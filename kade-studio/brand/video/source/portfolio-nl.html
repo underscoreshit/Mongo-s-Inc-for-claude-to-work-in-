@@ -1,0 +1,116 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><style>
+@font-face{font-family:BS;src:url(../../../fonts/big-shoulders-var-latin.woff2) format("woff2");font-weight:800 900}
+@font-face{font-family:BR;src:url(../../../fonts/bricolage-400-800-latin.woff2) format("woff2");font-weight:400 800}
+@font-face{font-family:CP;src:url(../../../fonts/courier-prime-700-latin.woff2) format("woff2");font-weight:700}
+:root{--acid:#74DB4B;--tomato:#FF5426;--sun:#FFD43A;--bubble:#FFB8E0;--cobalt:#3B6BFF;--ink:#151515;--paper:#F1F2EC;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--paper)}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;color:var(--ink);font-family:BR,sans-serif}
+.abs{position:absolute}
+.poster{font-family:BS;font-weight:900;text-transform:uppercase;line-height:.84}
+.disp{font-family:BR;font-weight:800;letter-spacing:-.025em;line-height:.92;font-variation-settings:"wdth" 75,"opsz" 96}
+.mono{font-family:CP;font-weight:700}
+.band{left:0;right:0;height:84px;background:var(--sun);border-block:7px solid var(--ink);white-space:nowrap;font-family:BS;font-weight:900;text-transform:uppercase;font-size:44px;display:flex;align-items:center;z-index:5}
+.band .tr{display:flex;gap:40px}
+.band span{display:inline-flex;gap:40px;align-items:center}
+.band span::after{content:"✶";color:var(--tomato)}
+/* gsm */
+#phone{left:150px;top:520px;width:780px;height:1500px;background:var(--ink);border-radius:90px;padding:22px;box-shadow:24px 24px 0 rgba(21,21,21,.18)}
+#screen{position:relative;width:100%;height:100%;border-radius:70px;overflow:hidden;background:var(--white)}
+.site{position:absolute;left:0;top:0;width:736px}
+.site .nav{display:flex;justify-content:space-between;align-items:center;padding:44px 40px 26px;font-family:BS;font-weight:900;font-size:40px;text-transform:uppercase}
+.site .nav i{display:block;width:48px;height:6px;background:currentColor;box-shadow:0 14px 0 currentColor,0 -14px 0 currentColor}
+.site .hero{padding:30px 40px 50px}
+.site .hero h1{font-family:BR;font-weight:800;font-size:92px;line-height:.92;letter-spacing:-.025em;font-variation-settings:"wdth" 75,"opsz" 96}
+.site .hero p{margin-top:26px;font-size:30px;line-height:1.3;max-width:560px}
+.site .btn{display:inline-block;margin-top:34px;padding:22px 40px;border:5px solid var(--ink);border-radius:999px;font-weight:800;font-size:30px;box-shadow:8px 8px 0 var(--ink)}
+.site .pic{height:420px;margin:0 40px;border:5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);position:relative;overflow:hidden}
+.site .pic::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background-image:radial-gradient(circle,rgba(21,21,21,.5) 3px,transparent 3.6px);background-size:16px 16px;-webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent)}
+.site .pic b{position:absolute;left:30px;bottom:26px;font-family:BS;font-weight:900;font-size:110px;line-height:.84;text-transform:uppercase}
+.site .list{margin:50px 40px 0;border-top:5px solid currentColor}
+.site .list div{display:flex;justify-content:space-between;padding:24px 0;border-bottom:3px solid currentColor;font-size:32px;font-weight:600}
+.site .list div span:last-child{font-family:CP;font-weight:700}
+.site .foot{margin-top:50px;padding:40px;background:var(--ink);color:var(--paper);font-family:CP;font-size:26px;line-height:1.5}
+/* label met naam en stad */
+#tag{left:150px;top:1735px;width:780px;z-index:6}
+#tagin{display:inline-flex;align-items:center;gap:22px;background:var(--white);border:7px solid var(--ink);box-shadow:14px 14px 0 var(--ink);padding:22px 36px;font-size:46px;font-weight:800;white-space:nowrap}
+#tagin .c{font-family:CP;font-size:26px;border:4px solid var(--ink);border-radius:999px;padding:4px 18px}
+#tagin .city{font-family:CP;font-size:30px;font-weight:700;color:#444}
+.burst{display:grid;place-items:center;text-align:center;background:var(--white);clip-path:polygon(50.0% 0.0%,58.5% 13.0%,71.7% 5.0%,73.7% 20.3%,89.1% 18.8%,84.2% 33.5%,98.7% 38.9%,88.0% 50.0%,98.7% 61.1%,84.2% 66.5%,89.1% 81.2%,73.7% 79.7%,71.7% 95.0%,58.5% 87.0%,50.0% 100.0%,41.5% 87.0%,28.3% 95.0%,26.3% 79.7%,10.9% 81.2%,15.8% 66.5%,1.3% 61.1%,12.0% 50.0%,1.3% 38.9%,15.8% 33.5%,10.9% 18.8%,26.3% 20.3%,28.3% 5.0%,41.5% 13.0%);font-family:BS;font-weight:900;text-transform:uppercase;line-height:.92}
+.bsh{background:var(--ink);clip-path:polygon(50.0% 0.0%,58.5% 13.0%,71.7% 5.0%,73.7% 20.3%,89.1% 18.8%,84.2% 33.5%,98.7% 38.9%,88.0% 50.0%,98.7% 61.1%,84.2% 66.5%,89.1% 81.2%,73.7% 79.7%,71.7% 95.0%,58.5% 87.0%,50.0% 100.0%,41.5% 87.0%,28.3% 95.0%,26.3% 79.7%,10.9% 81.2%,15.8% 66.5%,1.3% 61.1%,12.0% 50.0%,1.3% 38.9%,15.8% 33.5%,10.9% 18.8%,26.3% 20.3%,28.3% 5.0%,41.5% 13.0%)}
+#grain{position:absolute;inset:0;pointer-events:none;opacity:.14;mix-blend-mode:multiply;z-index:50;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* 4:5-feed: zonder titel, kortere gsm; wordt uitgesneden op y=285..1635 */
+html.feed #title,html.feed #sub{display:none}
+html.feed #phone{top:330px;height:1230px}
+html.feed #tag{top:1500px}
+html.feed #endh{top:360px}
+html.feed #logo{top:690px}
+html.feed #cta{top:1170px}
+html.feed #bs{top:1295px}
+html.feed #bb{top:1280px}
+html.feed #url{top:1380px}
+</style></head><body><div id="stage">
+<div class="abs band" id="b1" style="top:0;border-top:0"><div class="tr" id="b1t"><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span></div></div>
+<h1 class="abs disp" id="title" style="left:70px;top:160px;width:940px;font-size:150px">Werk dat<br>opvalt.</h1>
+<p class="abs" id="sub" style="left:74px;top:420px;width:760px;font-size:34px;font-weight:500;line-height:1.25">Sites voor verzonnen zaken, om u de stijl te tonen.</p>
+<div class="abs" id="phone"><div id="screen"><div class="site" id="site0" style="background:var(--sun);color:var(--ink)"><div class="nav"><span>Vanhove</span><i></i></div><div class="hero"><h1>Zuurdesem<br>sinds 1987.</h1><p>Brood, koffiekoeken en taarten, elke nacht gebakken.</p><span class="btn" style="background:var(--cobalt);color:var(--white)">Bestel voor morgen</span></div><div class="pic" style="background:var(--cobalt);color:var(--white)"><b>Vanhove</b></div><div class="list"><div><span>Boerenbrood</span><span>4,20 €</span></div><div><span>Croissant</span><span>1,40 €</span></div><div><span>Rijsttaart</span><span>14 €</span></div><div><span>Pistolets</span><span>0,70 €</span></div></div><div class="foot">Bakkerij Vanhove<br>Gent</div></div><div class="site" id="site1" style="background:var(--ink);color:var(--paper)"><div class="nav"><span>Atelier 12</span><i></i></div><div class="hero"><h1>Barbier.<br>Nooit meer<br>wachten.</h1><p>Knippen, baard, klassiek scheren. Reserveer online, 7 op 7.</p><span class="btn" style="background:var(--acid);color:var(--ink)">Reserveren</span></div><div class="pic" style="background:var(--acid);color:var(--ink)"><b>Atelier 12</b></div><div class="list"><div><span>Knippen</span><span>25 €</span></div><div><span>Baard</span><span>15 €</span></div><div><span>Knippen + baard</span><span>35 €</span></div><div><span>Scheren</span><span>20 €</span></div></div><div class="foot">Atelier 12<br>Namen</div></div><div class="site" id="site2" style="background:var(--bubble);color:var(--ink)"><div class="nav"><span>Julie</span><i></i></div><div class="hero"><h1>Boeketten<br>die spreken.</h1><p>Seizoensbloemen, dezelfde dag geleverd in Bergen en omgeving.</p><span class="btn" style="background:var(--tomato);color:var(--ink)">Boeket bestellen</span></div><div class="pic" style="background:var(--tomato);color:var(--ink)"><b>Julie</b></div><div class="list"><div><span>Boeket van de dag</span><span>25 €</span></div><div><span>Rozen (12)</span><span>39 €</span></div><div><span>Kamerplant</span><span>vanaf 18 €</span></div><div><span>Huwelijk</span><span>op offerte</span></div></div><div class="foot">Fleurs de Julie<br>Bergen</div></div><div class="site" id="site3" style="background:var(--cobalt);color:var(--white)"><div class="nav"><span>Peeters</span><i></i></div><div class="hero"><h1>Uw auto,<br>goed gevolgd.</h1><p>Onderhoud, banden, keuring. Duidelijke offerte voor elke ingreep.</p><span class="btn" style="background:var(--sun);color:var(--ink)">Afspraak maken</span></div><div class="pic" style="background:var(--sun);color:var(--ink)"><b>Peeters</b></div><div class="list"><div><span>Onderhoud</span><span>vanaf 149 €</span></div><div><span>Banden (4)</span><span>vanaf 320 €</span></div><div><span>Pre-keuring</span><span>49 €</span></div><div><span>Diagnose</span><span>39 €</span></div></div><div class="foot">Garage Peeters<br>Hasselt</div></div><div class="site" id="site4" style="background:var(--tomato);color:var(--ink)"><div class="nav"><span>Chez Mo</span><i></i></div><div class="hero"><h1>De echte<br>Luikse friet.</h1><p>Twee keer gebakken, warm geserveerd. Open tot 23 u.</p><span class="btn" style="background:var(--sun);color:var(--ink)">Bekijk de kaart</span></div><div class="pic" style="background:var(--sun);color:var(--ink)"><b>Chez Mo</b></div><div class="list"><div><span>Grote friet</span><span>3,50 €</span></div><div><span>Frikandel</span><span>2,50 €</span></div><div><span>Boulet</span><span>6 €</span></div><div><span>Mitraillette</span><span>8 €</span></div></div><div class="foot">Frituur Chez Mo<br>Luik</div></div></div></div>
+<div class="abs" id="tag"><div id="tagin"><span class="c">Concept</span><span id="tname"></span><span class="city" id="tcity"></span></div></div>
+
+<!-- einde -->
+<div class="abs" id="end" style="inset:0;background:var(--acid)">
+  <div class="abs band" style="top:0;border-top:0"><div class="tr" id="b2t"><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span></div></div>
+  <h2 class="abs disp" id="endh" style="left:70px;top:330px;width:940px;font-size:160px">Uw zaak<br>is de volgende?</h2>
+  <img class="abs" id="logo" src="../../logo/kade-logo.svg" style="left:90px;top:760px;width:900px">
+  <div class="abs" id="cta" style="left:70px;top:1330px;padding:38px 64px;background:var(--tomato);border:8px solid var(--ink);border-radius:999px;box-shadow:14px 14px 0 var(--ink);font-size:66px;font-weight:800;white-space:nowrap">Offerte aanvragen</div>
+  <div class="abs bsh" id="bs" style="left:725px;top:1455px;width:300px;height:300px"></div>
+  <div class="abs burst" id="bb" style="left:710px;top:1440px;width:300px;height:300px;font-size:76px;background:var(--sun)"><span style="transform:rotate(-8deg)">Link<br>in bio</span></div>
+  <p class="abs mono" id="url" style="left:76px;top:1540px;font-size:58px">kadestudio.be</p>
+  <div class="abs band" style="top:1836px;background:var(--ink);color:var(--acid)"><div class="tr" id="b3t"><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span><span>Websites voor kleine Belgische bedrijven</span><span>Vaste prijs</span><span>NL + FR</span></div></div>
+</div>
+<div id="grain"></div>
+</div>
+<script>
+const DURATION=15;window.DURATION=DURATION;
+const SITES=[{"name": "Bakkerij Vanhove", "city": "Gent"}, {"name": "Atelier 12", "city": "Namen"}, {"name": "Fleurs de Julie", "city": "Bergen"}, {"name": "Garage Peeters", "city": "Hasselt"}, {"name": "Frituur Chez Mo", "city": "Luik"}];
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const p=(t,a,b)=>cl((t-a)/(b-a));
+const io=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const oc=x=>1-Math.pow(1-x,3);
+const oq=x=>1-Math.pow(1-x,4);
+const ob=x=>{const c1=1.9,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+function set(id,css){const e=$(id);for(const k in css)e.style[k]=css[k]}
+function band(id,t,dir){$(id).style.transform=`translateX(${(dir*t*140)%1200-(dir>0?1200:0)}px)`}
+if(location.hash==='#feed')document.documentElement.classList.add('feed');
+const H=[...document.querySelectorAll('.site')].map(e=>e.offsetHeight);
+const SCREEN=$('screen').offsetHeight, PER=2.3, START=1.0;   // elke site 2,3 s in beeld
+function render(t){
+  band('b1t',t,-1);band('b2t',t,-1);band('b3t',t,1);
+  set('title',{transform:`translateY(${lerp(60,0,oc(p(t,.05,.5)))}px)`,opacity:p(t,.05,.3)});
+  set('sub',{opacity:p(t,.35,.6)});
+  set('phone',{transform:`translateY(${lerp(1500,0,oq(p(t,.3,1.0)))}px)`});
+  // sites: horizontaal binnen, scrollen, horizontaal weg
+  let cur=0;
+  SITES.forEach((s,i)=>{
+    const t0=START+i*PER, tin=p(t,t0,t0+.4), tout=p(t,t0+PER,t0+PER+.4);
+    const x=lerp(760,0,oq(tin))-lerp(0,760,io(tout));
+    const scroll=io(p(t,t0+.45,t0+PER-.05))*Math.max(0,H[i]-SCREEN);
+    set('site'+i,{transform:`translate(${x}px,${-scroll}px)`,visibility:(tin>0&&tout<1)?'visible':'hidden'});
+    if(t>=t0+.15&&t<t0+PER+.15)cur=i;
+  });
+  const s=SITES[cur];$('tname').textContent=s.name;$('tcity').textContent=s.city;
+  const t0=START+cur*PER;const k=t<t0+.35?oq(p(t,t0+.1,t0+.4)):1-oq(p(t,t0+PER-.1,t0+PER+.15));
+  set('tagin',{transform:`translateY(${lerp(60,0,k)}px) rotate(${lerp(2,-2,k)}deg)`,opacity:t<START+.1?0:k});
+  // einde
+  const E=START+SITES.length*PER+.1;   // 12,6 s
+  set('end',{transform:`translateY(${lerp(1920,0,oq(p(t,E,E+.4)))}px)`});
+  set('endh',{transform:`translateY(${lerp(80,0,oc(p(t,E+.3,E+.7)))}px)`,opacity:p(t,E+.3,E+.5)});
+  const l=ob(p(t,E+.55,E+.95));set('logo',{transform:`scale(${lerp(2.2,1,l)}) rotate(${lerp(-12,-3,l)}deg)`,opacity:p(t,E+.55,E+.6)});
+  set('cta',{transform:`scale(${ob(p(t,E+.9,E+1.2))})`,transformOrigin:'0 50%'});
+  const b=ob(p(t,E+1.1,E+1.4));for(const id of ['bb','bs'])set(id,{transform:`scale(${b}) rotate(${(t-E-1.1)*-30}deg)`,opacity:t>E+1.1?1:0});
+  set('url',{opacity:p(t,E+1.3,E+1.45)});
+}
+window.render=render;render(0);
+</script></body></html>

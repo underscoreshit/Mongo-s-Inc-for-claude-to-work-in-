@@ -2,7 +2,7 @@
 const {chromium}=require('playwright');const fs=require('fs'),path=require('path');
 const [lang,out,...times]=process.argv.slice(2);
 (async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
-await p.goto('file://'+path.resolve(__dirname,`ad-${lang}.html`));await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);
+await p.goto('file://'+path.resolve(__dirname,(process.env.AD||'ad')+`-${lang}.html`)+(process.env.FEED?'#feed':''));await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);
 fs.mkdirSync(out,{recursive:true});
 const T=times.length?times.map(Number):[...Array(Math.round(30*(await p.evaluate(()=>window.DURATION)))).keys()].map(f=>f/30);
 for(let i=0;i<T.length;i++){await p.evaluate(t=>window.render(t),T[i]);

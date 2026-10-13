@@ -1,9 +1,25 @@
-# Video-advertentie (13,5 s)
+# Video-advertenties
 
+## 1. Advertentie (13,5 s): "Bij de buren?"
 | Bestand | Formaat | Gebruik |
 |---|---|---|
 | `kade-ad-nl-9x16.mp4` / `kade-ad-fr-9x16.mp4` | 1080×1920 | Reels, Stories |
 | `kade-ad-nl-4x5.mp4` / `kade-ad-fr-4x5.mp4` | 1080×1350 | Feed Instagram en Facebook |
+
+## 2. Portfolio-video (15 s): voorbeeldsites in een gsm
+| Bestand | Formaat | Gebruik |
+|---|---|---|
+| `kade-portfolio-nl-9x16.mp4` / `kade-portfolio-fr-9x16.mp4` | 1080×1920 | Reels, Stories |
+| `kade-portfolio-nl-4x5.mp4` / `kade-portfolio-fr-4x5.mp4` | 1080×1350 | Feed |
+
+Vijf voorbeeldsites (bakkerij, barbier, bloemist, garage, frituur) scrollen na elkaar in een gsm, elk 2,3 s, met een label "Concept" + naam + stad. Eindigt op "Uw zaak is de volgende?" met logo en knop.
+Echt klantenwerk toevoegen: vervang een site in de `sites`-lijst van `make_portfolio.py` en zet het label op de echte naam (en haal "Concept" weg in `concept=`).
+
+```bash
+python3 make_portfolio.py
+AD=portfolio node render.js nl frames-pf-nl              # 9:16
+FEED=1 AD=portfolio node render.js nl frames-pf-nl-feed  # 4:5-layout, daarna crop=1080:1350:0:285
+```
 
 H.264, 30 fps, stille audiotrack (voeg muziek toe in Instagram of in Meta Ads Manager).
 De MP4's staan niet in git (te groot). Opnieuw maken:
