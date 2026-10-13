@@ -49,20 +49,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--paper)}
 /* gsm */
 #phone{left:150px;top:520px;width:780px;height:1500px;background:var(--ink);border-radius:90px;padding:22px;box-shadow:24px 24px 0 rgba(21,21,21,.18)}
 #screen{position:relative;width:100%;height:100%;border-radius:70px;overflow:hidden;background:var(--white)}
-.site{position:absolute;left:0;top:0;width:736px}
-.site .nav{display:flex;justify-content:space-between;align-items:center;padding:44px 40px 26px;font-family:BS;font-weight:900;font-size:40px;text-transform:uppercase}
-.site .nav i{display:block;width:48px;height:6px;background:currentColor;box-shadow:0 14px 0 currentColor,0 -14px 0 currentColor}
-.site .hero{padding:30px 40px 50px}
-.site .hero h1{font-family:BR;font-weight:800;font-size:92px;line-height:.92;letter-spacing:-.025em;font-variation-settings:"wdth" 75,"opsz" 96}
-.site .hero p{margin-top:26px;font-size:30px;line-height:1.3;max-width:560px}
-.site .btn{display:inline-block;margin-top:34px;padding:22px 40px;border:5px solid var(--ink);border-radius:999px;font-weight:800;font-size:30px;box-shadow:8px 8px 0 var(--ink)}
-.site .pic{height:420px;margin:0 40px;border:5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);position:relative;overflow:hidden}
-.site .pic::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background-image:radial-gradient(circle,rgba(21,21,21,.5) 3px,transparent 3.6px);background-size:16px 16px;-webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent)}
-.site .pic b{position:absolute;left:30px;bottom:26px;font-family:BS;font-weight:900;font-size:110px;line-height:.84;text-transform:uppercase}
-.site .list{margin:50px 40px 0;border-top:5px solid currentColor}
-.site .list div{display:flex;justify-content:space-between;padding:24px 0;border-bottom:3px solid currentColor;font-size:32px;font-weight:600}
-.site .list div span:last-child{font-family:CP;font-weight:700}
-.site .foot{margin-top:50px;padding:40px;background:var(--ink);color:var(--paper);font-family:CP;font-size:26px;line-height:1.5}
+__SITECSS__
 /* label met naam en stad */
 #tag{left:150px;top:1735px;width:780px;z-index:6}
 #tagin{display:inline-flex;align-items:center;gap:22px;background:var(--white);border:7px solid var(--ink);box-shadow:14px 14px 0 var(--ink);padding:22px 36px;font-size:46px;font-weight:800;white-space:nowrap}
@@ -117,7 +104,7 @@ function set(id,css){const e=$(id);for(const k in css)e.style[k]=css[k]}
 function band(id,t,dir){$(id).style.transform=`translateX(${(dir*t*140)%1200-(dir>0?1200:0)}px)`}
 if(location.hash==='#feed')document.documentElement.classList.add('feed');
 const H=[...document.querySelectorAll('.site')].map(e=>e.offsetHeight);
-const SCREEN=$('screen').offsetHeight, PER=2.3, START=1.0;   // elke site 2,3 s in beeld
+const SCREEN=$('screen').offsetHeight, PER=2.4, START=0.9;   // elke site 2,3 s in beeld
 function render(t){
   band('b1t',t,-1);band('b2t',t,-1);band('b3t',t,1);
   set('title',{transform:`translateY(${lerp(60,0,oc(p(t,.05,.5)))}px)`,opacity:p(t,.05,.3)});
@@ -157,21 +144,17 @@ def star(n=14, r=.76):
     return "polygon(" + ",".join(pts) + ")"
 
 
+import sys; sys.path.insert(0, str(HERE))
+import sites as SITES_MOD
+
 for lang, t in T.items():
-    sites = ""
-    for i, s in enumerate(t["sites"]):
-        rows = "".join(f"<div><span>{a}</span><span>{b}</span></div>" for a, b in zip(s["items"], s["prices"]))
-        sites += (f'<div class="site" id="site{i}" style="background:{s["bg"]};color:{s["fg"]}">'
-                  f'<div class="nav"><span>{s["short"]}</span><i></i></div>'
-                  f'<div class="hero"><h1>{s["h"]}</h1><p>{s["p"]}</p><span class="btn" style="background:{s["acc"]};color:{s["accfg"]}">{s["btn"]}</span></div>'
-                  f'<div class="pic" style="background:{s["acc"]};color:{s["accfg"]}"><b>{s["short"]}</b></div>'
-                  f'<div class="list">{rows}</div>'
-                  f'<div class="foot">{s["name"]}<br>{s["city"]}</div></div>')
+    gen = SITES_MOD.sites_html(lang)
+    sites = "".join(html.replace('class="site"', f'class="site" id="site{i}"', 1) for i, (_, _, html) in enumerate(gen))
     html = HTML
     for k, v in {"__LANG__": lang, "__STAR__": star(), "__BAND__": "".join(f"<span>{b}</span>" for b in t["band"] * 4),
                  "__TITLE__": t["title"], "__SUB__": t["sub"], "__SITES__": sites, "__CONCEPT__": t["concept"],
-                 "__END__": t["end"], "__CTA__": t["cta"], "__BIO__": t["bio"], "__URL__": t["url"],
-                 "__SITEDATA__": json.dumps([{"name": s["name"], "city": s["city"]} for s in t["sites"]], ensure_ascii=False)}.items():
+                 "__END__": t["end"], "__CTA__": t["cta"], "__BIO__": t["bio"], "__URL__": t["url"], "__SITECSS__": SITES_MOD.CSS,
+                 "__SITEDATA__": json.dumps([{"name": n, "city": c} for n, c, _ in gen], ensure_ascii=False)}.items():
         html = html.replace(k, v)
     (HERE / f"portfolio-{lang}.html").write_text(html, encoding="utf-8")
 print("ok")

@@ -13,7 +13,8 @@
 | `kade-portfolio-nl-4x5.mp4` / `kade-portfolio-fr-4x5.mp4` | 1080×1350 | Feed |
 
 Vijf voorbeeldsites (bakkerij, barbier, bloemist, garage, frituur) scrollen na elkaar in een gsm, elk 2,3 s, met een label "Concept" + naam + stad. Eindigt op "Uw zaak is de volgende?" met logo en knop.
-Echt klantenwerk toevoegen: vervang een site in de `sites`-lijst van `make_portfolio.py` en zet het label op de echte naam (en haal "Concept" weg in `concept=`).
+De vijf sites staan in `source/sites.py`, elk met eigen lettertype, kleuren en opbouw (hero, producten, reviews, openingsuren, kaart, footer). Extra lettertypes in `source/fonts/`.
+Echt klantenwerk toevoegen: vervang een site in `sites.py` (of zet er een screenshot in) en haal "Concept" weg in `make_portfolio.py`.
 
 ```bash
 python3 make_portfolio.py
