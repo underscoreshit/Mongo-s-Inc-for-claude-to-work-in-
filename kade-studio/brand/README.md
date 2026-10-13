@@ -34,6 +34,8 @@ PNG's zijn transparant en 3x vergroot. SVG's zijn vectoren (tekst omgezet naar p
 | `post-1` tot `post-6` | 1080×1350 (4:5) | Instagram/Facebook posts |
 | `story-1`, `story-2` | 1080×1920 | Stories |
 | `highlight-1` tot `-4` | 1080×1080 | Instagram highlight-covers |
+| `first-post/slide-1` tot `-5` | 1080×1350 | Eerste Instagram-post (carrousel). Caption: `social/first-post-caption.md` |
+| `og-image.png` | 1200×630 | Voorbeeldafbeelding als de site gedeeld wordt (WhatsApp, Facebook, LinkedIn) |
 
 `post-5-nouveau-projet` en `story-2-projet` zijn sjablonen: zet je screenshot op het witte vlak (Canva, Figma of Photoshop).
 

@@ -139,6 +139,62 @@ for lg,t in L.items():
         files[f'{lg}/highlight-{i}-{lab.lower()}']=(1080,1080,
           f'<div style="position:absolute;inset:0;background:{col}"></div>'
           f'<div style="position:absolute;inset:0;display:grid;place-items:center"><span class="poster" style="font-size:{fs}px;{"color:var(--white);-webkit-text-stroke:6px var(--ink);paint-order:stroke fill" if col=="var(--cobalt)" else ""};transform:rotate(-6deg)">{lab}</span></div>')
+
+# ---------- first post: launch carousel (5 slides) + OG image ----------
+FP={
+'fr':dict(s1a="Kade Studio",s1b="est ouvert.",swipe="Glissez",
+  s2="Un client vous cherche sur Google.",s2b="Il trouve quoi?",s2c="Pas de site, des horaires faux, une photo floue de 2017. Il va chez le voisin.",
+  s3="Un site clair, rapide, en FR et NL.",s3p=["Horaires et itinéraire","Lisible sur téléphone","Trouvable sur Google"],s3s="Livré en<br>3 semaines",
+  s4="Prix fixe.",s4b="Annoncé avant de commencer.",rows=[("Une page","690 €"),("Vitrine","1 490 €"),("Boutique","dès 2 900 €")],tax="Montants HTVA",
+  s5="Votre devis est gratuit.",s5p="Dites-moi votre métier et votre ville. Je vous réponds sous 24 h ouvrables.",bio="Lien<br>en bio",
+  og="Sites web pour petites entreprises belges"),
+'nl':dict(s1a="Kade Studio",s1b="is open.",swipe="Swipe",
+  s2="Een klant zoekt u op Google.",s2b="Wat vindt die?",s2c="Geen website, verkeerde openingsuren, een wazige foto uit 2017. Die gaat naar de buren.",
+  s3="Een heldere, snelle site, in NL en FR.",s3p=["Openingsuren en route","Leesbaar op de gsm","Vindbaar op Google"],s3s="Online in<br>3 weken",
+  s4="Vaste prijs.",s4b="Vooraf meegedeeld.",rows=[("Eén pagina","690 €"),("Etalage","1 490 €"),("Webshop","vanaf 2 900 €")],tax="Bedragen excl. btw",
+  s5="Uw offerte is gratis.",s5p="Vertel me uw vak en uw stad. U krijgt antwoord binnen 24 werkuren.",bio="Link<br>in bio",
+  og="Websites voor kleine Belgische bedrijven"),
+}
+def dots(n,i,col):
+    return '<div style="position:absolute;left:0;right:0;bottom:46px;display:flex;justify-content:center;gap:14px">'+''.join(f'<span style="width:18px;height:18px;border-radius:50%;border:4px solid {col};background:{col if j==i else "transparent"}"></span>' for j in range(n))+'</div>'
+for lg,t in FP.items():
+    P=(1080,1350)
+    files[f'{lg}/first-post/slide-1']=(*P,
+      '<div style="position:absolute;inset:0;background:var(--acid)"></div>'+band(0,L[lg]['band'],'border-top:0')+
+      f'<div class="logo" style="position:absolute;left:70px;top:190px;width:940px">{logo}</div>'+
+      f'<h1 class="disp" style="position:absolute;left:70px;top:740px;width:940px;font-size:170px"><em>{t["s1b"]}</em></h1>'+
+      f'<p style="position:absolute;left:70px;top:960px;width:700px;font-size:44px;font-weight:500;line-height:1.25">{L[lg]["sub"]}</p>'+
+      burst(760,1030,250,t['swipe'],56,'var(--sun)')+dots(5,0,'var(--ink)'))
+    files[f'{lg}/first-post/slide-2']=(*P,
+      '<div style="position:absolute;inset:0;background:var(--ink)"></div>'+
+      f'<h2 class="disp" style="position:absolute;left:70px;top:110px;width:940px;font-size:120px;color:var(--paper)">{t["s2"]}</h2>'+
+      f'<h2 class="poster" style="position:absolute;left:66px;top:560px;width:960px;font-size:230px;color:transparent;-webkit-text-stroke:6px var(--acid)">{t["s2b"]}</h2>'+
+      f'<p style="position:absolute;left:70px;top:1010px;width:820px;font-size:44px;font-weight:500;line-height:1.3;color:var(--paper)">{t["s2c"]}</p>'+dots(5,1,'var(--acid)'))
+    pills=''.join(f'<span class="pill" style="font-size:36px;background:var(--white);border-color:var(--ink);transform:rotate({[-3,2,-1][i]}deg)">{x}</span>' for i,x in enumerate(t['s3p']))
+    files[f'{lg}/first-post/slide-3']=(*P,
+      '<div style="position:absolute;inset:0;background:var(--sun)"></div>'+
+      f'<h2 class="disp" style="position:absolute;left:70px;top:110px;width:940px;font-size:140px">{t["s3"]}</h2>'+
+      f'<div style="position:absolute;left:70px;top:720px;width:620px;display:flex;flex-direction:column;align-items:flex-start;gap:26px">{pills}</div>'+
+      burst(640,660,400,t['s3s'],62,'var(--white)')+dots(5,2,'var(--ink)'))
+    rows=''.join(f'<div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-bottom:6px solid var(--ink);padding:26px 0"><span class="disp" style="font-size:66px">{a}</span><span class="poster" style="font-size:110px;white-space:nowrap">{b}</span></div>' for a,b in t['rows'])
+    files[f'{lg}/first-post/slide-4']=(*P,
+      '<div style="position:absolute;inset:0;background:var(--bubble)"></div>'+
+      f'<h2 class="poster" style="position:absolute;left:70px;top:90px;font-size:180px;white-space:nowrap">{t["s4"]}</h2>'+
+      f'<p style="position:absolute;left:74px;top:270px;font-size:48px;font-weight:800">{t["s4b"]}</p>'+
+      f'<div style="position:absolute;left:70px;top:430px;width:940px;border-top:6px solid var(--ink)">{rows}</div>'+
+      f'<p class="mono" style="position:absolute;left:74px;top:1100px;font-size:34px;font-weight:700">{t["tax"]}</p>'+dots(5,3,'var(--ink)'))
+    files[f'{lg}/first-post/slide-5']=(*P,
+      '<div style="position:absolute;inset:0;background:var(--cobalt)"></div>'+
+      f'<h2 class="poster" style="position:absolute;left:70px;top:100px;width:940px;font-size:200px;color:var(--white);-webkit-text-stroke:8px var(--ink);paint-order:stroke fill;text-shadow:12px 12px 0 var(--ink)">{t["s5"]}</h2>'+
+      f'<p style="position:absolute;left:70px;top:660px;width:640px;font-size:46px;font-weight:500;line-height:1.3;color:var(--white)">{t["s5p"]}</p>'+
+      f'<span style="position:absolute;left:70px;top:940px;background:var(--tomato);border:7px solid var(--ink);border-radius:999px;padding:24px 44px;font-size:48px;font-weight:800;box-shadow:12px 12px 0 var(--ink)">{L[lg]["cta"]}</span>'+
+      burst(700,760,320,t['bio'],78,'var(--sun)')+
+      f'<div class="handle" style="left:74px;top:1130px;color:var(--white);font-size:38px">{HANDLE}</div>'+dots(5,4,'var(--white)'))
+    files[f'{lg}/og-image']=(1200,630,
+      '<div style="position:absolute;inset:0;background:var(--acid)"></div>'+band(0,L[lg]['band'],'border-top:0')+
+      f'<div class="logo" style="position:absolute;left:70px;top:140px;width:640px">{logo}</div>'+
+      f'<p class="disp" style="position:absolute;left:74px;top:500px;width:1060px;font-size:50px">{t["og"]}</p>'+
+      burst(830,130,300,L[lg]['fast'],52,'var(--white)'))
 os.makedirs(OUT,exist_ok=True)
 man=[]
 for k,(w,h,body) in files.items():
