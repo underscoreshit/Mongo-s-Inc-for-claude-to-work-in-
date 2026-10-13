@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kade Studio</title>
+<meta name="description" content="Kade Studio crée des sites vitrines pour les petites entreprises belges. Clairs, rapides, et qu'on n'oublie pas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Courier+Prime:wght@400;700&display=swap">
+<style>
+/* Layout: affiche de rue collée sur un mur. Bandeaux défilants, blocs de couleur pleins,
+   stickers et posters de travers. Un seul look assumé (pas de mode sombre). */
+:root{
+  --acid:#74DB4B;      /* vert du hero */
+  --tomato:#FF5426;    /* stickers, accents chauds */
+  --sun:#FFD43A;       /* bandeaux */
+  --bubble:#FFB8E0;    /* rose */
+  --cobalt:#3B6BFF;    /* bleu */
+  --ink:#151515;       /* texte, contours */
+  --paper:#F1F2EC;     /* fond neutre, légèrement froid */
+  --white:#FFFFFF;
+
+  --f-poster:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --f-display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --f-type:"Courier Prime", "Courier New", ui-monospace, monospace;
+
+  --step-0:clamp(1rem,.95rem + .25vw,1.125rem);
+  --step-1:clamp(1.25rem,1.1rem + .6vw,1.6rem);
+  --step-2:clamp(1.8rem,1.4rem + 1.8vw,2.9rem);
+  --step-3:clamp(2.6rem,1.6rem + 4.6vw,5.6rem);
+
+  --gutter:clamp(16px,3vw,40px);
+  --border:3px solid var(--ink);
+  --pop:5px 5px 0 var(--ink);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-display);font-size:var(--step-0);line-height:1.5;overflow-x:hidden}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+
+/* grain photocopie */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.13;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{padding-inline:var(--gutter)}
+
+/* ---------- bandeau défilant ---------- */
+.band{background:var(--sun);border-block:var(--border);overflow:hidden;white-space:nowrap;font-family:var(--f-poster);font-weight:900;text-transform:uppercase;letter-spacing:.02em;font-size:1.05rem}
+.band__track{display:inline-flex;gap:2.2rem;padding-block:.45rem;animation:slide 32s linear infinite}
+.band__track span{display:inline-flex;align-items:center;gap:2.2rem}
+.band__track span::after{content:"✶";color:var(--tomato)}
+.band--ink{background:var(--ink);color:var(--acid);border-color:var(--ink);font-size:clamp(1.6rem,1rem + 3vw,3.4rem)}
+.band--ink .band__track{animation-duration:40s;animation-direction:reverse}
+.band--ink .band__track span::after{color:var(--bubble)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- navigation en pilules ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--acid);border-bottom:var(--border);padding-block:.7rem}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.logo{font-family:var(--f-poster);font-weight:900;font-size:1.9rem;line-height:1;text-decoration:none;letter-spacing:.01em}
+.logo sup{font-family:var(--f-type);font-size:.7rem;font-weight:700}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.pill{display:inline-block;padding:.38rem 1.1rem;border:2.5px solid var(--ink);border-radius:999px;background:var(--white);font-weight:800;font-style:italic;font-variation-settings:"wdth" 80;text-decoration:none;font-size:.95rem;transition:transform .2s,background .2s}
+.pill:hover{background:var(--sun);transform:translateY(-2px) rotate(-2deg)}
+.pill--dark{background:var(--ink);color:var(--white)}
+.pill--dark:hover{background:var(--tomato);color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--acid);border-bottom:var(--border);overflow:hidden;position:relative}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;padding-block:clamp(2.5rem,6vw,5rem) 1rem}
+.hero h1{font-size:var(--step-3);line-height:.92;font-weight:800;font-variation-settings:"wdth" 75,"opsz" 96;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;display:inline-block;background:var(--ink);color:var(--acid);padding:0 .14em .04em;transform:rotate(-2deg);border-radius:.12em}
+.hero__sub{margin-top:1.4rem;max-width:34ch;font-size:var(--step-1);line-height:1.35;font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;border:var(--border);border-radius:999px;font-family:var(--f-display);font-weight:800;font-size:1.05rem;text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .15s,box-shadow .15s;background:var(--white);color:var(--ink)}
+.btn--main{background:var(--tomato);box-shadow:var(--pop)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+
+/* collage */
+.collage{position:relative;min-height:440px}
+.poster{position:absolute;border:var(--border);box-shadow:var(--pop);padding:1rem;display:flex;flex-direction:column;justify-content:space-between;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.poster:hover{transform:rotate(0) scale(1.03)!important;z-index:5}
+.poster::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:26px;background:rgba(255,255,255,.55);border:1px solid rgba(21,21,21,.15);transform:translateX(-50%) rotate(-4deg)}
+.p1{width:52%;height:290px;left:0;top:70px;background:var(--cobalt);color:var(--white);transform:rotate(-6deg)}
+.p2{width:48%;height:250px;right:0;top:0;background:var(--bubble);transform:rotate(5deg)}
+.p3{width:54%;height:190px;right:6%;bottom:0;z-index:3;background:var(--sun);transform:rotate(-2deg)}
+.poster b{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;line-height:.88;font-size:clamp(2rem,1.2rem + 2.6vw,3.4rem)}
+.poster small{font-family:var(--f-type);font-size:.8rem;line-height:1.3}
+.dots{position:absolute;inset:auto 0 0 0;height:55%;pointer-events:none;
+  background-image:radial-gradient(circle,currentColor 1.6px,transparent 1.9px);background-size:9px 9px;
+  -webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);opacity:.45}
+
+.burst{position:absolute;z-index:6;width:150px;aspect-ratio:1;max-width:100%;display:grid;place-items:center;text-align:center;
+  background:var(--white);color:var(--ink);font-family:var(--f-poster);font-weight:900;text-transform:uppercase;line-height:.95;font-size:1.2rem;padding:1.6rem;
+  clip-path:polygon(50.0% 0.0%,58.5% 13.0%,71.7% 5.0%,73.7% 20.3%,89.1% 18.8%,84.2% 33.5%,98.7% 38.9%,88.0% 50.0%,98.7% 61.1%,84.2% 66.5%,89.1% 81.2%,73.7% 79.7%,71.7% 95.0%,58.5% 87.0%,50.0% 100.0%,41.5% 87.0%,28.3% 95.0%,26.3% 79.7%,10.9% 81.2%,15.8% 66.5%,1.3% 61.1%,12.0% 50.0%,1.3% 38.9%,15.8% 33.5%,10.9% 18.8%,26.3% 20.3%,28.3% 5.0%,41.5% 13.0%);
+  filter:drop-shadow(0 0 0 var(--ink));animation:spin 24s linear infinite}
+.burst span{transform:rotate(-8deg)}
+.burst--hero{left:-2%;bottom:-6px;top:auto}
+@keyframes spin{to{rotate:360deg}}
+
+.wordmark{display:block;font-family:var(--f-poster);font-weight:900;text-transform:uppercase;white-space:nowrap;
+  font-size:clamp(3.5rem,20.5vw,25rem);line-height:.78;letter-spacing:-.01em;color:var(--white);
+  -webkit-text-stroke:clamp(2px,.35vw,5px) var(--ink);paint-order:stroke fill;text-shadow:.04em .04em 0 var(--ink);
+  margin-top:1rem;padding-bottom:.06em;text-align:center}
+
+/* ---------- pour qui : blocs couleur ---------- */
+.who__head{background:var(--ink);color:var(--white);padding-block:clamp(2rem,4vw,3rem);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.2rem}
+.who__head h2{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:var(--step-3);line-height:.85}
+.who__head p{max-width:40ch;color:#d9dacf}
+.blocks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:var(--border)}
+.block{position:relative;overflow:hidden;padding:1.4rem var(--gutter) 8.5rem;min-height:340px;display:flex;flex-direction:column;gap:.8rem;border-right:var(--border)}
+.block:last-child{border-right:0}
+.block h3{font-family:var(--f-poster);font-weight:800;font-size:var(--step-2);line-height:.92;text-transform:uppercase}
+.block p{position:relative;z-index:1;font-weight:500;max-width:30ch}
+.block .big{position:absolute;right:-.06em;bottom:-.18em;font-family:var(--f-poster);font-weight:900;font-size:9rem;line-height:1;opacity:.95;color:transparent;-webkit-text-stroke:3px var(--ink)}
+.b-sun{background:var(--sun)} .b-bubble{background:var(--bubble)} .b-cobalt{background:var(--cobalt);color:var(--white)} .b-tomato{background:var(--tomato)}
+.b-cobalt .big{-webkit-text-stroke-color:var(--white)}
+
+/* ---------- travaux : rail horizontal ---------- */
+.work{padding-block:clamp(3rem,7vw,6rem) clamp(2rem,4vw,3rem)}
+.work h2{font-size:var(--step-3);font-weight:800;line-height:.92;font-variation-settings:"wdth" 75,"opsz" 96;letter-spacing:-.02em;max-width:14ch}
+.work__intro{margin-top:1rem;max-width:52ch}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,320px);gap:1.4rem;overflow-x:auto;padding:2.2rem var(--gutter) 1.6rem;margin-inline:calc(var(--gutter) * -1);scroll-snap-type:x mandatory;scrollbar-color:var(--ink) transparent}
+.case{scroll-snap-align:start;display:flex;flex-direction:column;gap:.6rem}
+.case__art{aspect-ratio:4/5;border:var(--border);box-shadow:var(--pop);position:relative;overflow:hidden;padding:1.1rem;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.case:nth-child(odd) .case__art{transform:rotate(-1.5deg)}
+.case:nth-child(even) .case__art{transform:rotate(1.5deg)}
+.case:hover .case__art{transform:rotate(0) translateY(-6px)}
+.case__art b{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:3.1rem;line-height:.85;position:relative;z-index:1}
+.case__art i{font-family:var(--f-type);font-style:normal;font-size:.82rem;position:relative;z-index:1}
+.case__meta{display:flex;justify-content:space-between;gap:.6rem;font-family:var(--f-type);font-size:.85rem}
+.case__meta strong{font-family:var(--f-display);font-size:1.05rem}
+.a1{background:var(--sun)} .a2{background:var(--ink);color:var(--acid)} .a3{background:var(--bubble)} .a4{background:var(--cobalt);color:var(--white)} .a5{background:var(--tomato)}
+.a2 b{color:transparent;-webkit-text-stroke:2px var(--acid)}
+.ring{position:absolute;right:-30%;top:22%;width:90%;aspect-ratio:1;border-radius:50%;border:18px solid currentColor;opacity:.25}
+
+/* ---------- offres : poster sombre ---------- */
+.offers{background:var(--ink);color:var(--white);padding-block:clamp(3rem,7vw,6rem)}
+.offers h2{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:clamp(3rem,2rem + 7vw,8.5rem);line-height:.82;color:transparent;-webkit-text-stroke:2px var(--acid)}
+.offers h2 span{color:var(--acid);-webkit-text-stroke:0}
+.offers__note{margin-top:1rem;font-family:var(--f-type);color:#cfd0c6;max-width:58ch}
+.menu{margin-top:2.6rem;display:flex;flex-direction:column;gap:1.1rem}
+.offer{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:1.4rem;align-items:center;padding:1.4rem 1.6rem;border:2.5px solid var(--acid);border-radius:22px;transition:background .25s,color .25s}
+.offer:hover{background:var(--acid);color:var(--ink)}
+.offer h3{font-weight:800;font-size:var(--step-2);line-height:1;font-variation-settings:"wdth" 78}
+.offer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem .5rem;font-family:var(--f-type);font-size:.9rem}
+.offer li{border:1.5px solid currentColor;border-radius:999px;padding:.12rem .7rem}
+.price{text-align:right;font-family:var(--f-poster);font-weight:900;font-size:clamp(2.4rem,1.8rem + 2vw,3.6rem);line-height:.9;white-space:nowrap;font-variant-numeric:tabular-nums}
+.price small{display:block;font-family:var(--f-type);font-weight:400;font-size:.8rem;letter-spacing:.02em}
+.offer--star{background:var(--sun);color:var(--ink);border-color:var(--sun);position:relative}
+.offer--star:hover{background:var(--acid);border-color:var(--acid)}
+.tag{position:absolute;top:-14px;left:1.4rem;background:var(--tomato);color:var(--ink);border:2.5px solid var(--ink);border-radius:999px;padding:.1rem .8rem;font-weight:800;font-size:.85rem;transform:rotate(-3deg)}
+.maint{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:baseline;font-family:var(--f-type)}
+.maint strong{font-family:var(--f-poster);font-size:2rem;color:var(--bubble)}
+
+/* ---------- méthode ---------- */
+.method{background:var(--bubble);border-block:var(--border);padding-block:clamp(3rem,7vw,6rem)}
+.method h2{font-size:var(--step-3);font-weight:800;line-height:.92;font-variation-settings:"wdth" 75,"opsz" 96;letter-spacing:-.02em}
+.steps{list-style:none;margin:2.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem;counter-reset:s}
+.step{counter-increment:s;background:var(--white);border:var(--border);border-radius:26px;padding:1.3rem 1.3rem 1.6rem;box-shadow:var(--pop);display:flex;flex-direction:column;gap:.6rem}
+.step:nth-child(2){margin-top:2.2rem} .step:nth-child(3){margin-top:4.4rem} .step:nth-child(4){margin-top:6.6rem}
+.step::before{content:counter(s);display:grid;place-items:center;width:3.2rem;height:3.2rem;border-radius:50%;background:var(--ink);color:var(--bubble);font-family:var(--f-poster);font-weight:900;font-size:1.8rem}
+.step h3{font-weight:800;font-size:var(--step-1);line-height:1.1}
+.step p{font-size:.98rem}
+.step .when{font-family:var(--f-type);font-size:.85rem;margin-top:auto;padding-top:.4rem}
+
+/* ---------- FAQ ---------- */
+.faq{padding-block:clamp(3rem,7vw,6rem);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(1.5rem,4vw,4rem);align-items:start}
+.faq h2{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:var(--step-3);line-height:.85}
+.faq details{border-bottom:var(--border)}
+.faq details:first-of-type{border-top:var(--border)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.1rem 0;font-weight:800;font-size:var(--step-1);line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:2.2rem;height:2.2rem;border:2.5px solid var(--ink);border-radius:50%;font-family:var(--f-poster);font-size:1.5rem;transition:transform .25s,background .25s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--sun)}
+.faq details p{padding-bottom:1.3rem;max-width:60ch}
+
+/* ---------- contact ---------- */
+.contact{background:var(--cobalt);border-top:var(--border);position:relative;overflow:hidden;padding-block:clamp(3rem,7vw,6rem)}
+.contact__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;position:relative;z-index:1}
+.contact h2{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;color:var(--white);font-size:clamp(3.2rem,2rem + 7vw,8rem);line-height:.82;-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;text-shadow:.05em .05em 0 var(--ink)}
+.contact__mail{margin-top:1.4rem;display:inline-flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.mail{font-family:var(--f-type);font-weight:700;background:var(--white);border:var(--border);padding:.5rem .9rem;user-select:all}
+.form{background:#E4EEDA;border:var(--border);box-shadow:8px 8px 0 var(--ink);padding:1.6rem;font-family:var(--f-type);transform:rotate(1.2deg)}
+.form__top{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;border-bottom:2px solid var(--ink);padding-bottom:.6rem;margin-bottom:1rem}
+.form h3{font-family:var(--f-display);font-weight:800;font-size:var(--step-2);line-height:.95;font-variation-settings:"wdth" 78;margin-bottom:1rem}
+.field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}
+.field label{font-weight:700;font-size:.85rem}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--ink);padding:.4rem 0;border-radius:0}
+.field textarea{resize:vertical;min-height:4.5rem}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;background:rgba(255,212,58,.4)}
+.field input::placeholder,.field textarea::placeholder{color:#55584f}
+.err{color:#A3190A;font-size:.82rem;min-height:1em}
+.form .btn{margin-top:.4rem}
+.done{margin-top:1rem;font-weight:700;background:var(--sun);border:2px solid var(--ink);padding:.6rem .8rem}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink);color:#d9dacf;padding-block:2rem;font-family:var(--f-type);font-size:.88rem}
+.foot__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;align-items:center}
+.foot .logo{color:var(--acid);font-size:2.4rem}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero__grid,.contact__grid,.faq{grid-template-columns:minmax(0,1fr)}
+  .blocks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .block:nth-child(2){border-right:0}
+  .block:nth-child(-n+2){border-bottom:var(--border)}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step:nth-child(n){margin-top:0}
+  .step:nth-child(even){margin-top:2rem}
+  .offer{grid-template-columns:minmax(0,1fr) auto}
+  .offer ul{grid-column:1/-1;grid-row:2}
+}
+@media (max-width:620px){
+  .nav ul{width:100%}
+  .collage{min-height:400px}
+  .p1{width:66%;height:260px} .p2{width:58%;height:220px} .p3{width:64%;height:170px}
+  .burst{width:118px;font-size:1rem;padding:1.2rem}
+  .burst--hero{left:auto;right:0;bottom:auto;top:-30px}
+  .blocks{grid-template-columns:minmax(0,1fr)}
+  .block{border-right:0;border-bottom:var(--border);min-height:260px}
+  .block:last-child{border-bottom:0}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .step:nth-child(even){margin-top:0}
+  .offer{grid-template-columns:minmax(0,1fr);padding:1.3rem}
+  .price{text-align:left}
+  .form{transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true">
+  <div class="band__track">
+    <span>Sites web pour petites entreprises belges</span><span>Bruxelles, Wallonie, Flandre</span><span>Français et Nederlands</span><span>Livré en 3 semaines</span>
+    <span>Sites web pour petites entreprises belges</span><span>Bruxelles, Wallonie, Flandre</span><span>Français et Nederlands</span><span>Livré en 3 semaines</span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__in wrap">
+    <a class="logo" href="#top">KADE<sup>®</sup></a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a class="pill" href="#travaux">Travaux</a></li>
+        <li><a class="pill" href="#offres">Offres</a></li>
+        <li><a class="pill" href="#methode">Méthode</a></li>
+        <li><a class="pill pill--dark" href="#contact">Demander un devis</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__grid wrap">
+      <div>
+        <h1 id="hero-title">Des sites web qui ont de la <em>gueule.</em></h1>
+        <p class="hero__sub">Je crée des sites vitrines pour les petites entreprises belges. Clairs, rapides, et qu'on n'oublie pas.</p>
+        <div class="cta">
+          <a class="btn btn--main" href="#contact">Demander un devis</a>
+          <a class="btn" href="#travaux">Voir les travaux</a>
+        </div>
+      </div>
+
+      <div class="collage" aria-hidden="true">
+        <div class="poster p2"><b>Barbier<br>Atelier 12</b><small>Namur. Réservation en ligne, 7j/7.</small><div class="dots"></div></div>
+        <div class="poster p1"><b>Boulan&shy;gerie Vanhove</b><small>Gand. Le levain depuis 1987.<br>Commande du pain la veille.</small><div class="dots"></div></div>
+        <div class="poster p3"><b>Friterie<br>Chez Mo</b><small>Liège. Carte, horaires, itinéraire.</small></div>
+        <div class="burst burst--hero"><span>Livré en<br>3 semaines</span></div>
+      </div>
+    </div>
+    <span class="wordmark" aria-hidden="true">Kade Studio</span>
+  </section>
+
+  <section aria-labelledby="who-title">
+    <div class="who__head wrap">
+      <h2 id="who-title">Pour les gens<br>qui bossent.</h2>
+      <p>Vous tenez un commerce, un atelier ou un cabinet. Vous n'avez pas le temps de vous battre avec un CMS. Je m'occupe de tout, du texte à la mise en ligne.</p>
+    </div>
+    <div class="blocks">
+      <article class="block b-sun">
+        <h3>Le commerce du coin</h3>
+        <p>Horaires à jour, produits en photo, itinéraire en un clic. Les gens vous trouvent sur Google Maps et passent la porte.</p>
+        <span class="big" aria-hidden="true">€</span>
+      </article>
+      <article class="block b-bubble">
+        <h3>Salons & instituts</h3>
+        <p>Prise de rendez-vous en ligne, tarifs clairs, galerie de vos réalisations. Moins d'appels pendant que vous coupez.</p>
+        <span class="big" aria-hidden="true">✂</span>
+      </article>
+      <article class="block b-cobalt">
+        <h3>Artisans & indépendants</h3>
+        <p>Un portfolio qui montre votre travail et un formulaire de devis. Fini les clients qui demandent «vous faites quoi exactement?».</p>
+        <span class="big" aria-hidden="true">&amp;</span>
+      </article>
+      <article class="block b-tomato">
+        <h3>Restos & cafés</h3>
+        <p>Carte lisible sur téléphone, réservation, réseaux sociaux reliés. Pas de PDF du menu à zoomer.</p>
+        <span class="big" aria-hidden="true">@</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="work wrap" id="travaux" aria-labelledby="work-title">
+    <h2 id="work-title">Chaque boîte a sa propre tête.</h2>
+    <p class="work__intro">Pas de template recyclé. Chaque site part de votre métier, de votre quartier et de vos clients.</p>
+    <div class="rail" tabindex="0" aria-label="Projets, défilement horizontal">
+      <article class="case">
+        <div class="case__art a1"><i>Boulangerie</i><b>Vanhove</b><div class="ring"></div></div>
+        <div class="case__meta"><strong>Boulangerie Vanhove</strong><span>Gand</span></div>
+      </article>
+      <article class="case">
+        <div class="case__art a2"><i>Barbier</i><b>Atelier<br>12</b></div>
+        <div class="case__meta"><strong>Atelier 12</strong><span>Namur</span></div>
+      </article>
+      <article class="case">
+        <div class="case__art a3"><i>Fleuriste</i><b>Fleurs de Julie</b><div class="ring"></div></div>
+        <div class="case__meta"><strong>Fleurs de Julie</strong><span>Mons</span></div>
+      </article>
+      <article class="case">
+        <div class="case__art a4"><i>Garage</i><b>Garage Peeters</b><div class="dots"></div></div>
+        <div class="case__meta"><strong>Garage Peeters</strong><span>Hasselt</span></div>
+      </article>
+      <article class="case">
+        <div class="case__art a5"><i>Friterie</i><b>Chez<br>Mo</b><div class="ring"></div></div>
+        <div class="case__meta"><strong>Friterie Chez Mo</strong><span>Liège</span></div>
+      </article>
+    </div>
+  </section>
+
+  <div class="band band--ink" aria-hidden="true">
+    <div class="band__track">
+      <span>Rapide sur mobile</span><span>Trouvable sur Google</span><span>Facile à modifier</span><span>Hébergé en Europe</span>
+      <span>Rapide sur mobile</span><span>Trouvable sur Google</span><span>Facile à modifier</span><span>Hébergé en Europe</span>
+    </div>
+  </div>
+
+  <section class="offers" id="offres" aria-labelledby="offers-title">
+    <div class="wrap">
+      <h2 id="offers-title">Trois formules.<br><span>Zéro jargon.</span></h2>
+      <p class="offers__note">Prix fixes, annoncés avant de commencer. Montants HTVA. Acompte de 30 % au lancement, le reste à la mise en ligne.</p>
+      <div class="menu">
+        <article class="offer">
+          <h3>Une page</h3>
+          <ul><li>1 page</li><li>formulaire de contact</li><li>Google Maps</li><li>10 jours</li></ul>
+          <p class="price">690 €<small>HTVA</small></p>
+        </article>
+        <article class="offer offer--star">
+          <span class="tag">La plus choisie</span>
+          <h3>Vitrine</h3>
+          <ul><li>jusqu'à 6 pages</li><li>textes rédigés</li><li>FR + NL</li><li>référencement local</li><li>3 semaines</li></ul>
+          <p class="price">1 490 €<small>HTVA</small></p>
+        </article>
+        <article class="offer">
+          <h3>Boutique</h3>
+          <ul><li>e-shop</li><li>paiement Bancontact</li><li>gestion des stocks</li><li>formation incluse</li></ul>
+          <p class="price">dès 2 900 €<small>HTVA</small></p>
+        </article>
+      </div>
+      <p class="maint"><strong>39 €/mois</strong> Hébergement, nom de domaine .be, mises à jour et petites modifications. Sans engagement.</p>
+    </div>
+  </section>
+
+  <section class="method" id="methode" aria-labelledby="method-title">
+    <div class="wrap">
+      <h2 id="method-title">De l'appel à la mise en ligne.</h2>
+      <ol class="steps">
+        <li class="step"><h3>On se parle</h3><p>30 minutes au téléphone ou autour d'un café. Vous me parlez de votre activité, je pose les questions.</p><span class="when">Jour 1</span></li>
+        <li class="step"><h3>Je dessine</h3><p>Je vous montre la maquette de la page d'accueil. Vous dites ce qui vous plaît et ce qui ne vous ressemble pas.</p><span class="when">Semaine 1</span></li>
+        <li class="step"><h3>Je construis</h3><p>Toutes les pages, les textes, les photos, la version mobile. Vous suivez l'avancement sur un lien privé.</p><span class="when">Semaine 2</span></li>
+        <li class="step"><h3>On lance</h3><p>Mise en ligne, fiche Google mise à jour, et une courte formation pour modifier vos horaires seul.</p><span class="when">Semaine 3</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faq wrap" aria-labelledby="faq-title">
+    <h2 id="faq-title">Vous vous demandez.</h2>
+    <div>
+      <details open>
+        <summary>Je dois écrire les textes moi-même?</summary>
+        <p>Non. Dans la formule Vitrine, je rédige les textes à partir de notre appel. Vous relisez et corrigez ce que vous voulez.</p>
+      </details>
+      <details>
+        <summary>Mon site peut être en français et en néerlandais?</summary>
+        <p>Oui. La version NL est incluse dans la formule Vitrine. Pour l'anglais ou l'allemand, on en parle au devis.</p>
+      </details>
+      <details>
+        <summary>Je n'ai pas de logo ni de photos.</summary>
+        <p>Pas de souci. Je peux créer un logo simple et vous indiquer un photographe près de chez vous, ou travailler avec vos photos de téléphone.</p>
+      </details>
+      <details>
+        <summary>Et si je veux changer quelque chose après?</summary>
+        <p>Avec l'entretien mensuel, vous m'envoyez un message et c'est fait dans la semaine. Vous pouvez aussi modifier vos horaires et vos photos vous-même.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact__grid wrap">
+      <div>
+        <h2 id="contact-title">Parlons de votre site.</h2>
+        <div class="contact__mail">
+          <span class="mail" id="mail">hello@kadestudio.be</span>
+          <button class="btn" type="button" id="copy">Copier l'adresse</button>
+        </div>
+      </div>
+      <form class="form" id="quote" novalidate>
+        <p class="form__top">Réponse sous 24 h ouvrables</p>
+        <h3>Demander un devis</h3>
+        <div class="field">
+          <label for="f-name">Votre nom</label>
+          <input id="f-name" name="name" autocomplete="name" placeholder="Prénom et nom" required>
+          <span class="err" id="e-name"></span>
+        </div>
+        <div class="field">
+          <label for="f-mail">Votre email</label>
+          <input id="f-mail" name="email" type="email" autocomplete="email" placeholder="vous@exemple.be" required>
+          <span class="err" id="e-mail"></span>
+        </div>
+        <div class="field">
+          <label for="f-type">Votre activité</label>
+          <select id="f-type" name="type">
+            <option>Commerce</option><option>Salon ou institut</option><option>Artisan ou indépendant</option><option>Resto ou café</option><option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Votre projet, en deux lignes</label>
+          <textarea id="f-msg" name="message" placeholder="J'ai une boulangerie à Wavre et pas encore de site."></textarea>
+        </div>
+        <button class="btn btn--main" type="submit">Demander un devis</button>
+        <p class="done" id="done" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__in wrap">
+    <span class="logo">KADE STUDIO</span>
+    <span>Sites web pour petites entreprises, Belgique</span>
+    <span>N° d'entreprise BE 0XXX.XXX.XXX</span>
+    <span>© 2026 Kade Studio</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('quote');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true,n=form.elements.name,m=form.elements.email;
+    document.getElementById('e-name').textContent=n.value.trim()?'':'Indiquez votre nom pour que je sache à qui répondre.';
+    document.getElementById('e-mail').textContent=/^\S+@\S+\.\S+$/.test(m.value)?'':'Cette adresse email semble incomplète.';
+    if(!n.value.trim()||!/^\S+@\S+\.\S+$/.test(m.value))ok=false;
+    if(!ok)return;
+    var d=document.getElementById('done');
+    d.textContent='Demande prête, '+n.value.trim().split(' ')[0]+'. Envoyez-la aussi à hello@kadestudio.be si vous ne recevez pas de réponse sous 24 h.';
+    d.hidden=false;
+  });
+  var c=document.getElementById('copy');
+  c.addEventListener('click',function(){
+    var t=document.getElementById('mail').textContent;
+    var done=function(){c.textContent='Adresse copiée';setTimeout(function(){c.textContent="Copier l'adresse"},2000)};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+  });
+})();
+</script>
+</body>
+</html>
