@@ -1,1 +1,5 @@
 kade-studio-brand.zip
+
+# gerenderde video (te groot voor git, opnieuw te maken met brand/video/source)
+kade-studio/brand/video/*.mp4
+kade-studio/brand/video/source/frames-*/
