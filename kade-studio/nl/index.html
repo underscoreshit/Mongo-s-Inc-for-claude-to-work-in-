@@ -290,6 +290,15 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   .price{text-align:left}
   .form{transform:none}
 }
+/* ---------- pixel-cursor (alleen met muis, niet op touchscreens) ---------- */
+@media (hover:hover) and (pointer:fine){
+  html,body{cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAApklEQVR42uXWUQ6AIAgG4N/WFeD+59ND2BOtObVmqWA8OZ/kExggokhEEZNjg5I4HzJbRo3ILgfvPQCAmSMAhBDcv0Vmy+gVmSWjX2S0jB2RUTL2RHrL2BXpJWNXhJmz97LLtMro29BymZeyr0XrpqdGxMnrL11Q7ZK0VtadIy318EW32JkjaYYyQaVW7mrKrohk/vavl5msrjXzp7W1vkhJZpk5cgBdNWacNlEtAwAAAABJRU5ErkJggg==) 1 1,auto;cursor:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAApklEQVR42uXWUQ6AIAgG4N/WFeD+59ND2BOtObVmqWA8OZ/kExggokhEEZNjg5I4HzJbRo3ILgfvPQCAmSMAhBDcv0Vmy+gVmSWjX2S0jB2RUTL2RHrL2BXpJWNXhJmz97LLtMro29BymZeyr0XrpqdGxMnrL11Q7ZK0VtadIy318EW32JkjaYYyQaVW7mrKrohk/vavl5msrjXzp7W1vkhJZpk5cgBdNWacNlEtAwAAAABJRU5ErkJggg==) 1x,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAYAAAA4E5OyAAAA/0lEQVR42u3aSw6DMBAEURzlCvj+54NDJNtkEglZfIzt1zsQq1JPaWyR5nl+TR9Z1zVNA+cxCSCAFCRFh8SM5hQNAQSQojzji2VZvp5zzkPtKRoCCCD7HDK6UzQEEECOdchoTtEQQAA51yG9O0VDAAHkWof05hQNAQSQug5p3SkaAggg93JIa07REEAAuZdDcs5F39f+501DAAHkXIdEJ8S94uhc7RQNAQSQovz8p/rnrLHrrLLlIPchRgaQvvaQUme0tmdoCCCA1D3LbM14vCONe8nePUdDAAHkXg6JTqi9F7hTNTKANJV0tROO3ns0BBBA+nZIqVPchxgZQJrKG88hbeopw0KpAAAAAElFTkSuQmCC) 2x) 1 1,auto;cursor:image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAApklEQVR42uXWUQ6AIAgG4N/WFeD+59ND2BOtObVmqWA8OZ/kExggokhEEZNjg5I4HzJbRo3ILgfvPQCAmSMAhBDcv0Vmy+gVmSWjX2S0jB2RUTL2RHrL2BXpJWNXhJmz97LLtMro29BymZeyr0XrpqdGxMnrL11Q7ZK0VtadIy318EW32JkjaYYyQaVW7mrKrohk/vavl5msrjXzp7W1vkhJZpk5cgBdNWacNlEtAwAAAABJRU5ErkJggg==) 1x,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAYAAAA4E5OyAAAA/0lEQVR42u3aSw6DMBAEURzlCvj+54NDJNtkEglZfIzt1zsQq1JPaWyR5nl+TR9Z1zVNA+cxCSCAFCRFh8SM5hQNAQSQojzji2VZvp5zzkPtKRoCCCD7HDK6UzQEEECOdchoTtEQQAA51yG9O0VDAAHkWof05hQNAQSQug5p3SkaAggg93JIa07REEAAuZdDcs5F39f+501DAAHkXIdEJ8S94uhc7RQNAQSQovz8p/rnrLHrrLLlIPchRgaQvvaQUme0tmdoCCCA1D3LbM14vCONe8nePUdDAAHkXg6JTqi9F7hTNTKANJV0tROO3ns0BBBA+nZIqVPchxgZQJrKG88hbeopw0KpAAAAAElFTkSuQmCC) 2x) 1 1,auto}
+  body :is(a,button,summary,select,label,.btn,.pill,.rail,[role="button"]){cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAArElEQVR42uXWwQ2AIAwF0I9xAQ91HWdnHTk4Ap6qiRE1KLTFnggn+mibgogiEUUIRwclsT1EWkaNSM+HeRoAAKNHBIAQgvu3iLSMXhEpGf0itWXsiNSSsSdSWsauSCkZuyKjX07veZfJldG3oZ1lnsr+KnI3PTUijl+/d8Fy2SXHWml3juTUwxfdYmeOHDPkCcq1cldTdkU487d/3cxkdbmZP62t9kVSMs3MkRVNHWU0JBuGqAAAAABJRU5ErkJggg==) 1 1,pointer;cursor:-webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAArElEQVR42uXWwQ2AIAwF0I9xAQ91HWdnHTk4Ap6qiRE1KLTFnggn+mibgogiEUUIRwclsT1EWkaNSM+HeRoAAKNHBIAQgvu3iLSMXhEpGf0itWXsiNSSsSdSWsauSCkZuyKjX07veZfJldG3oZ1lnsr+KnI3PTUijl+/d8Fy2SXHWml3juTUwxfdYmeOHDPkCcq1cldTdkU487d/3cxkdbmZP62t9kVSMs3MkRVNHWU0JBuGqAAAAABJRU5ErkJggg==) 1x,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAYAAAA4E5OyAAABBklEQVR42u3aSw6CMBhF4WLcgAPYjmtnOzJwCTrVnwFpeJTS7840xsHJ7cmloev7/pN+Mk1TlxrOLQkggGSkiw6Jac0pGgIIIFm5xy9ez8ff52FMTe0UDQEEkHUOad0pGgIIINs6pDWnaAgggOzrkKs7RUMAAeRYh1zNKRoCCCBlHVK7UzQEEEDO5ZDanKIhgAByLocM4zvr96XfedMQQADZ1yHRCXFXbJ2jnaIhgACSldl7qvNnjbwdseSU+H/uQxwZQK61Q3KdUdvO0BBAACn7LLN0xuMdadwla3eOhgACyLkcEp1Qehe4U3VkAKkq3dFO2Hr3aAgggFzbIblOcR/iyABSVb448Gl6GZfVSAAAAABJRU5ErkJggg==) 2x) 1 1,pointer;cursor:image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAArElEQVR42uXWwQ2AIAwF0I9xAQ91HWdnHTk4Ap6qiRE1KLTFnggn+mibgogiEUUIRwclsT1EWkaNSM+HeRoAAKNHBIAQgvu3iLSMXhEpGf0itWXsiNSSsSdSWsauSCkZuyKjX07veZfJldG3oZ1lnsr+KnI3PTUijl+/d8Fy2SXHWml3juTUwxfdYmeOHDPkCcq1cldTdkU487d/3cxkdbmZP62t9kVSMs3MkRVNHWU0JBuGqAAAAABJRU5ErkJggg==) 1x,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAYAAAA4E5OyAAABBklEQVR42u3aSw6CMBhF4WLcgAPYjmtnOzJwCTrVnwFpeJTS7840xsHJ7cmloev7/pN+Mk1TlxrOLQkggGSkiw6Jac0pGgIIIFm5xy9ez8ff52FMTe0UDQEEkHUOad0pGgIIINs6pDWnaAgggOzrkKs7RUMAAeRYh1zNKRoCCCBlHVK7UzQEEEDO5ZDanKIhgAByLocM4zvr96XfedMQQADZ1yHRCXFXbJ2jnaIhgACSldl7qvNnjbwdseSU+H/uQxwZQK61Q3KdUdvO0BBAACn7LLN0xuMdadwla3eOhgACyLkcEp1Qehe4U3VkAKkq3dFO2Hr3aAgggFzbIblOcR/iyABSVb448Gl6GZfVSAAAAABJRU5ErkJggg==) 2x) 1 1,pointer}
+  body :is(input,textarea){cursor:text}
+  body .btn[disabled]{cursor:progress}
+}
+.px{position:fixed;left:0;top:0;width:8px;height:8px;margin:-4px 0 0 -4px;pointer-events:none;z-index:60;box-shadow:2px 2px 0 var(--ink);animation:pxpop .44s steps(5) forwards}
+@keyframes pxpop{to{transform:translate(var(--dx),var(--dy));opacity:0}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   html{scroll-behavior:auto}
@@ -548,6 +557,22 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   var nlLink=document.querySelector('.lang a[data-lang="nl"]');
   var bot=/bot|crawl|spider|slurp|preview|lighthouse/i.test(navigator.userAgent);
   if(lang==='fr'&&!bot&&(location.hash==='#nl'||(!pref&&/^nl/i.test(navigator.language||'')))){location.replace(nlLink.href)}
+
+  // Pixel-klik: kleine pixels in de huisstijlkleuren, alleen met muis en zonder "minder beweging"
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var PX=['var(--acid)','var(--sun)','var(--bubble)','var(--cobalt)','var(--tomato)'];
+    document.addEventListener('pointerdown',function(e){
+      if(e.button!==0||e.pointerType!=='mouse')return;
+      for(var i=0;i<8;i++){
+        var d=document.createElement('span'),ang=i*Math.PI/4,r=26+(i%2)*12;
+        d.className='px';d.style.background=PX[i%PX.length];
+        d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';
+        d.style.setProperty('--dx',Math.round(Math.cos(ang)*r/4)*4+'px');d.style.setProperty('--dy',Math.round(Math.sin(ang)*r/4)*4+'px');
+        d.addEventListener('animationend',function(){this.remove()});
+        document.body.appendChild(d);
+      }
+    });
+  }
 
   var form=document.getElementById('quote');
   var mailRe=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
