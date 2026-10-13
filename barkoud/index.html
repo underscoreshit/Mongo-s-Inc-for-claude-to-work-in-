@@ -120,7 +120,7 @@ a{color:inherit}
 
 /* ---------- sections ---------- */
 section{position:relative}
-.sec{padding:clamp(80px,10vw,140px) 0}
+.sec{padding:clamp(64px,8vw,110px) 0}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt)}
 .eyebrow::before{content:"";width:22px;height:22px;border-radius:3px;background:
   linear-gradient(90deg,transparent 9px,#fff 9px 11px,transparent 11px),
@@ -146,31 +146,6 @@ h2 em{font-family:var(--font-koud);font-style:normal;color:var(--cobalt);font-si
 @media (max-width:520px){.flav-grid{gap:12px}.flav{padding:18px 14px 16px}.flav h3{font-size:14px}.flav .scoop{width:70px;height:70px}.flav p{font-size:14px}}
 .note{margin-top:30px;font-size:15px;color:#5a5f78}
 .note a{color:var(--cobalt);font-weight:700}
-
-/* ---------- ijsjesbouwer ---------- */
-.builder{color:#fff;overflow:hidden;--tile:64px}
-.builder::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,21,80,.7),rgba(12,21,80,.15))}
-.builder .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
-@media (max-width:900px){.builder .wrap{grid-template-columns:1fr}}
-.builder h2 em,.insta h2 em{color:#fff;text-shadow:0 0 18px rgba(169,188,255,.9)}
-.builder .eyebrow,.insta .eyebrow{color:#fff}
-.builder .eyebrow::before,.insta .eyebrow::before{background:linear-gradient(90deg,transparent 9px,var(--cobalt) 9px 11px,transparent 11px),linear-gradient(transparent 9px,var(--cobalt) 9px 11px,transparent 11px),#fff}
-.builder .lede{color:#e3e8ff}
-.picks{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 22px}
-.pick{display:inline-flex;align-items:center;gap:10px;padding:9px 15px 9px 9px;border-radius:12px;border:2px solid rgba(255,255,255,.5);background:rgba(12,21,80,.45);color:#fff;font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
-.pick:hover{background:rgba(12,21,80,.75);border-color:#fff}
-.pick:active{transform:scale(.94)}
-.pick i{width:24px;height:24px;border-radius:50%;background:var(--c);box-shadow:inset -3px -4px 0 rgba(0,0,0,.12),0 0 0 2px #fff}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-.verdict{min-height:3.2em;margin-top:22px;font-family:var(--font-koud);font-size:clamp(20px,2vw,26px);line-height:1.3;color:#fff}
-.stage{position:relative;display:grid;place-items:end center;min-height:430px}
-.stage svg{height:min(520px,68vh);min-height:400px;width:auto;overflow:visible}
-.stage .plate{position:absolute;bottom:4px;width:240px;height:26px;border-radius:50%;background:rgba(5,10,50,.45);filter:blur(6px)}
-.scoopg{animation:drop .7s cubic-bezier(.3,1.5,.5,1) both;transform-box:fill-box;transform-origin:50% 100%}
-@keyframes drop{0%{transform:translateY(-520px) scaleY(1.2)}70%{transform:translateY(0) scale(1.1,.85)}100%{transform:none}}
-.melting .scoopg{animation:melt 1.6s ease-in forwards}
-@keyframes melt{to{transform:translateY(160px) scale(1.4,.15);opacity:0}}
-.counter-badge{position:absolute;top:10px;right:10px;font-family:var(--font-koud);font-size:24px;background:#fff;color:var(--cobalt);border-radius:12px;padding:8px 14px 5px;transform:rotate(6deg);box-shadow:0 5px 0 var(--ink)}
 
 /* ---------- openingsuren (hun eigen poster) ---------- */
 .hours{background:#fff}
@@ -212,7 +187,9 @@ h2 em{font-family:var(--font-koud);font-style:normal;color:var(--cobalt);font-si
 .insta{color:#fff;overflow:hidden;--tile:64px;text-align:center}
 .insta::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 50%,rgba(12,21,80,.75),rgba(12,21,80,.3))}
 .insta .wrap{position:relative}
-.insta .handle{font-size:clamp(34px,7vw,92px);margin:22px 0 10px}
+.insta .eyebrow{color:#fff}
+.insta .eyebrow::before{background:linear-gradient(90deg,transparent 9px,var(--cobalt) 9px 11px,transparent 11px),linear-gradient(transparent 9px,var(--cobalt) 9px 11px,transparent 11px),#fff}
+.insta .handle{display:flex;justify-content:center;font-size:clamp(34px,7vw,92px);margin:22px 0 10px}
 .insta .lede{color:#e3e8ff;margin-inline:auto}
 .insta .hero-cta{justify-content:center}
 
@@ -252,10 +229,6 @@ footer{background:var(--navy);color:#fff;overflow:hidden;position:relative}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <pattern id="waffle" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="14" height="14" fill="#e8b46a"/>
-      <path d="M0 0H14M0 0V14" stroke="#c98a3d" stroke-width="3"/>
-    </pattern>
     <clipPath id="tileClip"><circle cx="100" cy="100" r="88"/></clipPath>
     <linearGradient id="tileGrad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#3552e6"/><stop offset=".55" stop-color="#1f37c4"/><stop offset="1" stop-color="#132592"/>
@@ -282,7 +255,6 @@ footer{background:var(--navy);color:#fff;overflow:hidden;position:relative}
   <nav aria-label="Hoofdmenu">
     <ul>
       <li><a href="#smaken">Smaken</a></li>
-      <li><a href="#bouw">Bouw je ijsje</a></li>
       <li><a href="#uren">Openingsuren</a></li>
       <li><a href="#verhaal">Verhaal</a></li>
       <li><a href="#langskomen">Langskomen</a></li>
@@ -328,31 +300,6 @@ footer{background:var(--navy);color:#fff;overflow:hidden;position:relative}
     <p class="lede rv">Elke dag vers, in een hoorntje of een potje. Het aanbod wisselt, de liefde blijft hetzelfde.</p>
     <div class="flav-grid" id="flavGrid"></div>
     <p class="note rv">Smaken wisselen per dag. Het aanbod van vandaag staat op <a href="https://www.instagram.com/barrrkoud/" target="_blank" rel="noopener">@barrrkoud</a>.</p>
-  </div>
-</section>
-
-<section class="builder sec tilebg" id="bouw">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Speeltuin</span>
-      <h2>Bouw je <em>droomijsje.</em></h2>
-      <p class="lede">Tik op een smaak en stapel maar. Kom het daarna in het echt halen, want digitaal ijs smaakt naar niks.</p>
-      <div class="picks" id="picks" role="group" aria-label="Kies een smaak"></div>
-      <div class="actions">
-        <button class="btn" id="melt" type="button">Laten smelten</button>
-        <button class="btn line" id="reset" type="button">Opnieuw</button>
-      </div>
-      <p class="verdict" id="verdict" aria-live="polite">Een leeg hoorntje. Daar doen we iets aan.</p>
-    </div>
-    <div class="stage">
-      <div class="plate"></div>
-      <span class="counter-badge" id="count">0 bollen</span>
-      <svg id="build" viewBox="0 0 240 520" aria-label="Jouw ijsje">
-        <g id="stack"></g>
-        <path d="M58 360 L120 512 L182 360Z" fill="url(#waffle)" stroke="#b47a35" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M52 352h136a8 8 0 0 1 0 16H52a8 8 0 0 1 0-16z" fill="#d79a4f" stroke="#b47a35" stroke-width="3"/>
-      </svg>
-    </div>
   </div>
 </section>
 
@@ -475,53 +422,6 @@ footer{background:var(--navy);color:#fff;overflow:hidden;position:relative}
       <h3>${f.n}</h3><p>${f.d}</p>
     </article>`).join('');
 
-  /* ---------- ijsjesbouwer ---------- */
-  const picks = document.getElementById('picks');
-  const stack = document.getElementById('stack');
-  const verdict = document.getElementById('verdict');
-  const count = document.getElementById('count');
-  const build = document.getElementById('build');
-  const MAX = 6;
-  let scoops = [];
-  picks.innerHTML = FLAVOURS.map((f, i) => `<button class="pick" type="button" data-i="${i}" style="--c:${f.c}"><i></i>${f.n}</button>`).join('');
-  const LINES = [
-    'Een leeg hoorntje. Daar doen we iets aan.',
-    'Eén bol. Bescheiden. Respect.',
-    'Twee bollen, de gouden standaard.',
-    'Drie! Nu begint het feest.',
-    'Vier bollen. Jij bent aan het trakteren.',
-    'Vijf. Treat yo self, hé.',
-    'Zes bollen. Dit is architectuur, geen ijsje meer.'
-  ];
-  function say(extra){ verdict.textContent = extra || LINES[scoops.length]; count.textContent = scoops.length + (scoops.length === 1 ? ' bol' : ' bollen'); }
-  function addScoop(i){
-    if (scoops.length >= MAX){ say('Ho maar! Zes is het maximum, de toog is geen Atomium.'); build.animate?.([{transform:'rotate(-3deg)'},{transform:'rotate(3deg)'},{transform:'none'}],{duration:300}); return; }
-    const f = FLAVOURS[i], k = scoops.length;
-    const cy = 318 - k * 54, cx = 120 + (k ? (Math.random() * 18 - 9) : 0), r = 58 - k * 2;
-    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
-    g.setAttribute('class','scoopg');
-    const dots = f.dots ? Array.from({length:7},()=>`<circle cx="${cx + (Math.random()*2-1)*r*.6}" cy="${cy + (Math.random()*2-1)*r*.45}" r="${2+Math.random()*2}" fill="#3b2418"/>`).join('') : '';
-    const drips = [14, 26, 12, 22, 17], w = 2 * r / drips.length;
-    let d = `M${cx-r} ${cy} A${r} ${r*0.98} 0 0 1 ${cx+r} ${cy}`;
-    drips.forEach((dd, j) => { const x0 = cx + r - j*w, x1 = x0 - w; d += ` C${x0} ${cy+dd} ${x1} ${cy+dd} ${x1} ${cy}`; });
-    g.innerHTML = `
-      <path d="${d}Z" fill="${f.c}" stroke="#14151b" stroke-width="3.5" stroke-linejoin="round"/>
-      ${dots}
-      <ellipse cx="${cx - r*.4}" cy="${cy - r*.45}" rx="${r*.22}" ry="${r*.12}" fill="#fff" opacity=".5" transform="rotate(-30 ${cx - r*.4} ${cy - r*.45})"/>`;
-    stack.appendChild(g);
-    scoops.push(i);
-    say(scoops.length === 2 && scoops[0] === scoops[1] ? `Twee keer ${f.n}? Jij weet wat je wil.` : null);
-    if (!reduce){ const b = build.getBoundingClientRect(); burst(b.left + b.width / 2, b.top + b.height * .35, f.c); }
-  }
-  picks.addEventListener('click', e => { const b = e.target.closest('.pick'); if (b) addScoop(+b.dataset.i); });
-  document.getElementById('reset').addEventListener('click', () => { build.classList.remove('melting'); stack.innerHTML = ''; scoops = []; say(); });
-  document.getElementById('melt').addEventListener('click', () => {
-    if (!scoops.length){ say('Niets om te smelten. Eerst bollen kiezen!'); return; }
-    build.classList.add('melting');
-    say('Oei. Daarom eet je ijs best ter plaatse.');
-    setTimeout(() => { build.classList.remove('melting'); stack.innerHTML = ''; scoops = []; count.textContent = '0 bollen'; }, reduce ? 0 : 1700);
-  });
-
   /* ---------- open / gesloten (Brusselse tijd) ---------- */
   const DAYS = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
   const OPEN_DAYS = [3,4,5,6,0], OPEN = 11*60+30, CLOSE = 19*60;
@@ -596,7 +496,7 @@ footer{background:var(--navy);color:#fff;overflow:hidden;position:relative}
   function burst(x, y, c){ for (let i = 0; i < 26; i++) flake(x, y, i % 2 ? c : '#ffffff', 2.2); }
   let lastT = 0;
   addEventListener('pointermove', e => { if (reduce || e.pointerType !== 'mouse') return; const t = performance.now(); if (t - lastT > 28){ flake(e.clientX, e.clientY); lastT = t; } }, {passive:true});
-  addEventListener('pointerdown', e => { if (!reduce && !e.target.closest('.pick')) burst(e.clientX, e.clientY, '#3552e6'); });
+  addEventListener('pointerdown', e => { if (!reduce) burst(e.clientX, e.clientY, '#3552e6'); });
   function drawFlake(f){
     cx.save(); cx.translate(f.x, f.y); cx.rotate(f.rot); cx.globalAlpha = f.a;
     cx.strokeStyle = f.c; cx.lineWidth = 1.4 * dpr; cx.lineCap = 'round';
@@ -611,8 +511,6 @@ footer{background:var(--navy);color:#fff;overflow:hidden;position:relative}
     requestAnimationFrame(loop);
   })();
 
-  // voorbeeldijsje zodat de bouwer niet leeg start
-  [0, 3, 1].forEach(addScoop); say('Drie bollen als voorbeeld. Nu jij!');
 })();
 </script>
 </body>
