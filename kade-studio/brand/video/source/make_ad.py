@@ -7,13 +7,13 @@ CUR = json.loads((HERE / "cursors.json").read_text())
 
 T = {
  "fr": dict(s1h="Votre client<br>vous cherche.", query="boulangerie wavre", zero="0 résultat", none="Aucun site trouvé.",
-            s2a="Alors il va", s2b="chez le<br>voisin.",
+            s2b="Chez le<br>voisin&nbsp;?", l3a="On crée", l3b="votre", l3c="site web.", s3p="Pour les petites entreprises belges. Clair, rapide, FR&nbsp;+&nbsp;NL.",
             s3=["Clair.", "Rapide sur mobile.", "FR + NL.", "Trouvable."],
             s4="Prix fixe", frm="dès", tax="HTVA", burst="Livré en<br>3 semaines",
             cta="Demander un devis", bio="Lien<br>en bio", url="kadestudio.be",
             band=["Sites web pour petites entreprises belges", "Prix fixe", "FR + NL"]),
  "nl": dict(s1h="Uw klant<br>zoekt u.", query="bakkerij leuven", zero="0 resultaten", none="Geen website gevonden.",
-            s2a="Dus gaat die", s2b="naar de<br>buren.",
+            s2b="Bij de<br>buren?", l3a="Wij maken", l3b="uw", l3c="website.", s3p="Voor kleine Belgische zaken. Helder, snel, NL&nbsp;+&nbsp;FR.",
             s3=["Helder.", "Snel op de gsm.", "NL + FR.", "Vindbaar."],
             s4="Vaste prijs", frm="vanaf", tax="excl. btw", burst="Online in<br>3 weken",
             cta="Offerte aanvragen", bio="Link<br>in bio", url="kadestudio.be",
@@ -69,15 +69,19 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--acid)}
   </div>
 </div>
 
-<!-- SCENE 2: de buren -->
+<!-- SCENE 2: bij de buren? -->
 <div class="scene" id="s2" style="background:var(--ink)">
-  <p class="abs disp" id="s2a" style="left:70px;top:430px;font-size:120px;color:var(--paper)">__S2A__</p>
-  <h2 class="abs poster" id="s2b" style="left:62px;top:600px;font-size:290px;color:transparent;-webkit-text-stroke:9px var(--acid)">__S2B__</h2>
+  <h2 class="abs poster" id="s2b" style="left:62px;top:580px;font-size:300px;color:transparent;-webkit-text-stroke:10px var(--acid);transform-origin:0 50%">__S2B__</h2>
 </div>
 
-<!-- SCENE 3: blokken -->
-<div class="scene" id="s3" style="background:var(--paper)">
-  __BLOCKS__
+<!-- SCENE 3: wij maken uw website -->
+<div class="scene" id="s3" style="background:var(--cobalt)">
+  <div class="abs" style="left:62px;top:400px">
+    <div style="overflow:hidden;padding:40px 30px 26px 0;margin-top:-40px"><p class="poster l3" id="l3a" style="font-size:225px;white-space:nowrap;color:var(--white);-webkit-text-stroke:9px var(--ink);paint-order:stroke fill;text-shadow:16px 16px 0 var(--ink)">__L3A__</p></div>
+    <div style="overflow:hidden;padding:40px 30px 26px 0;margin-top:-40px"><p class="poster l3" id="l3b" style="font-size:225px;white-space:nowrap;color:var(--sun);-webkit-text-stroke:9px var(--ink);paint-order:stroke fill;text-shadow:16px 16px 0 var(--ink)">__L3B__</p></div>
+    <div style="overflow:hidden;padding:40px 30px 26px 0;margin-top:-40px"><p class="poster l3" id="l3c" style="font-size:225px;white-space:nowrap;color:var(--white);-webkit-text-stroke:9px var(--ink);paint-order:stroke fill;text-shadow:16px 16px 0 var(--ink)">__L3C__</p></div>
+  </div>
+  <p class="abs disp" id="s3p" style="left:70px;top:1100px;width:900px;font-size:66px;color:var(--white);line-height:1.08">__S3P__</p>
 </div>
 
 <!-- SCENE 4: prijs -->
@@ -106,81 +110,67 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--acid)}
 <div id="grain"></div>
 </div>
 <script>
+const DURATION=13.5;window.DURATION=DURATION;
 const QUERY="__QUERY__";
 const $=id=>document.getElementById(id);
 const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
 const p=(t,a,b)=>cl((t-a)/(b-a));
 const oc=x=>1-Math.pow(1-x,3);
+const oq=x=>1-Math.pow(1-x,4);
 const ob=x=>{const c1=1.9,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
-const st=(x,n)=>Math.floor(x*n)/n;           // stappen: "game"-beweging
 const lerp=(a,b,x)=>a+(b-a)*x;
 function set(id,css){const e=$(id);for(const k in css)e.style[k]=css[k]}
-function show(id,on){$(id).style.visibility=on?'visible':'hidden'}
 const COLS=['var(--acid)','var(--sun)','var(--bubble)','var(--cobalt)','var(--tomato)'];
-function burst(t,t0,x,y){const box=$('pxs');let h='';const k=p(t,t0,t0+.5);if(k>0&&k<1){const s=st(k,6);
-  for(let i=0;i<10;i++){const a=i*Math.PI/5,r=40+s*120+(i%2)*30;h+=`<span class="px" style="left:${Math.round((x+Math.cos(a)*r)/10)*10}px;top:${Math.round((y+Math.sin(a)*r)/10)*10}px;background:${COLS[i%5]};opacity:${1-s}"></span>`}}
+function burst(t,t0,x,y){let h='';const k=p(t,t0,t0+.45);if(k>0&&k<1){const s=oc(k);
+  for(let i=0;i<10;i++){const a=i*Math.PI/5,r=40+s*130+(i%2)*30;h+=`<span class="px" style="left:${x+Math.cos(a)*r}px;top:${y+Math.sin(a)*r}px;background:${COLS[i%5]};opacity:${1-k*k}"></span>`}}
   return h}
 function band(id,t,dir){$(id).style.transform=`translateX(${(dir*t*140)%1200-(dir>0?1200:0)}px)`}
+// scènes: start, en hoe ze binnenkomen (smooth wipe over de vorige)
+const SC=[[0,null],[3.0,'up'],[4.8,'left'],[7.8,'up'],[10.6,'right']];
 function render(t){
-  // welke scène
-  const sc=t<3?1:t<5.2?2:t<9?3:t<12?4:5;
-  for(let i=1;i<=5;i++)show('s'+i,i===sc||(i===2&&t>=3&&t<3.3)||(i===1&&t>=3&&t<3.3));
+  for(let i=0;i<5;i++){
+    const [s0,dir]=SC[i],next=SC[i+1]?SC[i+1][0]:99;
+    const on=t>=s0&&t<next+.35;$('s'+(i+1)).style.visibility=on?'visible':'hidden';
+    if(dir){const k=1-oq(p(t,s0,s0+.32));
+      $('s'+(i+1)).style.transform=dir==='up'?`translateY(${k*1920}px)`:dir==='left'?`translateX(${k*1080}px)`:`translateX(${-k*1080}px)`;}
+  }
   let px='';
-  // S1
-  if(sc===1||t<3.3){
-    band('b1t',t,-1);
-    const h=ob(p(t,.1,.5));set('s1h',{transform:`scale(${lerp(1.5,1,h)})`,opacity:p(t,.1,.18)});
-    set('search',{transform:`translateY(${lerp(400,0,oc(p(t,.25,.6)))}px)`});
-    const n=Math.floor(p(t,.85,1.8)*QUERY.length);$('q').textContent=QUERY.slice(0,n);
-    $('caret').style.opacity=(t>.8&&Math.floor(t*3)%2===0)?1:0;
-    const r=ob(p(t,2.05,2.35));set('none',{transform:`translateY(${lerp(500,0,r)}px) rotate(${lerp(8,-2,r)}deg)`,opacity:p(t,2.05,2.1)});
-    const s=p(t,2.45,2.6);set('stamp',{transform:`rotate(-12deg) scale(${lerp(3,1,ob(s))})`,opacity:s>0?1:0});
-    const sh=t>2.6&&t<2.9?Math.sin(t*90)*12:0;set('none',{marginLeft:sh+'px'});
-    if(t>=2.05&&t<2.35)px+='';
-  }
-  // overgang S1 -> S2: zwart schuift omhoog in stappen
-  set('s2',{transform:`translateY(${t<3.3?(1-st(p(t,3,3.3),5))*1920:0}px)`});
-  if(sc===2){
-    set('s2a',{opacity:p(t,3.35,3.45),transform:`translateX(${lerp(-200,0,oc(p(t,3.35,3.6)))}px)`});
-    const k=ob(p(t,3.75,4.05));const shake=t>4.05&&t<4.35?Math.sin(t*120)*14:0;
-    set('s2b',{transform:`scale(${lerp(2.2,1,k)}) translate(${shake}px,${-shake/2}px)`,opacity:p(t,3.75,3.8),transformOrigin:'0 0'});
-  }
-  // S3 blokken
-  if(sc===3){
-    for(let i=0;i<4;i++){
-      const tin=5.25+i*.45,tout=8.45+i*.1;
-      const x=t<tout?(1-st(oc(p(t,tin,tin+.4)),6))*-1100:st(p(t,tout,tout+.35),5)*1100;
-      set('blk'+i,{transform:`translateX(${x}px)`});
-    }
-  }
-  // S4 prijs
-  if(sc===4){
-    set('s4h',{transform:`translateY(${(1-st(oc(p(t,9.05,9.4)),6))*-600}px)`});
-    set('frm',{opacity:p(t,9.4,9.5)});
-    const c=oc(p(t,9.45,10.5));$('price').textContent=Math.round(690*c)+' €';
-    set('price',{transform:`scale(${t>10.5&&t<10.75?1+.06*Math.sin(p(t,10.5,10.75)*Math.PI):1})`,transformOrigin:'0 50%'});
-    set('tax',{opacity:p(t,10.5,10.6)});
-    const b=ob(p(t,10.7,11.1));const rot=(t-10.7)*40;
-    for(const id of ['b4','b4s'])set(id,{transform:`scale(${b}) rotate(${rot}deg)`,opacity:t>10.7?1:0});
-  }
-  // S5 logo + CTA + klik
-  if(sc===5){
-    band('b5t',t,-1);band('b6t',t,1);
-    const l=ob(p(t,12.05,12.5));set('logo',{transform:`scale(${lerp(2.4,1,l)}) rotate(${lerp(-14,-3,l)}deg)`,opacity:p(t,12.05,12.12)});
-    const press=t>13.75&&t<13.95;const c=ob(p(t,12.55,12.85));
-    set('cta',{transform:`translate(${press?14:0}px,${press?14:0}px) scale(${c})`,boxShadow:press?'0 0 0 #151515':'14px 14px 0 #151515',transformOrigin:'0 50%'});
-    const b=ob(p(t,12.9,13.2));for(const id of ['b5b','b5s'])set(id,{transform:`scale(${b}) rotate(${(t-12.9)*-30}deg)`,opacity:t>12.9?1:0});
-    set('url',{opacity:p(t,14,14.1),transform:`translateY(${lerp(30,0,oc(p(t,14,14.3)))}px)`});
-    px+=burst(t,13.8,520,990);
-  }
-  // pixel-cursor: S1 naar zoekbalk, S5 naar de knop
+  // S1: zoeken, geen website
+  band('b1t',t,-1);
+  set('s1h',{transform:`scale(${lerp(1.5,1,ob(p(t,.1,.45)))})`,opacity:p(t,.1,.16)});
+  set('search',{transform:`translateY(${lerp(400,0,oc(p(t,.2,.5)))}px)`,opacity:p(t,.2,.26)});
+  $('q').textContent=QUERY.slice(0,Math.floor(p(t,.75,1.55)*QUERY.length));
+  $('caret').style.opacity=(t>.7&&Math.floor(t*3)%2===0)?1:0;
+  const r=ob(p(t,1.75,2.05));set('none',{transform:`translateY(${lerp(500,0,r)}px) rotate(${lerp(8,-2,r)}deg)`,opacity:p(t,1.75,1.8),
+    marginLeft:(t>2.3&&t<2.6?Math.sin(t*90)*12:0)+'px'});
+  const s=p(t,2.15,2.3);set('stamp',{transform:`rotate(-12deg) scale(${lerp(3,1,ob(s))})`,opacity:s>0?1:0});
+  // S2: bij de buren?
+  const k2=ob(p(t,3.25,3.55));const sh=t>3.55&&t<3.85?Math.sin(t*120)*14:0;
+  set('s2b',{transform:`scale(${lerp(2.2,1,k2)}) translate(${sh}px,${-sh/2}px)`,opacity:p(t,3.25,3.3)});
+  // S3: wij maken uw website
+  ['l3a','l3b','l3c'].forEach((id,i)=>set(id,{transform:`translateY(${lerp(110,0,oq(p(t,5.0+i*.14,5.4+i*.14)))}%)`}));
+  set('s3p',{opacity:p(t,5.65,5.85),transform:`translateY(${lerp(40,0,oc(p(t,5.65,5.95)))}px)`});
+  // S4: vaste prijs
+  set('s4h',{transform:`translateY(${lerp(-500,0,oq(p(t,7.85,8.2)))}px)`});
+  set('frm',{opacity:p(t,8.1,8.2)});
+  $('price').textContent=Math.round(690*oc(p(t,8.15,9.0)))+' €';
+  set('price',{transform:`scale(${t>9&&t<9.25?1+.06*Math.sin(p(t,9,9.25)*Math.PI):1})`,transformOrigin:'0 50%'});
+  set('tax',{opacity:p(t,9.0,9.1)});
+  const b4=ob(p(t,9.2,9.55));for(const id of ['b4','b4s'])set(id,{transform:`scale(${b4}) rotate(${(t-9.2)*40}deg)`,opacity:t>9.2?1:0});
+  // S5: logo, knop, klik
+  band('b5t',t,-1);band('b6t',t,1);
+  const l=ob(p(t,10.7,11.1));set('logo',{transform:`scale(${lerp(2.4,1,l)}) rotate(${lerp(-14,-3,l)}deg)`,opacity:p(t,10.7,10.76)});
+  const press=t>12.15&&t<12.35;
+  set('cta',{transform:`translate(${press?14:0}px,${press?14:0}px) scale(${ob(p(t,11.1,11.4))})`,boxShadow:press?'0 0 0 #151515':'14px 14px 0 #151515',transformOrigin:'0 50%'});
+  const b5=ob(p(t,11.4,11.7));for(const id of ['b5b','b5s'])set(id,{transform:`scale(${b5}) rotate(${(t-11.4)*-30}deg)`,opacity:t>11.4?1:0});
+  set('url',{opacity:p(t,12.4,12.5),transform:`translateY(${lerp(30,0,oc(p(t,12.4,12.7)))}px)`});
+  px+=burst(t,12.2,520,990);
+  // pixel-cursor
   let cx=-200,cy=-200,src='__CURA__';
-  if(t<3){const k=st(oc(p(t,.3,.75)),8);cx=lerp(1100,860,k);cy=lerp(1400,760,k);if(t>.75){src='__CURP__'}px+=burst(t,.78,870,770)}
-  else if(t>=13.15){const k=st(oc(p(t,13.15,13.7)),8);cx=lerp(1100,560,k);cy=lerp(1600,970,k);src='__CURP__';if(t>13.75&&t<13.95){cx+=14;cy+=14}}
+  if(t<3){const k=oc(p(t,.25,.65));cx=lerp(1100,860,k);cy=lerp(1400,760,k);if(t>.65)src='__CURP__';px+=burst(t,.68,870,770)}
+  else if(t>=11.55){const k=oc(p(t,11.55,12.1));cx=lerp(1100,560,k);cy=lerp(1600,970,k);src='__CURP__';if(press){cx+=14;cy+=14}}
   set('cur',{left:cx+'px',top:cy+'px'});if($('cur').getAttribute('src')!==src)$('cur').setAttribute('src',src);
   $('pxs').innerHTML=px;
-  // korrel verschuift per beeld, zoals film
-  const f=Math.floor(t*30/5);$('grain').style.transform=`translate(${(f*73)%160-80}px,${(f*131)%160-80}px)`;
 }
 window.render=render;render(0);
 </script></body></html>"""
@@ -196,7 +186,7 @@ for lang, t in T.items():
     band = "".join(f"<span>{b}</span>" for b in t["band"] * 4)
     html = HTML
     for k, v in {"__LANG__": lang, "__STAR__": star(), "__BAND__": band, "__S1H__": t["s1h"], "__NONE__": t["none"],
-                 "__S2A__": t["s2a"], "__S2B__": t["s2b"], "__BLOCKS__": blocks, "__S4__": t["s4"], "__FRM__": t["frm"],
+                 "__S2B__": t["s2b"], "__L3A__": t["l3a"], "__L3B__": t["l3b"], "__L3C__": t["l3c"], "__S3P__": t["s3p"], "__S4__": t["s4"], "__FRM__": t["frm"],
                  "__TAX__": t["tax"], "__BURST__": t["burst"], "__CTA__": t["cta"], "__BIO__": t["bio"], "__URL__": t["url"],
                  "__QUERY__": t["query"], "__ZERO__": t["zero"], "__CURA__": CUR["arrow2"], "__CURP__": CUR["point2"]}.items():
         html = html.replace(k, v)
