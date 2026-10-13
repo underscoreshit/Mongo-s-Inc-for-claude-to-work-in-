@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /build.py
+Disallow: /i18n/
+
+Sitemap: https://kadestudio.be/sitemap.xml

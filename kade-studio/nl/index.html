@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kade Studio | Websites voor kleine Belgische bedrijven</title>
+<meta name="description" id="meta-desc" content="Kade Studio maakt websites voor kleine Belgische bedrijven. Helder, snel, en niet te vergeten.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kade Studio">
+<meta property="og:title" content="Kade Studio | Websites voor kleine Belgische bedrijven">
+<meta property="og:description" content="Heldere, snelle websites voor winkels, kapsalons, vakmensen en horeca in België. Vaste prijs, NL en FR.">
+<meta property="og:image" content="https://kadestudio.be/brand/social/nl/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://kadestudio.be/nl/">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:locale:alternate" content="fr_BE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://kadestudio.be/nl/">
+<link rel="alternate" hreflang="fr-BE" href="https://kadestudio.be/">
+<link rel="alternate" hreflang="nl-BE" href="https://kadestudio.be/nl/">
+<link rel="alternate" hreflang="x-default" href="https://kadestudio.be/">
+<meta name="theme-color" content="#74DB4B">
+<link rel="icon" href="../brand/logo/kade-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/social/profile-picture.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kade Studio","description":"Websites voor kleine Belgische bedrijven.","email":"hello@kadestudio.be","areaServed":{"@type":"Country","name":"Belgium"},"knowsLanguage":["fr","nl"],"priceRange":"€€","url":"https://kadestudio.be/","logo":"https://kadestudio.be/brand/logo/kade-logo.png","image":"https://kadestudio.be/brand/og-image.png"}</script>
+<link rel="preload" href="../fonts/bricolage-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/big-shoulders-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Lettertypes op eigen server: geen verbinding met Google bij het laden (GDPR). */
+@font-face { font-family: 'Big Shoulders Display'; font-style: normal; font-weight: 800; font-display: swap; src: url(../fonts/big-shoulders-var-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Big Shoulders Display'; font-style: normal; font-weight: 800; font-display: swap; src: url(../fonts/big-shoulders-var-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Big Shoulders Display'; font-style: normal; font-weight: 900; font-display: swap; src: url(../fonts/big-shoulders-var-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Big Shoulders Display'; font-style: normal; font-weight: 900; font-display: swap; src: url(../fonts/big-shoulders-var-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Bricolage Grotesque'; font-style: normal; font-weight: 400 800; font-stretch: 75% 100%; font-display: swap; src: url(../fonts/bricolage-400-800-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Bricolage Grotesque'; font-style: normal; font-weight: 400 800; font-stretch: 75% 100%; font-display: swap; src: url(../fonts/bricolage-400-800-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/courier-prime-400-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/courier-prime-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/courier-prime-700-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/courier-prime-700-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+</style>
+<!-- Statistieken: haal de commentaartekens weg zodra je een account hebt op plausible.io
+<script defer data-domain="kadestudio.be" src="https://plausible.io/js/script.tagged-events.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+-->
+<style>
+/* Layout: affiche de rue collée sur un mur. Bandeaux défilants, blocs de couleur pleins,
+   stickers et posters de travers. Un seul look assumé (pas de mode sombre). */
+:root{
+  --acid:#74DB4B;      /* vert du hero */
+  --tomato:#FF5426;    /* stickers, accents chauds */
+  --sun:#FFD43A;       /* bandeaux */
+  --bubble:#FFB8E0;    /* rose */
+  --cobalt:#3B6BFF;    /* bleu */
+  --ink:#151515;       /* texte, contours */
+  --paper:#F1F2EC;     /* fond neutre, légèrement froid */
+  --white:#FFFFFF;
+
+  --f-poster:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --f-display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --f-type:"Courier Prime", "Courier New", ui-monospace, monospace;
+
+  --step-0:clamp(1rem,.95rem + .25vw,1.125rem);
+  --step-1:clamp(1.25rem,1.1rem + .6vw,1.6rem);
+  --step-2:clamp(1.8rem,1.4rem + 1.8vw,2.9rem);
+  --step-3:clamp(2.6rem,1.6rem + 4.6vw,5.6rem);
+
+  --gutter:clamp(16px,3vw,40px);
+  --border:3px solid var(--ink);
+  --pop:5px 5px 0 var(--ink);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-display);font-size:var(--step-0);line-height:1.5;overflow-x:hidden}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+
+/* grain photocopie */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{padding-inline:var(--gutter)}
+
+/* ---------- bandeau défilant ---------- */
+.band{background:var(--sun);border-block:var(--border);overflow:hidden;white-space:nowrap;font-family:var(--f-poster);font-weight:900;text-transform:uppercase;letter-spacing:.02em;font-size:1.05rem}
+.band__track{display:inline-flex;gap:2.2rem;padding-block:.45rem;animation:slide 32s linear infinite}
+.band__track span{display:inline-flex;align-items:center;gap:2.2rem}
+.band__track span::after{content:"✶";color:var(--tomato)}
+.band--ink{background:var(--ink);color:var(--acid);border-color:var(--ink);font-size:clamp(1.6rem,1rem + 3vw,3.4rem)}
+.band--ink .band__track{animation-duration:40s;animation-direction:reverse}
+.band--ink .band__track span::after{color:var(--bubble)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- navigation en pilules ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--acid);border-bottom:var(--border);padding-block:.7rem}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.logo{font-family:var(--f-poster);font-weight:900;font-size:1.9rem;line-height:1;text-decoration:none;letter-spacing:.01em}
+.logo sup{font-family:var(--f-type);font-size:.7rem;font-weight:700}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.pill{display:inline-block;padding:.38rem 1.1rem;border:2.5px solid var(--ink);border-radius:999px;background:var(--white);font-weight:800;font-style:italic;font-variation-settings:"wdth" 80;text-decoration:none;font-size:.95rem;transition:transform .2s,background .2s}
+.pill:hover{background:var(--sun);transform:translateY(-2px) rotate(-2deg)}
+.pill--dark{background:var(--ink);color:var(--white)}
+.pill--dark:hover{background:var(--tomato);color:var(--ink)}
+
+.lang{display:inline-flex;border:2.5px solid var(--ink);border-radius:999px;overflow:hidden;background:var(--white);margin-left:auto;margin-right:.2rem}
+.lang a{text-decoration:none;font:inherit;font-family:var(--f-poster);font-weight:900;font-size:1rem;letter-spacing:.04em;border:0;background:transparent;color:var(--ink);padding:.3rem .75rem;cursor:pointer}
+.lang a[aria-current="page"]{background:var(--ink);color:var(--acid)}
+.lang a:hover:not([aria-current="page"]){background:var(--sun)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--acid);border-bottom:var(--border);overflow:hidden;position:relative}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;padding-block:clamp(2.5rem,6vw,5rem) 1rem}
+.hero h1{font-size:var(--step-3);line-height:.92;font-weight:800;font-variation-settings:"wdth" 75,"opsz" 96;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;display:inline-block;background:var(--ink);color:var(--acid);padding:0 .14em .04em;transform:rotate(-2deg);border-radius:.12em}
+.hero__sub{margin-top:1.4rem;max-width:34ch;font-size:var(--step-1);line-height:1.35;font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;border:var(--border);border-radius:999px;font-family:var(--f-display);font-weight:800;font-size:1.05rem;text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .15s,box-shadow .15s;background:var(--white);color:var(--ink)}
+.btn--main{background:var(--tomato);box-shadow:var(--pop)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+
+/* collage */
+.collage{position:relative;min-height:440px}
+.poster{position:absolute;border:var(--border);box-shadow:var(--pop);padding:1rem;display:flex;flex-direction:column;justify-content:space-between;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.poster:hover{transform:rotate(0) scale(1.03)!important;z-index:5}
+.poster::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:26px;background:rgba(255,255,255,.55);border:1px solid rgba(21,21,21,.15);transform:translateX(-50%) rotate(-4deg)}
+.p1{width:52%;height:290px;left:0;top:70px;background:var(--cobalt);color:var(--white);transform:rotate(-6deg)}
+.p2{width:48%;height:250px;right:0;top:0;background:var(--bubble);transform:rotate(5deg)}
+.p3{width:54%;height:190px;right:6%;bottom:0;z-index:3;background:var(--sun);transform:rotate(-2deg)}
+.poster b{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;line-height:.88;font-size:clamp(2rem,1.2rem + 2.6vw,3.4rem)}
+.poster small{font-family:var(--f-type);font-size:.8rem;line-height:1.3}
+.dots{position:absolute;inset:auto 0 0 0;height:55%;pointer-events:none;
+  background-image:radial-gradient(circle,currentColor 1.6px,transparent 1.9px);background-size:9px 9px;
+  -webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);opacity:.45}
+
+.burst{position:absolute;z-index:6;width:150px;aspect-ratio:1;max-width:100%;display:grid;place-items:center;text-align:center;
+  background:var(--white);color:var(--ink);font-family:var(--f-poster);font-weight:900;text-transform:uppercase;line-height:.95;font-size:1.2rem;padding:1.6rem;
+  clip-path:polygon(50.0% 0.0%,58.5% 13.0%,71.7% 5.0%,73.7% 20.3%,89.1% 18.8%,84.2% 33.5%,98.7% 38.9%,88.0% 50.0%,98.7% 61.1%,84.2% 66.5%,89.1% 81.2%,73.7% 79.7%,71.7% 95.0%,58.5% 87.0%,50.0% 100.0%,41.5% 87.0%,28.3% 95.0%,26.3% 79.7%,10.9% 81.2%,15.8% 66.5%,1.3% 61.1%,12.0% 50.0%,1.3% 38.9%,15.8% 33.5%,10.9% 18.8%,26.3% 20.3%,28.3% 5.0%,41.5% 13.0%);
+  filter:drop-shadow(0 0 0 var(--ink));animation:spin 24s linear infinite}
+.burst span{transform:rotate(-8deg)}
+.burst--hero{left:-2%;bottom:-6px;top:auto}
+@keyframes spin{to{rotate:360deg}}
+
+.wordmark{display:block;font-family:var(--f-poster);font-weight:900;text-transform:uppercase;white-space:nowrap;
+  font-size:clamp(3.5rem,20.5vw,25rem);line-height:.78;letter-spacing:-.01em;color:var(--white);
+  -webkit-text-stroke:clamp(2px,.35vw,5px) var(--ink);paint-order:stroke fill;text-shadow:.04em .04em 0 var(--ink);
+  margin-top:1rem;padding-bottom:.06em;text-align:center}
+
+/* ---------- pour qui : blocs couleur ---------- */
+.who__head{background:var(--ink);color:var(--white);padding-block:clamp(2rem,4vw,3rem);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.2rem}
+.who__head h2{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:var(--step-3);line-height:.85}
+.who__head p{max-width:40ch;color:#d9dacf}
+.blocks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:var(--border)}
+.block{position:relative;overflow:hidden;padding:1.4rem var(--gutter) 8.5rem;min-height:340px;display:flex;flex-direction:column;gap:.8rem;border-right:var(--border)}
+.block:last-child{border-right:0}
+.block h3{font-family:var(--f-poster);font-weight:800;font-size:var(--step-2);line-height:.92;text-transform:uppercase}
+.block p{position:relative;z-index:1;font-weight:500;max-width:30ch}
+.block .big{position:absolute;right:-.06em;bottom:-.18em;font-family:var(--f-poster);font-weight:900;font-size:9rem;line-height:1;opacity:.95;color:transparent;-webkit-text-stroke:3px var(--ink)}
+.b-sun{background:var(--sun)} .b-bubble{background:var(--bubble)} .b-cobalt{background:var(--cobalt);color:var(--white)} .b-tomato{background:var(--tomato)}
+.b-cobalt .big{-webkit-text-stroke-color:var(--white)}
+
+/* ---------- travaux : rail horizontal ---------- */
+.work{padding-block:clamp(3rem,7vw,6rem) clamp(2rem,4vw,3rem)}
+.work h2{font-size:var(--step-3);font-weight:800;line-height:.92;font-variation-settings:"wdth" 75,"opsz" 96;letter-spacing:-.02em;max-width:14ch}
+.work__intro{margin-top:1rem;max-width:52ch}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,320px);gap:1.4rem;overflow-x:auto;padding:2.2rem var(--gutter) 1.6rem;margin-inline:calc(var(--gutter) * -1);scroll-snap-type:x mandatory;scrollbar-color:var(--ink) transparent}
+.case{scroll-snap-align:start;display:flex;flex-direction:column;gap:.6rem}
+.case__art{aspect-ratio:4/5;border:var(--border);box-shadow:var(--pop);position:relative;overflow:hidden;padding:1.1rem;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.case:nth-child(odd) .case__art{transform:rotate(-1.5deg)}
+.case:nth-child(even) .case__art{transform:rotate(1.5deg)}
+.case:hover .case__art{transform:rotate(0) translateY(-6px)}
+.case__art b{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:3.1rem;line-height:.85;position:relative;z-index:1}
+.case__art i{font-family:var(--f-type);font-style:normal;font-size:.82rem;position:relative;z-index:1}
+.case__meta{display:flex;justify-content:space-between;gap:.6rem;font-family:var(--f-type);font-size:.85rem}
+.case__meta strong{font-family:var(--f-display);font-size:1.05rem}
+.a1{background:var(--sun)} .a2{background:var(--ink);color:var(--acid)} .a3{background:var(--bubble)} .a4{background:var(--cobalt);color:var(--white)} .a5{background:var(--tomato)}
+.a2 b{color:transparent;-webkit-text-stroke:2px var(--acid)}
+.ring{position:absolute;right:-30%;top:22%;width:90%;aspect-ratio:1;border-radius:50%;border:18px solid currentColor;opacity:.25}
+
+/* ---------- offres : poster sombre ---------- */
+.offers{background:var(--ink);color:var(--white);padding-block:clamp(3rem,7vw,6rem)}
+.offers h2{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:clamp(3rem,2rem + 7vw,8.5rem);line-height:.82;color:transparent;-webkit-text-stroke:2px var(--acid)}
+.offers h2 span{color:var(--acid);-webkit-text-stroke:0}
+.offers__note{margin-top:1rem;font-family:var(--f-type);color:#cfd0c6;max-width:58ch}
+.menu{margin-top:2.6rem;display:flex;flex-direction:column;gap:1.1rem}
+.offer{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:1.4rem;align-items:center;padding:1.4rem 1.6rem;border:2.5px solid var(--acid);border-radius:22px;transition:background .25s,color .25s}
+.offer:hover{background:var(--acid);color:var(--ink)}
+.offer h3{font-weight:800;font-size:var(--step-2);line-height:1;font-variation-settings:"wdth" 78}
+.offer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem .5rem;font-family:var(--f-type);font-size:.9rem}
+.offer li{border:1.5px solid currentColor;border-radius:999px;padding:.12rem .7rem}
+.price{text-align:right;font-family:var(--f-poster);font-weight:900;font-size:clamp(2.4rem,1.8rem + 2vw,3.6rem);line-height:.9;white-space:nowrap;font-variant-numeric:tabular-nums}
+.price small{display:block;font-family:var(--f-type);font-weight:400;font-size:.8rem;letter-spacing:.02em}
+.offer--star{background:var(--sun);color:var(--ink);border-color:var(--sun);position:relative}
+.offer--star:hover{background:var(--acid);border-color:var(--acid)}
+.tag{position:absolute;top:-14px;left:1.4rem;background:var(--tomato);color:var(--ink);border:2.5px solid var(--ink);border-radius:999px;padding:.1rem .8rem;font-weight:800;font-size:.85rem;transform:rotate(-3deg)}
+.maint{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:baseline;font-family:var(--f-type)}
+.maint strong{font-family:var(--f-poster);font-size:2rem;color:var(--bubble)}
+
+/* ---------- méthode ---------- */
+.method{background:var(--bubble);border-block:var(--border);padding-block:clamp(3rem,7vw,6rem)}
+.method h2{font-size:var(--step-3);font-weight:800;line-height:.92;font-variation-settings:"wdth" 75,"opsz" 96;letter-spacing:-.02em}
+.steps{list-style:none;margin:2.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem;counter-reset:s}
+.step{counter-increment:s;background:var(--white);border:var(--border);border-radius:26px;padding:1.3rem 1.3rem 1.6rem;box-shadow:var(--pop);display:flex;flex-direction:column;gap:.6rem}
+.step:nth-child(2){margin-top:2.2rem} .step:nth-child(3){margin-top:4.4rem} .step:nth-child(4){margin-top:6.6rem}
+.step::before{content:counter(s);display:grid;place-items:center;width:3.2rem;height:3.2rem;border-radius:50%;background:var(--ink);color:var(--bubble);font-family:var(--f-poster);font-weight:900;font-size:1.8rem}
+.step h3{font-weight:800;font-size:var(--step-1);line-height:1.1}
+.step p{font-size:.98rem}
+.step .when{font-family:var(--f-type);font-size:.85rem;margin-top:auto;padding-top:.4rem}
+
+/* ---------- FAQ ---------- */
+.faq{padding-block:clamp(3rem,7vw,6rem);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(1.5rem,4vw,4rem);align-items:start}
+.faq h2{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:var(--step-3);line-height:.85}
+.faq details{border-bottom:var(--border)}
+.faq details:first-of-type{border-top:var(--border)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.1rem 0;font-weight:800;font-size:var(--step-1);line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:2.2rem;height:2.2rem;border:2.5px solid var(--ink);border-radius:50%;font-family:var(--f-poster);font-size:1.5rem;transition:transform .25s,background .25s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--sun)}
+.faq details p{padding-bottom:1.3rem;max-width:60ch}
+
+/* ---------- contact ---------- */
+.contact{background:var(--cobalt);border-top:var(--border);position:relative;overflow:hidden;padding-block:clamp(3rem,7vw,6rem)}
+.contact__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;position:relative;z-index:1}
+.contact h2{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;color:var(--white);font-size:clamp(3.2rem,2rem + 7vw,8rem);line-height:.82;-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;text-shadow:.05em .05em 0 var(--ink)}
+.contact__mail{margin-top:1.4rem;display:inline-flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.mail{font-family:var(--f-type);font-weight:700;background:var(--white);border:var(--border);padding:.5rem .9rem;user-select:all}
+.form{background:#E4EEDA;border:var(--border);box-shadow:8px 8px 0 var(--ink);padding:1.6rem;font-family:var(--f-type);transform:rotate(1.2deg)}
+.form__top{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;border-bottom:2px solid var(--ink);padding-bottom:.6rem;margin-bottom:1rem}
+.form h3{font-family:var(--f-display);font-weight:800;font-size:var(--step-2);line-height:.95;font-variation-settings:"wdth" 78;margin-bottom:1rem}
+.field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}
+.field label{font-weight:700;font-size:.85rem}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--ink);padding:.4rem 0;border-radius:0}
+.field textarea{resize:vertical;min-height:4.5rem}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;background:rgba(255,212,58,.4)}
+.field input::placeholder,.field textarea::placeholder{color:#55584f}
+.err{color:#A3190A;font-size:.82rem;min-height:1em}
+.form .btn{margin-top:.4rem}
+.done{margin-top:1rem;font-weight:700;background:var(--sun);border:2px solid var(--ink);padding:.6rem .8rem}
+
+.assure{list-style:none;margin:1.4rem 0 0;padding:0;display:flex;flex-direction:column;gap:.5rem;color:var(--white);font-weight:700;font-size:var(--step-1)}
+.assure li{display:flex;gap:.6rem;align-items:baseline}
+.assure li::before{content:"✶";color:var(--sun)}
+.privacy{font-size:.78rem;margin-top:.8rem;line-height:1.4}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn[disabled]{opacity:.6;cursor:progress}
+.done--err{background:var(--bubble)}
+.foot a{color:var(--acid)}
+.concept{font-family:var(--f-type);font-size:.78rem;border:1.5px solid currentColor;border-radius:999px;padding:0 .5rem}
+.case__meta{flex-wrap:wrap;align-items:baseline}
+.case__meta strong{flex-basis:100%}
+.concept{white-space:nowrap}
+/* ---------- footer ---------- */
+.foot{background:var(--ink);color:#d9dacf;padding-block:2rem;font-family:var(--f-type);font-size:.88rem}
+.foot__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;align-items:center}
+.foot .logo{color:var(--acid);font-size:2.4rem}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero__grid,.contact__grid,.faq{grid-template-columns:minmax(0,1fr)}
+  .blocks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .block:nth-child(2){border-right:0}
+  .block:nth-child(-n+2){border-bottom:var(--border)}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step:nth-child(n){margin-top:0}
+  .step:nth-child(even){margin-top:2rem}
+  .offer{grid-template-columns:minmax(0,1fr) auto}
+  .offer ul{grid-column:1/-1;grid-row:2}
+}
+@media (max-width:620px){
+  .nav__in{flex-wrap:nowrap;gap:.6rem}
+  .nav li:not(:last-child){display:none}
+  .lang{margin-left:auto}
+  .pill,.lang a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+  .pill--dark{padding-inline:.9rem;font-size:.9rem;white-space:nowrap}
+  .field input,.field select,.field textarea{min-height:44px}
+  .collage{min-height:400px}
+  .p1{width:66%;height:260px} .p2{width:58%;height:220px} .p3{width:64%;height:170px}
+  .burst{width:118px;font-size:1rem;padding:1.2rem}
+  .burst--hero{left:auto;right:-6px;top:auto;bottom:-12px}
+  .blocks{grid-template-columns:minmax(0,1fr)}
+  .block{border-right:0;border-bottom:var(--border);min-height:260px}
+  .block:last-child{border-bottom:0}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .step:nth-child(even){margin-top:0}
+  .offer{grid-template-columns:minmax(0,1fr);padding:1.3rem}
+  .price{text-align:left}
+  .form{transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true">
+  <div class="band__track">
+    <span><span data-i18n="b1">Websites voor kleine Belgische bedrijven</span></span><span><span data-i18n="b2">Brussel, Wallonië, Vlaanderen</span></span><span><span data-i18n="b3">Nederlands en Frans</span></span><span><span data-i18n="b4">Online in 3 weken</span></span>
+    <span><span data-i18n="b1">Websites voor kleine Belgische bedrijven</span></span><span><span data-i18n="b2">Brussel, Wallonië, Vlaanderen</span></span><span><span data-i18n="b3">Nederlands en Frans</span></span><span><span data-i18n="b4">Online in 3 weken</span></span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__in wrap">
+    <a class="logo" href="#top">KADE<sup>®</sup></a>
+    <nav class="lang" aria-label="Langue / Taal"><a href="../index.html" hreflang="fr-BE" lang="fr" data-lang="fr">FR</a><a href="index.html" hreflang="nl-BE" lang="nl" data-lang="nl" aria-current="page">NL</a></nav>
+    <nav aria-label="Hoofdnavigatie" data-i18n-aria="al1">
+      <ul>
+        <li><a class="pill" href="#exemples"><span data-i18n="n1">Voorbeelden</span></a></li>
+        <li><a class="pill" href="#offres"><span data-i18n="n2">Prijzen</span></a></li>
+        <li><a class="pill" href="#methode"><span data-i18n="n3">Werkwijze</span></a></li>
+        <li><a class="pill pill--dark" href="#contact" data-track="nav_cta"><span data-i18n="cta">Offerte aanvragen</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__grid wrap">
+      <div>
+        <h1 id="hero-title"><span data-i18n="h1">Websites die <em>opvallen.</em></span></h1>
+        <p class="hero__sub"><span data-i18n="sub">Ik maak websites voor kleine Belgische bedrijven. Helder, snel, en niet te vergeten.</span></p>
+        <div class="cta">
+          <a class="btn btn--main" href="#contact" data-track="hero_cta"><span data-i18n="cta">Offerte aanvragen</span></a>
+          <a class="btn" href="#exemples" data-track="hero_examples"><span data-i18n="see">Bekijk voorbeelden</span></a>
+        </div>
+      </div>
+
+      <div class="collage" aria-hidden="true">
+        <div class="poster p2"><b>Barbier<br>Atelier 12</b><small><span data-i18n="pc1">Namen. Online reserveren, 7 dagen op 7.</span></small><div class="dots"></div></div>
+        <div class="poster p1"><b>Boulan&shy;gerie Vanhove</b><small><span data-i18n="pc2">Gent. Zuurdesem sinds 1987.<br>Brood bestellen de dag ervoor.</span></small><div class="dots"></div></div>
+        <div class="poster p3"><b><span data-i18n="c5">Frituur</span><br>Chez Mo</b><small><span data-i18n="pc3">Luik. Menu, openingsuren, route.</span></small></div>
+        <div class="burst burst--hero"><span><span data-i18n="burst">Online in<br>3 weken</span></span></div>
+      </div>
+    </div>
+    <span class="wordmark" aria-hidden="true">Kade Studio</span>
+  </section>
+
+  <section aria-labelledby="who-title">
+    <div class="who__head wrap">
+      <h2 id="who-title"><span data-i18n="who">Voor mensen<br>die ondernemen.</span></h2>
+      <p><span data-i18n="whop">U runt een winkel, een atelier of een praktijk. U hebt geen tijd om te worstelen met een CMS. Ik regel alles, van de teksten tot de lancering.</span></p>
+    </div>
+    <div class="blocks">
+      <article class="block b-sun">
+        <h3><span data-i18n="k1">De winkel om de hoek</span></h3>
+        <p><span data-i18n="k1p">Openingsuren up-to-date, producten in beeld, route in één klik. Mensen vinden u op Google Maps en stappen binnen.</span></p>
+        <span class="big" aria-hidden="true">€</span>
+      </article>
+      <article class="block b-bubble">
+        <h3><span data-i18n="k2">Kapsalons &amp; instituten</span></h3>
+        <p><span data-i18n="k2p">Online afspraken, duidelijke prijzen, een galerij van uw werk. Minder telefoontjes terwijl u knipt.</span></p>
+        <span class="big" aria-hidden="true">✂</span>
+      </article>
+      <article class="block b-cobalt">
+        <h3><span data-i18n="k3">Vakmensen &amp; zelfstandigen</span></h3>
+        <p><span data-i18n="k3p">Een portfolio dat uw werk toont en een offerteformulier. Gedaan met klanten die vragen: ‘wat doet u eigenlijk precies?’</span></p>
+        <span class="big" aria-hidden="true">&amp;</span>
+      </article>
+      <article class="block b-tomato">
+        <h3><span data-i18n="k4">Restaurants &amp; cafés</span></h3>
+        <p><span data-i18n="k4p">Een menukaart die leesbaar is op de gsm, reservaties, sociale media gekoppeld. Geen pdf van de kaart om op in te zoomen.</span></p>
+        <span class="big" aria-hidden="true">@</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="work wrap" id="exemples" aria-labelledby="work-title">
+    <h2 id="work-title"><span data-i18n="wh">Zo kan uw site eruitzien.</span></h2>
+    <p class="work__intro"><span data-i18n="wi">Concepten voor verzonnen zaken, om u de stijl te tonen. Uw site vertrekt van uw vak, uw buurt en uw klanten.</span></p>
+    <div class="rail" tabindex="0" aria-label="Voorbeeldconcepten, horizontaal scrollen" data-i18n-aria="al2">
+      <article class="case">
+        <div class="case__art a1"><i><span data-i18n="c1">Bakkerij</span></i><b>Vanhove</b><div class="ring"></div></div>
+        <div class="case__meta"><strong>Boulangerie Vanhove</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g1">Gent</span></span></div>
+      </article>
+      <article class="case">
+        <div class="case__art a2"><i>Barbier</i><b>Atelier<br>12</b></div>
+        <div class="case__meta"><strong>Atelier 12</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g2">Namen</span></span></div>
+      </article>
+      <article class="case">
+        <div class="case__art a3"><i><span data-i18n="c3">Bloemist</span></i><b>Fleurs de Julie</b><div class="ring"></div></div>
+        <div class="case__meta"><strong>Fleurs de Julie</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g3">Bergen</span></span></div>
+      </article>
+      <article class="case">
+        <div class="case__art a4"><i>Garage</i><b>Garage Peeters</b><div class="dots"></div></div>
+        <div class="case__meta"><strong>Garage Peeters</strong><span class="concept" data-i18n="cpt">Concept</span><span>Hasselt</span></div>
+      </article>
+      <article class="case">
+        <div class="case__art a5"><i><span data-i18n="c5">Frituur</span></i><b>Chez<br>Mo</b><div class="ring"></div></div>
+        <div class="case__meta"><strong>Friterie Chez Mo</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g5">Luik</span></span></div>
+      </article>
+    </div>
+  </section>
+
+  <div class="band band--ink" aria-hidden="true">
+    <div class="band__track">
+      <span><span data-i18n="r1">Snel op mobiel</span></span><span><span data-i18n="r2">Vindbaar op Google</span></span><span><span data-i18n="r3">Makkelijk aan te passen</span></span><span><span data-i18n="r4">Gehost in Europa</span></span>
+      <span><span data-i18n="r1">Snel op mobiel</span></span><span><span data-i18n="r2">Vindbaar op Google</span></span><span><span data-i18n="r3">Makkelijk aan te passen</span></span><span><span data-i18n="r4">Gehost in Europa</span></span>
+    </div>
+  </div>
+
+  <section class="offers" id="offres" aria-labelledby="offers-title">
+    <div class="wrap">
+      <h2 id="offers-title"><span data-i18n="oh">Drie formules.<br><span>Nul jargon.</span></span></h2>
+      <p class="offers__note"><span data-i18n="on">Vaste prijzen, vooraf meegedeeld. Bedragen excl. btw. Voorschot van 30 % bij de start, de rest bij de lancering.</span></p>
+      <div class="menu">
+        <article class="offer">
+          <h3><span data-i18n="o1">Eén pagina</span></h3>
+          <ul><li><span data-i18n="l1">1 pagina</span></li><li><span data-i18n="l2">contactformulier</span></li><li>Google Maps</li><li><span data-i18n="l3">10 dagen</span></li></ul>
+          <p class="price">690 €<small><span data-i18n="htva">excl. btw</span></small></p>
+        </article>
+        <article class="offer offer--star">
+          <span class="tag"><span data-i18n="tag">Meest gekozen</span></span>
+          <h3><span data-i18n="o2">Etalage</span></h3>
+          <ul><li><span data-i18n="l4">tot 6 pagina's</span></li><li><span data-i18n="l5">teksten geschreven</span></li><li>FR + NL</li><li><span data-i18n="l6">lokale SEO</span></li><li><span data-i18n="l7">3 weken</span></li></ul>
+          <p class="price">1 490 €<small><span data-i18n="htva">excl. btw</span></small></p>
+        </article>
+        <article class="offer">
+          <h3><span data-i18n="o3">Webshop</span></h3>
+          <ul><li><span data-i18n="l8">webshop</span></li><li><span data-i18n="l9">betalen met Bancontact</span></li><li><span data-i18n="l10">voorraadbeheer</span></li><li><span data-i18n="l11">opleiding inbegrepen</span></li></ul>
+          <p class="price"><span data-i18n="from">vanaf</span> 2 900 €<small><span data-i18n="htva">excl. btw</span></small></p>
+        </article>
+      </div>
+      <p class="maint"><strong><span data-i18n="m1">39 €/maand</span></strong><span data-i18n="m2"> Hosting, .be-domeinnaam, updates en kleine aanpassingen. Zonder verbintenis.</span></p>
+    </div>
+  </section>
+
+  <section class="method" id="methode" aria-labelledby="method-title">
+    <div class="wrap">
+      <h2 id="method-title"><span data-i18n="mh">Van eerste gesprek tot lancering.</span></h2>
+      <ol class="steps">
+        <li class="step"><h3><span data-i18n="s1">We praten</span></h3><p><span data-i18n="s1p">30 minuten aan de telefoon of bij een koffie. U vertelt over uw zaak, ik stel de vragen.</span></p><span class="when"><span data-i18n="d1">Dag 1</span></span></li>
+        <li class="step"><h3><span data-i18n="s2">Ik ontwerp</span></h3><p><span data-i18n="s2p">Ik toon u het ontwerp van de homepage. U zegt wat u bevalt en wat niet bij u past.</span></p><span class="when"><span data-i18n="wk1">Week 1</span></span></li>
+        <li class="step"><h3><span data-i18n="s3">Ik bouw</span></h3><p><span data-i18n="s3p">Alle pagina's, teksten, foto's en de mobiele versie. U volgt de voortgang via een privélink.</span></p><span class="when"><span data-i18n="wk2">Week 2</span></span></li>
+        <li class="step"><h3><span data-i18n="s4">We lanceren</span></h3><p><span data-i18n="s4p">Online zetten, Google-bedrijfsprofiel bijgewerkt, en een korte opleiding om zelf uw openingsuren aan te passen.</span></p><span class="when"><span data-i18n="wk3">Week 3</span></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faq wrap" aria-labelledby="faq-title">
+    <h2 id="faq-title"><span data-i18n="fh">U vraagt zich af.</span></h2>
+    <div>
+      <details open>
+        <summary><span data-i18n="q1">Moet ik de teksten zelf schrijven?</span></summary>
+        <p><span data-i18n="a1">Nee. In de formule Etalage schrijf ik de teksten op basis van ons gesprek. U leest na en past aan wat u wilt.</span></p>
+      </details>
+      <details>
+        <summary><span data-i18n="q2">Kan mijn site in het Nederlands en het Frans?</span></summary>
+        <p><span data-i18n="a2">Ja. De tweede taal zit inbegrepen in de formule Etalage. Voor Engels of Duits bespreken we het in de offerte.</span></p>
+      </details>
+      <details>
+        <summary><span data-i18n="q3">Ik heb geen logo en geen foto's.</span></summary>
+        <p><span data-i18n="a3">Geen probleem. Ik kan een eenvoudig logo maken en u een fotograaf in de buurt aanraden, of werken met foto's van uw gsm.</span></p>
+      </details>
+      <details>
+        <summary><span data-i18n="q4">En als ik later iets wil veranderen?</span></summary>
+        <p><span data-i18n="a4">Met het maandelijkse onderhoud stuurt u me een bericht en het is binnen de week geregeld. U kunt ook zelf uw openingsuren en foto's aanpassen.</span></p>
+      </details>
+      <details>
+        <summary><span data-i18n="q5">Zijn er verborgen kosten?</span></summary>
+        <p><span data-i18n="a5">Nee. De prijs in de offerte is de eindprijs. Alleen het maandelijkse onderhoud komt terug (hosting, .be-domein, updates), en dat is zonder verbintenis.</span></p>
+      </details>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact__grid wrap">
+      <div>
+        <h2 id="contact-title"><span data-i18n="ch">Tijd voor uw site.</span></h2>
+        <ul class="assure">
+          <li><span data-i18n="as1">Gratis offerte, zonder verbintenis</span></li>
+          <li><span data-i18n="as2">Vaste prijs, vooraf meegedeeld</span></li>
+          <li><span data-i18n="as3">Eén aanspreekpunt, van het eerste gesprek tot de lancering</span></li>
+        </ul>
+        <div class="contact__mail">
+          <span class="mail" id="mail">hello@kadestudio.be</span>
+          <button class="btn" type="button" id="copy"><span data-i18n="copy">Kopieer het adres</span></button>
+        </div>
+      </div>
+      <!-- Envoi du formulaire: collez ici l'URL de votre service (Formspree, Web3Forms, Netlify...).
+           Vide = le logiciel mail du visiteur s'ouvre avec la demande pré-remplie. -->
+      <form class="form" id="quote" novalidate method="post" data-endpoint="">
+        <p class="form__top"><span data-i18n="ft">Antwoord binnen 24 werkuren</span></p>
+        <h3><span data-i18n="cta">Offerte aanvragen</span></h3>
+        <div class="field">
+          <label for="f-name"><span data-i18n="fn">Uw naam</span></label>
+          <input id="f-name" name="name" autocomplete="name" placeholder="Voor- en achternaam" data-i18n-ph="ph1" required>
+          <span class="err" id="e-name"></span>
+        </div>
+        <div class="field">
+          <label for="f-mail"><span data-i18n="fm">Uw e-mail</span></label>
+          <input id="f-mail" name="email" type="email" autocomplete="email" placeholder="u@voorbeeld.be" data-i18n-ph="ph2" required>
+          <span class="err" id="e-mail"></span>
+        </div>
+        <div class="field">
+          <label for="f-tel"><span data-i18n="fphone">Telefoon (optioneel)</span></label>
+          <input id="f-tel" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0470 12 34 56" data-i18n-ph="ph4">
+        </div>
+        <div class="field">
+          <label for="f-type"><span data-i18n="fa">Uw activiteit</span></label>
+          <select id="f-type" name="type">
+            <option value="Commerce" data-i18n="op0">Winkel</option><option value="Salon ou institut" data-i18n="op1">Kapsalon of instituut</option><option value="Artisan ou indépendant" data-i18n="op2">Vakman of zelfstandige</option><option value="Resto ou café" data-i18n="op3">Restaurant of café</option><option value="Autre" data-i18n="op4">Andere</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg"><span data-i18n="fp">Uw project, in twee regels</span></label>
+          <textarea id="f-msg" name="message" placeholder="Ik heb een bakkerij in Leuven en nog geen website." data-i18n-ph="ph3"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn--main" type="submit" id="send"><span data-i18n="cta">Offerte aanvragen</span></button>
+        <p class="privacy"><span data-i18n="priv">Uw gegevens dienen alleen om uw aanvraag te beantwoorden. Ze worden niet doorverkocht en niet gebruikt voor reclame.</span></p>
+        <p class="done" id="done" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__in wrap">
+    <span class="logo">KADE STUDIO</span>
+    <span><span data-i18n="f1">Websites voor kleine bedrijven, België</span></span>
+    <span><span data-i18n="f2">Ondernemingsnr. BE 0XXX.XXX.XXX</span></span>
+    <a href="mailto:hello@kadestudio.be">hello@kadestudio.be</a>
+    <span>© 2026 Kade Studio</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var STR={fr:{"js_name": "Indiquez votre nom pour que je sache à qui répondre.", "js_mail": "Cette adresse email semble incomplète.", "js_copied": "Adresse copiée", "js_ok": "Merci {n}, votre demande est envoyée. Je vous réponds sous 24 h ouvrables.", "js_err": "L'envoi n'a pas fonctionné. Écrivez-moi à hello@kadestudio.be, je vous réponds au plus vite.", "js_mailto": "Votre logiciel mail s'ouvre avec la demande prête. Cliquez sur envoyer. Rien ne s'ouvre? Écrivez à hello@kadestudio.be.", "js_sending": "Envoi...", "js_subject": "Demande de devis via kadestudio.be", "cta": "Demander un devis", "copy": "Copier l'adresse"},
+    nl:{"js_name": "Vul uw naam in, zodat ik weet wie ik moet antwoorden.", "js_mail": "Dit e-mailadres lijkt onvolledig.", "js_copied": "Adres gekopieerd", "js_ok": "Bedankt {n}, uw aanvraag is verstuurd. U krijgt antwoord binnen 24 werkuren.", "js_err": "Het versturen is niet gelukt. Mail uw aanvraag naar hello@kadestudio.be, dan antwoord ik zo snel mogelijk.", "js_mailto": "Uw mailprogramma opent met de aanvraag klaar. Klik daar op versturen. Opent er niets? Mail naar hello@kadestudio.be.", "js_sending": "Versturen...", "js_subject": "Offerteaanvraag via kadestudio.be", "cta": "Offerte aanvragen", "copy": "Kopieer het adres"}};
+  var lang=/^nl/i.test(document.documentElement.lang)?'nl':'fr';
+  function t(k){return STR[lang][k]}
+  window.dataLayer=window.dataLayer||[];
+  function track(ev,data){var o={event:ev};for(var k in data)o[k]=data[k];window.dataLayer.push(o);if(window.plausible)window.plausible(ev,{props:data})}
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a)track('cta_click',{id:a.dataset.track,lang:lang})});
+
+  // Taalkeuze onthouden. Eerste bezoek met een Nederlandstalige browser op de Franse pagina: naar /nl/.
+  function store(l){try{localStorage.setItem('kade-lang',l)}catch(e){}}
+  document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){store(a.dataset.lang);track('lang_switch',{lang:a.dataset.lang})})});
+  var pref='';try{pref=localStorage.getItem('kade-lang')||''}catch(e){}
+  var nlLink=document.querySelector('.lang a[data-lang="nl"]');
+  var bot=/bot|crawl|spider|slurp|preview|lighthouse/i.test(navigator.userAgent);
+  if(lang==='fr'&&!bot&&(location.hash==='#nl'||(!pref&&/^nl/i.test(navigator.language||'')))){location.replace(nlLink.href)}
+
+  var form=document.getElementById('quote');
+  var mailRe=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var sendBtn=document.getElementById('send');
+  function show(msg,err){var d=document.getElementById('done');d.textContent=msg;d.classList.toggle('done--err',!!err);d.hidden=false}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=form.elements.name,m=form.elements.email;
+    var okN=!!n.value.trim(),okM=mailRe.test(m.value.trim());
+    document.getElementById('e-name').textContent=okN?'':t('js_name');
+    document.getElementById('e-mail').textContent=okM?'':t('js_mail');
+    if(!okN){n.focus();return}
+    if(!okM){m.focus();return}
+    if(form.elements.website.value)return;
+    var first=n.value.trim().split(' ')[0];
+    var data={name:n.value.trim(),email:m.value.trim(),phone:form.elements.phone.value.trim(),type:form.elements.type.value,message:form.elements.message.value.trim(),lang:lang};
+    var endpoint=form.dataset.endpoint;
+    if(!endpoint){
+      var body=[data.message,'',data.name,data.email,data.phone,data.type].filter(function(x,i){return x||i===1}).join('\n');
+      location.href='mailto:hello@kadestudio.be?subject='+encodeURIComponent(t('js_subject'))+'&body='+encodeURIComponent(body);
+      show(t('js_mailto'));track('lead_mailto',{type:data.type,lang:lang});return;
+    }
+    var label=sendBtn.innerHTML;sendBtn.disabled=true;sendBtn.textContent=t('js_sending');
+    fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){if(!r.ok)throw new Error(r.status);form.reset();show(t('js_ok').replace('{n}',first));track('lead_submit',{type:data.type,lang:lang})})
+      .catch(function(){show(t('js_err'),true);track('lead_error',{lang:lang})})
+      .then(function(){sendBtn.disabled=false;sendBtn.innerHTML=label;sendBtn.querySelector('[data-i18n]').innerHTML=t('cta')});
+  });
+  var c=document.getElementById('copy');
+  c.addEventListener('click',function(){
+    var t0=document.getElementById('mail').textContent;
+    var done=function(){var s=c.querySelector('[data-i18n]');s.textContent=t('js_copied');setTimeout(function(){s.innerHTML=t('copy')},2000)};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t0).then(done,fallback)}else{fallback()}
+  });
+})();
+</script>
+</body>
+</html>
