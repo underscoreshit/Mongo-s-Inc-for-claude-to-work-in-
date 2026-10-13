@@ -3,8 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kade Studio</title>
+<title>Kade Studio | Sites web pour petites entreprises belges</title>
 <meta name="description" id="meta-desc" content="Kade Studio crée des sites vitrines pour les petites entreprises belges. Clairs, rapides, et qu'on n'oublie pas.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kade Studio">
+<meta property="og:title" content="Kade Studio | Sites web pour petites entreprises belges">
+<meta property="og:description" content="Sites vitrines clairs et rapides pour commerces, salons, artisans et restos en Belgique. Prix fixe, FR et NL.">
+<meta property="og:image" content="brand/og-image.png">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:locale:alternate" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#74DB4B">
+<link rel="icon" href="brand/logo/kade-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/social/profile-picture.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kade Studio","description":"Création de sites web pour petites entreprises belges.","email":"hello@kadestudio.be","areaServed":{"@type":"Country","name":"Belgium"},"knowsLanguage":["fr","nl"],"priceRange":"€€","logo":"brand/logo/kade-logo.png"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Courier+Prime:wght@400;700&display=swap">
@@ -45,7 +57,7 @@ h1,h2,h3{margin:0;text-wrap:balance}
 p{margin:0}
 
 /* grain photocopie */
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.13;mix-blend-mode:multiply;
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.09;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 .wrap{padding-inline:var(--gutter)}
@@ -206,6 +218,18 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .form .btn{margin-top:.4rem}
 .done{margin-top:1rem;font-weight:700;background:var(--sun);border:2px solid var(--ink);padding:.6rem .8rem}
 
+.assure{list-style:none;margin:1.4rem 0 0;padding:0;display:flex;flex-direction:column;gap:.5rem;color:var(--white);font-weight:700;font-size:var(--step-1)}
+.assure li{display:flex;gap:.6rem;align-items:baseline}
+.assure li::before{content:"✶";color:var(--sun)}
+.privacy{font-size:.78rem;margin-top:.8rem;line-height:1.4}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn[disabled]{opacity:.6;cursor:progress}
+.done--err{background:var(--bubble)}
+.foot a{color:var(--acid)}
+.concept{font-family:var(--f-type);font-size:.78rem;border:1.5px solid currentColor;border-radius:999px;padding:0 .5rem}
+.case__meta{flex-wrap:wrap;align-items:baseline}
+.case__meta strong{flex-basis:100%}
+.concept{white-space:nowrap}
 /* ---------- footer ---------- */
 .foot{background:var(--ink);color:#d9dacf;padding-block:2rem;font-family:var(--f-type);font-size:.88rem}
 .foot__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;align-items:center}
@@ -224,11 +248,16 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   .offer ul{grid-column:1/-1;grid-row:2}
 }
 @media (max-width:620px){
-  .nav ul{width:100%}
+  .nav__in{flex-wrap:nowrap;gap:.6rem}
+  .nav li:not(:last-child){display:none}
+  .lang{margin-left:auto}
+  .pill,.lang button{min-height:44px;display:inline-flex;align-items:center}
+  .pill--dark{padding-inline:.9rem;font-size:.9rem;white-space:nowrap}
+  .field input,.field select,.field textarea{min-height:44px}
   .collage{min-height:400px}
   .p1{width:66%;height:260px} .p2{width:58%;height:220px} .p3{width:64%;height:170px}
   .burst{width:118px;font-size:1rem;padding:1.2rem}
-  .burst--hero{left:auto;right:0;bottom:auto;top:-30px}
+  .burst--hero{left:auto;right:-6px;top:auto;bottom:-12px}
   .blocks{grid-template-columns:minmax(0,1fr)}
   .block{border-right:0;border-bottom:var(--border);min-height:260px}
   .block:last-child{border-bottom:0}
@@ -259,10 +288,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
     <div class="lang" role="group" aria-label="Langue / Taal"><button type="button" data-lang="fr" aria-pressed="true">FR</button><button type="button" data-lang="nl" aria-pressed="false">NL</button></div>
     <nav aria-label="Navigation principale" data-i18n-aria="al1">
       <ul>
-        <li><a class="pill" href="#travaux"><span data-i18n="n1">Travaux</span></a></li>
+        <li><a class="pill" href="#exemples"><span data-i18n="n1">Exemples</span></a></li>
         <li><a class="pill" href="#offres"><span data-i18n="n2">Offres</span></a></li>
         <li><a class="pill" href="#methode"><span data-i18n="n3">Méthode</span></a></li>
-        <li><a class="pill pill--dark" href="#contact"><span data-i18n="cta">Demander un devis</span></a></li>
+        <li><a class="pill pill--dark" href="#contact" data-track="nav_cta"><span data-i18n="cta">Demander un devis</span></a></li>
       </ul>
     </nav>
   </div>
@@ -275,8 +304,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
         <h1 id="hero-title"><span data-i18n="h1">Des sites web qui ont de la <em>gueule.</em></span></h1>
         <p class="hero__sub"><span data-i18n="sub">Je crée des sites vitrines pour les petites entreprises belges. Clairs, rapides, et qu'on n'oublie pas.</span></p>
         <div class="cta">
-          <a class="btn btn--main" href="#contact"><span data-i18n="cta">Demander un devis</span></a>
-          <a class="btn" href="#travaux"><span data-i18n="see">Voir les travaux</span></a>
+          <a class="btn btn--main" href="#contact" data-track="hero_cta"><span data-i18n="cta">Demander un devis</span></a>
+          <a class="btn" href="#exemples" data-track="hero_examples"><span data-i18n="see">Voir des exemples</span></a>
         </div>
       </div>
 
@@ -284,7 +313,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
         <div class="poster p2"><b>Barbier<br>Atelier 12</b><small><span data-i18n="pc1">Namur. Réservation en ligne, 7j/7.</span></small><div class="dots"></div></div>
         <div class="poster p1"><b>Boulan&shy;gerie Vanhove</b><small><span data-i18n="pc2">Gand. Le levain depuis 1987.<br>Commande du pain la veille.</span></small><div class="dots"></div></div>
         <div class="poster p3"><b><span data-i18n="c5">Friterie</span><br>Chez Mo</b><small><span data-i18n="pc3">Liège. Carte, horaires, itinéraire.</span></small></div>
-        <div class="burst burst--hero"><span><span data-i18n="burst">Livré en<br><span data-i18n="l7">3 semaines</span></span></span></div>
+        <div class="burst burst--hero"><span><span data-i18n="burst">Livré en<br>3 semaines</span></span></div>
       </div>
     </div>
     <span class="wordmark" aria-hidden="true">Kade Studio</span>
@@ -319,29 +348,29 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
     </div>
   </section>
 
-  <section class="work wrap" id="travaux" aria-labelledby="work-title">
-    <h2 id="work-title"><span data-i18n="wh">Chaque boîte a sa propre tête.</span></h2>
-    <p class="work__intro"><span data-i18n="wi">Pas de template recyclé. Chaque site part de votre métier, de votre quartier et de vos clients.</span></p>
-    <div class="rail" tabindex="0" aria-label="Projets, défilement horizontal" data-i18n-aria="al2">
+  <section class="work wrap" id="exemples" aria-labelledby="work-title">
+    <h2 id="work-title"><span data-i18n="wh">À quoi votre site pourrait ressembler.</span></h2>
+    <p class="work__intro"><span data-i18n="wi">Des concepts pour des commerces imaginaires, pour vous montrer le style. Votre site partira de votre métier, de votre quartier et de vos clients.</span></p>
+    <div class="rail" tabindex="0" aria-label="Exemples de concepts, défilement horizontal" data-i18n-aria="al2">
       <article class="case">
         <div class="case__art a1"><i><span data-i18n="c1">Boulangerie</span></i><b>Vanhove</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Boulangerie Vanhove</strong><span><span data-i18n="g1">Gand</span></span></div>
+        <div class="case__meta"><strong>Boulangerie Vanhove</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g1">Gand</span></span></div>
       </article>
       <article class="case">
         <div class="case__art a2"><i>Barbier</i><b>Atelier<br>12</b></div>
-        <div class="case__meta"><strong>Atelier 12</strong><span><span data-i18n="g2">Namur</span></span></div>
+        <div class="case__meta"><strong>Atelier 12</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g2">Namur</span></span></div>
       </article>
       <article class="case">
         <div class="case__art a3"><i><span data-i18n="c3">Fleuriste</span></i><b>Fleurs de Julie</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Fleurs de Julie</strong><span><span data-i18n="g3">Mons</span></span></div>
+        <div class="case__meta"><strong>Fleurs de Julie</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g3">Mons</span></span></div>
       </article>
       <article class="case">
         <div class="case__art a4"><i>Garage</i><b>Garage Peeters</b><div class="dots"></div></div>
-        <div class="case__meta"><strong>Garage Peeters</strong><span>Hasselt</span></div>
+        <div class="case__meta"><strong>Garage Peeters</strong><span class="concept" data-i18n="cpt">Concept</span><span>Hasselt</span></div>
       </article>
       <article class="case">
         <div class="case__art a5"><i><span data-i18n="c5">Friterie</span></i><b>Chez<br>Mo</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Friterie Chez Mo</strong><span><span data-i18n="g5">Liège</span></span></div>
+        <div class="case__meta"><strong>Friterie Chez Mo</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g5">Liège</span></span></div>
       </article>
     </div>
   </section>
@@ -410,6 +439,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
         <summary><span data-i18n="q4">Et si je veux changer quelque chose après?</span></summary>
         <p><span data-i18n="a4">Avec l'entretien mensuel, vous m'envoyez un message et c'est fait dans la semaine. Vous pouvez aussi modifier vos horaires et vos photos vous-même.</span></p>
       </details>
+      <details>
+        <summary><span data-i18n="q5">Il y a des frais cachés?</span></summary>
+        <p><span data-i18n="a5">Non. Le prix du devis est le prix final. Seul l'entretien mensuel est récurrent (hébergement, domaine .be, mises à jour), et il est sans engagement.</span></p>
+      </details>
     </div>
   </section>
 
@@ -417,12 +450,19 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
     <div class="contact__grid wrap">
       <div>
         <h2 id="contact-title"><span data-i18n="ch">Parlons de votre site.</span></h2>
+        <ul class="assure">
+          <li><span data-i18n="as1">Devis gratuit, sans engagement</span></li>
+          <li><span data-i18n="as2">Prix fixe, annoncé avant de commencer</span></li>
+          <li><span data-i18n="as3">Un seul interlocuteur, du premier appel à la mise en ligne</span></li>
+        </ul>
         <div class="contact__mail">
           <span class="mail" id="mail">hello@kadestudio.be</span>
           <button class="btn" type="button" id="copy"><span data-i18n="copy">Copier l'adresse</span></button>
         </div>
       </div>
-      <form class="form" id="quote" novalidate>
+      <!-- Envoi du formulaire: collez ici l'URL de votre service (Formspree, Web3Forms, Netlify...).
+           Vide = le logiciel mail du visiteur s'ouvre avec la demande pré-remplie. -->
+      <form class="form" id="quote" novalidate method="post" data-endpoint="">
         <p class="form__top"><span data-i18n="ft">Réponse sous 24 h ouvrables</span></p>
         <h3><span data-i18n="cta">Demander un devis</span></h3>
         <div class="field">
@@ -436,6 +476,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
           <span class="err" id="e-mail"></span>
         </div>
         <div class="field">
+          <label for="f-tel"><span data-i18n="fphone">Téléphone (optionnel)</span></label>
+          <input id="f-tel" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0470 12 34 56" data-i18n-ph="ph4">
+        </div>
+        <div class="field">
           <label for="f-type"><span data-i18n="fa">Votre activité</span></label>
           <select id="f-type" name="type">
             <option value="Commerce" data-i18n="op0">Commerce</option><option value="Salon ou institut" data-i18n="op1">Salon ou institut</option><option value="Artisan ou indépendant" data-i18n="op2">Artisan ou indépendant</option><option value="Resto ou café" data-i18n="op3">Resto ou café</option><option value="Autre" data-i18n="op4">Autre</option>
@@ -445,8 +489,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
           <label for="f-msg"><span data-i18n="fp">Votre projet, en deux lignes</span></label>
           <textarea id="f-msg" name="message" placeholder="J'ai une boulangerie à Wavre et pas encore de site." data-i18n-ph="ph3"></textarea>
         </div>
-        <button class="btn btn--main" type="submit"><span data-i18n="cta">Demander un devis</span></button>
-        <p class="done" id="done" hidden></p>
+        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn--main" type="submit" id="send"><span data-i18n="cta">Demander un devis</span></button>
+        <p class="privacy"><span data-i18n="priv">Vos données servent uniquement à répondre à votre demande. Elles ne sont ni revendues ni utilisées pour de la publicité.</span></p>
+        <p class="done" id="done" role="status" hidden></p>
       </form>
     </div>
   </section>
@@ -457,15 +503,19 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
     <span class="logo">KADE STUDIO</span>
     <span><span data-i18n="f1">Sites web pour petites entreprises, Belgique</span></span>
     <span><span data-i18n="f2">N° d'entreprise BE 0XXX.XXX.XXX</span></span>
+    <a href="mailto:hello@kadestudio.be">hello@kadestudio.be</a>
     <span>© 2026 Kade Studio</span>
   </div>
 </footer>
 
 <script>
 (function(){
-  var NL={"b1": "Websites voor kleine Belgische bedrijven", "b2": "Brussel, Wallonië, Vlaanderen", "b3": "Nederlands en Frans", "b4": "Online in 3 weken", "n1": "Werk", "n2": "Prijzen", "n3": "Werkwijze", "cta": "Offerte aanvragen", "h1": "Websites die <em>opvallen.</em>", "sub": "Ik maak websites voor kleine Belgische bedrijven. Helder, snel, en niet te vergeten.", "see": "Bekijk het werk", "pc1": "Namen. Online reserveren, 7 dagen op 7.", "pc2": "Gent. Zuurdesem sinds 1987.<br>Brood bestellen de dag ervoor.", "pc3": "Luik. Menu, openingsuren, route.", "burst": "Online in<br>3 weken", "who": "Voor mensen<br>die ondernemen.", "whop": "U runt een winkel, een atelier of een praktijk. U hebt geen tijd om te worstelen met een CMS. Ik regel alles, van de teksten tot de lancering.", "k1": "De winkel om de hoek", "k1p": "Openingsuren up-to-date, producten in beeld, route in één klik. Mensen vinden u op Google Maps en stappen binnen.", "k2": "Kapsalons &amp; instituten", "k2p": "Online afspraken, duidelijke prijzen, een galerij van uw werk. Minder telefoontjes terwijl u knipt.", "k3": "Vakmensen &amp; zelfstandigen", "k3p": "Een portfolio dat uw werk toont en een offerteformulier. Gedaan met klanten die vragen: ‘wat doet u eigenlijk precies?’", "k4": "Restaurants &amp; cafés", "k4p": "Een menukaart die leesbaar is op de gsm, reservaties, sociale media gekoppeld. Geen pdf van de kaart om op in te zoomen.", "wh": "Elke zaak heeft een eigen gezicht.", "wi": "Geen hergebruikt template. Elke site vertrekt van uw vak, uw buurt en uw klanten.", "c1": "Bakkerij", "c3": "Bloemist", "c5": "Frituur", "g1": "Gent", "g2": "Namen", "g3": "Bergen", "g5": "Luik", "r1": "Snel op mobiel", "r2": "Vindbaar op Google", "r3": "Makkelijk aan te passen", "r4": "Gehost in Europa", "oh": "Drie formules.<br><span>Nul jargon.</span>", "on": "Vaste prijzen, vooraf meegedeeld. Bedragen excl. btw. Voorschot van 30 % bij de start, de rest bij de lancering.", "htva": "excl. btw", "o1": "Eén pagina", "o2": "Etalage", "o3": "Webshop", "l1": "1 pagina", "l2": "contactformulier", "l3": "10 dagen", "l4": "tot 6 pagina's", "l5": "teksten geschreven", "l6": "lokale SEO", "l7": "3 weken", "l8": "webshop", "l9": "betalen met Bancontact", "l10": "voorraadbeheer", "l11": "opleiding inbegrepen", "tag": "Meest gekozen", "m1": "39 €/maand", "m2": " Hosting, .be-domeinnaam, updates en kleine aanpassingen. Zonder verbintenis.", "mh": "Van eerste gesprek tot lancering.", "s1": "We praten", "s1p": "30 minuten aan de telefoon of bij een koffie. U vertelt over uw zaak, ik stel de vragen.", "d1": "Dag 1", "s2": "Ik ontwerp", "s2p": "Ik toon u het ontwerp van de homepage. U zegt wat u bevalt en wat niet bij u past.", "s3": "Ik bouw", "s3p": "Alle pagina's, teksten, foto's en de mobiele versie. U volgt de voortgang via een privélink.", "s4": "We lanceren", "s4p": "Online zetten, Google-bedrijfsprofiel bijgewerkt, en een korte opleiding om zelf uw openingsuren aan te passen.", "wk1": "Week 1", "wk2": "Week 2", "wk3": "Week 3", "fh": "U vraagt zich af.", "q1": "Moet ik de teksten zelf schrijven?", "a1": "Nee. In de formule Etalage schrijf ik de teksten op basis van ons gesprek. U leest na en past aan wat u wilt.", "q2": "Kan mijn site in het Nederlands en het Frans?", "a2": "Ja. De tweede taal zit inbegrepen in de formule Etalage. Voor Engels of Duits bespreken we het in de offerte.", "q3": "Ik heb geen logo en geen foto's.", "a3": "Geen probleem. Ik kan een eenvoudig logo maken en u een fotograaf in de buurt aanraden, of werken met foto's van uw gsm.", "q4": "En als ik later iets wil veranderen?", "a4": "Met het maandelijkse onderhoud stuurt u me een bericht en het is binnen de week geregeld. U kunt ook zelf uw openingsuren en foto's aanpassen.", "ch": "Tijd voor uw site.", "copy": "Kopieer het adres", "ft": "Antwoord binnen 24 werkuren", "fn": "Uw naam", "fm": "Uw e-mail", "fa": "Uw activiteit", "fp": "Uw project, in twee regels", "f1": "Websites voor kleine bedrijven, België", "f2": "Ondernemingsnr. BE 0XXX.XXX.XXX", "from": "vanaf", "op0": "Winkel", "op1": "Kapsalon of instituut", "op2": "Vakman of zelfstandige", "op3": "Restaurant of café", "op4": "Andere", "ph1": "Voor- en achternaam", "ph2": "u@voorbeeld.be", "ph3": "Ik heb een bakkerij in Leuven en nog geen website.", "al1": "Hoofdnavigatie", "al2": "Projecten, horizontaal scrollen", "js_name": "Vul uw naam in, zodat ik weet wie ik moet antwoorden.", "js_mail": "Dit e-mailadres lijkt onvolledig.", "js_done": "Aanvraag klaar, {n}. Stuur ze ook naar hello@kadestudio.be als u binnen 24 uur geen antwoord krijgt.", "js_copied": "Adres gekopieerd", "title": "Kade Studio", "desc": "Kade Studio maakt websites voor kleine Belgische bedrijven. Helder, snel, en niet te vergeten."};
-  var FR={"js_name": "Indiquez votre nom pour que je sache à qui répondre.", "js_mail": "Cette adresse email semble incomplète.", "js_done": "Demande prête, {n}. Envoyez-la aussi à hello@kadestudio.be si vous ne recevez pas de réponse sous 24 h.", "js_copied": "Adresse copiée", "desc": "Kade Studio crée des sites vitrines pour les petites entreprises belges. Clairs, rapides, et qu'on n'oublie pas."};
+  var NL={"b1": "Websites voor kleine Belgische bedrijven", "b2": "Brussel, Wallonië, Vlaanderen", "b3": "Nederlands en Frans", "b4": "Online in 3 weken", "n1": "Voorbeelden", "n2": "Prijzen", "n3": "Werkwijze", "cta": "Offerte aanvragen", "h1": "Websites die <em>opvallen.</em>", "sub": "Ik maak websites voor kleine Belgische bedrijven. Helder, snel, en niet te vergeten.", "see": "Bekijk voorbeelden", "pc1": "Namen. Online reserveren, 7 dagen op 7.", "pc2": "Gent. Zuurdesem sinds 1987.<br>Brood bestellen de dag ervoor.", "pc3": "Luik. Menu, openingsuren, route.", "burst": "Online in<br>3 weken", "who": "Voor mensen<br>die ondernemen.", "whop": "U runt een winkel, een atelier of een praktijk. U hebt geen tijd om te worstelen met een CMS. Ik regel alles, van de teksten tot de lancering.", "k1": "De winkel om de hoek", "k1p": "Openingsuren up-to-date, producten in beeld, route in één klik. Mensen vinden u op Google Maps en stappen binnen.", "k2": "Kapsalons &amp; instituten", "k2p": "Online afspraken, duidelijke prijzen, een galerij van uw werk. Minder telefoontjes terwijl u knipt.", "k3": "Vakmensen &amp; zelfstandigen", "k3p": "Een portfolio dat uw werk toont en een offerteformulier. Gedaan met klanten die vragen: ‘wat doet u eigenlijk precies?’", "k4": "Restaurants &amp; cafés", "k4p": "Een menukaart die leesbaar is op de gsm, reservaties, sociale media gekoppeld. Geen pdf van de kaart om op in te zoomen.", "wh": "Zo kan uw site eruitzien.", "wi": "Concepten voor verzonnen zaken, om u de stijl te tonen. Uw site vertrekt van uw vak, uw buurt en uw klanten.", "c1": "Bakkerij", "c3": "Bloemist", "c5": "Frituur", "g1": "Gent", "g2": "Namen", "g3": "Bergen", "g5": "Luik", "r1": "Snel op mobiel", "r2": "Vindbaar op Google", "r3": "Makkelijk aan te passen", "r4": "Gehost in Europa", "oh": "Drie formules.<br><span>Nul jargon.</span>", "on": "Vaste prijzen, vooraf meegedeeld. Bedragen excl. btw. Voorschot van 30 % bij de start, de rest bij de lancering.", "htva": "excl. btw", "o1": "Eén pagina", "o2": "Etalage", "o3": "Webshop", "l1": "1 pagina", "l2": "contactformulier", "l3": "10 dagen", "l4": "tot 6 pagina's", "l5": "teksten geschreven", "l6": "lokale SEO", "l7": "3 weken", "l8": "webshop", "l9": "betalen met Bancontact", "l10": "voorraadbeheer", "l11": "opleiding inbegrepen", "tag": "Meest gekozen", "m1": "39 €/maand", "m2": " Hosting, .be-domeinnaam, updates en kleine aanpassingen. Zonder verbintenis.", "mh": "Van eerste gesprek tot lancering.", "s1": "We praten", "s1p": "30 minuten aan de telefoon of bij een koffie. U vertelt over uw zaak, ik stel de vragen.", "d1": "Dag 1", "s2": "Ik ontwerp", "s2p": "Ik toon u het ontwerp van de homepage. U zegt wat u bevalt en wat niet bij u past.", "s3": "Ik bouw", "s3p": "Alle pagina's, teksten, foto's en de mobiele versie. U volgt de voortgang via een privélink.", "s4": "We lanceren", "s4p": "Online zetten, Google-bedrijfsprofiel bijgewerkt, en een korte opleiding om zelf uw openingsuren aan te passen.", "wk1": "Week 1", "wk2": "Week 2", "wk3": "Week 3", "fh": "U vraagt zich af.", "q1": "Moet ik de teksten zelf schrijven?", "a1": "Nee. In de formule Etalage schrijf ik de teksten op basis van ons gesprek. U leest na en past aan wat u wilt.", "q2": "Kan mijn site in het Nederlands en het Frans?", "a2": "Ja. De tweede taal zit inbegrepen in de formule Etalage. Voor Engels of Duits bespreken we het in de offerte.", "q3": "Ik heb geen logo en geen foto's.", "a3": "Geen probleem. Ik kan een eenvoudig logo maken en u een fotograaf in de buurt aanraden, of werken met foto's van uw gsm.", "q4": "En als ik later iets wil veranderen?", "a4": "Met het maandelijkse onderhoud stuurt u me een bericht en het is binnen de week geregeld. U kunt ook zelf uw openingsuren en foto's aanpassen.", "ch": "Tijd voor uw site.", "copy": "Kopieer het adres", "ft": "Antwoord binnen 24 werkuren", "fn": "Uw naam", "fm": "Uw e-mail", "fa": "Uw activiteit", "fp": "Uw project, in twee regels", "f1": "Websites voor kleine bedrijven, België", "f2": "Ondernemingsnr. BE 0XXX.XXX.XXX", "from": "vanaf", "op0": "Winkel", "op1": "Kapsalon of instituut", "op2": "Vakman of zelfstandige", "op3": "Restaurant of café", "op4": "Andere", "ph1": "Voor- en achternaam", "ph2": "u@voorbeeld.be", "ph3": "Ik heb een bakkerij in Leuven en nog geen website.", "al1": "Hoofdnavigatie", "al2": "Voorbeeldconcepten, horizontaal scrollen", "js_name": "Vul uw naam in, zodat ik weet wie ik moet antwoorden.", "js_mail": "Dit e-mailadres lijkt onvolledig.", "js_copied": "Adres gekopieerd", "title": "Kade Studio | Websites voor kleine Belgische bedrijven", "desc": "Kade Studio maakt websites voor kleine Belgische bedrijven. Helder, snel, en niet te vergeten.", "cpt": "Concept", "q5": "Zijn er verborgen kosten?", "a5": "Nee. De prijs in de offerte is de eindprijs. Alleen het maandelijkse onderhoud komt terug (hosting, .be-domein, updates), en dat is zonder verbintenis.", "as1": "Gratis offerte, zonder verbintenis", "as2": "Vaste prijs, vooraf meegedeeld", "as3": "Eén aanspreekpunt, van het eerste gesprek tot de lancering", "fphone": "Telefoon (optioneel)", "ph4": "0470 12 34 56", "priv": "Uw gegevens dienen alleen om uw aanvraag te beantwoorden. Ze worden niet doorverkocht en niet gebruikt voor reclame.", "js_ok": "Bedankt {n}, uw aanvraag is verstuurd. U krijgt antwoord binnen 24 werkuren.", "js_err": "Het versturen is niet gelukt. Mail uw aanvraag naar hello@kadestudio.be, dan antwoord ik zo snel mogelijk.", "js_mailto": "Uw mailprogramma opent met de aanvraag klaar. Klik daar op versturen. Opent er niets? Mail naar hello@kadestudio.be.", "js_sending": "Versturen...", "js_subject": "Offerteaanvraag via kadestudio.be"};
+  var FR={"js_name": "Indiquez votre nom pour que je sache à qui répondre.", "js_mail": "Cette adresse email semble incomplète.", "js_copied": "Adresse copiée", "desc": "Kade Studio crée des sites vitrines pour les petites entreprises belges. Clairs, rapides, et qu'on n'oublie pas.", "title": "Kade Studio | Sites web pour petites entreprises belges", "js_ok": "Merci {n}, votre demande est envoyée. Je vous réponds sous 24 h ouvrables.", "js_err": "L'envoi n'a pas fonctionné. Écrivez-moi à hello@kadestudio.be, je vous réponds au plus vite.", "js_mailto": "Votre logiciel mail s'ouvre avec la demande prête. Cliquez sur envoyer. Rien ne s'ouvre? Écrivez à hello@kadestudio.be.", "js_sending": "Envoi...", "js_subject": "Demande de devis via kadestudio.be"};
   var lang='fr';
+  window.dataLayer=window.dataLayer||[];
+  function track(ev,data){var o={event:ev};for(var k in data)o[k]=data[k];window.dataLayer.push(o);if(window.plausible)window.plausible(ev,{props:data})}
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a)track('cta_click',{id:a.dataset.track,lang:lang})});
   document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;if(!(k in FR))FR[k]=el.innerHTML});
   document.querySelectorAll('[data-i18n-ph]').forEach(function(el){FR[el.dataset.i18nPh]=el.placeholder});
   document.querySelectorAll('[data-i18n-aria]').forEach(function(el){FR[el.dataset.i18nAria]=el.getAttribute('aria-label')});
@@ -477,12 +527,13 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
     document.querySelectorAll('[data-i18n-ph]').forEach(function(el){el.placeholder=D[el.dataset.i18nPh]});
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el){el.setAttribute('aria-label',D[el.dataset.i18nAria])});
     var m=document.getElementById('meta-desc');if(m)m.content=D.desc;
+    document.title=D.title;
     document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false')});
     ['e-name','e-mail'].forEach(function(id){document.getElementById(id).textContent=''});
     document.getElementById('done').hidden=true;
     try{localStorage.setItem('kade-lang',lang)}catch(e){}
   }
-  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang);track('lang_switch',{lang:lang})})});
   var start='fr';
   try{start=localStorage.getItem('kade-lang')||''}catch(e){start=''}
   if(location.hash==='#nl')start='nl';else if(location.hash==='#fr')start='fr';
@@ -490,17 +541,31 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   if(start==='nl')setLang('nl');
 
   var form=document.getElementById('quote');
-  var mailRe=/^\S+@\S+\.\S+$/;
+  var mailRe=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var sendBtn=document.getElementById('send');
+  function show(msg,err){var d=document.getElementById('done');d.textContent=msg;d.classList.toggle('done--err',!!err);d.hidden=false}
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var n=form.elements.name,m=form.elements.email;
-    var okN=!!n.value.trim(),okM=mailRe.test(m.value);
+    var okN=!!n.value.trim(),okM=mailRe.test(m.value.trim());
     document.getElementById('e-name').textContent=okN?'':t('js_name');
     document.getElementById('e-mail').textContent=okM?'':t('js_mail');
-    if(!okN||!okM)return;
-    var d=document.getElementById('done');
-    d.textContent=t('js_done').replace('{n}',n.value.trim().split(' ')[0]);
-    d.hidden=false;
+    if(!okN){n.focus();return}
+    if(!okM){m.focus();return}
+    if(form.elements.website.value)return;
+    var first=n.value.trim().split(' ')[0];
+    var data={name:n.value.trim(),email:m.value.trim(),phone:form.elements.phone.value.trim(),type:form.elements.type.value,message:form.elements.message.value.trim(),lang:lang};
+    var endpoint=form.dataset.endpoint;
+    if(!endpoint){
+      var body=[data.message,'',data.name,data.email,data.phone,data.type].filter(function(x,i){return x||i===1}).join('\n');
+      location.href='mailto:hello@kadestudio.be?subject='+encodeURIComponent(t('js_subject'))+'&body='+encodeURIComponent(body);
+      show(t('js_mailto'));track('lead_mailto',{type:data.type,lang:lang});return;
+    }
+    var label=sendBtn.innerHTML;sendBtn.disabled=true;sendBtn.textContent=t('js_sending');
+    fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){if(!r.ok)throw new Error(r.status);form.reset();show(t('js_ok').replace('{n}',first));track('lead_submit',{type:data.type,lang:lang})})
+      .catch(function(){show(t('js_err'),true);track('lead_error',{lang:lang})})
+      .then(function(){sendBtn.disabled=false;sendBtn.innerHTML=label;sendBtn.querySelector('[data-i18n]').innerHTML=t('cta')});
   });
   var c=document.getElementById('copy');
   c.addEventListener('click',function(){
