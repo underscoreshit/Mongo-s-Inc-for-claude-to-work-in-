@@ -61,7 +61,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--acid)}
   <p class="abs poster" id="price" style="left:62px;top:600px;font-size:440px;font-variant-numeric:tabular-nums;color:var(--white);-webkit-text-stroke:12px var(--ink);paint-order:stroke fill;text-shadow:18px 18px 0 var(--ink)">0 €</p>
   <p class="abs mono" id="tax" style="left:80px;top:1000px;font-size:52px">excl. btw</p>
   <div class="abs bsh" id="b4s" style="left:615px;top:1035px;width:400px;height:400px"></div>
-  <div class="abs burst" id="b4" style="left:600px;top:1020px;width:400px;height:400px;font-size:74px"><span style="transform:rotate(-8deg)">Online in<br>3 weken</span></div>
+  <div class="abs burst" id="b4" style="left:600px;top:1020px;width:400px;height:400px;font-size:74px"><span style="transform:rotate(-8deg)">Online in<br>1-2 dagen</span></div>
 </div>
 
 <!-- SCENE 5: logo + actie -->
@@ -123,7 +123,7 @@ function render(t){
   // S4: vaste prijs
   set('s4h',{transform:`translateY(${lerp(-500,0,oq(p(t,7.85,8.2)))}px)`});
   set('frm',{opacity:p(t,8.1,8.2)});
-  $('price').textContent=Math.round(690*oc(p(t,8.15,9.0)))+' €';
+  $('price').textContent=Math.round(490*oc(p(t,8.15,9.0)))+' €';
   set('price',{transform:`scale(${t>9&&t<9.25?1+.06*Math.sin(p(t,9,9.25)*Math.PI):1})`,transformOrigin:'0 50%'});
   set('tax',{opacity:p(t,9.0,9.1)});
   const b4=ob(p(t,9.2,9.55));for(const id of ['b4','b4s'])set(id,{transform:`scale(${b4}) rotate(${(t-9.2)*40}deg)`,opacity:t>9.2?1:0});

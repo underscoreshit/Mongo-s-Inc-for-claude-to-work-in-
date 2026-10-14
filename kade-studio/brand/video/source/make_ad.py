@@ -9,13 +9,13 @@ T = {
  "fr": dict(s1h="Votre client<br>vous cherche.", query="boulangerie wavre", zero="0 résultat", none="Aucun site trouvé.",
             s2b="Chez le<br>voisin&nbsp;?", l3a="On crée", l3b="votre", l3c="site web.", s3p="Pour les petites entreprises belges. Clair, rapide, FR&nbsp;+&nbsp;NL.",
             s3=["Clair.", "Rapide sur mobile.", "FR + NL.", "Trouvable."],
-            s4="Prix fixe", frm="dès", tax="HTVA", burst="Livré en<br>3 semaines",
+            s4="Prix fixe", frm="dès", tax="HTVA", burst="Livré en<br>1-2 jours",
             cta="Demander un devis", bio="Lien<br>en bio", url="kadestudio.be",
             band=["Sites web pour petites entreprises belges", "Prix fixe", "FR + NL"]),
  "nl": dict(s1h="Uw klant<br>zoekt u.", query="bakkerij leuven", zero="0 resultaten", none="Geen website gevonden.",
             s2b="Bij de<br>buren?", l3a="Wij maken", l3b="uw", l3c="website.", s3p="Voor kleine Belgische zaken. Helder, snel, NL&nbsp;+&nbsp;FR.",
             s3=["Helder.", "Snel op de gsm.", "NL + FR.", "Vindbaar."],
-            s4="Vaste prijs", frm="vanaf", tax="excl. btw", burst="Online in<br>3 weken",
+            s4="Vaste prijs", frm="vanaf", tax="excl. btw", burst="Online in<br>1-2 dagen",
             cta="Offerte aanvragen", bio="Link<br>in bio", url="kadestudio.be",
             band=["Websites voor kleine Belgische bedrijven", "Vaste prijs", "NL + FR"]),
 }
@@ -153,7 +153,7 @@ function render(t){
   // S4: vaste prijs
   set('s4h',{transform:`translateY(${lerp(-500,0,oq(p(t,7.85,8.2)))}px)`});
   set('frm',{opacity:p(t,8.1,8.2)});
-  $('price').textContent=Math.round(690*oc(p(t,8.15,9.0)))+' €';
+  $('price').textContent=Math.round(490*oc(p(t,8.15,9.0)))+' €';
   set('price',{transform:`scale(${t>9&&t<9.25?1+.06*Math.sin(p(t,9,9.25)*Math.PI):1})`,transformOrigin:'0 50%'});
   set('tax',{opacity:p(t,9.0,9.1)});
   const b4=ob(p(t,9.2,9.55));for(const id of ['b4','b4s'])set(id,{transform:`scale(${b4}) rotate(${(t-9.2)*40}deg)`,opacity:t>9.2?1:0});

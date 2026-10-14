@@ -23,7 +23,7 @@ Statische site, geen installatie nodig. Upload de hele map `kade-studio/` naar j
 - [ ] **E-mail**: `hello@kadestudio.be` (index.html en `STR` onderaan in het script).
 - [ ] **Ondernemingsnummer**: `BE 0XXX.XXX.XXX` in de footer. Wettelijk verplicht op een Belgische zakelijke website, samen met je adres.
 - [ ] **Statistieken**: haal de commentaartekens weg rond de Plausible-regels in `<head>`. De klik- en aanvraag-events worden al verstuurd.
-- [ ] **Prijzen en termijnen** nakijken: 690 €, 1 490 €, vanaf 2 900 €, 39 €/maand, 3 weken, 24 uur.
+- [ ] **Prijzen en termijnen** nakijken: 490 €, 1 490 €, vanaf 2 900 €, 39 €/maand, 1-2 dagen (webshop 1 week), 24 uur.
 
 ## Wat er gemeten wordt (`dataLayer` en Plausible)
 | Event | Wanneer |

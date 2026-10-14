@@ -37,18 +37,18 @@ ffmpeg -framerate 30 -i frames-nl/%04d.jpg -vf crop=1080:1350:0:285 -c:v libx264
 0-3 s: "Uw klant zoekt u." Cursor typt een zoekopdracht, er is geen website, met een 404-stempel.
 3-4,8 s: "Bij de buren?"
 4,8-7,8 s: "Wij maken uw website." Voor kleine Belgische zaken. Helder, snel, NL + FR.
-7,8-10,6 s: Vaste prijs vanaf 690 € excl. btw, sticker "Online in 3 weken".
+7,8-10,6 s: Vaste prijs vanaf 490 € excl. btw, sticker "Online in 1-2 dagen".
 10,6-13,5 s: Logo, cursor klikt op "Offerte aanvragen", "Link in bio".
 
 Alle bewegingen zijn vloeiend (ease-out); scènes schuiven over elkaar zonder pauze.
 
 ## Advertentietekst voor Meta Ads Manager
 **NL**
-- Primaire tekst: Uw klanten zoeken u op Google. Vinden ze iets? Kade Studio maakt heldere websites voor kleine Belgische bedrijven, in het Nederlands en het Frans. Vaste prijs, online in 3 weken.
-- Kop: Uw website, vanaf 690 € excl. btw
+- Primaire tekst: Uw klanten zoeken u op Google. Vinden ze iets? Kade Studio maakt heldere websites voor kleine Belgische bedrijven, in het Nederlands en het Frans. Vaste prijs, online in 1-2 dagen.
+- Kop: Uw website, vanaf 490 € excl. btw
 - Knop: Offerte aanvragen
 
 **FR**
-- Texte principal : Vos clients vous cherchent sur Google. Ils trouvent quoi ? Kade Studio crée des sites clairs pour les petites entreprises belges, en français et en néerlandais. Prix fixe, livré en 3 semaines.
-- Titre : Votre site web, dès 690 € HTVA
+- Texte principal : Vos clients vous cherchent sur Google. Ils trouvent quoi ? Kade Studio crée des sites clairs pour les petites entreprises belges, en français et en néerlandais. Prix fixe, livré en 1-2 jours.
+- Titre : Votre site web, dès 490 € HTVA
 - Bouton : Demander un devis
