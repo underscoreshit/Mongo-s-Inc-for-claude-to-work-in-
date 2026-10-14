@@ -1,6 +1,6 @@
-"""Gig-afbeeldingen voor Fiverr (1280x769). Genereert gig-1..3.html; renderen met render_gigs.js.
-Opbouw per beeld (marketing): 1 = wat je krijgt in één oogopslag (merk + site-structuren),
-2 = waarom bij Kade (zes troeven als iconen), 3 = pakketten met de middelste als aanrader."""
+"""Fiverr gig images (1280x769). Generates gig-1..3.html; render with render_gigs.js.
+One job per image: 1 = what you get at a glance (brand + site structures),
+2 = why Kade (six benefits as icons), 3 = packages with the middle one highlighted."""
 import json
 import math
 from pathlib import Path
@@ -38,7 +38,7 @@ body{{width:1280px;height:769px;overflow:hidden;font-family:BR,sans-serif;color:
 .band span::after{{content:" ✶";color:var(--tomato)}}
 .burst{{display:grid;place-items:center;text-align:center;background:var(--white);clip-path:{star()};font-family:BS;font-weight:900;text-transform:uppercase;line-height:.92}}
 .bsh{{background:var(--ink);clip-path:{star()}}}
-/* wireframes: website-structuren zonder tekst */
+/* wireframes: website structures without text */
 .win{{position:absolute;background:var(--white);border:5px solid var(--ink);box-shadow:12px 12px 0 var(--ink);overflow:hidden}}
 .win .bar{{height:34px;background:var(--paper);border-bottom:5px solid var(--ink);display:flex;align-items:center;gap:8px;padding:0 12px}}
 .win .bar i{{width:14px;height:14px;border-radius:50%;border:3px solid var(--ink);display:block}}
@@ -79,7 +79,7 @@ def lines(widths, gap=8, light=False):
     return f'<div style="display:flex;flex-direction:column;gap:{gap}px">' + "".join(f'<div class="ln{" l" if light else ""}" style="width:{w}%"></div>' for w in widths) + "</div>"
 
 
-# browservenster met een site-structuur (hero, drie kaarten, knop)
+# browser window with a site structure (hero, three cards, button)
 def window(x, y, w, h, hero, c1, c2, c3, rot=0):
     return f'''<div class="win" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;transform:rotate({rot}deg)">
   <div class="bar"><i></i><i></i><i></i><u></u></div>
@@ -93,7 +93,7 @@ def window(x, y, w, h, hero, c1, c2, c3, rot=0):
 </div>'''
 
 
-# gsm met een site-structuur
+# phone with a site structure
 def phone(x, y, w, h, hero, c1, c2, rot=0):
     return f'''<div class="phone" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;transform:rotate({rot}deg)"><div class="scr">
   <div class="nav" style="padding:16px 14px"><b></b><s></s><i style="width:22px;height:4px;box-shadow:0 7px 0 var(--ink),0 -7px 0 var(--ink);opacity:1;border-radius:0"></i></div>
@@ -104,7 +104,7 @@ def phone(x, y, w, h, hero, c1, c2, rot=0):
 </div></div>'''
 
 
-# ---------- beeld 1: merk + structuren ----------
+# ---------- image 1: brand + structures ----------
 g1 = (f'<div class="abs" style="inset:0;background:var(--acid)"></div>{BAND}'
       f'<div class="abs logo" style="left:60px;top:110px;width:520px">{logo}</div>'
       f'<h1 class="abs disp" style="left:64px;top:430px;width:560px;font-size:70px">Websites that <em style="font-style:normal;background:var(--ink);color:var(--acid);padding:0 .12em .05em;border-radius:.1em;display:inline-block;transform:rotate(-2deg)">stand out.</em></h1>'
@@ -114,7 +114,7 @@ g1 = (f'<div class="abs" style="inset:0;background:var(--acid)"></div>{BAND}'
       + f'<div class="abs bsh" style="left:598px;top:548px;width:190px;height:190px"></div><div class="abs burst" style="left:590px;top:540px;width:190px;height:190px;font-size:34px;background:var(--sun)"><span style="transform:rotate(-8deg)">3 weeks<br>delivery</span></div>'
       f'<img class="abs" src="{cur["point2"]}" style="left:1120px;top:590px;width:64px;image-rendering:pixelated;z-index:30">')
 
-# ---------- beeld 2: zes troeven als iconen ----------
+# ---------- image 2: six benefits as icons ----------
 ICONS = {
  "design": '<svg viewBox="0 0 64 64"><rect x="6" y="10" width="52" height="44" rx="4" fill="#fff" stroke="#151515" stroke-width="5"/><rect x="12" y="18" width="20" height="14" fill="#3B6BFF"/><rect x="36" y="18" width="16" height="5" fill="#151515"/><rect x="36" y="27" width="12" height="5" fill="#151515"/><rect x="12" y="38" width="40" height="5" fill="#FF5426"/></svg>',
  "copy": '<svg viewBox="0 0 64 64"><path d="M14 50L44 20l8 8-30 30H14z" fill="#FFD43A" stroke="#151515" stroke-width="5" stroke-linejoin="round"/><path d="M40 24l8 8" stroke="#151515" stroke-width="5"/><rect x="8" y="54" width="48" height="5" fill="#151515"/></svg>',
@@ -138,10 +138,10 @@ g2 = (f'<div class="abs" style="inset:0;background:var(--ink)"></div>'
       + '</div>'
       f'<div class="abs mono" style="left:66px;top:716px;font-size:24px;color:var(--acid)">kadestudio.be · Belgium · replies within a few hours</div>')
 
-# ---------- beeld 3: pakketten ----------
-pk = [("One page", "€ 350", ["1 page", "contact form + map", "7 days"], "var(--white)", "var(--ink)", ""),
-      ("Business site", "€ 890", ["up to 6 pages", "copy written for you", "local SEO", "14 days"], "var(--sun)", "var(--ink)", "transform:translateY(-34px);box-shadow:14px 14px 0 var(--ink)"),
-      ("Bilingual + shop", "€ 1 690", ["up to 8 pages", "second language", "booking or catalogue", "21 days"], "var(--cobalt)", "var(--white)", "")]
+# ---------- image 3: packages ----------
+pk = [("One page", "€ 350", ["1 page", "contact form + map", "2 days"], "var(--white)", "var(--ink)", ""),
+      ("Business site", "€ 890", ["up to 6 pages", "copy written for you", "local SEO", "5 days"], "var(--sun)", "var(--ink)", "transform:translateY(-34px);box-shadow:14px 14px 0 var(--ink)"),
+      ("Next level", "€ 1 690", ["up to 10 pages", "second language", "booking, catalogue, accounts", "10 days"], "var(--cobalt)", "var(--white)", "")]
 cards = "".join(f'<div class="pk" style="background:{bg};color:{fg};{ex}"><div class="n">{n}</div><div class="p">{p}</div><div class="d">{"".join(f"<div>{x}</div>" for x in d)}</div></div>' for n, p, d, bg, fg, ex in pk)
 g3 = (f'<div class="abs" style="inset:0;background:var(--bubble)"></div>'
       f'<h2 class="abs poster" style="left:60px;top:56px;font-size:90px;white-space:nowrap">Fixed price. <span style="color:var(--tomato)">No jargon.</span></h2>'

@@ -1,6 +1,6 @@
-# Eerste Instagram-post: carrousel van 5 slides
+# First Instagram post: 5-slide carousel
 
-Upload `fr/first-post/slide-1.png` t.e.m. `slide-5.png` (of de `nl/`-versie) in die volgorde als één carrousel.
+Upload `fr/first-post/slide-1.png` to `slide-5.png` (or the `nl/` version) in that order as one carousel.
 
 ## Caption NL
 Kade Studio is open. ✶
@@ -25,4 +25,4 @@ Pas de template, pas de jargon, pas de surprise sur la facture. Un site clair, l
 #pme #webdesign #sitevitrine #belgique #bruxelles #wallonie #commercelocal #independant #kadestudio
 
 ## Tip
-Post FR en NL niet op dezelfde dag. Begin met de taal van de meeste klanten in je regio, de andere versie 2 à 3 dagen later.
+Do not post FR and NL on the same day. Start with the language most of your customers speak, the other version 2 or 3 days later.

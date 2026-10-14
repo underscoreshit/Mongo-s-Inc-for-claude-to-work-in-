@@ -1,43 +1,46 @@
-# Kade Studio, huisstijl & social media
+# Kade Studio, brand & social media
 
 ## Logo (`logo/`)
-| Bestand | Gebruik |
+| File | Use |
 |---|---|
-| `kade-logo.svg/.png` | Hoofdlogo: wit met zwarte rand, oranje "STUDIO"-label. Op groen, geel, roze, blauw of zwart. |
-| `kade-logo-ink.svg/.png` | Eén kleur zwart: stempels, facturen, lichte achtergrond. |
-| `kade-logo-white.svg/.png` | Eén kleur wit: op foto's of donkere achtergrond. |
-| `kade-mark.svg/.png` | Sticker met "K": profielfoto, favicon, kleine plekken. |
+| `kade-logo.svg/.png` | Main logo: white with black outline, orange "STUDIO" label. On green, yellow, pink, blue or black. |
+| `kade-logo-ink.svg/.png` | One colour black: stamps, invoices, light backgrounds. |
+| `kade-logo-white.svg/.png` | One colour white: on photos or dark backgrounds. |
+| `kade-mark.svg/.png` | Sticker with "K": profile picture, favicon, small spaces. |
 
-PNG's zijn transparant en 3x vergroot. SVG's zijn vectoren (tekst omgezet naar paden, geen lettertype nodig).
+PNGs are transparent and 3x size. SVGs are vectors (text converted to paths, no font needed).
 
-## Kleuren
-| Naam | Hex |
+## Colours
+| Name | Hex |
 |---|---|
-| Zuurgroen | `#74DB4B` |
-| Tomaat | `#FF5426` |
-| Zon | `#FFD43A` |
-| Kauwgom | `#FFB8E0` |
-| Kobalt | `#3B6BFF` |
-| Inkt | `#151515` |
-| Papier | `#F1F2EC` |
+| Acid green | `#74DB4B` |
+| Tomato | `#FF5426` |
+| Sun | `#FFD43A` |
+| Bubblegum | `#FFB8E0` |
+| Cobalt | `#3B6BFF` |
+| Ink | `#151515` |
+| Paper | `#F1F2EC` |
 
-## Lettertypes (gratis, Google Fonts)
-- **Big Shoulders Display Black**: affichetitels, logo
-- **Bricolage Grotesque** (500 en 800): koppen en tekst
-- **Courier Prime**: kleine labels, @handle
+## Fonts (free, Google Fonts, self-hosted in `../fonts/`)
+- **Big Shoulders Display Black**: poster titles, logo
+- **Bricolage Grotesque** (500 and 800): headings and body
+- **Courier Prime**: small labels, @handle
 
-## Social (`social/`, elk in `fr/` en `nl/`)
-| Bestand | Formaat | Waar |
+## Social (`social/`, each in `fr/` and `nl/`)
+| File | Size | Where |
 |---|---|---|
-| `profile-picture.png` | 1080×1080 | Instagram + Facebook profielfoto |
-| `facebook-cover.png` | 1640×624 | Facebook omslagfoto |
-| `post-1` tot `post-6` | 1080×1350 (4:5) | Instagram/Facebook posts |
+| `profile-picture.png` | 1080×1080 | Instagram + Facebook profile picture |
+| `facebook-cover.png` | 1640×624 | Facebook cover |
+| `post-1` to `post-6` | 1080×1350 (4:5) | Instagram/Facebook posts |
 | `story-1`, `story-2` | 1080×1920 | Stories |
-| `highlight-1` tot `-4` | 1080×1080 | Instagram highlight-covers |
-| `first-post/slide-1` tot `-5` | 1080×1350 | Eerste Instagram-post (carrousel). Caption: `social/first-post-caption.md` |
-| `og-image.png` | 1200×630 | Voorbeeldafbeelding als de site gedeeld wordt (WhatsApp, Facebook, LinkedIn) |
+| `highlight-1` to `-4` | 1080×1080 | Instagram highlight covers |
+| `first-post/slide-1` to `-5` | 1080×1350 | First Instagram post (carousel). Caption: `social/first-post-caption.md` |
+| `og-image.png` | 1200×630 | Preview image when the site is shared (WhatsApp, Facebook, LinkedIn) |
 
-`post-5-nouveau-projet` en `story-2-projet` zijn sjablonen: zet je screenshot op het witte vlak (Canva, Figma of Photoshop).
+`post-5-nouveau-projet` and `story-2-projet` are templates: put your screenshot on the white area (Canva, Figma or Photoshop).
 
-## Opnieuw genereren
-`source/` bevat de scripts (Python + Playwright) die alles maken. Teksten aanpassen in `social.py`.
+## Video (`video/`), Fiverr (`fiverr/`)
+See the README in each folder.
+
+## Regenerating
+`source/` contains the scripts (Python + Playwright) that build everything. Change texts in `social.py`.

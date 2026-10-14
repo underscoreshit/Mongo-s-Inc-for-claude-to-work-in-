@@ -1,35 +1,35 @@
 # Kade Studio, website
 
-Statische site, geen installatie nodig. Upload de hele map `kade-studio/` naar je hosting (Netlify, Vercel, Cloudflare Pages, Combell, OVH...).
+Static site, nothing to install. Upload the whole `kade-studio/` folder to your hosting (Netlify, Vercel, Cloudflare Pages, Combell, OVH...).
 
-| Pad | Wat |
+| Path | What |
 |---|---|
-| `index.html` | Franse pagina, en de **bron** voor alles |
-| `nl/index.html` | Nederlandse pagina, **gegenereerd**: niet met de hand aanpassen |
-| `i18n/nl.json` | Nederlandse teksten |
-| `build.py` | Maakt `nl/index.html` opnieuw: `python3 build.py` |
-| `fonts/` | Lettertypes op eigen server (geen Google-verbinding, GDPR) |
-| `brand/` | Logo's, social media, deelbeeld |
-| `sitemap.xml`, `robots.txt` | Voor Google |
+| `index.html` | French page, and the **source** for everything |
+| `nl/index.html` | Dutch page, **generated**: do not edit by hand |
+| `i18n/nl.json` | Dutch texts |
+| `build.py` | Rebuilds `nl/index.html`: `python3 build.py` |
+| `fonts/` | Self-hosted fonts (no Google request, GDPR) |
+| `brand/` | Logos, social media, video, Fiverr kit, share image |
+| `sitemap.xml`, `robots.txt` | For Google |
 
-## Tekst wijzigen
-1. Franse tekst: in `index.html`.
-2. Nederlandse tekst: in `i18n/nl.json`, met dezelfde sleutel als `data-i18n="..."` in `index.html`.
-3. Draai `python3 build.py`. Het script stopt met een melding als er een vertaling ontbreekt.
+## Changing text
+1. French text: in `index.html`.
+2. Dutch text: in `i18n/nl.json`, same key as `data-i18n="..."` in `index.html`.
+3. Run `python3 build.py`. It stops with a message if a translation is missing.
 
-## Voor de lancering invullen
-- [ ] **Formulier**: maak een gratis formulier aan op formspree.io of web3forms.com en plak de URL in `data-endpoint=""` in `index.html`. Zolang dit leeg is, opent het mailprogramma van de bezoeker.
-- [ ] **Domein**: overal staat `https://kadestudio.be` (index.html, sitemap.xml, robots.txt). Is je domein anders? Zoek en vervang, en draai dan `build.py`.
-- [ ] **E-mail**: `hello@kadestudio.be` (index.html en `STR` onderaan in het script).
-- [ ] **Ondernemingsnummer**: `BE 0XXX.XXX.XXX` in de footer. Wettelijk verplicht op een Belgische zakelijke website, samen met je adres.
-- [ ] **Statistieken**: haal de commentaartekens weg rond de Plausible-regels in `<head>`. De klik- en aanvraag-events worden al verstuurd.
-- [ ] **Prijzen en termijnen** nakijken: 690 €, 1 490 €, vanaf 2 900 €, 39 €/maand, 3 weken, 24 uur.
+## Before launch
+- [ ] **Form**: create a free form on formspree.io or web3forms.com and paste the URL into `data-endpoint=""` in `index.html`. While empty, the visitor's mail app opens instead.
+- [ ] **Domain**: `https://kadestudio.be` is used everywhere (index.html, sitemap.xml, robots.txt). Different domain? Find and replace, then run `build.py`.
+- [ ] **Email**: `hello@kadestudio.be` (index.html and `STR` at the bottom of the script).
+- [ ] **Company number**: `BE 0XXX.XXX.XXX` in the footer. Legally required on a Belgian business website, together with your address.
+- [ ] **Analytics**: uncomment the Plausible lines in `<head>`. Click and lead events are already sent.
+- [ ] **Prices and timings** to check: 690 €, 1 490 €, from 2 900 €, 39 €/month, 3 weeks, 24 h.
 
-## Wat er gemeten wordt (`dataLayer` en Plausible)
-| Event | Wanneer |
+## What is measured (`dataLayer` and Plausible)
+| Event | When |
 |---|---|
-| `cta_click` | klik op "Demander un devis" / "Offerte aanvragen" (`id`: nav_cta, hero_cta, hero_examples) |
-| `lead_submit` | formulier verstuurd via de formulierdienst |
-| `lead_mailto` | formulier doorgestuurd naar het mailprogramma |
-| `lead_error` | verzenden mislukt |
-| `lang_switch` | wissel FR/NL |
+| `cta_click` | click on "Demander un devis" / "Offerte aanvragen" (`id`: nav_cta, hero_cta, hero_examples) |
+| `lead_submit` | form sent through the form service |
+| `lead_mailto` | form handed to the mail app |
+| `lead_error` | sending failed |
+| `lang_switch` | FR/NL switch |
