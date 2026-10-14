@@ -73,8 +73,8 @@ out = sub_once(out, '<meta property="og:locale:alternate" content="nl_BE">', '<m
 out = sub_once(out, 'content="%s/brand/og-image.png"' % SITE, 'content="%s/brand/social/nl/og-image.png"' % SITE)
 out = sub_once(out, '<meta property="og:url" content="%s/">' % SITE, '<meta property="og:url" content="%s/nl/">' % SITE)
 out = sub_once(out, '<link rel="canonical" href="%s/">' % SITE, '<link rel="canonical" href="%s/nl/">' % SITE)
-out = out.replace('"description":"Création de sites web pour petites entreprises belges."',
-                  '"description":"Websites voor kleine Belgische bedrijven."')
+out = out.replace('"description":"Création de sites web pour commerces et artisans de Westerlo et des Kempen."',
+                  '"description":"Websites voor handelaars en vakmensen uit Westerlo en de Kempen."')
 
 # Taalknop: deze pagina is NL
 out = sub_once(out,

@@ -4,7 +4,7 @@ Statische site, geen installatie nodig. Upload de hele map `kade-studio/` naar j
 
 | Pad | Wat |
 |---|---|
-| `index.html` | Franse pagina, en de **bron** voor alles |
+| `index.html` | Franse pagina, en de **bron** voor alles. Bezoekers zonder taalvoorkeur en Google (`x-default`) gaan naar `/nl/`: de streek is Nederlandstalig. |
 | `nl/index.html` | Nederlandse pagina, **gegenereerd**: niet met de hand aanpassen |
 | `i18n/nl.json` | Nederlandse teksten |
 | `build.py` | Maakt `nl/index.html` opnieuw: `python3 build.py` |
@@ -23,7 +23,8 @@ Statische site, geen installatie nodig. Upload de hele map `kade-studio/` naar j
 - [ ] **E-mail**: `hello@kadestudio.be` (index.html en `STR` onderaan in het script).
 - [ ] **Ondernemingsnummer**: `BE 0XXX.XXX.XXX` in de footer. Wettelijk verplicht op een Belgische zakelijke website, samen met je adres.
 - [ ] **Statistieken**: haal de commentaartekens weg rond de Plausible-regels in `<head>`. De klik- en aanvraag-events worden al verstuurd.
-- [ ] **Prijzen en termijnen** nakijken: 690 €, 1 490 €, vanaf 2 900 €, 39 €/maand, 3 weken, 24 uur.
+- [ ] **Prijzen en termijnen** nakijken: 490 €, 1 490 €, vanaf 2 900 €, 19 en 39 €/maand, 48 uur, 24 uur. Ook: 100 € doorverwijskorting, "vanaf 490 €" voor kapotte sites.
+- [ ] **Demo's in de rail**: de twee dakwerker-demo's (Westerlo, Berlaar) staan zonder naam. Zet de echte naam en een link pas als de klant akkoord is.
 
 ## Wat er gemeten wordt (`dataLayer` en Plausible)
 | Event | Wanneer |
@@ -33,3 +34,9 @@ Statische site, geen installatie nodig. Upload de hele map `kade-studio/` naar j
 | `lead_mailto` | formulier doorgestuurd naar het mailprogramma |
 | `lead_error` | verzenden mislukt |
 | `lang_switch` | wissel FR/NL |
+
+## Positionering (oktober 2026)
+Na de marktanalyse (zie repo `Kade-Business`): lokaal in plaats van heel België, demo vóór het eerste gesprek, online in 48 uur, bouw & ambacht eerst.
+- Eén pagina 490 € (Designer@Work Westerlo zit op 350 €, de markt op 500-1 500 €).
+- Etalage 1 490 € met meer erin (offerteformulier, Google-profiel, 1 uur foto's) om boven Adworkx/Webily (699-895 €) te verantwoorden.
+- Onderhoud in twee stappen: 19 €/maand (domein, hosting, mail) en 39 €/maand (+ onbeperkt aanpassen, Google-profiel).

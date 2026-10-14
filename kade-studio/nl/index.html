@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kade Studio | Websites voor kleine Belgische bedrijven</title>
-<meta name="description" id="meta-desc" content="Kade Studio maakt websites voor kleine Belgische bedrijven. Helder, snel, en niet te vergeten.">
+<title>Kade Studio | Websites voor handelaars en vakmensen in Westerlo</title>
+<meta name="description" id="meta-desc" content="Kade Studio maakt websites voor handelaars en vakmensen uit Westerlo en de Kempen. Gratis demo vóór u tekent, online in 48 uur, vaste prijs.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kade Studio">
-<meta property="og:title" content="Kade Studio | Websites voor kleine Belgische bedrijven">
-<meta property="og:description" content="Heldere, snelle websites voor winkels, kapsalons, vakmensen en horeca in België. Vaste prijs, NL en FR.">
+<meta property="og:title" content="Kade Studio | Websites voor handelaars en vakmensen in Westerlo">
+<meta property="og:description" content="Websites voor winkels, vakmensen en horeca uit Westerlo en de Kempen. Gratis demo, online in 48 uur, vaste prijs. NL en FR.">
 <meta property="og:image" content="https://kadestudio.be/brand/social/nl/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,11 +19,11 @@
 <link rel="canonical" href="https://kadestudio.be/nl/">
 <link rel="alternate" hreflang="fr-BE" href="https://kadestudio.be/">
 <link rel="alternate" hreflang="nl-BE" href="https://kadestudio.be/nl/">
-<link rel="alternate" hreflang="x-default" href="https://kadestudio.be/">
+<link rel="alternate" hreflang="x-default" href="https://kadestudio.be/nl/">
 <meta name="theme-color" content="#74DB4B">
 <link rel="icon" href="../brand/logo/kade-mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/social/profile-picture.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kade Studio","description":"Websites voor kleine Belgische bedrijven.","email":"hello@kadestudio.be","areaServed":{"@type":"Country","name":"Belgium"},"knowsLanguage":["fr","nl"],"priceRange":"€€","url":"https://kadestudio.be/","logo":"https://kadestudio.be/brand/logo/kade-logo.png","image":"https://kadestudio.be/brand/og-image.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kade Studio","description":"Websites voor handelaars en vakmensen uit Westerlo en de Kempen.","email":"hello@kadestudio.be","address":{"@type":"PostalAddress","addressLocality":"Westerlo","postalCode":"2260","addressCountry":"BE"},"areaServed":[{"@type":"City","name":"Westerlo"},{"@type":"City","name":"Geel"},{"@type":"City","name":"Herentals"},{"@type":"City","name":"Heist-op-den-Berg"},{"@type":"City","name":"Lier"},{"@type":"City","name":"Mol"}],"knowsLanguage":["fr","nl"],"priceRange":"€€","url":"https://kadestudio.be/","logo":"https://kadestudio.be/brand/logo/kade-logo.png","image":"https://kadestudio.be/brand/og-image.png"}</script>
 <link rel="preload" href="../fonts/bricolage-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../fonts/big-shoulders-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -199,6 +199,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .tag{position:absolute;top:-14px;left:1.4rem;background:var(--tomato);color:var(--ink);border:2.5px solid var(--ink);border-radius:999px;padding:.1rem .8rem;font-weight:800;font-size:.85rem;transform:rotate(-3deg)}
 .maint{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:baseline;font-family:var(--f-type)}
 .maint strong{font-family:var(--f-poster);font-size:2rem;color:var(--bubble)}
+.maints{margin-top:1.6rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.maints .maint{margin-top:0;flex-direction:column;align-items:flex-start;gap:.3rem;border:2px dashed #6a6b62;border-radius:18px;padding:1rem 1.2rem}
+.maints .maint em{font-style:normal;font-family:var(--f-display);font-weight:800;color:var(--white)}
+.fix{margin-top:1.6rem;border:2.5px solid var(--tomato);border-radius:22px;padding:1.1rem 1.4rem;font-family:var(--f-type);color:#cfd0c6;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;align-items:baseline}
+.fix b{font-family:var(--f-display);font-size:var(--step-1);color:var(--tomato)}
+.fix strong{color:var(--white)}
 
 /* ---------- méthode ---------- */
 .method{background:var(--bubble);border-block:var(--border);padding-block:clamp(3rem,7vw,6rem)}
@@ -288,6 +294,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   .step:nth-child(even){margin-top:0}
   .offer{grid-template-columns:minmax(0,1fr);padding:1.3rem}
   .price{text-align:left}
+  .maints{grid-template-columns:minmax(0,1fr)}
   .form{transform:none}
 }
 /* ---------- pixel-cursor (alleen met muis, niet op touchscreens) ---------- */
@@ -309,8 +316,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 
 <div class="band" aria-hidden="true">
   <div class="band__track">
-    <span><span data-i18n="b1">Websites voor kleine Belgische bedrijven</span></span><span><span data-i18n="b2">Brussel, Wallonië, Vlaanderen</span></span><span><span data-i18n="b3">Nederlands en Frans</span></span><span><span data-i18n="b4">Online in 3 weken</span></span>
-    <span><span data-i18n="b1">Websites voor kleine Belgische bedrijven</span></span><span><span data-i18n="b2">Brussel, Wallonië, Vlaanderen</span></span><span><span data-i18n="b3">Nederlands en Frans</span></span><span><span data-i18n="b4">Online in 3 weken</span></span>
+    <span><span data-i18n="b1">Websites voor handelaars en vakmensen</span></span><span><span data-i18n="b2">Westerlo, Geel, Herentals, Heist-op-den-Berg, Lier</span></span><span><span data-i18n="b3">Nederlands en Frans</span></span><span><span data-i18n="b4">Online in 48 uur</span></span>
+    <span><span data-i18n="b1">Websites voor handelaars en vakmensen</span></span><span><span data-i18n="b2">Westerlo, Geel, Herentals, Heist-op-den-Berg, Lier</span></span><span><span data-i18n="b3">Nederlands en Frans</span></span><span><span data-i18n="b4">Online in 48 uur</span></span>
   </div>
 </div>
 
@@ -320,10 +327,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
     <nav class="lang" aria-label="Langue / Taal"><a href="../index.html" hreflang="fr-BE" lang="fr" data-lang="fr">FR</a><a href="index.html" hreflang="nl-BE" lang="nl" data-lang="nl" aria-current="page">NL</a></nav>
     <nav aria-label="Hoofdnavigatie" data-i18n-aria="al1">
       <ul>
-        <li><a class="pill" href="#exemples"><span data-i18n="n1">Voorbeelden</span></a></li>
+        <li><a class="pill" href="#exemples"><span data-i18n="n1">Demo's</span></a></li>
         <li><a class="pill" href="#offres"><span data-i18n="n2">Prijzen</span></a></li>
         <li><a class="pill" href="#methode"><span data-i18n="n3">Werkwijze</span></a></li>
-        <li><a class="pill pill--dark" href="#contact" data-track="nav_cta"><span data-i18n="cta">Offerte aanvragen</span></a></li>
+        <li><a class="pill pill--dark" href="#contact" data-track="nav_cta"><span data-i18n="cta">Mijn gratis demo aanvragen</span></a></li>
       </ul>
     </nav>
   </div>
@@ -333,19 +340,19 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__grid wrap">
       <div>
-        <h1 id="hero-title"><span data-i18n="h1">Websites die <em>opvallen.</em></span></h1>
-        <p class="hero__sub"><span data-i18n="sub">Ik maak websites voor kleine Belgische bedrijven. Helder, snel, en niet te vergeten.</span></p>
+        <h1 id="hero-title"><span data-i18n="h1">Uw site staat klaar <em>vóór</em> we elkaar spreken.</span></h1>
+        <p class="hero__sub"><span data-i18n="sub">Ik maak websites voor handelaars en vakmensen uit Westerlo en de Kempen. U ziet eerst een gratis demo, u zegt ja, en 48 uur later staat ze online.</span></p>
         <div class="cta">
-          <a class="btn btn--main" href="#contact" data-track="hero_cta"><span data-i18n="cta">Offerte aanvragen</span></a>
-          <a class="btn" href="#exemples" data-track="hero_examples"><span data-i18n="see">Bekijk voorbeelden</span></a>
+          <a class="btn btn--main" href="#contact" data-track="hero_cta"><span data-i18n="cta">Mijn gratis demo aanvragen</span></a>
+          <a class="btn" href="#exemples" data-track="hero_examples"><span data-i18n="see">Bekijk demo's</span></a>
         </div>
       </div>
 
       <div class="collage" aria-hidden="true">
-        <div class="poster p2"><b>Barbier<br>Atelier 12</b><small><span data-i18n="pc1">Namen. Online reserveren, 7 dagen op 7.</span></small><div class="dots"></div></div>
-        <div class="poster p1"><b>Boulan&shy;gerie Vanhove</b><small><span data-i18n="pc2">Gent. Zuurdesem sinds 1987.<br>Brood bestellen de dag ervoor.</span></small><div class="dots"></div></div>
-        <div class="poster p3"><b><span data-i18n="c5">Frituur</span><br>Chez Mo</b><small><span data-i18n="pc3">Luik. Menu, openingsuren, route.</span></small></div>
-        <div class="burst burst--hero"><span><span data-i18n="burst">Online in<br>3 weken</span></span></div>
+        <div class="poster p2"><b>Frituur<br>Den Hoek</b><small><span data-i18n="pc1">Geel. Menu, openingsuren, belknop.</span></small><div class="dots"></div></div>
+        <div class="poster p1"><b>Dak&shy;werken</b><small><span data-i18n="pc2">Westerlo. Offerte aanvragen in één klik.<br>Demo gemaakt vóór het eerste gesprek.</span></small><div class="dots"></div></div>
+        <div class="poster p3"><b>Salon<br>Lies</b><small><span data-i18n="pc3">Herentals. Online afspraken, duidelijke prijzen.</span></small></div>
+        <div class="burst burst--hero"><span><span data-i18n="burst">Online<br>in 48 u</span></span></div>
       </div>
     </div>
     <span class="wordmark" aria-hidden="true">Kade Studio</span>
@@ -354,100 +361,105 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   <section aria-labelledby="who-title">
     <div class="who__head wrap">
       <h2 id="who-title"><span data-i18n="who">Voor mensen<br>die ondernemen.</span></h2>
-      <p><span data-i18n="whop">U runt een winkel, een atelier of een praktijk. U hebt geen tijd om te worstelen met een CMS. Ik regel alles, van de teksten tot de lancering.</span></p>
+      <p><span data-i18n="whop">U runt een winkel, een atelier of een frituur in Westerlo of de Kempen. U hebt geen tijd om te worstelen met een CMS. Ik maak de demo, u zegt ja of nee, en 48 uur later staat ze online.</span></p>
     </div>
     <div class="blocks">
+      <article class="block b-cobalt">
+        <h3><span data-i18n="k3">Dakwerkers, elektriciens, tuinaanleggers</span></h3>
+        <p><span data-i18n="k3p">Een dak van 15.000 € bestelt niemand bij iemand zonder website. Uw werven in beeld en een offerteformulier dat op uw gsm binnenkomt.</span></p>
+        <span class="big" aria-hidden="true">&amp;</span>
+      </article>
       <article class="block b-sun">
         <h3><span data-i18n="k1">De winkel om de hoek</span></h3>
         <p><span data-i18n="k1p">Openingsuren up-to-date, producten in beeld, route in één klik. Mensen vinden u op Google Maps en stappen binnen.</span></p>
         <span class="big" aria-hidden="true">€</span>
+      </article>
+      <article class="block b-tomato">
+        <h3><span data-i18n="k4">Restaurants, cafés &amp; frituren</span></h3>
+        <p><span data-i18n="k4p">Een menukaart die leesbaar is op de gsm, openingsuren, belknop. Minder telefoontjes om te vragen of u open bent.</span></p>
+        <span class="big" aria-hidden="true">@</span>
       </article>
       <article class="block b-bubble">
         <h3><span data-i18n="k2">Kapsalons &amp; instituten</span></h3>
         <p><span data-i18n="k2p">Online afspraken, duidelijke prijzen, een galerij van uw werk. Minder telefoontjes terwijl u knipt.</span></p>
         <span class="big" aria-hidden="true">✂</span>
       </article>
-      <article class="block b-cobalt">
-        <h3><span data-i18n="k3">Vakmensen &amp; zelfstandigen</span></h3>
-        <p><span data-i18n="k3p">Een portfolio dat uw werk toont en een offerteformulier. Gedaan met klanten die vragen: ‘wat doet u eigenlijk precies?’</span></p>
-        <span class="big" aria-hidden="true">&amp;</span>
-      </article>
-      <article class="block b-tomato">
-        <h3><span data-i18n="k4">Restaurants &amp; cafés</span></h3>
-        <p><span data-i18n="k4p">Een menukaart die leesbaar is op de gsm, reservaties, sociale media gekoppeld. Geen pdf van de kaart om op in te zoomen.</span></p>
-        <span class="big" aria-hidden="true">@</span>
-      </article>
     </div>
   </section>
 
   <section class="work wrap" id="exemples" aria-labelledby="work-title">
-    <h2 id="work-title"><span data-i18n="wh">Zo kan uw site eruitzien.</span></h2>
-    <p class="work__intro"><span data-i18n="wi">Concepten voor verzonnen zaken, om u de stijl te tonen. Uw site vertrekt van uw vak, uw buurt en uw klanten.</span></p>
-    <div class="rail" tabindex="0" aria-label="Voorbeeldconcepten, horizontaal scrollen" data-i18n-aria="al2">
+    <h2 id="work-title"><span data-i18n="wh">Demo's gemaakt vóór het eerste gesprek.</span></h2>
+    <p class="work__intro"><span data-i18n="wi">Dat is mijn methode: eerst bouwen, dan tonen. De demo's zijn echte sites die klaarstaan voor vakmensen uit de streek (namen verborgen tot ze ja zeggen). De concepten tonen de stijl voor andere vakken.</span></p>
+    <div class="rail" tabindex="0" aria-label="Demo's en concepten, horizontaal scrollen" data-i18n-aria="al2">
       <article class="case">
-        <div class="case__art a1"><i><span data-i18n="c1">Bakkerij</span></i><b>Vanhove</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Boulangerie Vanhove</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g1">Gent</span></span></div>
+        <div class="case__art a1"><i><span data-i18n="c1">Dakwerker</span></i><b>Dak<br>werken</b><div class="ring"></div></div>
+        <div class="case__meta"><strong><span data-i18n="n_c1">Dakwerker, BV sinds 2019</span></strong><span class="concept" data-i18n="dmo">Demo</span><span>Westerlo</span></div>
       </article>
       <article class="case">
-        <div class="case__art a2"><i>Barbier</i><b>Atelier<br>12</b></div>
-        <div class="case__meta"><strong>Atelier 12</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g2">Namen</span></span></div>
+        <div class="case__art a2"><i><span data-i18n="c2">Site offline, opnieuw gemaakt</span></i><b>Nieuw<br>dak</b></div>
+        <div class="case__meta"><strong><span data-i18n="n_c2">Dakwerker, 26 jaar ervaring</span></strong><span class="concept" data-i18n="dmo">Demo</span><span>Berlaar</span></div>
       </article>
       <article class="case">
-        <div class="case__art a3"><i><span data-i18n="c3">Bloemist</span></i><b>Fleurs de Julie</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Fleurs de Julie</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g3">Bergen</span></span></div>
+        <div class="case__art a3"><i><span data-i18n="c3">Frituur</span></i><b>Frituur<br>Den Hoek</b><div class="ring"></div></div>
+        <div class="case__meta"><strong>Frituur Den Hoek</strong><span class="concept" data-i18n="cpt">Concept</span><span>Geel</span></div>
       </article>
       <article class="case">
-        <div class="case__art a4"><i>Garage</i><b>Garage Peeters</b><div class="dots"></div></div>
-        <div class="case__meta"><strong>Garage Peeters</strong><span class="concept" data-i18n="cpt">Concept</span><span>Hasselt</span></div>
+        <div class="case__art a4"><i><span data-i18n="c4">Tuinen</span></i><b>Groen&shy;werk</b><div class="dots"></div></div>
+        <div class="case__meta"><strong>Tuinen Groenwerk</strong><span class="concept" data-i18n="cpt">Concept</span><span>Heist-op-den-Berg</span></div>
       </article>
       <article class="case">
-        <div class="case__art a5"><i><span data-i18n="c5">Frituur</span></i><b>Chez<br>Mo</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Friterie Chez Mo</strong><span class="concept" data-i18n="cpt">Concept</span><span><span data-i18n="g5">Luik</span></span></div>
+        <div class="case__art a5"><i><span data-i18n="c5">Kapper</span></i><b>Salon<br>Lies</b><div class="ring"></div></div>
+        <div class="case__meta"><strong>Kapsalon Lies</strong><span class="concept" data-i18n="cpt">Concept</span><span>Herentals</span></div>
       </article>
     </div>
   </section>
 
   <div class="band band--ink" aria-hidden="true">
     <div class="band__track">
-      <span><span data-i18n="r1">Snel op mobiel</span></span><span><span data-i18n="r2">Vindbaar op Google</span></span><span><span data-i18n="r3">Makkelijk aan te passen</span></span><span><span data-i18n="r4">Gehost in Europa</span></span>
-      <span><span data-i18n="r1">Snel op mobiel</span></span><span><span data-i18n="r2">Vindbaar op Google</span></span><span><span data-i18n="r3">Makkelijk aan te passen</span></span><span><span data-i18n="r4">Gehost in Europa</span></span>
+      <span><span data-i18n="r1">Gratis demo vóór u tekent</span></span><span><span data-i18n="r2">Vindbaar op Google</span></span><span><span data-i18n="r3">Snel op mobiel</span></span><span><span data-i18n="r4">Gehost in Europa</span></span>
+      <span><span data-i18n="r1">Gratis demo vóór u tekent</span></span><span><span data-i18n="r2">Vindbaar op Google</span></span><span><span data-i18n="r3">Snel op mobiel</span></span><span><span data-i18n="r4">Gehost in Europa</span></span>
     </div>
   </div>
 
   <section class="offers" id="offres" aria-labelledby="offers-title">
     <div class="wrap">
       <h2 id="offers-title"><span data-i18n="oh">Drie formules.<br><span>Nul jargon.</span></span></h2>
-      <p class="offers__note"><span data-i18n="on">Vaste prijzen, vooraf meegedeeld. Bedragen excl. btw. Voorschot van 30 % bij de start, de rest bij de lancering.</span></p>
+      <p class="offers__note"><span data-i18n="on">Vaste prijzen, vooraf meegedeeld. Bedragen excl. btw. U betaalt niets vóór u de demo gezien hebt: u betaalt bij de lancering.</span></p>
       <div class="menu">
         <article class="offer">
           <h3><span data-i18n="o1">Eén pagina</span></h3>
-          <ul><li><span data-i18n="l1">1 pagina</span></li><li><span data-i18n="l2">contactformulier</span></li><li>Google Maps</li><li><span data-i18n="l3">10 dagen</span></li></ul>
-          <p class="price">690 €<small><span data-i18n="htva">excl. btw</span></small></p>
+          <ul><li><span data-i18n="l1">1 pagina</span></li><li><span data-i18n="l12">openingsuren, menu of diensten</span></li><li><span data-i18n="l13">belknop</span></li><li>Google Maps</li><li><span data-i18n="l2">contactformulier</span></li><li><span data-i18n="l3">online in 48 uur</span></li></ul>
+          <p class="price">490 €<small><span data-i18n="htva">excl. btw</span></small></p>
         </article>
         <article class="offer offer--star">
           <span class="tag"><span data-i18n="tag">Meest gekozen</span></span>
           <h3><span data-i18n="o2">Etalage</span></h3>
-          <ul><li><span data-i18n="l4">tot 6 pagina's</span></li><li><span data-i18n="l5">teksten geschreven</span></li><li>FR + NL</li><li><span data-i18n="l6">lokale SEO</span></li><li><span data-i18n="l7">3 weken</span></li></ul>
+          <ul><li><span data-i18n="l4">tot 6 pagina's</span></li><li><span data-i18n="l5">teksten geschreven</span></li><li>NL + FR</li><li><span data-i18n="l14">offerteformulier</span></li><li><span data-i18n="l6">Google-profiel geoptimaliseerd</span></li><li><span data-i18n="l15">1 uur foto's bij u ter plaatse</span></li><li><span data-i18n="l7">online in 48 uur</span></li></ul>
           <p class="price">1 490 €<small><span data-i18n="htva">excl. btw</span></small></p>
         </article>
         <article class="offer">
           <h3><span data-i18n="o3">Webshop</span></h3>
-          <ul><li><span data-i18n="l8">webshop</span></li><li><span data-i18n="l9">betalen met Bancontact</span></li><li><span data-i18n="l10">voorraadbeheer</span></li><li><span data-i18n="l11">opleiding inbegrepen</span></li></ul>
+          <ul><li><span data-i18n="l8">webshop</span></li><li><span data-i18n="l9">betalen met Bancontact</span></li><li><span data-i18n="l10">voorraadbeheer</span></li><li><span data-i18n="l11">opleiding inbegrepen</span></li><li><span data-i18n="l16">2 tot 3 weken</span></li></ul>
           <p class="price"><span data-i18n="from">vanaf</span> 2 900 €<small><span data-i18n="htva">excl. btw</span></small></p>
         </article>
       </div>
-      <p class="maint"><strong><span data-i18n="m1">39 €/maand</span></strong><span data-i18n="m2"> Hosting, .be-domeinnaam, updates en kleine aanpassingen. Zonder verbintenis.</span></p>
+      <div class="maints">
+        <p class="maint"><strong><span data-i18n="m1">19 €/maand</span></strong><em><span data-i18n="m1t">De site draait</span></em><span data-i18n="m2">.be-domeinnaam, hosting, professioneel e-mailadres, formulier dat in uw mailbox toekomt. Zonder verbintenis.</span></p>
+        <p class="maint"><strong><span data-i18n="m3">39 €/maand</span></strong><em><span data-i18n="m3t">Ik regel alles</span></em><span data-i18n="m4">Dat alles, plus onbeperkt aanpassingen via WhatsApp, Google-profiel en reviews bijgehouden. Zonder verbintenis.</span></p>
+      </div>
+      <p class="fix"><b><span data-i18n="fx1">Kapotte site?</span></b><span data-i18n="fx2">Offline, een Joomla uit 2012, een ‘new.’-subdomein dat blijft hangen? Ik haal uw teksten en foto's op en zet alles in 48 uur opnieuw online. <strong>Vanaf 490 €.</strong></span></p>
+      <p class="fix"><b><span data-i18n="pr1">Doorverwijzen</span></b><span data-i18n="pr2">Stuurt u een buur of collega die tekent? <strong>100 € korting</strong> voor u én voor hem.</span></p>
     </div>
   </section>
 
   <section class="method" id="methode" aria-labelledby="method-title">
     <div class="wrap">
-      <h2 id="method-title"><span data-i18n="mh">Van eerste gesprek tot lancering.</span></h2>
+      <h2 id="method-title"><span data-i18n="mh">Van demo tot lancering, in 48 uur.</span></h2>
       <ol class="steps">
-        <li class="step"><h3><span data-i18n="s1">We praten</span></h3><p><span data-i18n="s1p">30 minuten aan de telefoon of bij een koffie. U vertelt over uw zaak, ik stel de vragen.</span></p><span class="when"><span data-i18n="d1">Dag 1</span></span></li>
-        <li class="step"><h3><span data-i18n="s2">Ik ontwerp</span></h3><p><span data-i18n="s2p">Ik toon u het ontwerp van de homepage. U zegt wat u bevalt en wat niet bij u past.</span></p><span class="when"><span data-i18n="wk1">Week 1</span></span></li>
-        <li class="step"><h3><span data-i18n="s3">Ik bouw</span></h3><p><span data-i18n="s3p">Alle pagina's, teksten, foto's en de mobiele versie. U volgt de voortgang via een privélink.</span></p><span class="when"><span data-i18n="wk2">Week 2</span></span></li>
-        <li class="step"><h3><span data-i18n="s4">We lanceren</span></h3><p><span data-i18n="s4p">Online zetten, Google-bedrijfsprofiel bijgewerkt, en een korte opleiding om zelf uw openingsuren aan te passen.</span></p><span class="when"><span data-i18n="wk3">Week 3</span></span></li>
+        <li class="step"><h3><span data-i18n="s1">Ik bouw de demo</span></h3><p><span data-i18n="s1p">Met wat er al online over u te vinden is: Google-profiel, Facebook, reviews. U hoeft niets te doen, en niets te betalen.</span></p><span class="when"><span data-i18n="d1">Vóór het gesprek</span></span></li>
+        <li class="step"><h3><span data-i18n="s2">We praten</span></h3><p><span data-i18n="s2p">30 minuten aan de telefoon of bij u. Ik toon de demo op mijn gsm, u zegt wat u bevalt en wat niet bij u past.</span></p><span class="when"><span data-i18n="wk1">Dag 1</span></span></li>
+        <li class="step"><h3><span data-i18n="s3">Ik pas aan en lanceer</span></h3><p><span data-i18n="s3p">Uw foto's, uw gecorrigeerde teksten, de domeinnaam, het professionele e-mailadres. Online zetten en Google-profiel bijwerken.</span></p><span class="when"><span data-i18n="wk2">Dag 2</span></span></li>
+        <li class="step"><h3><span data-i18n="s4">Ik blijf in de buurt</span></h3><p><span data-i18n="s4p">Een openingsuur dat verandert, een nieuwe werffoto? Eén WhatsApp en het is geregeld. U raakt nooit een CMS aan.</span></p><span class="when"><span data-i18n="wk3">Daarna</span></span></li>
       </ol>
     </div>
   </section>
@@ -456,24 +468,36 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
     <h2 id="faq-title"><span data-i18n="fh">U vraagt zich af.</span></h2>
     <div>
       <details open>
-        <summary><span data-i18n="q1">Moet ik de teksten zelf schrijven?</span></summary>
-        <p><span data-i18n="a1">Nee. In de formule Etalage schrijf ik de teksten op basis van ons gesprek. U leest na en past aan wat u wilt.</span></p>
+        <summary><span data-i18n="q1">De gratis demo, waar zit de adder?</span></summary>
+        <p><span data-i18n="a1">Nergens. Ik bouw een eerste versie van uw site met de publieke info over uw zaak, nog vóór we elkaar spreken. Bevalt ze u, dan passen we ze aan en staat ze in 48 uur online. Bevalt ze niet, dan bent u me niets verschuldigd.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q2">Kan mijn site in het Nederlands en het Frans?</span></summary>
-        <p><span data-i18n="a2">Ja. De tweede taal zit inbegrepen in de formule Etalage. Voor Engels of Duits bespreken we het in de offerte.</span></p>
+        <summary><span data-i18n="q2">48 uur, echt?</span></summary>
+        <p><span data-i18n="a2">Ja, voor Eén pagina en Etalage. De demo bestaat al wanneer we elkaar spreken: er rest alleen de teksten corrigeren, uw foto's plaatsen en het domein koppelen. De Webshop duurt 2 tot 3 weken.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q3">Ik heb geen logo en geen foto's.</span></summary>
-        <p><span data-i18n="a3">Geen probleem. Ik kan een eenvoudig logo maken en u een fotograaf in de buurt aanraden, of werken met foto's van uw gsm.</span></p>
+        <summary><span data-i18n="q3">Moet ik de teksten zelf schrijven?</span></summary>
+        <p><span data-i18n="a3">Nee. Ik schrijf de teksten op basis van wat u me vertelt. U leest na en past aan wat u wilt.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q4">En als ik later iets wil veranderen?</span></summary>
-        <p><span data-i18n="a4">Met het maandelijkse onderhoud stuurt u me een bericht en het is binnen de week geregeld. U kunt ook zelf uw openingsuren en foto's aanpassen.</span></p>
+        <summary><span data-i18n="q4">Kan mijn site in het Nederlands en het Frans?</span></summary>
+        <p><span data-i18n="a4">Ja. De tweede taal zit inbegrepen in de formule Etalage. Voor Engels of Duits bespreken we het in de offerte.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q5">Zijn er verborgen kosten?</span></summary>
-        <p><span data-i18n="a5">Nee. De prijs in de offerte is de eindprijs. Alleen het maandelijkse onderhoud komt terug (hosting, .be-domein, updates), en dat is zonder verbintenis.</span></p>
+        <summary><span data-i18n="q5">Ik heb geen logo en geen foto's.</span></summary>
+        <p><span data-i18n="a5">Geen probleem. In de formule Etalage kom ik een uur bij u of op de werf foto's maken. Ik kan ook een eenvoudig logo maken.</span></p>
+      </details>
+      <details>
+        <summary><span data-i18n="q6">En als ik later iets wil veranderen?</span></summary>
+        <p><span data-i18n="a6">Aan 39 €/maand stuurt u me een WhatsApp en het is binnen de week geregeld, zonder limiet. Aan 19 €/maand worden aanpassingen per uur gefactureerd.</span></p>
+      </details>
+      <details>
+        <summary><span data-i18n="q7">Zijn er verborgen kosten?</span></summary>
+        <p><span data-i18n="a7">Nee. De prijs in de offerte is de eindprijs. Alleen het maandabonnement komt terug, zonder verbintenis: u stopt wanneer u wilt en de site blijft van u.</span></p>
+      </details>
+      <details>
+        <summary><span data-i18n="q8">Waarom goedkoper dan een bureau?</span></summary>
+        <p><span data-i18n="a8">Geen kantoor, geen verkoper, geen vergaderingen. Eén persoon die alles doet, van het eerste gesprek tot de lancering. En ik ben van Westerlo: ik kom langs, ik stuur u geen pdf.</span></p>
       </details>
     </div>
   </section>
@@ -481,11 +505,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="contact__grid wrap">
       <div>
-        <h2 id="contact-title"><span data-i18n="ch">Tijd voor uw site.</span></h2>
+        <h2 id="contact-title"><span data-i18n="ch">Uw gratis demo.</span></h2>
         <ul class="assure">
-          <li><span data-i18n="as1">Gratis offerte, zonder verbintenis</span></li>
+          <li><span data-i18n="as1">Gratis demo, vóór u iets tekent</span></li>
           <li><span data-i18n="as2">Vaste prijs, vooraf meegedeeld</span></li>
-          <li><span data-i18n="as3">Eén aanspreekpunt, van het eerste gesprek tot de lancering</span></li>
+          <li><span data-i18n="as3">Online in 48 uur, één aanspreekpunt</span></li>
         </ul>
         <div class="contact__mail">
           <span class="mail" id="mail">hello@kadestudio.be</span>
@@ -496,7 +520,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
            Vide = le logiciel mail du visiteur s'ouvre avec la demande pré-remplie. -->
       <form class="form" id="quote" novalidate method="post" data-endpoint="">
         <p class="form__top"><span data-i18n="ft">Antwoord binnen 24 werkuren</span></p>
-        <h3><span data-i18n="cta">Offerte aanvragen</span></h3>
+        <h3><span data-i18n="cta">Mijn gratis demo aanvragen</span></h3>
         <div class="field">
           <label for="f-name"><span data-i18n="fn">Uw naam</span></label>
           <input id="f-name" name="name" autocomplete="name" placeholder="Voor- en achternaam" data-i18n-ph="ph1" required>
@@ -514,15 +538,15 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
         <div class="field">
           <label for="f-type"><span data-i18n="fa">Uw activiteit</span></label>
           <select id="f-type" name="type">
-            <option value="Commerce" data-i18n="op0">Winkel</option><option value="Salon ou institut" data-i18n="op1">Kapsalon of instituut</option><option value="Artisan ou indépendant" data-i18n="op2">Vakman of zelfstandige</option><option value="Resto ou café" data-i18n="op3">Restaurant of café</option><option value="Autre" data-i18n="op4">Andere</option>
+            <option value="Commerce" data-i18n="op0">Winkel</option><option value="Salon ou institut" data-i18n="op1">Kapsalon of instituut</option><option value="Artisan" data-i18n="op2">Dakwerker, elektricien, tuinaanlegger...</option><option value="Horeca" data-i18n="op3">Restaurant, café of frituur</option><option value="Autre" data-i18n="op4">Andere</option>
           </select>
         </div>
         <div class="field">
           <label for="f-msg"><span data-i18n="fp">Uw project, in twee regels</span></label>
-          <textarea id="f-msg" name="message" placeholder="Ik heb een bakkerij in Leuven en nog geen website." data-i18n-ph="ph3"></textarea>
+          <textarea id="f-msg" name="message" placeholder="Ik heb een frituur in Westerlo en nog geen website." data-i18n-ph="ph3"></textarea>
         </div>
         <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
-        <button class="btn btn--main" type="submit" id="send"><span data-i18n="cta">Offerte aanvragen</span></button>
+        <button class="btn btn--main" type="submit" id="send"><span data-i18n="cta">Mijn gratis demo aanvragen</span></button>
         <p class="privacy"><span data-i18n="priv">Uw gegevens dienen alleen om uw aanvraag te beantwoorden. Ze worden niet doorverkocht en niet gebruikt voor reclame.</span></p>
         <p class="done" id="done" role="status" hidden></p>
       </form>
@@ -533,7 +557,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 <footer class="foot">
   <div class="foot__in wrap">
     <span class="logo">KADE STUDIO</span>
-    <span><span data-i18n="f1">Websites voor kleine bedrijven, België</span></span>
+    <span><span data-i18n="f1">Websites voor handelaars en vakmensen, Westerlo en de Kempen</span></span>
     <span><span data-i18n="f2">Ondernemingsnr. BE 0XXX.XXX.XXX</span></span>
     <a href="mailto:hello@kadestudio.be">hello@kadestudio.be</a>
     <span>© 2026 Kade Studio</span>
@@ -542,8 +566,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 
 <script>
 (function(){
-  var STR={fr:{"js_name": "Indiquez votre nom pour que je sache à qui répondre.", "js_mail": "Cette adresse email semble incomplète.", "js_copied": "Adresse copiée", "js_ok": "Merci {n}, votre demande est envoyée. Je vous réponds sous 24 h ouvrables.", "js_err": "L'envoi n'a pas fonctionné. Écrivez-moi à hello@kadestudio.be, je vous réponds au plus vite.", "js_mailto": "Votre logiciel mail s'ouvre avec la demande prête. Cliquez sur envoyer. Rien ne s'ouvre? Écrivez à hello@kadestudio.be.", "js_sending": "Envoi...", "js_subject": "Demande de devis via kadestudio.be", "cta": "Demander un devis", "copy": "Copier l'adresse"},
-    nl:{"js_name": "Vul uw naam in, zodat ik weet wie ik moet antwoorden.", "js_mail": "Dit e-mailadres lijkt onvolledig.", "js_copied": "Adres gekopieerd", "js_ok": "Bedankt {n}, uw aanvraag is verstuurd. U krijgt antwoord binnen 24 werkuren.", "js_err": "Het versturen is niet gelukt. Mail uw aanvraag naar hello@kadestudio.be, dan antwoord ik zo snel mogelijk.", "js_mailto": "Uw mailprogramma opent met de aanvraag klaar. Klik daar op versturen. Opent er niets? Mail naar hello@kadestudio.be.", "js_sending": "Versturen...", "js_subject": "Offerteaanvraag via kadestudio.be", "cta": "Offerte aanvragen", "copy": "Kopieer het adres"}};
+  var STR={fr:{"js_name": "Indiquez votre nom pour que je sache à qui répondre.", "js_mail": "Cette adresse email semble incomplète.", "js_copied": "Adresse copiée", "js_ok": "Merci {n}, votre demande est envoyée. Je vous réponds sous 24 h ouvrables.", "js_err": "L'envoi n'a pas fonctionné. Écrivez-moi à hello@kadestudio.be, je vous réponds au plus vite.", "js_mailto": "Votre logiciel mail s'ouvre avec la demande prête. Cliquez sur envoyer. Rien ne s'ouvre? Écrivez à hello@kadestudio.be.", "js_sending": "Envoi...", "js_subject": "Demande de démo via kadestudio.be", "cta": "Demander ma démo gratuite", "copy": "Copier l'adresse"},
+    nl:{"js_name": "Vul uw naam in, zodat ik weet wie ik moet antwoorden.", "js_mail": "Dit e-mailadres lijkt onvolledig.", "js_copied": "Adres gekopieerd", "js_ok": "Bedankt {n}, uw aanvraag is verstuurd. U krijgt antwoord binnen 24 werkuren.", "js_err": "Het versturen is niet gelukt. Mail uw aanvraag naar hello@kadestudio.be, dan antwoord ik zo snel mogelijk.", "js_mailto": "Uw mailprogramma opent met de aanvraag klaar. Klik daar op versturen. Opent er niets? Mail naar hello@kadestudio.be.", "js_sending": "Versturen...", "js_subject": "Demo-aanvraag via kadestudio.be", "cta": "Mijn gratis demo aanvragen", "copy": "Kopieer het adres"}};
   var lang=/^nl/i.test(document.documentElement.lang)?'nl':'fr';
   function t(k){return STR[lang][k]}
   window.dataLayer=window.dataLayer||[];
