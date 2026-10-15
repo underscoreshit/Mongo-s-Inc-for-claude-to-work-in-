@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kade Gmail Setup</title>
+<style>
+/* Layout: one checklist, top to bottom, each step with the exact text to paste. */
+:root{--bg:#F1F2EC;--fg:#151515;--card:#FFFFFF;--line:#151515;--muted:#5a5c55;--acid:#74DB4B;--sun:#FFD43A;--tomato:#FF5426;--cobalt:#3B6BFF;
+  --f-head:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;--f-body:"Bricolage Grotesque",system-ui,sans-serif;--f-mono:"Courier Prime","Courier New",monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161714;--fg:#F1F2EC;--card:#1f201c;--line:#F1F2EC;--muted:#b5b7ad;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161714;--fg:#F1F2EC;--card:#1f201c;--line:#F1F2EC;--muted:#b5b7ad;color-scheme:dark}
+@font-face{font-family:"Bricolage Grotesque";src:url(../../fonts/bricolage-400-800-latin.woff2) format("woff2");font-weight:400 800}
+@font-face{font-family:"Courier Prime";src:url(../../fonts/courier-prime-700-latin.woff2) format("woff2");font-weight:700}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:24px 80px}
+.wrap{max-width:820px;margin:0 auto}
+h1{font-family:var(--f-head);font-size:clamp(2rem,5vw,3rem);line-height:1;margin:0 0 .4rem;letter-spacing:-.02em}
+.lead{color:var(--muted);margin:0 0 1.5rem;max-width:60ch}
+h2{font-family:var(--f-head);font-size:1.4rem;margin:2.4rem 0 .6rem;padding-top:1rem;border-top:3px solid var(--line);display:flex;align-items:center;gap:12px}
+h2 .n{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--acid);color:#151515;font-size:1rem;flex:none}
+h2 small{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);font-weight:400;margin-left:auto}
+ol,ul{padding-left:1.2rem}li{margin:.35rem 0}
+.field{background:var(--card);border:2px solid var(--line);margin:12px 0;box-shadow:5px 5px 0 var(--line)}
+.field header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 14px;border-bottom:2px solid var(--line)}
+.field header b{font-size:.95rem}.field header span{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+.field pre{margin:0;padding:12px 14px;white-space:pre-wrap;word-wrap:break-word;font-family:var(--f-mono);font-size:.9rem;line-height:1.5}
+button{font:inherit;font-weight:700;font-size:.85rem;background:var(--sun);color:#151515;border:2px solid #151515;border-radius:999px;padding:5px 14px;cursor:pointer;white-space:nowrap;box-shadow:3px 3px 0 #151515}
+button:active{transform:translate(2px,2px);box-shadow:0 0 0 #151515}button.done{background:var(--acid)}
+button:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.note{background:var(--card);border-left:6px solid var(--tomato);padding:10px 14px;margin:12px 0;font-size:.95rem}
+label.chk{display:flex;gap:10px;align-items:flex-start;margin:.35rem 0;cursor:pointer}
+label.chk input{width:20px;height:20px;margin-top:3px;accent-color:#151515}
+label.chk input:checked+span{text-decoration:line-through;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.95rem;background:var(--card);border:2px solid var(--line);margin:12px 0}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--sun);color:#151515}
+code{font-family:var(--f-mono);background:var(--card);padding:1px 6px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>kadestudio@gmail.com</h1>
+<p class="lead">Business inbox for Kade Studio. Free, separate from your personal mail. Tick the boxes as you go; they stay ticked on this device.</p>
+
+<h2><span class="n">1</span>Create the account<small>accounts.google.com · 5 min</small></h2>
+<label class="chk"><input type="checkbox" data-k="c1"><span>Go to <code>accounts.google.com</code> → Create account → <b>For work or my business</b> → Create a new Gmail address.</span></label>
+<div class="field"><header><b>Names</b><span>first / last</span><button data-copy>Copy</button></header><pre>Kade
+Studio</pre></div>
+<div class="field"><header><b>Username, in order of preference</b><span>try until one is free</span><button data-copy>Copy</button></header><pre>kadestudio
+kade.studio
+kadestudio.be
+hellokadestudio</pre></div>
+<label class="chk"><input type="checkbox" data-k="c2"><span>Password: 16+ characters, saved in your password manager. Not reused from any other account.</span></label>
+<label class="chk"><input type="checkbox" data-k="c3"><span>Phone verification with your own number. Recovery email: your personal Gmail.</span></label>
+<label class="chk"><input type="checkbox" data-k="c4"><span>Skip "Add a business" and marketing options. Finish.</span></label>
+
+<h2><span class="n">2</span>Lock it<small>Security · 3 min</small></h2>
+<div class="note">Fiverr payouts, Meta and Netlify resets will all land here. One leak = business gone. Do this before anything else.</div>
+<label class="chk"><input type="checkbox" data-k="s1"><span>Google Account → Security → <b>2-Step Verification</b> → turn on (phone prompt or authenticator app).</span></label>
+<label class="chk"><input type="checkbox" data-k="s2"><span>Security → Backup codes → save them in your password manager.</span></label>
+<label class="chk"><input type="checkbox" data-k="s3"><span>Security → Recovery phone and email: check both are filled in.</span></label>
+
+<h2><span class="n">3</span>Make it look like a business<small>Gmail settings · 5 min</small></h2>
+<label class="chk"><input type="checkbox" data-k="b1"><span>Profile photo: Google Account → Personal info → Photo → upload <code>brand/social/profile-picture.png</code>. It appears next to every email you send.</span></label>
+<label class="chk"><input type="checkbox" data-k="b2"><span>Gmail → ⚙ → See all settings → General → <b>Signature</b> → paste:</span></label>
+<div class="field"><header><b>Signature</b><span>plain text</span><button data-copy>Copy</button></header><pre>Kade Studio
+Custom websites for small businesses · EN · NL · FR
+kadestudio@gmail.com · Instagram @kadestudio</pre></div>
+<label class="chk"><input type="checkbox" data-k="b3"><span>General → Send and Archive: show button. Undo send: 30 seconds. Save changes.</span></label>
+<label class="chk"><input type="checkbox" data-k="b4"><span>Settings → Inbox → Inbox type: <b>Default</b>, categories: untick Social and Promotions (business mail must never be hidden in a tab).</span></label>
+
+<h2><span class="n">4</span>Labels and filters<small>Settings → Labels · Filters · 5 min</small></h2>
+<div class="field"><header><b>Labels to create</b><span>Settings → Labels → Create new label</span><button data-copy>Copy</button></header><pre>Clients
+Quotes
+Fiverr
+Invoices
+Admin</pre></div>
+<p>Filters: Settings → Filters and Blocked Addresses → Create a new filter → paste in "From" → Create filter → tick "Apply the label" → choose the label.</p>
+<table>
+<tr><th>From</th><th>Apply label</th><th>Also</th></tr>
+<tr><td><code>fiverr.com</code></td><td>Fiverr</td><td>Star it</td></tr>
+<tr><td><code>facebookmail.com OR instagram.com OR meta.com</code></td><td>Admin</td><td>Skip inbox? No, keep visible</td></tr>
+<tr><td><code>netlify.com OR formspree.io OR web3forms.com</code></td><td>Admin</td><td></td></tr>
+<tr><td><code>noreply@kadestudio.be</code> (later, your site's form)</td><td>Quotes</td><td>Star it, mark important</td></tr>
+</table>
+<div class="field"><header><b>Filter "From" values</b><span>one per filter</span><button data-copy>Copy</button></header><pre>fiverr.com
+facebookmail.com OR instagram.com OR meta.com
+netlify.com OR formspree.io OR web3forms.com</pre></div>
+
+<h2><span class="n">5</span>Use it everywhere<small>today</small></h2>
+<label class="chk"><input type="checkbox" data-k="u1"><span>Fiverr: create the seller account with this address (see <code>brand/fiverr/copy-page.html</code>).</span></label>
+<label class="chk"><input type="checkbox" data-k="u2"><span>Instagram @kadestudio and the Facebook page: contact email = this address.</span></label>
+<label class="chk"><input type="checkbox" data-k="u3"><span>Netlify (hosting) and the form service (Formspree / Web3Forms): sign up with this address.</span></label>
+<label class="chk"><input type="checkbox" data-k="u4"><span>Gmail app on your phone: add the account, notifications on for this one.</span></label>
+<label class="chk"><input type="checkbox" data-k="u5"><span>Send me the final address so I replace <code>hello@kadestudio.be</code> on the site, the posts, the videos and the Fiverr kit.</span></label>
+
+<h2><span class="n">6</span>Your personal Gmail<small>optional · 15 min</small></h2>
+<p>It stays personal, no full cleanup needed. If you want space back, paste these in the Gmail search bar, select all, delete:</p>
+<div class="field"><header><b>Cleanup searches</b><span>one at a time</span><button data-copy>Copy</button></header><pre>category:promotions older_than:30d
+category:social
+category:updates older_than:90d
+unsubscribe older_than:60d
+has:attachment larger:10M older_than:1y
+in:spam
+in:trash</pre></div>
+<p>If business mail already arrived there: Settings → Forwarding and POP/IMAP → add <code>kadestudio@gmail.com</code> as a forwarding address, then forward <b>only</b> through a filter (e.g. From <code>fiverr.com</code>), never everything.</p>
+
+<h2><span class="n">7</span>Later, when there's domain money<small>about €10/year</small></h2>
+<p>Buy <code>kadestudio.be</code>, then Gmail → Settings → Accounts → <b>Send mail as</b> → add <code>hello@kadestudio.be</code>. You keep this inbox and send from the domain. Nothing else changes.</p>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var pre=b.closest('.field').querySelector('pre');var t=pre.textContent;
+      var done=function(){b.textContent='Copied';b.classList.add('done');setTimeout(function(){b.textContent='Copy';b.classList.remove('done')},1600)};
+      var fallback=function(){var r=document.createRange();r.selectNodeContents(pre);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Select + ⌘C'};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+    });
+  });
+  document.querySelectorAll('input[data-k]').forEach(function(c){
+    try{c.checked=localStorage.getItem('kade-gmail-'+c.dataset.k)==='1'}catch(e){}
+    c.addEventListener('change',function(){try{localStorage.setItem('kade-gmail-'+c.dataset.k,c.checked?'1':'0')}catch(e){}});
+  });
+})();
+</script>
+</body>
+</html>

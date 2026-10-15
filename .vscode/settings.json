@@ -1,0 +1,5 @@
+{
+  "livePreview.defaultPreviewPath": "/kade-studio/brand/setup/gmail-setup.html",
+  "livePreview.openPreviewTarget": "Embedded Preview",
+  "files.exclude": { "**/.git": true, "**/__pycache__": true }
+}
