@@ -1,0 +1,321 @@
+<title>Kade Fiverr Setup</title>
+<style>
+/* Layout: one column of fields in the exact order Fiverr asks for them, each with a copy button. */
+:root{--bg:#F1F2EC;--fg:#151515;--card:#FFFFFF;--line:#151515;--muted:#5a5c55;--acid:#74DB4B;--sun:#FFD43A;--tomato:#FF5426;--cobalt:#3B6BFF;--ok:#1f8a3a;
+  --f-head:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;--f-body:"Bricolage Grotesque",system-ui,sans-serif;--f-mono:"Courier Prime","Courier New",monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161714;--fg:#F1F2EC;--card:#1f201c;--line:#F1F2EC;--muted:#b5b7ad;--ok:#74DB4B;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161714;--fg:#F1F2EC;--card:#1f201c;--line:#F1F2EC;--muted:#b5b7ad;--ok:#74DB4B;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:24px 80px}
+.wrap{max-width:860px;margin:0 auto}
+h1{font-family:var(--f-head);font-size:clamp(2rem,5vw,3rem);line-height:1;margin:0 0 .4rem;letter-spacing:-.02em}
+.lead{color:var(--muted);margin:0 0 1.5rem;max-width:60ch}
+h2{font-family:var(--f-head);font-size:1.5rem;margin:2.6rem 0 .4rem;padding-top:1rem;border-top:3px solid var(--line)}
+h2 small{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);display:block;font-weight:400;margin-top:.2rem}
+.field{background:var(--card);border:2px solid var(--line);margin:14px 0;box-shadow:5px 5px 0 var(--line)}
+.field header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:2px solid var(--line)}
+.field header b{font-size:.95rem}
+.field header span{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+.field pre{margin:0;padding:14px;white-space:pre-wrap;word-wrap:break-word;font-family:inherit;font-size:.95rem;line-height:1.5;min-width:0}
+.field pre.mono{font-family:var(--f-mono);font-size:.9rem}
+button{font:inherit;font-weight:700;font-size:.85rem;background:var(--sun);color:#151515;border:2px solid #151515;border-radius:999px;padding:5px 14px;cursor:pointer;white-space:nowrap;box-shadow:3px 3px 0 #151515}
+button:active{transform:translate(2px,2px);box-shadow:0 0 0 #151515}
+button.done{background:var(--acid)}
+button:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.note{background:var(--card);border-left:6px solid var(--tomato);padding:10px 14px;margin:12px 0;font-size:.95rem}
+table{border-collapse:collapse;width:100%;font-size:.95rem;background:var(--card);border:2px solid var(--line);margin:14px 0}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--sun);color:#151515}
+.pk td:first-child{font-weight:700;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:1rem 0}
+.tabs button{background:var(--card);color:var(--fg);border-color:var(--line);box-shadow:3px 3px 0 var(--line)}
+.tabs button[aria-pressed="true"]{background:var(--acid);color:#151515}
+.gig{display:none}.gig.on{display:block}
+ol.steps{padding-left:1.2rem}
+ol.steps li{margin:.3rem 0}
+</style>
+
+<div class="wrap">
+<h1>Kade Studio on Fiverr</h1>
+<p class="lead">Every field in the order Fiverr asks for it. Tap <b>Copy</b>, paste into Fiverr, move on. Character limits are checked against Fiverr's current form.</p>
+
+<h2>Step 0. Account <small>fiverr.com → Join → Become a seller</small></h2>
+<ol class="steps">
+<li>Join with your Kade email address (not a personal one).</li>
+<li>Username <b>kadestudio</b> (fallback <b>kade_studio</b>). Cannot be changed later.</li>
+<li>Confirm email and phone.</li>
+<li>Become a seller → fill in Step 1 below.</li>
+<li>ID check (ID card photo + selfie) before the first payout. Payout via Payoneer or bank transfer (IBAN). Enter your company number so Fiverr doesn't add VAT on its 20% commission.</li>
+</ol>
+
+<h2>Step 1. Profile <small>Seller onboarding → Personal info</small></h2>
+<div class="field"><header><b>Display name</b><span>Full name field</span><button data-copy>Copy</button></header><pre>Kade Studio</pre></div>
+<div class="field"><header><b>Profile picture</b><span>upload</span></header><pre>brand/social/profile-picture.png</pre></div>
+<div class="field"><header><b>Tagline</b><span>max 70 characters · 51 used</span><button data-copy>Copy</button></header><pre>Custom websites for small businesses (EN · NL · FR)</pre></div>
+<div class="field"><header><b>Description</b><span>max 600 characters · 464 used</span><button data-copy>Copy</button></header><pre>I'm a web designer from Belgium and I build clear, fast websites for small businesses: shops, salons, trades, restaurants, independent professionals.
+
+What you get: a custom design (no recycled template), copy written for your business, mobile-first, found on Google, and fast delivery. I work in English, Dutch and French, so bilingual sites are included, not an upsell.
+
+Fixed price, agreed before we start. One point of contact from the first message to launch.</pre></div>
+<div class="field"><header><b>Languages</b><span>add one by one</span><button data-copy>Copy</button></header><pre>English - Fluent
+Dutch - Native
+French - Native</pre></div>
+<div class="field"><header><b>Occupation</b><span>pick from list</span></header><pre>Web Design → Website Design (from 2024)</pre></div>
+<div class="field"><header><b>Skills</b><span>pick from list, only what you really do</span><button data-copy>Copy</button></header><pre>Web Design
+Landing Page Design
+HTML & CSS
+JavaScript
+Responsive Design
+SEO
+Copywriting</pre></div>
+<div class="note">Education and certifications: leave empty unless you have something real. Empty beats invented.</div>
+
+<h2>Step 2. Gigs <small>Switch to Selling → Gigs → Create a new gig</small></h2>
+<div class="tabs">
+<button type="button" data-tab="g1" aria-pressed="true">Gig 1 · Business website</button>
+<button type="button" data-tab="g2" aria-pressed="false">Gig 2 · Landing page</button>
+<button type="button" data-tab="g3" aria-pressed="false">Gig 3 · Fix or speed up</button>
+</div>
+
+<!-- ============ GIG 1 ============ -->
+<section class="gig on" id="g1">
+<h2>2a. Overview <small>Gig title · Category · Metadata · Tags</small></h2>
+<div class="field"><header><b>Gig title</b><span>max 80 · 77 used · starts with "I will"</span><button data-copy>Copy</button></header><pre>I will design and develop a responsive custom website for your small business</pre></div>
+<div class="field"><header><b>Category</b><span>dropdowns</span></header><pre>Programming & Tech → Website Development → Business websites</pre></div>
+<div class="field"><header><b>Gig metadata</b><span>tick boxes</span></header><pre>Website type: Business
+Features: Responsive design · SEO · Contact form · Social media integration · Google Maps
+Programming language: HTML / CSS / JavaScript
+Website platform: Other / Custom</pre></div>
+<div class="field"><header><b>Search tags</b><span>5 tags, one at a time</span><button data-copy>Copy</button></header><pre>business website
+responsive website
+custom website
+landing page
+website design</pre></div>
+
+<h2>2b. Pricing <small>3 packages · Extras</small></h2>
+<table class="pk">
+<tr><th></th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+<tr><td>Package name</td><td>One-page site</td><td>Business site</td><td>Next level</td></tr>
+<tr><td>Package description (max 100)</td><td>1 custom page, contact form, Google Maps, source files.</td><td>Up to 6 pages, copy written for you, local SEO, 2 weeks support.</td><td>Up to 10 pages, second language, booking or catalogue, 1 month support.</td></tr>
+<tr><td>Delivery time</td><td>2 days</td><td>5 days</td><td>10 days</td></tr>
+<tr><td>Revisions</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><td>Number of pages</td><td>1</td><td>6</td><td>10</td></tr>
+<tr><td>Responsive design</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Content upload</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Source file</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Price</td><td>€ 350</td><td>€ 890</td><td>€ 1 690</td></tr>
+</table>
+<div class="field"><header><b>Package descriptions</b><span>max 100 each</span><button data-copy>Copy</button></header><pre>Basic: 1 custom page, contact form, Google Maps, source files.
+Standard: Up to 6 pages, copy written for you, local SEO, 2 weeks support.
+Premium: Up to 10 pages, second language, booking or catalogue, 1 month support.</pre></div>
+<div class="field"><header><b>Gig extras</b><span>title · price · extra days</span><button data-copy>Copy</button></header><pre>Additional page - € 90 - +1 day
+Additional revision - € 40 - +1 day
+Second language (NL, FR or EN) - € 250 - +2 days
+Speed optimisation of an existing site - € 120 - +1 day
+Simple logo - € 150 - +2 days
+Extra fast delivery (24 h, Basic only) - € 100</pre></div>
+<div class="note">Fiverr prices are entered in USD or EUR depending on your account currency. If the form is in USD, use 380 / 960 / 1 830.</div>
+
+<h2>2c. Description &amp; FAQ <small>max 1200 characters</small></h2>
+<div class="field"><header><b>Description</b><span>1 173 characters</span><button data-copy>Copy</button></header><pre>I design and develop custom websites for small businesses: shops, salons, trades, restaurants, independent professionals. Custom code, no WordPress template, so your site loads fast and needs no plugin updates.
+
+WHAT YOU WILL GET
+• Custom design that fits your trade and your customers
+• 100% responsive: phone, tablet and desktop
+• Fast loading and SEO friendly (local SEO basics included)
+• Contact form, opening hours, Google Maps, social links
+• Copy written for you in English, Dutch or French
+• Source files and a short handover video so you can edit it yourself
+
+WHY CHOOSE ME
+• Based in Belgium, EU time zone, replies within a few hours
+• One point of contact from first message to launch
+• Fixed price agreed upfront, delivered on time
+• Bilingual sites (EN/NL/FR) written natively, not translated
+
+HOW IT WORKS
+1. You send your business details and the requirements.
+2. I show you the homepage design. You give feedback.
+3. I build all pages, texts and the mobile version.
+4. Launch and handover.
+
+Not included: hosting and domain fees (I set them up), stock photos, logo (extra).
+
+NOTE: please message me before ordering so I can confirm scope and delivery date.</pre></div>
+
+<div class="field"><header><b>FAQ 1</b><span>question / answer</span><button data-copy>Copy</button></header><pre>Do I need to write the texts myself?
+No. In Standard and Premium I write the copy from your answers. You review and correct.</pre></div>
+<div class="field"><header><b>FAQ 2</b><span></span><button data-copy>Copy</button></header><pre>Can the site be in two languages?
+Yes. Dutch, French and English. Included in Premium, available as an extra on other packages.</pre></div>
+<div class="field"><header><b>FAQ 3</b><span></span><button data-copy>Copy</button></header><pre>Which platform do you use?
+Custom code (HTML, CSS, JavaScript). No WordPress, no page builder, so nothing to update and no plugin fees. You get the source files.</pre></div>
+<div class="field"><header><b>FAQ 4</b><span></span><button data-copy>Copy</button></header><pre>Do you do hosting and the domain name?
+I set them up for you (Netlify, Cloudflare or your own hosting). The fees are paid by you; I can run them for you for a monthly fee.</pre></div>
+<div class="field"><header><b>FAQ 5</b><span></span><button data-copy>Copy</button></header><pre>Will I be able to edit the site myself?
+Yes. You get the source files, a short guide and a video for hours, prices and photos.</pre></div>
+<div class="field"><header><b>FAQ 6</b><span></span><button data-copy>Copy</button></header><pre>What counts as "Next level"?
+Anything beyond a brochure site: online booking, a product catalogue or small shop, customer accounts, payment or calendar integrations, custom animations. Message me first so I can quote correctly.</pre></div>
+<div class="field"><header><b>FAQ 7</b><span></span><button data-copy>Copy</button></header><pre>Can you deliver faster?
+Basic can be done in 24 hours as an extra. For Standard and Premium, ask before ordering.</pre></div>
+
+<h2>2d. Requirements <small>what the buyer answers after ordering · add one by one</small></h2>
+<div class="field"><header><b>Requirement 1</b><span>free text · mandatory</span><button data-copy>Copy</button></header><pre>What is the name of your business, in which city, and what do you sell or do?</pre></div>
+<div class="field"><header><b>Requirement 2</b><span>attachment · optional</span><button data-copy>Copy</button></header><pre>Upload your logo and photos if you have them (phone photos are fine). If you have none, write "none".</pre></div>
+<div class="field"><header><b>Requirement 3</b><span>free text · mandatory</span><button data-copy>Copy</button></header><pre>Send 2 or 3 websites you like and 1 you don't, with a few words why.</pre></div>
+<div class="field"><header><b>Requirement 4</b><span>free text · mandatory</span><button data-copy>Copy</button></header><pre>Opening hours, address, phone, email and social media links.</pre></div>
+<div class="field"><header><b>Requirement 5</b><span>multiple choice · mandatory</span><button data-copy>Copy</button></header><pre>Language(s) of the site: English / Dutch / French / Two languages</pre></div>
+<div class="field"><header><b>Requirement 6</b><span>free text · optional</span><button data-copy>Copy</button></header><pre>Premium only: which features do you need (booking, catalogue, payments, accounts...) and which tools do you already use?</pre></div>
+
+<h2>2e. Gallery <small>3 images · 1 video</small></h2>
+<div class="field"><header><b>Files</b><span>upload</span></header><pre>brand/fiverr/gig-1.png   (first image = thumbnail)
+brand/fiverr/gig-2.png
+brand/fiverr/gig-3.png
+brand/video/kade-portfolio-nl-9x16.mp4   (or the FR one; max 75 s)</pre></div>
+<div class="note">Publish, then open your own gig as a buyer and read it once on your phone. Fix anything that looks off before sharing the link.</div>
+</section>
+
+<!-- ============ GIG 2 ============ -->
+<section class="gig" id="g2">
+<h2>2a. Overview</h2>
+<div class="field"><header><b>Gig title</b><span>max 80 · 73 used</span><button data-copy>Copy</button></header><pre>I will design and develop a responsive landing page for your product or event</pre></div>
+<div class="field"><header><b>Category</b><span></span></header><pre>Programming & Tech → Website Development → Landing pages</pre></div>
+<div class="field"><header><b>Search tags</b><span>5</span><button data-copy>Copy</button></header><pre>landing page
+landing page design
+responsive landing page
+sales page
+lead generation</pre></div>
+<h2>2b. Pricing</h2>
+<table class="pk">
+<tr><th></th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+<tr><td>Package name</td><td>Simple page</td><td>Campaign page</td><td>Page + extras</td></tr>
+<tr><td>Description</td><td>1 section layout, 1 call to action, contact form, source files.</td><td>Full landing page, copy written for you, form or booking link, basic SEO.</td><td>Landing page in 2 languages, custom animations, analytics setup, 2 weeks support.</td></tr>
+<tr><td>Delivery</td><td>1 day</td><td>2 days</td><td>3 days</td></tr>
+<tr><td>Revisions</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><td>Price</td><td>€ 250</td><td>€ 450</td><td>€ 750</td></tr>
+</table>
+<h2>2c. Description</h2>
+<div class="field"><header><b>Description</b><span>under 1 200</span><button data-copy>Copy</button></header><pre>One page, one goal: sign-ups, bookings or sales. I design and develop landing pages in custom code, so they load fast and convert on mobile.
+
+WHAT YOU WILL GET
+• Custom design matched to your brand or campaign
+• 100% responsive, fast loading, SEO friendly
+• One clear call to action, contact form or booking link
+• Copy written for you in English, Dutch or French (Standard and Premium)
+• Source files and a short handover
+
+WHY CHOOSE ME
+• Based in Belgium, EU time zone, replies within a few hours
+• Fixed price, on-time delivery
+• Bilingual pages (EN/NL/FR) written natively
+
+HOW IT WORKS
+1. You send the goal, the offer and any brand material.
+2. I show you the design. You give feedback.
+3. I build it, test it on phone and desktop, and hand it over.
+
+Not included: hosting and domain fees, ad campaigns, stock photos.
+
+NOTE: please message me before ordering so I can confirm the scope.</pre></div>
+<div class="field"><header><b>FAQ</b><span>add as separate entries</span><button data-copy>Copy</button></header><pre>Can you connect it to my mailing list or booking tool?
+Yes: Mailchimp, Brevo, Calendly, Cal.com and most form tools. Tell me which one in the requirements.
+
+Do you run the ads too?
+No. I build the page and set up analytics so you can see what your ads bring in.
+
+Can it be added to my existing website?
+Yes, as a separate page on your domain. Send me access details after ordering.</pre></div>
+<h2>2d. Requirements</h2>
+<div class="field"><header><b>Requirements</b><span>add one by one</span><button data-copy>Copy</button></header><pre>1. What is the page for (sign-ups, bookings, sales, event)? What is the offer?
+2. Upload logo, photos and brand colours if you have them.
+3. Where should the button lead (form, booking tool, shop, phone)?
+4. Language(s) of the page.
+5. Send 1 or 2 landing pages you like.</pre></div>
+<h2>2e. Gallery</h2>
+<div class="field"><header><b>Files</b><span></span></header><pre>brand/fiverr/gig-1.png, gig-2.png (reuse) + a landing page mockup once you have one</pre></div>
+</section>
+
+<!-- ============ GIG 3 ============ -->
+<section class="gig" id="g3">
+<h2>2a. Overview</h2>
+<div class="field"><header><b>Gig title</b><span>max 80 · 52 used</span><button data-copy>Copy</button></header><pre>I will fix, update or speed up your existing website</pre></div>
+<div class="field"><header><b>Category</b><span></span></header><pre>Programming & Tech → Website Maintenance → Bug fixes</pre></div>
+<div class="field"><header><b>Search tags</b><span>5</span><button data-copy>Copy</button></header><pre>website fix
+website speed
+website update
+html css fix
+responsive fix</pre></div>
+<h2>2b. Pricing</h2>
+<table class="pk">
+<tr><th></th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+<tr><td>Package name</td><td>One fix</td><td>Fix + update</td><td>Speed + fixes</td></tr>
+<tr><td>Description</td><td>1 bug fix or 1 small change (text, image, link, layout).</td><td>Up to 3 fixes or changes, plus a mobile check.</td><td>Speed optimisation, up to 5 fixes, mobile and browser check.</td></tr>
+<tr><td>Delivery</td><td>1 day</td><td>2 days</td><td>3 days</td></tr>
+<tr><td>Revisions</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>Price</td><td>€ 60</td><td>€ 120</td><td>€ 250</td></tr>
+</table>
+<h2>2c. Description</h2>
+<div class="field"><header><b>Description</b><span>under 1 200</span><button data-copy>Copy</button></header><pre>Something broken, outdated or slow on your website? Send me the link and what's wrong. I fix it fast and clean, and I explain what I changed.
+
+WHAT I FIX
+• Layout problems on mobile or desktop
+• Broken links, forms, buttons, images
+• Text, price, opening hours and photo updates
+• Slow pages: image compression, code cleanup, caching
+• Small design refreshes (fonts, colours, spacing)
+
+WHY CHOOSE ME
+• Web designer from Belgium, EU time zone, replies within a few hours
+• Clean code, no hacks, and a short note on what was done
+• On-time delivery, usually within 24 hours for Basic
+
+HOW IT WORKS
+1. Send the website link and a description or screenshot of the issue.
+2. I confirm it's covered by the package (or send a custom offer).
+3. I fix it, test it, and send you a before/after.
+
+Works on custom-coded sites, HTML/CSS/JS and most static site builders. For WordPress or Shopify, message me first.
+
+NOTE: please message me before ordering so I can check the site.</pre></div>
+<div class="field"><header><b>FAQ</b><span>add as separate entries</span><button data-copy>Copy</button></header><pre>What do you need from me?
+The website link, a description or screenshot of the problem, and access (hosting, FTP or repository) if the fix needs it.
+
+Can you fix a WordPress or Shopify site?
+Often yes, but message me first with the link so I can check.
+
+What if the fix is bigger than expected?
+I tell you before starting and send a custom offer. No surprise costs.</pre></div>
+<h2>2d. Requirements</h2>
+<div class="field"><header><b>Requirements</b><span>add one by one</span><button data-copy>Copy</button></header><pre>1. Website link.
+2. What is wrong or what should change? Add a screenshot if you can.
+3. Access details if needed (hosting login, FTP or repository). You can share them through Fiverr's secure message after ordering.</pre></div>
+<h2>2e. Gallery</h2>
+<div class="field"><header><b>Files</b><span></span></header><pre>brand/fiverr/gig-2.png (reuse) + before/after screenshots from your first jobs</pre></div>
+</section>
+
+<h2>Step 3. After publishing <small>what the top sellers do</small></h2>
+<ol class="steps">
+<li>Turn on Fiverr notifications on your phone. Reply within the hour; the response time is shown on your profile.</li>
+<li>Post the three gigs the same day. The cheap fix gig brings the first reviews.</li>
+<li>Deliver before the deadline, never on it. If a buyer goes quiet, click "Request extension" early.</li>
+<li>Never move the conversation or the payment outside Fiverr before the order is complete.</li>
+<li>After delivery, ask once for a review.</li>
+</ol>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var pre=b.closest('.field').querySelector('pre');var t=pre.textContent;
+      var done=function(){b.textContent='Copied';b.classList.add('done');setTimeout(function(){b.textContent='Copy';b.classList.remove('done')},1600)};
+      var fallback=function(){var r=document.createRange();r.selectNodeContents(pre);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Select + ⌘C'};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+    });
+  });
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      document.querySelectorAll('.gig').forEach(function(g){g.classList.toggle('on',g.id===b.dataset.tab)});
+    });
+  });
+})();
+</script>
