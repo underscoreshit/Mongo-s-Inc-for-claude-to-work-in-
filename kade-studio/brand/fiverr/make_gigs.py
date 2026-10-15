@@ -139,13 +139,13 @@ g2 = (f'<div class="abs" style="inset:0;background:var(--ink)"></div>'
       f'<div class="abs mono" style="left:66px;top:716px;font-size:24px;color:var(--acid)">kadestudio.be · Belgium · replies within a few hours</div>')
 
 # ---------- image 3: packages ----------
-pk = [("One page", "€ 350", ["1 page", "contact form + map", "2 days"], "var(--white)", "var(--ink)", ""),
-      ("Business site", "€ 890", ["up to 6 pages", "copy written for you", "local SEO", "5 days"], "var(--sun)", "var(--ink)", "transform:translateY(-34px);box-shadow:14px 14px 0 var(--ink)"),
-      ("Next level", "€ 1 690", ["up to 10 pages", "second language", "booking, catalogue, accounts", "10 days"], "var(--cobalt)", "var(--white)", "")]
+pk = [("One-page site", "€ 350", ["1 page", "contact form + map", "source files", "2 days"], "var(--white)", "var(--ink)", ""),
+      ("Business site", "€ 890", ["up to 6 pages", "copy written for you", "local SEO", "2 weeks support", "5 days"], "var(--sun)", "var(--ink)", "transform:translateY(-34px);box-shadow:14px 14px 0 var(--ink)"),
+      ("Next level", "€ 1 690", ["up to 10 pages", "second language", "booking, catalogue, accounts", "1 month support", "10 days"], "var(--cobalt)", "var(--white)", "")]
 cards = "".join(f'<div class="pk" style="background:{bg};color:{fg};{ex}"><div class="n">{n}</div><div class="p">{p}</div><div class="d">{"".join(f"<div>{x}</div>" for x in d)}</div></div>' for n, p, d, bg, fg, ex in pk)
 g3 = (f'<div class="abs" style="inset:0;background:var(--bubble)"></div>'
-      f'<h2 class="abs poster" style="left:60px;top:56px;font-size:90px;white-space:nowrap">Fixed price. <span style="color:var(--tomato)">No jargon.</span></h2>'
-      f'<p class="abs" style="left:64px;top:160px;font-size:26px;font-weight:600">Pick a package or message me for a custom offer.</p>'
+      f'<h2 class="abs poster" style="left:60px;top:56px;font-size:90px;white-space:nowrap">Simple pricing.</h2>'
+      f'<p class="abs" style="left:64px;top:160px;font-size:26px;font-weight:600">Three packages. Message me for a custom offer.</p>'
       f'<div class="abs" style="left:60px;top:250px;width:1160px;display:flex;gap:30px;align-items:flex-start">{cards}</div>'
       f'<div class="abs bsh" style="left:748px;top:168px;width:140px;height:140px"></div><div class="abs burst" style="left:740px;top:160px;width:140px;height:140px;font-size:25px;background:var(--acid);z-index:5"><span style="transform:rotate(-10deg)">Most<br>popular</span></div>'
       f'<div class="abs mono" style="left:66px;top:716px;font-size:24px">Prices excl. VAT · message me before ordering · kadestudio.be</div>')
