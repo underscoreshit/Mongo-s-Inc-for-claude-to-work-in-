@@ -1,0 +1,817 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Belgium Motor Homes Store</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: mobile-first single column. Belgian tricolour palette (black, yellow, a touch of red).
+   The hero carries a dark showroom stage with a rotating 3D motorhome; the rest is quiet: two listing links, a buying guide, three steps, one phone number. */
+:root{
+  --bg:#F3F2EE; --surface:#FFFFFF; --surface-2:#E8E6DF; --ink:#151515; --muted:#5B5A55; --line:#D6D4CB;
+  --accent:#FDDA24; --on-accent:#151515; --red:#D4212F; --focus:#151515; --warn:#8A5600;
+  --stage-a:#141414; --stage-b:#2B2A27; --stage-glow:#5B5852; --stage-ink:#F3F2EE; --stage-line:#3A3936;
+  --be-black:#000000; --be-yellow:#FDDA24; --be-red:#EF3340;
+  --sil-body:#F3F2EE; --sil-van:#B9BDC1; --sil-cab:#5C6066; --sil-glass:#0F1215; --sil-tire:#050505; --sil-hub:#AEB3B8; --sil-door:#D9D8D2;
+  --shadow:0 1px 2px rgba(21,21,21,.06),0 10px 30px rgba(21,21,21,.08);
+  --font-display:'Barlow Condensed','Arial Narrow','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Albert Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --r:14px; --header-h:60px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111110; --surface:#1B1B1A; --surface-2:#272725; --ink:#F1F0EA; --muted:#A6A49C; --line:#343330;
+    --accent:#FDDA24; --on-accent:#151515; --red:#F0505C; --focus:#FDDA24; --warn:#E5B454;
+    --stage-a:#0B0B0B; --stage-b:#262523; --stage-glow:#55524C; --stage-ink:#F3F2EE; --stage-line:#3A3936;
+    --be-black:#000000; --be-yellow:#FDDA24; --be-red:#EF3340;
+    --sil-body:#F3F2EE; --sil-van:#B9BDC1; --sil-cab:#5C6066; --sil-glass:#0F1215; --sil-tire:#050505; --sil-hub:#AEB3B8; --sil-door:#D9D8D2;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.4);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111110; --surface:#1B1B1A; --surface-2:#272725; --ink:#F1F0EA; --muted:#A6A49C; --line:#343330;
+  --accent:#FDDA24; --on-accent:#151515; --red:#F0505C; --focus:#FDDA24; --warn:#E5B454;
+  --stage-a:#0B0B0B; --stage-b:#262523; --stage-glow:#55524C; --stage-ink:#F3F2EE; --stage-line:#3A3936;
+  --be-black:#000000; --be-yellow:#FDDA24; --be-red:#EF3340;
+  --sil-body:#F3F2EE; --sil-van:#B9BDC1; --sil-cab:#5C6066; --sil-glass:#0F1215; --sil-tire:#050505; --sil-hub:#AEB3B8; --sil-door:#D9D8D2;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.4);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,dl,dd,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.section{padding-block:clamp(48px,9vw,96px);scroll-margin-top:calc(var(--header-h) + env(safe-area-inset-top,0px))}
+.section--tint{background:var(--surface)}
+
+.display{font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:.005em;line-height:.98;text-wrap:balance}
+h1.display{font-size:clamp(2.5rem,10.5vw,5.2rem);overflow-wrap:normal;hyphens:none}
+h1.display em{font-style:normal;background:var(--accent);color:var(--on-accent);padding:0 .12em;border-radius:.08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+h2.display{font-size:clamp(2rem,7vw,3.2rem)}
+.eyebrow{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:1.0625rem;color:var(--muted);max-width:56ch}
+.section-head{display:flex;flex-direction:column;gap:12px;margin-bottom:clamp(24px,4vw,40px)}
+.todo{font-family:var(--font-mono);font-size:.8125rem;color:var(--warn);border:1px dashed var(--warn);border-radius:8px;padding:4px 10px;display:inline-block}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;border:1.5px solid transparent;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:transform .15s ease,background-color .2s ease,filter .2s ease}
+.btn:active{transform:scale(.97)}
+.btn--primary{background:var(--accent);color:var(--on-accent)}
+.btn--primary:hover{filter:brightness(.94)}
+.btn--ghost{position:relative;overflow:hidden;isolation:isolate;border-color:var(--ink);background:transparent;color:var(--ink)}
+.btn--ghost::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);transform:translateX(-101%);transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.btn--ghost:hover{border-color:var(--accent);color:var(--on-accent)}
+.btn--ghost:hover::before{transform:translateX(0)}
+.btn--sm{min-height:44px;padding:0 16px;font-size:.9375rem}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px) saturate(140%);-webkit-backdrop-filter:blur(12px) saturate(140%);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand-mark{flex:none;width:42px;height:42px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.brand-mark svg{width:32px;height:24px;display:block}
+.brand-name{font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:1rem;line-height:1.02;letter-spacing:.03em;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-sub{display:flex;align-items:center;gap:7px;color:var(--muted);font-weight:600}
+.flag{display:inline-grid;grid-template-columns:repeat(3,6px);height:9px;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.flag i:nth-child(1){background:var(--be-black)}.flag i:nth-child(2){background:var(--be-yellow)}.flag i:nth-child(3){background:var(--be-red)}
+.top-nav{display:none;gap:26px;font-weight:500;font-size:.9375rem}
+.top-nav a{text-decoration:none;padding-block:8px;border-bottom:2px solid transparent}
+.top-nav a:hover{border-bottom-color:var(--accent)}
+.top-right{display:flex;align-items:center;gap:12px;flex:none}
+.lang{display:flex;gap:2px;padding:3px;background:var(--surface-2);border-radius:999px}
+.lang button{min-width:40px;min-height:38px;border:0;border-radius:999px;background:transparent;cursor:pointer;font-family:var(--font-mono);font-size:.8125rem;font-weight:500;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.top-cta{display:none}
+
+/* Hero */
+.hero{padding-block:clamp(28px,5vw,64px) clamp(40px,7vw,80px)}
+.hero-grid{display:grid;gap:28px}
+.hero-copy{display:flex;flex-direction:column;gap:18px;min-width:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+.showroom{display:flex;flex-direction:column;gap:14px;min-width:0}
+.stage{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:calc(var(--r) + 6px);overflow:hidden;background:radial-gradient(ellipse 58% 20% at 50% 80%,var(--stage-glow),transparent 72%),linear-gradient(180deg,var(--stage-a),var(--stage-b));border:1px solid var(--stage-line);touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--be-black) 0 33.33%,var(--be-yellow) 33.33% 66.66%,var(--be-red) 66.66%)}
+.stage.is-dragging{cursor:grabbing}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .5s ease}
+.stage.is-3d canvas{opacity:1}
+.stage-fallback{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:0 5% 15%;transition:opacity .4s ease}
+.stage.is-3d .stage-fallback{opacity:0;pointer-events:none}
+.stage-fallback .sil{width:100%;height:auto}
+.stage-hint{position:absolute;right:12px;top:12px;z-index:2;font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--stage-ink);background:color-mix(in srgb,var(--stage-a) 70%,transparent);border:1px solid var(--stage-line);padding:6px 10px;border-radius:999px;display:none}
+.stage.is-3d .stage-hint{display:block}
+.stage-turn{position:absolute;bottom:16px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--stage-line);background:color-mix(in srgb,var(--stage-a) 70%,transparent);color:var(--stage-ink);cursor:pointer;display:none;align-items:center;justify-content:center;font-size:1.1rem;line-height:1}
+.stage.is-3d .stage-turn{display:flex}
+.stage-turn--l{left:10px}.stage-turn--r{right:10px}
+
+/* Promises (the four things every buyer gets) */
+.promise{position:relative;isolation:isolate;color:#F3F2EE;background:#141414;overflow:hidden;min-height:min(92vh,760px);display:flex;align-items:flex-end}
+.promise>.wrap{width:100%}
+.promise-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center;display:none}
+.promise.has-photo .promise-photo{display:block}
+.promise::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,10,.55),rgba(10,10,10,.25) 35%,rgba(10,10,10,.86) 70%,rgba(10,10,10,.94));}
+.promise:not(.has-photo)::before{background:radial-gradient(ellipse 70% 60% at 80% 20%,#3a3832,transparent 70%),linear-gradient(180deg,#141414,#1f1e1b)}
+.promise .eyebrow{display:inline-block;background:var(--accent);color:var(--on-accent);padding:6px 10px;border-radius:6px;font-weight:500}
+.promise h2{text-shadow:0 2px 18px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.8)}
+.promise .lede{color:#EDEBE4;text-shadow:0 1px 12px rgba(0,0,0,.8)}
+.promise .section-head{align-items:flex-start}
+.promises{display:grid;gap:14px;margin-top:clamp(24px,4vw,40px)}
+.promises li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:18px;border-radius:var(--r);background:rgba(12,12,12,.62);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.promises i{flex:none;width:44px;height:44px;border-radius:12px;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center}
+.promises i svg{width:24px;height:24px;display:block}
+.promises strong{display:block;font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:1.3rem;line-height:1.05}
+.promises span{color:#CFCDC5;font-size:.9375rem}
+.promise .stripe{height:5px;background:linear-gradient(90deg,var(--be-black) 0 33.33%,var(--be-yellow) 33.33% 66.66%,var(--be-red) 66.66%);position:absolute;left:0;right:0;bottom:0}
+
+/* Silhouettes (shown until the 3D model is ready) */
+.sil-body{fill:var(--sil-body)}.sil-van{fill:var(--sil-van)}.sil-cab{fill:var(--sil-cab)}.sil-glass{fill:var(--sil-glass)}
+.sil-tire{fill:var(--sil-tire)}.sil-hub{fill:var(--sil-hub)}.sil-door{fill:var(--sil-door)}.sil-stripe{fill:var(--be-yellow)}
+.sil-ground{fill:var(--stage-ink);opacity:.2}
+
+/* Listings */
+.links{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.link{display:grid;gap:14px;align-content:space-between;min-height:188px;padding:22px;border-radius:calc(var(--r) + 4px);text-decoration:none;border:1.5px solid var(--line);background:var(--bg);min-width:0;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.link:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brand)}
+.link--twee{--brand:#1A8F3C}
+.link--fb{--brand:#1877F2}
+.link-logo{display:flex;align-items:center;gap:12px}
+.link-logo .mark{flex:none;width:52px;height:52px;border-radius:14px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center}
+.link-logo .mark svg{width:30px;height:30px;display:block}
+.link-logo .mark img{width:100%;height:100%;object-fit:contain;display:none}
+.link-logo .mark.has-img{background:transparent;padding:0}
+.link-logo .mark.has-img svg{display:none}.link-logo .mark.has-img img{display:block}
+.link-name{font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.7rem,6vw,2.3rem);line-height:.98;color:var(--brand)}
+.link-sub{color:var(--muted)}
+.link-go{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:700;color:var(--brand)}
+.link-go::after{content:"\2197";font-size:1.4rem;line-height:1}
+.devnote{margin-top:18px}
+
+/* Guide */
+.guide{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+.guide li{display:grid;gap:6px;align-content:start;padding-block:20px;border-bottom:1px solid var(--line);min-width:0}
+.guide h3{font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:1.4rem;line-height:1.05}
+.guide p{color:var(--muted);max-width:60ch}
+
+/* Steps */
+.steps{display:grid;gap:18px;counter-reset:step}
+.steps li{counter-increment:step;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
+.steps li::before{content:counter(step);font-family:var(--font-display);font-weight:800;font-size:1.6rem;line-height:1;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent);color:var(--on-accent)}
+.steps strong{display:block;font-weight:700;font-size:1.0625rem}
+.steps span{color:var(--muted);font-size:.9375rem}
+
+/* Contact */
+.contact-grid{display:grid;gap:28px}
+.call{display:grid;gap:14px;align-content:start;justify-items:start;min-width:0}
+.phone{font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,9.6vw,4.6rem);line-height:.98;font-variant-numeric:tabular-nums;text-decoration:none;overflow-wrap:anywhere}
+.info{display:grid;gap:20px;align-content:start}
+.info h3{font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:1.25rem;margin-bottom:4px}
+.info p{color:var(--muted)}
+.info a{font-weight:600;color:var(--ink)}
+.info .todo{margin-block:6px}
+.mail{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.9375rem;overflow-wrap:anywhere;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:2px}
+.foot a{color:inherit}
+
+/* Footer + dock */
+.foot{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.875rem}
+.foot-in{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.dock a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;text-decoration:none;font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:1.0625rem;color:var(--ink);border:1.5px solid var(--line)}
+.dock a.is-main{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+
+@media (max-width:359px){ .brand-name{display:none} }
+@media (min-width:560px){
+  .links{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .promises{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .guide{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}
+}
+@media (min-width:1100px){
+  .promises{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .promises li{grid-template-columns:minmax(0,1fr);gap:12px}
+}
+@media (min-width:900px){
+  body{padding-bottom:0}
+  .dock{display:none}
+  .top-nav{display:flex}
+  .top-cta{display:inline-flex}
+  .hero-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center}
+  h1.display{font-size:clamp(2.8rem,4.6vw,4.6rem)}
+  .stage{aspect-ratio:16/11}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+  .steps li{grid-template-columns:minmax(0,1fr)}
+  .contact-grid{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:48px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+</style>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#home" aria-label="Belgium Motor Homes Store">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 24" focusable="false"><rect x="1" y="3" width="20" height="14" rx="2.5" fill="#151515"/><polygon points="20,8 26,8 31,13 31,17 20,17" fill="#151515"/><rect x="4" y="6.5" width="7" height="4" rx="1" fill="#FDDA24"/><rect x="22.5" y="10" width="4.5" height="3.2" rx=".6" fill="#FDDA24"/><circle cx="8" cy="18" r="3.4" fill="#151515" stroke="#FDDA24" stroke-width="1.2"/><circle cx="25" cy="18" r="3.4" fill="#151515" stroke="#FDDA24" stroke-width="1.2"/></svg>
+      </span>
+      <span class="brand-name">Belgium Motor Homes<span class="brand-sub">Store <span class="flag" aria-hidden="true"><i></i><i></i><i></i></span></span></span>
+    </a>
+    <nav class="top-nav" aria-label="Menu">
+      <a href="#aanbod" data-i18n="nav.ads"></a>
+      <a href="#troeven" data-i18n="nav.promise"></a>
+      <a href="#contact" data-i18n="nav.contact"></a>
+    </nav>
+    <div class="top-right">
+      <div class="lang" id="langSeg" role="group" aria-label="Taal / Langue / Language">
+        <button type="button" data-lang="nl" aria-pressed="false" aria-label="Nederlands">NL</button>
+        <button type="button" data-lang="fr" aria-pressed="false" aria-label="Français">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+      <a class="btn btn--primary btn--sm top-cta" href="#contact" data-i18n="cta.call"></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+        <h1 class="display" data-i18n="hero.h1"></h1>
+        <p class="lede" data-i18n="hero.lede"></p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#contact" data-i18n="cta.call"></a>
+          <a class="btn btn--ghost" href="#aanbod" data-i18n="cta.ads"></a>
+        </div>
+      </div>
+
+      <div class="showroom">
+        <div class="stage" id="stage" role="img" data-i18n-aria="stage.aria">
+          <span class="stage-hint" aria-hidden="true" data-i18n="stage.hint"></span>
+          <div class="stage-fallback" id="stageFallback"></div>
+          <canvas id="stageCanvas" aria-hidden="true"></canvas>
+          <button class="stage-turn stage-turn--l" id="turnL" type="button" data-i18n-aria="stage.left">&#8592;</button>
+          <button class="stage-turn stage-turn--r" id="turnR" type="button" data-i18n-aria="stage.right">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="aanbod">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="ads.eyebrow"></p>
+        <h2 class="display" data-i18n="ads.h2"></h2>
+        <p class="lede" data-i18n="ads.lede"></p>
+      </div>
+      <div class="links">
+        <a class="link link--twee" id="linkTwee" target="_blank" rel="noopener">
+          <div class="link-logo">
+            <span class="mark" id="markTwee" aria-hidden="true"><img alt="" src=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4L13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>
+            <p class="link-name" id="tweeName"></p>
+          </div>
+          <p class="link-sub" data-i18n="ads.twee.sub"></p>
+          <span class="link-go" id="tweeGo"></span>
+        </a>
+        <a class="link link--fb" id="linkFb" target="_blank" rel="noopener">
+          <div class="link-logo">
+            <span class="mark" id="markFb" aria-hidden="true"><img alt="" src=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/><path d="M3 9h18"/></svg></span>
+            <p class="link-name">Facebook Marketplace</p>
+          </div>
+          <p class="link-sub" data-i18n="ads.fb.sub"></p>
+          <span class="link-go" data-i18n="ads.fb.go"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section promise" id="troeven">
+    <img class="promise-photo" id="promisePhoto" alt="" src="" aria-hidden="true">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="promise.eyebrow"></p>
+        <h2 class="display" data-i18n="promise.h2"></h2>
+        <p class="lede" data-i18n="promise.lede"></p>
+      </div>
+      <ul class="promises">
+        <li><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4L15 11.7 12.3 9z"/></svg></i><div><strong data-i18n="promise.1.t"></strong><span data-i18n="promise.1.d"></span></div></li>
+        <li><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><div><strong data-i18n="promise.2.t"></strong><span data-i18n="promise.2.d"></span></div></li>
+        <li><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 2v4M16 2v4M4 9h16"/><path d="M9 14l2 2 4-4"/></svg></i><div><strong data-i18n="promise.5.t"></strong><span data-i18n="promise.5.d"></span></div></li>
+        <li><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></i><div><strong data-i18n="promise.3.t"></strong><span data-i18n="promise.3.d"></span></div></li>
+        <li><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg></i><div><strong data-i18n="promise.4.t"></strong><span data-i18n="promise.4.d"></span></div></li>
+      </ul>
+    </div>
+    <span class="stripe" aria-hidden="true"></span>
+  </section>
+
+
+
+
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="contact.eyebrow"></p>
+        <h2 class="display" data-i18n="contact.h2"></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="call">
+          <a class="phone" id="phoneLink" hidden></a>
+          <p class="todo" id="phoneTodo" data-i18n="todo.phone" hidden></p>
+          <button class="btn btn--primary" type="button" id="phoneCopy" hidden></button>
+          <p class="lede" data-i18n="contact.lede"></p>
+        </div>
+        <div class="info">
+          <div>
+            <h3 data-i18n="contact.mail"></h3>
+            <p><a class="mail" id="mailLink"></a></p>
+          </div>
+          <div>
+            <h3 data-i18n="contact.where"></h3>
+            <p id="addrLine"></p>
+            <p class="todo" id="addrTodo" data-i18n="todo.addr" hidden></p>
+            <p><a href="https://www.google.com/maps/place/Aarschot" target="_blank" rel="noopener" data-i18n="contact.map"></a></p>
+          </div>
+          <div>
+            <h3 data-i18n="contact.when"></h3>
+            <p data-i18n="contact.whenText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© 2026 Belgium Motor Homes Store · Aarschot</span>
+    <span><a id="footPhone"></a> · <a id="footMail"></a></span>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+'use strict';
+
+/* ---------- To fill in: the shop's real details ---------- */
+var SITE={
+  phone:'+32 497 37 32 60',
+  email:'johanvanvaerenbergh@msn.com',
+  address:'',                                                        /* street and number (optional) */
+  twee:'https://link.2ememain.be/link/seller-profile/59750703',      /* 2dehands / 2ememain seller profile */
+  facebook:'',                                                       /* TODO: paste the Facebook Marketplace profile link here */
+  photo:'/_blob/e7964318120190609c441a9754f4c6c6',                   /* background photo for the "troeven" section */
+  logoTwee:'',                                                       /* optional: official 2dehands logo file (URL) */
+  logoFb:''                                                          /* optional: official Facebook Marketplace logo file (URL) */
+};
+
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $ = function(id){ return document.getElementById(id); };
+var each = function(sel,fn){ Array.prototype.forEach.call(document.querySelectorAll(sel),fn); };
+
+/* ---------- Three languages ---------- */
+var I18N={
+nl:{
+  'nav.promise':'Onze troeven','nav.ads':'Aanbod','nav.guide':'Koopwijzer','nav.how':'Zo werkt het','nav.contact':'Contact',
+  'cta.call':'Bel voor een afspraak','cta.callShort':'Bel ons','cta.ads':'Bekijk onze mobilhomes',
+  'hero.eyebrow':'Tweedehands mobilhomes · Aarschot',
+  'hero.h1':'Uw volgende mobilhome staat in <em>Aarschot</em>',
+  'hero.lede':'Tweedehands mobilhomes geleverd met grote onderhoudsbeurt, 2 jaar technische keuring en 12 maanden garantie. Ons aanbod staat op 2dehands en Facebook Marketplace. Bezichtigen kan na telefonische afspraak.',
+  'promise.eyebrow':'Waarom bij ons','promise.h2':'Elke mobilhome vertrekt in orde',
+  'promise.lede':'Geen verrassingen achteraf. Dit krijgt u bij elke mobilhome die u bij ons koopt.',
+  'promise.1.t':'Grote onderhoudsbeurt','promise.1.d':'Elke mobilhome wordt geleverd met een grote onderhoudsbeurt.',
+  'promise.2.t':'12 maanden garantie','promise.2.d':'Een jaar lang garantie op uw aankoop.',
+  'promise.3.t':'Service achteraf','promise.3.d':'Ook na de verkoop staan we voor u klaar met raad en service.',
+  'promise.5.t':'2 jaar technische keuring','promise.5.d':'Elke mobilhome vertrekt met een technische keuring die 2 jaar geldig is.',
+  'promise.4.t':'Gevestigd in Aarschot','promise.4.d':'Centraal in Vlaams-Brabant, vlot bereikbaar vanuit heel Vlaanderen.',
+  'stage.aria':'3D-model van een mobilhome dat u kunt draaien','stage.hint':'Sleep om te draaien','stage.left':'Draai het model naar links','stage.right':'Draai het model naar rechts',
+  'seg.aria':'Type mobilhome',
+  'type.van':'Buscamper','type.profile':'Halfintegraal','type.capucine':'Alkoof','type.integral':'Integraal',
+  'type.van.d':'Compact en discreet. Parkeert als een bestelwagen en komt overal: ideaal met twee.',
+  'type.profile.d':'De populairste. Lage daklijn, queensbed of enkele bedden, goed evenwicht tussen ruimte en verbruik.',
+  'type.capucine.d':'De gezinswagen. Een groot vast bed boven de cabine en tot zes slaapplaatsen.',
+  'type.integral.d':'De topklasse. De cabine maakt deel uit van de leefruimte, achter een panoramische voorruit.',
+  'spec.len':'Lengte','spec.h':'Hoogte','spec.sleep':'Slaapplaatsen','spec.lic':'Rijbewijs','spec.to':'tot','spec.licv':'B tot 3,5 t',
+  'ads.eyebrow':'Ons aanbod','ads.h2':'Altijd actueel op 2dehands en Marketplace',
+  'ads.lede':'Ons aanbod wisselt regelmatig. De advertenties met foto\'s, kilometerstand en prijs vindt u op deze twee platformen.',
+  'ads.twee.name':'2dehands','ads.twee.sub':'Ons volledige aanbod, met foto\'s en prijs','ads.twee.go':'Open ons profiel op 2dehands',
+  'ads.fb.sub':'Dezelfde voertuigen, ook op Facebook','ads.fb.go':'Open Marketplace',
+  'guide.eyebrow':'Koopwijzer','guide.h2':'Vier dingen om na te kijken voor u koopt',
+  'guide.1.t':'Vocht','guide.1.d':'Insijpeling is het grootste risico bij een tweedehands mobilhome. Vraag een vochtmeting van wanden, vloer en dakluiken.',
+  'guide.2.t':'Gewicht en rijbewijs','guide.2.d':'Tot 3.500 kg maximaal toegelaten massa (MTM) volstaat rijbewijs B. Daarboven hebt u rijbewijs C1 nodig.',
+  'guide.3.t':'Euronorm en LEZ','guide.3.d':'De euronorm bepaalt of u de lage-emissiezones van Antwerpen, Brussel en Gent binnen mag.',
+  'guide.4.t':'Onderhoud en keuring','guide.4.d':'Vraag het onderhoudsboekje, de leeftijd van de banden en het laatste keuringsbewijs.',
+  'how.h2':'Zo werkt het',
+  'how.1.t':'Bekijk de advertenties','how.1.d':'Kies een mobilhome op 2dehands of Facebook Marketplace.',
+  'how.2.t':'Bel voor een afspraak','how.2.d':'We spreken samen een dag en uur af.',
+  'how.3.t':'Kom kijken in Aarschot','how.3.d':'Neem rustig de tijd om het voertuig te bekijken.',
+  'contact.eyebrow':'Enkel op afspraak','contact.h2':'Bel ons voor een afspraak',
+  'contact.lede':'Afspraken maken we enkel telefonisch. Zeg erbij welke advertentie u interesseert.',
+  'contact.mail':'E-mail','contact.where':'Waar','contact.city':'Aarschot, Vlaams-Brabant','contact.map':'Open Aarschot in Google Maps',
+  'contact.when':'Wanneer','contact.whenText':'Bezichtigen kan enkel na afspraak.',
+  'copy':'Kopieer het nummer','copied':'Gekopieerd','selected':'Nummer geselecteerd',
+  'todo.phone':'Telefoonnummer nog toe te voegen','todo.addr':'Adres nog toe te voegen','todo.links':'Maquette: links naar uw verkopersprofielen nog toe te voegen','todo.kbo':'Ondernemingsnummer (KBO) nog toe te voegen'
+},
+fr:{
+  'nav.promise':'Nos atouts','nav.ads':'Annonces','nav.guide':'Guide d\'achat','nav.how':'Comment ça marche','nav.contact':'Contact',
+  'cta.call':'Appeler pour un rendez-vous','cta.callShort':'Appeler','cta.ads':'Voir les annonces',
+  'hero.eyebrow':'Motorhomes d\'occasion · Aarschot',
+  'hero.h1':'Votre prochain motorhome vous attend à <em>Aarschot</em>',
+  'hero.lede':'Motorhomes d\'occasion livrés avec grand entretien, 2 ans de contrôle technique et 12 mois de garantie. Nos annonces sont sur 2ememain et Facebook Marketplace. Les visites se font sur rendez-vous, pris par téléphone.',
+  'promise.eyebrow':'Pourquoi chez nous','promise.h2':'Chaque motorhome part en ordre',
+  'promise.lede':'Pas de mauvaises surprises. Voici ce que vous recevez avec chaque motorhome acheté chez nous.',
+  'promise.1.t':'Grand entretien','promise.1.d':'Chaque motorhome est livré avec un grand entretien.',
+  'promise.2.t':'12 mois de garantie','promise.2.d':'Un an de garantie sur votre achat.',
+  'promise.3.t':'Service après-vente','promise.3.d':'Après la vente aussi, nous restons à votre disposition pour conseils et service.',
+  'promise.5.t':'2 ans de contrôle technique','promise.5.d':'Chaque motorhome part avec un contrôle technique valable 2 ans.',
+  'promise.4.t':'Basés à Aarschot','promise.4.d':'Au centre du Brabant flamand, facile d\'accès depuis toute la Belgique.',
+  'stage.aria':'Modèle 3D d\'un motorhome, à faire tourner','stage.hint':'Glissez pour tourner','stage.left':'Tourner le modèle vers la gauche','stage.right':'Tourner le modèle vers la droite',
+  'seg.aria':'Type de motorhome',
+  'type.van':'Fourgon','type.profile':'Profilé','type.capucine':'Capucine','type.integral':'Intégral',
+  'type.van.d':'Compact et discret. Il se gare comme une camionnette et passe partout : le bon choix à deux.',
+  'type.profile.d':'Le plus répandu. Ligne basse, lit central ou lits jumeaux, bon équilibre entre espace et consommation.',
+  'type.capucine.d':'La familiale. Un grand lit fixe au-dessus de la cabine et jusqu\'à six couchages.',
+  'type.integral.d':'Le haut de gamme. La cabine fait partie du salon, derrière un pare-brise panoramique.',
+  'spec.len':'Longueur','spec.h':'Hauteur','spec.sleep':'Couchages','spec.lic':'Permis','spec.to':'à','spec.licv':'B jusqu\'à 3,5 t',
+  'ads.eyebrow':'Nos annonces','ads.h2':'Toujours à jour sur 2ememain et Marketplace',
+  'ads.lede':'Notre stock change régulièrement. Les annonces avec photos, kilométrage et prix se trouvent sur ces deux plateformes.',
+  'ads.twee.name':'2ememain','ads.twee.sub':'Toutes nos annonces, avec photos et prix','ads.twee.go':'Ouvrir notre profil 2ememain',
+  'ads.fb.sub':'Les mêmes véhicules, aussi sur Facebook','ads.fb.go':'Ouvrir Marketplace',
+  'guide.eyebrow':'Guide d\'achat','guide.h2':'Quatre points à vérifier avant d\'acheter',
+  'guide.1.t':'Humidité','guide.1.d':'Les infiltrations sont le premier risque d\'un motorhome d\'occasion. Demandez une mesure d\'humidité des parois, du plancher et des lanterneaux.',
+  'guide.2.t':'Poids et permis','guide.2.d':'Jusqu\'à 3 500 kg de masse maximale autorisée (MMA), le permis B suffit. Au-delà, il faut le permis C1.',
+  'guide.3.t':'Norme Euro et LEZ','guide.3.d':'La norme Euro détermine l\'accès aux zones de basses émissions d\'Anvers, de Bruxelles et de Gand.',
+  'guide.4.t':'Entretien et contrôle technique','guide.4.d':'Demandez le carnet d\'entretien, l\'âge des pneus et le dernier certificat de contrôle technique.',
+  'how.h2':'Comment ça marche',
+  'how.1.t':'Regardez les annonces','how.1.d':'Choisissez un motorhome sur 2ememain ou Facebook Marketplace.',
+  'how.2.t':'Appelez pour un rendez-vous','how.2.d':'Nous fixons ensemble le jour et l\'heure.',
+  'how.3.t':'Venez le voir à Aarschot','how.3.d':'Prenez le temps d\'examiner le véhicule sur place.',
+  'contact.eyebrow':'Uniquement sur rendez-vous','contact.h2':'Appelez-nous pour un rendez-vous',
+  'contact.lede':'Les rendez-vous se prennent uniquement par téléphone. Dites-nous quelle annonce vous intéresse.',
+  'contact.mail':'E-mail','contact.where':'Où','contact.city':'Aarschot, Brabant flamand','contact.map':'Ouvrir Aarschot dans Google Maps',
+  'contact.when':'Quand','contact.whenText':'Les visites se font uniquement sur rendez-vous.',
+  'copy':'Copier le numéro','copied':'Copié','selected':'Numéro sélectionné',
+  'todo.phone':'Numéro de téléphone à ajouter','todo.addr':'Adresse à ajouter','todo.links':'Maquette : liens vers vos profils vendeur à ajouter','todo.kbo':'N° d\'entreprise (BCE) à ajouter'
+},
+en:{
+  'nav.promise':'Why us','nav.ads':'Listings','nav.guide':'Buying guide','nav.how':'How it works','nav.contact':'Contact',
+  'cta.call':'Call for an appointment','cta.callShort':'Call us','cta.ads':'See the listings',
+  'hero.eyebrow':'Used motorhomes · Aarschot',
+  'hero.h1':'Your next motorhome is waiting in <em>Aarschot</em>',
+  'hero.lede':'Used motorhomes delivered with a full service, 2 years of roadworthiness inspection and a 12-month warranty. Our listings are on 2dehands and Facebook Marketplace. Viewings are by appointment, booked by phone.',
+  'promise.eyebrow':'Why buy from us','promise.h2':'Every motorhome leaves in good order',
+  'promise.lede':'No surprises afterwards. This is what you get with every motorhome you buy from us.',
+  'promise.1.t':'Full service','promise.1.d':'Every motorhome is delivered with a full service.',
+  'promise.2.t':'12-month warranty','promise.2.d':'A full year of warranty on your purchase.',
+  'promise.3.t':'After-sales service','promise.3.d':'After the sale we are still here for advice and service.',
+  'promise.5.t':'2-year inspection','promise.5.d':'Every motorhome leaves with a roadworthiness inspection valid for 2 years.',
+  'promise.4.t':'Based in Aarschot','promise.4.d':'Central in Flemish Brabant, easy to reach from all over Belgium.',
+  'stage.aria':'3D model of a motorhome that you can rotate','stage.hint':'Drag to rotate','stage.left':'Rotate the model to the left','stage.right':'Rotate the model to the right',
+  'seg.aria':'Motorhome type',
+  'type.van':'Campervan','type.profile':'Low-profile','type.capucine':'Overcab','type.integral':'A-class',
+  'type.van.d':'Compact and discreet. It parks like a van and goes anywhere: ideal for two.',
+  'type.profile.d':'The most popular. Low roofline, island bed or twin beds, a good balance of space and fuel use.',
+  'type.capucine.d':'The family choice. A large fixed bed above the cab and up to six berths.',
+  'type.integral.d':'Top of the range. The cab is part of the living area, behind a panoramic windscreen.',
+  'spec.len':'Length','spec.h':'Height','spec.sleep':'Berths','spec.lic':'Licence','spec.to':'to','spec.licv':'B up to 3.5 t',
+  'ads.eyebrow':'Our listings','ads.h2':'Always up to date on 2dehands and Marketplace',
+  'ads.lede':'Our stock changes regularly. Listings with photos, mileage and price are on these two platforms.',
+  'ads.twee.name':'2dehands','ads.twee.sub':'All our listings, with photos and prices','ads.twee.go':'Open our 2dehands profile',
+  'ads.fb.sub':'The same vehicles, also on Facebook','ads.fb.go':'Open Marketplace',
+  'guide.eyebrow':'Buying guide','guide.h2':'Four things to check before you buy',
+  'guide.1.t':'Damp','guide.1.d':'Water ingress is the biggest risk with a used motorhome. Ask for a damp reading of the walls, floor and roof lights.',
+  'guide.2.t':'Weight and licence','guide.2.d':'Up to 3,500 kg maximum authorised mass, a category B licence is enough. Above that you need category C1.',
+  'guide.3.t':'Euro standard and LEZ','guide.3.d':'The Euro standard decides whether you may enter the low-emission zones of Antwerp, Brussels and Ghent.',
+  'guide.4.t':'Service history and inspection','guide.4.d':'Ask for the service book, the age of the tyres and the latest roadworthiness certificate.',
+  'how.h2':'How it works',
+  'how.1.t':'Browse the listings','how.1.d':'Pick a motorhome on 2dehands or Facebook Marketplace.',
+  'how.2.t':'Call for an appointment','how.2.d':'We agree on a day and time together.',
+  'how.3.t':'Come and see it in Aarschot','how.3.d':'Take your time to look the vehicle over.',
+  'contact.eyebrow':'By appointment only','contact.h2':'Call us for an appointment',
+  'contact.lede':'Appointments are made by phone only. Tell us which listing you are interested in.',
+  'contact.mail':'Email','contact.where':'Where','contact.city':'Aarschot, Flemish Brabant','contact.map':'Open Aarschot in Google Maps',
+  'contact.when':'When','contact.whenText':'Viewings are by appointment only.',
+  'copy':'Copy the number','copied':'Copied','selected':'Number selected',
+  'todo.phone':'Phone number to be added','todo.addr':'Address to be added','todo.links':'Mock-up: links to your seller profiles still to be added','todo.kbo':'Company number (KBO/BCE) to be added'
+}};
+var LOCALE={nl:'nl-BE',fr:'fr-BE',en:'en-GB'};
+var lang='nl';
+try{ var saved=localStorage.getItem('bmh-lang'); if(saved&&I18N[saved]) lang=saved; else { var navL=(navigator.language||'nl').slice(0,2).toLowerCase(); if(I18N[navL]) lang=navL; } }catch(e){}
+function tr(k){ return I18N[lang][k]!==undefined ? I18N[lang][k] : (I18N.nl[k]!==undefined?I18N.nl[k]:k); }
+function fmt(n,d){ return n.toLocaleString(LOCALE[lang],{minimumFractionDigits:d,maximumFractionDigits:d}); }
+
+/* ---------- Body types: one set of side profiles drives both the silhouettes and the 3D model ---------- */
+var TYPES={
+  van:      {id:'van',      L:6.0,  H:2.6,  W:2.05, wb:4.04, range:[5.4,6.4], height:2.6,  hd:1, sleeps:'2 – 3'},
+  profile:  {id:'profile',  L:7.0,  H:2.9,  W:2.3,  wb:4.04, range:[6.0,7.5], height:2.9,  hd:1, sleeps:'2 – 4'},
+  capucine: {id:'capucine', L:6.95, H:3.1,  W:2.3,  wb:4.04, range:[6.0,7.3], height:3.1,  hd:1, sleeps:'4 – 6'},
+  integral: {id:'integral', L:7.45, H:2.95, W:2.3,  wb:4.3,  range:[6.5,8.0], height:2.95, hd:2, sleeps:'4'}
+};
+function shapes(t){
+  var L=t.L, c=L-2.2;
+  if(t.id==='van') return {cab:null, cabW:t.W, cell:[[0,.45],[L,.45],[L+.06,.75],[L,1.05],[L-.62,1.25],[L-1.3,2.12],[L-1.85,2.55],[.12,2.6],[0,2.42]], shield:[[L-.62,1.25],[L-1.3,2.12]]};
+  if(t.id==='integral') return {cab:null, cabW:t.W, cell:[[0,.5],[L,.5],[L+.05,.9],[L,1.32],[L-.12,1.42],[L-.72,2.72],[L-1.2,2.92],[.15,2.95],[0,2.75]], shield:[[L-.12,1.42],[L-.72,2.72]]};
+  var cab=[[c-.1,.45],[c+2.2,.45],[c+2.26,.75],[c+2.2,1.05],[c+1.55,1.25],[c+.95,2.05],[c-.1,2.1]];
+  var cell = t.id==='profile'
+    ? [[0,.5],[c,.5],[c,2.06],[c+.95,2.1],[c+.9,2.3],[c+.3,2.78],[c-.3,2.9],[.15,2.9],[0,2.7]]
+    : [[0,.5],[c,.5],[c,2.1],[c+1.4,2.14],[c+1.55,2.5],[c+1.4,3.0],[c+.95,3.1],[.15,3.1],[0,2.9]];
+  return {cab:cab, cabW:2.0, cell:cell, shield:[[c+1.55,1.25],[c+.95,2.05]]};
+}
+function parts(t){
+  var L=t.L, c=L-2.2, hasCab=(t.id==='profile'||t.id==='capucine'), cl=hasCab?c:L-2.1;
+  var glass = t.id==='van' ? [[L-1.95,1.32],[L-.78,1.32],[L-1.3,2.0],[L-1.95,2.0]]
+            : t.id==='integral' ? [[L-1.9,1.5],[L-.32,1.5],[L-.78,2.5],[L-1.9,2.5]]
+            : [[c+.3,1.32],[c+1.42,1.32],[c+.98,1.93],[c+.3,1.93]];
+  var dw = t.id==='van'?1.15:.62, dx=.66*cl, dh=t.id==='van'?1.75:1.9;
+  var rear=[.3,1.5,.24*cl,.55];
+  var p={
+    cl:cl, glass:glass,
+    door:[dx,.56,dw,dh],
+    doorWin: t.id==='van' ? [dx+.15,1.5,dw-.3,.55] : [dx+.14,1.55,dw-.28,.5],
+    right:[rear,[.4*cl,1.6,.17*cl,.45]],
+    left:[rear,[.5*cl,1.42,.32*cl,.7]],
+    both:[],
+    stripe:[.2,1.12,cl-.3,.08], stripe2:[.2,.99,cl-.3,.035],
+    axF:L-.98, axR:L-.98-t.wb
+  };
+  if(t.id==='capucine') p.both.push([c+.5,2.48,.8,.36]);
+  return p;
+}
+function silhouette(id){
+  var t=TYPES[id], s=shapes(t), p=parts(t), VW=8.4, ox=(VW-t.L)/2;
+  var X=function(x){return (x+ox).toFixed(3);}, Y=function(y){return (3.45-y).toFixed(3);};
+  var poly=function(pts,c){return '<polygon class="'+c+'" points="'+pts.map(function(q){return X(q[0])+','+Y(q[1]);}).join(' ')+'"/>';};
+  var rect=function(r,c){return '<rect class="'+c+'" x="'+X(r[0])+'" y="'+Y(r[1]+r[3])+'" width="'+r[2].toFixed(3)+'" height="'+r[3].toFixed(3)+'" rx=".04"/>';};
+  var wheel=function(x){return '<circle class="sil-tire" cx="'+X(x)+'" cy="'+Y(.36)+'" r=".36"/><circle class="sil-hub" cx="'+X(x)+'" cy="'+Y(.36)+'" r=".17"/>';};
+  var h='<svg class="sil" viewBox="0 0 '+VW+' 3.55" aria-hidden="true" focusable="false">';
+  h+='<rect class="sil-ground" x="0" y="3.45" width="'+VW+'" height=".04"/>';
+  if(s.cab) h+=poly(s.cab,'sil-cab');
+  h+=poly(s.cell, id==='van'?'sil-van':'sil-body');
+  h+=rect(p.stripe,'sil-stripe');
+  h+=poly(p.glass,'sil-glass');
+  p.right.concat(p.both).forEach(function(r){h+=rect(r,'sil-glass');});
+  h+=rect(p.door,'sil-door')+rect(p.doorWin,'sil-glass');
+  h+=wheel(p.axF)+wheel(p.axR);
+  return h+'</svg>';
+}
+
+/* ---------- One model on the stage: the low-profile (halfintegraal), the most common type ---------- */
+var currentType='profile', show3d=null;
+
+/* ---------- Contact details, listing links, photo and logos ---------- */
+function renderSite(){
+  $('linkTwee').href = SITE.twee || (lang==='fr' ? 'https://www.2ememain.be' : 'https://www.2dehands.be');
+  $('linkFb').href = SITE.facebook || 'https://www.facebook.com/marketplace/';
+  $('tweeName').textContent=tr('ads.twee.name');
+  $('tweeGo').textContent=tr('ads.twee.go');
+  var has=!!SITE.phone, tel='tel:'+SITE.phone.replace(/[^\d+]/g,'');
+  $('phoneLink').hidden=!has; $('phoneCopy').hidden=!has; $('phoneTodo').hidden=has;
+  if(has){ $('phoneLink').textContent=SITE.phone; $('phoneLink').href=tel; $('phoneCopy').textContent=tr('copy'); }
+  $('footPhone').textContent=SITE.phone; $('footPhone').href=tel;
+  $('mailLink').textContent=SITE.email; $('mailLink').href='mailto:'+SITE.email;
+  $('footMail').textContent=SITE.email; $('footMail').href='mailto:'+SITE.email;
+  $('addrLine').textContent = SITE.address ? SITE.address+', Aarschot' : tr('contact.city');
+  $('addrTodo').hidden = true;
+  if(SITE.photo){ var ph=$('promisePhoto'); ph.src=SITE.photo; ph.parentNode.classList.add('has-photo'); }
+  [['markTwee',SITE.logoTwee],['markFb',SITE.logoFb]].forEach(function(m){ if(m[1]){ var el=$(m[0]); el.querySelector('img').src=m[1]; el.classList.add('has-img'); } });
+}
+$('phoneCopy').addEventListener('click',function(){
+  var btn=$('phoneCopy');
+  var fallback=function(){ var r=document.createRange(); r.selectNodeContents($('phoneLink')); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent=tr('selected'); };
+  try{ navigator.clipboard.writeText(SITE.phone).then(function(){ btn.textContent=tr('copied'); },fallback); }catch(err){ fallback(); }
+});
+
+function applyLang(){
+  document.documentElement.lang=lang;
+  each('[data-i18n]',function(el){ el.innerHTML=tr(el.getAttribute('data-i18n')); });
+  each('[data-i18n-aria]',function(el){ el.setAttribute('aria-label',tr(el.getAttribute('data-i18n-aria'))); });
+  each('#langSeg button',function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang===lang)); });
+  renderSite();
+}
+$('langSeg').addEventListener('click',function(e){
+  var b=e.target.closest('button[data-lang]'); if(!b) return;
+  lang=b.dataset.lang;
+  try{ localStorage.setItem('bmh-lang',lang); }catch(err){}
+  applyLang();
+});
+
+/* ---------- In-page links ---------- */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]'); if(!a) return;
+  var el=$(a.getAttribute('href').slice(1)); if(!el) return;
+  e.preventDefault();
+  el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+});
+
+/* ---------- First paint (works without 3D) ---------- */
+applyLang();
+$('stageFallback').innerHTML=silhouette(currentType);
+
+/* ---------- 3D showroom ---------- */
+var THREE_URLS=[
+  'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'
+];
+function loadThree(i){
+  if(window.THREE){ try{ init3d(); }catch(err){ if(window.console) console.warn('3D unavailable',err); } return; }
+  if(i>=THREE_URLS.length) return;
+  var s=document.createElement('script'); s.src=THREE_URLS[i]; s.async=true;
+  s.onload=function(){ loadThree(window.THREE?i:i+1); };
+  s.onerror=function(){ loadThree(i+1); };
+  document.head.appendChild(s);
+}
+if('requestIdleCallback' in window) requestIdleCallback(function(){loadThree(0);},{timeout:1200}); else setTimeout(function(){loadThree(0);},200);
+
+function init3d(){
+  var T=window.THREE, stage=$('stage'), canvas=$('stageCanvas');
+  var rev=parseInt(String(T.REVISION).replace(/\D/g,''),10)||128;
+  var k = rev>=155 ? Math.PI : 1;                      /* newer builds use physical light units */
+  var renderer=new T.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'low-power'});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  renderer.setClearColor(0x000000,0);
+  if('outputColorSpace' in renderer) renderer.outputColorSpace=T.SRGBColorSpace; else if(T.sRGBEncoding) renderer.outputEncoding=T.sRGBEncoding;
+  renderer.shadowMap.enabled=true; renderer.shadowMap.type=T.PCFSoftShadowMap;
+
+  var scene=new T.Scene();
+  var camera=new T.PerspectiveCamera(28,4/3,0.5,80);
+  scene.add(new T.HemisphereLight(0xffffff,0x8f8d86,0.6*k));
+  var key=new T.DirectionalLight(0xfff3e2,0.74*k);
+  key.position.set(5,9,8); key.castShadow=true;
+  key.shadow.mapSize.set(1024,1024); key.shadow.bias=-0.0006;
+  var sc=key.shadow.camera; sc.left=-6; sc.right=6; sc.top=6; sc.bottom=-6; sc.near=1; sc.far=30;
+  scene.add(key);
+  var fill=new T.DirectionalLight(0xffe9a8,0.2*k); fill.position.set(-6,4,-5); scene.add(fill);
+
+  var ground=new T.Mesh(new T.PlaneGeometry(40,40), new T.ShadowMaterial({opacity:0.5}));
+  ground.rotation.x=-Math.PI/2; ground.receiveShadow=true; scene.add(ground);
+
+  var std=function(color,rough,metal,extra){ var o={color:color,roughness:rough,metalness:metal}; if(extra) for(var q in extra) o[q]=extra[q]; return new T.MeshStandardMaterial(o); };
+  var M={
+    white:std(0xf4f3ef,.42,.05), silver:std(0xb9bdc1,.36,.3), cab:std(0x3d4044,.38,.3),
+    glass:std(0x12161a,.12,.6,{side:T.DoubleSide}), dark:std(0x232323,.7,.1), tire:std(0x141414,.9,0),
+    hub:std(0xbcc0c4,.35,.6), yellow:std(0xfdda24,.5,.05), black:std(0x151515,.6,.1),
+    lamp:std(0xfff6dd,.3,0,{emissive:0xffe9b0,emissiveIntensity:.7}), tail:std(0xd4212f,.4,0,{emissive:0x8a0f1a,emissiveIntensity:.6}),
+    doorW:std(0xe4e3de,.5,.05), doorS:std(0xa5a7a9,.4,.3)
+  };
+  /* front and rear plate: Belgian red characters on white */
+  var pc=document.createElement('canvas'); pc.width=520; pc.height=110;
+  var g2=pc.getContext('2d');
+  g2.fillStyle='#fbfbf8'; g2.fillRect(0,0,520,110);
+  g2.strokeStyle='#a5142e'; g2.lineWidth=8; g2.strokeRect(4,4,512,102);
+  g2.fillStyle='#a5142e'; g2.font='bold 78px "Barlow Condensed", "Arial Narrow", Arial, sans-serif'; g2.textAlign='center'; g2.textBaseline='middle'; g2.fillText('1-BMH-001',260,60);
+  var ptex=new T.CanvasTexture(pc);
+  if('colorSpace' in ptex && T.SRGBColorSpace) ptex.colorSpace=T.SRGBColorSpace; else if(T.sRGBEncoding) ptex.encoding=T.sRGBEncoding;
+  M.plate=new T.MeshStandardMaterial({map:ptex,roughness:.5,metalness:0});
+
+  var root=new T.Group(); scene.add(root);
+  var model=null;
+
+  function add(grp,geo,mat,x,y,z){ var m=new T.Mesh(geo,mat); m.position.set(x||0,y||0,z||0); m.castShadow=true; grp.add(m); return m; }
+  function extrude(grp,pts,width,mat){
+    var sh=new T.Shape(), bt=.05;
+    pts.forEach(function(q,i){ if(i) sh.lineTo(q[0],q[1]); else sh.moveTo(q[0],q[1]); });
+    sh.closePath();
+    var geo=new T.ExtrudeGeometry(sh,{depth:width-2*bt,bevelEnabled:true,bevelThickness:bt,bevelSize:bt,bevelOffset:-bt,bevelSegments:2,curveSegments:1});
+    geo.translate(0,0,-(width-2*bt)/2);
+    return add(grp,geo,mat,0,0,0);
+  }
+  function sideRect(grp,r,mat,W,side,thick){ /* r=[x,y,w,h]; side=+1 right (door side), -1 left */
+    return add(grp,new T.BoxGeometry(r[2],r[3],thick),mat,r[0]+r[2]/2,r[1]+r[3]/2,side*(W/2+.002));
+  }
+  function build(id){
+    var t=TYPES[id], s=shapes(t), p=parts(t), L=t.L, W=t.W, grp=new T.Group();
+    var bodyMat = id==='van'?M.silver:M.white;
+    if(s.cab) extrude(grp,s.cab,s.cabW,M.cab);
+    extrude(grp,s.cell,W,bodyMat);
+    add(grp,new T.BoxGeometry(L-.7,.24,W-.5),M.dark,L/2,.4,0);                       /* chassis */
+
+    /* windscreen, laid along the sloped edge of the profile */
+    var a=s.shield[0], b=s.shield[1], dx=b[0]-a[0], dy=b[1]-a[1], len=Math.sqrt(dx*dx+dy*dy);
+    var ws=add(grp,new T.BoxGeometry(len*.9,.03,s.cabW*.86),M.glass,(a[0]+b[0])/2+dy/len*.012,(a[1]+b[1])/2-dx/len*.012,0);
+    ws.rotation.z=Math.atan2(dy,dx);
+
+    /* cab side glass (both sides) */
+    var gs=new T.Shape(); p.glass.forEach(function(q,i){ if(i) gs.lineTo(q[0],q[1]); else gs.moveTo(q[0],q[1]); }); gs.closePath();
+    [1,-1].forEach(function(sd){ var m=add(grp,new T.ShapeGeometry(gs),M.glass,0,0,sd*(s.cabW/2+.008)); m.castShadow=false; });
+
+    /* cell windows, stripes, door */
+    p.right.concat(p.both).forEach(function(r){ sideRect(grp,r,M.glass,W,1,.03); });
+    p.left.concat(p.both).forEach(function(r){ sideRect(grp,r,M.glass,W,-1,.03); });
+    [1,-1].forEach(function(sd){ sideRect(grp,p.stripe,M.yellow,W,sd,.012); sideRect(grp,p.stripe2,M.black,W,sd,.012); });
+    var d=p.door;
+    sideRect(grp,[d[0]-.025,d[1]-.025,d[2]+.05,d[3]+.05],M.doorS,W,1,.018);
+    sideRect(grp,d,id==='van'?M.silver:M.doorW,W,1,.03);
+    sideRect(grp,p.doorWin,M.glass,W,1,.042);
+    add(grp,new T.BoxGeometry(.12,.035,.03),M.dark,d[0]+.12,d[1]+d[3]*.5,W/2+.03);  /* handle */
+
+    /* wheels and arches */
+    [[p.axF,s.cabW],[p.axR,W]].forEach(function(ax){
+      [1,-1].forEach(function(sd){
+        var z=sd*(ax[1]/2-.1);
+        var tyre=add(grp,new T.CylinderGeometry(.36,.36,.24,28),M.tire,ax[0],.36,z); tyre.rotation.x=Math.PI/2;
+        var hub=add(grp,new T.CylinderGeometry(.19,.19,.26,20),M.hub,ax[0],.36,z); hub.rotation.x=Math.PI/2;
+        var arch=add(grp,new T.CircleGeometry(.47,24,0,Math.PI),M.dark,ax[0],.36,sd*(ax[1]/2+.004)); arch.castShadow=false;
+        if(sd<0) arch.rotation.y=Math.PI;
+      });
+    });
+
+    /* front: bumper, grille, lamps, plate, mirrors */
+    var fw=s.cabW;
+    add(grp,new T.BoxGeometry(.14,.22,fw-.08),M.dark,L+.03,.58,0);
+    add(grp,new T.BoxGeometry(.06,.2,fw*.5),M.dark,L+.045,.9,0);
+    [1,-1].forEach(function(sd){
+      add(grp,new T.BoxGeometry(.1,.15,.34),M.lamp,L+.03,.93,sd*(fw/2-.24));
+      add(grp,new T.BoxGeometry(.1,.26,.16),M.dark,a[0]-.12,1.55,sd*(fw/2+.13));
+    });
+    var pf=add(grp,new T.PlaneGeometry(.52,.11),M.plate,L+.102,.58,0); pf.rotation.y=Math.PI/2; pf.castShadow=false;
+
+    /* rear: lamps, plate */
+    [1,-1].forEach(function(sd){ add(grp,new T.BoxGeometry(.05,.42,.12),M.tail,-.005,1.05,sd*(W/2-.17)); });
+    var pr=add(grp,new T.PlaneGeometry(.52,.11),M.plate,-.012,.72,0); pr.rotation.y=-Math.PI/2; pr.castShadow=false;
+    if(id==='van') add(grp,new T.BoxGeometry(.03,.6,W*.62),M.glass,-.004,1.75,0);
+
+    /* roof: skylights, air conditioning, awning on the door side */
+    add(grp,new T.BoxGeometry(.7,.05,.5),M.glass,p.cl*.3,t.H+.01,0);
+    add(grp,new T.BoxGeometry(.5,.05,.5),M.glass,p.cl*.72,t.H+.01,0);
+    if(id!=='van') add(grp,new T.BoxGeometry(.95,.2,.7),M.white,p.cl*.52,t.H+.08,0);
+    var aw=add(grp,new T.CylinderGeometry(.065,.065,Math.min(3.6,p.cl*.72),14),M.dark,p.cl*.5+.2,t.H-.14,W/2+.06); aw.rotation.z=Math.PI/2;
+
+    grp.position.x=-L/2;
+    return grp;
+  }
+  function dispose(grp){ grp.traverse(function(o){ if(o.geometry) o.geometry.dispose(); }); }
+
+  /* camera fit */
+  var EL=10*Math.PI/180, R_H=4.05, R_V=1.95;
+  function fit(){
+    var w=stage.clientWidth, h=stage.clientHeight; if(!w||!h) return;
+    renderer.setSize(w,h,false);
+    camera.aspect=w/h;
+    var tv=Math.tan(camera.fov*Math.PI/360), th=tv*camera.aspect;
+    var dist=Math.max(R_H/th,R_V/tv)*1.04;
+    camera.position.set(0,1.3+dist*Math.sin(EL),dist*Math.cos(EL));
+    camera.lookAt(0,1.3,0);
+    camera.updateProjectionMatrix();
+    dirty=true;
+  }
+
+  var rot=-0.62, vel=0, settle=1, dragging=false, visible=true, dirty=true, running=false, last=0, lastX=0, idleAt=0;
+  function frame(now){
+    running=false;
+    var dt=Math.min(.05,(now-last)/1000||0); last=now;
+    if(!dragging){
+      if(Math.abs(vel)>.001){ rot+=vel*dt; vel*=Math.pow(.03,dt); dirty=true; }
+      else if(!reduce && now>idleAt){ rot+=dt*.16; dirty=true; }
+    }
+    if(settle<1){ settle=Math.min(1,settle+dt*2.4); dirty=true; }
+    if(dirty){
+      var e=1-Math.pow(1-settle,3);
+      root.rotation.y=rot+(reduce?0:window.pageYOffset*.0012)-(1-e)*.7;
+      var sc2=.9+.1*e; root.scale.set(sc2,sc2,sc2);
+      renderer.render(scene,camera); dirty=false;
+    }
+    if(visible && (!reduce || dragging || settle<1 || Math.abs(vel)>.001)) loop();
+  }
+  function loop(){ if(!running){ running=true; requestAnimationFrame(frame); } }
+  function kick(){ dirty=true; loop(); }
+
+  show3d=function(id,animate){
+    if(model){ root.remove(model); dispose(model); }
+    model=build(id); root.add(model);
+    settle=(animate&&!reduce)?0:1;
+    kick();
+  };
+
+  /* drag to rotate (horizontal only; vertical swipes still scroll the page) */
+  stage.addEventListener('pointerdown',function(e){
+    if(e.target.closest('button')) return;
+    dragging=true; lastX=e.clientX; vel=0; stage.classList.add('is-dragging');
+    try{ stage.setPointerCapture(e.pointerId); }catch(err){}
+    kick();
+  });
+  stage.addEventListener('pointermove',function(e){
+    if(!dragging) return;
+    var dxp=e.clientX-lastX; lastX=e.clientX;
+    rot+=dxp*.01; vel=dxp*.6; dirty=true;
+  });
+  var end=function(){ if(!dragging) return; dragging=false; stage.classList.remove('is-dragging'); idleAt=performance.now()+2500; kick(); };
+  stage.addEventListener('pointerup',end); stage.addEventListener('pointercancel',end); stage.addEventListener('lostpointercapture',end);
+  $('turnL').addEventListener('click',function(){ vel=-2.2; idleAt=performance.now()+2500; kick(); });
+  $('turnR').addEventListener('click',function(){ vel=2.2; idleAt=performance.now()+2500; kick(); });
+
+  if('ResizeObserver' in window) new ResizeObserver(function(){ fit(); kick(); }).observe(stage); else window.addEventListener('resize',function(){ fit(); kick(); });
+  if('IntersectionObserver' in window) new IntersectionObserver(function(en){ visible=en[0].isIntersecting; if(visible) kick(); },{threshold:.05}).observe(stage);
+  window.addEventListener('scroll',function(){ if(visible && !reduce) dirty=true; },{passive:true});
+  canvas.addEventListener('webglcontextlost',function(e){ e.preventDefault(); stage.classList.remove('is-3d'); });
+
+  fit();
+  show3d(currentType,false);
+  renderer.render(scene,camera);
+  stage.classList.add('is-3d');
+}
+})();
+</script>
+
+</body></html>
