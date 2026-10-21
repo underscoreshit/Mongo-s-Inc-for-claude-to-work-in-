@@ -157,23 +157,41 @@ section{position:relative}
 .work h2{color:var(--white);max-width:13ch}
 .work h2::first-line{font-style:italic}
 .work header p{max-width:46ch;color:#d8d8d0}
-.rail-ctrl{display:flex;gap:.6rem}
-.rail-ctrl button{width:52px;height:52px;border-radius:50%;border:3px solid var(--white);background:transparent;color:var(--white);font:700 1.3rem var(--f-sans);cursor:pointer;transition:background .15s,color .15s}
-.rail-ctrl button:hover{background:var(--white);color:var(--ink)}
-.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(400px,82vw);gap:1.4rem;overflow-x:auto;padding:.6rem var(--gutter) 1.6rem;margin-inline:calc(var(--gutter) * -1);scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--yellow) transparent;cursor:grab}
-.rail.drag{cursor:grabbing;scroll-snap-type:none}
-.rail.drag a{pointer-events:none}
-.case{scroll-snap-align:start;display:flex;flex-direction:column;gap:.9rem;text-decoration:none;color:inherit}
-.bw{border:3px solid var(--white);border-radius:16px;overflow:hidden;background:var(--white);box-shadow:8px 8px 0 var(--c,var(--yellow));transition:transform .2s,box-shadow .2s}
-.case:hover .bw,.case:focus-visible .bw{transform:translate(-3px,-3px) rotate(-1deg);box-shadow:12px 12px 0 var(--c,var(--yellow))}
-.bw__bar{display:flex;align-items:center;gap:.7rem;padding:.45rem .7rem;background:var(--white);color:var(--ink);border-bottom:3px solid var(--ink);font:700 .7rem var(--f-mono)}
-.bw__bar .dots3 i{width:10px;height:10px}
-.bw__bar span{opacity:.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bw img{width:100%;height:auto;aspect-ratio:16/9.4;object-fit:cover;object-position:50% 100%}
-.case__meta{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
-.case__meta strong{font:900 1.25rem/1 var(--f-sans);font-stretch:95%;letter-spacing:-.02em}
-.case__meta small{font:400 .9rem var(--f-mono);color:#cfcfc6}
-.case__tags{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.expo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2rem,4vw,4rem);align-items:start}
+.ix{list-style:none;margin:0;padding:0;border-bottom:2px solid rgba(255,255,255,.18)}
+.ix__row{position:relative;display:grid;grid-template-columns:3.2rem minmax(0,1fr) auto;grid-template-areas:"n name go" "n meta go";align-items:center;column-gap:1rem;padding:1.05rem .9rem;border-top:2px solid rgba(255,255,255,.18);text-decoration:none;color:var(--white);isolation:isolate;overflow:hidden}
+.ix__row::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--c);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.ix__row.on,.ix__row:hover,.ix__row:focus-visible{color:var(--t)}
+.ix__row.on::before,.ix__row:hover::before,.ix__row:focus-visible::before{transform:scaleX(1)}
+.ix__row:focus-visible{outline:3px solid var(--white);outline-offset:2px}
+.ix__n{grid-area:n;font:400 .85rem var(--f-mono);opacity:.7}
+.ix__name{grid-area:name;font:900 clamp(1.5rem,2.9vw,2.5rem)/1 var(--f-sans);font-stretch:90%;letter-spacing:-.025em}
+.ix__meta{grid-area:meta;font:400 .88rem var(--f-mono);opacity:.8;margin-top:.35rem}
+.ix__meta span{text-transform:none}
+.ix__go{grid-area:go;width:44px;height:44px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font-size:1.15rem;transition:transform .25s}
+.ix__row:hover .ix__go{transform:rotate(45deg)}
+.ix__thumb{display:none}
+.stage{position:sticky;top:110px;padding:0 0 12% 0}
+.stage__desk{border:3px solid var(--white);border-radius:16px;overflow:hidden;background:var(--white);box-shadow:10px 10px 0 var(--c);transition:box-shadow .35s;margin-left:14%}
+.stage .bw__bar{display:flex;align-items:center;gap:.7rem;padding:.45rem .7rem;background:var(--white);color:var(--ink);border-bottom:3px solid var(--ink);font:700 .7rem var(--f-mono)}
+.stage .bw__bar .dots3 i{width:10px;height:10px}
+.stage .bw__bar span{opacity:.6}
+.stage__imgs{position:relative;aspect-ratio:16/10;background:#222}
+.stage__imgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;opacity:0;transition:opacity .35s}
+.stage__imgs img.on{opacity:1}
+.stage__phone{position:absolute;left:0;bottom:0;width:30%;border:3px solid var(--ink);border-radius:26px;padding:6px;background:var(--white);box-shadow:8px 8px 0 var(--ink),0 0 0 3px var(--white)}
+.stage__phone .stage__imgs{aspect-ratio:390/760;border-radius:19px;overflow:hidden}
+@media (max-width:900px){
+  .expo{grid-template-columns:1fr}
+  .stage{display:none}
+  .ix__row{grid-template-columns:88px minmax(0,1fr) auto;grid-template-areas:"img n go" "img name go" "img meta go";row-gap:.15rem;padding:.9rem .6rem}
+  .ix__thumb{display:block;grid-area:img;width:88px;height:auto;aspect-ratio:9/14;object-fit:cover;object-position:50% 0;border:2px solid var(--white);border-radius:12px;background:#222}
+  .ix__name{font-size:clamp(1.3rem,6vw,1.8rem)}
+  .ix__go{width:38px;height:38px}
+  .ix__row.on{color:var(--white)}.ix__row.on::before{transform:scaleX(0)}
+  .ix__row:hover,.ix__row:focus-visible{color:var(--t)}.ix__row:hover::before,.ix__row:focus-visible::before{transform:scaleX(1)}
+}
+@media (prefers-reduced-motion:reduce){.ix__row::before,.stage__imgs img{transition:none}}
 .chip{display:inline-flex;align-items:center;border:2px solid currentColor;border-radius:999px;padding:.05rem .6rem;font:700 .72rem var(--f-pixel);text-transform:uppercase}
 .go{margin-left:auto;font:italic 400 1.15rem var(--f-serif);color:var(--yellow)}
 
@@ -553,42 +571,38 @@ html.intro-on .intro{display:block}
           <h2 class="h-serif rv" id="work-title"><span data-i18n="wh">Des démos faites avant le premier appel.</span></h2>
         </div>
         <p class="rv"><span data-i18n="wi">Telle est ma méthode : je construis d'abord, je présente ensuite. Les six sites ci-dessous sont des concepts complets pour des commerces fictifs, chacun avec son propre style. Cliquez et parcourez-les, de préférence sur votre téléphone.</span></p>
-        <div class="rail-ctrl">
-          <button type="button" id="rail-prev" aria-label="Démo précédente" data-i18n-aria="al_prev">←</button>
-          <button type="button" id="rail-next" aria-label="Démo suivante" data-i18n-aria="al_next">→</button>
-        </div>
       </header>
-      <div class="rail" id="rail" tabindex="0" aria-label="Six sites de démonstration, défilement horizontal" data-i18n-aria="al2">
-        <a class="case" href="../demos/dakwerken-hendrickx/index.html" target="_blank" rel="noopener" data-track="demo_dakwerken" style="--c:var(--yellow)">
-          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>dakwerken-hendrickx</span></div><img src="img/demo-dakwerken-hendrickx.jpg" alt="" width="960" height="600" loading="lazy"></div>
-          <div class="case__meta"><strong>Dakwerken Hendrickx</strong><small>Lier</small></div>
-          <div class="case__tags"><span class="chip"><span data-i18n="c1">Couvreur</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
-        </a>
-        <a class="case" href="../demos/barbier-marcel/index.html" target="_blank" rel="noopener" data-track="demo_barbier" style="--c:var(--red)">
-          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>barbier-marcel</span></div><img src="img/demo-barbier-marcel.jpg" alt="" width="960" height="600" loading="lazy"></div>
-          <div class="case__meta"><strong>Barbier Marcel</strong><small>Mechelen</small></div>
-          <div class="case__tags"><span class="chip"><span data-i18n="c2">Barbier</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
-        </a>
-        <a class="case" href="../demos/broodjesbar-bo/index.html" target="_blank" rel="noopener" data-track="demo_broodjesbar" style="--c:var(--pink)">
-          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>broodjesbar-bo</span></div><img src="img/demo-broodjesbar-bo.jpg" alt="" width="960" height="600" loading="lazy"></div>
-          <div class="case__meta"><strong>Broodjesbar Bo</strong><small>Turnhout</small></div>
-          <div class="case__tags"><span class="chip"><span data-i18n="c3">Bar à sandwichs</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
-        </a>
-        <a class="case" href="../demos/groenwerk-dewitte/index.html" target="_blank" rel="noopener" data-track="demo_groenwerk" style="--c:var(--green)">
-          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>groenwerk-dewitte</span></div><img src="img/demo-groenwerk-dewitte.jpg" alt="" width="960" height="600" loading="lazy"></div>
-          <div class="case__meta"><strong>Groenwerk De Witte</strong><small>Heist-op-den-Berg</small></div>
-          <div class="case__tags"><span class="chip"><span data-i18n="c4">Jardins</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
-        </a>
-        <a class="case" href="../demos/velo-atelier-leuven/index.html" target="_blank" rel="noopener" data-track="demo_velo" style="--c:var(--cobalt)">
-          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>velo-atelier-leuven</span></div><img src="img/demo-velo-atelier-leuven.jpg" alt="" width="960" height="600" loading="lazy"></div>
-          <div class="case__meta"><strong>Vélo Atelier Leuven</strong><small>Leuven</small></div>
-          <div class="case__tags"><span class="chip"><span data-i18n="c5">Vélos</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
-        </a>
-        <a class="case" href="../demos/atelier-nova/index.html" target="_blank" rel="noopener" data-track="demo_atelier" style="--c:var(--orange)">
-          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>atelier-nova</span></div><img src="img/demo-atelier-nova.jpg" alt="" width="960" height="600" loading="lazy"></div>
-          <div class="case__meta"><strong>Atelier Nova</strong><small>Gent</small></div>
-          <div class="case__tags"><span class="chip"><span data-i18n="c6">Atelier d'art</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
-        </a>
+      <div class="expo" id="expo">
+        <ol class="ix" aria-label="Six sites de démonstration" data-i18n-aria="al2">
+          <li><a class="ix__row" href="../demos/dakwerken-hendrickx/index.html" target="_blank" rel="noopener" data-track="demo_dakwerken" data-i="0" style="--c:var(--yellow);--t:var(--ink)">
+            <img class="ix__thumb" src="img/demo-dakwerken-hendrickx-m.jpg" alt="" width="390" height="844" loading="lazy">
+            <span class="ix__n">01</span><span class="ix__name">Dakwerken Hendrickx</span><span class="ix__meta"><span data-i18n="c1">Couvreur</span> · Lier</span><span class="ix__go" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="ix__row" href="../demos/barbier-marcel/index.html" target="_blank" rel="noopener" data-track="demo_barbier" data-i="1" style="--c:var(--red);--t:var(--ink)">
+            <img class="ix__thumb" src="img/demo-barbier-marcel-m.jpg" alt="" width="390" height="844" loading="lazy">
+            <span class="ix__n">02</span><span class="ix__name">Barbier Marcel</span><span class="ix__meta"><span data-i18n="c2">Barbier</span> · Mechelen</span><span class="ix__go" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="ix__row" href="../demos/velo-atelier-leuven/index.html" target="_blank" rel="noopener" data-track="demo_velo" data-i="2" style="--c:var(--cobalt);--t:var(--white)">
+            <img class="ix__thumb" src="img/demo-velo-atelier-leuven-m.jpg" alt="" width="390" height="844" loading="lazy">
+            <span class="ix__n">03</span><span class="ix__name">Vélo Atelier Leuven</span><span class="ix__meta"><span data-i18n="c5">Vélos</span> · Leuven</span><span class="ix__go" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="ix__row" href="../demos/museum-vlak/index.html" target="_blank" rel="noopener" data-track="demo_museum" data-i="3" style="--c:var(--sky);--t:var(--ink)">
+            <img class="ix__thumb" src="img/demo-museum-vlak-m.jpg" alt="" width="390" height="844" loading="lazy">
+            <span class="ix__n">04</span><span class="ix__name">Museum VLAK</span><span class="ix__meta"><span data-i18n="c4">Musée</span> · Herentals</span><span class="ix__go" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="ix__row" href="../demos/broodjesbar-bo/index.html" target="_blank" rel="noopener" data-track="demo_broodjesbar" data-i="4" style="--c:var(--peach);--t:var(--ink)">
+            <img class="ix__thumb" src="img/demo-broodjesbar-bo-m.jpg" alt="" width="390" height="844" loading="lazy">
+            <span class="ix__n">05</span><span class="ix__name">Broodjesbar Bo</span><span class="ix__meta"><span data-i18n="c3">Bar à sandwichs</span> · Turnhout</span><span class="ix__go" aria-hidden="true">↗</span>
+          </a></li>
+          <li><a class="ix__row" href="../demos/atelier-nova/index.html" target="_blank" rel="noopener" data-track="demo_atelier" data-i="5" style="--c:var(--orange);--t:var(--ink)">
+            <img class="ix__thumb" src="img/demo-atelier-nova-m.jpg" alt="" width="390" height="844" loading="lazy">
+            <span class="ix__n">06</span><span class="ix__name">Atelier Nova</span><span class="ix__meta"><span data-i18n="c6">Atelier d'art</span> · Gent</span><span class="ix__go" aria-hidden="true">↗</span>
+          </a></li>
+        </ol>
+        <div class="stage" id="stage" aria-hidden="true" style="--c:var(--yellow)">
+          <div class="stage__desk"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span id="stage-url">dakwerken-hendrickx</span></div><div class="stage__imgs"><img class="on" src="img/demo-dakwerken-hendrickx.jpg" alt="" width="960" height="600" loading="lazy"><img src="img/demo-barbier-marcel.jpg" alt="" width="960" height="600" loading="lazy"><img src="img/demo-velo-atelier-leuven.jpg" alt="" width="960" height="600" loading="lazy"><img src="img/demo-museum-vlak.jpg" alt="" width="960" height="600" loading="lazy"><img src="img/demo-broodjesbar-bo.jpg" alt="" width="960" height="600" loading="lazy"><img src="img/demo-atelier-nova.jpg" alt="" width="960" height="600" loading="lazy"></div></div>
+          <div class="stage__phone"><div class="stage__imgs"><img class="on" src="img/demo-dakwerken-hendrickx-m.jpg" alt="" width="390" height="844" loading="lazy"><img src="img/demo-barbier-marcel-m.jpg" alt="" width="390" height="844" loading="lazy"><img src="img/demo-velo-atelier-leuven-m.jpg" alt="" width="390" height="844" loading="lazy"><img src="img/demo-museum-vlak-m.jpg" alt="" width="390" height="844" loading="lazy"><img src="img/demo-broodjesbar-bo-m.jpg" alt="" width="390" height="844" loading="lazy"><img src="img/demo-atelier-nova-m.jpg" alt="" width="390" height="844" loading="lazy"></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -867,17 +881,18 @@ html.intro-on .intro{display:block}
   }
 })();
 
-/* Rail des démos: flèches et glisser à la souris. */
+/* Index des démos: l'aperçu suit la ligne survolée ou sélectionnée au clavier. */
 (function(){
-  var rail=document.getElementById('rail');if(!rail)return;
-  function step(){var c=rail.querySelector('.case');return c?c.getBoundingClientRect().width+22:400}
-  document.getElementById('rail-prev').addEventListener('click',function(){rail.scrollBy({left:-step(),behavior:'smooth'})});
-  document.getElementById('rail-next').addEventListener('click',function(){rail.scrollBy({left:step(),behavior:'smooth'})});
-  var down=false,sx=0,sl=0,moved=0;
-  rail.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=0;sx=e.clientX;sl=rail.scrollLeft});
-  addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;moved=Math.max(moved,Math.abs(dx));if(moved>6)rail.classList.add('drag');rail.scrollLeft=sl-dx});
-  addEventListener('pointerup',function(){if(!down)return;down=false;setTimeout(function(){rail.classList.remove('drag')},0)});
-  rail.addEventListener('click',function(e){if(moved>6){e.preventDefault();moved=0}},true);
+  var ix=document.getElementById('expo');if(!ix)return;
+  var rows=ix.querySelectorAll('.ix__row'),stage=document.getElementById('stage'),url=document.getElementById('stage-url');
+  var sets=stage.querySelectorAll('.stage__imgs');
+  function show(i){
+    rows.forEach(function(r,j){r.classList.toggle('on',j===i)});
+    sets.forEach(function(s){s.querySelectorAll('img').forEach(function(im,j){im.classList.toggle('on',j===i)})});
+    stage.style.setProperty('--c',rows[i].style.getPropertyValue('--c'));
+    var m=rows[i].getAttribute('href').match(/demos\/([^\/]+)/);url.textContent=m?m[1]:'';
+  }
+  rows.forEach(function(r,i){r.addEventListener('mouseenter',function(){show(i)});r.addEventListener('focus',function(){show(i)})});
 })();
 
 /* Méthode: l'écran du téléphone suit l'étape active, défilement auto jusqu'au premier clic. */
