@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kade Studio | Websites voor handelaars en vakmensen in Westerlo</title>
-<meta name="description" id="meta-desc" content="Kade Studio maakt websites voor handelaars en vakmensen uit Westerlo en de Kempen. Gratis demo vóór u tekent, online in 48 uur, vaste prijs.">
+<meta name="description" id="meta-desc" content="Kade Studio maakt websites voor handelaars en vakmensen uit Westerlo en de Kempen, en elders in België op aanvraag. Gratis demo vóór u tekent, online in 48 uur, vaste prijs.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kade Studio">
 <meta property="og:title" content="Kade Studio | Websites voor handelaars en vakmensen in Westerlo">
@@ -23,7 +23,7 @@
 <meta name="theme-color" content="#74DB4B">
 <link rel="icon" href="../brand/logo/kade-mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/social/profile-picture.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kade Studio","description":"Websites voor handelaars en vakmensen uit Westerlo en de Kempen.","email":"hello@kadestudio.be","address":{"@type":"PostalAddress","addressLocality":"Westerlo","postalCode":"2260","addressCountry":"BE"},"areaServed":[{"@type":"City","name":"Westerlo"},{"@type":"City","name":"Geel"},{"@type":"City","name":"Herentals"},{"@type":"City","name":"Heist-op-den-Berg"},{"@type":"City","name":"Lier"},{"@type":"City","name":"Mol"}],"knowsLanguage":["fr","nl"],"priceRange":"€€","url":"https://kadestudio.be/","logo":"https://kadestudio.be/brand/logo/kade-logo.png","image":"https://kadestudio.be/brand/og-image.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kade Studio","description":"Websites voor handelaars en vakmensen uit Westerlo en de Kempen.","email":"hello@kadestudio.be","address":{"@type":"PostalAddress","addressLocality":"Westerlo","postalCode":"2260","addressCountry":"BE"},"areaServed":[{"@type":"City","name":"Westerlo"},{"@type":"City","name":"Geel"},{"@type":"City","name":"Herentals"},{"@type":"City","name":"Heist-op-den-Berg"},{"@type":"City","name":"Lier"},{"@type":"City","name":"Mol"},{"@type":"Country","name":"Belgium"}],"knowsLanguage":["fr","nl"],"priceRange":"€€","url":"https://kadestudio.be/","logo":"https://kadestudio.be/brand/logo/kade-logo.png","image":"https://kadestudio.be/brand/og-image.png"}</script>
 <link rel="preload" href="../fonts/bricolage-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../fonts/big-shoulders-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -173,11 +173,17 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .case:nth-child(odd) .case__art{transform:rotate(-1.5deg)}
 .case:nth-child(even) .case__art{transform:rotate(1.5deg)}
 .case:hover .case__art{transform:rotate(0) translateY(-6px)}
+a.case{color:inherit;text-decoration:none}
+a.case:focus-visible{outline:3px solid var(--ink);outline-offset:6px}
+a.case:focus-visible .case__art{transform:rotate(0) translateY(-6px)}
 .case__art b{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:3.1rem;line-height:.85;position:relative;z-index:1}
 .case__art i{font-family:var(--f-type);font-style:normal;font-size:.82rem;position:relative;z-index:1}
 .case__meta{display:flex;justify-content:space-between;gap:.6rem;font-family:var(--f-type);font-size:.85rem}
 .case__meta strong{font-family:var(--f-display);font-size:1.05rem}
-.a1{background:var(--sun)} .a2{background:var(--ink);color:var(--acid)} .a3{background:var(--bubble)} .a4{background:var(--cobalt);color:var(--white)} .a5{background:var(--tomato)}
+.a1{background:var(--sun)} .a2{background:var(--ink);color:var(--acid)} .a3{background:var(--bubble)} .a4{background:var(--cobalt);color:var(--white)} .a5{background:var(--tomato)} .a6{background:var(--acid)}
+.case__go{position:relative;z-index:1;align-self:flex-start;font-family:var(--f-type);font-style:normal;font-size:.78rem;border:1.5px solid currentColor;border-radius:999px;padding:.15rem .65rem;background:transparent;transition:background .2s,color .2s}
+.case:hover .case__go,a.case:focus-visible .case__go{background:currentColor}
+.case:hover .case__go span,a.case:focus-visible .case__go span{color:var(--white);mix-blend-mode:difference}
 .a2 b{color:transparent;-webkit-text-stroke:2px var(--acid)}
 .ring{position:absolute;right:-30%;top:22%;width:90%;aspect-ratio:1;border-radius:50%;border:18px solid currentColor;opacity:.25}
 
@@ -259,6 +265,50 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .case__meta{flex-wrap:wrap;align-items:baseline}
 .case__meta strong{flex-basis:100%}
 .concept{white-space:nowrap}
+/* ---------- intro : le rideau du commerce se lève ---------- */
+.intro{display:none;position:fixed;inset:0;z-index:1000;place-items:center;overflow:hidden;background-color:var(--paper);background-image:radial-gradient(circle,rgba(21,21,21,.16) 1.1px,transparent 1.5px);background-size:14px 14px;animation:introOut .45s ease-in 2.7s both}
+html.intro-on{overflow:hidden}
+html.intro-on .intro{display:grid}
+.intro--done{animation:none;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.intro__scene{position:relative;width:min(620px,92vw);transform-origin:50% 66%;animation:introZoom .9s cubic-bezier(.7,0,.6,1) 2.25s both;will-change:transform}
+.intro__sun{position:absolute;right:-6%;top:-22%;width:clamp(70px,16vw,120px);aspect-ratio:1;border-radius:50%;background:var(--sun);border:var(--border);box-shadow:var(--pop);animation:introRise 1s cubic-bezier(.2,.8,.2,1) both,introFade .3s ease-in 2.35s forwards}
+.intro__sun::after{content:"";position:absolute;inset:-18px;border-radius:50%;border:3px dashed var(--ink);animation:spin 14s linear infinite}
+.intro__fascia{position:relative;background:var(--ink);color:var(--white);border:var(--border);box-shadow:var(--pop);padding:clamp(.6rem,2vw,1rem) clamp(1rem,3vw,1.6rem);display:flex;justify-content:space-between;align-items:baseline;gap:1rem;animation:introDrop .7s cubic-bezier(.2,1.4,.4,1) .1s both,introFade .3s ease-in 2.35s forwards}
+.intro__fascia b{font-family:var(--f-poster);font-weight:900;font-size:clamp(2.4rem,9vw,4.6rem);line-height:.9;letter-spacing:.01em}
+.intro__fascia b sup{font-size:.35em;vertical-align:top;color:var(--acid)}
+.intro__fascia small{font-family:var(--f-type);font-size:clamp(.7rem,1.8vw,.9rem);color:#cfd0c6;text-align:right;max-width:18ch}
+.intro__awning{height:clamp(22px,4vw,34px);background:repeating-linear-gradient(90deg,var(--tomato) 0 28px,var(--white) 28px 56px);border:var(--border);border-top:0;margin:0 clamp(8px,2vw,16px);-webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 0,#000 9px,transparent 9.5px) bottom/20px 18px repeat-x;mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 0,#000 9px,transparent 9.5px) bottom/20px 18px repeat-x;animation:introDrop .7s cubic-bezier(.2,1.4,.4,1) .2s both,introFade .3s ease-in 2.35s forwards}
+.intro__front{position:relative;margin:0 clamp(18px,4vw,36px);aspect-ratio:4/2.9;border:var(--border);border-top:0;background:var(--acid);overflow:hidden;animation:introDrop .7s cubic-bezier(.2,1.4,.4,1) .25s both}
+.intro__inside{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:1rem}
+.intro__inside p{font-family:var(--f-display);font-weight:800;font-size:clamp(1.3rem,4.6vw,2.4rem);line-height:1.02;letter-spacing:-.02em;max-width:14ch;opacity:0;animation:introIn .5s ease-out 1.75s forwards,introFade .25s ease-in 2.3s forwards;font-variation-settings:"wdth" 80}
+.intro__inside p em{font-style:normal;background:var(--ink);color:var(--acid);padding:.05em .2em;border-radius:.2em;display:inline-block;transform:rotate(-2deg)}
+.intro__shutter{position:absolute;inset:0;transform-origin:top;background:repeating-linear-gradient(180deg,#2f2f2f 0 13px,#151515 13px 16px);box-shadow:inset 0 0 0 2px #1d1d1d,inset 40px 0 50px -40px rgba(255,255,255,.08),inset -40px 0 50px -40px rgba(0,0,0,.5);animation:introRoll 1.1s cubic-bezier(.7,0,.25,1) 1.05s both}
+.intro__shutter::after{content:"";position:absolute;left:38%;right:38%;bottom:9%;height:7px;border:2px solid #0b0b0b;border-radius:4px;background:#3a3a3a}
+.intro__roll{position:absolute;left:-3px;right:-3px;top:-3px;height:8px;background:linear-gradient(#4a4a4a,#151515 60%,#2a2a2a);border:var(--border);border-radius:0 0 8px 8px;z-index:3;animation:introRollBar 1.1s cubic-bezier(.7,0,.25,1) 1.05s both,introFade .3s ease-in 2.4s forwards}
+.intro__sign{position:absolute;left:50%;top:13%;width:clamp(96px,26vw,160px);translate:-50% 0;z-index:4;perspective:700px;animation:introDrop .7s cubic-bezier(.2,1.4,.4,1) .35s both,introFade .25s ease-in 2.3s forwards}
+.intro__sign::before{content:"";position:absolute;left:50%;bottom:100%;width:2px;height:40px;background:var(--ink);translate:-50% 0}
+.intro__sign-card{position:relative;transform-style:preserve-3d;animation:introFlip .8s cubic-bezier(.3,1.5,.5,1) .75s both;aspect-ratio:2.4/1}
+.intro__sign-card span{position:absolute;inset:0;display:grid;place-items:center;border:var(--border);box-shadow:var(--pop);font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:clamp(1.3rem,5.4vw,2.6rem);letter-spacing:.04em;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.intro__sign-card span:first-child{background:var(--tomato);color:var(--ink)}
+.intro__sign-card span:last-child{background:var(--acid);color:var(--ink);transform:rotateX(180deg)}
+.intro__board{position:absolute;left:-4%;bottom:-6px;width:clamp(84px,20vw,120px);aspect-ratio:1/1.2;background:var(--sun);border:var(--border);box-shadow:var(--pop);transform:rotate(-4deg);display:grid;place-content:center;text-align:center;padding:.4rem;font-family:var(--f-poster);font-weight:900;text-transform:uppercase;line-height:.9;font-size:clamp(.95rem,2.6vw,1.3rem);animation:introPop .6s cubic-bezier(.2,1.6,.4,1) .55s both,introFade .3s ease-in 2.35s forwards;z-index:5}
+.intro__board small{display:block;margin-top:.3rem;font-family:var(--f-type);font-weight:400;text-transform:none;font-size:.62em}
+.intro__board::after{content:"";position:absolute;left:12%;right:12%;bottom:-6px;height:6px;background:var(--ink);clip-path:polygon(0 100%,10% 0,90% 0,100% 100%)}
+.intro__ground{position:absolute;left:-30vw;right:-30vw;bottom:-3px;height:3px;background:var(--ink)}
+.intro__skip{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:1001;background:var(--paper);color:var(--ink);border:var(--border);border-radius:999px;padding:.55rem 1rem;font:700 .85rem var(--f-type);cursor:pointer;box-shadow:var(--pop);animation:introIn .4s .8s both;opacity:0}
+.intro__skip:hover{background:var(--sun)}
+@keyframes introRise{from{transform:translateY(90px) rotate(-30deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes introDrop{from{transform:translateY(-40px);opacity:0}to{transform:none;opacity:1}}
+@keyframes introPop{from{transform:rotate(-4deg) scale(0);opacity:0}to{transform:rotate(-4deg) scale(1);opacity:1}}
+@keyframes introFlip{from{transform:rotateX(0)}to{transform:rotateX(180deg)}}
+@keyframes introRoll{from{transform:scaleY(1)}to{transform:scaleY(0)}}
+@keyframes introRollBar{from{height:8px}to{height:30px}}
+@keyframes introIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes introZoom{to{transform:scale(7)}}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+@keyframes introFade{to{opacity:0}}
+@media (max-width:600px){.intro__sun{top:-14%;right:-4%}.intro__board{left:-2%}}
+@media (prefers-reduced-motion:reduce){html.intro-on .intro{display:none}}
 /* ---------- footer ---------- */
 .foot{background:var(--ink);color:#d9dacf;padding-block:2rem;font-family:var(--f-type);font-size:.88rem}
 .foot__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;align-items:center}
@@ -311,8 +361,26 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   html{scroll-behavior:auto}
 }
 </style>
+<script>(function(){try{var s=sessionStorage.getItem('kade_intro')==='1',f=/[?&]intro=1/.test(location.search),r=matchMedia('(prefers-reduced-motion: reduce)').matches;if((!s&&!r)||f)document.documentElement.classList.add('intro-on')}catch(e){}})();</script>
 </head>
 <body>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__scene">
+    <div class="intro__sun"></div>
+    <div class="intro__fascia"><b>KADE<sup>®</sup></b><small><span data-i18n="i_sub">Websites voor handelaars en vakmensen</span></small></div>
+    <div class="intro__awning"></div>
+    <div class="intro__front">
+      <div class="intro__inside"><p><span data-i18n="i_in">Kom binnen, <em>we zijn open.</em></span></p></div>
+      <div class="intro__shutter"></div>
+      <div class="intro__roll"></div>
+  <div class="intro__sign"><div class="intro__sign-card"><span data-i18n="i_closed">Gesloten</span><span data-i18n="i_open">Open</span></div></div>
+    </div>
+    <div class="intro__board"><span data-i18n="i_board">Gratis demo</span><small><span data-i18n="i_board2">online in 48 u</span></small></div>
+    <div class="intro__ground"></div>
+  </div>
+</div>
+<button class="intro__skip" id="intro-skip" type="button" hidden><span data-i18n="i_skip">Intro overslaan</span></button>
 
 <div class="band" aria-hidden="true">
   <div class="band__track">
@@ -340,8 +408,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__grid wrap">
       <div>
-        <h1 id="hero-title"><span data-i18n="h1">Uw site staat klaar <em>vóór</em> we elkaar spreken.</span></h1>
-        <p class="hero__sub"><span data-i18n="sub">Ik maak websites voor handelaars en vakmensen uit Westerlo en de Kempen. U ziet eerst een gratis demo, u zegt ja, en 48 uur later staat ze online.</span></p>
+        <h1 id="hero-title"><span data-i18n="h1">Uw website staat klaar <em>vóór</em> ons eerste gesprek.</span></h1>
+        <p class="hero__sub"><span data-i18n="sub">Ik ontwerp websites voor handelaars en vakmensen uit Westerlo en de Kempen. U ontvangt eerst een gratis demo; overtuigt die u, dan staat uw website 48 uur later online.</span></p>
         <div class="cta">
           <a class="btn btn--main" href="#contact" data-track="hero_cta"><span data-i18n="cta">Mijn gratis demo aanvragen</span></a>
           <a class="btn" href="#exemples" data-track="hero_examples"><span data-i18n="see">Bekijk demo's</span></a>
@@ -361,27 +429,27 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   <section aria-labelledby="who-title">
     <div class="who__head wrap">
       <h2 id="who-title"><span data-i18n="who">Voor mensen<br>die ondernemen.</span></h2>
-      <p><span data-i18n="whop">U runt een winkel, een atelier of een frituur in Westerlo of de Kempen. U hebt geen tijd om te worstelen met een CMS. Ik maak de demo, u zegt ja of nee, en 48 uur later staat ze online.</span></p>
+      <p><span data-i18n="whop">U baat een winkel, een atelier of een frituur uit in Westerlo of de Kempen, en uw tijd is kostbaar. Ik maak de demo, u beslist, en 48 uur later staat uw website online. Technische kennis is niet nodig.</span></p>
     </div>
     <div class="blocks">
       <article class="block b-cobalt">
         <h3><span data-i18n="k3">Dakwerkers, elektriciens, tuinaanleggers</span></h3>
-        <p><span data-i18n="k3p">Een dak van 15.000 € bestelt niemand bij iemand zonder website. Uw werven in beeld en een offerteformulier dat op uw gsm binnenkomt.</span></p>
+        <p><span data-i18n="k3p">Een dak van 15.000 € bestelt men niet bij een bedrijf zonder website. Uw werven in beeld en een offerteformulier dat rechtstreeks op uw telefoon binnenkomt.</span></p>
         <span class="big" aria-hidden="true">&amp;</span>
       </article>
       <article class="block b-sun">
-        <h3><span data-i18n="k1">De winkel om de hoek</span></h3>
-        <p><span data-i18n="k1p">Openingsuren up-to-date, producten in beeld, route in één klik. Mensen vinden u op Google Maps en stappen binnen.</span></p>
+        <h3><span data-i18n="k1">De buurtwinkel</span></h3>
+        <p><span data-i18n="k1p">Actuele openingsuren, producten in beeld, route in één klik. Uw klanten vinden u via Google Maps en stappen binnen.</span></p>
         <span class="big" aria-hidden="true">€</span>
       </article>
       <article class="block b-tomato">
         <h3><span data-i18n="k4">Restaurants, cafés &amp; frituren</span></h3>
-        <p><span data-i18n="k4p">Een menukaart die leesbaar is op de gsm, openingsuren, belknop. Minder telefoontjes om te vragen of u open bent.</span></p>
+        <p><span data-i18n="k4p">Een menukaart die leesbaar is op de telefoon, openingsuren en een belknop. Minder telefoontjes om te vragen of u open bent.</span></p>
         <span class="big" aria-hidden="true">@</span>
       </article>
       <article class="block b-bubble">
         <h3><span data-i18n="k2">Kapsalons &amp; instituten</span></h3>
-        <p><span data-i18n="k2p">Online afspraken, duidelijke prijzen, een galerij van uw werk. Minder telefoontjes terwijl u knipt.</span></p>
+        <p><span data-i18n="k2p">Online afspraken, duidelijke prijzen en een galerij van uw werk. Minder telefoontjes terwijl u aan het werk bent.</span></p>
         <span class="big" aria-hidden="true">✂</span>
       </article>
     </div>
@@ -389,28 +457,32 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 
   <section class="work wrap" id="exemples" aria-labelledby="work-title">
     <h2 id="work-title"><span data-i18n="wh">Demo's gemaakt vóór het eerste gesprek.</span></h2>
-    <p class="work__intro"><span data-i18n="wi">Dat is mijn methode: eerst bouwen, dan tonen. De demo's zijn echte sites die klaarstaan voor vakmensen uit de streek (namen verborgen tot ze ja zeggen). De concepten tonen de stijl voor andere vakken.</span></p>
-    <div class="rail" tabindex="0" aria-label="Demo's en concepten, horizontaal scrollen" data-i18n-aria="al2">
-      <article class="case">
-        <div class="case__art a1"><i><span data-i18n="c1">Dakwerker</span></i><b>Dak<br>werken</b><div class="ring"></div></div>
-        <div class="case__meta"><strong><span data-i18n="n_c1">Dakwerker, BV sinds 2019</span></strong><span class="concept" data-i18n="dmo">Demo</span><span>Westerlo</span></div>
-      </article>
-      <article class="case">
-        <div class="case__art a2"><i><span data-i18n="c2">Site offline, opnieuw gemaakt</span></i><b>Nieuw<br>dak</b></div>
-        <div class="case__meta"><strong><span data-i18n="n_c2">Dakwerker, 26 jaar ervaring</span></strong><span class="concept" data-i18n="dmo">Demo</span><span>Berlaar</span></div>
-      </article>
-      <article class="case">
-        <div class="case__art a3"><i><span data-i18n="c3">Frituur</span></i><b>Frituur<br>Den Hoek</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Frituur Den Hoek</strong><span class="concept" data-i18n="cpt">Concept</span><span>Geel</span></div>
-      </article>
-      <article class="case">
-        <div class="case__art a4"><i><span data-i18n="c4">Tuinen</span></i><b>Groen&shy;werk</b><div class="dots"></div></div>
-        <div class="case__meta"><strong>Tuinen Groenwerk</strong><span class="concept" data-i18n="cpt">Concept</span><span>Heist-op-den-Berg</span></div>
-      </article>
-      <article class="case">
-        <div class="case__art a5"><i><span data-i18n="c5">Kapper</span></i><b>Salon<br>Lies</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Kapsalon Lies</strong><span class="concept" data-i18n="cpt">Concept</span><span>Herentals</span></div>
-      </article>
+    <p class="work__intro"><span data-i18n="wi">Dat is mijn werkwijze: eerst bouwen, dan tonen. De zes sites hieronder zijn volledige concepten voor fictieve zaken, elk met een eigen stijl. Klik en bekijk ze, het liefst op uw telefoon.</span></p>
+    <div class="rail" tabindex="0" aria-label="Zes demosites, horizontaal scrollen" data-i18n-aria="al2">
+      <a class="case" href="../demos/dakwerken-hendrickx/index.html" target="_blank" rel="noopener" data-track="demo_dakwerken">
+        <div class="case__art a1"><i><span data-i18n="c1">Dakwerker</span></i><b>Dak<br>werken</b><em class="case__go"><span data-i18n="go">Bekijk de demo →</span></em><div class="ring"></div></div>
+        <div class="case__meta"><strong>Dakwerken Hendrickx</strong><span class="concept" data-i18n="cpt">Concept</span><span>Lier</span></div>
+      </a>
+      <a class="case" href="../demos/barbier-marcel/index.html" target="_blank" rel="noopener" data-track="demo_barbier">
+        <div class="case__art a2"><i><span data-i18n="c2">Barbier</span></i><b>Bar<br>bier</b><em class="case__go"><span data-i18n="go">Bekijk de demo →</span></em></div>
+        <div class="case__meta"><strong>Barbier Marcel</strong><span class="concept" data-i18n="cpt">Concept</span><span>Mechelen</span></div>
+      </a>
+      <a class="case" href="../demos/broodjesbar-bo/index.html" target="_blank" rel="noopener" data-track="demo_broodjesbar">
+        <div class="case__art a3"><i><span data-i18n="c3">Broodjesbar</span></i><b>Brood<br>jes</b><em class="case__go"><span data-i18n="go">Bekijk de demo →</span></em><div class="ring"></div></div>
+        <div class="case__meta"><strong>Broodjesbar Bo</strong><span class="concept" data-i18n="cpt">Concept</span><span>Turnhout</span></div>
+      </a>
+      <a class="case" href="../demos/groenwerk-dewitte/index.html" target="_blank" rel="noopener" data-track="demo_groenwerk">
+        <div class="case__art a4"><i><span data-i18n="c4">Tuinen</span></i><b>Groen&shy;werk</b><em class="case__go"><span data-i18n="go">Bekijk de demo →</span></em><div class="dots"></div></div>
+        <div class="case__meta"><strong>Groenwerk De Witte</strong><span class="concept" data-i18n="cpt">Concept</span><span>Heist-op-den-Berg</span></div>
+      </a>
+      <a class="case" href="../demos/velo-atelier-leuven/index.html" target="_blank" rel="noopener" data-track="demo_velo">
+        <div class="case__art a5"><i><span data-i18n="c5">Fietsen</span></i><b>Vélo<br>Atelier</b><em class="case__go"><span data-i18n="go">Bekijk de demo →</span></em><div class="ring"></div></div>
+        <div class="case__meta"><strong>Vélo Atelier Leuven</strong><span class="concept" data-i18n="cpt">Concept</span><span>Leuven</span></div>
+      </a>
+      <a class="case" href="../demos/atelier-nova/index.html" target="_blank" rel="noopener" data-track="demo_atelier">
+        <div class="case__art a6"><i><span data-i18n="c6">Kunstatelier</span></i><b>Atelier<br>Nova</b><em class="case__go"><span data-i18n="go">Bekijk de demo →</span></em></div>
+        <div class="case__meta"><strong>Atelier Nova</strong><span class="concept" data-i18n="cpt">Concept</span><span>Gent</span></div>
+      </a>
     </div>
   </section>
 
@@ -423,8 +495,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 
   <section class="offers" id="offres" aria-labelledby="offers-title">
     <div class="wrap">
-      <h2 id="offers-title"><span data-i18n="oh">Drie formules.<br><span>Nul jargon.</span></span></h2>
-      <p class="offers__note"><span data-i18n="on">Vaste prijzen, vooraf meegedeeld. Bedragen excl. btw. U betaalt niets vóór u de demo gezien hebt: u betaalt bij de lancering.</span></p>
+      <h2 id="offers-title"><span data-i18n="oh">Drie formules.<br><span>Transparante prijzen.</span></span></h2>
+      <p class="offers__note"><span data-i18n="on">Vaste prijzen, vooraf meegedeeld. Bedragen excl. btw. U betaalt niets voordat u de demo hebt gezien: u betaalt bij de lancering.</span></p>
       <div class="menu">
         <article class="offer">
           <h3><span data-i18n="o1">Eén pagina</span></h3>
@@ -444,11 +516,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
         </article>
       </div>
       <div class="maints">
-        <p class="maint"><strong><span data-i18n="m1">19 €/maand</span></strong><em><span data-i18n="m1t">De site draait</span></em><span data-i18n="m2">.be-domeinnaam, hosting, professioneel e-mailadres, formulier dat in uw mailbox toekomt. Zonder verbintenis.</span></p>
-        <p class="maint"><strong><span data-i18n="m3">39 €/maand</span></strong><em><span data-i18n="m3t">Ik regel alles</span></em><span data-i18n="m4">Dat alles, plus onbeperkt aanpassingen via WhatsApp, Google-profiel en reviews bijgehouden. Zonder verbintenis.</span></p>
+        <p class="maint"><strong><span data-i18n="m1">19 €/maand</span></strong><em><span data-i18n="m1t">De website draait</span></em><span data-i18n="m2">Een .be-domeinnaam, hosting, een professioneel e-mailadres en een contactformulier dat in uw mailbox toekomt. Zonder verbintenis.</span></p>
+        <p class="maint"><strong><span data-i18n="m3">39 €/maand</span></strong><em><span data-i18n="m3t">Ik neem alles uit handen</span></em><span data-i18n="m4">Alles van hierboven, plus onbeperkte aanpassingen via WhatsApp, en een Google-profiel en reviews die up-to-date blijven. Zonder verbintenis.</span></p>
       </div>
-      <p class="fix"><b><span data-i18n="fx1">Kapotte site?</span></b><span data-i18n="fx2">Offline, een Joomla uit 2012, een ‘new.’-subdomein dat blijft hangen? Ik haal uw teksten en foto's op en zet alles in 48 uur opnieuw online. <strong>Vanaf 490 €.</strong></span></p>
-      <p class="fix"><b><span data-i18n="pr1">Doorverwijzen</span></b><span data-i18n="pr2">Stuurt u een buur of collega die tekent? <strong>100 € korting</strong> voor u én voor hem.</span></p>
+      <p class="fix"><b><span data-i18n="fx1">Kapotte site?</span></b><span data-i18n="fx2">Offline, verouderd (een Joomla uit 2012) of een ‘new.’-subdomein dat blijft hangen? Ik haal uw teksten en foto's op en zet alles binnen 48 uur opnieuw online. <strong>Vanaf 490 €.</strong></span></p>
+      <p class="fix"><b><span data-i18n="pr1">Doorverwijzen</span></b><span data-i18n="pr2">Verwijst u een buur of collega door die tekent? <strong>100 € korting</strong> voor u allebei.</span></p>
     </div>
   </section>
 
@@ -456,48 +528,48 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
     <div class="wrap">
       <h2 id="method-title"><span data-i18n="mh">Van demo tot lancering, in 48 uur.</span></h2>
       <ol class="steps">
-        <li class="step"><h3><span data-i18n="s1">Ik bouw de demo</span></h3><p><span data-i18n="s1p">Met wat er al online over u te vinden is: Google-profiel, Facebook, reviews. U hoeft niets te doen, en niets te betalen.</span></p><span class="when"><span data-i18n="d1">Vóór het gesprek</span></span></li>
-        <li class="step"><h3><span data-i18n="s2">We praten</span></h3><p><span data-i18n="s2p">30 minuten aan de telefoon of bij u. Ik toon de demo op mijn gsm, u zegt wat u bevalt en wat niet bij u past.</span></p><span class="when"><span data-i18n="wk1">Dag 1</span></span></li>
-        <li class="step"><h3><span data-i18n="s3">Ik pas aan en lanceer</span></h3><p><span data-i18n="s3p">Uw foto's, uw gecorrigeerde teksten, de domeinnaam, het professionele e-mailadres. Online zetten en Google-profiel bijwerken.</span></p><span class="when"><span data-i18n="wk2">Dag 2</span></span></li>
-        <li class="step"><h3><span data-i18n="s4">Ik blijf in de buurt</span></h3><p><span data-i18n="s4p">Een openingsuur dat verandert, een nieuwe werffoto? Eén WhatsApp en het is geregeld. U raakt nooit een CMS aan.</span></p><span class="when"><span data-i18n="wk3">Daarna</span></span></li>
+        <li class="step"><h3><span data-i18n="s1">Ik maak de demo</span></h3><p><span data-i18n="s1p">Op basis van wat er al openbaar over u te vinden is: Google-profiel, Facebook, reviews. U hoeft niets aan te leveren en niets te betalen.</span></p><span class="when"><span data-i18n="d1">Vóór het gesprek</span></span></li>
+        <li class="step"><h3><span data-i18n="s2">We spreken af</span></h3><p><span data-i18n="s2p">30 minuten telefonisch of bij u. Ik toon de demo op mijn telefoon; u geeft aan wat u bevalt en wat nog moet veranderen.</span></p><span class="when"><span data-i18n="wk1">Dag 1</span></span></li>
+        <li class="step"><h3><span data-i18n="s3">Ik pas aan en lanceer</span></h3><p><span data-i18n="s3p">Uw foto's, uw gecorrigeerde teksten, de domeinnaam en het professionele e-mailadres. Online zetten en uw Google-profiel bijwerken.</span></p><span class="when"><span data-i18n="wk2">Dag 2</span></span></li>
+        <li class="step"><h3><span data-i18n="s4">Ik blijf bereikbaar</span></h3><p><span data-i18n="s4p">Verandert een openingsuur, is er een nieuwe werffoto? Eén WhatsApp-bericht volstaat. U hoeft nooit zelf aan de website te werken.</span></p><span class="when"><span data-i18n="wk3">Daarna</span></span></li>
       </ol>
     </div>
   </section>
 
   <section class="faq wrap" aria-labelledby="faq-title">
-    <h2 id="faq-title"><span data-i18n="fh">U vraagt zich af.</span></h2>
+    <h2 id="faq-title"><span data-i18n="fh">Uw vragen.</span></h2>
     <div>
       <details open>
-        <summary><span data-i18n="q1">De gratis demo, waar zit de adder?</span></summary>
-        <p><span data-i18n="a1">Nergens. Ik bouw een eerste versie van uw site met de publieke info over uw zaak, nog vóór we elkaar spreken. Bevalt ze u, dan passen we ze aan en staat ze in 48 uur online. Bevalt ze niet, dan bent u me niets verschuldigd.</span></p>
+        <summary><span data-i18n="q1">Waarom is de demo gratis?</span></summary>
+        <p><span data-i18n="a1">Omdat dit mijn manier is om me voor te stellen. Ik maak een eerste versie van uw website op basis van openbare informatie over uw zaak, nog vóór we elkaar spreken. Bevalt ze, dan passen we ze aan en staat ze binnen 48 uur online. Bevalt ze niet, dan bent u me niets verschuldigd.</span></p>
       </details>
       <details>
         <summary><span data-i18n="q2">48 uur, echt?</span></summary>
-        <p><span data-i18n="a2">Ja, voor Eén pagina en Etalage. De demo bestaat al wanneer we elkaar spreken: er rest alleen de teksten corrigeren, uw foto's plaatsen en het domein koppelen. De Webshop duurt 2 tot 3 weken.</span></p>
+        <p><span data-i18n="a2">Ja, voor de formules Eén pagina en Etalage. De demo bestaat al wanneer we elkaar spreken: er resteert enkel het corrigeren van de teksten, het plaatsen van uw foto's en het koppelen van het domein. De Webshop vraagt 2 tot 3 weken.</span></p>
       </details>
       <details>
         <summary><span data-i18n="q3">Moet ik de teksten zelf schrijven?</span></summary>
-        <p><span data-i18n="a3">Nee. Ik schrijf de teksten op basis van wat u me vertelt. U leest na en past aan wat u wilt.</span></p>
+        <p><span data-i18n="a3">Nee. Ik schrijf de teksten op basis van uw uitleg. U leest na en past aan wat u wenst.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q4">Kan mijn site in het Nederlands en het Frans?</span></summary>
-        <p><span data-i18n="a4">Ja. De tweede taal zit inbegrepen in de formule Etalage. Voor Engels of Duits bespreken we het in de offerte.</span></p>
+        <summary><span data-i18n="q4">Kan mijn website in het Nederlands en het Frans?</span></summary>
+        <p><span data-i18n="a4">Ja. De tweede taal is inbegrepen in de formule Etalage. Voor Engels of Duits bespreken we dit bij de offerte.</span></p>
       </details>
       <details>
         <summary><span data-i18n="q5">Ik heb geen logo en geen foto's.</span></summary>
-        <p><span data-i18n="a5">Geen probleem. In de formule Etalage kom ik een uur bij u of op de werf foto's maken. Ik kan ook een eenvoudig logo maken.</span></p>
+        <p><span data-i18n="a5">Geen probleem. Bij de formule Etalage kom ik een uur bij u of op de werf foto's nemen. Ik kan ook een eenvoudig logo ontwerpen.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q6">En als ik later iets wil veranderen?</span></summary>
-        <p><span data-i18n="a6">Aan 39 €/maand stuurt u me een WhatsApp en het is binnen de week geregeld, zonder limiet. Aan 19 €/maand worden aanpassingen per uur gefactureerd.</span></p>
+        <summary><span data-i18n="q6">En als ik later iets wil wijzigen?</span></summary>
+        <p><span data-i18n="a6">Met 39 €/maand stuurt u me een WhatsApp-bericht en is het binnen de week geregeld, zonder limiet. Met 19 €/maand worden aanpassingen per uur gefactureerd.</span></p>
       </details>
       <details>
         <summary><span data-i18n="q7">Zijn er verborgen kosten?</span></summary>
-        <p><span data-i18n="a7">Nee. De prijs in de offerte is de eindprijs. Alleen het maandabonnement komt terug, zonder verbintenis: u stopt wanneer u wilt en de site blijft van u.</span></p>
+        <p><span data-i18n="a7">Nee. De prijs in de offerte is de eindprijs. Enkel het maandabonnement komt terug, zonder verbintenis: u kunt op elk moment stoppen en de website blijft van u.</span></p>
       </details>
       <details>
         <summary><span data-i18n="q8">Waarom goedkoper dan een bureau?</span></summary>
-        <p><span data-i18n="a8">Geen kantoor, geen verkoper, geen vergaderingen. Eén persoon die alles doet, van het eerste gesprek tot de lancering. En ik ben van Westerlo: ik kom langs, ik stuur u geen pdf.</span></p>
+        <p><span data-i18n="a8">Geen kantoor, geen verkoper, geen eindeloze vergaderingen. Eén persoon doet alles, van het eerste gesprek tot de lancering. Ik ben van Westerlo: in de Kempen kom ik bij u langs. Elders in België? Dan werken we op afstand, in het Nederlands of het Frans.</span></p>
       </details>
     </div>
   </section>
@@ -507,7 +579,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
       <div>
         <h2 id="contact-title"><span data-i18n="ch">Uw gratis demo.</span></h2>
         <ul class="assure">
-          <li><span data-i18n="as1">Gratis demo, vóór u iets tekent</span></li>
+          <li><span data-i18n="as1">Gratis demo, vóór enige verbintenis</span></li>
           <li><span data-i18n="as2">Vaste prijs, vooraf meegedeeld</span></li>
           <li><span data-i18n="as3">Online in 48 uur, één aanspreekpunt</span></li>
         </ul>
@@ -543,11 +615,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
         </div>
         <div class="field">
           <label for="f-msg"><span data-i18n="fp">Uw project, in twee regels</span></label>
-          <textarea id="f-msg" name="message" placeholder="Ik heb een frituur in Westerlo en nog geen website." data-i18n-ph="ph3"></textarea>
+          <textarea id="f-msg" name="message" placeholder="Ik heb een frituur in Gent en nog geen website." data-i18n-ph="ph3"></textarea>
         </div>
         <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn--main" type="submit" id="send"><span data-i18n="cta">Mijn gratis demo aanvragen</span></button>
-        <p class="privacy"><span data-i18n="priv">Uw gegevens dienen alleen om uw aanvraag te beantwoorden. Ze worden niet doorverkocht en niet gebruikt voor reclame.</span></p>
+        <p class="privacy"><span data-i18n="priv">Uw gegevens dienen alleen om uw aanvraag te beantwoorden. Ze worden niet doorverkocht en niet gebruikt voor reclamedoeleinden.</span></p>
         <p class="done" id="done" role="status" hidden></p>
       </form>
     </div>
@@ -557,13 +629,27 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 <footer class="foot">
   <div class="foot__in wrap">
     <span class="logo">KADE STUDIO</span>
-    <span><span data-i18n="f1">Websites voor handelaars en vakmensen, Westerlo en de Kempen</span></span>
+    <span><span data-i18n="f1">Websites voor handelaars en vakmensen, Westerlo, de Kempen en elders in België</span></span>
     <span><span data-i18n="f2">Ondernemingsnr. BE 0XXX.XXX.XXX</span></span>
     <a href="mailto:hello@kadestudio.be">hello@kadestudio.be</a>
     <span>© 2026 Kade Studio</span>
   </div>
 </footer>
 
+<script>
+(function(){
+  var el=document.getElementById('intro'),skip=document.getElementById('intro-skip'),root=document.documentElement;
+  if(!el)return;
+  if(!root.classList.contains('intro-on')){el.remove();skip.remove();return;}
+  try{sessionStorage.setItem('kade_intro','1')}catch(e){}
+  skip.hidden=false;
+  var done=false;
+  function end(){if(done)return;done=true;el.classList.add('intro--done');root.classList.remove('intro-on');skip.remove();setTimeout(function(){el.remove()},400)}
+  skip.addEventListener('click',function(){window.dataLayer&&window.dataLayer.push({event:'intro_skip'});end()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')end()});
+  setTimeout(end,3200);
+})();
+</script>
 <script>
 (function(){
   var STR={fr:{"js_name": "Indiquez votre nom pour que je sache à qui répondre.", "js_mail": "Cette adresse email semble incomplète.", "js_copied": "Adresse copiée", "js_ok": "Merci {n}, votre demande est envoyée. Je vous réponds sous 24 h ouvrables.", "js_err": "L'envoi n'a pas fonctionné. Écrivez-moi à hello@kadestudio.be, je vous réponds au plus vite.", "js_mailto": "Votre logiciel mail s'ouvre avec la demande prête. Cliquez sur envoyer. Rien ne s'ouvre? Écrivez à hello@kadestudio.be.", "js_sending": "Envoi...", "js_subject": "Demande de démo via kadestudio.be", "cta": "Demander ma démo gratuite", "copy": "Copier l'adresse"},

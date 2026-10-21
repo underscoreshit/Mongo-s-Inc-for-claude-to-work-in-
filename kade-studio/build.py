@@ -82,7 +82,7 @@ out = sub_once(out,
     '<a href="../index.html" hreflang="fr-BE" lang="fr" data-lang="fr">FR</a><a href="index.html" hreflang="nl-BE" lang="nl" data-lang="nl" aria-current="page">NL</a>')
 
 # Relatieve paden: nl/ zit een map dieper
-out = re.sub(r'(href|src)="(brand|fonts)/', r'\1="../\2/', out)
+out = re.sub(r'(href|src)="(brand|fonts|demos)/', r'\1="../\2/', out)
 out = out.replace("url(fonts/", "url(../fonts/")
 
 (ROOT / "nl").mkdir(exist_ok=True)

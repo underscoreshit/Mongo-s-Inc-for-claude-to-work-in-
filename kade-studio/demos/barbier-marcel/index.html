@@ -1,0 +1,519 @@
+<!doctype html>
+<!-- Voorbeeldontwerp door Kade Studio. Fictieve zaak: Barbier Marcel bestaat niet. Concept-site, geen echte boekingen. Foto's: Unsplash (zie img/CREDITS.md). -->
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barbier Marcel | Barbershop in Mechelen, knippen en scheren op afspraak</title>
+<meta name="description" content="Voorbeeldsite: barbershop in Mechelen. Knippen, baard trimmen, klassiek scheren met het mes. Prijzen, openingsuren en online een stoel reserveren.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#15130f">
+<link rel="preload" href="fonts/antonio-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/hero.jpg" as="image">
+<style>
+@font-face{font-family:"Antonio";src:url(fonts/antonio-latin-wght-normal.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrument-sans-latin-wght-normal.woff2) format("woff2");font-weight:400 700;font-display:swap}
+:root{
+  --ink:#15130f;--ink-2:#221f19;--ink-3:#2e2a22;
+  --cream:#f3ead9;--cream-2:#e6dcc8;--brass:#c9a35a;--brass-2:#e2c27a;--red:#a8382c;
+  --muted:#a89f8c;--line:rgba(243,234,217,.14);
+  --f-head:"Antonio",Impact,"Arial Narrow",sans-serif;--f-body:"Instrument Sans",system-ui,sans-serif;
+  --wrap:1180px;--gutter:clamp(1rem,4vw,2.5rem);--r:4px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--f-body);font-size:1.0625rem;line-height:1.55;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-head);font-weight:700;text-transform:uppercase;letter-spacing:.01em;line-height:.9;margin:0}
+p{margin:0}
+.wrap{width:min(var(--wrap),100% - 2*var(--gutter));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--brass);color:var(--ink);padding:.6rem 1rem;z-index:100;font-weight:600}
+.skip:focus{top:1rem}
+:focus-visible{outline:3px solid var(--brass-2);outline-offset:3px}
+.kade{background:#74DB4B;color:#111;font-size:.8rem;text-align:center;padding:.4rem var(--gutter);display:flex;justify-content:center;gap:.5rem 1.2rem;flex-wrap:wrap}
+.kade a{color:inherit;font-weight:600}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(21,19,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.4rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand-mark{width:38px;height:38px;border:2px solid var(--brass);border-radius:50%;display:grid;place-items:center;font-family:var(--f-head);font-weight:700;font-size:1.25rem;color:var(--brass)}
+.brand-name{font-family:var(--f-head);font-weight:700;font-size:1.5rem;text-transform:uppercase;letter-spacing:.06em}
+.brand-name small{display:block;font-family:var(--f-body);font-weight:400;font-size:.68rem;letter-spacing:.22em;color:var(--muted)}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.6rem}
+.nav li a{text-decoration:none;font-size:.95rem;color:var(--cream-2);padding:.4rem 0;border-bottom:2px solid transparent}
+.nav li a:hover{border-color:var(--brass)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.4rem;border:2px solid var(--brass);border-radius:var(--r);background:var(--brass);color:var(--ink);font:600 .95rem var(--f-body);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:var(--brass-2);border-color:var(--brass-2);transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--cream)}
+.btn-line:hover{background:rgba(201,163,90,.12)}
+.menubtn{display:none;background:none;border:1px solid var(--line);color:var(--cream);padding:.5rem .7rem;border-radius:var(--r);font:inherit}
+
+/* hero */
+.hero{position:relative;padding:clamp(3rem,8vw,6.5rem) 0 clamp(3rem,7vw,6rem);overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:3rem;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.eyebrow::before{content:"";width:2.2rem;height:1px;background:var(--brass)}
+.hero h1{font-size:clamp(3.6rem,10vw,8.5rem);margin-top:1rem}
+.hero h1 em{font-style:normal;color:var(--brass)}
+.hero .lead{margin-top:1.4rem;max-width:46ch;font-size:1.1rem;color:var(--cream-2)}
+.hero .ctas{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.status{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--muted)}
+.status i{width:.65rem;height:.65rem;border-radius:50%;background:#4ec77a;box-shadow:0 0 0 4px rgba(78,199,122,.2)}
+.status.closed i{background:var(--red);box-shadow:0 0 0 4px rgba(168,56,44,.2)}
+.hero-ph{position:relative;margin:0}
+.hero-ph img{aspect-ratio:4/5;object-fit:cover;width:100%;border:3px solid var(--brass);filter:saturate(.9)}
+.hero-ph::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--brass);z-index:-1;opacity:.6}
+.pole{position:absolute;left:-1.2rem;bottom:2rem;width:3.2rem;height:9rem;border-radius:999px;overflow:hidden;border:3px solid var(--brass);background:var(--cream);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.pole span{position:absolute;inset:-50% 0;background:repeating-linear-gradient(-35deg,var(--red) 0 14px,var(--cream) 14px 28px,#1f3a63 28px 42px,var(--cream) 42px 56px);animation:spin 5s linear infinite}
+@keyframes spin{to{transform:translateY(112px)}}
+.hero-ph figcaption{position:absolute;right:1rem;bottom:1rem;background:var(--ink);color:var(--brass);font-family:var(--f-head);text-transform:uppercase;letter-spacing:.06em;padding:.4rem .8rem;font-size:.95rem;border:1px solid var(--brass)}
+@media (prefers-reduced-motion:reduce){.pole span{animation:none}}
+
+/* ticker */
+.ticker{border-bottom:1px solid var(--line);overflow:hidden;background:var(--ink-2)}
+.ticker-track{display:flex;gap:3rem;white-space:nowrap;padding:.7rem 0;width:max-content;animation:tick 28s linear infinite;font-family:var(--f-head);text-transform:uppercase;letter-spacing:.08em;font-size:1rem;color:var(--brass)}
+.ticker-track span::after{content:"✦";margin-left:3rem;color:var(--muted)}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
+section{padding:clamp(3rem,8vw,6.5rem) 0}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:2.4rem}
+.sec-head h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.sec-head p{max-width:42ch;color:var(--muted)}
+
+/* services */
+.services .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:3rem;align-items:start}
+.menu{display:grid;gap:0}
+.item{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.item h3{font-size:1.5rem;letter-spacing:.03em;font-weight:600}
+.item .price{font-family:var(--f-head);font-size:1.6rem;color:var(--brass);font-variant-numeric:tabular-nums}
+.item p{grid-column:1/-1;color:var(--muted);font-size:.95rem}
+.item small{display:inline-block;margin-left:.6rem;font:500 .72rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--brass);padding:.1rem .45rem;border-radius:2px;vertical-align:middle}
+.item button{justify-self:start;grid-column:1/-1;margin-top:.4rem;background:none;border:0;padding:0;color:var(--brass);font:600 .85rem var(--f-body);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.svc-photos{position:sticky;top:6rem;display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.svc-photos figure{margin:0;position:relative;overflow:hidden;border:1px solid var(--line)}
+.svc-photos img{aspect-ratio:1;object-fit:cover;width:100%;transition:transform .5s}
+.svc-photos figure:hover img{transform:scale(1.04)}
+.svc-photos figure:first-child{grid-column:1/-1}
+.svc-photos figure:first-child img{aspect-ratio:16/10}
+.svc-photos figcaption{position:absolute;left:0;bottom:0;background:linear-gradient(transparent,rgba(21,19,15,.85));color:var(--cream);width:100%;padding:1.6rem .8rem .6rem;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* team */
+.team{background:var(--ink-2);border-block:1px solid var(--line)}
+.crew{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+.card{background:var(--ink-3);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%;filter:grayscale(1) contrast(1.05);transition:filter .4s}
+.card:hover img{filter:grayscale(0)}
+.card .body{padding:1.4rem 1.5rem 1.6rem;position:relative}
+.card .initial{font-family:var(--f-head);font-size:5rem;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--brass);position:absolute;right:.8rem;top:-.6rem;opacity:.6}
+.card h3{font-size:1.9rem;letter-spacing:.03em}
+.card .role{color:var(--brass);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;margin-top:.3rem}
+.card p{margin-top:.8rem;color:var(--cream-2);font-size:.95rem;max-width:30ch}
+.card .days{margin-top:1rem;display:flex;gap:.3rem}
+.card .days b{width:1.9rem;height:1.9rem;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:.72rem;font-weight:600;color:var(--muted)}
+.card .days b.on{background:var(--brass);color:var(--ink);border-color:var(--brass)}
+
+/* hours + visit */
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
+.visit h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin-top:1.6rem}
+.hours th,.hours td{text-align:left;padding:.7rem 0;border-bottom:1px solid var(--line);font-weight:400}
+.hours td{text-align:right;color:var(--cream-2)}
+.hours tr.today th,.hours tr.today td{color:var(--brass);font-weight:600}
+.hours tr.today th::after{content:"vandaag";font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-left:.6rem;border:1px solid var(--brass);padding:.05rem .4rem;border-radius:2px}
+.addr{font-style:normal;line-height:1.7;margin-top:1.4rem}
+.addr a{color:var(--brass)}
+.shopph{margin:1.6rem 0 0;position:relative}
+.shopph img{aspect-ratio:16/10;object-fit:cover;width:100%;border:1px solid var(--line)}
+.shopph figcaption{position:absolute;left:1rem;bottom:1rem;background:var(--brass);color:var(--ink);font-weight:600;font-size:.85rem;padding:.3rem .7rem}
+
+/* reviews */
+.reviews{background:var(--cream);color:var(--ink)}
+.reviews .sec-head p{color:#5e5648}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+.quote{background:#fff;padding:1.6rem;border-radius:var(--r);border:1px solid #ddd3bf;box-shadow:0 10px 30px rgba(21,19,15,.06);margin:0}
+.quote .stars{color:var(--brass);letter-spacing:.1em;font-size:.95rem}
+.quote p{margin-top:.8rem;font-size:1rem}
+.quote footer{margin-top:1rem;font-size:.85rem;color:#5e5648}
+.reviews .note{margin-top:1.4rem;font-size:.82rem;color:#5e5648}
+
+/* booking */
+.book{background:var(--ink-2);border-top:1px solid var(--line);position:relative;overflow:hidden}
+.book .bg{position:absolute;inset:0;background:url(img/tools.jpg) center/cover;opacity:.12;pointer-events:none}
+.book .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:3rem;align-items:start;position:relative}
+.book h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.book .intro{margin-top:1rem;color:var(--muted);max-width:40ch}
+.book ul.perks{list-style:none;padding:0;margin:1.6rem 0 0;display:grid;gap:.6rem;color:var(--cream-2);font-size:.95rem}
+.book ul.perks li::before{content:"✦";color:var(--brass);margin-right:.6rem}
+.form{background:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.2rem,3vw,2rem)}
+fieldset{border:0;padding:0;margin:0 0 1.5rem}
+legend{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{position:relative}
+.chip input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.chip span{display:inline-block;padding:.55rem .9rem;border:1px solid var(--line);border-radius:999px;font-size:.9rem;color:var(--cream-2);cursor:pointer;transition:background .15s,color .15s}
+.chip input:checked+span{background:var(--brass);color:var(--ink);border-color:var(--brass);font-weight:600}
+.chip input:focus-visible+span{outline:3px solid var(--brass-2);outline-offset:2px}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(5.2rem,1fr));gap:.5rem}
+.slots .chip span{display:block;text-align:center;padding:.6rem .4rem;font-variant-numeric:tabular-nums}
+.slots .chip.full span{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.field{display:grid;gap:.35rem;margin-bottom:1rem}
+.field label{font-size:.85rem;color:var(--cream-2)}
+.field input{width:100%;background:var(--ink-3);border:1px solid var(--line);border-radius:var(--r);color:var(--cream);padding:.75rem .85rem;font:inherit;font-size:1rem}
+.field input:focus{border-color:var(--brass)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.summary{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;align-items:center;padding:1rem;border:1px dashed var(--line);border-radius:var(--r);margin-bottom:1rem;font-size:.95rem;color:var(--cream-2)}
+.summary b{color:var(--brass);font-family:var(--f-head);font-size:1.4rem;letter-spacing:.03em}
+.err{color:#f0a195;font-size:.85rem;min-height:1.2em}
+.done{display:none;text-align:center;padding:2rem 1rem}
+.done.show{display:block}
+.done .check{width:64px;height:64px;border-radius:50%;background:var(--brass);color:var(--ink);display:grid;place-items:center;margin:0 auto 1rem;font-size:2rem}
+.done h3{font-size:2.2rem}
+.done p{margin-top:.8rem;color:var(--cream-2)}
+.demo-note{font-size:.8rem;color:var(--muted)}
+
+.foot{border-top:1px solid var(--line);padding:2rem 0 6rem;font-size:.85rem;color:var(--muted)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+.foot a{color:var(--brass)}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:.5rem;padding:.6rem var(--gutter) calc(.6rem + env(safe-area-inset-bottom));background:var(--ink);border-top:1px solid var(--line)}
+.callbar .btn{flex:1;padding:.8rem .6rem;font-size:.9rem}
+
+
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero .rv:nth-child(2){transition-delay:.1s}.js .hero .rv:nth-child(3){transition-delay:.2s}.js .hero .rv:nth-child(4){transition-delay:.3s}.js .hero .rv:nth-child(5){transition-delay:.4s}.js .hero .hero-ph{transition-delay:.2s}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+
+@media (max-width:900px){
+  .crew,.quotes{grid-template-columns:1fr}
+  .hero .wrap,.visit .wrap,.book .wrap,.services .wrap{grid-template-columns:1fr}
+  .hero-ph{max-width:420px}
+  .hero-ph img{aspect-ratio:4/3}
+  .pole{left:auto;right:-.6rem;height:7rem}
+  .svc-photos{position:static}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--ink);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:.6rem var(--gutter) 1rem}
+  .nav ul.open{display:flex}
+  .nav li a{display:block;padding:.8rem 0;border-bottom:1px solid var(--line)}
+  .nav .btn{display:none}
+  .menubtn{display:inline-block}
+  .callbar{display:flex}
+  .two{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#diensten">Naar de diensten</a>
+<div class="kade"><span>Voorbeeldsite van Kade Studio: fictieve zaak, geen echte boekingen.</span><a href="../../nl/index.html#exemples">← Terug naar Kade Studio</a></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Barbier Marcel, naar boven"><span class="brand-mark" aria-hidden="true">M</span><span class="brand-name">Barbier Marcel<small>Mechelen · sinds 2014</small></span></a>
+    <nav aria-label="Hoofdnavigatie">
+      <ul id="menu">
+        <li><a href="#diensten">Diensten & prijzen</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#bezoek">Openingsuren</a></li>
+        <li><a href="#boeken">Reserveren</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#boeken">Stoel reserveren</a>
+    <button class="menubtn" type="button" aria-expanded="false" aria-controls="menu" id="menubtn">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow rv">Barbershop · Mechelen</p>
+      <h1 class="rv">Scherp<br>geknipt,<br><em>goed gezien.</em></h1>
+      <p class="lead rv">Klassiek barbierswerk zonder gedoe: een strakke coupe, een verzorgde baard, een warme handdoek. Op afspraak, zodat u nooit wacht.</p>
+      <div class="ctas rv">
+        <a class="btn" href="#boeken">Stoel reserveren</a>
+        <a class="btn btn-line" href="#diensten">Bekijk de prijzen</a>
+      </div>
+      <p class="status rv" id="status"><i aria-hidden="true"></i><span>Openingsuren laden…</span></p>
+    </div>
+    <figure class="hero-ph rv">
+      <img src="img/hero.jpg" alt="De drie stoelen van de barbershop, met bakstenen muur en warme lampen" width="1800" height="2250" fetchpriority="high">
+      <span class="pole" aria-hidden="true"><span></span></span>
+      <figcaption>Drie stoelen · Mechelen</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker">
+  <span>Knippen 26 €</span><span>Baard 18 €</span><span>Scheren met het mes 30 €</span><span>Vader & zoon 42 €</span><span>Op afspraak, geen wachtrij</span><span>Di tot za</span>
+</div></div>
+
+<section class="services" id="diensten">
+  <div class="wrap">
+    <div>
+      <div class="sec-head rv" style="margin-bottom:1.6rem">
+        <h2>Diensten & prijzen</h2>
+        <p>Vaste prijzen, geen verrassingen. Kies een dienst en reserveer meteen een stoel.</p>
+      </div>
+      <div class="menu" id="menu-list"></div>
+    </div>
+    <div class="svc-photos rv">
+      <figure><img src="img/fade.jpg" alt="Barbier werkt een skin fade af met de tondeuse" loading="lazy" width="1000" height="667"><figcaption>Skin fade</figcaption></figure>
+      <figure><img src="img/scheren.jpg" alt="Klassiek scheren: scheerzeep wordt met de kwast aangebracht" loading="lazy" width="1000" height="667"><figcaption>Klassiek scheren</figcaption></figure>
+      <figure><img src="img/mes.jpg" alt="Contouren van de baard worden met het scheermes getrokken" loading="lazy" width="1000" height="667"><figcaption>Baard & contouren</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Drie stoelen, drie barbiers</h2>
+      <p>Kies uw vaste barbier of laat de keuze aan ons. Elke barbier heeft zijn eigen dagen.</p>
+    </div>
+    <div class="crew">
+      <article class="card rv"><img src="img/team-marcel.jpg" alt="Marcel scheert een klant met kwast en zeep" loading="lazy" width="900" height="600"><div class="body"><span class="initial" aria-hidden="true">M</span><h3>Marcel</h3><p class="role">Eigenaar · klassiek scheren</p><p>Begon in 2014 met één stoel. Specialist in het mes en de warme handdoek.</p><div class="days" aria-label="Werkdagen: dinsdag, woensdag, vrijdag, zaterdag"><b class="on">di</b><b class="on">wo</b><b>do</b><b class="on">vr</b><b class="on">za</b></div></div></article>
+      <article class="card rv"><img src="img/team-yassin.jpg" alt="Yassin knipt geconcentreerd een klant" loading="lazy" width="900" height="600"><div class="body"><span class="initial" aria-hidden="true">Y</span><h3>Yassin</h3><p class="role">Fades & skin fades</p><p>Strakke overgangen en lijnen. De eerste keuze van de jongere klanten.</p><div class="days" aria-label="Werkdagen: dinsdag tot zaterdag"><b class="on">di</b><b class="on">wo</b><b class="on">do</b><b class="on">vr</b><b class="on">za</b></div></div></article>
+      <article class="card rv"><img src="img/team-jonas.jpg" alt="Jonas föhnt het haar van een lachende klant" loading="lazy" width="900" height="600"><div class="body"><span class="initial" aria-hidden="true">J</span><h3>Jonas</h3><p class="role">Baard & verzorging</p><p>Baardvormgeving, olie en advies voor thuis. Rustige hand, droge humor.</p><div class="days" aria-label="Werkdagen: woensdag, donderdag, vrijdag, zaterdag"><b>di</b><b class="on">wo</b><b class="on">do</b><b class="on">vr</b><b class="on">za</b></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="bezoek">
+  <div class="wrap">
+    <div class="rv">
+      <h2>Openingsuren</h2>
+      <table class="hours" id="hours">
+        <caption class="sr">Openingsuren per dag</caption>
+        <tbody>
+          <tr data-day="1"><th scope="row">Maandag</th><td>Gesloten</td></tr>
+          <tr data-day="2" data-open="9:00" data-close="18:00"><th scope="row">Dinsdag</th><td>9:00 – 18:00</td></tr>
+          <tr data-day="3" data-open="9:00" data-close="18:00"><th scope="row">Woensdag</th><td>9:00 – 18:00</td></tr>
+          <tr data-day="4" data-open="9:00" data-close="20:00"><th scope="row">Donderdag</th><td>9:00 – 20:00</td></tr>
+          <tr data-day="5" data-open="9:00" data-close="18:00"><th scope="row">Vrijdag</th><td>9:00 – 18:00</td></tr>
+          <tr data-day="6" data-open="8:30" data-close="16:00"><th scope="row">Zaterdag</th><td>8:30 – 16:00</td></tr>
+          <tr data-day="0"><th scope="row">Zondag</th><td>Gesloten</td></tr>
+        </tbody>
+      </table>
+      <address class="addr">
+        <strong>Barbier Marcel</strong><br>
+        Voorbeeldstraat 12, 2800 Mechelen<br>
+        <a href="tel:+3215000000">015 00 00 00</a> · <a href="mailto:hallo@barbiermarcel.example">hallo@barbiermarcel.example</a><br>
+        Op 3 minuten wandelen van de Grote Markt. Fietsenstalling voor de deur.
+      </address>
+    </div>
+    <div class="rv">
+      <h2>De zaak</h2>
+      <figure class="shopph"><img src="img/stoel.jpg" alt="Klassieke lederen barbierstoel in de zaak" loading="lazy" width="1000" height="667"><figcaption>Stoel 1, sinds 2014</figcaption></figure>
+      <figure class="shopph"><img src="img/coupe.jpg" alt="Een klant krijgt de laatste lijnen van zijn coupe" loading="lazy" width="1000" height="667"><figcaption>Afwerking met het mes</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Wat klanten zeggen</h2>
+      <p>Voorbeeldbeoordelingen om de layout te tonen. Op de echte site koppelen we uw Google-beoordelingen.</p>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote rv"><div class="stars" aria-label="5 op 5">★★★★★</div><p>Eindelijk een barbier die luistert. Yassin maakte exact de fade die ik op de foto toonde.</p><footer>Voorbeeldklant · fade</footer></blockquote>
+      <blockquote class="quote rv"><div class="stars" aria-label="5 op 5">★★★★★</div><p>Het klassieke scheren met warme handdoek is een half uur vakantie. Marcel is een vakman.</p><footer>Voorbeeldklant · scheren</footer></blockquote>
+      <blockquote class="quote rv"><div class="stars" aria-label="5 op 5">★★★★★</div><p>Online gereserveerd, op tijd geholpen, geen wachtrij. Mijn zoon wil nergens anders meer heen.</p><footer>Voorbeeldklant · vader & zoon</footer></blockquote>
+    </div>
+    <p class="note">Illustratieve teksten, geen echte klanten.</p>
+  </div>
+</section>
+
+<section class="book" id="boeken">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="rv">
+      <h2>Reserveer uw stoel</h2>
+      <p class="intro">Kies een dienst, een barbier en een moment. U krijgt meteen een bevestiging per sms. Annuleren kan gratis tot 2 uur vooraf.</p>
+      <ul class="perks">
+        <li>Geen wachtrij: u komt binnen en gaat zitten</li>
+        <li>Herinnering per sms de dag voordien</li>
+        <li>Betalen in de zaak, cash of Bancontact</li>
+      </ul>
+    </div>
+    <form class="form rv" id="bookform" novalidate>
+      <div id="form-body">
+        <fieldset><legend>1. Dienst</legend><div class="chips" id="svc-chips"></div></fieldset>
+        <fieldset><legend>2. Barbier</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="barber" value="Geen voorkeur" checked><span>Geen voorkeur</span></label>
+            <label class="chip"><input type="radio" name="barber" value="Marcel"><span>Marcel</span></label>
+            <label class="chip"><input type="radio" name="barber" value="Yassin"><span>Yassin</span></label>
+            <label class="chip"><input type="radio" name="barber" value="Jonas"><span>Jonas</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>3. Dag</legend><div class="chips" id="day-chips"></div></fieldset>
+        <fieldset><legend>4. Uur</legend><div class="slots" id="slots"></div><p class="err" id="e-slot"></p></fieldset>
+        <div class="two">
+          <div class="field"><label for="b-name">Naam</label><input id="b-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="b-tel">Gsm (voor de bevestiging)</label><input id="b-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required></div>
+        </div>
+        <p class="err" id="e-contact"></p>
+        <div class="summary" id="summary"><span>Kies een dienst en een moment.</span><b></b></div>
+        <button class="btn" type="submit" style="width:100%">Reservering bevestigen</button>
+        <p class="demo-note" style="margin-top:.8rem">Demo: er wordt niets verstuurd. Op de echte site komt elke reservering in uw agenda en krijgt de klant een sms.</p>
+      </div>
+      <div class="done" id="done" role="status" aria-live="polite" tabindex="-1">
+        <div class="check" aria-hidden="true">✓</div>
+        <h3>Tot dan!</h3>
+        <p id="done-text"></p>
+        <p class="demo-note" style="margin-top:1.2rem">Dit is een demo: er is geen echte afspraak gemaakt.</p>
+        <p style="margin-top:1.4rem"><button class="btn btn-line" type="button" id="again">Nog een reservering</button></p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Barbier Marcel · Voorbeeldstraat 12, 2800 Mechelen · BTW BE 0000.000.000 (fictief)</p>
+    <p>Fictieve zaak, foto's via Unsplash. <a href="../../nl/index.html">Voorbeeldsite door Kade Studio</a></p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-line" href="tel:+3215000000">Bel 015 00 00 00</a>
+  <a class="btn" href="#boeken">Reserveren</a>
+</div>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add('js');
+
+  var SERVICES = [
+    {id:'knippen', name:'Knippen', price:26, min:30, desc:'Wassen, knippen, stylen. Inclusief nek en bakkebaarden met het mes.'},
+    {id:'fade', name:'Skin fade', price:30, min:45, desc:'Strakke overgang tot op de huid, afgewerkt met scheermes en lijnen.', tag:'populair'},
+    {id:'baard', name:'Baard trimmen', price:18, min:20, desc:'Vormgeven, contouren met het mes, baardolie.'},
+    {id:'knipbaard', name:'Knippen + baard', price:40, min:50, desc:'De volledige beurt. Onze meest gekozen combinatie.'},
+    {id:'scheren', name:'Klassiek scheren', price:30, min:40, desc:'Warme handdoek, scheerzeep met de kwast, het mes, aftershave-balsem.'},
+    {id:'vaderzoon', name:'Vader & zoon', price:42, min:60, desc:'Twee knipbeurten na elkaar, naast elkaar. Kinderen tot 12 jaar.'},
+    {id:'kind', name:'Kind tot 12 jaar', price:18, min:25, desc:'Rustig, met geduld. Met een lolly erbij als het mag van thuis.'},
+    {id:'grijs', name:'Grijs camoufleren', price:22, min:20, desc:'Subtiele toning die 4 tot 6 weken meegaat. Enkel in combinatie met knippen.'}
+  ];
+  var DAYS = ['zo','ma','di','wo','do','vr','za'], DAYNAMES = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'], MONTHS = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+
+  var mb = document.getElementById('menubtn'), menu = document.getElementById('menu');
+  mb.addEventListener('click', function(){ var open = menu.classList.toggle('open'); mb.setAttribute('aria-expanded', String(open)); });
+  menu.addEventListener('click', function(e){ if (e.target.tagName === 'A') { menu.classList.remove('open'); mb.setAttribute('aria-expanded','false'); } });
+
+  var now = new Date(), dow = now.getDay(), st = document.getElementById('status'), stText = st.querySelector('span');
+  document.querySelectorAll('#hours tr').forEach(function(r){
+    if (+r.dataset.day !== dow) return;
+    r.classList.add('today');
+    if (r.dataset.open) {
+      var o = r.dataset.open.split(':'), c = r.dataset.close.split(':'), mins = now.getHours()*60 + now.getMinutes(), om = +o[0]*60 + +o[1], cm = +c[0]*60 + +c[1];
+      if (mins >= om && mins < cm) stText.textContent = 'Nu open tot ' + r.dataset.close + ' · walk-ins welkom bij vrije stoel';
+      else if (mins < om) { stText.textContent = 'Vandaag open vanaf ' + r.dataset.open; st.classList.add('closed'); }
+      else { stText.textContent = 'Vandaag gesloten sinds ' + r.dataset.close; st.classList.add('closed'); }
+    } else { stText.textContent = 'Vandaag gesloten. Reserveer online voor een andere dag.'; st.classList.add('closed'); }
+  });
+
+  var list = document.getElementById('menu-list'), chips = document.getElementById('svc-chips');
+  SERVICES.forEach(function(s, i){
+    var art = document.createElement('article'); art.className = 'item rv';
+    art.innerHTML = '<h3>' + s.name + (s.tag ? '<small>' + s.tag + '</small>' : '') + '</h3><span class="price">' + s.price + ' €</span><p>' + s.desc + ' <span style="white-space:nowrap">· ' + s.min + ' min</span></p><button type="button" data-svc="' + s.id + '">Reserveer dit →</button>';
+    list.appendChild(art);
+    var lab = document.createElement('label'); lab.className = 'chip';
+    lab.innerHTML = '<input type="radio" name="service" value="' + s.id + '"' + (i === 0 ? ' checked' : '') + '><span>' + s.name + ' · ' + s.price + ' €</span>';
+    chips.appendChild(lab);
+  });
+  list.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-svc]'); if (!b) return;
+    var r = chips.querySelector('input[value="' + b.dataset.svc + '"]'); if (r) { r.checked = true; update(); }
+    document.getElementById('boeken').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  var dayChips = document.getElementById('day-chips'), dayList = [];
+  for (var d = new Date(now), n = 0; dayList.length < 7 && n < 14; n++, d.setDate(d.getDate() + 1)) { var dd = d.getDay(); if (dd === 0 || dd === 1) continue; dayList.push(new Date(d)); }
+  dayList.forEach(function(d, i){
+    var lab = document.createElement('label'); lab.className = 'chip';
+    var label = (i === 0 && d.toDateString() === now.toDateString() ? 'vandaag' : DAYS[d.getDay()]) + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
+    lab.innerHTML = '<input type="radio" name="day" value="' + d.toISOString().slice(0,10) + '"' + (i === 0 ? ' checked' : '') + '><span>' + label + '</span>';
+    dayChips.appendChild(lab);
+  });
+
+  var slots = document.getElementById('slots');
+  function seed(str){ var h = 0; for (var i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0; return h; }
+  function buildSlots(){
+    var day = document.querySelector('input[name="day"]:checked').value, barber = document.querySelector('input[name="barber"]:checked').value;
+    var dt = new Date(day + 'T12:00:00'), dow = dt.getDay(), close = dow === 4 ? 20 : dow === 6 ? 16 : 18, start = dow === 6 ? 8.5 : 9, h = seed(day + barber);
+    slots.innerHTML = '';
+    var isToday = dt.toDateString() === now.toDateString(), count = 0;
+    for (var t = start; t < close; t += 0.5) {
+      var hh = Math.floor(t), mm = t % 1 ? '30' : '00', past = isToday && (hh * 60 + +mm) <= now.getHours() * 60 + now.getMinutes();
+      h = (h * 1103515245 + 12345) >>> 0;
+      var full = past || (h % 100) < (barber === 'Geen voorkeur' ? 22 : 45);
+      var lab = document.createElement('label'); lab.className = 'chip' + (full ? ' full' : '');
+      var v = (hh < 10 ? '0' : '') + hh + ':' + mm;
+      lab.innerHTML = '<input type="radio" name="slot" value="' + v + '"' + (full ? ' disabled' : '') + '><span>' + v + '</span>';
+      slots.appendChild(lab); if (!full) count++;
+    }
+    if (!count) slots.innerHTML = '<p style="grid-column:1/-1;color:var(--muted)">Geen vrije stoelen meer op deze dag. Kies een andere dag.</p>';
+  }
+  var sum = document.getElementById('summary');
+  function picked(){
+    var s = SERVICES.filter(function(x){ return x.id === document.querySelector('input[name="service"]:checked').value; })[0];
+    var slot = document.querySelector('input[name="slot"]:checked'), day = new Date(document.querySelector('input[name="day"]:checked').value + 'T12:00:00');
+    return {s:s, slot:slot && slot.value, day:day, barber:document.querySelector('input[name="barber"]:checked').value};
+  }
+  function update(){
+    var p = picked();
+    sum.innerHTML = '<span>' + p.s.name + ' · ' + p.s.min + ' min' + (p.barber !== 'Geen voorkeur' ? ' · bij ' + p.barber : '') + (p.slot ? ' · ' + DAYNAMES[p.day.getDay()] + ' ' + p.day.getDate() + ' ' + MONTHS[p.day.getMonth()] + ' om ' + p.slot : '') + '</span><b>' + p.s.price + ' €</b>';
+  }
+  var form = document.getElementById('bookform');
+  form.addEventListener('change', function(e){ if (e.target.name === 'day' || e.target.name === 'barber') buildSlots(); update(); });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var p = picked(), ok = true, eSlot = document.getElementById('e-slot'), eC = document.getElementById('e-contact');
+    eSlot.textContent = ''; eC.textContent = '';
+    if (!p.slot) { eSlot.textContent = 'Kies nog een uur.'; ok = false; }
+    var name = document.getElementById('b-name').value.trim(), tel = document.getElementById('b-tel').value.replace(/\D/g,'');
+    if (!name) { eC.textContent = 'Vul uw naam in.'; ok = false; } else if (tel.length < 9) { eC.textContent = 'Vul een geldig gsm-nummer in.'; ok = false; }
+    if (!ok) return;
+    document.getElementById('form-body').hidden = true;
+    var done = document.getElementById('done'); done.classList.add('show');
+    document.getElementById('done-text').textContent = name.split(' ')[0] + ', uw ' + p.s.name.toLowerCase() + ' staat genoteerd op ' + DAYNAMES[p.day.getDay()] + ' ' + p.day.getDate() + ' ' + MONTHS[p.day.getMonth()] + ' om ' + p.slot + (p.barber !== 'Geen voorkeur' ? ' bij ' + p.barber : '') + '. U krijgt een sms ter bevestiging.';
+    done.focus();
+  });
+  document.getElementById('again').addEventListener('click', function(){
+    document.getElementById('done').classList.remove('show'); document.getElementById('form-body').hidden = false;
+    form.reset(); chips.querySelector('input').checked = true; dayChips.querySelector('input').checked = true; buildSlots(); update();
+  });
+  buildSlots(); update();
+
+  var tk = document.getElementById('ticker'); tk.innerHTML += tk.innerHTML;
+
+  /* Reveal on scroll: CSS transitions + IntersectionObserver. Content is never left hidden. */
+  function revealAll(){ document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
+  if (!('IntersectionObserver' in window) || reduce) revealAll();
+  else {
+    document.querySelectorAll('.hero .rv').forEach(function(el){ el.classList.add('in'); });
+    var io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv:not(.in)').forEach(function(el){ io.observe(el); });
+    setTimeout(revealAll, 6000); /* safety net */
+  }
+  /* GSAP (local vendor): subtle parallax on the hero photo and the booking background. Pure enhancement. */
+  window.addEventListener('load', function(){
+    if (reduce || !window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.hero-ph img', {yPercent:10, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+    gsap.to('.book .bg', {yPercent:-12, ease:'none', scrollTrigger:{trigger:'.book', start:'top bottom', end:'bottom top', scrub:true}});
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!doctype html>
+<!-- Voorbeeldontwerp door Kade Studio. Fictieve zaak: Broodjesbar Bo bestaat niet. Concept-site, geen echte bestellingen. Foto's: Unsplash (zie img/CREDITS.md). -->
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Broodjesbar Bo | Vers belegde broodjes in Turnhout, ook voor op kantoor</title>
+<meta name="description" content="Voorbeeldsite: broodjesbar in Turnhout. Elke ochtend vers brood van de bakker, huisgemaakte salades, soep van de dag. Online bestellen om af te halen, lunch voor bedrijven.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#3a4a2a">
+<link rel="preload" href="fonts/lora-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/intertight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/hero.jpg" as="image">
+<style>
+@font-face{font-family:"Lora";src:url(fonts/lora-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Lora";src:url(fonts/lora-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Lora";src:url(fonts/lora-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Inter Tight";src:url(fonts/intertight-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter Tight";src:url(fonts/intertight-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{
+  --olive:#3a4a2a;--olive-2:#2c3920;--cream:#fbf7f0;--cream-2:#f2ead9;--tomato:#d1582f;--tomato-2:#b4471f;--mustard:#e9b949;--sage:#e4e9d8;
+  --ink:#24261f;--text:#3a3d33;--muted:#726f64;--line:#e3dccb;--white:#fff;--green:#2f8f5b;
+  --f-head:"Lora",Georgia,serif;--f-body:"Inter Tight",system-ui,sans-serif;
+  --wrap:1140px;--gutter:clamp(1rem,4vw,2.5rem);--r:14px;--shadow:0 14px 34px rgba(58,74,42,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--cream);color:var(--text);font-family:var(--f-body);font-size:1.0625rem;line-height:1.55;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-head);font-weight:700;line-height:1.05;margin:0;color:var(--olive);letter-spacing:-.01em}
+h1 em,h2 em{font-style:italic;font-weight:400;color:var(--tomato)}
+p{margin:0}
+.wrap{width:min(var(--wrap),100% - 2*var(--gutter));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--olive);color:#fff;padding:.6rem 1rem;z-index:100;font-weight:700;border-radius:8px}
+.skip:focus{top:1rem}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px}
+.kade{background:#74DB4B;color:#111;font-size:.8rem;text-align:center;padding:.4rem var(--gutter);display:flex;justify-content:center;gap:.5rem 1.2rem;flex-wrap:wrap}
+.kade a{color:inherit;font-weight:700}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(251,247,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.4rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand i{width:38px;height:38px;border-radius:50%;background:var(--tomato);color:#fff;display:grid;place-items:center;font:700 1.3rem var(--f-head);font-style:italic}
+.brand-name{font-family:var(--f-head);font-weight:700;font-size:1.35rem;color:var(--olive);line-height:1}
+.brand-name small{display:block;font-family:var(--f-body);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato)}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem}
+.nav li a{text-decoration:none;font-weight:700;font-size:.95rem;color:var(--olive);padding:.4rem 0;border-bottom:2px solid transparent}
+.nav li a:hover{border-color:var(--tomato)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.4rem;border:2px solid var(--olive);border-radius:999px;background:var(--olive);color:#fff;font:700 .95rem var(--f-body);text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--olive-2);transform:translateY(-1px)}
+.btn-tomato{background:var(--tomato);border-color:var(--tomato)}
+.btn-tomato:hover{background:var(--tomato-2);border-color:var(--tomato-2)}
+.btn-line{background:transparent;color:var(--olive)}
+.btn-line:hover{background:var(--sage)}
+.btn-white{background:#fff;color:var(--olive);border-color:#fff}
+.cartbtn{position:relative;display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--olive);border:2px solid var(--olive);border-radius:999px;padding:.55rem 1rem;font:700 .9rem var(--f-body);cursor:pointer}
+.cartbtn .n{background:var(--tomato);color:#fff;border-radius:999px;min-width:1.4rem;height:1.4rem;display:grid;place-items:center;font-size:.75rem;padding:0 .3rem}
+.cartbtn.bump{animation:bump .35s}
+@keyframes bump{40%{transform:scale(1.1)}}
+.menubtn{display:none;background:none;border:1px solid var(--line);color:var(--olive);padding:.45rem .7rem;border-radius:999px;font:700 .9rem var(--f-body)}
+
+/* hero */
+.hero{position:relative;isolation:isolate;color:#fff;min-height:min(86vh,760px);display:grid;align-items:end}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(44,57,32,.5),rgba(44,57,32,.68) 40%,rgba(44,57,32,.92))}
+.hero .wrap{padding:clamp(4rem,10vw,8rem) 0 clamp(2.5rem,5vw,4rem);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:2rem;align-items:end}
+.hero h1{color:#fff;font-size:clamp(2.8rem,7vw,5.4rem)}
+.hero h1 em{color:var(--mustard)}
+.hero .lead{margin-top:1.2rem;font-size:1.15rem;max-width:46ch;color:#eef0e6}
+.hero .ctas{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.openpill{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);padding:.6rem 1rem;border-radius:999px;font-weight:700;font-size:.9rem;justify-self:end}
+.openpill i{width:.7rem;height:.7rem;border-radius:50%;background:#7be09b;box-shadow:0 0 0 4px rgba(123,224,155,.25)}
+.openpill.closed i{background:var(--mustard);box-shadow:0 0 0 4px rgba(233,185,73,.25)}
+
+.usp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:-1.8rem;position:relative;z-index:2}
+.usp div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.1rem;box-shadow:var(--shadow);font-weight:700;font-size:.92rem;color:var(--olive);display:flex;gap:.7rem;align-items:center}
+.usp svg{width:26px;height:26px;flex:none;color:var(--tomato)}
+
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+.sec-head{max-width:58ch;margin-bottom:2rem}
+.kicker{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tomato);margin-bottom:.6rem}
+.sec-head h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.sec-head p{margin-top:.8rem;color:var(--muted)}
+
+/* menu */
+.tabs{display:flex;gap:.5rem;overflow-x:auto;padding:.3rem .2rem 1rem;margin:0 -.2rem;scrollbar-width:none;flex-wrap:wrap}
+.tabs button{flex:none;border:1.5px solid var(--line);background:#fff;color:var(--olive);border-radius:999px;padding:.5rem 1rem;font:700 .92rem var(--f-body);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--olive);color:#fff;border-color:var(--olive)}
+.cat{display:none}
+.cat.on{display:block}
+.cat-note{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem;font-style:italic;font-family:var(--f-head)}
+.items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.dish{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.dish:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.dish img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.dish .body{padding:1rem 1.1rem 1.1rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.dish h3{font-size:1.2rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.dish h3 small{font-family:var(--f-body);font-weight:700;font-size:.66rem;background:var(--mustard);color:var(--olive);padding:.1rem .5rem;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+.dish .veg{font-family:var(--f-body);font-weight:700;font-size:.66rem;color:var(--green);border:1.5px solid var(--green);border-radius:999px;padding:.05rem .4rem}
+.dish p{font-size:.9rem;color:var(--muted);flex:1}
+.dish .row{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.6rem}
+.dish .price{font-family:var(--f-head);font-weight:700;font-size:1.25rem;color:var(--olive);font-variant-numeric:tabular-nums}
+.dish .opts{display:flex;gap:.3rem}
+.dish .opts button{border:1.5px solid var(--line);background:#fff;color:var(--olive);border-radius:999px;font:700 .75rem var(--f-body);padding:.25rem .55rem;cursor:pointer}
+.dish .opts button[aria-pressed="true"]{background:var(--olive);color:#fff;border-color:var(--olive)}
+.dish .add{border:2px solid var(--tomato);background:var(--tomato);color:#fff;border-radius:999px;font:700 .85rem var(--f-body);padding:.45rem .9rem;cursor:pointer;transition:background .15s}
+.dish .add:hover{background:var(--tomato-2)}
+
+/* business lunch */
+.biz{background:var(--olive);color:#fff;position:relative;overflow:hidden}
+.biz .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}
+.biz h2{color:#fff}
+.biz h2 em{color:var(--mustard)}
+.biz p{margin-top:1rem;color:#dfe5d2;max-width:46ch}
+.biz ul{margin:1.4rem 0 0;padding:0;list-style:none;display:grid;gap:.7rem}
+.biz li{display:flex;gap:.7rem;align-items:flex-start;color:#eef0e6}
+.biz li::before{content:"✓";color:var(--mustard);font-weight:700}
+.biz .pics{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.biz .pics img{border-radius:var(--r);aspect-ratio:1;object-fit:cover;width:100%}
+.biz .pics img:nth-child(2){margin-top:2rem}
+.biz .pics img:nth-child(3){margin-top:-2rem}
+.biz .btn{margin-top:1.6rem}
+
+/* sfeer gallery */
+.sfeer .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.sfeer figure{margin:0;position:relative;border-radius:var(--r);overflow:hidden}
+.sfeer img{aspect-ratio:1;object-fit:cover;width:100%;transition:transform .5s}
+.sfeer figure:hover img{transform:scale(1.04)}
+.sfeer figure:first-child{grid-column:span 2;grid-row:span 2}
+.sfeer figcaption{position:absolute;left:.7rem;bottom:.7rem;background:rgba(251,247,240,.94);color:var(--olive);font-weight:700;font-size:.78rem;padding:.25rem .6rem;border-radius:999px}
+
+/* hours & visit */
+.visit{background:var(--cream-2);border-block:1px solid var(--line)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
+.visit h2{font-size:clamp(2rem,4.5vw,3rem)}
+.hours{width:100%;border-collapse:collapse;margin-top:1.2rem;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-variant-numeric:tabular-nums}
+.hours th,.hours td{padding:.7rem 1rem;text-align:left;border-bottom:1px solid var(--line);font-weight:400}
+.hours tr:last-child th,.hours tr:last-child td{border:0}
+.hours td{text-align:right}
+.hours tr.today{background:var(--sage)}
+.hours tr.today th{font-weight:700}
+.hours tr.today th::after{content:"vandaag";font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;margin-left:.6rem;background:var(--tomato);color:#fff;padding:.1rem .45rem;border-radius:999px}
+.addr{font-style:normal;margin-top:1.2rem;line-height:1.7}
+.addr a{color:var(--tomato);font-weight:700}
+.visit figure{margin:1.2rem 0 0;border-radius:var(--r);overflow:hidden}
+.visit figure img{aspect-ratio:16/10;object-fit:cover;width:100%}
+
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.quote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;margin:0}
+.quote .stars{color:var(--mustard);letter-spacing:.1em}
+.quote p{margin-top:.6rem;font-family:var(--f-head);font-style:italic;font-size:1.05rem}
+.quote footer{margin-top:.7rem;font-size:.85rem;color:var(--muted)}
+.rnote{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
+
+.foot{background:var(--olive-2);color:#c9d1b9;padding:2rem 0 6.5rem;font-size:.88rem}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+.foot a{color:#fff}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:.5rem;padding:.6rem var(--gutter) calc(.6rem + env(safe-area-inset-bottom));background:var(--olive-2)}
+.callbar .btn{flex:1;padding:.75rem .5rem;font-size:.9rem}
+
+/* cart drawer */
+.scrim{position:fixed;inset:0;background:rgba(36,38,31,.5);z-index:60}
+.scrim[hidden]{display:none}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--cream);z-index:70;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.25);transform:translateX(100%);transition:transform .3s}
+.drawer.open{transform:none}
+.drawer[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.drawer{transition:none}.cartbtn.bump{animation:none}}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;background:var(--olive);color:#fff}
+.drawer-head h2{color:#fff;font-size:1.5rem}
+.iconbtn{background:#fff;color:var(--olive);border:0;border-radius:50%;width:2.4rem;height:2.4rem;font:700 1.1rem var(--f-body);cursor:pointer}
+.drawer-body{flex:1;overflow:auto;padding:1rem 1.2rem}
+.line{display:grid;grid-template-columns:auto 1fr auto;gap:.2rem .8rem;padding:.7rem 0;border-bottom:1px dashed var(--line);align-items:center}
+.line img{width:52px;height:52px;object-fit:cover;border-radius:8px;grid-row:span 2}
+.line b{font-weight:700}
+.line small{display:block;color:var(--muted)}
+.qty{display:inline-flex;align-items:center;gap:.4rem}
+.qty button{width:1.8rem;height:1.8rem;border-radius:50%;border:1.5px solid var(--olive);background:#fff;font:700 1rem var(--f-body);cursor:pointer;color:var(--olive)}
+.qty span{min-width:1.4rem;text-align:center;font-weight:700}
+.line .lp{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;grid-column:3}
+.empty{text-align:center;color:var(--muted);padding:2rem 0}
+.drawer-foot{padding:1rem 1.2rem calc(1rem + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:#fff}
+.tot{display:flex;justify-content:space-between;font-family:var(--f-head);font-weight:700;font-size:1.3rem;margin-bottom:.8rem;color:var(--olive)}
+.field{display:grid;gap:.3rem;margin-bottom:.8rem}
+.field label{font-weight:700;font-size:.88rem;color:var(--olive)}
+.field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:.65rem .8rem;font:inherit;font-size:1rem;background:#fff;color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.err{color:var(--tomato);font-size:.85rem;font-weight:700;min-height:1.1em}
+.done{text-align:center;padding:2rem 1rem}
+.done .check{width:70px;height:70px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;margin:0 auto 1rem;font-size:2.4rem;font-weight:700}
+.done h3{font-size:2rem}
+.done p{margin-top:.8rem}
+.done .code{font-family:var(--f-head);font-size:2.2rem;color:var(--tomato);background:#fff;border:2px dashed var(--olive);border-radius:var(--r);padding:.5rem 1rem;display:inline-block;margin-top:1rem;letter-spacing:.06em}
+.done .note{margin-top:1rem;font-size:.85rem;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:5.5rem;transform:translate(-50%,20px);background:var(--olive);color:#fff;padding:.7rem 1.1rem;border-radius:999px;font-weight:700;opacity:0;transition:.25s;z-index:80;pointer-events:none;font-size:.95rem}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:960px){
+  .items{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .biz .wrap,.visit .wrap{grid-template-columns:1fr}
+  .quotes{grid-template-columns:1fr}
+  .usp{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sfeer .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .items{grid-template-columns:1fr}
+  .hero{min-height:0}
+  .hero .wrap{grid-template-columns:1fr}
+  .openpill{justify-self:start}
+  .usp{grid-template-columns:1fr}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--cream);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:.4rem var(--gutter) 1rem}
+  .nav ul.open{display:flex}
+  .nav li a{display:block;padding:.8rem 0;border-bottom:1px solid var(--line)}
+  .menubtn{display:inline-block}
+  .cartbtn .lbl{display:none}
+  .callbar{display:flex}
+  .two{grid-template-columns:1fr}
+  .tabs{flex-wrap:nowrap}
+  .biz .pics img:nth-child(2),.biz .pics img:nth-child(3){margin:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#menu">Naar het menu</a>
+<div class="kade"><span>Voorbeeldsite van Kade Studio: fictieve zaak, geen echte bestellingen.</span><a href="../../nl/index.html#exemples">← Terug naar Kade Studio</a></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Broodjesbar Bo, naar boven"><i aria-hidden="true">B</i><span class="brand-name">Broodjesbar Bo<small>Turnhout · sinds 2016</small></span></a>
+    <nav aria-label="Hoofdnavigatie">
+      <ul id="nav">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#kantoor">Voor op kantoor</a></li>
+        <li><a href="#sfeer">De zaak</a></li>
+        <li><a href="#uren">Openingsuren</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;gap:.6rem;align-items:center">
+      <button class="cartbtn" type="button" id="open-cart" aria-haspopup="dialog" aria-controls="cart"><span class="lbl">Bestelling</span><span class="n" id="cart-n">0</span><span class="sr" id="cart-sr">, 0 artikelen</span></button>
+      <button class="menubtn" type="button" aria-expanded="false" aria-controls="nav" id="menubtn">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img class="bg" src="img/hero.jpg" alt="" width="1800" height="1200" fetchpriority="high">
+  <div class="wrap">
+    <div>
+      <h1>Vers belegd,<br><em>elke ochtend opnieuw.</em></h1>
+      <p class="lead">Brood van bakker Peeters om de hoek, salades uit eigen keuken en soep die elke dag anders is. Bestel online en haal af zonder wachten, ook voor het hele kantoor.</p>
+      <div class="ctas">
+        <a class="btn btn-tomato" href="#menu">Bekijk het menu</a>
+        <button class="btn btn-white" type="button" data-open-cart>Bestelling afhalen</button>
+      </div>
+    </div>
+    <p class="openpill" id="status"><i aria-hidden="true"></i><span>Openingsuren laden…</span></p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="usp">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12c0-4 3.6-7 8-7s8 3 8 7-3.6 7-8 7-8-3-8-7z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg>Brood van de bakker, elke ochtend</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Online besteld, klaar om 12:00</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-1.5 11h-15z"/><path d="M8 9V7a4 4 0 0 1 8 0v2"/></svg>Levering aan bedrijven vanaf 8 broodjes</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4-4 7-7.5 7-12a7 7 0 0 0-14 0c0 4.5 3 8 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Bancontact, Payconiq, maaltijdcheques</div>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Het menu</span>
+      <h2>Kies je brood, <em>wij doen de rest.</em></h2>
+      <p>Wit, bruin, meergranen of ciabatta. Tik op <strong>Bestel</strong> om je lunch samen te stellen en af te halen aan de toog.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Menucategorieën" id="tabs"></div>
+    <div id="cats"></div>
+  </div>
+</section>
+
+<section class="biz" id="kantoor">
+  <div class="wrap">
+    <div>
+      <span class="kicker" style="color:var(--mustard)">Voor op kantoor</span>
+      <h2>Lunch voor het hele team, <em>geleverd om 12 uur.</em></h2>
+      <p>Bestel voor 10:00 en we leveren gratis in Turnhout, Oud-Turnhout, Vosselaar en Beerse vanaf 8 broodjes. Elke broodje apart verpakt en genaamd, met factuur per e-mail.</p>
+      <ul>
+        <li>Broodjesschotels, salades en soep in thermosbak</li>
+        <li>Vegetarisch en glutenvrij op aanvraag</li>
+        <li>Vaste weekbestelling? Eén mail en het staat elke dag klaar.</li>
+        <li>Vergaderontbijt met koffiekoeken en fruit vanaf 6,50 € p.p.</li>
+      </ul>
+      <a class="btn btn-white" href="mailto:bestel@broodjesbarbo.example?subject=Bedrijfsbestelling">Vraag een offerte voor je team</a>
+    </div>
+    <div class="pics" aria-hidden="true">
+      <img src="img/club.jpg" alt="" loading="lazy" width="900" height="600">
+      <img src="img/ontbijt.jpg" alt="" loading="lazy" width="900" height="600">
+      <img src="img/wrap.jpg" alt="" loading="lazy" width="900" height="600">
+      <img src="img/koffie.jpg" alt="" loading="lazy" width="900" height="600">
+    </div>
+  </div>
+</section>
+
+<section class="sfeer" id="sfeer">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">De zaak</span>
+      <h2>Klein, licht en altijd <em>een praatje.</em></h2>
+      <p>Twintig zitplaatsen binnen, een terras op het pleintje en een toog waar je ziet wat we snijden.</p>
+    </div>
+    <div class="grid">
+      <figure><img src="img/interieur.jpg" alt="Lichte eetruimte met houten tafels en planten" loading="lazy" width="1200" height="800"><figcaption>Binnen, 20 plaatsen</figcaption></figure>
+      <figure><img src="img/toog.jpg" alt="Toog met vers brood en koffiekoeken" loading="lazy" width="1000" height="667"><figcaption>De toog</figcaption></figure>
+      <figure><img src="img/terras.jpg" alt="Terras met tafeltjes op een zonnig plein" loading="lazy" width="1000" height="667"><figcaption>Het terras</figcaption></figure>
+      <figure><img src="img/keuken.jpg" alt="Handen snijden verse groenten op een snijplank" loading="lazy" width="1000" height="667"><figcaption>Eigen keuken</figcaption></figure>
+      <figure><img src="img/brood.jpg" alt="Gesneden bruin brood op een lichte achtergrond" loading="lazy" width="1000" height="667"><figcaption>Brood van Peeters</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="uren">
+  <div class="wrap">
+    <div>
+      <h2>Openingsuren</h2>
+      <table class="hours" id="hours">
+        <caption class="sr">Openingsuren per dag</caption>
+        <tbody>
+          <tr data-day="1" data-open="7:30" data-close="15:00"><th scope="row">Maandag</th><td>7:30 – 15:00</td></tr>
+          <tr data-day="2" data-open="7:30" data-close="15:00"><th scope="row">Dinsdag</th><td>7:30 – 15:00</td></tr>
+          <tr data-day="3" data-open="7:30" data-close="15:00"><th scope="row">Woensdag</th><td>7:30 – 15:00</td></tr>
+          <tr data-day="4" data-open="7:30" data-close="15:00"><th scope="row">Donderdag</th><td>7:30 – 15:00</td></tr>
+          <tr data-day="5" data-open="7:30" data-close="15:00"><th scope="row">Vrijdag</th><td>7:30 – 15:00</td></tr>
+          <tr data-day="6" data-open="8:30" data-close="14:00"><th scope="row">Zaterdag</th><td>8:30 – 14:00</td></tr>
+          <tr data-day="0"><th scope="row">Zondag</th><td>Gesloten</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:.8rem;font-size:.9rem;color:var(--muted)">Ontbijt tot 11:00. Online bestellen kan tot 14:30 voor dezelfde dag.</p>
+    </div>
+    <div>
+      <h2>Op het Zegeplein</h2>
+      <address class="addr">
+        <strong>Broodjesbar Bo</strong><br>
+        Voorbeeldplein 5, 2300 Turnhout<br>
+        <a href="tel:+3214000001">014 00 00 01</a> · <a href="mailto:hallo@broodjesbarbo.example">hallo@broodjesbarbo.example</a><br>
+        Op 4 minuten wandelen van de Grote Markt. Parkeren op het plein, 30 min gratis met schijf.
+      </address>
+      <figure><img src="img/croissant.jpg" alt="Twee croissants bestrooid met bloemsuiker" loading="lazy" width="900" height="600"></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">Klanten</span><h2>Wat de buurt zegt.</h2></div>
+    <div class="quotes">
+      <blockquote class="quote"><div class="stars" aria-label="5 op 5">★★★★★</div><p>Elke middag hetzelfde ritueel: broodje Bo met extra pesto. Om 12:05 ligt het klaar met mijn naam erop.</p><footer>Voorbeeldklant · vaste lunch</footer></blockquote>
+      <blockquote class="quote"><div class="stars" aria-label="5 op 5">★★★★★</div><p>We bestellen elke vrijdag voor twintig collega's. Nooit een fout, altijd op tijd, en de soep is top.</p><footer>Voorbeeldklant · bedrijfsbestelling</footer></blockquote>
+      <blockquote class="quote"><div class="stars" aria-label="5 op 5">★★★★★</div><p>Vers, eerlijk geprijsd en een eigenares die iedereen bij naam kent. Zo hoort een broodjesbar te zijn.</p><footer>Voorbeeldklant · ontbijt op zaterdag</footer></blockquote>
+    </div>
+    <p class="rnote">Illustratieve teksten. Op de echte site tonen we uw Google-beoordelingen.</p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Broodjesbar Bo · Voorbeeldplein 5, 2300 Turnhout · BTW BE 0000.000.000 (fictief)</p>
+    <p>Fictieve zaak, foto's via Unsplash. <a href="../../nl/index.html">Voorbeeldsite door Kade Studio</a></p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-white" href="tel:+3214000001">Bel 014 00 00 01</a>
+  <button class="btn btn-tomato" type="button" data-open-cart>Bestelling <span id="cart-n2">0</span></button>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden tabindex="-1">
+  <div class="drawer-head"><h2 id="cart-title">Je bestelling</h2><button class="iconbtn" type="button" id="close-cart" aria-label="Sluiten">✕</button></div>
+  <div class="drawer-body" id="cart-body"></div>
+  <div class="drawer-foot" id="cart-foot"></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var BREAD = ['wit','bruin','meergranen','ciabatta'];
+  var MENU = [
+    {id:'broodjes', name:'Broodjes', note:'Keuze uit wit, bruin, meergranen of ciabatta (+0,50). Groenten naar keuze inbegrepen.', items:[
+      {id:'b1', img:'ham-kaas', n:'Ham & kaas', d:'Gekookte ham, jonge kaas, sla, tomaat, mayonaise. De klassieker.', p:4.6, bread:true},
+      {id:'b2', img:'baguette', n:'Broodje Bo', d:'Gerookte kip, oude kaas, zongedroogde tomaat, rucola en huisgemaakte pesto.', p:6.2, bread:true, tag:'favoriet'},
+      {id:'b3', img:'mozzarella', n:'Mozzarella & tomaat', d:'Buffelmozzarella, tomaat, basilicum, olijfolie en zwarte peper.', p:5.9, bread:true, veg:true},
+      {id:'b4', img:'club', n:'Club Turnhout', d:'Kip, spek, ei, sla, tomaat en cocktailsaus op drie lagen toast.', p:7.4, bread:false},
+      {id:'b5', img:'veggie', n:'Veggie deluxe', d:'Hummus, gegrilde groenten, feta, spinazie en zaadjes.', p:6.4, bread:true, veg:true},
+      {id:'b6', img:'avocado', n:'Avocado & ei', d:'Avocado, gekookt ei, kiemen, limoen en chilivlokken.', p:6.6, bread:true, veg:true},
+      {id:'b7', img:'wrap', n:'Wrap kip tandoori', d:'Kip tandoori, rode kool, komkommer, yoghurt-muntsaus. Ook met falafel.', p:6.9, bread:false},
+      {id:'b8', img:'ei', n:'Martino van het huis', d:'Préparé van de slager, augurk, ui, tabasco en martinosaus.', p:5.4, bread:true}
+    ]},
+    {id:'warm', name:'Warm & toast', note:'Warm uit de panini-pers of de oven. Reken 8 minuten.', items:[
+      {id:'w1', img:'toast', n:'Croque monsieur', d:'Twee sneden, ham, kaas, bechamel. Met salade.', p:6.8},
+      {id:'w2', img:'ei', n:'Croque madame', d:'Croque monsieur met een spiegelei erbovenop.', p:7.4},
+      {id:'w3', img:'mozzarella', n:'Panini caprese', d:'Mozzarella, tomaat, pesto, geperst op ciabatta.', p:6.9, veg:true},
+      {id:'w4', img:'baguette', n:'Panini kip-curry', d:'Kip, currysaus, ananas en kaas, warm geperst.', p:7.2}
+    ]},
+    {id:'salades', name:'Salades & soep', note:'Salades in een bak van 500 ml met broodje erbij. Soep van de dag wisselt elke dag.', items:[
+      {id:'s1', img:'veggie', n:'Soep van de dag', d:'Vandaag: pompoen met gember. Met broodje en boter.', p:4.5, veg:true, sizes:[['klein',4.5],['groot',5.9]]},
+      {id:'s2', img:'avocado', n:'Salade geitenkaas', d:'Gemengde sla, warme geitenkaas, honing, walnoten en appel.', p:9.8, veg:true},
+      {id:'s3', img:'club', n:'Salade kip caesar', d:'Romeinse sla, gegrilde kip, parmezaan, croutons, caesardressing.', p:9.9},
+      {id:'s4', img:'wrap', n:'Pastasalade pesto', d:'Fusilli, pesto, cherrytomaten, mozzarella, pijnboompitten.', p:7.9, veg:true}
+    ]},
+    {id:'ontbijt', name:'Ontbijt', note:'Tot 11:00. Op zaterdag tot 12:00.', items:[
+      {id:'o1', img:'croissant', n:'Croissant of chocoladebroodje', d:'Van bakker Peeters, elke ochtend vers.', p:1.9, veg:true},
+      {id:'o2', img:'ontbijt', n:'Ontbijt Bo', d:'Koffie of thee, vers sinaasappelsap, croissant, broodje met kaas en confituur.', p:9.5, veg:true, tag:'weekend'},
+      {id:'o3', img:'avocado', n:'Avocadotoast', d:'Zuurdesem, avocado, gepocheerd ei, chilivlokken.', p:8.2, veg:true},
+      {id:'o4', img:'brood', n:'Yoghurt met granola', d:'Griekse yoghurt, huisgemaakte granola, seizoensfruit en honing.', p:5.6, veg:true}
+    ]},
+    {id:'dranken', name:'Dranken', note:'Koffie van brander Kafka uit Antwerpen. Havermelk zonder meerprijs.', items:[
+      {id:'d1', img:'koffie', n:'Koffie', d:'Espresso, lungo, cappuccino of latte.', p:2.8, veg:true, sizes:[['espresso',2.4],['lungo',2.8],['cappuccino',3.4],['latte',3.8]]},
+      {id:'d2', img:'ontbijt', n:'Vers sinaasappelsap', d:'Geperst terwijl je wacht, 25 cl.', p:3.9, veg:true},
+      {id:'d3', img:'koffie', n:'Thee', d:'Losse thee: groen, zwart, munt, gember-citroen.', p:2.9, veg:true},
+      {id:'d4', img:'brood', n:'Frisdrank of water', d:'Cola, cola zero, ice tea, plat of bruisend water.', p:2.4, veg:true}
+    ]}
+  ];
+  var cart = {};
+  function money(n){ return n.toFixed(2).replace('.', ',') + ' €'; }
+
+  var mb = document.getElementById('menubtn'), nav = document.getElementById('nav');
+  mb.addEventListener('click', function(){ var o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', String(o)); });
+  nav.addEventListener('click', function(e){ if (e.target.tagName === 'A') { nav.classList.remove('open'); mb.setAttribute('aria-expanded','false'); } });
+
+  var now = new Date(), dow = now.getDay(), st = document.getElementById('status'), stT = st.querySelector('span'), isOpen = false;
+  document.querySelectorAll('#hours tr').forEach(function(r){
+    if (+r.dataset.day !== dow) return;
+    r.classList.add('today');
+    if (!r.dataset.open) { stT.textContent = 'Vandaag gesloten. Tot maandag!'; st.classList.add('closed'); return; }
+    var o = r.dataset.open.split(':'), c = r.dataset.close.split(':'), m = now.getHours()*60 + now.getMinutes(), om = +o[0]*60 + +o[1], cm = +c[0]*60 + +c[1];
+    if (m >= om && m < cm) { isOpen = true; stT.textContent = 'Nu open tot ' + r.dataset.close + ' · bestel online, klaar in 15 min'; }
+    else if (m < om) { stT.textContent = 'Vandaag open vanaf ' + r.dataset.open + ' · bestel alvast voor straks'; st.classList.add('closed'); }
+    else { stT.textContent = 'Gesloten voor vandaag · bestel voor morgen'; st.classList.add('closed'); }
+  });
+
+  var tabs = document.getElementById('tabs'), cats = document.getElementById('cats');
+  MENU.forEach(function(c, i){
+    var b = document.createElement('button'); b.type = 'button'; b.id = 'tab-' + c.id; b.textContent = c.name;
+    b.setAttribute('role','tab'); b.setAttribute('aria-selected', String(i === 0)); b.setAttribute('aria-controls','cat-' + c.id); b.tabIndex = i === 0 ? 0 : -1;
+    tabs.appendChild(b);
+    var div = document.createElement('div'); div.className = 'cat' + (i === 0 ? ' on' : ''); div.id = 'cat-' + c.id; div.setAttribute('role','tabpanel'); div.setAttribute('aria-labelledby','tab-' + c.id);
+    div.innerHTML = '<p class="cat-note">' + c.note + '</p><div class="items">' + c.items.map(function(it){
+      var opts = '';
+      if (it.sizes) opts = '<div class="opts" role="group" aria-label="Keuze">' + it.sizes.map(function(s, k){ return '<button type="button" data-size="' + k + '" aria-pressed="' + (k === 0) + '">' + s[0] + '</button>'; }).join('') + '</div>';
+      else if (it.bread) opts = '<div class="opts" role="group" aria-label="Brood">' + BREAD.map(function(s, k){ return '<button type="button" data-bread="' + k + '" aria-pressed="' + (k === 0) + '">' + s + '</button>'; }).join('') + '</div>';
+      var price = it.sizes ? it.sizes[0][1] : it.p;
+      return '<article class="dish" data-id="' + it.id + '"><img src="img/' + it.img + '.jpg" alt="" loading="lazy" width="900" height="600"><div class="body"><h3>' + it.n + (it.tag ? '<small>' + it.tag + '</small>' : '') + (it.veg ? '<span class="veg" title="Vegetarisch">veggie</span>' : '') + '</h3><p>' + it.d + '</p>' + opts + '<div class="row"><span class="price" data-price>' + money(price) + '</span><button type="button" class="add" data-add>+ Bestel</button></div></div></article>';
+    }).join('') + '</div>';
+    cats.appendChild(div);
+  });
+  function selectTab(id){
+    tabs.querySelectorAll('[role="tab"]').forEach(function(t){ var on = t.id === 'tab-' + id; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
+    cats.querySelectorAll('.cat').forEach(function(c){ c.classList.toggle('on', c.id === 'cat-' + id); });
+  }
+  tabs.addEventListener('click', function(e){ var t = e.target.closest('[role="tab"]'); if (t) selectTab(t.id.slice(4)); });
+  tabs.addEventListener('keydown', function(e){
+    var all = Array.prototype.slice.call(tabs.querySelectorAll('[role="tab"]')), i = all.indexOf(document.activeElement); if (i < 0) return;
+    var j = e.key === 'ArrowRight' ? (i + 1) % all.length : e.key === 'ArrowLeft' ? (i - 1 + all.length) % all.length : -1;
+    if (j >= 0) { e.preventDefault(); all[j].focus(); selectTab(all[j].id.slice(4)); }
+  });
+  function findItem(id){ for (var i = 0; i < MENU.length; i++) for (var j = 0; j < MENU[i].items.length; j++) if (MENU[i].items[j].id === id) return MENU[i].items[j]; }
+  cats.addEventListener('click', function(e){
+    var opt = e.target.closest('button[data-size],button[data-bread]');
+    if (opt) {
+      var dish = opt.closest('.dish'), it = findItem(dish.dataset.id);
+      dish.querySelectorAll('.opts button').forEach(function(b){ b.setAttribute('aria-pressed', String(b === opt)); });
+      if (opt.dataset.size !== undefined) dish.querySelector('[data-price]').textContent = money(it.sizes[+opt.dataset.size][1]);
+      else dish.querySelector('[data-price]').textContent = money(it.p + (+opt.dataset.bread === 3 ? .5 : 0));
+      return;
+    }
+    var add = e.target.closest('button[data-add]');
+    if (add) {
+      var d2 = add.closest('.dish'), it2 = findItem(d2.dataset.id), key = it2.id, label = it2.n, price = it2.p;
+      var sel = d2.querySelector('.opts button[aria-pressed="true"]');
+      if (sel && sel.dataset.size !== undefined) { key += '-' + sel.dataset.size; label += ' (' + it2.sizes[+sel.dataset.size][0] + ')'; price = it2.sizes[+sel.dataset.size][1]; }
+      else if (sel) { key += '-' + sel.dataset.bread; label += ' · ' + BREAD[+sel.dataset.bread]; price += +sel.dataset.bread === 3 ? .5 : 0; }
+      cart[key] = cart[key] || {label:label, price:price, img:it2.img, q:0}; cart[key].q++;
+      renderCart(); toast(label + ' toegevoegd');
+      var cb = document.getElementById('open-cart'); cb.classList.remove('bump'); void cb.offsetWidth; cb.classList.add('bump');
+    }
+  });
+
+  var drawer = document.getElementById('cart'), scrim = document.getElementById('scrim'), body = document.getElementById('cart-body'), foot = document.getElementById('cart-foot'), lastFocus, ordered = false;
+  function openCart(){ lastFocus = document.activeElement; drawer.hidden = false; scrim.hidden = false; requestAnimationFrame(function(){ drawer.classList.add('open'); }); renderCart(); drawer.focus(); document.body.style.overflow = 'hidden'; }
+  function closeCart(){ drawer.classList.remove('open'); scrim.hidden = true; document.body.style.overflow = ''; setTimeout(function(){ drawer.hidden = true; if (lastFocus) lastFocus.focus(); }, reduce ? 0 : 300); }
+  document.querySelectorAll('#open-cart,[data-open-cart]').forEach(function(b){ b.addEventListener('click', openCart); });
+  document.getElementById('close-cart').addEventListener('click', closeCart);
+  scrim.addEventListener('click', closeCart);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !drawer.hidden) closeCart(); });
+  function count(){ var n = 0; for (var k in cart) n += cart[k].q; return n; }
+  function total(){ var t = 0; for (var k in cart) t += cart[k].q * cart[k].price; return t; }
+  function slotOptions(){
+    var out = '', base = new Date(now.getTime() + 15*60000); base.setMinutes(Math.ceil(base.getMinutes()/5)*5, 0, 0);
+    if (!isOpen) { ['11:30','11:45','12:00','12:15','12:30','12:45','13:00'].forEach(function(s){ out += '<option>' + (dow === 6 || dow === 0 ? 'maandag' : 'morgen') + ' ' + s + '</option>'; }); return out; }
+    for (var i = 0; i < 8; i++) { var t = new Date(base.getTime() + i*10*60000); var s = (t.getHours()<10?'0':'') + t.getHours() + ':' + (t.getMinutes()<10?'0':'') + t.getMinutes(); out += '<option>' + (i === 0 ? 'Zo snel mogelijk (' + s + ')' : s) + '</option>'; }
+    return out;
+  }
+  function renderCart(){
+    var n = count();
+    document.getElementById('cart-n').textContent = n; document.getElementById('cart-n2').textContent = n; document.getElementById('cart-sr').textContent = ', ' + n + ' artikelen';
+    if (ordered) return;
+    if (!n) { body.innerHTML = '<p class="empty">Je bestelling is nog leeg.<br>Kies iets uit het menu.</p>'; foot.innerHTML = '<button class="btn btn-line" type="button" style="width:100%" data-close>Naar het menu</button>'; foot.querySelector('[data-close]').addEventListener('click', closeCart); return; }
+    body.innerHTML = Object.keys(cart).map(function(k){ var l = cart[k]; return '<div class="line"><img src="img/' + l.img + '.jpg" alt="" width="52" height="52"><div><b>' + l.label + '</b><small>' + money(l.price) + ' per stuk</small></div><div class="qty"><button type="button" data-q="-1" data-k="' + k + '" aria-label="Eén minder ' + l.label + '">−</button><span>' + l.q + '</span><button type="button" data-q="1" data-k="' + k + '" aria-label="Eén meer ' + l.label + '">+</button></div><div></div><div class="lp">' + money(l.q * l.price) + '</div></div>'; }).join('');
+    foot.innerHTML = '<div class="tot"><span>Totaal</span><span>' + money(total()) + '</span></div><form id="order" novalidate><div class="two"><div class="field"><label for="o-name">Naam (komt op het zakje)</label><input id="o-name" autocomplete="name" required></div><div class="field"><label for="o-tel">Gsm</label><input id="o-tel" type="tel" inputmode="tel" autocomplete="tel" required></div></div><div class="field"><label for="o-time">Afhalen om</label><select id="o-time">' + slotOptions() + '</select></div><p class="err" id="o-err"></p><button class="btn btn-tomato" type="submit" style="width:100%">Bestelling plaatsen · ' + money(total()) + '</button><p style="margin-top:.6rem;font-size:.78rem;color:var(--muted);text-align:center">Demo: er wordt niets besteld of betaald. Betalen gebeurt aan de toog.</p></form>';
+    foot.querySelector('#order').addEventListener('submit', submitOrder);
+  }
+  body.addEventListener('click', function(e){ var b = e.target.closest('button[data-q]'); if (!b) return; var l = cart[b.dataset.k]; l.q += +b.dataset.q; if (l.q <= 0) delete cart[b.dataset.k]; renderCart(); });
+  function submitOrder(e){
+    e.preventDefault();
+    var err = document.getElementById('o-err'), name = document.getElementById('o-name').value.trim(), tel = document.getElementById('o-tel').value.replace(/\D/g,'');
+    if (!name) { err.textContent = 'Vul je naam in.'; return; }
+    if (tel.length < 9) { err.textContent = 'Vul een geldig gsm-nummer in.'; return; }
+    var time = document.getElementById('o-time').value, code = 'BO-' + (100 + Math.floor(Math.random()*900));
+    ordered = true;
+    body.innerHTML = '<div class="done"><div class="check" aria-hidden="true">✓</div><h3>Bedankt, ' + name.split(' ')[0] + '!</h3><p>' + count() + ' artikel' + (count() > 1 ? 'en' : '') + ', ' + money(total()) + '. Af te halen ' + (time.indexOf('Zo snel') === 0 ? 'zo snel mogelijk, rond ' + time.slice(-6, -1) : time) + '. Je naam staat op het zakje, zeg je code aan de toog:</p><span class="code">' + code + '</span><p class="note">Dit is een demo: er is geen echte bestelling geplaatst.</p><p style="margin-top:1.2rem"><button class="btn btn-line" type="button" id="again">Nieuwe bestelling</button></p></div>';
+    foot.innerHTML = '';
+    document.getElementById('again').addEventListener('click', function(){ cart = {}; ordered = false; renderCart(); });
+    body.querySelector('h3').scrollIntoView();
+  }
+  var tt = document.getElementById('toast'), ttT;
+  function toast(msg){ tt.textContent = msg; tt.classList.add('show'); clearTimeout(ttT); ttT = setTimeout(function(){ tt.classList.remove('show'); }, 1600); }
+  renderCart();
+})();
+</script>
+</body>
+</html>

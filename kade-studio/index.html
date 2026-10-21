@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kade Studio | Sites web pour commerces et artisans à Westerlo</title>
-<meta name="description" id="meta-desc" content="Kade Studio crée des sites web pour les commerces et artisans de Westerlo et des Kempen. Démo gratuite avant de signer, en ligne en 48 h, prix fixe.">
+<meta name="description" id="meta-desc" content="Kade Studio crée des sites web pour les commerces et artisans de Westerlo et des Kempen, et ailleurs en Belgique sur demande. Démo gratuite avant de signer, en ligne en 48 h, prix fixe.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kade Studio">
 <meta property="og:title" content="Kade Studio | Sites web pour commerces et artisans à Westerlo">
@@ -23,7 +23,7 @@
 <meta name="theme-color" content="#74DB4B">
 <link rel="icon" href="brand/logo/kade-mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/social/profile-picture.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kade Studio","description":"Création de sites web pour commerces et artisans de Westerlo et des Kempen.","email":"hello@kadestudio.be","address":{"@type":"PostalAddress","addressLocality":"Westerlo","postalCode":"2260","addressCountry":"BE"},"areaServed":[{"@type":"City","name":"Westerlo"},{"@type":"City","name":"Geel"},{"@type":"City","name":"Herentals"},{"@type":"City","name":"Heist-op-den-Berg"},{"@type":"City","name":"Lier"},{"@type":"City","name":"Mol"}],"knowsLanguage":["fr","nl"],"priceRange":"€€","url":"https://kadestudio.be/","logo":"https://kadestudio.be/brand/logo/kade-logo.png","image":"https://kadestudio.be/brand/og-image.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kade Studio","description":"Création de sites web pour commerces et artisans de Westerlo et des Kempen.","email":"hello@kadestudio.be","address":{"@type":"PostalAddress","addressLocality":"Westerlo","postalCode":"2260","addressCountry":"BE"},"areaServed":[{"@type":"City","name":"Westerlo"},{"@type":"City","name":"Geel"},{"@type":"City","name":"Herentals"},{"@type":"City","name":"Heist-op-den-Berg"},{"@type":"City","name":"Lier"},{"@type":"City","name":"Mol"},{"@type":"Country","name":"Belgium"}],"knowsLanguage":["fr","nl"],"priceRange":"€€","url":"https://kadestudio.be/","logo":"https://kadestudio.be/brand/logo/kade-logo.png","image":"https://kadestudio.be/brand/og-image.png"}</script>
 <link rel="preload" href="fonts/bricolage-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/big-shoulders-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -173,11 +173,17 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .case:nth-child(odd) .case__art{transform:rotate(-1.5deg)}
 .case:nth-child(even) .case__art{transform:rotate(1.5deg)}
 .case:hover .case__art{transform:rotate(0) translateY(-6px)}
+a.case{color:inherit;text-decoration:none}
+a.case:focus-visible{outline:3px solid var(--ink);outline-offset:6px}
+a.case:focus-visible .case__art{transform:rotate(0) translateY(-6px)}
 .case__art b{font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:3.1rem;line-height:.85;position:relative;z-index:1}
 .case__art i{font-family:var(--f-type);font-style:normal;font-size:.82rem;position:relative;z-index:1}
 .case__meta{display:flex;justify-content:space-between;gap:.6rem;font-family:var(--f-type);font-size:.85rem}
 .case__meta strong{font-family:var(--f-display);font-size:1.05rem}
-.a1{background:var(--sun)} .a2{background:var(--ink);color:var(--acid)} .a3{background:var(--bubble)} .a4{background:var(--cobalt);color:var(--white)} .a5{background:var(--tomato)}
+.a1{background:var(--sun)} .a2{background:var(--ink);color:var(--acid)} .a3{background:var(--bubble)} .a4{background:var(--cobalt);color:var(--white)} .a5{background:var(--tomato)} .a6{background:var(--acid)}
+.case__go{position:relative;z-index:1;align-self:flex-start;font-family:var(--f-type);font-style:normal;font-size:.78rem;border:1.5px solid currentColor;border-radius:999px;padding:.15rem .65rem;background:transparent;transition:background .2s,color .2s}
+.case:hover .case__go,a.case:focus-visible .case__go{background:currentColor}
+.case:hover .case__go span,a.case:focus-visible .case__go span{color:var(--white);mix-blend-mode:difference}
 .a2 b{color:transparent;-webkit-text-stroke:2px var(--acid)}
 .ring{position:absolute;right:-30%;top:22%;width:90%;aspect-ratio:1;border-radius:50%;border:18px solid currentColor;opacity:.25}
 
@@ -259,6 +265,50 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .case__meta{flex-wrap:wrap;align-items:baseline}
 .case__meta strong{flex-basis:100%}
 .concept{white-space:nowrap}
+/* ---------- intro : le rideau du commerce se lève ---------- */
+.intro{display:none;position:fixed;inset:0;z-index:1000;place-items:center;overflow:hidden;background-color:var(--paper);background-image:radial-gradient(circle,rgba(21,21,21,.16) 1.1px,transparent 1.5px);background-size:14px 14px;animation:introOut .45s ease-in 2.7s both}
+html.intro-on{overflow:hidden}
+html.intro-on .intro{display:grid}
+.intro--done{animation:none;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.intro__scene{position:relative;width:min(620px,92vw);transform-origin:50% 66%;animation:introZoom .9s cubic-bezier(.7,0,.6,1) 2.25s both;will-change:transform}
+.intro__sun{position:absolute;right:-6%;top:-22%;width:clamp(70px,16vw,120px);aspect-ratio:1;border-radius:50%;background:var(--sun);border:var(--border);box-shadow:var(--pop);animation:introRise 1s cubic-bezier(.2,.8,.2,1) both,introFade .3s ease-in 2.35s forwards}
+.intro__sun::after{content:"";position:absolute;inset:-18px;border-radius:50%;border:3px dashed var(--ink);animation:spin 14s linear infinite}
+.intro__fascia{position:relative;background:var(--ink);color:var(--white);border:var(--border);box-shadow:var(--pop);padding:clamp(.6rem,2vw,1rem) clamp(1rem,3vw,1.6rem);display:flex;justify-content:space-between;align-items:baseline;gap:1rem;animation:introDrop .7s cubic-bezier(.2,1.4,.4,1) .1s both,introFade .3s ease-in 2.35s forwards}
+.intro__fascia b{font-family:var(--f-poster);font-weight:900;font-size:clamp(2.4rem,9vw,4.6rem);line-height:.9;letter-spacing:.01em}
+.intro__fascia b sup{font-size:.35em;vertical-align:top;color:var(--acid)}
+.intro__fascia small{font-family:var(--f-type);font-size:clamp(.7rem,1.8vw,.9rem);color:#cfd0c6;text-align:right;max-width:18ch}
+.intro__awning{height:clamp(22px,4vw,34px);background:repeating-linear-gradient(90deg,var(--tomato) 0 28px,var(--white) 28px 56px);border:var(--border);border-top:0;margin:0 clamp(8px,2vw,16px);-webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 0,#000 9px,transparent 9.5px) bottom/20px 18px repeat-x;mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 0,#000 9px,transparent 9.5px) bottom/20px 18px repeat-x;animation:introDrop .7s cubic-bezier(.2,1.4,.4,1) .2s both,introFade .3s ease-in 2.35s forwards}
+.intro__front{position:relative;margin:0 clamp(18px,4vw,36px);aspect-ratio:4/2.9;border:var(--border);border-top:0;background:var(--acid);overflow:hidden;animation:introDrop .7s cubic-bezier(.2,1.4,.4,1) .25s both}
+.intro__inside{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:1rem}
+.intro__inside p{font-family:var(--f-display);font-weight:800;font-size:clamp(1.3rem,4.6vw,2.4rem);line-height:1.02;letter-spacing:-.02em;max-width:14ch;opacity:0;animation:introIn .5s ease-out 1.75s forwards,introFade .25s ease-in 2.3s forwards;font-variation-settings:"wdth" 80}
+.intro__inside p em{font-style:normal;background:var(--ink);color:var(--acid);padding:.05em .2em;border-radius:.2em;display:inline-block;transform:rotate(-2deg)}
+.intro__shutter{position:absolute;inset:0;transform-origin:top;background:repeating-linear-gradient(180deg,#2f2f2f 0 13px,#151515 13px 16px);box-shadow:inset 0 0 0 2px #1d1d1d,inset 40px 0 50px -40px rgba(255,255,255,.08),inset -40px 0 50px -40px rgba(0,0,0,.5);animation:introRoll 1.1s cubic-bezier(.7,0,.25,1) 1.05s both}
+.intro__shutter::after{content:"";position:absolute;left:38%;right:38%;bottom:9%;height:7px;border:2px solid #0b0b0b;border-radius:4px;background:#3a3a3a}
+.intro__roll{position:absolute;left:-3px;right:-3px;top:-3px;height:8px;background:linear-gradient(#4a4a4a,#151515 60%,#2a2a2a);border:var(--border);border-radius:0 0 8px 8px;z-index:3;animation:introRollBar 1.1s cubic-bezier(.7,0,.25,1) 1.05s both,introFade .3s ease-in 2.4s forwards}
+.intro__sign{position:absolute;left:50%;top:13%;width:clamp(96px,26vw,160px);translate:-50% 0;z-index:4;perspective:700px;animation:introDrop .7s cubic-bezier(.2,1.4,.4,1) .35s both,introFade .25s ease-in 2.3s forwards}
+.intro__sign::before{content:"";position:absolute;left:50%;bottom:100%;width:2px;height:40px;background:var(--ink);translate:-50% 0}
+.intro__sign-card{position:relative;transform-style:preserve-3d;animation:introFlip .8s cubic-bezier(.3,1.5,.5,1) .75s both;aspect-ratio:2.4/1}
+.intro__sign-card span{position:absolute;inset:0;display:grid;place-items:center;border:var(--border);box-shadow:var(--pop);font-family:var(--f-poster);font-weight:900;text-transform:uppercase;font-size:clamp(1.3rem,5.4vw,2.6rem);letter-spacing:.04em;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.intro__sign-card span:first-child{background:var(--tomato);color:var(--ink)}
+.intro__sign-card span:last-child{background:var(--acid);color:var(--ink);transform:rotateX(180deg)}
+.intro__board{position:absolute;left:-4%;bottom:-6px;width:clamp(84px,20vw,120px);aspect-ratio:1/1.2;background:var(--sun);border:var(--border);box-shadow:var(--pop);transform:rotate(-4deg);display:grid;place-content:center;text-align:center;padding:.4rem;font-family:var(--f-poster);font-weight:900;text-transform:uppercase;line-height:.9;font-size:clamp(.95rem,2.6vw,1.3rem);animation:introPop .6s cubic-bezier(.2,1.6,.4,1) .55s both,introFade .3s ease-in 2.35s forwards;z-index:5}
+.intro__board small{display:block;margin-top:.3rem;font-family:var(--f-type);font-weight:400;text-transform:none;font-size:.62em}
+.intro__board::after{content:"";position:absolute;left:12%;right:12%;bottom:-6px;height:6px;background:var(--ink);clip-path:polygon(0 100%,10% 0,90% 0,100% 100%)}
+.intro__ground{position:absolute;left:-30vw;right:-30vw;bottom:-3px;height:3px;background:var(--ink)}
+.intro__skip{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:1001;background:var(--paper);color:var(--ink);border:var(--border);border-radius:999px;padding:.55rem 1rem;font:700 .85rem var(--f-type);cursor:pointer;box-shadow:var(--pop);animation:introIn .4s .8s both;opacity:0}
+.intro__skip:hover{background:var(--sun)}
+@keyframes introRise{from{transform:translateY(90px) rotate(-30deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes introDrop{from{transform:translateY(-40px);opacity:0}to{transform:none;opacity:1}}
+@keyframes introPop{from{transform:rotate(-4deg) scale(0);opacity:0}to{transform:rotate(-4deg) scale(1);opacity:1}}
+@keyframes introFlip{from{transform:rotateX(0)}to{transform:rotateX(180deg)}}
+@keyframes introRoll{from{transform:scaleY(1)}to{transform:scaleY(0)}}
+@keyframes introRollBar{from{height:8px}to{height:30px}}
+@keyframes introIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes introZoom{to{transform:scale(7)}}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+@keyframes introFade{to{opacity:0}}
+@media (max-width:600px){.intro__sun{top:-14%;right:-4%}.intro__board{left:-2%}}
+@media (prefers-reduced-motion:reduce){html.intro-on .intro{display:none}}
 /* ---------- footer ---------- */
 .foot{background:var(--ink);color:#d9dacf;padding-block:2rem;font-family:var(--f-type);font-size:.88rem}
 .foot__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;align-items:center}
@@ -311,13 +361,31 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   html{scroll-behavior:auto}
 }
 </style>
+<script>(function(){try{var s=sessionStorage.getItem('kade_intro')==='1',f=/[?&]intro=1/.test(location.search),r=matchMedia('(prefers-reduced-motion: reduce)').matches;if((!s&&!r)||f)document.documentElement.classList.add('intro-on')}catch(e){}})();</script>
 </head>
 <body>
 
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__scene">
+    <div class="intro__sun"></div>
+    <div class="intro__fascia"><b>KADE<sup>®</sup></b><small><span data-i18n="i_sub">Sites web pour commerces et artisans</span></small></div>
+    <div class="intro__awning"></div>
+    <div class="intro__front">
+      <div class="intro__inside"><p><span data-i18n="i_in">Entrez, <em>c'est ouvert.</em></span></p></div>
+      <div class="intro__shutter"></div>
+      <div class="intro__roll"></div>
+  <div class="intro__sign"><div class="intro__sign-card"><span data-i18n="i_closed">Fermé</span><span data-i18n="i_open">Ouvert</span></div></div>
+    </div>
+    <div class="intro__board"><span data-i18n="i_board">Démo gratuite</span><small><span data-i18n="i_board2">en ligne en 48 h</span></small></div>
+    <div class="intro__ground"></div>
+  </div>
+</div>
+<button class="intro__skip" id="intro-skip" type="button" hidden><span data-i18n="i_skip">Passer l'intro</span></button>
+
 <div class="band" aria-hidden="true">
   <div class="band__track">
-    <span><span data-i18n="b1">Sites web pour commerces et artisans</span></span><span><span data-i18n="b2">Westerlo, Geel, Herentals, Heist-op-den-Berg, Lier</span></span><span><span data-i18n="b3">Nederlands et Français</span></span><span><span data-i18n="b4">En ligne en 48 h</span></span>
-    <span><span data-i18n="b1">Sites web pour commerces et artisans</span></span><span><span data-i18n="b2">Westerlo, Geel, Herentals, Heist-op-den-Berg, Lier</span></span><span><span data-i18n="b3">Nederlands et Français</span></span><span><span data-i18n="b4">En ligne en 48 h</span></span>
+    <span><span data-i18n="b1">Sites web pour commerces et artisans</span></span><span><span data-i18n="b2">Westerlo, Geel, Herentals, Heist-op-den-Berg, Lier</span></span><span><span data-i18n="b3">Néerlandais et français</span></span><span><span data-i18n="b4">En ligne en 48 h</span></span>
+    <span><span data-i18n="b1">Sites web pour commerces et artisans</span></span><span><span data-i18n="b2">Westerlo, Geel, Herentals, Heist-op-den-Berg, Lier</span></span><span><span data-i18n="b3">Néerlandais et français</span></span><span><span data-i18n="b4">En ligne en 48 h</span></span>
   </div>
 </div>
 
@@ -340,8 +408,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__grid wrap">
       <div>
-        <h1 id="hero-title"><span data-i18n="h1">Votre site, fini <em>avant</em> qu'on se parle.</span></h1>
-        <p class="hero__sub"><span data-i18n="sub">Je crée des sites web pour les commerces et artisans de Westerlo et des Kempen. Je vous montre une démo gratuite, vous dites oui, et c'est en ligne en 48 h.</span></p>
+        <h1 id="hero-title"><span data-i18n="h1">Votre site est prêt <em>avant</em> notre premier entretien.</span></h1>
+        <p class="hero__sub"><span data-i18n="sub">Je conçois des sites web pour les commerçants et artisans de Westerlo et des Kempen. Vous découvrez d'abord une démo gratuite ; si elle vous convainc, votre site est en ligne 48 heures plus tard.</span></p>
         <div class="cta">
           <a class="btn btn--main" href="#contact" data-track="hero_cta"><span data-i18n="cta">Demander ma démo gratuite</span></a>
           <a class="btn" href="#exemples" data-track="hero_examples"><span data-i18n="see">Voir des démos</span></a>
@@ -360,28 +428,28 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 
   <section aria-labelledby="who-title">
     <div class="who__head wrap">
-      <h2 id="who-title"><span data-i18n="who">Pour les gens<br>qui bossent.</span></h2>
-      <p><span data-i18n="whop">Vous tenez un commerce, un atelier ou une friterie à Westerlo ou dans les Kempen. Vous n'avez pas le temps de vous battre avec un CMS. Je fais la démo, vous dites oui ou non, et c'est en ligne en 48 h.</span></p>
+      <h2 id="who-title"><span data-i18n="who">Pour celles et ceux<br>qui entreprennent.</span></h2>
+      <p><span data-i18n="whop">Vous dirigez un commerce, un atelier ou une friterie à Westerlo ou dans les Kempen, et votre temps est précieux. Je réalise la démo, vous décidez, et votre site est en ligne 48 heures plus tard. Aucune connaissance technique n'est requise.</span></p>
     </div>
     <div class="blocks">
       <article class="block b-cobalt">
         <h3><span data-i18n="k3">Couvreurs, électriciens, jardiniers</span></h3>
-        <p><span data-i18n="k3p">Un toit à 15 000 €, on ne le commande pas chez quelqu'un sans site. Vos chantiers en photo et un formulaire de devis qui arrive sur votre GSM.</span></p>
+        <p><span data-i18n="k3p">Un toit à 15 000 € ne se commande pas à une entreprise sans site web. Vos chantiers en images et un formulaire de devis qui arrive directement sur votre téléphone.</span></p>
         <span class="big" aria-hidden="true">&amp;</span>
       </article>
       <article class="block b-sun">
-        <h3><span data-i18n="k1">Le commerce du coin</span></h3>
-        <p><span data-i18n="k1p">Horaires à jour, produits en photo, itinéraire en un clic. Les gens vous trouvent sur Google Maps et passent la porte.</span></p>
+        <h3><span data-i18n="k1">Le commerce de proximité</span></h3>
+        <p><span data-i18n="k1p">Horaires à jour, produits en images, itinéraire en un clic. Vos clients vous trouvent sur Google Maps et poussent la porte.</span></p>
         <span class="big" aria-hidden="true">€</span>
       </article>
       <article class="block b-tomato">
         <h3><span data-i18n="k4">Restos, cafés & friteries</span></h3>
-        <p><span data-i18n="k4p">Carte lisible sur téléphone, horaires, bouton d'appel. Moins de coups de fil pour demander si c'est ouvert.</span></p>
+        <p><span data-i18n="k4p">Une carte lisible sur téléphone, vos horaires et un bouton d'appel. Moins d'appels pour savoir si vous êtes ouvert.</span></p>
         <span class="big" aria-hidden="true">@</span>
       </article>
       <article class="block b-bubble">
         <h3><span data-i18n="k2">Salons & instituts</span></h3>
-        <p><span data-i18n="k2p">Prise de rendez-vous en ligne, tarifs clairs, galerie de vos réalisations. Moins d'appels pendant que vous coupez.</span></p>
+        <p><span data-i18n="k2p">Prise de rendez-vous en ligne, tarifs clairs et galerie de vos réalisations. Moins d'appels pendant que vous travaillez.</span></p>
         <span class="big" aria-hidden="true">✂</span>
       </article>
     </div>
@@ -389,28 +457,32 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 
   <section class="work wrap" id="exemples" aria-labelledby="work-title">
     <h2 id="work-title"><span data-i18n="wh">Des démos faites avant le premier appel.</span></h2>
-    <p class="work__intro"><span data-i18n="wi">C'est ma méthode : je construis d'abord, je montre ensuite. Les démos sont des sites réels préparés pour des artisans de la région (noms masqués tant qu'ils n'ont pas dit oui). Les concepts montrent le style pour d'autres métiers.</span></p>
-    <div class="rail" tabindex="0" aria-label="Démos et concepts, défilement horizontal" data-i18n-aria="al2">
-      <article class="case">
-        <div class="case__art a1"><i><span data-i18n="c1">Couvreur</span></i><b>Dak<br>werken</b><div class="ring"></div></div>
-        <div class="case__meta"><strong><span data-i18n="n_c1">Couvreur, BV depuis 2019</span></strong><span class="concept" data-i18n="dmo">Démo</span><span>Westerlo</span></div>
-      </article>
-      <article class="case">
-        <div class="case__art a2"><i><span data-i18n="c2">Site hors ligne, refait</span></i><b>Nieuw<br>dak</b></div>
-        <div class="case__meta"><strong><span data-i18n="n_c2">Couvreur, 26 ans de métier</span></strong><span class="concept" data-i18n="dmo">Démo</span><span>Berlaar</span></div>
-      </article>
-      <article class="case">
-        <div class="case__art a3"><i><span data-i18n="c3">Friterie</span></i><b>Frituur<br>Den Hoek</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Frituur Den Hoek</strong><span class="concept" data-i18n="cpt">Concept</span><span>Geel</span></div>
-      </article>
-      <article class="case">
-        <div class="case__art a4"><i><span data-i18n="c4">Jardins</span></i><b>Groen&shy;werk</b><div class="dots"></div></div>
-        <div class="case__meta"><strong>Tuinen Groenwerk</strong><span class="concept" data-i18n="cpt">Concept</span><span>Heist-op-den-Berg</span></div>
-      </article>
-      <article class="case">
-        <div class="case__art a5"><i><span data-i18n="c5">Coiffeur</span></i><b>Salon<br>Lies</b><div class="ring"></div></div>
-        <div class="case__meta"><strong>Kapsalon Lies</strong><span class="concept" data-i18n="cpt">Concept</span><span>Herentals</span></div>
-      </article>
+    <p class="work__intro"><span data-i18n="wi">Telle est ma méthode : je construis d'abord, je présente ensuite. Les six sites ci-dessous sont des concepts complets pour des commerces fictifs, chacun avec son propre style. Cliquez et parcourez-les, de préférence sur votre téléphone.</span></p>
+    <div class="rail" tabindex="0" aria-label="Six sites de démonstration, défilement horizontal" data-i18n-aria="al2">
+      <a class="case" href="demos/dakwerken-hendrickx/index.html" target="_blank" rel="noopener" data-track="demo_dakwerken">
+        <div class="case__art a1"><i><span data-i18n="c1">Couvreur</span></i><b>Dak<br>werken</b><em class="case__go"><span data-i18n="go">Voir la démo →</span></em><div class="ring"></div></div>
+        <div class="case__meta"><strong>Dakwerken Hendrickx</strong><span class="concept" data-i18n="cpt">Concept</span><span>Lier</span></div>
+      </a>
+      <a class="case" href="demos/barbier-marcel/index.html" target="_blank" rel="noopener" data-track="demo_barbier">
+        <div class="case__art a2"><i><span data-i18n="c2">Barbier</span></i><b>Bar<br>bier</b><em class="case__go"><span data-i18n="go">Voir la démo →</span></em></div>
+        <div class="case__meta"><strong>Barbier Marcel</strong><span class="concept" data-i18n="cpt">Concept</span><span>Mechelen</span></div>
+      </a>
+      <a class="case" href="demos/broodjesbar-bo/index.html" target="_blank" rel="noopener" data-track="demo_broodjesbar">
+        <div class="case__art a3"><i><span data-i18n="c3">Bar à sandwichs</span></i><b>Brood<br>jes</b><em class="case__go"><span data-i18n="go">Voir la démo →</span></em><div class="ring"></div></div>
+        <div class="case__meta"><strong>Broodjesbar Bo</strong><span class="concept" data-i18n="cpt">Concept</span><span>Turnhout</span></div>
+      </a>
+      <a class="case" href="demos/groenwerk-dewitte/index.html" target="_blank" rel="noopener" data-track="demo_groenwerk">
+        <div class="case__art a4"><i><span data-i18n="c4">Jardins</span></i><b>Groen&shy;werk</b><em class="case__go"><span data-i18n="go">Voir la démo →</span></em><div class="dots"></div></div>
+        <div class="case__meta"><strong>Groenwerk De Witte</strong><span class="concept" data-i18n="cpt">Concept</span><span>Heist-op-den-Berg</span></div>
+      </a>
+      <a class="case" href="demos/velo-atelier-leuven/index.html" target="_blank" rel="noopener" data-track="demo_velo">
+        <div class="case__art a5"><i><span data-i18n="c5">Vélos</span></i><b>Vélo<br>Atelier</b><em class="case__go"><span data-i18n="go">Voir la démo →</span></em><div class="ring"></div></div>
+        <div class="case__meta"><strong>Vélo Atelier Leuven</strong><span class="concept" data-i18n="cpt">Concept</span><span>Leuven</span></div>
+      </a>
+      <a class="case" href="demos/atelier-nova/index.html" target="_blank" rel="noopener" data-track="demo_atelier">
+        <div class="case__art a6"><i><span data-i18n="c6">Atelier d'art</span></i><b>Atelier<br>Nova</b><em class="case__go"><span data-i18n="go">Voir la démo →</span></em></div>
+        <div class="case__meta"><strong>Atelier Nova</strong><span class="concept" data-i18n="cpt">Concept</span><span>Gent</span></div>
+      </a>
     </div>
   </section>
 
@@ -423,8 +495,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 
   <section class="offers" id="offres" aria-labelledby="offers-title">
     <div class="wrap">
-      <h2 id="offers-title"><span data-i18n="oh">Trois formules.<br><span>Zéro jargon.</span></span></h2>
-      <p class="offers__note"><span data-i18n="on">Prix fixes, annoncés avant de commencer. Montants HTVA. Rien à payer avant d'avoir vu la démo : vous réglez à la mise en ligne.</span></p>
+      <h2 id="offers-title"><span data-i18n="oh">Trois formules.<br><span>Des prix transparents.</span></span></h2>
+      <p class="offers__note"><span data-i18n="on">Prix fixes, communiqués avant de commencer. Montants hors TVA. Aucun paiement avant d'avoir vu la démo : vous réglez à la mise en ligne.</span></p>
       <div class="menu">
         <article class="offer">
           <h3><span data-i18n="o1">Une page</span></h3>
@@ -444,60 +516,60 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
         </article>
       </div>
       <div class="maints">
-        <p class="maint"><strong><span data-i18n="m1">19 €/mois</span></strong><em><span data-i18n="m1t">Le site tourne</span></em><span data-i18n="m2">Nom de domaine .be, hébergement, adresse mail pro, formulaire qui arrive dans votre boîte. Sans engagement.</span></p>
-        <p class="maint"><strong><span data-i18n="m3">39 €/mois</span></strong><em><span data-i18n="m3t">Je m'occupe de tout</span></em><span data-i18n="m4">Tout ça, plus modifications illimitées par WhatsApp, fiche Google et avis tenus à jour. Sans engagement.</span></p>
+        <p class="maint"><strong><span data-i18n="m1">19 €/mois</span></strong><em><span data-i18n="m1t">Le site en fonctionnement</span></em><span data-i18n="m2">Nom de domaine .be, hébergement, adresse e-mail professionnelle et formulaire de contact relayé vers votre boîte de réception. Sans engagement.</span></p>
+        <p class="maint"><strong><span data-i18n="m3">39 €/mois</span></strong><em><span data-i18n="m3t">Je gère tout pour vous</span></em><span data-i18n="m4">Tout ce qui précède, plus modifications illimitées par WhatsApp, fiche Google et avis tenus à jour. Sans engagement.</span></p>
       </div>
-      <p class="fix"><b><span data-i18n="fx1">Site cassé ?</span></b><span data-i18n="fx2">Hors ligne, Joomla de 2012, sous-domaine « new. » qui traîne ? Je récupère vos textes et photos et je remets tout en ligne en 48 h. <strong>Dès 490 €.</strong></span></p>
-      <p class="fix"><b><span data-i18n="pr1">Parrainage</span></b><span data-i18n="pr2">Vous m'envoyez un voisin ou un collègue qui signe ? <strong>100 € de remise</strong> pour vous et pour lui.</span></p>
+      <p class="fix"><b><span data-i18n="fx1">Site cassé ?</span></b><span data-i18n="fx2">Site hors ligne, obsolète (Joomla de 2012) ou sous-domaine « new. » resté en suspens ? Je récupère vos textes et vos photos et remets l'ensemble en ligne en 48 heures. <strong>Dès 490 €.</strong></span></p>
+      <p class="fix"><b><span data-i18n="pr1">Parrainage</span></b><span data-i18n="pr2">Vous me recommandez un confrère ou un voisin qui signe ? <strong>100 € de remise</strong> pour vous deux.</span></p>
     </div>
   </section>
 
   <section class="method" id="methode" aria-labelledby="method-title">
     <div class="wrap">
-      <h2 id="method-title"><span data-i18n="mh">De la démo à la mise en ligne, en 48 h.</span></h2>
+      <h2 id="method-title"><span data-i18n="mh">De la démo à la mise en ligne, en 48 heures.</span></h2>
       <ol class="steps">
-        <li class="step"><h3><span data-i18n="s1">Je construis la démo</span></h3><p><span data-i18n="s1p">Avec ce qu'on trouve déjà sur vous en ligne : fiche Google, Facebook, avis. Vous n'avez rien à faire, et rien à payer.</span></p><span class="when"><span data-i18n="d1">Avant l'appel</span></span></li>
-        <li class="step"><h3><span data-i18n="s2">On se parle</span></h3><p><span data-i18n="s2p">30 minutes au téléphone ou chez vous. Je montre la démo sur mon GSM, vous dites ce qui vous plaît et ce qui ne vous ressemble pas.</span></p><span class="when"><span data-i18n="wk1">Jour 1</span></span></li>
-        <li class="step"><h3><span data-i18n="s3">J'ajuste et je lance</span></h3><p><span data-i18n="s3p">Vos photos, vos textes corrigés, le nom de domaine, l'adresse mail pro. Mise en ligne et fiche Google mise à jour.</span></p><span class="when"><span data-i18n="wk2">Jour 2</span></span></li>
-        <li class="step"><h3><span data-i18n="s4">Je reste là</span></h3><p><span data-i18n="s4p">Un horaire qui change, une nouvelle photo de chantier ? Un WhatsApp et c'est fait. Vous ne touchez jamais à un CMS.</span></p><span class="when"><span data-i18n="wk3">Ensuite</span></span></li>
+        <li class="step"><h3><span data-i18n="s1">Je réalise la démo</span></h3><p><span data-i18n="s1p">À partir des informations déjà publiques sur votre activité : fiche Google, Facebook, avis. Vous n'avez rien à fournir et rien à payer.</span></p><span class="when"><span data-i18n="d1">Avant l'entretien</span></span></li>
+        <li class="step"><h3><span data-i18n="s2">Nous échangeons</span></h3><p><span data-i18n="s2p">30 minutes par téléphone ou chez vous. Je présente la démo sur mon téléphone ; vous m'indiquez ce qui vous convient et ce qui doit évoluer.</span></p><span class="when"><span data-i18n="wk1">Jour 1</span></span></li>
+        <li class="step"><h3><span data-i18n="s3">J'ajuste et je mets en ligne</span></h3><p><span data-i18n="s3p">Vos photos, vos textes corrigés, le nom de domaine et l'adresse e-mail professionnelle. Mise en ligne et mise à jour de votre fiche Google.</span></p><span class="when"><span data-i18n="wk2">Jour 2</span></span></li>
+        <li class="step"><h3><span data-i18n="s4">Je reste à vos côtés</span></h3><p><span data-i18n="s4p">Un horaire qui change, une nouvelle photo de chantier ? Un message WhatsApp suffit. Vous n'avez jamais à intervenir vous-même sur le site.</span></p><span class="when"><span data-i18n="wk3">Ensuite</span></span></li>
       </ol>
     </div>
   </section>
 
   <section class="faq wrap" aria-labelledby="faq-title">
-    <h2 id="faq-title"><span data-i18n="fh">Vous vous demandez.</span></h2>
+    <h2 id="faq-title"><span data-i18n="fh">Vos questions.</span></h2>
     <div>
       <details open>
-        <summary><span data-i18n="q1">La démo gratuite, c'est quoi le piège ?</span></summary>
-        <p><span data-i18n="a1">Aucun. Je construis une première version de votre site avec les infos publiques de votre activité, avant même qu'on se parle. Elle vous plaît, on l'ajuste et elle est en ligne en 48 h. Elle ne vous plaît pas, vous ne me devez rien.</span></p>
+        <summary><span data-i18n="q1">Pourquoi la démo est-elle gratuite ?</span></summary>
+        <p><span data-i18n="a1">Parce que c'est ma façon de me présenter. Je prépare une première version de votre site à partir des informations publiques de votre activité, avant tout entretien. Si elle vous convient, nous l'ajustons et elle est en ligne en 48 heures. Sinon, vous ne me devez rien.</span></p>
       </details>
       <details>
         <summary><span data-i18n="q2">48 heures, vraiment ?</span></summary>
-        <p><span data-i18n="a2">Oui, pour Une page et Vitrine. La démo existe déjà quand on se parle : il reste à corriger les textes, mettre vos photos et brancher le domaine. La Boutique prend 2 à 3 semaines.</span></p>
+        <p><span data-i18n="a2">Oui, pour les formules Une page et Vitrine. La démo existe déjà lors de notre entretien : il reste à corriger les textes, intégrer vos photos et connecter le nom de domaine. La Boutique demande 2 à 3 semaines.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q3">Je dois écrire les textes moi-même ?</span></summary>
-        <p><span data-i18n="a3">Non. Je rédige les textes à partir de ce que vous me racontez. Vous relisez et corrigez ce que vous voulez.</span></p>
+        <summary><span data-i18n="q3">Dois-je rédiger les textes moi-même ?</span></summary>
+        <p><span data-i18n="a3">Non. Je rédige les textes à partir de vos explications. Vous relisez et corrigez à votre guise.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q4">Mon site peut être en néerlandais et en français ?</span></summary>
-        <p><span data-i18n="a4">Oui. La deuxième langue est incluse dans la formule Vitrine. Pour l'anglais ou l'allemand, on en parle au devis.</span></p>
+        <summary><span data-i18n="q4">Mon site peut-il être en néerlandais et en français ?</span></summary>
+        <p><span data-i18n="a4">Oui. La deuxième langue est incluse dans la formule Vitrine. Pour l'anglais ou l'allemand, nous en discutons lors du devis.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q5">Je n'ai pas de logo ni de photos.</span></summary>
-        <p><span data-i18n="a5">Pas de souci. Dans la formule Vitrine, je passe une heure chez vous ou sur chantier pour les photos. Je peux aussi créer un logo simple.</span></p>
+        <summary><span data-i18n="q5">Je n'ai ni logo ni photos.</span></summary>
+        <p><span data-i18n="a5">Aucun problème. Avec la formule Vitrine, je consacre une heure à photographier votre activité, chez vous ou sur chantier. Je peux aussi créer un logo simple.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q6">Et si je veux changer quelque chose après ?</span></summary>
-        <p><span data-i18n="a6">À 39 €/mois, vous m'envoyez un WhatsApp et c'est fait dans la semaine, sans limite. À 19 €/mois, les modifications sont facturées à l'heure.</span></p>
+        <summary><span data-i18n="q6">Et si je souhaite modifier quelque chose plus tard ?</span></summary>
+        <p><span data-i18n="a6">Avec la formule à 39 €/mois, vous m'écrivez sur WhatsApp et la modification est faite dans la semaine, sans limite. Avec celle à 19 €/mois, les modifications sont facturées à l'heure.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q7">Il y a des frais cachés ?</span></summary>
-        <p><span data-i18n="a7">Non. Le prix du devis est le prix final. Seul l'abonnement mensuel est récurrent, sans engagement : vous l'arrêtez quand vous voulez et le site reste à vous.</span></p>
+        <summary><span data-i18n="q7">Y a-t-il des frais cachés ?</span></summary>
+        <p><span data-i18n="a7">Non. Le prix du devis est le prix final. Seul l'abonnement mensuel est récurrent, sans engagement : vous pouvez l'arrêter à tout moment et le site vous appartient.</span></p>
       </details>
       <details>
-        <summary><span data-i18n="q8">Pourquoi moins cher qu'une agence ?</span></summary>
-        <p><span data-i18n="a8">Pas de bureau, pas de commercial, pas de réunions. Une seule personne qui fait tout, du premier appel à la mise en ligne. Et je suis de Westerlo : je passe vous voir, je ne vous envoie pas un PDF.</span></p>
+        <summary><span data-i18n="q8">Pourquoi êtes-vous moins cher qu'une agence ?</span></summary>
+        <p><span data-i18n="a8">Pas de bureaux, pas de service commercial, pas de réunions interminables. Une seule personne s'occupe de tout, du premier entretien à la mise en ligne. Je suis de Westerlo : dans les Kempen, je passe vous voir. Vous êtes ailleurs en Belgique ? On travaille à distance, en néerlandais ou en français.</span></p>
       </details>
     </div>
   </section>
@@ -507,8 +579,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
       <div>
         <h2 id="contact-title"><span data-i18n="ch">Votre démo gratuite.</span></h2>
         <ul class="assure">
-          <li><span data-i18n="as1">Démo gratuite, avant de signer quoi que ce soit</span></li>
-          <li><span data-i18n="as2">Prix fixe, annoncé avant de commencer</span></li>
+          <li><span data-i18n="as1">Démo gratuite, avant tout engagement</span></li>
+          <li><span data-i18n="as2">Prix fixe, communiqué avant de commencer</span></li>
           <li><span data-i18n="as3">En ligne en 48 h, un seul interlocuteur</span></li>
         </ul>
         <div class="contact__mail">
@@ -519,7 +591,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
       <!-- Envoi du formulaire: collez ici l'URL de votre service (Formspree, Web3Forms, Netlify...).
            Vide = le logiciel mail du visiteur s'ouvre avec la demande pré-remplie. -->
       <form class="form" id="quote" novalidate method="post" data-endpoint="">
-        <p class="form__top"><span data-i18n="ft">Réponse sous 24 h ouvrables</span></p>
+        <p class="form__top"><span data-i18n="ft">Réponse sous 24 heures ouvrables</span></p>
         <h3><span data-i18n="cta">Demander ma démo gratuite</span></h3>
         <div class="field">
           <label for="f-name"><span data-i18n="fn">Votre nom</span></label>
@@ -527,7 +599,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
           <span class="err" id="e-name"></span>
         </div>
         <div class="field">
-          <label for="f-mail"><span data-i18n="fm">Votre email</span></label>
+          <label for="f-mail"><span data-i18n="fm">Votre e-mail</span></label>
           <input id="f-mail" name="email" type="email" autocomplete="email" placeholder="vous@exemple.be" data-i18n-ph="ph2" required>
           <span class="err" id="e-mail"></span>
         </div>
@@ -543,11 +615,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
         </div>
         <div class="field">
           <label for="f-msg"><span data-i18n="fp">Votre projet, en deux lignes</span></label>
-          <textarea id="f-msg" name="message" placeholder="J'ai une friterie à Westerlo et pas encore de site." data-i18n-ph="ph3"></textarea>
+          <textarea id="f-msg" name="message" placeholder="J'ai une friterie à Namur et pas encore de site." data-i18n-ph="ph3"></textarea>
         </div>
         <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn--main" type="submit" id="send"><span data-i18n="cta">Demander ma démo gratuite</span></button>
-        <p class="privacy"><span data-i18n="priv">Vos données servent uniquement à répondre à votre demande. Elles ne sont ni revendues ni utilisées pour de la publicité.</span></p>
+        <p class="privacy"><span data-i18n="priv">Vos données servent uniquement à répondre à votre demande. Elles ne sont ni revendues ni utilisées à des fins publicitaires.</span></p>
         <p class="done" id="done" role="status" hidden></p>
       </form>
     </div>
@@ -557,13 +629,27 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 <footer class="foot">
   <div class="foot__in wrap">
     <span class="logo">KADE STUDIO</span>
-    <span><span data-i18n="f1">Sites web pour commerces et artisans, Westerlo et Kempen</span></span>
+    <span><span data-i18n="f1">Sites web pour commerces et artisans, Westerlo, Kempen et ailleurs en Belgique</span></span>
     <span><span data-i18n="f2">N° d'entreprise BE 0XXX.XXX.XXX</span></span>
     <a href="mailto:hello@kadestudio.be">hello@kadestudio.be</a>
     <span>© 2026 Kade Studio</span>
   </div>
 </footer>
 
+<script>
+(function(){
+  var el=document.getElementById('intro'),skip=document.getElementById('intro-skip'),root=document.documentElement;
+  if(!el)return;
+  if(!root.classList.contains('intro-on')){el.remove();skip.remove();return;}
+  try{sessionStorage.setItem('kade_intro','1')}catch(e){}
+  skip.hidden=false;
+  var done=false;
+  function end(){if(done)return;done=true;el.classList.add('intro--done');root.classList.remove('intro-on');skip.remove();setTimeout(function(){el.remove()},400)}
+  skip.addEventListener('click',function(){window.dataLayer&&window.dataLayer.push({event:'intro_skip'});end()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')end()});
+  setTimeout(end,3200);
+})();
+</script>
 <script>
 (function(){
   var STR={fr:{"js_name": "Indiquez votre nom pour que je sache à qui répondre.", "js_mail": "Cette adresse email semble incomplète.", "js_copied": "Adresse copiée", "js_ok": "Merci {n}, votre demande est envoyée. Je vous réponds sous 24 h ouvrables.", "js_err": "L'envoi n'a pas fonctionné. Écrivez-moi à hello@kadestudio.be, je vous réponds au plus vite.", "js_mailto": "Votre logiciel mail s'ouvre avec la demande prête. Cliquez sur envoyer. Rien ne s'ouvre? Écrivez à hello@kadestudio.be.", "js_sending": "Envoi...", "js_subject": "Demande de démo via kadestudio.be", "cta": "Demander ma démo gratuite", "copy": "Copier l'adresse"},

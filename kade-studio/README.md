@@ -10,6 +10,7 @@ Statische site, geen installatie nodig. Upload de hele map `kade-studio/` naar j
 | `build.py` | Maakt `nl/index.html` opnieuw: `python3 build.py` |
 | `fonts/` | Lettertypes op eigen server (geen Google-verbinding, GDPR) |
 | `brand/` | Logo's, social media, deelbeeld |
+| `demos/<naam>/` | Zes volledige demosites voor **fictieve** zaken, elk met eigen stijl, lettertypes (`fonts/`) en stockfoto's (`img/`, bronnen in `img/CREDITS.md`). De kaarten in de rail linken ernaar. Echte prospect-demo's staan in de repo `Kade-Business`. |
 | `sitemap.xml`, `robots.txt` | Voor Google |
 
 ## Tekst wijzigen
@@ -24,7 +25,7 @@ Statische site, geen installatie nodig. Upload de hele map `kade-studio/` naar j
 - [ ] **Ondernemingsnummer**: `BE 0XXX.XXX.XXX` in de footer. Wettelijk verplicht op een Belgische zakelijke website, samen met je adres.
 - [ ] **Statistieken**: haal de commentaartekens weg rond de Plausible-regels in `<head>`. De klik- en aanvraag-events worden al verstuurd.
 - [ ] **Prijzen en termijnen** nakijken: 490 €, 1 490 €, vanaf 2 900 €, 19 en 39 €/maand, 48 uur, 24 uur. Ook: 100 € doorverwijskorting, "vanaf 490 €" voor kapotte sites.
-- [ ] **Demo's in de rail**: de twee dakwerker-demo's (Westerlo, Berlaar) staan zonder naam. Zet de echte naam en een link pas als de klant akkoord is.
+- [ ] **Demo's in de rail**: zes fictieve concepten (dakwerker, barbier, broodjesbar, tuinaannemer, fietsenwinkel, kunstatelier). Wil je een echte klantsite tonen? Voeg pas een kaart toe als de klant akkoord is.
 
 ## Wat er gemeten wordt (`dataLayer` en Plausible)
 | Event | Wanneer |
@@ -34,6 +35,7 @@ Statische site, geen installatie nodig. Upload de hele map `kade-studio/` naar j
 | `lead_mailto` | formulier doorgestuurd naar het mailprogramma |
 | `lead_error` | verzenden mislukt |
 | `lang_switch` | wissel FR/NL |
+| `cta_click` met `id` `demo_<naam>` | klik op een demokaart in de rail |
 
 ## Positionering (oktober 2026)
 Na de marktanalyse (zie repo `Kade-Business`): lokaal in plaats van heel België, demo vóór het eerste gesprek, online in 48 uur, bouw & ambacht eerst.

@@ -1,0 +1,594 @@
+<!doctype html>
+<!-- Voorbeeldontwerp door Kade Studio. Fictieve zaak: Vélo Atelier Leuven bestaat niet. Concept-site, geen echte bestellingen of herstellingen. Foto's: Unsplash (zie img/CREDITS.md). -->
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vélo Atelier Leuven | Fietsenwinkel en hersteldienst in Leuven</title>
+<meta name="description" content="Voorbeeldsite: fietsenwinkel en atelier in Leuven. Stadsfietsen, e-bikes, gravelbikes en toebehoren uit voorraad. Herstelling binnen 48 uur, proefrit in de winkel.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1f2328">
+<link rel="preload" href="fonts/barlow-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/hero.jpg" as="image">
+<style>
+@font-face{font-family:"Barlow";src:url(fonts/barlow-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Barlow";src:url(fonts/barlow-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Barlow";src:url(fonts/barlow-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{
+  --ink:#1f2328;--ink-2:#2b3036;--grey:#eef0f2;--grey-2:#e1e4e8;--white:#fff;--text:#262a2f;--muted:#636b75;--line:#d6dbe1;
+  --blue:#1e5eff;--blue-2:#154adb;--blue-soft:#e8efff;--green:#19a05a;--amber:#f0a30a;
+  --f:"Barlow",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+  --wrap:1220px;--gutter:clamp(1rem,4vw,2.5rem);--r:8px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--white);color:var(--text);font-family:var(--f);font-size:1.0625rem;line-height:1.5;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:700;line-height:1.05;letter-spacing:-.015em;color:var(--ink)}
+p{margin:0}
+.wrap{width:min(var(--wrap),100% - 2*var(--gutter));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--blue);color:#fff;padding:.6rem 1rem;z-index:100;font-weight:700;border-radius:var(--r)}
+.skip:focus{top:1rem}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+.kade{background:#74DB4B;color:#111;font-size:.8rem;text-align:center;padding:.4rem var(--gutter);display:flex;justify-content:center;gap:.5rem 1.2rem;flex-wrap:wrap}
+.kade a{color:inherit;font-weight:700}
+
+.nav{position:sticky;top:0;z-index:40;background:var(--ink);color:#fff}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.4rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand svg{width:34px;height:34px;color:var(--blue)}
+.brand-name{font-weight:700;font-size:1.25rem;line-height:1;letter-spacing:-.01em}
+.brand-name small{display:block;font-family:var(--mono);font-weight:500;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#aab2bd}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem}
+.nav li a{text-decoration:none;font-weight:500;font-size:.98rem;padding:.4rem 0;border-bottom:2px solid transparent;color:#e6e9ed}
+.nav li a:hover{border-color:var(--blue)}
+.nav-actions{display:flex;align-items:center;gap:.6rem}
+.nav-tel{font-family:var(--mono);font-size:.85rem;text-decoration:none;color:#e6e9ed;padding:.5rem .3rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.3rem;border:2px solid var(--blue);border-radius:var(--r);background:var(--blue);color:#fff;font:700 .95rem var(--f);text-decoration:none;cursor:pointer;transition:background .15s,transform .15s}
+.btn:hover{background:var(--blue-2);border-color:var(--blue-2);transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.cartbtn{position:relative;display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--ink);border:0;border-radius:var(--r);padding:.6rem .9rem;font:700 .9rem var(--f);cursor:pointer}
+.cartbtn .badge{background:var(--blue);color:#fff;border-radius:999px;min-width:1.35rem;height:1.35rem;display:grid;place-items:center;font-size:.75rem;padding:0 .3rem;font-family:var(--mono)}
+.menubtn{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;padding:.5rem .7rem;border-radius:var(--r);font:700 .9rem var(--f)}
+
+/* hero */
+.hero{position:relative;color:#fff;isolation:isolate;min-height:min(80vh,720px);display:grid;align-items:center}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(31,35,40,.92) 0%,rgba(31,35,40,.7) 50%,rgba(31,35,40,.2) 100%)}
+.hero .wrap{padding:clamp(3rem,8vw,6rem) 0}
+.hero h1{color:#fff;font-size:clamp(2.6rem,6.5vw,5rem);max-width:14ch}
+.hero .lead{margin-top:1.2rem;font-size:1.2rem;color:#d7dbe1;max-width:46ch}
+.hero .ctas{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.hero .spec{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.2rem 2.4rem}
+.hero .spec b{display:block;font-size:1.6rem;line-height:1;color:#fff}
+.hero .spec span{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#aab2bd}
+
+section{padding:clamp(2.6rem,6vw,5rem) 0}
+.shop-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1.6rem}
+.shop-head h2,.sec h2{font-size:clamp(2rem,4.5vw,3.2rem)}
+.shop-head p{color:var(--muted);max-width:48ch}
+.filters{display:grid;gap:.8rem;padding:1rem 1.2rem;background:var(--grey);border-radius:var(--r);border:1px solid var(--line);margin-bottom:1.4rem}
+.filter-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem}
+.filter-label{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);min-width:3.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.4rem .85rem;font:500 .9rem var(--f);cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.filter-row-selects{justify-content:space-between}
+.sel{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem}
+.sel span{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.sel select{border:1px solid var(--line);border-radius:var(--r);padding:.45rem .6rem;font:500 .9rem var(--f);background:#fff;color:var(--ink)}
+.count{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-left:auto}
+.link-btn{background:none;border:0;padding:0;color:var(--blue);font:700 .9rem var(--f);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem}
+.prod{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.prod:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(31,35,40,.10)}
+.prod .art{aspect-ratio:4/3;background:var(--grey);position:relative;overflow:hidden}
+.prod .art img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.prod:hover .art img{transform:scale(1.04)}
+.prod .flag{position:absolute;left:.7rem;top:.7rem;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:#fff;padding:.2rem .5rem;border-radius:4px}
+.prod .flag.sale{background:var(--amber);color:var(--ink)}
+.prod .body{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
+.prod .brand-l{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.prod h3{font-size:1.15rem;font-weight:700}
+.prod .sub{font-size:.9rem;color:var(--muted);flex:1}
+.prod .row{display:flex;justify-content:space-between;align-items:end;margin-top:.6rem;gap:.5rem}
+.prod .price{font-weight:700;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.prod .price s{font-weight:400;color:var(--muted);font-size:.9rem;margin-right:.3rem}
+.stock{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--green)}
+.stock.low{color:var(--amber)}
+.stock.order{color:var(--muted)}
+.prod .actions{display:flex;gap:.5rem;margin-top:.7rem}
+.prod .actions button{flex:1;padding:.6rem .5rem;font-size:.88rem}
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--muted)}
+
+/* band with photos */
+.band{background:var(--ink);color:#fff;padding:0}
+.band .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;max-width:none;width:100%}
+.band .txt{padding:clamp(2.5rem,6vw,5rem) var(--gutter) clamp(2.5rem,6vw,5rem) max(var(--gutter),calc((100% - 610px)))}
+.band h2{color:#fff;font-size:clamp(1.9rem,4vw,3rem)}
+.band-list{margin:1.8rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.band-list div{border-top:2px solid var(--blue);padding-top:.8rem}
+.band-list dt{font-weight:700;font-size:1.05rem}
+.band-list dd{margin:.3rem 0 0;color:#c1c8d1;font-size:.93rem}
+.band .pics{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.band .pics img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.band .pics img:first-child{grid-column:1/-1;aspect-ratio:2/1}
+
+/* atelier */
+.atelier .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
+.atelier p.lead{margin-top:.8rem;color:var(--muted);font-size:1.1rem}
+.atelier figure{margin:1.4rem 0 0;position:relative;border-radius:var(--r);overflow:hidden}
+.atelier figure img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.atelier figcaption{position:absolute;left:.8rem;bottom:.8rem;background:var(--ink);color:#fff;font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;padding:.3rem .6rem;border-radius:4px}
+.pricelist{margin-top:1.4rem;border-top:1px solid var(--line)}
+.pricelist div{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;padding:.8rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.pricelist b{font-weight:700}
+.pricelist small{grid-column:1;color:var(--muted);font-size:.9rem}
+.pricelist .p{font-family:var(--mono);font-size:.95rem;font-variant-numeric:tabular-nums}
+.card{background:var(--grey);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.2rem,3vw,1.8rem)}
+.card h3{font-size:1.5rem}
+.field{display:grid;gap:.3rem;margin-top:.9rem}
+.field label{font-weight:500;font-size:.92rem}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:var(--r);padding:.7rem .8rem;font:inherit;font-size:1rem;background:#fff;color:var(--text)}
+.field textarea{min-height:4.5rem;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.err{color:#c0392b;font-size:.88rem;min-height:1.1em;margin-top:.5rem}
+.done{text-align:center;padding:1.2rem 0}
+.done .check{width:60px;height:60px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;margin:0 auto .8rem;font-size:2rem;font-weight:700}
+.done h3{font-size:1.6rem}
+.done p{margin-top:.6rem}
+.done .note{font-size:.85rem;color:var(--muted);margin-top:.8rem}
+
+.hours-sec{background:var(--grey);border-top:1px solid var(--line)}
+.hours-sec .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
+.hours-table{width:100%;border-collapse:collapse;margin-top:1rem;font-variant-numeric:tabular-nums;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.hours-table th,.hours-table td{text-align:left;padding:.65rem 1rem;border-bottom:1px solid var(--line);font-weight:400}
+.hours-table td{text-align:right;font-family:var(--mono);font-size:.9rem}
+.hours-table tr.today{background:var(--blue-soft)}
+.hours-table tr.today th{font-weight:700}
+.hours-table tr.today th::after{content:"vandaag";font-family:var(--mono);font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;margin-left:.6rem;background:var(--blue);color:#fff;padding:.1rem .4rem;border-radius:3px}
+.addr{font-style:normal;margin-top:1rem;line-height:1.7}
+.addr a{font-weight:500}
+.shopph{margin:1rem 0 0;border-radius:var(--r);overflow:hidden}
+.shopph img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;margin-top:.6rem}
+.status i{width:.6rem;height:.6rem;border-radius:50%;background:var(--green)}
+.status.closed i{background:var(--amber)}
+
+.foot{background:var(--ink);color:#aab2bd;padding:2rem 0 6.5rem;font-size:.88rem}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+.foot a{color:#fff}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:.5rem;padding:.6rem var(--gutter) calc(.6rem + env(safe-area-inset-bottom));background:var(--ink)}
+.callbar .btn{flex:1;padding:.75rem .5rem;font-size:.9rem}
+
+.scrim{position:fixed;inset:0;background:rgba(31,35,40,.55);z-index:60}
+.scrim[hidden]{display:none}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:#fff;z-index:70;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.25);transform:translateX(100%);transition:transform .3s}
+.drawer.open{transform:none}
+.drawer[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.drawer{transition:none}}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;border-bottom:1px solid var(--line)}
+.drawer-title{font-size:1.3rem}
+.iconbtn{background:var(--grey);border:0;border-radius:50%;width:2.4rem;height:2.4rem;font:700 1.1rem var(--f);cursor:pointer;color:var(--ink)}
+.drawer-body{flex:1;overflow:auto;padding:1.2rem}
+.drawer-foot{padding:1rem 1.2rem calc(1rem + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--grey)}
+.dp-art{border-radius:var(--r);overflow:hidden}
+.dp-art img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.dp h3{font-size:1.6rem;margin-top:1rem}
+.dp .price{font-size:1.5rem;font-weight:700;margin-top:.4rem;font-variant-numeric:tabular-nums}
+.dp p{margin-top:.8rem;color:var(--text)}
+.specs{margin:1rem 0 0;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.92rem;border-top:1px solid var(--line);padding-top:.8rem}
+.specs dt{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:.15rem}
+.specs dd{margin:0}
+.sizes{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.sizes button{border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:.45rem .8rem;font:500 .9rem var(--f);cursor:pointer}
+.sizes button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.line{display:grid;grid-template-columns:auto 1fr auto;gap:.2rem .8rem;padding:.8rem 0;border-bottom:1px solid var(--line);align-items:center}
+.line img{width:56px;height:56px;object-fit:cover;border-radius:6px;grid-row:span 2}
+.line b{font-weight:700}
+.line small{display:block;color:var(--muted)}
+.qty{display:inline-flex;align-items:center;gap:.4rem}
+.qty button{width:1.8rem;height:1.8rem;border-radius:50%;border:1px solid var(--line);background:#fff;font:700 1rem var(--f);cursor:pointer}
+.qty span{min-width:1.4rem;text-align:center;font-family:var(--mono);font-size:.9rem}
+.line .lp{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;grid-column:3}
+.tot{display:flex;justify-content:space-between;font-weight:700;font-size:1.2rem;margin-bottom:.8rem}
+.tot small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:5.5rem;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:.7rem 1.1rem;border-radius:var(--r);font-weight:500;opacity:0;transition:.25s;z-index:80;pointer-events:none;font-size:.95rem}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:820px){
+  .atelier .wrap,.hours-sec .wrap,.band .wrap{grid-template-columns:1fr}
+  .band .txt{padding-left:var(--gutter)}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero{min-height:0}
+  .hero::before{background:linear-gradient(0deg,rgba(31,35,40,.95),rgba(31,35,40,.6))}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--ink);flex-direction:column;gap:0;padding:.4rem var(--gutter) 1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav ul.open{display:flex}
+  .nav li a{display:block;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .nav-tel{display:none}
+  .cartbtn .cartbtn-label{display:none}
+  .menubtn{display:inline-block}
+  .callbar{display:flex}
+  .two{grid-template-columns:1fr}
+  .count{margin-left:0;flex-basis:100%}
+}
+@media (max-width:480px){.grid{grid-template-columns:1fr}.band-list{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#fietsen">Naar de catalogus</a>
+<div class="kade"><span>Voorbeeldsite van Kade Studio: fictieve zaak, geen echte bestellingen.</span><a href="../../nl/index.html#exemples">← Terug naar Kade Studio</a></div>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Vélo Atelier Leuven, naar boven">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="16" cy="16" r="3.2" fill="currentColor"/><path d="M16 3v9.5M16 19.5V29M3 16h9.5M19.5 16H29" stroke="currentColor" stroke-width="2.2"/></svg>
+      <span class="brand-name">Vélo Atelier<small>Leuven · winkel & atelier</small></span>
+    </a>
+    <nav aria-label="Hoofdnavigatie">
+      <ul id="menu">
+        <li><a href="#fietsen">Fietsen</a></li>
+        <li><a href="#atelier">Atelier</a></li>
+        <li><a href="#openingsuren">Openingsuren</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-tel" href="tel:+3216000000">016 00 00 00</a>
+      <button class="cartbtn" type="button" id="open-cart" aria-haspopup="dialog" aria-controls="dr-cart"><span class="cartbtn-label">Winkelmand</span><span class="badge" data-cart-badge>0</span><span class="sr" id="cart-sr">, 0 artikelen</span></button>
+      <button class="menubtn" type="button" aria-expanded="false" aria-controls="menu" id="menubtn">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="page">
+<section class="hero">
+  <img class="bg" src="img/hero.jpg" alt="" width="1800" height="1200" fetchpriority="high">
+  <div class="wrap">
+    <h1>Een fiets die klopt, elke rit opnieuw.</h1>
+    <p class="lead">Stadsfietsen, e-bikes en gravelbikes uit voorraad in Leuven. Proefrit in de winkel, herstelling binnen 48 uur in ons eigen atelier.</p>
+    <div class="ctas">
+      <a class="btn" href="#fietsen">Bekijk de fietsen</a>
+      <a class="btn btn-ghost" href="#atelier">Herstelling boeken</a>
+    </div>
+    <div class="spec">
+      <div><b>48 u</b><span>herstelling</span></div>
+      <div><b>120+</b><span>fietsen in voorraad</span></div>
+      <div><b>2 jaar</b><span>garantie op montage</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="fietsen">
+  <div class="wrap">
+    <div class="shop-head">
+      <h2>Uit voorraad in de winkel.</h2>
+      <p>Elke fiets wordt bij aflevering op uw maat afgesteld. Toebehoren verzenden we in heel België.</p>
+    </div>
+    <div class="filters" id="filters">
+      <div class="filter-row">
+        <span class="filter-label" id="lbl-type">Type</span>
+        <div class="chips" role="group" aria-labelledby="lbl-type" data-filter="type">
+          <button type="button" class="chip" data-value="alle" aria-pressed="true">Alles</button>
+          <button type="button" class="chip" data-value="stad" aria-pressed="false">Stadsfiets</button>
+          <button type="button" class="chip" data-value="ebike" aria-pressed="false">E-bike</button>
+          <button type="button" class="chip" data-value="gravel" aria-pressed="false">Gravel & MTB</button>
+          <button type="button" class="chip" data-value="kind" aria-pressed="false">Jeugd</button>
+          <button type="button" class="chip" data-value="toebehoren" aria-pressed="false">Toebehoren</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" id="lbl-prijs">Prijs</span>
+        <div class="chips" role="group" aria-labelledby="lbl-prijs" data-filter="prijs">
+          <button type="button" class="chip" data-value="alle" aria-pressed="true">Alles</button>
+          <button type="button" class="chip" data-value="0-500" aria-pressed="false">Tot 500 €</button>
+          <button type="button" class="chip" data-value="500-1500" aria-pressed="false">500 tot 1 500 €</button>
+          <button type="button" class="chip" data-value="1500-3000" aria-pressed="false">1 500 tot 3 000 €</button>
+          <button type="button" class="chip" data-value="3000-" aria-pressed="false">Vanaf 3 000 €</button>
+        </div>
+      </div>
+      <div class="filter-row filter-row-selects">
+        <label class="sel"><span>Merk</span><select id="f-merk"><option value="alle">Alle merken</option></select></label>
+        <label class="sel"><span>Sorteren</span><select id="f-sort"><option value="aanbevolen">Aanbevolen</option><option value="prijs-op">Prijs oplopend</option><option value="prijs-af">Prijs aflopend</option><option value="nieuw">Nieuw eerst</option></select></label>
+        <p class="count" id="count" role="status" aria-live="polite"></p>
+        <button type="button" class="link-btn" id="reset" hidden>Wis filters</button>
+      </div>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden><p>Geen producten in deze selectie.</p><p style="margin-top:.8rem"><button type="button" class="btn btn-line" data-reset>Toon alles</button></p></div>
+    <p class="mono" style="margin-top:1.4rem;color:var(--muted);text-transform:none;letter-spacing:0">Voorbeeldcatalogus met fictieve merken, prijzen en stockfoto's. Op de echte site koppelen we uw kassasysteem of webshop.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="txt">
+      <h2>Kopen bij een atelier, niet bij een magazijn.</h2>
+      <dl class="band-list">
+        <div><dt>Afgesteld op uw maat</dt><dd>Zadelhoogte, stuur en remmen worden bij aflevering ingesteld. Gratis nacontrole na 200 km.</dd></div>
+        <div><dt>Proefrit voor u beslist</dt><dd>Neem elke fiets mee voor een rondje door Leuven. Ook e-bikes, zonder afspraak.</dd></div>
+        <div><dt>Eigen atelier</dt><dd>Drie mecaniciens, onderdelen in voorraad. Herstelling binnen 48 uur, vaak dezelfde dag.</dd></div>
+        <div><dt>Fietsleasing en premies</dt><dd>We regelen de papieren voor uw leasingmaatschappij of de fietspremie van uw gemeente.</dd></div>
+      </dl>
+    </div>
+    <div class="pics">
+      <img src="img/gravel.jpg" alt="Gravelrijders in een bosrit, modder spat op" loading="lazy" width="1000" height="667">
+      <img src="img/stad.jpg" alt="Fietser op een fixie bij zonsopgang in de stad" loading="lazy" width="1000" height="667">
+      <img src="img/rit.jpg" alt="Zicht over het stuur van een koersfiets op een lege weg" loading="lazy" width="1000" height="667">
+    </div>
+  </div>
+</section>
+
+<section class="atelier" id="atelier">
+  <div class="wrap">
+    <div>
+      <h2>Atelier: hersteld binnen 48 uur.</h2>
+      <p class="lead">Breng uw fiets binnen, wij bellen als hij klaar is. Vaste prijzen, onderdelen apart. Nooit gekocht bij ons? Even welkom.</p>
+      <figure><img src="img/atelier.jpg" alt="Mecanicien aan het werk in het atelier" loading="lazy" width="1200" height="800"><figcaption>Het atelier, drie werkposten</figcaption></figure>
+      <div class="pricelist">
+        <div><b>Kleine beurt</b><span class="p">45 €</span><small>Remmen, versnellingen, banden, ketting smeren. ± 45 min.</small></div>
+        <div><b>Grote beurt</b><span class="p">95 €</span><small>Kleine beurt plus wielen richten, lagers nazien, volledige reiniging.</small></div>
+        <div><b>E-bike check</b><span class="p">65 €</span><small>Diagnose via software, batterijtest, motor en sensoren.</small></div>
+        <div><b>Lekke band</b><span class="p">vanaf 18 €</span><small>Inclusief binnenband. Terwijl u wacht als het kan.</small></div>
+        <div><b>Winterstalling</b><span class="p">35 €/maand</span><small>Droog en verzekerd, met gratis kleine beurt in maart.</small></div>
+      </div>
+    </div>
+    <form class="card" id="repair" novalidate>
+      <div id="repair-body">
+        <h3>Herstelling boeken</h3>
+        <p style="margin-top:.4rem;color:var(--muted);font-size:.95rem">Kies een dag om de fiets binnen te brengen. We bevestigen per sms.</p>
+        <div class="two">
+          <div class="field"><label for="r-type">Soort fiets</label><select id="r-type"><option>Stadsfiets</option><option>E-bike</option><option>Gravel of koers</option><option>Kinderfiets</option><option>Bakfiets</option></select></div>
+          <div class="field"><label for="r-svc">Wat is er nodig?</label><select id="r-svc"><option>Kleine beurt · 45 €</option><option>Grote beurt · 95 €</option><option>E-bike check · 65 €</option><option>Lekke band</option><option>Iets anders</option></select></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="r-day">Binnenbrengen op</label><select id="r-day"></select></div>
+          <div class="field"><label for="r-tel">Gsm</label><input id="r-tel" type="tel" inputmode="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="field"><label for="r-name">Naam</label><input id="r-name" autocomplete="name" required></div>
+        <div class="field"><label for="r-msg">Opmerking (optioneel)</label><textarea id="r-msg" placeholder="bv. Versnellingen springen over, en het achterwiel slingert."></textarea></div>
+        <p class="err" id="r-err"></p>
+        <button class="btn" type="submit" style="width:100%;margin-top:.4rem">Boek mijn herstelling</button>
+        <p style="margin-top:.6rem;font-size:.82rem;color:var(--muted)">Demo: er wordt niets verstuurd. Op de echte site komt elke boeking in uw werkplaatsagenda.</p>
+      </div>
+      <div class="done" id="r-done" hidden role="status" aria-live="polite" tabindex="-1">
+        <div class="check" aria-hidden="true">✓</div>
+        <h3>Genoteerd!</h3>
+        <p id="r-done-text"></p>
+        <p class="note">Dit is een demo: er is geen echte afspraak gemaakt.</p>
+        <p style="margin-top:1rem"><button class="btn btn-line" type="button" id="r-again">Nog een herstelling</button></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="hours-sec" id="openingsuren">
+  <div class="wrap">
+    <div>
+      <h2>Open van dinsdag tot zaterdag.</h2>
+      <p class="status" id="status"><i aria-hidden="true"></i><span>…</span></p>
+      <table class="hours-table" id="hours-table">
+        <caption class="sr">Openingsuren per dag</caption>
+        <tbody>
+          <tr data-day="1"><th scope="row">Maandag</th><td>Gesloten</td></tr>
+          <tr data-day="2" data-open="9:30" data-close="18:00"><th scope="row">Dinsdag</th><td>9:30 – 18:00</td></tr>
+          <tr data-day="3" data-open="9:30" data-close="18:00"><th scope="row">Woensdag</th><td>9:30 – 18:00</td></tr>
+          <tr data-day="4" data-open="9:30" data-close="18:00"><th scope="row">Donderdag</th><td>9:30 – 18:00</td></tr>
+          <tr data-day="5" data-open="9:30" data-close="18:00"><th scope="row">Vrijdag</th><td>9:30 – 18:00</td></tr>
+          <tr data-day="6" data-open="9:00" data-close="17:00"><th scope="row">Zaterdag</th><td>9:00 – 17:00</td></tr>
+          <tr data-day="0"><th scope="row">Zondag</th><td>Gesloten</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:.8rem;font-size:.92rem;color:var(--muted)">Fietsen afhalen kan ook buiten de openingsuren, na afspraak.</p>
+    </div>
+    <div>
+      <h2>In de Leuvense binnenstad.</h2>
+      <address class="addr">
+        <strong>Vélo Atelier Leuven</strong><br>
+        Voorbeeldstraat 7, 3000 Leuven<br>
+        <a href="tel:+3216000000">016 00 00 00</a> · <a href="mailto:info@veloatelier.example">info@veloatelier.example</a><br>
+        Op 5 minuten van het station. Fiets gerust tot aan de deur.
+      </address>
+      <figure class="shopph"><img src="img/p-wit.jpg" alt="Witte stadsfiets tegen een lichte muur, voor de winkel" loading="lazy" width="900" height="600"></figure>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Vélo Atelier Leuven BV · Voorbeeldstraat 7, 3000 Leuven · BTW BE 0000.000.000 (fictief)</p>
+    <p>Fictieve zaak, foto's via Unsplash. <a href="../../nl/index.html">Voorbeeldsite door Kade Studio</a></p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-ghost" href="tel:+3216000000">Bel 016 00 00 00</a>
+  <button type="button" class="btn" data-open-cart>Winkelmand <span data-cart-badge>0</span></button>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="dr-product" role="dialog" aria-modal="true" aria-labelledby="dp-title" hidden tabindex="-1">
+  <div class="drawer-head"><p class="mono" id="dp-brand"></p><button type="button" class="iconbtn" data-close aria-label="Sluiten">✕</button></div>
+  <div class="drawer-body dp" id="dp-body"></div>
+  <div class="drawer-foot" id="dp-foot"></div>
+</aside>
+<aside class="drawer" id="dr-cart" role="dialog" aria-modal="true" aria-labelledby="dc-title" hidden tabindex="-1">
+  <div class="drawer-head"><h2 id="dc-title" class="drawer-title">Winkelmand</h2><button type="button" class="iconbtn" data-close aria-label="Sluiten">✕</button></div>
+  <div class="drawer-body" id="dc-body"></div>
+  <div class="drawer-foot" id="dc-foot"></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SZ = {bike:['S','M','L','XL'], ebike:['S','M','L'], gravel:['51','54','56','58']};
+  var P = [
+    {id:1, type:'stad', brand:'Arkel', name:'Arkel Linea 7', sub:'Stadsfiets, 7 versnellingen, riemaandrijving', price:899, img:'p-staal', alt:'Zilvergrijze stadsfiets met lederen zadel tegen een donkere muur', stock:3, nieuw:true, desc:'Onderhoudsarme stadsfiets met riem in plaats van ketting, naafversnelling en hydraulische schijfremmen. Rechtop zitten, drager voor 25 kg.', specs:{Frame:'Staal, diamant of lage instap', Versnellingen:'Shimano Nexus 7', Remmen:'Hydraulische schijfremmen', Gewicht:'15,8 kg', Garantie:'5 jaar frame'}, sizes:SZ.bike},
+    {id:2, type:'ebike', brand:'Arkel', name:'Arkel Volt Mid', sub:'E-bike, middenmotor, 625 Wh', price:3299, img:'p-geel', alt:'Zwarte fiets met gele accenten tegen een oranje muur', stock:4, nieuw:true, desc:'Krachtige middenmotor voor heuvels en tegenwind, 625 Wh-batterij tot 130 km. Geïntegreerd licht, stuurslot en gps-tracker.', specs:{Motor:'Middenmotor 75 Nm', Batterij:'625 Wh, uitneembaar', Bereik:'80 tot 130 km', Remmen:'Hydraulische schijfremmen', Garantie:'2 jaar motor en batterij'}, sizes:SZ.ebike},
+    {id:3, type:'ebike', brand:'Dijle Cycles', name:'Dijle Urban E', sub:'Lichte e-bike, achterwielmotor, 17 kg', price:2199, img:'p-grijs', alt:'Slanke grijze fiets tegen een betonnen muur', stock:2, desc:'Een e-bike die je nog de trap op krijgt. Subtiele ondersteuning tot 25 km/u, batterij verborgen in de buis.', specs:{Motor:'Achterwielmotor 40 Nm', Batterij:'250 Wh + range extender optioneel', Bereik:'50 tot 80 km', Gewicht:'17 kg', Garantie:'2 jaar'}, sizes:SZ.ebike},
+    {id:4, type:'gravel', brand:'Hageland', name:'Hageland Grind Pro', sub:'Gravelbike, carbon, 1×12', price:3799, img:'p-zwart', alt:'Volledig zwarte koersfiets in de studio', stock:1, desc:'Carbon frame met ruimte voor 50 mm-banden, 1×12-groep en bagagebevestigingen voor bikepacking. Gebouwd voor de Hagelandse heuvels.', specs:{Frame:'Carbon, 1 050 g', Groep:'1×12, 10-44', Banden:'45 mm tubeless', Gewicht:'8,9 kg', Garantie:'Levenslang frame'}, sizes:SZ.gravel},
+    {id:5, type:'gravel', brand:'Hageland', name:'Hageland Grind Alu', sub:'Gravelbike, aluminium, 2×10', price:1649, img:'p-graffiti', alt:'Gravelbike tegen een muur met graffiti', stock:5, desc:'De toegankelijke gravelbike: stevig aluminium frame, carbon vork en een brede 2×10-groep. Ideaal voor woon-werk én zondagsrit.', specs:{Frame:'Aluminium, carbon vork', Groep:'2×10', Banden:'40 mm', Gewicht:'10,4 kg', Garantie:'5 jaar frame'}, sizes:SZ.gravel},
+    {id:6, type:'stad', brand:'Dijle Cycles', name:'Dijle Classic 3', sub:'Stadsfiets, 3 versnellingen, terugtraprem', price:549, img:'p-oranje', alt:'Blauwgrijze stadsfiets met oranje velgen tegen een witte bakstenen muur', stock:7, desc:'De klassieke Leuvense studentenfiets, maar dan degelijk. Stalen frame, 3 versnellingen, naafdynamo. Gaat een leven mee.', specs:{Frame:'Staal', Versnellingen:'3, naaf', Remmen:'Terugtrap + V-brake voor', Verlichting:'Naafdynamo', Garantie:'5 jaar frame'}, sizes:SZ.bike},
+    {id:7, type:'stad', brand:'Dijle Cycles', name:'Dijle Linea Light', sub:'Lichte stadsfiets, 8 versnellingen', price:749, img:'p-wit', alt:'Witte stadsfiets in het zonlicht tegen een lichte muur', stock:4, desc:'Aluminium frame van 11 kg, 8 versnellingen en schijfremmen. Voor wie elke dag door de stad fietst en graag licht draagt.', specs:{Frame:'Aluminium', Versnellingen:'8, derailleur', Remmen:'Schijfremmen', Gewicht:'11,2 kg', Garantie:'5 jaar frame'}, sizes:SZ.bike},
+    {id:8, type:'gravel', brand:'Hageland', name:'Hageland Trail MTB', sub:'Mountainbike, hardtail, 29 inch', price:1299, img:'p-mtb', alt:'Mountainbike met voorvering op een rotsachtig pad', stock:3, desc:'Hardtail met luchtvork van 120 mm en 1×11-groep. Voor de Hagelandse en Ardense paden, en de modder van de Kempen.', specs:{Frame:'Aluminium, 29 inch', Vork:'Lucht, 120 mm', Groep:'1×11', Gewicht:'13,1 kg', Garantie:'5 jaar frame'}, sizes:SZ.bike},
+    {id:9, type:'kind', brand:'Kiddo', name:'Kiddo 20"', sub:'Kinderfiets 6 – 9 jaar, 7 versnellingen', price:389, img:'p-blauw', alt:'Witte fiets tegen een blauwe houten muur', stock:4, desc:'Licht aluminium frame van 9 kg, kinderhanden-remhendels en een lage instap. Groeit mee met verstelbaar zadel en stuur.', specs:{Wielmaat:'20 inch', Gewicht:'9,1 kg', Versnellingen:'7', Leeftijd:'6 tot 9 jaar', Garantie:'2 jaar'}, sizes:null},
+    {id:10, type:'kind', brand:'Kiddo', name:'Kiddo 24" Urban', sub:'Jeugdfiets 9 – 12 jaar, 8 versnellingen', price:449, oud:499, img:'p-nat', alt:'Zwarte jeugdfiets op een natte weg', stock:6, desc:'Voor de eerste rit naar school alleen: naafdynamo, slot, drager en 8 versnellingen. Spatborden inbegrepen.', specs:{Wielmaat:'24 inch', Gewicht:'12 kg', Versnellingen:'8', Leeftijd:'9 tot 12 jaar', Garantie:'2 jaar'}, sizes:null},
+    {id:11, type:'toebehoren', brand:'Casq', name:'Casq Urban helm', sub:'Stadshelm met MIPS en achterlicht', price:89, img:'p-helm', alt:'Twee fietsers met helm op een weg langs de kust', stock:12, desc:'Comfortabele stadshelm met MIPS-bescherming, magnetische sluiting en ingebouwd USB-oplaadbaar achterlicht.', specs:{Maten:'S, M, L', Gewicht:'340 g', Certificaat:'EN 1078', Kleuren:'Zwart, zand, olijf'}, sizes:['S','M','L']},
+    {id:12, type:'toebehoren', brand:'Vast', name:'Vast Kettingslot 110', sub:'Kettingslot, 110 cm, ART 3', price:79, img:'p-muur', alt:'Fiets met slot tegen een witte muur', stock:9, desc:'Gehard stalen ketting van 110 cm met stoffen hoes, ART 3 goedgekeurd. Verplicht voor de meeste fietsverzekeringen.', specs:{Lengte:'110 cm', Keurmerk:'ART 3', Gewicht:'2,1 kg'}, sizes:null},
+    {id:13, type:'toebehoren', brand:'Lumen', name:'Lumen Set 400', sub:'Voor- en achterlicht, USB-C', price:49, oud:59, img:'p-stuur', alt:'Close-up van een stuur met stuurlint', stock:15, desc:'400 lumen voorlicht met dagstand en een achterlicht met remdetectie. Tot 12 uur op één lading.', specs:{Voorlicht:'400 lumen', Achterlicht:'Remdetectie', Lading:'USB-C, 12 u', Bevestiging:'Zonder gereedschap'}, sizes:null},
+    {id:14, type:'toebehoren', brand:'Vast', name:'Vast Bikepacking set', sub:'Frame-, zadel- en stuurtas, waterdicht', price:189, img:'p-tassen', alt:'Fiets met bikepacking-tassen bij zonsondergang', stock:0, desc:'Drie waterdichte tassen van samen 28 liter, zonder drager te monteren. Voor een weekend weg of de dagelijkse laptop.', specs:{Inhoud:'28 liter samen', Materiaal:'PVC-vrij zeildoek', Montage:'Zonder drager', Garantie:'5 jaar'}, sizes:null}
+  ];
+  var state = {type:'alle', prijs:'alle', merk:'alle', sort:'aanbevolen'}, cart = {};
+  function money(n){ return n.toLocaleString('nl-BE', {minimumFractionDigits: n % 1 ? 2 : 0}) + ' €'; }
+
+  var mb = document.getElementById('menubtn'), menu = document.getElementById('menu');
+  mb.addEventListener('click', function(){ var o = menu.classList.toggle('open'); mb.setAttribute('aria-expanded', String(o)); });
+  menu.addEventListener('click', function(e){ if (e.target.tagName === 'A') { menu.classList.remove('open'); mb.setAttribute('aria-expanded','false'); } });
+
+  var merk = document.getElementById('f-merk'), brands = [];
+  P.forEach(function(p){ if (brands.indexOf(p.brand) < 0) brands.push(p.brand); });
+  brands.sort().forEach(function(b){ var o = document.createElement('option'); o.value = b; o.textContent = b; merk.appendChild(o); });
+
+  document.querySelectorAll('[data-filter]').forEach(function(g){
+    g.addEventListener('click', function(e){
+      var b = e.target.closest('.chip'); if (!b) return;
+      g.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed', String(c === b)); });
+      state[g.dataset.filter] = b.dataset.value; render();
+    });
+  });
+  merk.addEventListener('change', function(){ state.merk = merk.value; render(); });
+  document.getElementById('f-sort').addEventListener('change', function(e){ state.sort = e.target.value; render(); });
+  function resetAll(){
+    state = {type:'alle', prijs:'alle', merk:'alle', sort:'aanbevolen'}; merk.value = 'alle'; document.getElementById('f-sort').value = 'aanbevolen';
+    document.querySelectorAll('[data-filter]').forEach(function(g){ g.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed', String(c.dataset.value === 'alle')); }); });
+    render();
+  }
+  document.getElementById('reset').addEventListener('click', resetAll);
+  document.querySelector('[data-reset]').addEventListener('click', resetAll);
+
+  var grid = document.getElementById('grid'), empty = document.getElementById('empty'), count = document.getElementById('count');
+  function stockLabel(p){ return p.stock === 0 ? '<span class="stock order">Op bestelling · 5 dagen</span>' : p.stock <= 2 ? '<span class="stock low">Nog ' + p.stock + ' in de winkel</span>' : '<span class="stock">In voorraad</span>'; }
+  function render(){
+    var list = P.filter(function(p){
+      if (state.type !== 'alle' && p.type !== state.type) return false;
+      if (state.merk !== 'alle' && p.brand !== state.merk) return false;
+      if (state.prijs !== 'alle') { var r = state.prijs.split('-'), lo = +r[0], hi = r[1] === '' ? Infinity : +r[1]; if (p.price < lo || p.price >= hi) return false; }
+      return true;
+    });
+    if (state.sort === 'prijs-op') list.sort(function(a, b){ return a.price - b.price; });
+    if (state.sort === 'prijs-af') list.sort(function(a, b){ return b.price - a.price; });
+    if (state.sort === 'nieuw') list.sort(function(a, b){ return (b.nieuw ? 1 : 0) - (a.nieuw ? 1 : 0); });
+    grid.innerHTML = list.map(function(p){
+      return '<article class="prod" data-id="' + p.id + '"><div class="art"><img src="img/' + p.img + '.jpg" alt="' + p.alt + '" loading="lazy" width="900" height="600">' + (p.nieuw ? '<span class="flag">Nieuw</span>' : p.oud ? '<span class="flag sale">Actie</span>' : '') + '</div><div class="body"><span class="brand-l">' + p.brand + '</span><h3>' + p.name + '</h3><p class="sub">' + p.sub + '</p><div class="row"><span class="price">' + (p.oud ? '<s>' + money(p.oud) + '</s>' : '') + money(p.price) + '</span>' + stockLabel(p) + '</div><div class="actions"><button type="button" class="btn btn-line" data-detail>Details</button><button type="button" class="btn" data-add>In mandje</button></div></div></article>';
+    }).join('');
+    empty.hidden = list.length > 0;
+    count.textContent = list.length + ' van ' + P.length + ' producten';
+    document.getElementById('reset').hidden = !(state.type !== 'alle' || state.prijs !== 'alle' || state.merk !== 'alle');
+  }
+  render();
+  grid.addEventListener('click', function(e){
+    var card = e.target.closest('.prod'); if (!card) return;
+    var p = P.filter(function(x){ return x.id === +card.dataset.id; })[0];
+    if (e.target.closest('[data-add]')) { add(p, p.sizes ? p.sizes[Math.floor(p.sizes.length / 2)] : null); return; }
+    if (e.target.closest('[data-detail]')) openProduct(p);
+  });
+
+  var scrim = document.getElementById('scrim'), lastFocus, openDrawer = null;
+  function open(id){
+    lastFocus = document.activeElement; var d = document.getElementById(id);
+    if (openDrawer && openDrawer !== d) { openDrawer.classList.remove('open'); openDrawer.hidden = true; }
+    openDrawer = d; d.hidden = false; scrim.hidden = false; document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function(){ d.classList.add('open'); d.focus(); });
+  }
+  function close(){
+    if (!openDrawer) return; var d = openDrawer; d.classList.remove('open'); scrim.hidden = true; document.body.style.overflow = ''; openDrawer = null;
+    setTimeout(function(){ d.hidden = true; if (lastFocus) lastFocus.focus(); }, reduce ? 0 : 300);
+  }
+  document.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', close); });
+  scrim.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  document.querySelectorAll('#open-cart,[data-open-cart]').forEach(function(b){ b.addEventListener('click', function(){ renderCart(); open('dr-cart'); }); });
+
+  function openProduct(p){
+    document.getElementById('dp-brand').textContent = p.brand + ' · ' + {stad:'Stadsfiets', ebike:'E-bike', gravel:'Gravel & MTB', kind:'Jeugd', toebehoren:'Toebehoren'}[p.type];
+    var sizes = p.sizes ? '<p class="mono" style="margin-top:1rem;color:var(--muted)">Maat</p><div class="sizes" id="dp-sizes">' + p.sizes.map(function(s, i){ return '<button type="button" data-s="' + s + '" aria-pressed="' + (i === Math.floor(p.sizes.length / 2)) + '">' + s + '</button>'; }).join('') + '</div><p style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Twijfelt u over de maat? We meten u in de winkel op.</p>' : '';
+    document.getElementById('dp-body').innerHTML = '<div class="dp-art"><img src="img/' + p.img + '.jpg" alt="' + p.alt + '" width="900" height="600"></div><h3 id="dp-title">' + p.name + '</h3><p class="price">' + (p.oud ? '<s style="font-weight:400;color:var(--muted);font-size:1rem">' + money(p.oud) + '</s> ' : '') + money(p.price) + '</p>' + stockLabel(p) + '<p>' + p.desc + '</p><dl class="specs">' + Object.keys(p.specs).map(function(k){ return '<dt>' + k + '</dt><dd>' + p.specs[k] + '</dd>'; }).join('') + '</dl>' + sizes;
+    document.getElementById('dp-foot').innerHTML = '<button class="btn" type="button" id="dp-add" style="width:100%">In mandje · ' + money(p.price) + '</button><p style="font-size:.82rem;color:var(--muted);margin-top:.6rem;text-align:center">' + (p.type === 'toebehoren' ? 'Verzending 4,95 €, gratis vanaf 75 €.' : 'Fietsen haalt u af in de winkel, afgesteld op uw maat.') + '</p>';
+    var sz = document.getElementById('dp-sizes');
+    if (sz) sz.addEventListener('click', function(e){ var b = e.target.closest('button'); if (!b) return; sz.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); }); });
+    document.getElementById('dp-add').addEventListener('click', function(){ add(p, sz ? sz.querySelector('[aria-pressed="true"]').dataset.s : null); renderCart(); open('dr-cart'); });
+    open('dr-product');
+  }
+
+  var ordered = false;
+  function add(p, size){
+    var key = p.id + (size ? '-' + size : ''); cart[key] = cart[key] || {p:p, size:size, q:0}; cart[key].q++;
+    badges(); toast(p.name + (size ? ' (' + size + ')' : '') + ' in de winkelmand');
+  }
+  function n(){ var t = 0; for (var k in cart) t += cart[k].q; return t; }
+  function total(){ var t = 0; for (var k in cart) t += cart[k].q * cart[k].p.price; return t; }
+  function badges(){ document.querySelectorAll('[data-cart-badge]').forEach(function(b){ b.textContent = n(); }); document.getElementById('cart-sr').textContent = ', ' + n() + ' artikelen'; }
+  var cb = document.getElementById('dc-body'), cf = document.getElementById('dc-foot');
+  function renderCart(){
+    badges(); if (ordered) return;
+    if (!n()) { cb.innerHTML = '<p class="empty">Uw winkelmand is leeg.</p>'; cf.innerHTML = '<button class="btn btn-line" type="button" data-close style="width:100%">Verder kijken</button>'; cf.querySelector('[data-close]').addEventListener('click', close); return; }
+    cb.innerHTML = Object.keys(cart).map(function(k){ var l = cart[k]; return '<div class="line"><img src="img/' + l.p.img + '.jpg" alt="" width="56" height="56"><div><b>' + l.p.name + '</b><small>' + l.p.brand + (l.size ? ' · maat ' + l.size : '') + ' · ' + money(l.p.price) + '</small></div><div class="qty"><button type="button" data-q="-1" data-k="' + k + '" aria-label="Eén minder">−</button><span>' + l.q + '</span><button type="button" data-q="1" data-k="' + k + '" aria-label="Eén meer">+</button></div><div></div><div class="lp">' + money(l.q * l.p.price) + '</div></div>'; }).join('');
+    var hasBike = Object.keys(cart).some(function(k){ return cart[k].p.type !== 'toebehoren'; });
+    cf.innerHTML = '<div class="tot"><span>Totaal<small>' + (hasBike ? 'Fietsen: afhalen in de winkel' : total() >= 75 ? 'Gratis verzending' : 'Verzending 4,95 €') + '</small></span><span>' + money(total()) + '</span></div><form id="checkout" novalidate><div class="two"><div class="field" style="margin-top:0"><label for="c-name">Naam</label><input id="c-name" autocomplete="name" required></div><div class="field" style="margin-top:0"><label for="c-mail">E-mail</label><input id="c-mail" type="email" autocomplete="email" required></div></div><p class="err" id="c-err"></p><button class="btn" type="submit" style="width:100%">' + (hasBike ? 'Reserveer en betaal in de winkel' : 'Bestel · ' + money(total())) + '</button><p style="font-size:.78rem;color:var(--muted);margin-top:.5rem;text-align:center">Demo: er wordt niets besteld of betaald. Op de echte site: Bancontact, Payconiq en kaart.</p></form>';
+    cf.querySelector('#checkout').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('c-name').value.trim(), mail = document.getElementById('c-mail').value.trim(), err = document.getElementById('c-err');
+      if (!name) { err.textContent = 'Vul uw naam in.'; return; }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) { err.textContent = 'Dat e-mailadres lijkt onvolledig.'; return; }
+      ordered = true; var ref = 'VA-' + (1000 + Math.floor(Math.random() * 9000));
+      cb.innerHTML = '<div class="done"><div class="check" aria-hidden="true">✓</div><h3>Bedankt, ' + name.split(' ')[0] + '!</h3><p>' + n() + ' artikel' + (n() > 1 ? 'en' : '') + ' voor ' + money(total()) + '. ' + (hasBike ? 'Uw fiets staat klaar in de winkel; we bellen zodra hij op maat is afgesteld.' : 'We versturen morgen; u krijgt een track & trace per mail.') + '</p><p class="mono" style="margin-top:.8rem">Referentie ' + ref + '</p><p class="note">Dit is een demo: er is geen echte bestelling geplaatst.</p><p style="margin-top:1rem"><button class="btn btn-line" type="button" id="c-again">Nieuwe bestelling</button></p></div>';
+      cf.innerHTML = '';
+      document.getElementById('c-again').addEventListener('click', function(){ cart = {}; ordered = false; renderCart(); });
+    });
+  }
+  cb.addEventListener('click', function(e){ var b = e.target.closest('button[data-q]'); if (!b) return; var l = cart[b.dataset.k]; l.q += +b.dataset.q; if (l.q <= 0) delete cart[b.dataset.k]; renderCart(); });
+
+  var DAYS = ['zo','ma','di','wo','do','vr','za'], MON = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'], DAYN = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+  var rday = document.getElementById('r-day'), now = new Date(), d = new Date(now); d.setDate(d.getDate() + 1);
+  for (var c = 0; rday.options.length < 8 && c < 14; c++, d.setDate(d.getDate() + 1)) { if (d.getDay() === 0 || d.getDay() === 1) continue; var o = document.createElement('option'); o.value = d.toISOString().slice(0,10); o.textContent = DAYS[d.getDay()] + ' ' + d.getDate() + ' ' + MON[d.getMonth()]; rday.appendChild(o); }
+  var rf = document.getElementById('repair');
+  rf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var err = document.getElementById('r-err'), name = document.getElementById('r-name').value.trim(), tel = document.getElementById('r-tel').value.replace(/\D/g,'');
+    err.textContent = '';
+    if (!name) { err.textContent = 'Vul uw naam in.'; document.getElementById('r-name').focus(); return; }
+    if (tel.length < 9) { err.textContent = 'Vul een geldig gsm-nummer in.'; document.getElementById('r-tel').focus(); return; }
+    var dd = new Date(rday.value + 'T12:00:00');
+    document.getElementById('repair-body').hidden = true;
+    var done = document.getElementById('r-done'); done.hidden = false;
+    document.getElementById('r-done-text').textContent = name.split(' ')[0] + ', breng uw ' + document.getElementById('r-type').value.toLowerCase() + ' binnen op ' + DAYN[dd.getDay()] + ' ' + dd.getDate() + ' ' + MON[dd.getMonth()] + ' voor een ' + document.getElementById('r-svc').value.split(' · ')[0].toLowerCase() + '. We sturen een sms zodra hij klaar is, normaal binnen 48 uur.';
+    done.focus();
+  });
+  document.getElementById('r-again').addEventListener('click', function(){ document.getElementById('r-done').hidden = true; document.getElementById('repair-body').hidden = false; rf.reset(); });
+
+  var dow = now.getDay(), st = document.getElementById('status'), stT = st.querySelector('span');
+  document.querySelectorAll('#hours-table tr').forEach(function(r){
+    if (+r.dataset.day !== dow) return; r.classList.add('today');
+    if (!r.dataset.open) { stT.textContent = 'Vandaag gesloten'; st.classList.add('closed'); return; }
+    var o = r.dataset.open.split(':'), cc = r.dataset.close.split(':'), m = now.getHours()*60 + now.getMinutes(), om = +o[0]*60 + +o[1], cm = +cc[0]*60 + +cc[1];
+    if (m >= om && m < cm) stT.textContent = 'Nu open tot ' + r.dataset.close; else { st.classList.add('closed'); stT.textContent = m < om ? 'Vandaag open vanaf ' + r.dataset.open : 'Gesloten, morgen weer open'; }
+  });
+
+  var tt = document.getElementById('toast'), ttT;
+  function toast(msg){ tt.textContent = msg; tt.classList.add('show'); clearTimeout(ttT); ttT = setTimeout(function(){ tt.classList.remove('show'); }, 1600); }
+})();
+</script>
+</body>
+</html>
