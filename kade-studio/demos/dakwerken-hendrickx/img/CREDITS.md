@@ -14,3 +14,5 @@ Stockfoto's van Unsplash (Unsplash License: vrij te gebruiken, geen naamsvermeld
 - `img/huis-5.jpg`: https://unsplash.com/photos/1605276374104-dee2a0ed3cd6 (Unsplash License)
 - `img/huis-6.jpg`: https://unsplash.com/photos/1568605114967-8130f3a36994 (Unsplash License)
 - `img/zonnepanelen.jpg`: https://unsplash.com/photos/1613665813446-82a78c468a1d (Unsplash License)
+- `img/leien.jpg`: https://unsplash.com/photos/1449844908441-8829872d2607 (Unsplash License)
+- `img/plat-dak.jpg`: https://unsplash.com/photos/1600566753190-17f0baa2a6c3 (Unsplash License)

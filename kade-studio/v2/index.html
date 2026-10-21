@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kade Studio | Sites web pour commerces et artisans à Westerlo</title>
+<meta name="description" id="meta-desc" content="Kade Studio crée des sites web pour les commerces et artisans de Westerlo et des Kempen, et ailleurs en Belgique sur demande. Démo gratuite avant de signer, en ligne en 48 h, prix fixe.">
+<!-- Version 2 (moodboard illustré). Pas indexée tant qu'elle ne remplace pas la page principale. -->
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kade Studio">
+<meta property="og:title" content="Kade Studio | Sites web pour commerces et artisans à Westerlo">
+<meta property="og:description" content="Sites web pour commerces, artisans et horeca de Westerlo et des Kempen. Démo gratuite, en ligne en 48 h, prix fixe. NL et FR.">
+<meta property="og:image" content="https://kadestudio.be/brand/og-image.png">
+<meta property="og:url" content="https://kadestudio.be/v2/">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:locale:alternate" content="nl_BE">
+<link rel="canonical" href="https://kadestudio.be/v2/">
+<meta name="theme-color" content="#FFC61A">
+<link rel="icon" href="../brand/logo/kade-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/social/profile-picture.png">
+<link rel="preload" href="fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-serif-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<script>(function(){try{var s=sessionStorage.getItem('kade_intro_v2')==='1',f=/[?&]intro=1/.test(location.search),r=matchMedia('(prefers-reduced-motion: reduce)').matches;if((!s&&!r)||f)document.documentElement.classList.add('intro-on')}catch(e){}document.documentElement.classList.add('js')})();</script>
+<style>
+/* Lettertypes op eigen server (GDPR). */
+@font-face{font-family:"Archivo";src:url(fonts/archivo-wdth.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-400-ext.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0100-024F,U+1E00-1EFF}
+@font-face{font-family:"Silkscreen";src:url(fonts/silkscreen-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Silkscreen";src:url(fonts/silkscreen-700.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Courier Prime";src:url(../fonts/courier-prime-400-latin.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Courier Prime";src:url(../fonts/courier-prime-700-latin.woff2) format("woff2");font-weight:700;font-display:swap}
+
+/* Direction: illustration plate et papier quadrillé. Personnages aux gros yeux, peau bleue,
+   fenêtres de navigateur posées sur des aplats de couleur, serif fine + grotesque très grasse,
+   police pixel pour tout ce qui est "écran". */
+:root{
+  --paper:#F5F2E9;--white:#fff;--ink:#121212;
+  --yellow:#FFC61A;--red:#E6402A;--pink:#F6B3C4;--cobalt:#1E3BDB;--sky:#8EB0FF;--green:#58C443;
+  --peach:#F5A88A;--orange:#FF6B1F;--lcd:#B7CB8A;
+  --gl:rgba(18,18,18,.13);
+  --f-serif:"Instrument Serif",Georgia,serif;
+  --f-sans:"Archivo","Arial Black",system-ui,sans-serif;
+  --f-pixel:"Silkscreen","Courier New",monospace;
+  --f-mono:"Courier Prime","Courier New",monospace;
+  --b:3px solid var(--ink);--r:22px;
+  --gutter:clamp(14px,3vw,40px);--wrap:1240px;
+  --shadow:6px 6px 0 var(--ink);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:clamp(1rem,.96rem + .2vw,1.1rem);line-height:1.5;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+button{font:inherit;color:inherit}
+.wrap{width:min(var(--wrap),100% - 2*var(--gutter));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+.paper{background-color:var(--white);background-image:linear-gradient(var(--gl) 1.5px,transparent 1.5px),linear-gradient(90deg,var(--gl) 1.5px,transparent 1.5px);background-size:52px 52px;background-position:-1px -1px}
+.dots3{display:inline-flex;gap:7px}
+.dots3 i{width:13px;height:13px;border-radius:50%;border:2px solid var(--ink);background:var(--red)}
+.dots3 i:nth-child(2){background:var(--yellow)}.dots3 i:nth-child(3){background:var(--green)}
+.spark{position:absolute;width:var(--s,18px);aspect-ratio:1;background:currentColor;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);animation:twinkle 2.6s ease-in-out infinite;animation-delay:var(--d,0s);pointer-events:none}
+@keyframes twinkle{50%{transform:scale(.4) rotate(45deg);opacity:.5}}
+
+/* ---------- boutons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:.8rem 1.4rem;border:var(--b);border-radius:999px;background:var(--white);color:var(--ink);font:800 1rem/1.1 var(--f-sans);text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn--ink{background:var(--ink);color:var(--white)}
+.btn--blue{background:var(--cobalt);color:var(--white)}
+.btn[disabled]{opacity:.6;cursor:progress}
+
+/* ---------- navigation : barre de navigateur ---------- */
+.nav{position:sticky;top:0;z-index:50;padding:10px var(--gutter);background:var(--yellow)}
+.nav__in{display:flex;align-items:center;gap:1rem;max-width:var(--wrap);margin-inline:auto;background:var(--white);border:var(--b);border-radius:999px;padding:.45rem .5rem .45rem 1rem;box-shadow:4px 4px 0 var(--ink)}
+.logo{display:inline-flex;align-items:baseline;gap:.3rem;text-decoration:none;font:900 1.45rem/1 var(--f-sans);font-stretch:112%;letter-spacing:-.03em}
+.logo sup{font-size:.45em;color:var(--cobalt)}
+.logo em{font:italic 400 1.15rem var(--f-serif);letter-spacing:0;color:var(--cobalt)}
+.nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;align-items:center;gap:.4rem}
+.pill{display:inline-flex;align-items:center;min-height:40px;padding:.3rem .9rem;border:2px solid var(--ink);border-radius:999px;font:700 .82rem var(--f-mono);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;background:var(--white);transition:background .15s}
+.pill:hover{background:var(--yellow)}
+.pill--ink{background:var(--ink);color:var(--white);font-family:var(--f-sans);text-transform:none;letter-spacing:0;font-weight:800;font-size:.9rem;padding-inline:1.1rem}
+.pill--ink:hover{background:var(--cobalt)}
+.pill--ink .short{display:none}
+.lang{display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;font:700 .8rem var(--f-pixel)}
+.lang a{min-width:40px;min-height:36px;display:grid;place-items:center;text-decoration:none;padding:0 .5rem}
+.lang a[aria-current]{background:var(--ink);color:var(--yellow)}
+
+/* ---------- héros : fenêtre quadrillée sur fond jaune ---------- */
+.hero{background:var(--yellow);padding:6px var(--gutter) clamp(28px,5vw,56px)}
+.win{position:relative;max-width:var(--wrap);margin-inline:auto;border:var(--b);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.win__bar{display:flex;align-items:center;gap:1rem;padding:.6rem 1rem;border-bottom:var(--b);background:var(--white);font:700 .78rem var(--f-mono)}
+.win__bar span{flex:1;text-align:center;opacity:.6}
+.hero .win{min-height:min(calc(100svh - 120px),860px);display:grid}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(1rem,3vw,3rem);align-items:center;padding:clamp(1.6rem,4vw,3.6rem) clamp(1.2rem,4vw,3.6rem) clamp(4.5rem,8vw,6rem)}
+.hero h1{font:900 clamp(2.7rem,1.4rem + 5.6vw,6.6rem)/.9 var(--f-sans);font-stretch:108%;letter-spacing:-.045em;text-wrap:balance}
+.hero h1 em{font:italic 400 1.08em/.8 var(--f-serif);letter-spacing:-.02em;color:var(--cobalt);position:relative;display:inline-block;padding-inline:.04em}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.02em;height:.14em;background:var(--yellow);z-index:-1;border-radius:99px}
+.hero__sub{margin-top:1.4rem;max-width:38ch;font-size:clamp(1.05rem,.98rem + .35vw,1.3rem);font-weight:500;line-height:1.45}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.corner{position:absolute;bottom:1.1rem;font:400 clamp(.9rem,.8rem + .4vw,1.15rem)/1.15 var(--f-mono);text-transform:lowercase}
+.corner--l{left:clamp(1.2rem,4vw,3.6rem)}
+.corner--r{right:clamp(1.2rem,4vw,3.6rem);text-align:right}
+.guy-wrap{position:relative;justify-self:center;width:min(100%,470px)}
+.guy{width:100%;height:auto;overflow:visible}
+.bubble{position:absolute;left:-6%;top:30%;background:var(--white);border:var(--b);border-radius:16px;padding:.55rem .8rem;font:700 clamp(.72rem,.65rem + .3vw,.9rem)/1.2 var(--f-pixel);box-shadow:4px 4px 0 var(--ink);transform:rotate(-6deg);white-space:nowrap}
+.bubble::after{content:"";position:absolute;right:-14px;top:50%;width:18px;height:18px;background:var(--white);border:var(--b);border-left:0;border-bottom:0;transform:translateY(-50%) rotate(45deg)}
+.bubble b{color:var(--green)}
+.squig{position:absolute;left:-9%;top:52%;width:clamp(70px,10vw,130px);overflow:visible;pointer-events:none}
+.squig path{stroke-dasharray:640;stroke-dashoffset:640;animation:draw 1.4s cubic-bezier(.6,0,.3,1) .4s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sticker{position:absolute;right:8%;bottom:6%;width:clamp(92px,11vw,128px);aspect-ratio:1;border-radius:50%;background:var(--red);color:var(--white);border:var(--b);display:grid;place-items:center;text-align:center;font:900 clamp(.95rem,.8rem + .5vw,1.2rem)/.95 var(--f-sans);font-stretch:80%;text-transform:uppercase;transform:rotate(12deg);box-shadow:4px 4px 0 var(--ink)}
+.blink{animation:blink 5.5s infinite;transform-box:fill-box;transform-origin:center}
+.blink--late{animation-delay:2.8s}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}96.5%{transform:scaleY(.08)}}
+
+/* ---------- bandeaux ---------- */
+.band{overflow:hidden;background:var(--ink);color:var(--green);border-block:var(--b);white-space:nowrap}
+.band__track{display:inline-flex;gap:2.5rem;padding:.8rem 0;animation:slide 32s linear infinite;font:700 clamp(.85rem,.8rem + .3vw,1.05rem) var(--f-pixel);text-transform:uppercase}
+.band__track>span::after{content:"✦";margin-left:2.5rem;color:var(--yellow)}
+.band--blue{background:var(--cobalt);color:var(--white)}
+.band--blue .band__track{animation-direction:reverse}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.sec{padding-block:clamp(3.5rem,8vw,7rem)}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font:700 .82rem var(--f-pixel);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1rem}
+.kicker::before{content:"";width:10px;height:10px;background:currentColor}
+.h-serif{font:400 clamp(2.6rem,1.6rem + 5vw,6rem)/.92 var(--f-serif);letter-spacing:-.025em;text-wrap:balance}
+.h-sans{font:900 clamp(2.4rem,1.4rem + 4.4vw,5.4rem)/.9 var(--f-sans);font-stretch:105%;letter-spacing:-.04em;text-wrap:balance}
+
+/* qui */
+.who .wrap>header{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:2rem;align-items:end;margin-bottom:clamp(2rem,4vw,3.4rem)}
+.who header p{font-size:1.08rem;max-width:44ch}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem}
+.tile{border:var(--b);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
+.tile:hover{transform:translateY(-4px) rotate(-.6deg)}
+.tile:hover svg{animation:wob .6s ease-in-out}
+@keyframes wob{30%{transform:rotate(-3deg) scale(1.03)}60%{transform:rotate(2deg)}}
+.tile figure{margin:0;border-bottom:var(--b);padding:1rem;display:grid;place-items:center;aspect-ratio:10/7}
+.tile svg{width:100%;height:100%;overflow:visible}
+.tile .body{padding:1.1rem 1.2rem 1.4rem;background:var(--white);flex:1}
+.tile h3{font:900 1.35rem/1 var(--f-sans);font-stretch:90%;letter-spacing:-.02em}
+.tile p{margin-top:.6rem;font-size:.95rem;line-height:1.45}
+.t-blue figure{background:var(--cobalt)}.t-yellow figure{background:var(--yellow)}.t-red figure{background:var(--red)}.t-pink figure{background:var(--pink)}
+
+/* démos : fond noir "hello world" */
+.work{background:var(--ink);color:var(--white);overflow:hidden}
+.work .waves{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9}
+.work .wrap{position:relative}
+.work header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.4rem}
+.work h2{color:var(--white);max-width:13ch}
+.work h2::first-line{font-style:italic}
+.work header p{max-width:46ch;color:#d8d8d0}
+.rail-ctrl{display:flex;gap:.6rem}
+.rail-ctrl button{width:52px;height:52px;border-radius:50%;border:3px solid var(--white);background:transparent;color:var(--white);font:700 1.3rem var(--f-sans);cursor:pointer;transition:background .15s,color .15s}
+.rail-ctrl button:hover{background:var(--white);color:var(--ink)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(400px,82vw);gap:1.4rem;overflow-x:auto;padding:.6rem var(--gutter) 1.6rem;margin-inline:calc(var(--gutter) * -1);scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--yellow) transparent;cursor:grab}
+.rail.drag{cursor:grabbing;scroll-snap-type:none}
+.rail.drag a{pointer-events:none}
+.case{scroll-snap-align:start;display:flex;flex-direction:column;gap:.9rem;text-decoration:none;color:inherit}
+.bw{border:3px solid var(--white);border-radius:16px;overflow:hidden;background:var(--white);box-shadow:8px 8px 0 var(--c,var(--yellow));transition:transform .2s,box-shadow .2s}
+.case:hover .bw,.case:focus-visible .bw{transform:translate(-3px,-3px) rotate(-1deg);box-shadow:12px 12px 0 var(--c,var(--yellow))}
+.bw__bar{display:flex;align-items:center;gap:.7rem;padding:.45rem .7rem;background:var(--white);color:var(--ink);border-bottom:3px solid var(--ink);font:700 .7rem var(--f-mono)}
+.bw__bar .dots3 i{width:10px;height:10px}
+.bw__bar span{opacity:.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bw img{width:100%;height:auto;aspect-ratio:16/9.4;object-fit:cover;object-position:50% 100%}
+.case__meta{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.case__meta strong{font:900 1.25rem/1 var(--f-sans);font-stretch:95%;letter-spacing:-.02em}
+.case__meta small{font:400 .9rem var(--f-mono);color:#cfcfc6}
+.case__tags{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.chip{display:inline-flex;align-items:center;border:2px solid currentColor;border-radius:999px;padding:.05rem .6rem;font:700 .72rem var(--f-pixel);text-transform:uppercase}
+.go{margin-left:auto;font:italic 400 1.15rem var(--f-serif);color:var(--yellow)}
+
+/* offres : grille rouge */
+.offers{background-color:var(--red);background-image:linear-gradient(rgba(18,18,18,.55) 2px,transparent 2px),linear-gradient(90deg,rgba(18,18,18,.55) 2px,transparent 2px);background-size:88px 88px;color:var(--ink);overflow:hidden}
+.offers .wrap{position:relative}
+.offers h2{color:var(--white);-webkit-text-stroke:0}
+.offers h2 span span{display:block;font:italic 400 1.02em/.95 var(--f-serif);color:var(--yellow);letter-spacing:-.02em}
+.offers__note{margin-top:1.2rem;max-width:56ch;color:var(--white);font-weight:500}
+.iso{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:2rem;align-items:end;margin-bottom:2.4rem}
+.iso figure{margin:0;position:relative}
+.iso svg{width:100%;height:auto;overflow:visible}
+.iso__labels{position:absolute;inset:auto 0 -.2rem;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;font:700 .78rem var(--f-pixel);text-transform:uppercase;color:var(--white)}
+.menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;align-items:start}
+.offer{position:relative;border:var(--b);border-radius:var(--r);overflow:hidden;background:var(--white);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.offer .win__bar{justify-content:space-between}
+.offer .body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:1rem;flex:1}
+.offer h3{font:900 clamp(1.7rem,1.3rem + 1.4vw,2.4rem)/.95 var(--f-sans);font-stretch:95%;letter-spacing:-.03em}
+.offer ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.offer li{border:2px solid var(--ink);border-radius:999px;padding:.12rem .65rem;font:400 .85rem var(--f-mono)}
+.price{margin-top:auto;font:900 clamp(2.6rem,2rem + 2vw,3.6rem)/.9 var(--f-sans);font-stretch:85%;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.price small{display:block;margin-top:.3rem;font:700 .75rem var(--f-pixel);letter-spacing:.02em;text-transform:uppercase}
+.price .from{font:italic 400 .5em var(--f-serif);letter-spacing:0}
+.offer--star{background:var(--yellow);transform:translateY(-14px) rotate(-1deg)}
+.offer--star .win__bar{background:var(--yellow)}
+.tag{position:absolute;right:1rem;top:3.1rem;background:var(--cobalt);color:var(--white);border:var(--b);border-radius:999px;padding:.15rem .8rem;font:700 .75rem var(--f-pixel);text-transform:uppercase;transform:rotate(6deg)}
+.maints{margin-top:2rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+.maint{background:var(--ink);color:var(--white);border:var(--b);border-radius:var(--r);padding:1.2rem 1.4rem;display:grid;gap:.35rem;box-shadow:6px 6px 0 var(--yellow)}
+.maint strong{font:700 clamp(1.4rem,1.1rem + 1vw,1.9rem) var(--f-pixel);color:var(--green)}
+.maint em{font:italic 400 1.4rem/1 var(--f-serif)}
+.maint span:last-child{color:#d8d8d0;font-size:.95rem}
+.stickers{margin-top:1.6rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+.fix{background:var(--paper);border:var(--b);border-radius:var(--r);padding:1.1rem 1.3rem;display:grid;gap:.3rem;box-shadow:var(--shadow);font-size:.97rem}
+.fix:nth-child(1){transform:rotate(-.8deg)}.fix:nth-child(2){transform:rotate(.8deg)}
+.fix b{font:900 1.35rem/1 var(--f-sans);font-stretch:90%;color:var(--red)}
+
+/* méthode : téléphone pixel */
+.method{background-color:var(--cobalt);background-image:linear-gradient(rgba(255,255,255,.14) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(255,255,255,.14) 1.5px,transparent 1.5px);background-size:40px 40px;color:var(--white);overflow:hidden}
+.method h2{font:700 clamp(1.9rem,1.1rem + 3.6vw,4.4rem)/1 var(--f-pixel);letter-spacing:-.02em;text-transform:uppercase;max-width:18ch;text-wrap:balance}
+.method__grid{margin-top:clamp(2rem,5vw,3.6rem);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(1.5rem,5vw,4.5rem);align-items:center}
+.phone{position:relative;width:min(100%,300px);justify-self:center}
+.phone svg{width:100%;height:auto;filter:drop-shadow(8px 8px 0 var(--ink))}
+.lcd{position:absolute;left:30%;top:17.9%;width:40%;height:18.4%;display:flex;flex-direction:column;justify-content:space-between;padding:4% 5%;color:#1d2a10;font:400 clamp(9px,.55rem + .25vw,12px)/1.1 var(--f-pixel);text-transform:uppercase;overflow:hidden}
+.lcd__top{display:flex;justify-content:space-between;align-items:center}
+.lcd__bars{display:inline-flex;gap:2px;align-items:end;height:10px}
+.lcd__bars i{width:3px;background:#1d2a10}
+.lcd__bars i:nth-child(1){height:4px}.lcd__bars i:nth-child(2){height:7px}.lcd__bars i:nth-child(3){height:10px}
+.lcd__num{font:700 clamp(28px,1.6rem + 1vw,40px)/1 var(--f-pixel);text-align:center}
+.lcd__when{text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phone__next{position:absolute;left:28%;top:44%;width:44%;height:9%;border-radius:50%;border:0;background:transparent;cursor:pointer}
+.phone__next:focus-visible{outline:3px solid var(--yellow)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:.8rem;counter-reset:s}
+.step button{width:100%;text-align:left;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:.3rem 1rem;align-items:baseline;padding:1rem 1.2rem;border:3px solid var(--white);border-radius:18px;background:transparent;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.step button::before{counter-increment:s;content:"0" counter(s);font:700 1.4rem var(--f-pixel);color:var(--yellow);grid-row:span 2}
+.step h3{font:900 clamp(1.2rem,1rem + .7vw,1.6rem)/1.05 var(--f-sans);font-stretch:95%;letter-spacing:-.02em}
+.step p{grid-column:2/-1;font-size:.95rem;line-height:1.45;color:#e2e6ff}
+.when{font:700 .72rem var(--f-pixel);text-transform:uppercase;border:2px solid currentColor;border-radius:999px;padding:.05rem .55rem;white-space:nowrap}
+.step button[aria-current="step"]{background:var(--white);color:var(--ink);transform:translateX(8px)}
+.step button[aria-current="step"]::before{color:var(--cobalt)}
+.step button[aria-current="step"] p{color:var(--ink)}
+
+/* FAQ : boule de cristal */
+.faq{background:var(--pink);overflow:hidden}
+.faq__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.faq__art{position:sticky;top:110px}
+.ball{position:relative;width:min(100%,420px);margin-inline:auto}
+.ball svg{width:100%;height:auto;overflow:visible}
+.ball__word{position:absolute;left:12%;right:12%;top:15%;height:52%;display:grid;place-items:center;text-align:center;font:900 clamp(2.4rem,1.6rem + 3vw,4.4rem)/.82 var(--f-sans);font-stretch:62%;color:var(--red);transform:rotate(-9deg) scaleY(1.25);letter-spacing:-.02em;pointer-events:none;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:rotate(-6deg) scaleY(1.3) translateY(-6px)}}
+.faq h2{margin-bottom:1.8rem}
+.faq details{background:var(--white);border:var(--b);border-radius:18px;margin-bottom:.8rem;box-shadow:4px 4px 0 var(--ink);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;font:800 1.08rem/1.25 var(--f-sans)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:34px;height:34px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:700 1.2rem var(--f-pixel);transition:transform .2s,background .2s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--yellow)}
+.faq details p{padding:0 1.2rem 1.2rem;max-width:62ch}
+
+/* contact : fond vert */
+.contact{background-color:var(--green);overflow:hidden}
+.contact__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.contact h2 em{font-style:italic}
+.assure{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:.6rem;font-weight:700}
+.assure li{display:flex;gap:.7rem;align-items:baseline}
+.assure li::before{content:"✦";color:var(--cobalt)}
+.contact__mail{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.mail{font:700 clamp(1.1rem,.9rem + .8vw,1.5rem) var(--f-mono);background:var(--white);border:var(--b);border-radius:12px;padding:.5rem .9rem}
+.formwrap{position:relative;padding-top:clamp(70px,9vw,104px)}
+.peek{position:absolute;top:0;left:50%;width:clamp(220px,28vw,300px);transform:translateX(-50%);z-index:2;pointer-events:none;overflow:visible}
+.form{position:relative;z-index:1;border:var(--b);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:var(--white)}
+.form .body{padding:clamp(1.2rem,3vw,2rem)}
+.form h3{font:900 clamp(1.5rem,1.2rem + 1vw,2rem)/1 var(--f-sans);font-stretch:95%;letter-spacing:-.03em;margin-bottom:1.2rem}
+.field{display:grid;gap:.35rem;margin-bottom:1rem}
+.field label{font:700 .9rem var(--f-sans)}
+.field input,.field select,.field textarea{width:100%;min-height:50px;border:2.5px solid var(--ink);border-radius:12px;padding:.7rem .85rem;font:500 1rem var(--f-sans);background:var(--white);color:var(--ink)}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;box-shadow:4px 4px 0 var(--cobalt)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+.err{color:var(--red);font-size:.85rem;font-weight:700;min-height:1.1em}
+.form__top{font:700 .78rem var(--f-pixel);text-transform:uppercase;color:var(--cobalt)}
+.privacy{font-size:.8rem;margin-top:.9rem;line-height:1.4;color:#555}
+.done{margin-top:1rem;padding:.9rem 1rem;border:var(--b);border-radius:12px;background:var(--yellow);font-weight:700}
+.done--err{background:var(--pink)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* footer */
+.foot{background:var(--ink);color:#d8d8d0;padding-block:2.4rem 2rem;overflow:hidden}
+.foot__mark{font:900 clamp(4.5rem,2rem + 13vw,15rem)/.8 var(--f-sans);font-stretch:125%;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px var(--yellow);white-space:nowrap;margin-bottom:1.6rem}
+.foot__mark em{font:italic 400 .6em var(--f-serif);-webkit-text-stroke:0;color:var(--yellow);letter-spacing:-.02em}
+.foot__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem 2rem;font:400 .9rem var(--f-mono)}
+.foot a{color:var(--yellow)}
+
+/* révélation au défilement (seulement avec JS) */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- intro : un visage se compose, "bonjour kade" ---------- */
+.intro{display:none;position:fixed;inset:0;z-index:1000;background:var(--ink);overflow:hidden;animation:ivOut .3s ease-in 2.85s both}
+html.intro-on{overflow:hidden}
+html.intro-on .intro{display:block}
+.intro--done{animation:none;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.iv-svg{position:absolute;inset:0;width:100%;height:100%}
+.iv-hair path{fill:none;stroke:#fff;stroke-width:2.2;opacity:.6;stroke-dasharray:1900;stroke-dashoffset:1900;animation:draw 1.1s cubic-bezier(.5,0,.3,1) both}
+.iv-hair path:nth-child(2){animation-delay:.08s}.iv-hair path:nth-child(3){animation-delay:.16s}.iv-hair path:nth-child(4){animation-delay:.24s}.iv-hair path:nth-child(5){animation-delay:.32s}.iv-hair path:nth-child(6){animation-delay:.4s}
+.iv-pop{transform-box:fill-box;transform-origin:center;animation:ivPop .45s cubic-bezier(.2,1.7,.4,1) both}
+.iv-d1{animation-delay:.25s}.iv-d2{animation-delay:.4s}.iv-d3{animation-delay:.52s}.iv-d4{animation-delay:1.35s}
+.iv-eye{transform-box:fill-box;transform-origin:center;animation:ivBlink .22s ease-in-out 1.75s}
+.iv-nose{animation:ivDrop .6s cubic-bezier(.2,1.5,.4,1) 1.15s both}
+.iv-word{position:absolute;left:0;right:0;top:50%;display:flex;justify-content:center;align-items:baseline;gap:.08em;color:#fff;font-size:clamp(64px,15vw,210px);line-height:1;transform:translateY(-38%);white-space:nowrap;pointer-events:none}
+.iv-a{font:400 1em var(--f-serif);letter-spacing:-.03em;animation:ivRise .55s cubic-bezier(.2,1,.3,1) .75s both}
+.iv-b{font:900 .9em var(--f-sans);font-stretch:110%;letter-spacing:-.05em;animation:ivRise .55s cubic-bezier(.2,1,.3,1) .92s both}
+.iv-wipe{position:absolute;inset:0;background:var(--yellow);clip-path:circle(0% at 54% 60%);animation:ivWipe .6s cubic-bezier(.7,0,.3,1) 2.25s forwards}
+.intro__skip{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:1001;min-height:44px;background:var(--white);color:var(--ink);border:var(--b);border-radius:999px;padding:.5rem 1rem;font:700 .8rem var(--f-pixel);text-transform:uppercase;cursor:pointer;box-shadow:4px 4px 0 var(--yellow)}
+@keyframes ivPop{from{transform:scale(0) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes ivBlink{50%{transform:scaleY(.08)}}
+@keyframes ivDrop{from{transform:translateY(-90px);opacity:0}to{transform:none;opacity:1}}
+@keyframes ivRise{from{transform:translateY(60%);opacity:0}to{transform:none;opacity:1}}
+@keyframes ivWipe{to{clip-path:circle(150% at 54% 60%)}}
+@keyframes ivOut{to{opacity:0;visibility:hidden}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .nav ul li:not(:last-child){display:none}
+  .hero__grid{grid-template-columns:1fr;padding-bottom:6.5rem}
+  .guy-wrap{width:min(78%,380px)}
+  .who .wrap>header,.iso,.method__grid,.faq__grid,.contact__grid{grid-template-columns:1fr}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .menu{grid-template-columns:1fr;max-width:560px;margin-inline:auto}
+  .offer--star{transform:none}
+  .faq__art{position:static}
+  .ball{width:min(70%,320px)}
+}
+@media (max-width:640px){
+  .nav__in{padding-left:.8rem;gap:.5rem}
+  .logo em{display:none}
+  .pill--ink .long{display:none}.pill--ink .short{display:inline}
+  .tile figure{aspect-ratio:16/8}
+  .phone{width:min(62%,220px)}
+  .tiles,.maints,.stickers,.two{grid-template-columns:1fr}
+  .corner{font-size:.8rem}
+  .bubble{left:-2%;top:22%}
+  .sticker{right:4%;bottom:9%}
+  .step button{grid-template-columns:auto minmax(0,1fr)}
+  .step .when{grid-column:2;justify-self:start}
+  .step button[aria-current="step"]{transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .squig path{stroke-dashoffset:0}
+  .js .rv{opacity:1;transform:none}
+  html.intro-on .intro{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <svg class="iv-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+    <g class="iv-hair">
+      <path d="M90 640C40 430 110 190 250 105C370 30 560 30 650 120C750 220 760 430 700 640"/>
+      <path d="M130 640C95 450 150 230 270 150C380 80 540 85 620 165C700 250 705 440 660 640"/>
+      <path d="M50 600C10 380 90 150 230 70C360 0 600 0 700 100C790 200 800 420 750 620"/>
+      <path d="M170 640C150 470 200 280 300 210"/>
+      <path d="M630 640C650 470 620 300 520 220"/>
+      <path d="M20 520C0 330 70 120 200 40"/>
+    </g>
+    <path class="iv-pop iv-d1" d="M215 232C212 168 296 146 352 172C404 198 396 272 344 290C282 308 218 296 215 232Z" fill="#FF6B1F"/>
+    <g class="iv-pop iv-d2"><g class="iv-eye">
+      <path d="M245 232C270 200 330 200 355 232C330 262 270 262 245 232Z" fill="#fff"/>
+      <circle cx="300" cy="232" r="22" fill="#2F6BFF"/><circle cx="302" cy="232" r="9" fill="#121212"/><circle cx="294" cy="225" r="4" fill="#fff"/>
+    </g></g>
+    <g class="iv-pop iv-d3"><g class="iv-eye">
+      <path d="M445 230C470 196 530 196 555 230C530 264 470 264 445 230Z" fill="#fff" stroke="#2F6BFF" stroke-width="9"/>
+      <circle cx="500" cy="230" r="22" fill="#FF6B1F"/><circle cx="502" cy="230" r="9" fill="#121212"/><circle cx="494" cy="223" r="4" fill="#fff"/>
+    </g></g>
+  </svg>
+  <p class="iv-word"><span class="iv-a"><span data-i18n="iv_hello">bonjour</span></span><b class="iv-b">kade</b></p>
+  <svg class="iv-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+    <path class="iv-nose" d="M412 205C440 214 468 296 488 356C503 406 470 428 440 414C402 396 384 382 362 396C340 410 322 384 346 360C382 330 396 262 412 205Z" fill="#2F6BFF"/>
+    <g class="iv-pop iv-d4"><path d="M338 478C368 446 400 458 420 468C440 458 472 446 502 478C472 514 368 514 338 478Z" fill="#FFC61A"/><path d="M346 478C390 488 450 488 494 478" fill="none" stroke="#C97A00" stroke-width="5" stroke-linecap="round"/></g>
+  </svg>
+  <div class="iv-wipe"></div>
+</div>
+<button class="intro__skip" id="intro-skip" type="button" hidden><span data-i18n="i_skip">Passer l'intro</span></button>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="logo" href="#top" aria-label="Kade Studio">KADE<sup>®</sup><em>studio</em></a>
+    <nav class="lang" aria-label="Langue / Taal"><a href="index.html" hreflang="fr-BE" lang="fr" data-lang="fr" aria-current="page">FR</a><a href="nl/index.html" hreflang="nl-BE" lang="nl" data-lang="nl">NL</a></nav>
+    <nav aria-label="Navigation principale" data-i18n-aria="al1" style="margin-left:auto">
+      <ul>
+        <li><a class="pill" href="#exemples"><span data-i18n="n1">Exemples</span></a></li>
+        <li><a class="pill" href="#offres"><span data-i18n="n2">Offres</span></a></li>
+        <li><a class="pill" href="#methode"><span data-i18n="n3">Méthode</span></a></li>
+        <li><a class="pill pill--ink" href="#contact" data-track="nav_cta"><span class="long"><span data-i18n="cta">Demander ma démo gratuite</span></span><span class="short"><span data-i18n="cta_s">Ma démo</span></span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="win paper">
+      <div class="hero__grid">
+        <div>
+          <h1 id="hero-title"><span data-i18n="h1">Votre site est prêt <em>avant</em> notre premier entretien.</span></h1>
+          <p class="hero__sub"><span data-i18n="sub">Je conçois des sites web pour les commerçants et artisans de Westerlo et des Kempen. Vous découvrez d'abord une démo gratuite ; si elle vous convainc, votre site est en ligne 48 heures plus tard.</span></p>
+          <div class="cta">
+            <a class="btn btn--ink" href="#contact" data-track="hero_cta"><span data-i18n="cta">Demander ma démo gratuite</span></a>
+            <a class="btn" href="#exemples" data-track="hero_examples"><span data-i18n="see">Voir des démos</span></a>
+          </div>
+        </div>
+        <div class="guy-wrap" aria-hidden="true">
+          <svg class="squig" viewBox="0 0 120 260"><path d="M80 10C10 40 110 90 50 130S20 210 70 250" fill="none" stroke="#121212" stroke-width="34" stroke-linecap="round"/><path d="M80 10C10 40 110 90 50 130S20 210 70 250" fill="none" stroke="#1E3BDB" stroke-width="26" stroke-linecap="round"/></svg>
+          <svg class="guy" viewBox="0 -130 420 650" fill="none" stroke="#121212" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+            <!-- pull -->
+            <rect x="180" y="320" width="62" height="80" fill="#F5A88A"/>
+            <path d="M34 520C42 428 118 388 210 388C302 388 378 428 386 520Z" fill="#1E3BDB"/>
+            <path d="M96 470C110 440 130 425 150 418M330 470C318 442 296 425 272 418" stroke="#8EB0FF" stroke-width="4"/>
+            <path d="M146 396C176 420 246 420 276 396L270 372C240 392 182 392 152 372Z" fill="#1E3BDB"/>
+            <path d="M166 384V408M186 392V414M206 394V416M226 394V416M246 390V412M262 384V404" stroke="#8EB0FF" stroke-width="3.5"/>
+            <!-- oreille -->
+            <ellipse cx="316" cy="262" rx="27" ry="37" fill="#8EB0FF"/>
+            <path d="M318 246C330 254 330 274 318 282" stroke-width="4"/>
+            <!-- visage -->
+            <path d="M118 210C114 130 166 98 212 98C268 98 312 138 312 212C312 302 280 362 212 364C148 366 120 302 118 210Z" fill="#F5A88A"/>
+            <path d="M292 168C314 214 314 300 272 346C296 300 302 226 292 168Z" fill="#8EB0FF" stroke="none"/>
+            <!-- cheveux -->
+            <g fill="#121212" stroke="none">
+              <circle cx="104" cy="238" r="34"/><circle cx="96" cy="192" r="36"/><circle cx="110" cy="146" r="38"/><circle cx="140" cy="108" r="40"/><circle cx="182" cy="84" r="42"/><circle cx="228" cy="78" r="42"/><circle cx="270" cy="88" r="40"/><circle cx="304" cy="114" r="38"/><circle cx="326" cy="152" r="34"/><circle cx="334" cy="196" r="30"/><circle cx="330" cy="232" r="22"/>
+              <circle cx="146" cy="168" r="26"/><circle cx="186" cy="156" r="28"/><circle cx="228" cy="152" r="28"/><circle cx="270" cy="160" r="26"/><circle cx="300" cy="176" r="22"/>
+            </g>
+            <path d="M120 130C128 120 140 120 146 128M200 70C210 62 222 64 228 72M282 100C292 94 302 98 306 106M100 200C108 194 118 196 122 204" stroke="#3a3a3a" stroke-width="3"/>
+            <!-- sourcils -->
+            <path d="M142 214Q166 204 192 212M230 212Q256 204 280 214" stroke-width="4.5"/>
+            <!-- yeux -->
+            <g class="blink"><circle cx="164" cy="262" r="40" fill="#1E3BDB" stroke="none"/><circle cx="172" cy="258" r="40" fill="#fff"/><g class="pupil" data-r="15"><circle cx="172" cy="258" r="11" fill="#121212" stroke="none"/><circle cx="168" cy="253" r="3.5" fill="#fff" stroke="none"/></g></g>
+            <g class="blink"><circle cx="248" cy="262" r="40" fill="#1E3BDB" stroke="none"/><circle cx="256" cy="258" r="40" fill="#fff"/><g class="pupil" data-r="15"><circle cx="256" cy="258" r="11" fill="#121212" stroke="none"/><circle cx="252" cy="253" r="3.5" fill="#fff" stroke="none"/></g></g>
+            <path d="M150 300L144 310M166 302L164 314M184 300L188 312M234 300L230 312M252 302L252 314M270 300L276 310" stroke-width="3.5"/>
+            <!-- nez -->
+            <path d="M206 268C200 290 188 312 194 322C202 332 222 330 228 322Z" fill="#E6402A"/>
+            <path d="M214 270C226 292 236 312 230 324C226 330 218 330 214 328Z" fill="#1E3BDB" stroke="none"/>
+            <!-- bouche -->
+            <path d="M190 342C196 328 232 328 238 342C236 354 194 356 190 342Z" fill="#7A1E12"/>
+            <path d="M198 335C210 331 220 331 230 335L228 339C218 336 210 336 200 339Z" fill="#fff" stroke="none"/>
+            <!-- chat -->
+            <path d="M298 30C356 26 384 -36 344 -70" stroke-width="27"/>
+            <path d="M298 30C356 26 384 -36 344 -70" stroke="#DCE6FF" stroke-width="17"/>
+            <ellipse cx="222" cy="40" rx="98" ry="56" fill="#DCE6FF"/>
+            <path d="M150 52C180 80 260 84 300 56" stroke="#8EB0FF" stroke-width="5"/>
+            <path d="M158 -58L146 -126L198 -80Z" fill="#DCE6FF"/><path d="M162 -76L157 -108L182 -84Z" fill="#F27A9B" stroke="none"/>
+            <path d="M256 -80L284 -128L276 -54Z" fill="#DCE6FF"/><path d="M262 -78L278 -106L274 -66Z" fill="#F27A9B" stroke="none"/>
+            <path d="M150 -22C150 -70 186 -88 214 -88C250 -88 282 -66 280 -20C278 16 250 34 214 34C178 34 150 16 150 -22Z" fill="#DCE6FF"/>
+            <path d="M262 -60C280 -40 282 -6 262 18" stroke="#8EB0FF" stroke-width="5"/>
+            <circle cx="183" cy="-24" r="26" fill="#58C443"/><circle cx="187" cy="-26" r="21" fill="#FFE21A"/>
+            <circle cx="243" cy="-24" r="26" fill="#58C443"/><circle cx="247" cy="-26" r="21" fill="#FFE21A"/>
+            <g class="pupil" data-r="7"><ellipse cx="187" cy="-26" rx="5" ry="12" fill="#121212" stroke="none"/></g>
+            <g class="pupil" data-r="7"><ellipse cx="247" cy="-26" rx="5" ry="12" fill="#121212" stroke="none"/></g>
+            <path d="M210 2L222 2L216 10Z" fill="#F27A9B" stroke-width="3"/>
+            <path d="M204 12C202 34 208 48 218 48C228 48 234 34 230 12Z" fill="#F27A9B" stroke-width="4"/><path d="M217 16V38" stroke-width="3"/>
+            <path d="M176 4L118 -6M176 13L116 18M256 4L314 -6M256 13L316 18" stroke-width="3"/>
+            <path d="M144 96C140 80 152 72 168 74C186 76 190 92 180 102C170 110 148 108 144 96Z" fill="#DCE6FF"/><path d="M156 100L156 92M168 102L168 94" stroke-width="3"/>
+            <path d="M244 96C240 80 252 72 268 74C286 76 290 92 280 102C270 110 248 108 244 96Z" fill="#DCE6FF"/><path d="M256 100L256 92M268 102L268 94" stroke-width="3"/>
+          </svg>
+          <p class="bubble"><span data-i18n="bubble">démo prête</span> <b>✓</b></p>
+          <span class="spark" style="--s:22px;left:2%;top:4%;color:#121212"></span>
+          <span class="spark" style="--s:14px;right:6%;top:48%;color:#E6402A;--d:.8s"></span>
+          <span class="spark" style="--s:18px;left:10%;bottom:12%;color:#1E3BDB;--d:1.4s"></span>
+        </div>
+      </div>
+      <p class="corner corner--l" aria-hidden="true"><span data-i18n="hero_l">sites web<br>pour commerces<br>&amp; artisans</span></p>
+      <p class="corner corner--r" aria-hidden="true"><span data-i18n="hero_r">westerlo 2260<br>kempen<br>belgique</span></p>
+      <p class="sticker" aria-hidden="true"><span data-i18n="burst">En ligne<br>en 48 h</span></p>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="true">
+    <div class="band__track">
+      <span><span data-i18n="b1">Sites web pour commerces et artisans</span></span><span><span data-i18n="b2">Westerlo, Geel, Herentals, Heist-op-den-Berg, Lier</span></span><span><span data-i18n="b3">Néerlandais et français</span></span><span><span data-i18n="b4">En ligne en 48 h</span></span>
+      <span><span data-i18n="b1">Sites web pour commerces et artisans</span></span><span><span data-i18n="b2">Westerlo, Geel, Herentals, Heist-op-den-Berg, Lier</span></span><span><span data-i18n="b3">Néerlandais et français</span></span><span><span data-i18n="b4">En ligne en 48 h</span></span>
+    </div>
+  </div>
+
+  <section class="who sec paper" aria-labelledby="who-title">
+    <div class="wrap">
+      <header>
+        <h2 class="h-serif rv" id="who-title"><span data-i18n="who">Pour celles et ceux<br>qui entreprennent.</span></h2>
+        <p class="rv"><span data-i18n="whop">Vous dirigez un commerce, un atelier ou une friterie à Westerlo ou dans les Kempen, et votre temps est précieux. Je réalise la démo, vous décidez, et votre site est en ligne 48 heures plus tard. Aucune connaissance technique n'est requise.</span></p>
+      </header>
+      <div class="tiles">
+        <article class="tile t-blue rv">
+          <figure aria-hidden="true"><svg viewBox="0 0 200 140" fill="none" stroke="#121212" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="166" cy="26" r="14" fill="#FFC61A"/>
+            <rect x="40" y="66" width="100" height="64" fill="#fff"/>
+            <path d="M28 70L90 20L152 70Z" fill="#E6402A"/>
+            <path d="M48 56L132 56M60 46L120 46M72 36L108 36" stroke-width="3"/>
+            <rect x="58" y="84" width="24" height="24" fill="#8EB0FF"/><path d="M70 84V108M58 96H82" stroke-width="3"/>
+            <rect x="98" y="90" width="26" height="40" fill="#FFC61A"/>
+            <path d="M150 132L176 46M170 134L194 52M156 112L178 116M161 94L183 98M166 76L188 80M171 60L192 64" stroke-width="4"/>
+          </svg></figure>
+          <div class="body"><h3><span data-i18n="k3">Couvreurs, électriciens, jardiniers</span></h3><p><span data-i18n="k3p">Un toit à 15 000 € ne se commande pas à une entreprise sans site web. Vos chantiers en images et un formulaire de devis qui arrive directement sur votre téléphone.</span></p></div>
+        </article>
+        <article class="tile t-yellow rv">
+          <figure aria-hidden="true"><svg viewBox="0 0 200 140" fill="none" stroke="#121212" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="30" y="50" width="140" height="82" fill="#fff"/>
+            <rect x="24" y="22" width="152" height="22" fill="#121212"/>
+            <path d="M24 44H176L170 62C160 70 150 70 144 62C138 70 126 70 120 62C114 70 102 70 96 62C90 70 78 70 72 62C66 70 54 70 48 62C42 70 30 70 30 62Z" fill="#E6402A"/>
+            <path d="M48 46L48 62M72 46V62M96 46V62M120 46V62M144 46V62" stroke="#fff" stroke-width="10"/>
+            <rect x="44" y="78" width="62" height="40" fill="#8EB0FF"/>
+            <rect x="118" y="78" width="36" height="54" fill="#58C443"/>
+            <circle cx="146" cy="106" r="3" fill="#121212"/>
+            <text x="100" y="38" text-anchor="middle" font-family="Silkscreen,monospace" font-size="13" fill="#FFC61A" stroke="none">OPEN</text>
+          </svg></figure>
+          <div class="body"><h3><span data-i18n="k1">Le commerce de proximité</span></h3><p><span data-i18n="k1p">Horaires à jour, produits en images, itinéraire en un clic. Vos clients vous trouvent sur Google Maps et poussent la porte.</span></p></div>
+        </article>
+        <article class="tile t-red rv">
+          <figure aria-hidden="true"><svg viewBox="0 0 200 140" fill="none" stroke="#121212" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+            <g fill="#FFC61A"><rect x="70" y="18" width="14" height="70" rx="4" transform="rotate(-12 77 53)"/><rect x="92" y="10" width="14" height="76" rx="4"/><rect x="114" y="16" width="14" height="72" rx="4" transform="rotate(10 121 52)"/><rect x="104" y="26" width="13" height="62" rx="4" transform="rotate(-4 110 57)"/></g>
+            <path d="M58 62H142L128 132H72Z" fill="#fff"/>
+            <path d="M58 62H142L139 78H61Z" fill="#1E3BDB"/>
+            <ellipse cx="152" cy="108" rx="22" ry="14" fill="#fff"/><path d="M140 104C150 96 162 98 166 104" stroke-width="3"/>
+            <circle cx="90" cy="104" r="3" fill="#121212"/><circle cx="110" cy="114" r="3" fill="#121212"/>
+          </svg></figure>
+          <div class="body"><h3><span data-i18n="k4">Restos, cafés & friteries</span></h3><p><span data-i18n="k4p">Une carte lisible sur téléphone, vos horaires et un bouton d'appel. Moins d'appels pour savoir si vous êtes ouvert.</span></p></div>
+        </article>
+        <article class="tile t-pink rv">
+          <figure aria-hidden="true"><svg viewBox="0 0 200 140" fill="none" stroke="#121212" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="120" y="14" width="22" height="116" rx="6" fill="#FFC61A" transform="rotate(14 131 72)"/>
+            <path d="M126 30H142M124 44H140M122 58H138M120 72H136M118 86H134M116 100H132" stroke-width="3" transform="rotate(14 131 72)"/>
+            <path d="M58 24L104 96M104 24L58 96" stroke-width="7"/>
+            <circle cx="52" cy="112" r="16" fill="#1E3BDB"/><circle cx="110" cy="112" r="16" fill="#1E3BDB"/>
+            <circle cx="52" cy="112" r="6" fill="#F6B3C4"/><circle cx="110" cy="112" r="6" fill="#F6B3C4"/>
+            <path d="M68 100L76 86M94 100L86 86" stroke-width="6"/>
+            <circle cx="81" cy="60" r="5" fill="#fff"/>
+          </svg></figure>
+          <div class="body"><h3><span data-i18n="k2">Salons & instituts</span></h3><p><span data-i18n="k2p">Prise de rendez-vous en ligne, tarifs clairs et galerie de vos réalisations. Moins d'appels pendant que vous travaillez.</span></p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="work sec" id="exemples" aria-labelledby="work-title">
+    <svg class="waves" viewBox="0 0 1400 800" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="2">
+      <path d="M-20 120C200 40 300 260 520 180S900 20 1120 140 1380 260 1440 200"/>
+      <path d="M-20 300C160 220 320 420 560 330S880 180 1100 320 1360 420 1440 380"/>
+      <path d="M-20 520C220 440 360 640 600 540S960 400 1180 520 1380 600 1440 560"/>
+      <path d="M-20 700C200 620 400 800 640 720S1000 600 1220 720 1400 780 1440 760"/>
+      <path d="M200 -20C260 200 140 400 240 820"/>
+      <path d="M1180 -20C1120 220 1240 420 1160 820"/>
+    </svg>
+    <span class="spark" style="--s:20px;left:6%;top:12%;color:#FFC61A"></span>
+    <span class="spark" style="--s:14px;right:12%;top:8%;color:#fff;--d:1s"></span>
+    <div class="wrap">
+      <header>
+        <div>
+          <p class="kicker" style="color:var(--yellow)"><span data-i18n="n1">Exemples</span></p>
+          <h2 class="h-serif rv" id="work-title"><span data-i18n="wh">Des démos faites avant le premier appel.</span></h2>
+        </div>
+        <p class="rv"><span data-i18n="wi">Telle est ma méthode : je construis d'abord, je présente ensuite. Les six sites ci-dessous sont des concepts complets pour des commerces fictifs, chacun avec son propre style. Cliquez et parcourez-les, de préférence sur votre téléphone.</span></p>
+        <div class="rail-ctrl">
+          <button type="button" id="rail-prev" aria-label="Démo précédente" data-i18n-aria="al_prev">←</button>
+          <button type="button" id="rail-next" aria-label="Démo suivante" data-i18n-aria="al_next">→</button>
+        </div>
+      </header>
+      <div class="rail" id="rail" tabindex="0" aria-label="Six sites de démonstration, défilement horizontal" data-i18n-aria="al2">
+        <a class="case" href="../demos/dakwerken-hendrickx/index.html" target="_blank" rel="noopener" data-track="demo_dakwerken" style="--c:var(--yellow)">
+          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>dakwerken-hendrickx</span></div><img src="img/demo-dakwerken-hendrickx.jpg" alt="" width="960" height="600" loading="lazy"></div>
+          <div class="case__meta"><strong>Dakwerken Hendrickx</strong><small>Lier</small></div>
+          <div class="case__tags"><span class="chip"><span data-i18n="c1">Couvreur</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
+        </a>
+        <a class="case" href="../demos/barbier-marcel/index.html" target="_blank" rel="noopener" data-track="demo_barbier" style="--c:var(--red)">
+          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>barbier-marcel</span></div><img src="img/demo-barbier-marcel.jpg" alt="" width="960" height="600" loading="lazy"></div>
+          <div class="case__meta"><strong>Barbier Marcel</strong><small>Mechelen</small></div>
+          <div class="case__tags"><span class="chip"><span data-i18n="c2">Barbier</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
+        </a>
+        <a class="case" href="../demos/broodjesbar-bo/index.html" target="_blank" rel="noopener" data-track="demo_broodjesbar" style="--c:var(--pink)">
+          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>broodjesbar-bo</span></div><img src="img/demo-broodjesbar-bo.jpg" alt="" width="960" height="600" loading="lazy"></div>
+          <div class="case__meta"><strong>Broodjesbar Bo</strong><small>Turnhout</small></div>
+          <div class="case__tags"><span class="chip"><span data-i18n="c3">Bar à sandwichs</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
+        </a>
+        <a class="case" href="../demos/groenwerk-dewitte/index.html" target="_blank" rel="noopener" data-track="demo_groenwerk" style="--c:var(--green)">
+          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>groenwerk-dewitte</span></div><img src="img/demo-groenwerk-dewitte.jpg" alt="" width="960" height="600" loading="lazy"></div>
+          <div class="case__meta"><strong>Groenwerk De Witte</strong><small>Heist-op-den-Berg</small></div>
+          <div class="case__tags"><span class="chip"><span data-i18n="c4">Jardins</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
+        </a>
+        <a class="case" href="../demos/velo-atelier-leuven/index.html" target="_blank" rel="noopener" data-track="demo_velo" style="--c:var(--cobalt)">
+          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>velo-atelier-leuven</span></div><img src="img/demo-velo-atelier-leuven.jpg" alt="" width="960" height="600" loading="lazy"></div>
+          <div class="case__meta"><strong>Vélo Atelier Leuven</strong><small>Leuven</small></div>
+          <div class="case__tags"><span class="chip"><span data-i18n="c5">Vélos</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
+        </a>
+        <a class="case" href="../demos/atelier-nova/index.html" target="_blank" rel="noopener" data-track="demo_atelier" style="--c:var(--orange)">
+          <div class="bw"><div class="bw__bar"><span class="dots3"><i></i><i></i><i></i></span><span>atelier-nova</span></div><img src="img/demo-atelier-nova.jpg" alt="" width="960" height="600" loading="lazy"></div>
+          <div class="case__meta"><strong>Atelier Nova</strong><small>Gent</small></div>
+          <div class="case__tags"><span class="chip"><span data-i18n="c6">Atelier d'art</span></span><span class="chip"><span data-i18n="cpt">Concept</span></span><span class="go"><span data-i18n="go">Voir la démo →</span></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="band band--blue" aria-hidden="true">
+    <div class="band__track">
+      <span><span data-i18n="r1">Démo gratuite avant de signer</span></span><span><span data-i18n="r2">Trouvable sur Google</span></span><span><span data-i18n="r3">Rapide sur mobile</span></span><span><span data-i18n="r4">Hébergé en Europe</span></span>
+      <span><span data-i18n="r1">Démo gratuite avant de signer</span></span><span><span data-i18n="r2">Trouvable sur Google</span></span><span><span data-i18n="r3">Rapide sur mobile</span></span><span><span data-i18n="r4">Hébergé en Europe</span></span>
+    </div>
+  </div>
+
+  <section class="offers sec" id="offres" aria-labelledby="offers-title">
+    <span class="spark" style="--s:22px;left:4%;top:9%;color:#fff"></span>
+    <span class="spark" style="--s:16px;right:8%;top:16%;color:#fff;--d:.9s"></span>
+    <span class="spark" style="--s:12px;right:30%;top:6%;color:#FFC61A;--d:1.6s"></span>
+    <div class="wrap">
+      <div class="iso">
+        <div>
+          <p class="kicker" style="color:var(--white)"><span data-i18n="n2">Offres</span></p>
+          <h2 class="h-sans rv" id="offers-title"><span data-i18n="oh">Trois formules.<br><span>Des prix transparents.</span></span></h2>
+          <p class="offers__note rv"><span data-i18n="on">Prix fixes, communiqués avant de commencer. Montants hors TVA. Aucun paiement avant d'avoir vu la démo : vous réglez à la mise en ligne.</span></p>
+        </div>
+        <figure class="rv" aria-hidden="true">
+          <svg viewBox="0 -40 600 360" stroke="#121212" stroke-width="4" stroke-linejoin="round">
+            <ellipse cx="300" cy="290" rx="290" ry="26" fill="#121212" opacity=".25" stroke="none"/>
+            <path d="M52 175L130 220L130 280L52 235Z" fill="#E0A800"/><path d="M130 220L208 175L208 235L130 280Z" fill="#FFC61A"/><path d="M52 175L130 130L208 175L130 220Z" fill="#FFE07A"/>
+            <path d="M222 105L300 150L300 280L222 235Z" fill="#CFCFC7"/><path d="M300 150L378 105L378 235L300 280Z" fill="#ECEBE4"/><path d="M222 105L300 60L378 105L300 150Z" fill="#fff"/>
+            <path d="M392 35L470 80L470 280L392 235Z" fill="#142BA8"/><path d="M470 80L548 35L548 235L470 280Z" fill="#1E3BDB"/><path d="M392 35L470 -10L548 35L470 80Z" fill="#6E86FF"/>
+            <path d="M318 170L360 146M318 192L360 168M318 214L360 190" stroke-width="3"/>
+            <path d="M488 100L530 76M488 124L530 100M488 148L530 124M488 172L530 148M488 196L530 172" stroke="#8EB0FF" stroke-width="3"/>
+            <circle cx="130" cy="175" r="10" fill="#E6402A"/>
+          </svg>
+          <figcaption class="iso__labels"><span><span data-i18n="l1">1 page</span></span><span><span data-i18n="l4">jusqu'à 6 pages</span></span><span><span data-i18n="l8">e-shop</span></span></figcaption>
+        </figure>
+      </div>
+      <div class="menu">
+        <article class="offer rv">
+          <div class="win__bar"><span class="dots3"><i></i><i></i><i></i></span><span>01</span></div>
+          <div class="body">
+            <h3><span data-i18n="o1">Une page</span></h3>
+            <ul><li><span data-i18n="l1">1 page</span></li><li><span data-i18n="l12">horaires, carte ou services</span></li><li><span data-i18n="l13">bouton d'appel</span></li><li>Google Maps</li><li><span data-i18n="l2">formulaire de contact</span></li><li><span data-i18n="l3">en ligne en 48 h</span></li></ul>
+            <p class="price">490 €<small><span data-i18n="htva">HTVA</span></small></p>
+          </div>
+        </article>
+        <article class="offer offer--star rv">
+          <div class="win__bar"><span class="dots3"><i></i><i></i><i></i></span><span>02</span></div>
+          <span class="tag"><span data-i18n="tag">La plus choisie</span></span>
+          <div class="body">
+            <h3><span data-i18n="o2">Vitrine</span></h3>
+            <ul><li><span data-i18n="l4">jusqu'à 6 pages</span></li><li><span data-i18n="l5">textes rédigés</span></li><li>NL + FR</li><li><span data-i18n="l14">formulaire de devis</span></li><li><span data-i18n="l6">fiche Google optimisée</span></li><li><span data-i18n="l15">1 h de photos chez vous</span></li><li><span data-i18n="l7">en ligne en 48 h</span></li></ul>
+            <p class="price">1 490 €<small><span data-i18n="htva">HTVA</span></small></p>
+          </div>
+        </article>
+        <article class="offer rv">
+          <div class="win__bar"><span class="dots3"><i></i><i></i><i></i></span><span>03</span></div>
+          <div class="body">
+            <h3><span data-i18n="o3">Boutique</span></h3>
+            <ul><li><span data-i18n="l8">e-shop</span></li><li><span data-i18n="l9">paiement Bancontact</span></li><li><span data-i18n="l10">gestion des stocks</span></li><li><span data-i18n="l11">formation incluse</span></li><li><span data-i18n="l16">2 à 3 semaines</span></li></ul>
+            <p class="price"><span class="from"><span data-i18n="from">dès</span></span> 2 900 €<small><span data-i18n="htva">HTVA</span></small></p>
+          </div>
+        </article>
+      </div>
+      <div class="maints">
+        <p class="maint rv"><strong><span data-i18n="m1">19 €/mois</span></strong><em><span data-i18n="m1t">Le site en fonctionnement</span></em><span data-i18n="m2">Nom de domaine .be, hébergement, adresse e-mail professionnelle et formulaire de contact relayé vers votre boîte de réception. Sans engagement.</span></p>
+        <p class="maint rv"><strong><span data-i18n="m3">39 €/mois</span></strong><em><span data-i18n="m3t">Je gère tout pour vous</span></em><span data-i18n="m4">Tout ce qui précède, plus modifications illimitées par WhatsApp, fiche Google et avis tenus à jour. Sans engagement.</span></p>
+      </div>
+      <div class="stickers">
+        <p class="fix rv"><b><span data-i18n="fx1">Site cassé ?</span></b><span data-i18n="fx2">Site hors ligne, obsolète (Joomla de 2012) ou sous-domaine « new. » resté en suspens ? Je récupère vos textes et vos photos et remets l'ensemble en ligne en 48 heures. <strong>Dès 490 €.</strong></span></p>
+        <p class="fix rv"><b><span data-i18n="pr1">Parrainage</span></b><span data-i18n="pr2">Vous me recommandez un confrère ou un voisin qui signe ? <strong>100 € de remise</strong> pour vous deux.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="method sec" id="methode" aria-labelledby="method-title">
+    <div class="wrap">
+      <p class="kicker" style="color:var(--yellow)"><span data-i18n="n3">Méthode</span></p>
+      <h2 class="rv" id="method-title"><span data-i18n="mh">De la démo à la mise en ligne, en 48 heures.</span></h2>
+      <div class="method__grid">
+        <div class="phone rv">
+          <svg viewBox="0 0 240 480" aria-hidden="true" stroke="#121212" stroke-width="5" stroke-linejoin="round">
+            <path d="M40 60C40 25 70 10 120 10C170 10 200 25 200 60L206 250C208 270 196 280 196 300L200 430C200 455 180 470 120 470C60 470 40 455 40 430L44 300C44 280 32 270 34 250Z" fill="#C9CED9"/>
+            <path d="M58 70C58 56 70 50 120 50C170 50 182 56 182 70V196C182 206 176 212 166 212H74C64 212 58 206 58 196Z" fill="#2C3570"/>
+            <rect x="72" y="86" width="96" height="88" rx="6" fill="#B7CB8A" stroke-width="4"/>
+            <text x="120" y="76" text-anchor="middle" font-family="Silkscreen,monospace" font-size="10" fill="#C9CED9" stroke="none">KADE</text>
+            <ellipse cx="120" cy="236" rx="54" ry="20" fill="#1E3BDB"/>
+            <path d="M96 236H144" stroke="#8EB0FF" stroke-width="4" stroke-linecap="round"/>
+            <path d="M58 226C62 214 74 210 80 216M182 226C178 214 166 210 160 216" stroke-width="4"/>
+            <g fill="#ECEFF5" stroke-width="3.5">
+              <rect x="64" y="282" width="32" height="20" rx="9"/><rect x="104" y="286" width="32" height="20" rx="9"/><rect x="144" y="282" width="32" height="20" rx="9"/>
+              <rect x="64" y="314" width="32" height="20" rx="9"/><rect x="104" y="318" width="32" height="20" rx="9"/><rect x="144" y="314" width="32" height="20" rx="9"/>
+              <rect x="64" y="346" width="32" height="20" rx="9"/><rect x="104" y="350" width="32" height="20" rx="9"/><rect x="144" y="346" width="32" height="20" rx="9"/>
+              <rect x="64" y="378" width="32" height="20" rx="9"/><rect x="104" y="382" width="32" height="20" rx="9"/><rect x="144" y="378" width="32" height="20" rx="9"/>
+            </g>
+            <path d="M100 440H140" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <div class="lcd" aria-live="polite">
+            <div class="lcd__top"><span class="lcd__bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="lcd-of">1/4</span></div>
+            <div class="lcd__num" id="lcd-num">01</div>
+            <div class="lcd__when" id="lcd-when"></div>
+          </div>
+          <button class="phone__next" id="phone-next" type="button" aria-label="Étape suivante" data-i18n-aria="al_step"></button>
+        </div>
+        <ol class="steps" id="steps">
+          <li class="step rv"><button type="button" aria-current="step"><h3><span data-i18n="s1">Je réalise la démo</span></h3><span class="when"><span data-i18n="d1">Avant l'entretien</span></span><p><span data-i18n="s1p">À partir des informations déjà publiques sur votre activité : fiche Google, Facebook, avis. Vous n'avez rien à fournir et rien à payer.</span></p></button></li>
+          <li class="step rv"><button type="button"><h3><span data-i18n="s2">Nous échangeons</span></h3><span class="when"><span data-i18n="wk1">Jour 1</span></span><p><span data-i18n="s2p">30 minutes par téléphone ou chez vous. Je présente la démo sur mon téléphone ; vous m'indiquez ce qui vous convient et ce qui doit évoluer.</span></p></button></li>
+          <li class="step rv"><button type="button"><h3><span data-i18n="s3">J'ajuste et je mets en ligne</span></h3><span class="when"><span data-i18n="wk2">Jour 2</span></span><p><span data-i18n="s3p">Vos photos, vos textes corrigés, le nom de domaine et l'adresse e-mail professionnelle. Mise en ligne et mise à jour de votre fiche Google.</span></p></button></li>
+          <li class="step rv"><button type="button"><h3><span data-i18n="s4">Je reste à vos côtés</span></h3><span class="when"><span data-i18n="wk3">Ensuite</span></span><p><span data-i18n="s4p">Un horaire qui change, une nouvelle photo de chantier ? Un message WhatsApp suffit. Vous n'avez jamais à intervenir vous-même sur le site.</span></p></button></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq sec" aria-labelledby="faq-title">
+    <div class="wrap faq__grid">
+      <div class="faq__art" aria-hidden="true">
+        <div class="ball">
+          <svg viewBox="0 0 360 440" stroke="#121212" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+            <defs><radialGradient id="glass" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#F1EEF6"/><stop offset="1" stop-color="#C9C6D6"/></radialGradient></defs>
+            <path d="M118 440L132 360H228L242 440Z" fill="#1E3BDB"/>
+            <path d="M126 370H234" stroke="#8EB0FF" stroke-width="4"/>
+            <path d="M80 300C70 344 114 382 180 382C246 382 290 344 280 300C252 324 108 324 80 300Z" fill="#FFB23F"/>
+            <circle cx="180" cy="176" r="146" fill="url(#glass)"/>
+            <path d="M84 120C104 76 150 52 196 54" fill="none" stroke="#fff" stroke-width="12"/>
+            <path d="M84 120C104 76 150 52 196 54" fill="none"/>
+            <g fill="#FFB23F">
+              <path d="M70 300C58 270 72 250 92 262C104 270 106 292 100 312Z"/>
+              <path d="M104 318C96 284 112 266 130 276C142 284 142 306 136 324Z"/>
+              <path d="M226 324C220 306 220 284 232 276C250 266 266 284 258 318Z"/>
+              <path d="M262 312C256 292 258 270 270 262C290 250 302 270 290 300Z"/>
+            </g>
+            <path d="M84 276L90 286M118 290L122 300M240 290L238 300M276 276L272 286" stroke-width="3"/>
+          </svg>
+          <p class="ball__word"><span data-i18n="ball">et si…?</span></p>
+          <span class="spark" style="--s:24px;left:0;top:6%;color:#fff"></span>
+          <span class="spark" style="--s:16px;right:4%;top:2%;color:#1E3BDB;--d:.7s"></span>
+          <span class="spark" style="--s:12px;right:0;top:42%;color:#fff;--d:1.3s"></span>
+        </div>
+      </div>
+      <div>
+        <h2 class="h-sans rv" id="faq-title"><span data-i18n="fh">Vos questions.</span></h2>
+        <details open><summary><span data-i18n="q1">Pourquoi la démo est-elle gratuite ?</span></summary><p><span data-i18n="a1">Parce que c'est ma façon de me présenter. Je prépare une première version de votre site à partir des informations publiques de votre activité, avant tout entretien. Si elle vous convient, nous l'ajustons et elle est en ligne en 48 heures. Sinon, vous ne me devez rien.</span></p></details>
+        <details><summary><span data-i18n="q2">48 heures, vraiment ?</span></summary><p><span data-i18n="a2">Oui, pour les formules Une page et Vitrine. La démo existe déjà lors de notre entretien : il reste à corriger les textes, intégrer vos photos et connecter le nom de domaine. La Boutique demande 2 à 3 semaines.</span></p></details>
+        <details><summary><span data-i18n="q3">Dois-je rédiger les textes moi-même ?</span></summary><p><span data-i18n="a3">Non. Je rédige les textes à partir de vos explications. Vous relisez et corrigez à votre guise.</span></p></details>
+        <details><summary><span data-i18n="q4">Mon site peut-il être en néerlandais et en français ?</span></summary><p><span data-i18n="a4">Oui. La deuxième langue est incluse dans la formule Vitrine. Pour l'anglais ou l'allemand, nous en discutons lors du devis.</span></p></details>
+        <details><summary><span data-i18n="q5">Je n'ai ni logo ni photos.</span></summary><p><span data-i18n="a5">Aucun problème. Avec la formule Vitrine, je consacre une heure à photographier votre activité, chez vous ou sur chantier. Je peux aussi créer un logo simple.</span></p></details>
+        <details><summary><span data-i18n="q6">Et si je souhaite modifier quelque chose plus tard ?</span></summary><p><span data-i18n="a6">Avec la formule à 39 €/mois, vous m'écrivez sur WhatsApp et la modification est faite dans la semaine, sans limite. Avec celle à 19 €/mois, les modifications sont facturées à l'heure.</span></p></details>
+        <details><summary><span data-i18n="q7">Y a-t-il des frais cachés ?</span></summary><p><span data-i18n="a7">Non. Le prix du devis est le prix final. Seul l'abonnement mensuel est récurrent, sans engagement : vous pouvez l'arrêter à tout moment et le site vous appartient.</span></p></details>
+        <details><summary><span data-i18n="q8">Pourquoi êtes-vous moins cher qu'une agence ?</span></summary><p><span data-i18n="a8">Pas de bureaux, pas de service commercial, pas de réunions interminables. Une seule personne s'occupe de tout, du premier entretien à la mise en ligne. Je suis de Westerlo : dans les Kempen, je passe vous voir. Vous êtes ailleurs en Belgique ? On travaille à distance, en néerlandais ou en français.</span></p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact sec paper" id="contact" aria-labelledby="contact-title" style="background-color:var(--green)">
+    <div class="wrap contact__grid">
+      <div>
+        <p class="kicker" style="color:var(--cobalt)"><span data-i18n="cta">Demander ma démo gratuite</span></p>
+        <h2 class="h-serif rv" id="contact-title"><span data-i18n="ch">Votre démo gratuite.</span></h2>
+        <ul class="assure">
+          <li><span data-i18n="as1">Démo gratuite, avant tout engagement</span></li>
+          <li><span data-i18n="as2">Prix fixe, communiqué avant de commencer</span></li>
+          <li><span data-i18n="as3">En ligne en 48 h, un seul interlocuteur</span></li>
+        </ul>
+        <div class="contact__mail">
+          <span class="mail" id="mail">hello@kadestudio.be</span>
+          <button class="btn" type="button" id="copy"><span data-i18n="copy">Copier l'adresse</span></button>
+        </div>
+      </div>
+      <div class="formwrap">
+        <svg class="peek" viewBox="0 0 300 130" aria-hidden="true" stroke="#121212" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M30 132C30 50 86 6 150 6C214 6 270 50 270 132Z" fill="#1E3BDB"/>
+          <path d="M70 60C84 40 104 30 124 28" stroke="#8EB0FF" stroke-width="5" fill="none"/>
+          <g class="blink"><circle cx="112" cy="74" r="26" fill="#fff"/><g class="pupil" data-r="10"><circle cx="112" cy="74" r="9" fill="#121212" stroke="none"/></g></g>
+          <g class="blink blink--late"><circle cx="188" cy="74" r="26" fill="#fff"/><g class="pupil" data-r="10"><circle cx="188" cy="74" r="9" fill="#121212" stroke="none"/></g></g>
+          <path d="M60 128C50 110 66 98 84 106C96 112 98 124 96 134" fill="#F5A88A"/>
+          <path d="M240 128C250 110 234 98 216 106C204 112 202 124 204 134" fill="#F5A88A"/>
+          <path d="M70 116V128M82 112V128M230 116V128M218 112V128" stroke-width="3"/>
+        </svg>
+        <!-- Envoi du formulaire: collez ici l'URL de votre service (Formspree, Web3Forms, Netlify...).
+             Vide = le logiciel mail du visiteur s'ouvre avec la demande pré-remplie. -->
+        <form class="form" id="quote" novalidate method="post" data-endpoint="">
+          <div class="win__bar"><span class="dots3"><i></i><i></i><i></i></span><span>hello@kadestudio.be</span></div>
+          <div class="body">
+            <p class="form__top"><span data-i18n="ft">Réponse sous 24 heures ouvrables</span></p>
+            <h3><span data-i18n="cta">Demander ma démo gratuite</span></h3>
+            <div class="two">
+              <div class="field">
+                <label for="f-name"><span data-i18n="fn">Votre nom</span></label>
+                <input id="f-name" name="name" autocomplete="name" placeholder="Prénom et nom" data-i18n-ph="ph1" required>
+                <span class="err" id="e-name"></span>
+              </div>
+              <div class="field">
+                <label for="f-mail"><span data-i18n="fm">Votre e-mail</span></label>
+                <input id="f-mail" name="email" type="email" autocomplete="email" placeholder="vous@exemple.be" data-i18n-ph="ph2" required>
+                <span class="err" id="e-mail"></span>
+              </div>
+            </div>
+            <div class="two">
+              <div class="field">
+                <label for="f-tel"><span data-i18n="fphone">Téléphone (optionnel)</span></label>
+                <input id="f-tel" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0470 12 34 56" data-i18n-ph="ph4">
+              </div>
+              <div class="field">
+                <label for="f-type"><span data-i18n="fa">Votre activité</span></label>
+                <select id="f-type" name="type">
+                  <option value="Commerce" data-i18n="op0">Commerce</option><option value="Salon ou institut" data-i18n="op1">Salon ou institut</option><option value="Artisan" data-i18n="op2">Couvreur, électricien, jardinier...</option><option value="Horeca" data-i18n="op3">Resto, café ou friterie</option><option value="Autre" data-i18n="op4">Autre</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-msg"><span data-i18n="fp">Votre projet, en deux lignes</span></label>
+              <textarea id="f-msg" name="message" placeholder="J'ai une friterie à Namur et pas encore de site." data-i18n-ph="ph3"></textarea>
+            </div>
+            <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+            <button class="btn btn--blue" type="submit" id="send"><span data-i18n="cta">Demander ma démo gratuite</span></button>
+            <p class="privacy"><span data-i18n="priv">Vos données servent uniquement à répondre à votre demande. Elles ne sont ni revendues ni utilisées à des fins publicitaires.</span></p>
+            <p class="done" id="done" role="status" hidden></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__mark" aria-hidden="true">KADE <em>studio</em></p>
+    <div class="foot__in">
+      <span><span data-i18n="f1">Sites web pour commerces et artisans, Westerlo, Kempen et ailleurs en Belgique</span></span>
+      <span><span data-i18n="f2">N° d'entreprise BE 0XXX.XXX.XXX</span></span>
+      <a href="mailto:hello@kadestudio.be">hello@kadestudio.be</a>
+      <span>© 2026 Kade Studio</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Intro: une fois par session, passable, absente avec "réduire les animations". */
+(function(){
+  var el=document.getElementById('intro'),skip=document.getElementById('intro-skip'),root=document.documentElement;
+  if(!el)return;
+  if(!root.classList.contains('intro-on')){el.remove();skip.remove();return;}
+  try{sessionStorage.setItem('kade_intro_v2','1')}catch(e){}
+  skip.hidden=false;
+  var done=false;
+  function end(){if(done)return;done=true;el.classList.add('intro--done');root.classList.remove('intro-on');skip.remove();setTimeout(function(){el.remove()},350)}
+  skip.addEventListener('click',function(){window.dataLayer&&window.dataLayer.push({event:'intro_skip'});end()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')end()});
+  setTimeout(end,3150);
+})();
+
+/* Illustrations: les yeux suivent le pointeur (ou flânent tout seuls sur mobile). */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pupils=[].slice.call(document.querySelectorAll('.pupil'));
+  if(!pupils.length)return;
+  var target=null,raf=0,last=Date.now();
+  function look(px,py){
+    pupils.forEach(function(p){
+      var svg=p.ownerSVGElement,eye=p.firstElementChild,r=+p.dataset.r||10;
+      var b=eye.getBoundingClientRect();if(!b.width)return;
+      var scale=svg.getBoundingClientRect().width/svg.viewBox.baseVal.width;
+      var cx=b.left+b.width/2,cy=b.top+b.height/2,dx=px-cx,dy=py-cy,d=Math.hypot(dx,dy)||1;
+      var k=Math.min(1,d/(220*scale+120));
+      p.setAttribute('transform','translate('+(dx/d*r*k).toFixed(1)+' '+(dy/d*r*k).toFixed(1)+')');
+    });
+  }
+  function frame(){raf=0;if(target)look(target[0],target[1])}
+  addEventListener('pointermove',function(e){target=[e.clientX,e.clientY];last=Date.now();if(!raf)raf=requestAnimationFrame(frame)},{passive:true});
+  document.addEventListener('focusin',function(e){var b=e.target.getBoundingClientRect();target=[b.left+b.width/2,b.top+b.height/2];last=Date.now();if(!raf)raf=requestAnimationFrame(frame)});
+  if(!reduce){
+    setInterval(function(){
+      if(Date.now()-last<2500)return;
+      target=[innerWidth*Math.random(),innerHeight*(.2+Math.random()*.7)];
+      if(!raf)raf=requestAnimationFrame(frame);
+    },1800);
+  }
+})();
+
+/* Rail des démos: flèches et glisser à la souris. */
+(function(){
+  var rail=document.getElementById('rail');if(!rail)return;
+  function step(){var c=rail.querySelector('.case');return c?c.getBoundingClientRect().width+22:400}
+  document.getElementById('rail-prev').addEventListener('click',function(){rail.scrollBy({left:-step(),behavior:'smooth'})});
+  document.getElementById('rail-next').addEventListener('click',function(){rail.scrollBy({left:step(),behavior:'smooth'})});
+  var down=false,sx=0,sl=0,moved=0;
+  rail.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=0;sx=e.clientX;sl=rail.scrollLeft});
+  addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;moved=Math.max(moved,Math.abs(dx));if(moved>6)rail.classList.add('drag');rail.scrollLeft=sl-dx});
+  addEventListener('pointerup',function(){if(!down)return;down=false;setTimeout(function(){rail.classList.remove('drag')},0)});
+  rail.addEventListener('click',function(e){if(moved>6){e.preventDefault();moved=0}},true);
+})();
+
+/* Méthode: l'écran du téléphone suit l'étape active, défilement auto jusqu'au premier clic. */
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('#steps button'));if(!btns.length)return;
+  var num=document.getElementById('lcd-num'),of=document.getElementById('lcd-of'),when=document.getElementById('lcd-when');
+  var i=0,auto=!matchMedia('(prefers-reduced-motion: reduce)').matches,timer=0,visible=false;
+  function set(n){
+    i=(n+btns.length)%btns.length;
+    btns.forEach(function(b,k){if(k===i)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
+    num.textContent='0'+(i+1);of.textContent=(i+1)+'/'+btns.length;
+    when.textContent=btns[i].querySelector('.when').textContent;
+  }
+  function stop(){auto=false;clearInterval(timer)}
+  btns.forEach(function(b,k){b.addEventListener('click',function(){stop();set(k)})});
+  document.getElementById('phone-next').addEventListener('click',function(){stop();set(i+1)});
+  set(0);
+  if(auto&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){visible=es[0].isIntersecting}).observe(document.getElementById('methode'));
+    timer=setInterval(function(){if(auto&&visible)set(i+1)},3200);
+  }
+})();
+
+/* Apparition au défilement. Sans IntersectionObserver, tout reste visible. */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  function all(){els.forEach(function(e){e.classList.add('in')})}
+  if(!('IntersectionObserver' in window)){all();return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(e){io.observe(e)});
+  setTimeout(all,7000);
+})();
+
+/* Formulaire, copie de l'adresse, mesures et choix de langue (repris de la v1). */
+(function(){
+  var STR={fr:{"js_name": "Indiquez votre nom pour que je sache à qui répondre.", "js_mail": "Cette adresse email semble incomplète.", "js_copied": "Adresse copiée", "js_ok": "Merci {n}, votre demande est envoyée. Je vous réponds sous 24 h ouvrables.", "js_err": "L'envoi n'a pas fonctionné. Écrivez-moi à hello@kadestudio.be, je vous réponds au plus vite.", "js_mailto": "Votre logiciel mail s'ouvre avec la demande prête. Cliquez sur envoyer. Rien ne s'ouvre? Écrivez à hello@kadestudio.be.", "js_sending": "Envoi...", "js_subject": "Demande de démo via kadestudio.be", "cta": "Demander ma démo gratuite", "copy": "Copier l'adresse"},
+    nl:{"js_name": "Vul uw naam in, zodat ik weet wie ik moet antwoorden.", "js_mail": "Dit e-mailadres lijkt onvolledig.", "js_copied": "Adres gekopieerd", "js_ok": "Bedankt {n}, uw aanvraag is verstuurd. U krijgt antwoord binnen 24 werkuren.", "js_err": "Het versturen is niet gelukt. Mail uw aanvraag naar hello@kadestudio.be, dan antwoord ik zo snel mogelijk.", "js_mailto": "Uw mailprogramma opent met de aanvraag klaar. Klik daar op versturen. Opent er niets? Mail naar hello@kadestudio.be.", "js_sending": "Versturen...", "js_subject": "Demo-aanvraag via kadestudio.be", "cta": "Mijn gratis demo aanvragen", "copy": "Kopieer het adres"}};
+  var lang=/^nl/i.test(document.documentElement.lang)?'nl':'fr';
+  function t(k){return STR[lang][k]}
+  window.dataLayer=window.dataLayer||[];
+  function track(ev,data){var o={event:ev};for(var k in data)o[k]=data[k];window.dataLayer.push(o);if(window.plausible)window.plausible(ev,{props:data})}
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a)track('cta_click',{id:a.dataset.track,lang:lang,v:2})});
+  function store(l){try{localStorage.setItem('kade-lang',l)}catch(e){}}
+  document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){store(a.dataset.lang);track('lang_switch',{lang:a.dataset.lang})})});
+  var pref='';try{pref=localStorage.getItem('kade-lang')||''}catch(e){}
+  var nlLink=document.querySelector('.lang a[data-lang="nl"]');
+  var bot=/bot|crawl|spider|slurp|preview|lighthouse/i.test(navigator.userAgent);
+  if(lang==='fr'&&!bot&&(location.hash==='#nl'||(!pref&&/^nl/i.test(navigator.language||'')))){location.replace(nlLink.href+location.search)}
+  var form=document.getElementById('quote');
+  var mailRe=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var sendBtn=document.getElementById('send');
+  function show(msg,err){var d=document.getElementById('done');d.textContent=msg;d.classList.toggle('done--err',!!err);d.hidden=false}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=form.elements.name,m=form.elements.email;
+    var okN=!!n.value.trim(),okM=mailRe.test(m.value.trim());
+    document.getElementById('e-name').textContent=okN?'':t('js_name');
+    document.getElementById('e-mail').textContent=okM?'':t('js_mail');
+    if(!okN){n.focus();return}
+    if(!okM){m.focus();return}
+    if(form.elements.website.value)return;
+    var first=n.value.trim().split(' ')[0];
+    var data={name:n.value.trim(),email:m.value.trim(),phone:form.elements.phone.value.trim(),type:form.elements.type.value,message:form.elements.message.value.trim(),lang:lang};
+    var endpoint=form.dataset.endpoint;
+    if(!endpoint){
+      var body=[data.message,'',data.name,data.email,data.phone,data.type].filter(function(x,i){return x||i===1}).join('\n');
+      location.href='mailto:hello@kadestudio.be?subject='+encodeURIComponent(t('js_subject'))+'&body='+encodeURIComponent(body);
+      show(t('js_mailto'));track('lead_mailto',{type:data.type,lang:lang});return;
+    }
+    var label=sendBtn.innerHTML;sendBtn.disabled=true;sendBtn.textContent=t('js_sending');
+    fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){if(!r.ok)throw new Error(r.status);form.reset();show(t('js_ok').replace('{n}',first));track('lead_submit',{type:data.type,lang:lang})})
+      .catch(function(){show(t('js_err'),true);track('lead_error',{lang:lang})})
+      .then(function(){sendBtn.disabled=false;sendBtn.innerHTML=label;sendBtn.querySelector('[data-i18n]').innerHTML=t('cta')});
+  });
+  var c=document.getElementById('copy');
+  c.addEventListener('click',function(){
+    var t0=document.getElementById('mail').textContent;
+    var done=function(){var s=c.querySelector('[data-i18n]');s.textContent=t('js_copied');setTimeout(function(){s.innerHTML=t('copy')},2000)};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t0).then(done,fallback)}else{fallback()}
+  });
+})();
+</script>
+</body>
+</html>

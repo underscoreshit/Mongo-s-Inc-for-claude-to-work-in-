@@ -4,392 +4,1226 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Groenwerk De Witte | Tuinaanleg en tuinonderhoud in Heist-op-den-Berg</title>
-<meta name="description" content="Voorbeeldsite: tuinaannemer in Heist-op-den-Berg. Tuinaanleg, onderhoud, snoeiwerk, terrassen en opritten. Seizoenskalender, projecten en gratis offerte.">
+<title>Groenwerk De Witte | Tuinontwerp, aanleg en onderhoud in Heist-op-den-Berg</title>
+<meta name="description" content="Voorbeeldsite: tuinontwerp, tuinaanleg en onderhoud in Heist-op-den-Berg. Vier vaste hoveniers, seizoenskalender, projecten, onderhoudsformules en offerte.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#1f3d2b">
-<link rel="preload" href="fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#16291e">
+<link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/hero.jpg" as="image">
+<link rel="preload" href="img/hero.jpg" as="image" fetchpriority="high">
+<script>document.documentElement.classList.add('js')</script>
 <style>
-@font-face{font-family:"Schibsted";src:url(fonts/schibsted-grotesk-latin-wght-normal.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(fonts/fraunces-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(fonts/fraunces-latin-wght-italic.woff2) format("woff2");font-weight:100 900;font-style:italic;font-display:swap}
 @font-face{font-family:"Source Sans 3";src:url(fonts/source-sans-3-latin-wght-normal.woff2) format("woff2");font-weight:200 900;font-display:swap}
 @font-face{font-family:"Source Sans 3";src:url(fonts/source-sans-3-latin-wght-italic.woff2) format("woff2");font-weight:200 900;font-style:italic;font-display:swap}
 :root{
-  --forest:#1f3d2b;--forest-2:#162d20;--moss:#4f7a4a;--leaf:#7fae5e;--sage:#dfe7d6;--sage-2:#eef2e8;--cream:#f8f6f0;--clay:#c8743f;--clay-2:#a95c2c;
-  --ink:#1c2420;--text:#2f3a33;--muted:#64705f;--line:#d6ddd0;--white:#fff;
-  --f-head:"Schibsted",system-ui,sans-serif;--f-body:"Source Sans 3",system-ui,sans-serif;
-  --wrap:1160px;--gutter:clamp(1rem,4vw,2.5rem);--r:14px;--shadow:0 14px 36px rgba(31,61,43,.10);
+  --paper:#f5f2eb;--paper-2:#faf8f3;--stone:#e9e3d6;--stone-2:#ddd5c4;
+  --forest:#1f3a2b;--forest-2:#16291e;--forest-3:#0f1e15;--moss:#55704c;--sage:#a8b89a;--sage-2:#cdd8c1;
+  --clay:#a65f3b;--clay-2:#8e4e2f;--clay-ink:#8a4b2c;--ochre:#c79b55;
+  --ink:#18201b;--text:#38413a;--muted:#646b61;--line:rgba(31,58,43,.16);--line-2:rgba(31,58,43,.28);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1240px;--gutter:clamp(1.25rem,4.5vw,3rem);--hh:84px;
+  --sec:clamp(4.5rem,10vw,8.5rem);
+  --ease:cubic-bezier(.22,.61,.36,1);--r:6px;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--cream);color:var(--text);font-family:var(--f-body);font-size:1.1rem;line-height:1.55;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:1.0625rem;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit}
-h1,h2,h3{font-family:var(--f-head);font-weight:800;line-height:1.02;margin:0;color:var(--forest);letter-spacing:-.02em}
+button{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:380;line-height:1.04;margin:0;color:var(--forest);letter-spacing:-.022em}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:330}
 p{margin:0}
-em{font-style:italic}
+ul,ol{margin:0;padding:0;list-style:none}
 .wrap{width:min(var(--wrap),100% - 2*var(--gutter));margin-inline:auto}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:1rem;top:-4rem;background:var(--forest);color:#fff;padding:.6rem 1rem;z-index:100;font-weight:600;border-radius:8px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-5rem;background:var(--forest);color:#fff;padding:.7rem 1.1rem;z-index:200;font-weight:600;border-radius:var(--r)}
 .skip:focus{top:1rem}
-:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
-.kade{background:#74DB4B;color:#111;font-size:.8rem;text-align:center;padding:.4rem var(--gutter);display:flex;justify-content:center;gap:.5rem 1.2rem;flex-wrap:wrap}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+::selection{background:var(--sage-2);color:var(--forest-3)}
+
+.kade{position:relative;z-index:60;background:#74DB4B;color:#111;font-size:.8rem;line-height:1.4;text-align:center;padding:.45rem var(--gutter);display:flex;justify-content:center;gap:.3rem 1.2rem;flex-wrap:wrap}
 .kade a{color:inherit;font-weight:600}
 
-.nav{position:sticky;top:0;z-index:40;background:rgba(248,246,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.5rem}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
-.brand svg{width:40px;height:40px}
-.brand-name{font-family:var(--f-head);font-weight:800;font-size:1.35rem;color:var(--forest);line-height:1;letter-spacing:-.02em}
-.brand-name small{display:block;font-family:var(--f-body);font-weight:600;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
-.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.6rem}
-.nav li a{text-decoration:none;font-weight:600;font-size:1rem;color:var(--forest);padding:.4rem 0;border-bottom:2px solid transparent}
-.nav li a:hover{border-color:var(--leaf)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 1.5rem;border:2px solid var(--forest);border-radius:999px;background:var(--forest);color:#fff;font:600 1rem var(--f-body);text-decoration:none;cursor:pointer;transition:background .2s,transform .2s,color .2s}
-.btn:hover{background:var(--forest-2);transform:translateY(-1px)}
-.btn-clay{background:var(--clay);border-color:var(--clay)}
-.btn-clay:hover{background:var(--clay-2);border-color:var(--clay-2)}
-.btn-line{background:transparent;color:var(--forest)}
-.btn-line:hover{background:var(--sage)}
-.btn-white{background:#fff;color:var(--forest);border-color:#fff}
-.menubtn{display:none;background:none;border:1px solid var(--line);color:var(--forest);padding:.5rem .7rem;border-radius:999px;font:600 .9rem var(--f-body)}
+/* type helpers */
+.eyebrow{display:inline-flex;align-items:center;gap:.75rem;font:600 .74rem/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--clay-ink)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+.eyebrow.light{color:var(--sage-2)}
+.h2{font-size:clamp(2.35rem,4.8vw,4.1rem)}
+.lede{font-size:clamp(1.08rem,1.4vw,1.2rem);color:var(--muted);max-width:44ch}
+.note{font-size:.85rem;color:var(--muted)}
+.latin{font-family:var(--serif);font-style:italic;font-weight:360}
+
+/* buttons */
+.btn{--bg:var(--forest);--fg:#fff;--bd:var(--forest);display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.1rem;padding:.8rem 1.45rem;border:1px solid var(--bd);border-radius:999px;background:var(--bg);color:var(--fg);font:600 .98rem/1 var(--sans);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn:hover{--bg:var(--forest-2);--bd:var(--forest-2)}
+.btn:active{transform:translateY(1px)}
+.btn-clay{--bg:var(--clay);--bd:var(--clay)}
+.btn-clay:hover{--bg:var(--clay-2);--bd:var(--clay-2)}
+.btn-ghost{--bg:transparent;--fg:var(--forest);--bd:var(--line-2)}
+.btn-ghost:hover{--bg:var(--forest);--fg:#fff;--bd:var(--forest)}
+.btn-glass{--bg:rgba(255,255,255,.08);--fg:#fff;--bd:rgba(255,255,255,.55);backdrop-filter:blur(6px)}
+.btn-glass:hover{--bg:#fff;--fg:var(--forest);--bd:#fff}
+.btn-light{--bg:var(--paper);--fg:var(--forest);--bd:var(--paper)}
+.btn-light:hover{--bg:#fff;--bd:#fff}
+.btn-sm{min-height:2.6rem;padding:.6rem 1.1rem;font-size:.92rem}
+.link{display:inline-flex;align-items:center;gap:.45rem;font-weight:600;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:.15rem;transition:border-color .2s,gap .25s var(--ease)}
+.link:hover{border-color:var(--forest);gap:.7rem}
+.link svg{width:14px;height:14px}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;height:var(--hh);pointer-events:none}
+.bar{pointer-events:auto;height:var(--hh);transition:height .35s var(--ease),background .35s var(--ease),box-shadow .35s var(--ease),color .35s;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
+.bar .wrap{height:100%;display:flex;align-items:center;gap:2rem}
+.hdr.scrolled .bar{height:64px;background:rgba(245,242,235,.94);backdrop-filter:blur(12px) saturate(1.2);-webkit-backdrop-filter:blur(12px) saturate(1.2);color:var(--forest);border-bottom-color:var(--line);box-shadow:0 10px 30px -18px rgba(15,30,21,.35)}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit;margin-right:auto}
+.brand svg{width:38px;height:38px;flex:none;transition:width .35s var(--ease),height .35s var(--ease)}
+.hdr.scrolled .brand svg{width:32px;height:32px}
+.brand b{display:block;font:420 1.28rem/1 var(--serif);letter-spacing:-.01em}
+.brand small{display:block;margin-top:.3rem;font:600 .64rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.nav ul{display:flex;gap:1.9rem}
+.nav a{position:relative;text-decoration:none;font-weight:500;font-size:.98rem;padding:.4rem 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav a:hover::after,.nav a[aria-current="true"]::after{transform:scaleX(1);transform-origin:left}
+.hdr-tel{font-weight:600;font-size:.95rem;text-decoration:none;white-space:nowrap;opacity:.9}
+.hdr-tel:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.hdr .btn{min-height:2.75rem;padding:.6rem 1.2rem;font-size:.93rem}
+.menubtn{display:none;align-items:center;gap:.55rem;background:none;border:1px solid currentColor;border-radius:999px;padding:.5rem .95rem;font:600 .9rem var(--sans);cursor:pointer;color:inherit}
+.menubtn i{position:relative;display:block;width:16px;height:1.5px;background:currentColor}
+.menubtn i::before,.menubtn i::after{content:"";position:absolute;left:0;width:16px;height:1.5px;background:currentColor;transition:transform .3s var(--ease)}
+.menubtn i::before{top:-5px}.menubtn i::after{top:5px}
+
+/* mobile menu */
+.mnav{position:fixed;inset:0;z-index:70;background:var(--forest-2);color:var(--paper);display:flex;flex-direction:column;padding:1.1rem var(--gutter) calc(1.5rem + env(safe-area-inset-bottom));visibility:hidden;opacity:0;transition:opacity .35s var(--ease),visibility 0s .35s}
+.mnav.open{visibility:visible;opacity:1;transition:opacity .35s var(--ease)}
+.mnav-top{display:flex;justify-content:space-between;align-items:center;min-height:44px}
+.mnav-top span{font:600 .72rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--sage)}
+.mnav-close{background:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;color:#fff;padding:.5rem 1rem;font-weight:600;cursor:pointer}
+.mnav ul{margin-top:2rem;display:grid}
+.mnav li{border-bottom:1px solid rgba(255,255,255,.12)}
+.mnav li a{display:flex;justify-content:space-between;align-items:baseline;padding:1rem 0;font:380 2rem/1.1 var(--serif);text-decoration:none;color:#fff}
+.mnav li a small{font:500 .8rem var(--sans);color:var(--sage)}
+.mnav-foot{margin-top:auto;display:grid;gap:.7rem}
+.mnav-foot p{color:var(--sage-2);font-size:.92rem}
 
 /* hero */
-.hero{position:relative;color:#fff;isolation:isolate;min-height:min(88vh,800px);display:grid;align-items:end}
-.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(22,45,32,.5) 0%,rgba(22,45,32,.7) 40%,rgba(22,45,32,.92) 100%)}
-.hero .wrap{padding:clamp(4rem,10vw,8rem) 0 clamp(2.5rem,5vw,4rem);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:2rem;align-items:end}
-.hero h1{color:#fff;font-size:clamp(2.8rem,7vw,5.6rem)}
-.hero h1 em{font-family:var(--f-body);font-weight:400;font-style:italic;color:#cfe3b7}
-.hero .lead{margin-top:1.2rem;font-size:1.2rem;max-width:46ch;color:#e6eedf}
-.hero .ctas{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.8rem}
-.hero .facts{margin:0;padding:1.4rem 1.6rem;list-style:none;display:grid;gap:1rem;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:var(--r);justify-self:end;min-width:min(100%,280px)}
-.hero .facts b{display:block;font-family:var(--f-head);font-size:1.9rem;font-weight:800;line-height:1;color:#cfe3b7}
-.hero .facts span{font-size:.92rem;color:#e6eedf}
+.hero{position:relative;margin-top:calc(-1 * var(--hh));min-height:max(640px,min(100svh,980px));display:flex;align-items:flex-end;color:#fff;isolation:isolate;overflow:hidden;background:var(--forest-3)}
+.hero-media{position:absolute;inset:-6% 0 -6% 0;z-index:-2;will-change:transform}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(12,24,17,.55) 0%,rgba(12,24,17,0) 24%),
+  linear-gradient(90deg,rgba(12,24,17,.82) 0%,rgba(12,24,17,.58) 42%,rgba(12,24,17,.18) 78%),
+  linear-gradient(0deg,rgba(12,24,17,.9) 0%,rgba(12,24,17,.35) 45%,rgba(12,24,17,0) 70%)}
+.hero-in{width:100%;padding:calc(var(--hh) + 5rem) 0 clamp(2.5rem,5vw,4rem)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:3rem;align-items:end}
+.hero .eyebrow{color:var(--sage-2)}
+.hero h1{margin-top:1.4rem;color:#fff;font-size:clamp(3rem,7.2vw,6.6rem);font-weight:340;line-height:.98;letter-spacing:-.03em;max-width:13.5ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero h1 em{color:#e9d3b0;font-weight:300}
+.hero .lead{margin-top:1.6rem;font-size:clamp(1.1rem,1.5vw,1.25rem);line-height:1.55;color:#eef1ea;max-width:46ch;text-shadow:0 1px 14px rgba(0,0,0,.3)}
+.hero .ctas{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.now{position:relative;background:rgba(245,242,235,.1);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:10px;padding:1.35rem 1.4rem 1.3rem;color:#fff}
+.now-top{display:flex;align-items:center;gap:.6rem;font:600 .72rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--sage-2)}
+.now-top i{width:8px;height:8px;border-radius:50%;background:#9fd07a;box-shadow:0 0 0 0 rgba(159,208,122,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(159,208,122,.55)}70%{box-shadow:0 0 0 9px rgba(159,208,122,0)}100%{box-shadow:0 0 0 0 rgba(159,208,122,0)}}
+.now h2{margin-top:.7rem;color:#fff;font-size:1.65rem;font-weight:360}
+.now p{margin-top:.45rem;font-size:.98rem;line-height:1.5;color:#e6ebe2}
+.now a{margin-top:.9rem;display:inline-flex;gap:.4rem;align-items:center;font-weight:600;font-size:.92rem;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:.1rem}
+.now a:hover{border-color:#fff}
+.hero-foot{margin-top:clamp(2.5rem,5vw,4rem);padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;gap:1rem;font-size:.86rem;color:#d8dfd3;flex-wrap:wrap}
+.hero-foot span{display:inline-flex;align-items:center;gap:.5rem}
+.scrollcue{display:inline-flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none}
+.scrollcue i{position:relative;width:1px;height:26px;background:rgba(255,255,255,.35);overflow:hidden}
+.scrollcue i::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:#fff;animation:drop 2.2s var(--ease) infinite}
+@keyframes drop{to{top:100%}}
 
-section{padding:clamp(3rem,8vw,6.5rem) 0}
-.kicker{display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);margin-bottom:.7rem}
-.sec-head{max-width:60ch;margin-bottom:2.4rem}
-.sec-head h2{font-size:clamp(2.2rem,5vw,3.6rem)}
-.sec-head p{margin-top:.8rem;color:var(--muted);font-size:1.1rem}
+/* intro */
+.intro{padding:var(--sec) 0 calc(var(--sec)*.75);position:relative}
+.intro-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
+.intro-side{grid-column:1/4;display:grid;align-content:start;gap:1.5rem}
+.intro-side .sprig{width:92px;color:var(--moss);opacity:.8}
+.intro-text{grid-column:4/13}
+.intro-text p.big{font-family:var(--serif);font-weight:340;font-size:clamp(1.65rem,3.1vw,2.65rem);line-height:1.22;letter-spacing:-.015em;color:var(--forest)}
+.intro-text p.big em{color:var(--clay-ink)}
+.intro-text .sig{margin-top:1.6rem;display:flex;align-items:center;gap:1rem;color:var(--muted);font-size:.95rem}
+.intro-text .sig b{color:var(--forest);font-weight:600}
+.facts{margin-top:clamp(3rem,6vw,5rem);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+.facts li{padding:1.6rem 1.5rem 0 0}
+.facts li+li{padding-left:1.5rem;border-left:1px solid var(--line)}
+.facts b{display:block;font:330 clamp(2.4rem,4vw,3.4rem)/1 var(--serif);color:var(--forest);letter-spacing:-.02em}
+.facts b sup{font-size:.45em;vertical-align:top;position:relative;top:.35em;margin-left:.1em;color:var(--clay)}
+.facts span{display:block;margin-top:.6rem;font-size:.95rem;color:var(--muted)}
 
-/* services with photos */
-.svcs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem}
-.svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.svc img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.svc .body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
-.svc h3{font-size:1.35rem}
-.svc p{color:var(--muted);font-size:1rem;flex:1}
-.svc .from{font-weight:600;color:var(--forest);font-size:.95rem}
-.svc .from small{font-weight:400;color:var(--muted)}
+/* section heads */
+section{scroll-margin-top:60px}
+.shead{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem 2rem;align-items:end;margin-bottom:clamp(2.5rem,5vw,4.5rem)}
+.shead>div{grid-column:1/8}
+.shead h2{margin-top:1.1rem}
+.shead>p{grid-column:9/13}
 
-/* season calendar */
-.season{background:var(--sage-2);border-block:1px solid var(--line)}
-.season .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:3rem;align-items:start}
-.months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.5rem;margin-top:1.4rem}
-.months button{border:1px solid var(--line);background:#fff;color:var(--forest);border-radius:10px;padding:.7rem .3rem;font:600 .9rem var(--f-body);cursor:pointer;transition:background .15s}
-.months button:hover{background:var(--sage)}
-.months button[aria-pressed="true"]{background:var(--forest);color:#fff;border-color:var(--forest)}
-.months button.now{box-shadow:inset 0 0 0 2px var(--leaf)}
-.season .legend{margin-top:1rem;font-size:.85rem;color:var(--muted)}
-.season .legend i{display:inline-block;width:.9rem;height:.9rem;border-radius:3px;box-shadow:inset 0 0 0 2px var(--leaf);vertical-align:-2px;margin-right:.3rem;background:#fff}
-.tasks{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
-.tasks img{aspect-ratio:16/7;object-fit:cover;width:100%}
-.tasks .in{padding:1.6rem}
-.tasks h3{font-size:1.8rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
-.tasks h3 small{font-family:var(--f-body);font-weight:400;font-size:1rem;color:var(--muted);font-style:italic}
-.tasks ul{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.8rem}
-.tasks li{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:start;padding-bottom:.8rem;border-bottom:1px dashed var(--line)}
-.tasks li:last-child{border:0;padding:0}
-.tasks li .n{width:1.7rem;height:1.7rem;border-radius:50%;background:var(--sage);color:var(--forest);display:grid;place-items:center;font-weight:700;font-size:.85rem;font-family:var(--f-head)}
-.tasks li b{display:block;color:var(--forest)}
-.tasks li span{font-size:.95rem;color:var(--muted)}
-.tasks .cta{margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;font-size:.95rem;color:var(--muted)}
+/* services */
+.svcs{padding:calc(var(--sec)*.5) 0 var(--sec)}
+.svc-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.svc-visual{position:sticky;top:96px}
+.svc-frame{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--stone)}
+.svc-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .7s var(--ease),transform 1.4s var(--ease)}
+.svc-frame img.on{opacity:1;transform:scale(1)}
+.svc-cap{position:absolute;left:1rem;bottom:1rem;right:1rem;display:flex;justify-content:space-between;align-items:flex-end;color:#fff;font-size:.85rem;z-index:2;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.svc-cap b{font:380 1.5rem/1 var(--serif)}
+.svc-frame::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(0deg,rgba(12,24,17,.6),transparent);z-index:1}
+.svc-list{counter-reset:svc;border-top:1px solid var(--line)}
+.svc{position:relative;display:grid;grid-template-columns:3.6rem minmax(0,1fr) auto;gap:.3rem 1.5rem;padding:1.9rem 0 1.9rem;border-bottom:1px solid var(--line);transition:background .4s var(--ease)}
+.svc::before{content:"";position:absolute;inset:0 -1.2rem;background:var(--paper-2);opacity:0;transition:opacity .4s var(--ease);z-index:-1;border-radius:var(--r)}
+.svc-list{position:relative;z-index:0}
+.svc.on::before{opacity:1}
+.svc .num{font:italic 340 1.05rem/1.9 var(--serif);color:var(--clay)}
+.svc h3{font-size:clamp(1.6rem,2.4vw,2.1rem);transition:transform .45s var(--ease)}
+.svc.on h3{transform:translateX(6px)}
+.svc p{grid-column:2/3;margin-top:.5rem;color:var(--muted);max-width:52ch}
+.svc .price{grid-column:3;grid-row:1;text-align:right;font-size:.88rem;color:var(--muted);white-space:nowrap;padding-top:.5rem}
+.svc .price b{display:block;font:400 1.15rem/1.2 var(--serif);color:var(--forest)}
+.svc .tags{grid-column:2/4;margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.svc .tags li{font-size:.8rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;color:var(--moss);background:rgba(255,255,255,.4)}
+.svc .thumb{display:none}
+.svc-foot{margin-top:2rem;display:flex;gap:1rem 2rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
 
 /* projects */
-.projects .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
-.proj{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-.proj figure{margin:0;position:relative;overflow:hidden}
-.proj img{aspect-ratio:4/3;object-fit:cover;width:100%;transition:transform .5s}
-.proj:hover img{transform:scale(1.04)}
-.proj figcaption{position:absolute;left:.8rem;top:.8rem;background:rgba(255,255,255,.92);color:var(--forest);font-weight:700;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px}
-.proj .body{padding:1.2rem 1.4rem 1.4rem;flex:1}
-.proj h3{font-size:1.3rem}
-.proj .meta{font-size:.88rem;color:var(--muted);margin-top:.2rem}
-.proj p{margin-top:.5rem;font-size:1rem}
-.proj .tags{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.35rem}
-.proj .tags span{font-size:.78rem;font-weight:600;background:var(--sage);color:var(--forest);padding:.15rem .6rem;border-radius:999px}
-.proj.wide{grid-column:span 2}
-.proj.wide img{aspect-ratio:16/8}
-.projects .note{margin-top:1.2rem;font-size:.88rem;color:var(--muted)}
+.projects{background:var(--stone);padding:var(--sec) 0;position:relative;overflow:hidden}
+.pgrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4rem 2rem}
+.pcard{position:relative}
+.pcard figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r);background:var(--stone-2)}
+.pcard img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .6s}
+.pcard:hover img{transform:scale(1.045)}
+.pcard .pmeta{margin-top:1.2rem;display:flex;gap:.8rem;align-items:baseline;font-size:.84rem;color:var(--muted);letter-spacing:.02em}
+.pcard .pmeta b{font:italic 400 1rem var(--serif);color:var(--clay)}
+.pcard h3{margin-top:.45rem;font-size:clamp(1.6rem,2.5vw,2.2rem)}
+.pcard p{margin-top:.6rem;color:var(--muted);max-width:46ch}
+.pcard .open{margin-top:1rem;background:none;border:0;padding:0 0 .15rem;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:var(--forest);border-bottom:1px solid var(--line-2);transition:gap .25s var(--ease),border-color .2s}
+.pcard .open::after{content:"";position:absolute;inset:0;z-index:1}
+.pcard:hover .open{gap:.8rem;border-color:var(--forest)}
+.pcard .open svg{width:14px;height:14px}
+.pcard .badge{position:absolute;top:1rem;left:1rem;z-index:2;background:rgba(245,242,235,.94);color:var(--forest);font:600 .7rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:.5rem .7rem;border-radius:999px}
+.p1{grid-column:1/8}.p1 figure{aspect-ratio:4/3}
+.p2{grid-column:9/13;margin-top:9rem}.p2 figure{aspect-ratio:4/5}
+.p3{grid-column:2/6}.p3 figure{aspect-ratio:4/5}
+.p4{grid-column:7/13;margin-top:4rem}.p4 figure{aspect-ratio:3/2}
+.pnote{margin-top:3rem}
+
+/* before after */
+.ba-wrap{margin-top:clamp(5rem,9vw,8rem);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.ba-wrap h3{margin-top:1rem;font-size:clamp(2rem,3.4vw,3rem)}
+.ba-wrap .copy p{margin-top:1rem;color:var(--muted)}
+.ba-specs{margin-top:1.6rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;border-top:1px solid var(--line-2);padding-top:1.2rem}
+.ba-specs dt{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ba-specs dd{margin:.25rem 0 0;font:400 1.2rem var(--serif);color:var(--forest)}
+.ba{--pos:50%;position:relative;aspect-ratio:16/12;border-radius:var(--r);overflow:hidden;background:var(--stone-2);user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba .before img{filter:grayscale(.55) sepia(.5) saturate(.55) brightness(.82) contrast(.92) blur(.5px)}
+.ba .before::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(104,80,56,.92) 0%,rgba(112,88,62,.82) 26%,rgba(112,88,62,.35) 38%,rgba(112,88,62,0) 46%);mix-blend-mode:multiply}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:#fff;pointer-events:none;box-shadow:0 0 18px rgba(0,0,0,.25)}
+.ba-knob{position:absolute;top:50%;left:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:var(--paper);display:grid;place-items:center;color:var(--forest);box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .25s var(--ease)}
+.ba-knob svg{width:26px;height:26px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:3}
+.ba input:focus-visible~.ba-line .ba-knob{outline:2px solid var(--clay);outline-offset:4px;transform:scale(1.06)}
+.ba:hover .ba-knob{transform:scale(1.06)}
+.ba-tag{position:absolute;top:1rem;z-index:2;font:600 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:.5rem .75rem;border-radius:999px;pointer-events:none}
+.ba-tag.l{left:1rem;background:rgba(15,30,21,.72);color:#fff}
+.ba-tag.r{right:1rem;background:rgba(245,242,235,.94);color:var(--forest)}
+.ba-cap{margin-top:.9rem}
+
+/* project dialog */
+dialog.pd{padding:0;border:0;width:min(1180px,calc(100% - 2rem));max-height:calc(100dvh - 2rem);border-radius:10px;background:var(--paper);color:var(--text);box-shadow:0 40px 100px -30px rgba(0,0,0,.6);overflow:hidden}
+dialog.pd::backdrop{background:rgba(10,20,14,.72);backdrop-filter:blur(4px)}
+dialog.pd[open]{animation:dlg .45s var(--ease)}
+@keyframes dlg{from{opacity:0;transform:translateY(18px) scale(.985)}}
+.pd-in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:minmax(0,1fr);height:min(820px,calc(100dvh - 2rem))}
+.pd-gal{background:var(--forest-3);display:flex;flex-direction:column;min-height:0}
+.pd-body{min-height:0}
+.pd-main{position:relative;flex:1;min-height:320px;overflow:hidden}
+.pd-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.pd-thumbs{display:flex;gap:.5rem;padding:.75rem;background:var(--forest-3)}
+.pd-thumbs button{flex:1;max-width:120px;aspect-ratio:4/3;padding:0;border:0;border-radius:4px;overflow:hidden;cursor:pointer;opacity:.5;transition:opacity .25s;outline-offset:2px}
+.pd-thumbs button[aria-pressed="true"],.pd-thumbs button:hover{opacity:1}
+.pd-thumbs button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--paper)}
+.pd-thumbs img{width:100%;height:100%;object-fit:cover}
+.pd-body{overflow-y:auto;padding:clamp(1.5rem,3vw,2.6rem);overscroll-behavior:contain}
+.pd-close{position:absolute;top:.9rem;right:.9rem;z-index:5;width:44px;height:44px;border-radius:50%;border:0;background:var(--paper);color:var(--forest);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.2);transition:transform .25s var(--ease)}
+.pd-close:hover{transform:rotate(90deg)}
+.pd-close svg{width:18px;height:18px}
+.pd-body h2{margin-top:.8rem;font-size:clamp(1.9rem,3vw,2.7rem);padding-right:2.5rem}
+.pd-body .loc{margin-top:.5rem;color:var(--muted);font-size:.95rem}
+.pd-body h3{margin-top:1.8rem;font:600 .74rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--clay-ink)}
+.pd-body .brief{margin-top:.7rem;font-family:var(--serif);font-weight:350;font-size:1.18rem;line-height:1.45;color:var(--forest)}
+.pd-specs{margin:1.5rem 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
+.pd-specs div{padding:.8rem 0;border-bottom:1px solid var(--line)}
+.pd-specs div:nth-child(odd){padding-right:1rem}
+.pd-specs div:nth-child(even){padding-left:1rem;border-left:1px solid var(--line)}
+.pd-specs dt{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+.pd-specs dd{margin:.15rem 0 0;font:400 1.1rem var(--serif);color:var(--forest)}
+.palette{margin-top:.8rem;display:grid;gap:0}
+.palette li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px dashed var(--line);font-size:.96rem}
+.palette li span:last-child{color:var(--muted);font-size:.88rem;text-align:right}
+.did{margin-top:.8rem;display:grid;gap:.5rem}
+.did li{position:relative;padding-left:1.4rem}
+.did li::before{content:"";position:absolute;left:0;top:.7em;width:.6rem;height:1px;background:var(--clay)}
+.pd-nav{margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+.pd-nav button.link{background:none;border:0;border-bottom:1px solid var(--line-2);cursor:pointer;padding:0 0 .15rem}
+
+/* seasons */
+.seasons{padding:var(--sec) 0}
+.tabs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs button{position:relative;background:none;border:0;padding:1.1rem .2rem 1.2rem;cursor:pointer;font:500 .95rem var(--sans);color:var(--muted);transition:color .25s,background .25s}
+.tabs button::before{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--sc);opacity:.35;transition:opacity .25s,height .25s}
+.tabs button:hover{color:var(--forest);background:var(--paper-2)}
+.tabs button[aria-selected="true"]{color:var(--forest);font-weight:700;background:var(--paper-2)}
+.tabs button[aria-selected="true"]::before{opacity:1;height:4px}
+.tabs button .dot{position:absolute;top:.45rem;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--clay)}
+.tabs button[data-s="w"]{--sc:#8ea4a8}.tabs button[data-s="l"]{--sc:#9cbf7a}.tabs button[data-s="z"]{--sc:#c79b55}.tabs button[data-s="h"]{--sc:#a65f3b}
+.slegend{margin-top:.9rem;display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+.slegend span{display:inline-flex;align-items:center;gap:.45rem}
+.slegend i{width:14px;height:3px;border-radius:2px;display:inline-block}
+.spanel{margin-top:clamp(2rem,4vw,3.5rem);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,5vw,5rem);align-items:stretch}
+.sframe{position:relative;border-radius:var(--r);overflow:hidden;min-height:440px;background:var(--stone)}
+.sframe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s var(--ease),transform 1.6s var(--ease);transform:scale(1.05)}
+.sframe img.on{opacity:1;transform:scale(1)}
+.sframe::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,24,17,.65),rgba(12,24,17,0) 50%);z-index:1}
+.sframe .slabel{position:absolute;left:1.4rem;bottom:1.3rem;z-index:2;color:#fff}
+.sframe .slabel small{display:block;font:600 .7rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--sage-2)}
+.sframe .slabel b{display:block;margin-top:.3rem;font:italic 340 2.2rem/1 var(--serif)}
+.stasks{display:flex;flex-direction:column}
+.stasks .mhead{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-bottom:1.2rem;border-bottom:1px solid var(--line-2)}
+.stasks h3{font-size:clamp(2.6rem,5vw,4.2rem);font-weight:320}
+.stasks .mhead span{font-size:.9rem;color:var(--muted)}
+.stasks .mhead span.cur{color:var(--clay-ink);font-weight:600}
+.stasks ol{counter-reset:t}
+.stasks li{display:grid;grid-template-columns:3rem minmax(0,1fr);gap:1rem;padding:1.35rem 0;border-bottom:1px solid var(--line)}
+.stasks li::before{counter-increment:t;content:counter(t,decimal-leading-zero);font:italic 340 1.1rem/1.6 var(--serif);color:var(--clay)}
+.stasks li b{display:block;font:420 1.3rem/1.25 var(--serif);color:var(--forest)}
+.stasks li span{display:block;margin-top:.3rem;color:var(--muted)}
+.stasks .scta{margin-top:auto;padding-top:1.6rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.fade-swap{animation:fsw .5s var(--ease)}
+@keyframes fsw{from{opacity:0;transform:translateY(8px)}}
+
+/* pricing */
+.plans{background:var(--stone);padding:var(--sec) 0}
+.pctl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.5rem 3rem;align-items:center;padding:1.4rem 1.6rem;background:var(--paper-2);border:1px solid var(--line);border-radius:10px;margin-bottom:1.6rem}
+.seg{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;background:var(--stone);border-radius:999px;padding:4px;border:0;margin:0}
+.seg legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.seg label{position:relative;z-index:1;cursor:pointer;padding:.65rem 1.25rem;font-weight:600;font-size:.95rem;color:var(--muted);text-align:center;white-space:nowrap;transition:color .3s}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:has(input:checked){color:#fff}
+.seg label:has(input:focus-visible){outline:2px solid var(--clay);outline-offset:2px;border-radius:999px}
+.seg .thumb{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--forest);transition:transform .4s var(--ease)}
+.seg.y .thumb{transform:translateX(100%)}
+.seg em{font-style:normal;font-size:.72rem;margin-left:.35rem;padding:.12rem .4rem;border-radius:999px;background:var(--ochre);color:var(--forest-3);vertical-align:1px}
+.size{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1.2rem;align-items:center}
+.size label{font-weight:600;color:var(--forest);font-size:.95rem}
+.size output{font:400 1.45rem var(--serif);color:var(--forest);min-width:6.5ch;text-align:right;font-variant-numeric:tabular-nums}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer;--p:50%}
+input[type=range]::-webkit-slider-runnable-track{height:3px;border-radius:3px;background:linear-gradient(90deg,var(--forest) var(--p),var(--stone-2) var(--p))}
+input[type=range]::-moz-range-track{height:3px;border-radius:3px;background:var(--stone-2)}
+input[type=range]::-moz-range-progress{height:3px;background:var(--forest)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-9.5px;border-radius:50%;background:var(--paper);border:2px solid var(--forest);box-shadow:0 2px 8px rgba(0,0,0,.15);transition:transform .2s}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--paper);border:2px solid var(--forest)}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
+input[type=range]:focus-visible{outline:none}
+input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(166,95,59,.35)}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;align-items:stretch}
+.tier{position:relative;display:flex;flex-direction:column;background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:clamp(1.5rem,2.5vw,2.2rem);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.tier:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(15,30,21,.4)}
+.tier.feat{background:var(--forest);color:#e4eadf;border-color:var(--forest)}
+.tier.feat h3,.tier.feat .amt{color:#fff}
+.tier .flag{position:absolute;top:-.8rem;left:clamp(1.5rem,2.5vw,2.2rem);background:var(--ochre);color:var(--forest-3);font:700 .7rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:.45rem .7rem;border-radius:999px}
+.tier h3{font-size:2rem}
+.tier .tag{margin-top:.3rem;font-family:var(--serif);font-style:italic;color:var(--muted)}
+.tier.feat .tag{color:var(--sage-2)}
+.amt{margin-top:1.6rem;display:flex;align-items:baseline;gap:.4rem;font:330 clamp(3rem,4.6vw,3.9rem)/1 var(--serif);color:var(--forest);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.amt small{font:500 .95rem var(--sans);letter-spacing:0;color:var(--muted)}
+.tier.feat .amt small{color:var(--sage-2)}
+.amt-sub{margin-top:.6rem;font-size:.9rem;color:var(--muted);min-height:2.9em}
+.tier.feat .amt-sub{color:var(--sage-2)}
+.tier ul{margin:1.4rem 0 1.8rem;padding-top:1.4rem;border-top:1px solid var(--line);display:grid;gap:.7rem}
+.tier.feat ul{border-color:rgba(255,255,255,.16)}
+.tier li{display:grid;grid-template-columns:18px 1fr;gap:.7rem;font-size:.98rem}
+.tier li svg{width:18px;height:18px;margin-top:.2rem;color:var(--moss)}
+.tier.feat li svg{color:var(--sage)}
+.tier .btn{margin-top:auto;width:100%}
+.plans .note{margin-top:1.4rem}
 
 /* process */
-.process{background:var(--forest);color:#fff;position:relative;isolation:isolate;overflow:hidden}
-.process img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;z-index:-1}
-.process .sec-head h2{color:#fff}
-.process .sec-head p{color:#cfe3b7}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.6rem;counter-reset:s}
-.step{border-top:2px solid var(--leaf);padding-top:1rem}
-.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--f-head);font-weight:800;font-size:2.2rem;color:var(--leaf);line-height:1}
-.step h3{color:#fff;font-size:1.35rem;margin-top:.4rem}
-.step p{margin-top:.5rem;color:#d9e4d2;font-size:1rem}
+.process{position:relative;background:var(--forest-2);color:#d6ded1;padding:var(--sec) 0;overflow:hidden;isolation:isolate}
+.process .contours{position:absolute;right:-12%;top:-20%;width:min(1100px,90vw);z-index:-1;color:var(--sage);opacity:.16}
+.process h2{color:#fff}
+.process .shead>p{color:#c3cfbd}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;background:rgba(255,255,255,.2)}
+.step{position:relative;padding-top:2.6rem}
+.step::before{content:"";position:absolute;top:4px;left:0;width:15px;height:15px;border-radius:50%;background:var(--forest-2);border:1px solid var(--sage)}
+.step:first-child::before{background:var(--sage)}
+.step .n{font:italic 300 3.4rem/1 var(--serif);color:var(--sage)}
+.step h3{margin-top:.9rem;color:#fff;font-size:1.7rem}
+.step .when{margin-top:.4rem;font:600 .72rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ochre)}
+.step p{margin-top:.8rem;color:#c3cfbd;font-size:1rem}
+.pcta{margin-top:clamp(3rem,6vw,4.5rem);display:flex;gap:1.5rem 2rem;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(255,255,255,.16)}
+.pcta p{font:350 clamp(1.4rem,2.4vw,1.9rem)/1.25 var(--serif);color:#fff;max-width:30ch}
 
-.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
-.quote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;margin:0}
-.quote p{font-style:italic;font-size:1.08rem}
-.quote footer{margin-top:.8rem;font-size:.9rem;color:var(--muted);font-style:normal}
-.quote .stars{color:var(--clay);letter-spacing:.08em;font-size:.95rem;margin-bottom:.5rem}
-.rnote{margin-top:1.2rem;font-size:.88rem;color:var(--muted)}
+/* sustainability */
+.eco{padding:var(--sec) 0}
+.eco-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem);align-items:center}
+.eco-img{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden}
+.eco-img img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;will-change:transform}
+.eco-img figcaption{position:absolute;left:1rem;bottom:1rem;z-index:2;background:rgba(245,242,235,.94);color:var(--forest);font-size:.82rem;padding:.45rem .75rem;border-radius:999px}
+.eco h2{margin-top:1.1rem}
+.eco .lede{margin-top:1.2rem}
+.princ{margin-top:2.5rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 2.5rem}
+.princ li{padding-top:1.2rem;border-top:1px solid var(--line-2)}
+.princ svg{width:30px;height:30px;color:var(--moss)}
+.princ b{display:block;margin-top:.9rem;font:420 1.3rem/1.2 var(--serif);color:var(--forest)}
+.princ span{display:block;margin-top:.4rem;color:var(--muted);font-size:.98rem}
+.potm{margin-top:clamp(4rem,8vw,6.5rem);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);background:var(--paper-2);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.potm-art{position:relative;background:var(--sage-2);display:grid;place-items:center;padding:2rem;min-height:300px;color:var(--forest)}
+.potm-art .sprig{width:min(150px,60%);opacity:.9}
+.potm-art .mo{position:absolute;top:1.2rem;left:1.3rem;font:italic 340 1.1rem var(--serif);color:var(--forest)}
+.potm-art .ring{position:absolute;inset:auto;width:260px;height:260px;border:1px solid rgba(31,58,43,.18);border-radius:50%}
+.potm-body{padding:clamp(1.6rem,3.5vw,3rem);display:flex;flex-direction:column}
+.potm-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.potm-btns{display:flex;gap:.4rem}
+.ibtn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);background:transparent;color:var(--forest);display:grid;place-items:center;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.ibtn:hover{background:var(--forest);color:#fff;border-color:var(--forest)}
+.ibtn svg{width:16px;height:16px}
+.potm h3{margin-top:.9rem;font-size:clamp(2rem,3.4vw,2.8rem)}
+.potm .latin{display:block;margin-top:.35rem;font-size:1.15rem;color:var(--clay-ink)}
+.potm p.why{margin-top:1rem;max-width:60ch}
+.potm dl{margin:1.6rem 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+.potm dl div{padding:.9rem 1rem .2rem 0}
+.potm dl div+div{padding-left:1rem;border-left:1px solid var(--line)}
+.potm dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.potm dd{margin:.3rem 0 0;font:400 1.05rem/1.3 var(--serif);color:var(--forest)}
+
+/* reviews */
+.reviews{background:var(--stone);padding:var(--sec) 0}
+.rv-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.rv-main{margin:0}
+.rv-main .qm{font:italic 300 6rem/.6 var(--serif);color:var(--clay);display:block;height:2.6rem}
+.rv-main p{font:italic 330 clamp(1.7rem,3vw,2.6rem)/1.25 var(--serif);color:var(--forest);letter-spacing:-.01em}
+.rv-main footer,.rv-side footer{margin-top:1.5rem;display:flex;align-items:center;gap:.9rem;font-size:.92rem;color:var(--muted)}
+.av{width:44px;height:44px;border-radius:50%;background:var(--sage-2);color:var(--forest);display:grid;place-items:center;font:500 1rem var(--serif);flex:none}
+.rv-main footer b,.rv-side footer b{display:block;color:var(--forest);font-weight:600}
+.rv-side{display:grid;gap:1.2rem}
+.rv-side blockquote{margin:0;padding:1.6rem;background:var(--paper-2);border:1px solid var(--line);border-radius:10px}
+.stars{display:flex;gap:2px;color:var(--ochre);margin-bottom:.8rem}
+.stars svg{width:15px;height:15px}
+.rv-side p{font-size:1.04rem;color:var(--text)}
+.rv-score{margin-top:2.4rem;display:flex;align-items:center;gap:1.2rem;padding-top:1.6rem;border-top:1px solid var(--line-2)}
+.rv-score b{font:330 3rem/1 var(--serif);color:var(--forest)}
+.rv-score span{font-size:.9rem;color:var(--muted)}
+
+/* faq + area */
+.faqarea{padding:var(--sec) 0}
+.fa-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2.5rem,6vw,6rem);align-items:start}
+.faq{margin-top:2rem;border-top:1px solid var(--line-2)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;padding:1.3rem 0;font:420 1.22rem/1.3 var(--serif);color:var(--forest);transition:color .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--clay-ink)}
+.faq summary i{position:relative;flex:none;width:30px;height:30px;border:1px solid var(--line-2);border-radius:50%;transition:transform .35s var(--ease),background .25s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;margin:-.75px 0 0 -5.5px;background:currentColor}
+.faq summary i::after{transform:rotate(90deg);transition:transform .35s var(--ease)}
+.faq details[open] summary i{background:var(--forest);color:#fff;border-color:var(--forest)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq .ans{padding:0 3rem 1.4rem 0;color:var(--muted)}
+.area h2{margin-top:1.1rem}
+.askcard{margin-top:2.5rem;display:grid;grid-template-columns:56px 1fr;gap:1.2rem;align-items:center;padding:1.5rem;background:var(--stone);border-radius:10px}
+.askcard .sprig{width:44px;height:76px;color:var(--moss)}
+.askcard b{font:420 1.25rem var(--serif);color:var(--forest)}
+.askcard p{margin-top:.3rem;color:var(--muted);font-size:.96rem}
+.askcard a{color:var(--forest);font-weight:600}
+.map{position:relative;margin-top:2rem;aspect-ratio:1;max-width:520px;background:var(--paper-2);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.map svg{width:100%;height:100%}
+.map .tw{font:500 12px var(--sans);fill:var(--muted)}
+.map .tw.hub{font:500 14px var(--serif);fill:var(--forest);paint-order:stroke;stroke:var(--paper-2);stroke-width:4px}
+.map circle.pt{fill:var(--moss);transition:r .3s}
+.map circle.pt.hit{fill:var(--clay)}
+.map .ringlbl{font:600 9px var(--sans);letter-spacing:.14em;fill:var(--clay-ink);text-transform:uppercase}
+.check{margin-top:1.4rem;max-width:520px}
+.check label{display:block;font-weight:600;color:var(--forest);font-size:.95rem}
+.check .row{margin-top:.5rem;display:flex;gap:.5rem}
+.check input{flex:1;min-width:0;border:1px solid var(--line-2);border-radius:999px;padding:.75rem 1.1rem;background:var(--paper-2);font:inherit;font-size:1rem;color:var(--text)}
+.check input:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(31,58,43,.12)}
+.check .res{margin-top:.8rem;min-height:1.6em;font-size:.98rem}
+.check .res.ok{color:var(--moss)}.check .res.mid{color:var(--clay-ink)}
+.towns{margin-top:1.2rem;font-size:.92rem;color:var(--muted);max-width:520px}
 
 /* quote form */
-.offerte{background:var(--sage-2);border-top:1px solid var(--line)}
-.offerte .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:3rem;align-items:start}
-.offerte h2{font-size:clamp(2.2rem,5vw,3.6rem)}
-.offerte .intro{margin-top:.8rem;color:var(--muted)}
-.offerte .promise{margin-top:1.6rem;display:grid;gap:.8rem}
-.offerte .promise div{display:flex;gap:.7rem;align-items:flex-start}
-.offerte .promise svg{width:24px;height:24px;flex:none;color:var(--moss);margin-top:.2rem}
-.offerte .promise b{color:var(--forest);display:block}
-.offerte .promise span{font-size:.95rem;color:var(--muted)}
-.contactbox{margin-top:1.6rem;border-radius:var(--r);overflow:hidden;position:relative;color:#fff;padding:1.3rem 1.4rem;isolation:isolate;font-size:1rem}
-.contactbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.contactbox::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,45,32,.92),rgba(22,45,32,.55));z-index:-1}
-.contactbox b{font-family:var(--f-head);display:block;font-size:1.15rem}
-.contactbox a{font-weight:700;color:#fff}
-.form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.2rem,3vw,2rem);box-shadow:var(--shadow)}
-fieldset{border:0;padding:0;margin:0 0 1.3rem}
-legend{font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);margin-bottom:.6rem}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem}
-.chip{position:relative}
-.chip input{position:absolute;inset:0;opacity:0;cursor:pointer}
-.chip span{display:inline-block;padding:.55rem .95rem;border:1.5px solid var(--line);border-radius:999px;font-size:.95rem;font-weight:600;color:var(--forest);cursor:pointer;background:#fff}
-.chip input:checked+span{background:var(--forest);color:#fff;border-color:var(--forest)}
-.chip input:focus-visible+span{outline:3px solid var(--clay);outline-offset:2px}
-.field{display:grid;gap:.3rem;margin-bottom:1rem}
-.field label{font-weight:600;font-size:.95rem;color:var(--forest)}
-.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:.75rem .85rem;font:inherit;font-size:1rem;color:var(--text);background:#fff}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--moss)}
-.field textarea{min-height:6rem;resize:vertical}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.range{display:flex;align-items:center;gap:1rem}
-.range input{flex:1;accent-color:var(--forest)}
-.range output{min-width:5.5rem;font-weight:700;color:var(--forest);font-variant-numeric:tabular-nums}
-.err{color:#b4321f;font-size:.9rem;min-height:1.2em}
-.done{display:none;text-align:center;padding:1.6rem .5rem}
-.done.show{display:block}
-.done .check{width:70px;height:70px;border-radius:50%;background:var(--leaf);color:var(--forest);display:grid;place-items:center;margin:0 auto 1rem;font-size:2.2rem;font-weight:700}
-.done h3{font-size:2rem}
-.done p{margin-top:.8rem}
-.done .demo-note{font-size:.88rem;color:var(--muted);margin-top:1rem}
+.offerte{background:var(--stone);padding:var(--sec) 0}
+.of-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.of-side h2{margin-top:1.1rem}
+.of-side .lede{margin-top:1.2rem}
+.promise{margin-top:2rem;display:grid;gap:1.1rem}
+.promise li{display:grid;grid-template-columns:28px 1fr;gap:.8rem}
+.promise svg{width:24px;height:24px;color:var(--moss);margin-top:.15rem}
+.promise b{display:block;color:var(--forest);font-weight:600}
+.promise span{font-size:.95rem;color:var(--muted)}
+.callcard{margin-top:2.2rem;position:relative;border-radius:10px;overflow:hidden;color:#fff;padding:1.6rem;isolation:isolate}
+.callcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.callcard::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(15,30,21,.94),rgba(15,30,21,.6))}
+.callcard b{display:block;font:380 1.45rem/1.2 var(--serif)}
+.callcard a{display:inline-block;margin-top:.5rem;font:400 1.9rem var(--serif);color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.callcard a:hover{border-color:#fff}
+.callcard p{margin-top:.6rem;font-size:.92rem;color:#d7dfd2}
+.qf{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:clamp(1.4rem,3.5vw,2.6rem);box-shadow:0 30px 60px -40px rgba(15,30,21,.45)}
+.prog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-bottom:2rem}
+.prog li{font-size:.82rem;color:var(--muted);font-weight:600}
+.prog li::before{content:"";display:block;height:3px;border-radius:3px;background:var(--stone-2);margin-bottom:.6rem;transition:background .4s var(--ease)}
+.prog li.done::before,.prog li.cur::before{background:var(--forest)}
+.prog li.cur{color:var(--forest)}
+.prog li span{display:block;font-weight:400;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+.qstep h3{font-size:clamp(1.6rem,2.6vw,2.1rem);outline:none}
+.qstep .sub{margin-top:.4rem;color:var(--muted);font-size:.98rem}
+[hidden]{display:none!important}
+html:not(.js) .qstep[hidden]{display:block!important}
+.qstep fieldset{border:0;padding:0;margin:1.6rem 0 0}
+.qstep legend{padding:0;font-weight:600;color:var(--forest);font-size:.98rem;margin-bottom:.7rem}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.opt{position:relative;display:flex;align-items:center;gap:.8rem;padding:.95rem 1rem;border:1px solid var(--line-2);border-radius:8px;cursor:pointer;background:#fff;transition:border-color .2s,background .2s,box-shadow .2s}
+.opt:hover{border-color:var(--forest)}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt .bx{flex:none;width:20px;height:20px;border:1.5px solid var(--line-2);border-radius:5px;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.opt input[type=radio]+.bx{border-radius:50%}
+.opt .bx svg{width:12px;height:12px;color:#fff;opacity:0}
+.opt input:checked+.bx{background:var(--forest);border-color:var(--forest)}
+.opt input:checked+.bx svg{opacity:1}
+.opt:has(input:checked){border-color:var(--forest);background:rgba(205,216,193,.28);box-shadow:inset 0 0 0 1px var(--forest)}
+.opt:has(input:focus-visible){outline:2px solid var(--clay);outline-offset:2px}
+.opt b{display:block;font-weight:600;color:var(--forest);font-size:.98rem;line-height:1.25}
+.opt small{display:block;font-size:.84rem;color:var(--muted);line-height:1.3}
+.opts.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.opts.three .opt{flex-direction:column;align-items:flex-start;gap:.5rem}
+.opts.three .ico{width:26px;height:26px;color:var(--clay)}
+.rng{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center}
+.rng output{font:400 1.3rem var(--serif);color:var(--forest);min-width:9ch;text-align:right}
+.rng-scale{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-top:.2rem;padding-right:calc(9ch + 1rem)}
+.f{display:grid;gap:.35rem;margin-top:1.1rem}
+.f label{font-weight:600;color:var(--forest);font-size:.95rem}
+.f label small{font-weight:400;color:var(--muted)}
+.f input,.f select,.f textarea{width:100%;border:1px solid var(--line-2);border-radius:8px;padding:.8rem .95rem;font:inherit;font-size:1rem;color:var(--text);background:#fff;transition:border-color .2s,box-shadow .2s}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(31,58,43,.12)}
+.f [aria-invalid="true"]{border-color:#b4321f;box-shadow:0 0 0 3px rgba(180,50,31,.1)}
+.f textarea{min-height:6.5rem;resize:vertical}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+.ferr{color:#a8301d;font-size:.88rem;min-height:0}
+.ferr:empty{display:none}
+.agree{margin-top:1.2rem;display:flex;gap:.7rem;align-items:flex-start;font-size:.92rem;color:var(--muted);cursor:pointer}
+.agree input{margin-top:.25rem;width:18px;height:18px;accent-color:var(--forest);flex:none}
+.qnav{margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
+.qnav .note{flex-basis:100%;order:3}
+.qdone{text-align:center;padding:1rem 0}
+.qdone .ok{width:72px;height:72px;margin:0 auto 1.4rem;border-radius:50%;background:var(--sage-2);display:grid;place-items:center;color:var(--forest)}
+.qdone .ok svg{width:30px;height:30px}
+.qdone h3{font-size:2.2rem;outline:none}
+.qdone p{margin-top:.8rem;color:var(--muted)}
+.qsum{margin:1.6rem auto 0;max-width:440px;text-align:left;border-top:1px solid var(--line)}
+.qsum div{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.qsum dt{color:var(--muted)}.qsum dd{margin:0;color:var(--forest);font-weight:600;text-align:right}
+.qdone .demo{margin-top:1.4rem;display:inline-block;font-size:.85rem;background:var(--stone);padding:.4rem .8rem;border-radius:999px;color:var(--muted)}
 
-.foot{background:var(--forest-2);color:#b9cbb1;padding:2.4rem 0 6.5rem;font-size:.92rem}
-.foot .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
-.foot h3{color:#fff;font-size:1.1rem;margin-bottom:.5rem}
-.foot a{color:#fff}
-.foot .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:1rem;font-size:.84rem}
-.callbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:.5rem;padding:.6rem var(--gutter) calc(.6rem + env(safe-area-inset-bottom));background:var(--forest-2);border-top:1px solid rgba(255,255,255,.12)}
-.callbar .btn{flex:1;padding:.8rem .6rem;font-size:.92rem}
+/* footer */
+.foot{background:var(--forest-3);color:#b7c4b0;padding:clamp(4rem,8vw,6.5rem) 0 2rem;font-size:.95rem;position:relative;overflow:hidden}
+.foot-cta{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;padding-bottom:clamp(3rem,6vw,4.5rem);border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-cta h2{color:#fff;font-size:clamp(2.4rem,5.4vw,4.6rem);max-width:15ch;font-weight:320}
+.foot-cta h2 em{color:#e9d3b0}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-top:3rem}
+.foot h3{font:600 .72rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot ul{display:grid;gap:.45rem}
+.foot .brand{color:#fff;margin-bottom:1.2rem}
+.legal{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#8fa088}
+.legal a{color:#cfd8c9;text-decoration:underline;text-underline-offset:3px}
+.foot .sprig-bg{position:absolute;right:-40px;top:-30px;width:260px;color:var(--sage);opacity:.08;pointer-events:none}
 
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:.5rem;padding:.6rem var(--gutter) calc(.6rem + env(safe-area-inset-bottom));background:rgba(15,30,21,.96);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1);transform:translateY(110%);transition:transform .4s var(--ease)}
+.callbar.show{transform:none}
+.callbar .btn{flex:1;min-height:2.9rem;padding:.6rem .8rem;font-size:.95rem}
+
+/* reveal */
+html.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+html.js .rv.in{opacity:1;transform:none}
+html.js .rv-img{clip-path:inset(8% 0 0 0);transition:clip-path 1.2s var(--ease)}
+html.js .rv-img.in{clip-path:inset(0 0 0 0)}
+
+@media (max-width:1100px){
+  .nav ul{gap:1.3rem}
+  .hdr-tel{display:none}
+}
 @media (max-width:960px){
-  .hero .wrap,.season .wrap,.offerte .wrap{grid-template-columns:1fr}
-  .hero .facts{justify-self:start;grid-template-columns:repeat(3,1fr);width:100%}
-  .svcs,.projects .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .proj.wide{grid-column:span 2}
-  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .quotes{grid-template-columns:1fr}
-  .foot .wrap{grid-template-columns:1fr 1fr}
+  :root{--hh:72px}
+  .nav,.hdr .btn{display:none}
+  .menubtn{display:inline-flex}
+  .hero-grid{grid-template-columns:1fr;gap:2rem}
+  .now{max-width:440px}
+  .intro-side{grid-column:1/-1;grid-template-columns:auto 1fr;align-items:center}
+  .intro-side .sprig{width:56px}
+  .intro-text{grid-column:1/-1}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts li:nth-child(3){padding-left:0;border-left:0}
+  .facts li:nth-child(n+3){border-top:1px solid var(--line);margin-top:1.4rem}
+  .shead>div,.shead>p{grid-column:1/-1}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-visual{display:none}
+  .svc{grid-template-columns:2.6rem minmax(0,1fr)}
+  .svc .price{grid-column:2;grid-row:auto;text-align:left;padding-top:.6rem}
+  .svc .price b{display:inline;margin-right:.4rem}
+  .svc .tags{grid-column:2}
+  .svc .thumb{display:block;grid-column:2;margin-top:1rem;aspect-ratio:16/9;width:100%;object-fit:cover;border-radius:var(--r)}
+  .svc::before{display:none}
+  .svc.on h3{transform:none}
+  .pgrid{gap:3.5rem 1.4rem}
+  .p1,.p4{grid-column:1/-1;margin-top:0}
+  .p2,.p3{grid-column:span 6;margin-top:0}
+  .p2 figure,.p3 figure{aspect-ratio:4/5}
+  .ba-wrap{grid-template-columns:1fr}
+  .tabs{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .tabs button:nth-child(-n+6){border-bottom:1px solid var(--line)}
+  .spanel{grid-template-columns:1fr}
+  .sframe{min-height:0;aspect-ratio:16/10}
+  .pctl{grid-template-columns:1fr}
+  .tiers{grid-template-columns:1fr;max-width:560px;margin-inline:auto}
+  .tier.feat{order:-1}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem 2rem}
+  .steps::before{display:none}
+  .step{border-top:1px solid rgba(255,255,255,.2);padding-top:1.6rem}
+  .step::before{top:-8px}
+  .eco-grid{grid-template-columns:1fr}
+  .eco-img{aspect-ratio:16/11}
+  .potm{grid-template-columns:1fr}
+  .potm-art{min-height:200px}
+  .potm dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .potm dl div:nth-child(3){padding-left:0;border-left:0}
+  .rv-grid,.fa-grid,.of-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .pd-in{grid-template-columns:1fr;grid-template-rows:auto auto;height:auto;max-height:calc(100dvh - 2rem);overflow-y:auto;overscroll-behavior:contain}
+  .pd-main{min-height:0;aspect-ratio:4/3;flex:none}
+  .pd-body{overflow:visible}
 }
 @media (max-width:640px){
-  .svcs,.steps,.projects .grid,.foot .wrap{grid-template-columns:1fr}
-  .proj.wide{grid-column:auto}
-  .proj.wide img{aspect-ratio:4/3}
-  .hero{min-height:0}
-  .hero .facts{grid-template-columns:1fr 1fr;padding:1rem 1.1rem}
-  .months{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .two{grid-template-columns:1fr}
-  .nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--cream);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:.4rem var(--gutter) 1rem}
-  .nav ul.open{display:flex}
-  .nav li a{display:block;padding:.8rem 0;border-bottom:1px solid var(--line)}
-  .nav .btn{display:none}
-  .menubtn{display:inline-block}
+  body{font-size:1.02rem}
+  .brand b{font-size:1.12rem;white-space:nowrap}
+  .brand small{display:none}
+  .brand svg{width:32px;height:32px}
+  .menubtn{padding:.45rem .85rem}
+  .hero::before{background:linear-gradient(180deg,rgba(12,24,17,.62) 0%,rgba(12,24,17,.5) 22%,rgba(12,24,17,.7) 45%,rgba(12,24,17,.9) 72%,rgba(12,24,17,.96) 100%)}
+  .potm-art{min-height:170px}
+  .potm-art .ring{width:150px;height:150px}
+  .potm-art .sprig{width:84px}
+  .hero{min-height:max(600px,100svh)}
+  .hero-in{padding-top:calc(var(--hh) + 3rem)}
+  .hero h1{font-size:clamp(2.7rem,12.5vw,3.6rem)}
+  .hero .ctas .btn{flex:1 1 auto}
+  .hero-foot .hide-sm{display:none}
+  .now{padding:1.1rem 1.2rem}
+  .now h2{font-size:1.35rem}
+  .facts li{padding-right:.8rem}
+  .facts li+li{padding-left:.9rem}
+  .p2,.p3{grid-column:1/-1}
+  .p2 figure,.p3 figure{aspect-ratio:4/3}
+  .ba{aspect-ratio:4/3.4}
+  .tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .tabs button:nth-child(-n+8){border-bottom:1px solid var(--line)}
+  .size{grid-template-columns:1fr auto}
+  .size input{grid-column:1/-1;grid-row:2}
+  .seg{width:100%}
+  .seg label{padding:.65rem .6rem}
+  .steps{grid-template-columns:1fr}
+  .princ{grid-template-columns:1fr;gap:1.6rem}
+  .potm dl{grid-template-columns:1fr 1fr}
+  .opts,.opts.three{grid-template-columns:1fr}
+  .opts.three .opt{flex-direction:row;align-items:center}
+  .f2{grid-template-columns:1fr}
+  .rng-scale{padding-right:0}
+  .rng{grid-template-columns:1fr}
+  .rng output{text-align:left}
+  .foot-grid{grid-template-columns:1fr}
+  .foot{padding-bottom:6rem}
   .callbar{display:flex}
+  .faq .ans{padding-right:0}
+  .pd-specs{grid-template-columns:1fr 1fr}
+  dialog.pd{width:100%;max-width:100%;max-height:100dvh;height:100dvh;border-radius:0;margin:0}
+  .pd-in{max-height:100dvh;height:100dvh}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html.js .rv{opacity:1;transform:none}
+  html.js .rv-img{clip-path:none}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#offerte">Naar het offerteformulier</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="sprig" viewBox="0 0 120 210"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M60 205C57 160 63 105 60 14"/><path d="M60 158C42 150 24 130 18 106C38 110 54 128 60 158Z"/><path d="M60 158C46 140 30 120 18 106"/><path d="M60 126C78 118 96 100 102 76C82 80 66 98 60 126Z"/><path d="M60 126C74 108 88 92 102 76"/><path d="M60 92C44 84 32 66 30 46C46 52 58 70 60 92Z"/><path d="M60 92C50 76 40 60 30 46"/><path d="M60 64C74 56 84 42 86 24C72 30 62 44 60 64Z"/><path d="M60 64C68 50 77 37 86 24"/><path d="M60 14C54 22 54 34 60 42C66 34 66 22 60 14Z"/></g></symbol>
+  <symbol id="arrow" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="check" viewBox="0 0 18 18"><path d="M3.5 9.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="star" viewBox="0 0 16 16"><path d="M8 1.2l2 4.4 4.8.5-3.6 3.2 1 4.7L8 11.6 3.8 14l1-4.7L1.2 6.1 6 5.6z" fill="currentColor"/></symbol>
+  <symbol id="logo" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="18.5" opacity=".45"/><path d="M20 32V12"/><path d="M20 24c-6-1-9-5-9.5-10 5 .5 9 4 9.5 10z"/><path d="M20 19c5-1 8-4.5 8.5-9-4.5.4-8 3.6-8.5 9z"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Naar de inhoud</a>
 <div class="kade"><span>Voorbeeldsite van Kade Studio: fictieve zaak, geen echte aanvragen.</span><a href="../../nl/index.html#exemples">← Terug naar Kade Studio</a></div>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Groenwerk De Witte, naar boven">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36C8 30 6 16 10 6c10 2 18 10 16 24" fill="#7fae5e"/><path d="M20 36c0-10 2-18 8-26" stroke="#1f3d2b" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M20 36C32 32 36 20 33 10c-8 3-14 10-13 22" fill="#4f7a4a"/></svg>
-      <span class="brand-name">Groenwerk De Witte<small>Tuinaanleg & onderhoud</small></span>
-    </a>
-    <nav aria-label="Hoofdnavigatie">
-      <ul id="menu">
-        <li><a href="#diensten">Diensten</a></li>
-        <li><a href="#seizoen">Seizoenskalender</a></li>
-        <li><a href="#projecten">Projecten</a></li>
-        <li><a href="#werkwijze">Werkwijze</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-clay" href="#offerte">Gratis offerte</a>
-    <button class="menubtn" type="button" aria-expanded="false" aria-controls="menu" id="menubtn">Menu</button>
+<header class="hdr" id="hdr">
+  <div class="bar">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Groenwerk De Witte, naar boven">
+        <svg aria-hidden="true"><use href="#logo"/></svg>
+        <span><b>Groenwerk De Witte</b><small>Tuinarchitectuur &amp; onderhoud</small></span>
+      </a>
+      <nav class="nav" aria-label="Hoofdnavigatie">
+        <ul>
+          <li><a href="#diensten">Diensten</a></li>
+          <li><a href="#projecten">Projecten</a></li>
+          <li><a href="#seizoenen">Seizoenen</a></li>
+          <li><a href="#onderhoud">Onderhoud</a></li>
+          <li><a href="#werkwijze">Werkwijze</a></li>
+          <li><a href="#werkgebied">Werkgebied</a></li>
+        </ul>
+      </nav>
+      <a class="hdr-tel" href="tel:+3215000001">015 00 00 01</a>
+      <a class="btn btn-clay" href="#offerte">Offerte aanvragen</a>
+      <button class="menubtn" type="button" id="menubtn" aria-expanded="false" aria-controls="mnav"><i aria-hidden="true"></i>Menu</button>
+    </div>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <img class="bg" src="img/hero.jpg" alt="" width="1800" height="1200" fetchpriority="high">
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="mnav-top"><span>Groenwerk De Witte</span><button class="mnav-close" type="button" id="mclose">Sluiten</button></div>
+  <ul>
+    <li><a href="#diensten">Diensten <small>01</small></a></li>
+    <li><a href="#projecten">Projecten <small>02</small></a></li>
+    <li><a href="#seizoenen">Seizoenen <small>03</small></a></li>
+    <li><a href="#onderhoud">Onderhoud <small>04</small></a></li>
+    <li><a href="#werkwijze">Werkwijze <small>05</small></a></li>
+    <li><a href="#werkgebied">Werkgebied <small>06</small></a></li>
+  </ul>
+  <div class="mnav-foot">
+    <p>Ma tot vr, 7:30 tot 17:30</p>
+    <a class="btn btn-light" href="tel:+3215000001">Bel 015 00 00 01</a>
+    <a class="btn btn-clay" href="#offerte">Offerte aanvragen</a>
+  </div>
+</div>
+
+<main id="main">
+<span id="top"></span>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-media" id="heroMedia"><img src="img/hero.jpg" alt="Tuinpad tussen strak geschoren hagen en bloeiende rozen" width="1800" height="1013" fetchpriority="high"></div>
+  <div class="hero-in">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Tuinontwerp · aanleg · onderhoud</span>
+          <h1 id="hero-title">Tuinen die <em>mooier worden</em> met de jaren.</h1>
+          <p class="lead">Vanuit Heist-op-den-Berg ontwerpen, bouwen en verzorgen we tuinen in de Zuiderkempen. Eén vaste ploeg van vier hoveniers, van de eerste schets tot de laatste snoeibeurt.</p>
+          <div class="ctas">
+            <a class="btn btn-clay" href="#offerte">Plan een tuinbezoek <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+            <a class="btn btn-glass" href="#projecten">Bekijk ons werk</a>
+          </div>
+        </div>
+        <aside class="now" aria-labelledby="now-title">
+          <div class="now-top"><i aria-hidden="true"></i><span>Nu in de tuin</span></div>
+          <h2 id="now-title"><span id="nowMonth">Deze maand</span></h2>
+          <p id="nowText">Elke maand vraagt de tuin iets anders. Bekijk wat wij nu doen in de tuinen die we onderhouden.</p>
+          <a href="#seizoenen">Naar de seizoenskalender <svg width="14" height="14" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </aside>
+      </div>
+      <div class="hero-foot">
+        <span>Heist-op-den-Berg · Zuiderkempen</span>
+        <span class="hide-sm">Gratis kennismaking in uw tuin</span>
+        <a class="scrollcue" href="#intro"><i aria-hidden="true"></i>Ontdek</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="intro" id="intro" aria-label="Over Groenwerk De Witte">
   <div class="wrap">
-    <div>
-      <h1>Een tuin die <em>meegroeit</em> met uw leven.</h1>
-      <p class="lead">Tuinaanleg en onderhoud in Heist-op-den-Berg en de Zuiderkempen. Van ontwerp tot de laatste snoeibeurt, met een vaste ploeg die uw tuin kent.</p>
-      <div class="ctas">
-        <a class="btn btn-clay" href="#offerte">Vraag een gratis offerte</a>
-        <a class="btn btn-white" href="#seizoen">Wat doen we deze maand?</a>
+    <div class="intro-grid">
+      <div class="intro-side rv">
+        <svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg>
+        <span class="eyebrow">Sinds 2012</span>
+      </div>
+      <div class="intro-text">
+        <p class="big rv">We ontwerpen tuinen voor hoe u écht leeft: met plek voor de tafel in de avondzon, borders die elk seizoen iets te tonen hebben en <em>onderhoud dat u niet zelf hoeft te regelen</em>.</p>
+        <p class="sig rv" style="--d:.1s"><span><b>Pieter De Witte</b>, zaakvoerder en tuinarchitect (fictief)</span></p>
       </div>
     </div>
     <ul class="facts">
-      <li><b>14 jaar</b><span>tuinen in de streek</span></li>
-      <li><b>320+</b><span>tuinen in onderhoud</span></li>
-      <li><b>4</b><span>vaste hoveniers</span></li>
+      <li class="rv"><b>14<sup>jaar</sup></b><span>tuinen in de streek</span></li>
+      <li class="rv" style="--d:.08s"><b>320<sup>+</sup></b><span>tuinen in vast onderhoud</span></li>
+      <li class="rv" style="--d:.16s"><b>4</b><span>vaste hoveniers, geen onderaannemers</span></li>
+      <li class="rv" style="--d:.24s"><b>0</b><span>liter pesticiden, al sinds dag één</span></li>
     </ul>
   </div>
 </section>
 
-<section id="diensten">
+<section class="svcs" id="diensten" aria-labelledby="svc-title">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Diensten</span>
-      <h2>Alles voor uw tuin, van spade tot snoeischaar.</h2>
-      <p>Eén aanspreekpunt voor aanleg én onderhoud. We werken met planten van kwekers uit de streek en zonder pesticiden.</p>
+    <div class="shead">
+      <div class="rv"><span class="eyebrow">Diensten</span><h2 class="h2" id="svc-title">Van eerste schets <em>tot snoeischaar.</em></h2></div>
+      <p class="lede rv" style="--d:.1s">Eén aanspreekpunt voor ontwerp, aanleg en onderhoud. We werken met planten van kwekers uit de Kempen en zonder chemie.</p>
     </div>
-    <div class="svcs">
-      <article class="svc"><img src="img/aanleg.jpg" alt="Woning met weelderige voortuin, rozen en gesnoeide buxus" loading="lazy" width="1000" height="667"><div class="body"><h3>Tuinaanleg</h3><p>Ontwerp op maat, grondwerk, beplanting, gazon of bloemenweide. Ook voor kleine stadstuinen.</p><span class="from">vanaf 4 500 € <small>· voor een tuin tot 150 m²</small></span></div></article>
-      <article class="svc"><img src="img/onderhoud.jpg" alt="Pas gemaaid gazon in de ochtendzon" loading="lazy" width="1000" height="667"><div class="body"><h3>Tuinonderhoud</h3><p>Vast contract: maaien, borders wieden, hagen scheren, bladeren ruimen. U ziet ons elke 2 tot 4 weken.</p><span class="from">vanaf 95 € <small>· per beurt, tuin tot 300 m²</small></span></div></article>
-      <article class="svc"><img src="img/snoei.jpg" alt="Weelderige tuin met bomen, heesters en een gazonpad" loading="lazy" width="1000" height="667"><div class="body"><h3>Snoeien & vellen</h3><p>Vormsnoei, fruitbomen, hoogstammen en het veilig vellen van bomen. Met versnipperaar en opruiming.</p><span class="from">vanaf 180 € <small>· halve dag met 2 man</small></span></div></article>
-      <article class="svc"><img src="img/terras.jpg" alt="Schaduwrijk terras met planten en een tafel" loading="lazy" width="1000" height="667"><div class="body"><h3>Terrassen & opritten</h3><p>Keramische tegels, klinkers, kasseien of grind. Met afwatering die werkt en randen die recht blijven.</p><span class="from">vanaf 110 €/m² <small>· geplaatst, incl. fundering</small></span></div></article>
+    <div class="svc-grid">
+      <div class="svc-visual" aria-hidden="true">
+        <div class="svc-frame" id="svcFrame">
+          <img class="on" src="img/pergola.jpg" alt="" width="900" height="1239" loading="lazy">
+          <img src="img/handen.jpg" alt="" width="1000" height="1500" loading="lazy">
+          <img src="img/park.jpg" alt="" width="1200" height="900" loading="lazy">
+          <img src="img/boom.jpg" alt="" width="1200" height="800" loading="lazy">
+          <img src="img/terras.jpg" alt="" width="1000" height="726" loading="lazy">
+          <img src="img/klaprozen.jpg" alt="" width="1400" height="844" loading="lazy">
+          <div class="svc-cap"><b id="svcCap">Tuinontwerp</b><span id="svcNum">01 / 06</span></div>
+        </div>
+      </div>
+      <ol class="svc-list" id="svcList">
+        <li class="svc on rv" data-i="0">
+          <span class="num">01</span>
+          <h3>Tuinontwerp</h3>
+          <span class="price"><b>vanaf 650 €</b>verrekend bij aanleg</span>
+          <p>Een plan op schaal met beplantingsplan, materialen, verlichting en fasering. U ziet vooraf hoe de tuin er in elk seizoen uitziet.</p>
+          <ul class="tags"><li>Schetsontwerp</li><li>Beplantingsplan</li><li>3D-indruk</li></ul>
+          <img class="thumb" src="img/pergola.jpg" alt="Pad onder een pergola met bloeiende blauweregen" width="900" height="1239" loading="lazy">
+        </li>
+        <li class="svc rv" data-i="1">
+          <span class="num">02</span>
+          <h3>Tuinaanleg</h3>
+          <span class="price"><b>vanaf 4 500 €</b>tuin tot 150 m²</span>
+          <p>Grondwerk, drainage, beplanting, gazon of bloemenweide. Met onze eigen ploeg en machines, zonder onderaannemers.</p>
+          <ul class="tags"><li>Grondwerk</li><li>Aanplant</li><li>Gazon &amp; weide</li></ul>
+          <img class="thumb" src="img/handen.jpg" alt="Hovenier met werkhandschoenen plant een jonge plant" width="1000" height="1500" loading="lazy">
+        </li>
+        <li class="svc rv" data-i="2">
+          <span class="num">03</span>
+          <h3>Tuinonderhoud</h3>
+          <span class="price"><b>vanaf 95 €</b>per beurt</span>
+          <p>Maaien, borders bijwerken, hagen scheren en bladeren ruimen, telkens door dezelfde hoveniers. Per beurt of met een jaarcontract.</p>
+          <ul class="tags"><li>Vaste ploeg</li><li>Jaarplanning</li><li>Vakantiedienst</li></ul>
+          <img class="thumb" src="img/park.jpg" alt="Verzorgd gazon met borders en volwassen bomen" width="1200" height="900" loading="lazy">
+        </li>
+        <li class="svc rv" data-i="3">
+          <span class="num">04</span>
+          <h3>Snoeien &amp; vellen</h3>
+          <span class="price"><b>vanaf 180 €</b>halve dag, 2 hoveniers</span>
+          <p>Vormsnoei, fruitbomen, leibomen en het veilig vellen van bomen. Het snoeihout versnipperen we ter plaatse tot mulch.</p>
+          <ul class="tags"><li>Fruitbomen</li><li>Hoogstammen</li><li>Velling</li></ul>
+          <img class="thumb" src="img/boom.jpg" alt="Volwassen solitaire boom in een grasveld" width="1200" height="800" loading="lazy">
+        </li>
+        <li class="svc rv" data-i="4">
+          <span class="num">05</span>
+          <h3>Terrassen &amp; opritten</h3>
+          <span class="price"><b>vanaf 110 €/m²</b>geplaatst, met fundering</span>
+          <p>Keramiek, natuursteen, gebakken klinkers of grind. Met een afwatering die werkt en randen die over tien jaar nog recht liggen.</p>
+          <ul class="tags"><li>Waterdoorlatend</li><li>Natuursteen</li><li>Opritten</li></ul>
+          <img class="thumb" src="img/terras.jpg" alt="Schaduwrijk terras met tafel en planten in potten" width="1000" height="726" loading="lazy">
+        </li>
+        <li class="svc rv" data-i="5">
+          <span class="num">06</span>
+          <h3>Groendaken &amp; ecologisch</h3>
+          <span class="price"><b>vanaf 75 €/m²</b>sedum- of kruidendak</span>
+          <p>Groendaken op tuinhuis of carport, bloemenweides, wadi's en regenwaterbuffers. Een tuin die water vasthoudt en insecten voedt.</p>
+          <ul class="tags"><li>Groendak</li><li>Wadi</li><li>Bloemenweide</li></ul>
+          <img class="thumb" src="img/klaprozen.jpg" alt="Klaprozen en wilde bloemen in de zon" width="1400" height="844" loading="lazy">
+        </li>
+      </ol>
     </div>
   </div>
 </section>
 
-<section class="season" id="seizoen">
+<section class="projects" id="projecten" aria-labelledby="proj-title">
   <div class="wrap">
-    <div>
-      <span class="kicker">Seizoenskalender</span>
-      <h2 style="font-size:clamp(2.2rem,5vw,3.4rem)">Wat doet een tuin wanneer?</h2>
-      <p style="margin-top:.8rem;color:var(--muted)">Kies een maand en zie wat wij dan in uw tuin doen. Zo weet u altijd waarom we komen.</p>
-      <div class="months" id="months" role="group" aria-label="Kies een maand"></div>
-      <p class="legend"><i aria-hidden="true"></i> huidige maand</p>
+    <div class="shead">
+      <div class="rv"><span class="eyebrow">Geselecteerd werk</span><h2 class="h2" id="proj-title">Vier tuinen, <em>vier verhalen.</em></h2></div>
+      <p class="lede rv" style="--d:.1s">Elke tuin begint met een vraag. Open een project voor de briefing, het plantenpalet, de oppervlakte en de doorlooptijd.</p>
     </div>
-    <div class="tasks" id="tasks" aria-live="polite"></div>
+    <div class="pgrid">
+      <article class="pcard p1 rv">
+        <figure class="rv-img"><img src="img/villa.jpg" alt="Moderne woning met gazon onder een grote, oude boom bij avondlicht" width="1600" height="1067" loading="lazy"><span class="badge">Ontwerp &amp; aanleg</span></figure>
+        <div class="pmeta"><b>01</b><span>Itegem · 2025 · 1 250 m²</span></div>
+        <h3>Villatuin onder de oude eik</h3>
+        <p>Een nieuwbouwwoning rond een waardevolle boom: rust in de tuin, zonder één wortel te beschadigen.</p>
+        <button class="open" type="button" data-p="0" aria-haspopup="dialog">Bekijk het project <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+      </article>
+      <article class="pcard p2 rv" style="--d:.1s">
+        <figure class="rv-img"><img src="img/cottage.jpg" alt="Landelijke woning omringd door een rijk bloeiende tuin" width="1200" height="900" loading="lazy"><span class="badge">Aanleg &amp; onderhoud</span></figure>
+        <div class="pmeta"><b>02</b><span>Booischot · 2024 · 1 800 m²</span></div>
+        <h3>Landelijke tuin rond een hoeve</h3>
+        <p>Gemengde borders, oude appelrassen en een natuurlijke vijver, tweewekelijks onderhouden.</p>
+        <button class="open" type="button" data-p="1" aria-haspopup="dialog">Bekijk het project <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+      </article>
+      <article class="pcard p3 rv">
+        <figure class="rv-img"><img src="img/voortuin.jpg" alt="Moderne voortuin met gazon, betonnen stapstenen en lage beplanting" width="1600" height="1342" loading="lazy"><span class="badge">Voortuin</span></figure>
+        <div class="pmeta"><b>03</b><span>Hulshout · 2025 · 140 m²</span></div>
+        <h3>Voortuin met stapstenen</h3>
+        <p>Van kale grond naar een sobere, groene entree die het hele jaar strak oogt.</p>
+        <button class="open" type="button" data-p="2" aria-haspopup="dialog">Bekijk het project <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+      </article>
+      <article class="pcard p4 rv" style="--d:.1s">
+        <figure class="rv-img"><img src="img/bakken.jpg" alt="Verhoogde houten moestuinbakken met snijbiet en groenten" width="1200" height="800" loading="lazy"><span class="badge">Moestuin</span></figure>
+        <div class="pmeta"><b>04</b><span>Westerlo · 2026 · 60 m²</span></div>
+        <h3>Moestuin met verhoogde bakken</h3>
+        <p>Zes bakken in lariks, druppelbewatering en een compostplek: oogsten zonder te bukken.</p>
+        <button class="open" type="button" data-p="3" aria-haspopup="dialog">Bekijk het project <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+      </article>
+    </div>
+
+    <div class="ba-wrap" id="voor-na">
+      <div class="copy rv">
+        <span class="eyebrow">Voor &amp; na</span>
+        <h3>De voortuin in Hulshout, drie weken later.</h3>
+        <p>Sleep over de foto. Links ziet u een benadering van de startsituatie, rechts het resultaat met stapstenen, gazon en een lage, wintergroene beplanting.</p>
+        <dl class="ba-specs">
+          <div><dt>Oppervlakte</dt><dd>140 m²</dd></div>
+          <div><dt>Uitvoering</dt><dd>3 weken</dd></div>
+        </dl>
+      </div>
+      <div class="rv" style="--d:.1s">
+        <div class="ba" id="ba">
+          <img src="img/voortuin.jpg" alt="Na de aanleg: voortuin met gazon en stapstenen" width="1600" height="1342" loading="lazy">
+          <div class="before"><img src="img/voortuin.jpg" alt="" width="1600" height="1342" loading="lazy"></div>
+          <span class="ba-tag l">Vóór · simulatie</span><span class="ba-tag r">Na</span>
+          <input type="range" min="0" max="100" value="50" id="baRange" aria-label="Vergelijk vóór en na: schuif naar links of rechts" aria-valuetext="50 procent vóór">
+          <div class="ba-line"><div class="ba-knob"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M9 8l-5 5 5 5M17 8l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        </div>
+        <p class="note ba-cap">Eerlijk gezegd: het ‘vóór’-beeld is dezelfde foto met een filter, ter illustratie. Op uw eigen site tonen we echte voor- en nafoto's.</p>
+      </div>
+    </div>
+    <p class="note pnote">Illustratieve projecten met voorbeeldgegevens en stockfoto's, geen echte adressen of klanten.</p>
   </div>
 </section>
 
-<section class="projects" id="projecten">
+<dialog class="pd" id="pd" aria-labelledby="pdTitle">
+  <button class="pd-close" type="button" id="pdClose" aria-label="Sluit project"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  <div class="pd-in">
+    <div class="pd-gal">
+      <div class="pd-main"><img id="pdImg" src="img/villa.jpg" alt="" width="1600" height="1067"></div>
+      <div class="pd-thumbs" id="pdThumbs" role="group" aria-label="Foto's van dit project"></div>
+    </div>
+    <div class="pd-body">
+      <span class="eyebrow" id="pdKicker">Project</span>
+      <h2 id="pdTitle">Project</h2>
+      <p class="loc" id="pdLoc"></p>
+      <h3>De vraag</h3>
+      <p class="brief" id="pdBrief"></p>
+      <dl class="pd-specs" id="pdSpecs"></dl>
+      <h3>Plantenpalet</h3>
+      <ul class="palette" id="pdPalette"></ul>
+      <h3>Wat we deden</h3>
+      <ul class="did" id="pdDid"></ul>
+      <p class="note" style="margin-top:1.4rem">Voorbeeldproject met stockfoto's ter illustratie.</p>
+      <div class="pd-nav">
+        <button class="link" type="button" id="pdNext">Volgend project <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+        <a class="btn btn-clay btn-sm" href="#offerte" id="pdCta">Zoiets voor mijn tuin</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<section class="seasons" id="seizoenen" aria-labelledby="sea-title">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Projecten</span>
-      <h2>Tuinen die we mee groot zagen worden.</h2>
-      <p>Een greep uit onze aanleg- en onderhoudsprojecten. Op de echte site komen hier uw eigen foto's, voor en na.</p>
+    <div class="shead">
+      <div class="rv"><span class="eyebrow">Seizoenskalender</span><h2 class="h2" id="sea-title">Wat vraagt uw tuin <em>deze maand?</em></h2></div>
+      <p class="lede rv" style="--d:.1s">Kies een maand en zie wat onze hoveniers dan doen. Zo weet u altijd waarom we komen, en wanneer het beste moment is om te starten.</p>
     </div>
-    <div class="grid">
-      <article class="proj wide"><figure><img src="img/cottage.jpg" alt="Landelijke woning omringd door een rijk bloeiende tuin" loading="lazy" width="1200" height="800"><figcaption>Aanleg</figcaption></figure><div class="body"><h3>Landelijke tuin rond een hoeve</h3><p class="meta">Heist-op-den-Berg · 2024, in onderhoud sinds 2025 · 1 800 m²</p><p>Gemengde borders, een boomgaard met oude appelrassen en een natuurlijke vijver. Tweewekelijks onderhoud door dezelfde ploeg.</p><div class="tags"><span>Aanleg</span><span>Vijver</span><span>Onderhoudscontract</span></div></div></article>
-      <article class="proj"><figure><img src="img/moestuin.jpg" alt="Verhoogde moestuinbakken met sla en kruiden" loading="lazy" width="1000" height="667"><figcaption>Moestuin</figcaption></figure><div class="body"><h3>Moestuin met verhoogde bakken</h3><p class="meta">Booischot · 2026 · 60 m²</p><p>Zes bakken in lariks, druppelbewatering en een compostplek. Startpakket met plantgoed inbegrepen.</p><div class="tags"><span>Aanleg</span><span>Moestuin</span></div></div></article>
-      <article class="proj"><figure><img src="img/terras.jpg" alt="Terras onder bomen, met potten en tuinmeubelen" loading="lazy" width="1000" height="667"><figcaption>Terras</figcaption></figure><div class="body"><h3>Schaduwterras in de stad</h3><p class="meta">Lier · 2025 · 35 m²</p><p>Keramische tegels, varens en hortensia's voor een koer op het noorden. Geen gazon, wel groen.</p><div class="tags"><span>Terras</span><span>Schaduwtuin</span></div></div></article>
-      <article class="proj"><figure><img src="img/planten.jpg" alt="Handen planten jonge plantjes in de aarde" loading="lazy" width="1000" height="667"><figcaption>Aanplant</figcaption></figure><div class="body"><h3>Najaarsaanplant vaste planten</h3><p class="meta">Hulshout · 2025 · 240 m² border</p><p>Prairiebeplanting met grassen en vaste planten die van maart tot november iets te tonen hebben.</p><div class="tags"><span>Borders</span><span>Vaste planten</span></div></div></article>
-      <article class="proj"><figure><img src="img/potten.jpg" alt="Hovenier verpot jonge planten in zwarte potten" loading="lazy" width="1000" height="667"><figcaption>Kwekerij</figcaption></figure><div class="body"><h3>Eigen opkweek</h3><p class="meta">Onze loods · doorlopend</p><p>Een deel van onze vaste planten kweken we zelf op uit stek. Sterker plantgoed, minder transport.</p><div class="tags"><span>Kwekerij</span><span>Duurzaam</span></div></div></article>
+    <div class="rv">
+      <div class="tabs" id="tabs" role="tablist" aria-label="Maanden"></div>
+      <div class="slegend" aria-hidden="true"><span><i style="background:#8ea4a8"></i>Winter</span><span><i style="background:#9cbf7a"></i>Lente</span><span><i style="background:#c79b55"></i>Zomer</span><span><i style="background:#a65f3b"></i>Herfst</span><span><i style="background:var(--clay);width:6px;height:6px;border-radius:50%"></i>Huidige maand</span></div>
     </div>
-    <p class="note">Illustratieve projecten met voorbeeldgegevens en stockfoto's, geen echte adressen.</p>
+    <div class="spanel rv" id="spanel" role="tabpanel" aria-labelledby="tab-0" tabindex="0">
+      <div class="sframe" aria-hidden="true">
+        <img data-s="w" src="img/winter.jpg" alt="" width="1200" height="767" loading="lazy">
+        <img data-s="l" src="img/bloesem.jpg" alt="" width="1200" height="750" loading="lazy">
+        <img data-s="z" class="on" src="img/allium.jpg" alt="" width="900" height="1349" loading="lazy">
+        <img data-s="h" src="img/herfst.jpg" alt="" width="1000" height="1500" loading="lazy">
+        <div class="slabel"><small>Seizoen</small><b id="sName">Zomer</b></div>
+      </div>
+      <div class="stasks" id="stasks">
+        <div class="mhead"><h3 id="mName">Juni</h3><span id="mSub">Zomer</span></div>
+        <ol id="mList">
+          <li><div><b>Hagen scheren</b><span>Buxus, taxus, liguster en haagbeuk.</span></div></li>
+          <li><div><b>Zomersnoei van fruitbomen</b><span>Voor meer vruchten en minder waterloten.</span></div></li>
+          <li><div><b>Terras reinigen</b><span>Zonder hogedruk op natuursteen: we borstelen en behandelen.</span></div></li>
+        </ol>
+        <div class="scta"><a class="btn btn-ghost btn-sm" href="#offerte" id="mCta">Plan dit in voor mijn tuin</a><span class="note" id="mNote"></span></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="process" id="werkwijze">
-  <img class="bg" src="img/zaailingen.jpg" alt="" loading="lazy" width="900" height="600">
+<section class="plans" id="onderhoud" aria-labelledby="plan-title">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker" style="color:var(--leaf)">Werkwijze</span>
-      <h2>Zo gaan we te werk.</h2>
-      <p>Geen verrassingen: u weet vooraf wat het kost, wanneer we komen en wie er in uw tuin staat.</p>
+    <div class="shead">
+      <div class="rv"><span class="eyebrow">Onderhoudsformules</span><h2 class="h2" id="plan-title">Onderhoud <em>zonder omkijken.</em></h2></div>
+      <p class="lede rv" style="--d:.1s">Kies hoe vaak we komen en wat we doen. Schuif met de oppervlakte van uw tuin voor een eerste prijsindicatie.</p>
+    </div>
+    <div class="pctl rv">
+      <fieldset class="seg" id="seg">
+        <legend>Facturatie</legend>
+        <span class="thumb" aria-hidden="true"></span>
+        <label><input type="radio" name="bill" value="b" checked>Per beurt</label>
+        <label><input type="radio" name="bill" value="y">Jaarcontract<em>−12 %</em></label>
+      </fieldset>
+      <div class="size">
+        <label for="m2">Oppervlakte tuin</label>
+        <input type="range" id="m2" min="50" max="2000" step="25" value="300">
+        <output for="m2" id="m2Out">300 m²</output>
+      </div>
+    </div>
+    <div class="tiers">
+      <article class="tier rv">
+        <h3>Basis</h3><p class="tag">Netjes bijgehouden</p>
+        <p class="amt"><span data-amt="0">95 €</span><small data-unit>per beurt</small></p>
+        <p class="amt-sub" data-sub="0">18 beurten per jaar, van maart tot november.</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Gazon maaien en kanten steken</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Paden en terras vegen</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Groenafval afgevoerd en verwerkt</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Kort verslag na elke beurt</li>
+        </ul>
+        <a class="btn btn-ghost" href="#offerte" data-plan="Basis">Kies Basis</a>
+      </article>
+      <article class="tier feat rv" style="--d:.08s">
+        <span class="flag">Meest gekozen</span>
+        <h3>Seizoen</h3><p class="tag">De tuin op zijn best</p>
+        <p class="amt"><span data-amt="1">135 €</span><small data-unit>per beurt</small></p>
+        <p class="amt-sub" data-sub="1">22 beurten per jaar, afgestemd op het groeiritme.</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Alles uit Basis</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Borders wieden en bijwerken</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Hagen twee keer per jaar scheren</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Bladeren ruimen in de herfst</li>
+        </ul>
+        <a class="btn btn-light" href="#offerte" data-plan="Seizoen">Kies Seizoen</a>
+      </article>
+      <article class="tier rv" style="--d:.16s">
+        <h3>Integraal</h3><p class="tag">Wij denken vooruit</p>
+        <p class="amt"><span data-amt="2">185 €</span><small data-unit>per beurt</small></p>
+        <p class="amt-sub" data-sub="2">26 beurten per jaar, ook in de winter.</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Alles uit Seizoen</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Snoei van heesters en fruitbomen</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Gazon verticuteren en bemesten</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Vakantiedienst en jaarplan</li>
+        </ul>
+        <a class="btn btn-ghost" href="#offerte" data-plan="Integraal">Kies Integraal</a>
+      </article>
+    </div>
+    <p class="note" id="planNote" aria-live="polite">Indicatieve prijzen, excl. btw, voor een tuin van ± 300 m². De definitieve prijs volgt na een gratis plaatsbezoek.</p>
+  </div>
+</section>
+
+<section class="process" id="werkwijze" aria-labelledby="proc-title">
+  <svg class="contours" viewBox="-220 -220 440 440" aria-hidden="true"><defs><path id="blob" d="M4-104C52-112 92-80 112-30 128 14 104 66 60 92 22 114-30 108-68 84-104 60-118 18-100-30-84-72-44-98 4-104Z"/></defs><g fill="none" stroke="currentColor" stroke-width=".7"><use href="#blob" transform="translate(0 0) scale(0.22) rotate(8)"/><use href="#blob" transform="translate(-4 2) scale(0.42) rotate(17)"/><use href="#blob" transform="translate(-9 5) scale(0.62) rotate(26)"/><use href="#blob" transform="translate(-14 7) scale(0.82) rotate(35)"/><use href="#blob" transform="translate(-18 10) scale(1.02) rotate(44)"/><use href="#blob" transform="translate(-23 12) scale(1.22) rotate(53)"/><use href="#blob" transform="translate(-28 15) scale(1.42) rotate(62)"/><use href="#blob" transform="translate(-32 17) scale(1.62) rotate(71)"/><use href="#blob" transform="translate(-37 20) scale(1.82) rotate(80)"/><use href="#blob" transform="translate(-42 22) scale(2.02) rotate(89)"/><use href="#blob" transform="translate(-46 25) scale(2.22) rotate(98)"/></g></svg>
+  <div class="wrap">
+    <div class="shead">
+      <div class="rv"><span class="eyebrow light">Werkwijze</span><h2 class="h2" id="proc-title">Vier stappen, <em>geen verrassingen.</em></h2></div>
+      <p class="lede rv" style="--d:.1s">U weet vooraf wat het kost, wanneer we komen en wie er in uw tuin staat. En na de aanleg blijven we gewoon langskomen.</p>
     </div>
     <ol class="steps">
-      <li class="step"><h3>Kennismaking in de tuin</h3><p>We komen langs, luisteren naar wat u wilt en kijken naar grond, licht en water. Gratis en vrijblijvend.</p></li>
-      <li class="step"><h3>Plan en offerte</h3><p>Een schets met plantenlijst en een offerte met vaste prijs, binnen de week in uw mailbox.</p></li>
-      <li class="step"><h3>Uitvoering</h3><p>Onze eigen ploeg, eigen machines. We houden de buren te vriend en laten de straat proper achter.</p></li>
-      <li class="step"><h3>Onderhoud op maat</h3><p>Een onderhoudscontract dat volgt wat de tuin nodig heeft, seizoen na seizoen. Opzegbaar per jaar.</p></li>
+      <li class="step rv"><span class="n">01</span><h3>Kennismaking</h3><p class="when">Week 1 · gratis</p><p>We wandelen samen door de tuin en luisteren: hoe gebruikt u hem, wat moet blijven, waar valt de zon? Reken op een uur.</p></li>
+      <li class="step rv" style="--d:.08s"><span class="n">02</span><h3>Ontwerp</h3><p class="when">Week 2 tot 4</p><p>Een plan op schaal met beplantingsplan, materialen en een offerte met vaste prijs. We passen aan tot het klopt.</p></li>
+      <li class="step rv" style="--d:.16s"><span class="n">03</span><h3>Aanleg</h3><p class="when">2 tot 10 weken</p><p>Onze eigen ploeg, eigen machines. Elke vrijdag krijgt u een korte update met foto's van de werf.</p></li>
+      <li class="step rv" style="--d:.24s"><span class="n">04</span><h3>Onderhoud</h3><p class="when">Doorlopend</p><p>Dezelfde hoveniers komen terug, volgens het ritme van het seizoen. Opzegbaar per jaar, zonder kleine lettertjes.</p></li>
     </ol>
+    <div class="pcta rv">
+      <p>De eerste stap kost niets: een uur samen in uw tuin.</p>
+      <a class="btn btn-light" href="#offerte">Plan een kennismaking <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="eco" id="duurzaam" aria-labelledby="eco-title">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Klanten</span>
-      <h2>Wat tuineigenaars vertellen.</h2>
-    </div>
-    <div class="quotes">
-      <blockquote class="quote"><div class="stars" aria-label="5 op 5">★★★★★</div><p>Onze koer is een tuin geworden waar de kinderen elke dag in spelen. Het plan klopte tot op de plant.</p><footer>Voorbeeldklant · stadstuin, Heist-op-den-Berg</footer></blockquote>
-      <blockquote class="quote"><div class="stars" aria-label="5 op 5">★★★★★</div><p>Al vier jaar in onderhoud. Altijd dezelfde mannen, altijd op het afgesproken moment, altijd proper.</p><footer>Voorbeeldklant · onderhoudscontract, Hulshout</footer></blockquote>
-      <blockquote class="quote"><div class="stars" aria-label="5 op 5">★★★★★</div><p>De oude beuk vellen was een hele operatie. Alles veilig, geen schade, en 's avonds was het hout al versnipperd.</p><footer>Voorbeeldklant · boomvelling, Westerlo</footer></blockquote>
-    </div>
-    <p class="rnote">Illustratieve teksten. Op de echte site tonen we uw Google-beoordelingen.</p>
-  </div>
-</section>
-
-<section class="offerte" id="offerte">
-  <div class="wrap">
-    <div>
-      <span class="kicker">Offerte</span>
-      <h2>Vertel ons over uw tuin.</h2>
-      <p class="intro">Een paar vragen volstaan. We bellen u binnen twee werkdagen om een bezoek in te plannen.</p>
-      <div class="promise">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><b>Gratis plaatsbezoek</b><span>Ook als het bij een gesprek blijft.</span></div></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><b>Vaste prijs</b><span>Geen meerwerk zonder uw akkoord.</span></div></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><b>Planten met garantie</b><span>Eén jaar hergroeigarantie op alle aanplant.</span></div></div>
+    <div class="eco-grid">
+      <figure class="eco-img rv-img" style="margin:0"><img src="img/klaprozen.jpg" alt="Klaprozen en paarse wilde bloemen tegen een zonnige lucht" width="1400" height="844" loading="lazy" data-px=".08"><figcaption>Bloemenweide, tweede jaar</figcaption></figure>
+      <div>
+        <div class="rv"><span class="eyebrow">Biodiversiteit</span><h2 class="h2" id="eco-title">Een tuin die ook <em>voor de natuur</em> werkt.</h2>
+        <p class="lede">Een mooie tuin en een levende tuin zijn geen tegenstelling. We kiezen planten die bijen, vlinders en vogels voeden, en laten regenwater zoveel mogelijk in de grond zakken.</p></div>
+        <ul class="princ">
+          <li class="rv"><svg viewBox="0 0 30 30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="15" cy="15" r="12"/><path d="M6.5 23.5l17-17"/><path d="M15 8c-3 4-4.5 6.5-4.5 8.5a4.5 4.5 0 009 0C19.5 14.5 18 12 15 8z"/></g></svg><b>Geen pesticiden</b><span>We wieden mechanisch, met heet water of met de hand. Al sinds de eerste dag.</span></li>
+          <li class="rv" style="--d:.08s"><svg viewBox="0 0 30 30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 27V12"/><path d="M15 18c-6-.5-9.5-4.5-10-10 6 .3 9.6 4.2 10 10z"/><path d="M15 14c4.5-.6 7.5-3.8 8-8.5-4.8.3-7.7 3.4-8 8.5z"/></g></svg><b>Planten van hier</b><span>Minstens 60 % inheemse of bijvriendelijke soorten, gekweekt bij kwekers uit de Kempen.</span></li>
+          <li class="rv"><svg viewBox="0 0 30 30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3c-5 7-7.5 11-7.5 14.5a7.5 7.5 0 0015 0C22.5 14 20 10 15 3z"/><path d="M3 27c3-1.5 5-1.5 8 0s5 1.5 8 0 5-1.5 8 0"/></g></svg><b>Regenwater houden</b><span>Wadi's, infiltratiekratten en waterdoorlatende verharding: het water blijft in uw tuin.</span></li>
+          <li class="rv" style="--d:.08s"><svg viewBox="0 0 30 30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 11a10 10 0 00-17-2"/><path d="M6 4v5h5"/><path d="M6 19a10 10 0 0017 2"/><path d="M24 26v-5h-5"/></g></svg><b>Niets verloren</b><span>Snoeihout wordt houtsnipper, blad wordt mulch. Wat we toch afvoeren, gaat naar de compostering.</span></li>
+        </ul>
       </div>
-      <div class="contactbox"><img src="img/allium.jpg" alt="" loading="lazy" width="900" height="600"><b>Liever bellen of WhatsAppen?</b><a href="tel:+3215000001">015 00 00 01</a>, ma tot vr 7:30 – 17:30. Stuur gerust een foto van uw tuin mee.</div>
     </div>
-    <form class="form" id="qform" novalidate>
-      <div id="form-body">
+
+    <article class="potm rv" aria-labelledby="potmName">
+      <div class="potm-art" aria-hidden="true"><span class="ring"></span><span class="mo" id="potmMo">Plant van de maand</span><svg class="sprig"><use href="#sprig"/></svg></div>
+      <div class="potm-body">
+        <div class="potm-head">
+          <span class="eyebrow" id="potmLabel">Plant van de maand</span>
+          <div class="potm-btns">
+            <button class="ibtn" type="button" id="potmPrev" aria-label="Plant van de vorige maand"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14 8H3M7 4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="ibtn" type="button" id="potmNext" aria-label="Plant van de volgende maand"><svg aria-hidden="true"><use href="#arrow"/></svg></button>
+          </div>
+        </div>
+        <div id="potmLive" aria-live="polite">
+          <h3 id="potmName">Aster</h3>
+          <span class="latin" id="potmLatin">Symphyotrichum 'Little Carlow'</span>
+          <p class="why" id="potmWhy">Een wolk van lavendelblauwe sterretjes tot diep in de herfst, wanneer bijen en vlinders nog weinig vinden.</p>
+          <dl id="potmDl"><div><dt>Standplaats</dt><dd>Zon tot halfschaduw</dd></div><div><dt>Hoogte</dt><dd>90 cm</dd></div><div><dt>Bloei</dt><dd>sep – nov</dd></div><div><dt>Goed voor</dt><dd>Bijen, vlinders</dd></div></dl>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="reviews" id="reviews" aria-labelledby="rev-title">
+  <div class="wrap">
+    <div class="shead">
+      <div class="rv"><span class="eyebrow">Ervaringen</span><h2 class="h2" id="rev-title">Wat tuineigenaars <em>vertellen.</em></h2></div>
+      <p class="lede rv" style="--d:.1s">Voorbeeldreviews ter illustratie. Op uw echte site tonen we uw eigen Google-reviews.</p>
+    </div>
+    <div class="rv-grid">
+      <figure class="rv-main rv">
+        <span class="qm" aria-hidden="true">“</span>
+        <blockquote style="margin:0"><p>Ze hebben eerst een uur in onze tuin rondgelopen voor ze één lijn tekenden. Drie jaar later klopt het plan nog altijd, tot op de plant.</p></blockquote>
+        <figcaption><footer><span class="av" aria-hidden="true">LV</span><span><b>Voorbeeldklant</b>Villatuin, Itegem</span></footer></figcaption>
+        <div class="rv-score"><b>4,9</b><span>gemiddelde voorbeeldscore<br>op 120 fictieve reviews</span></div>
+      </figure>
+      <div class="rv-side">
+        <blockquote class="rv" style="--d:.08s"><div class="stars" role="img" aria-label="5 op 5 sterren"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div><p>Al vier jaar in onderhoud. Altijd dezelfde mensen, altijd op het afgesproken moment, en ze laten alles properder achter dan ze het vonden.</p><footer><span class="av" aria-hidden="true">AM</span><span><b>Voorbeeldklant</b>Onderhoudscontract, Hulshout</span></footer></blockquote>
+        <blockquote class="rv" style="--d:.16s"><div class="stars" role="img" aria-label="5 op 5 sterren"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div><p>De oude beuk vellen was een hele operatie. Alles veilig, geen schade bij de buren, en 's avonds lag het hout al als mulch onder de haag.</p><footer><span class="av" aria-hidden="true">JP</span><span><b>Voorbeeldklant</b>Boomvelling, Westerlo</span></footer></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faqarea" aria-label="Veelgestelde vragen en werkgebied">
+  <div class="wrap fa-grid">
+    <div id="faq">
+      <div class="rv"><span class="eyebrow">Veelgestelde vragen</span><h2 class="h2" style="margin-top:1.1rem">Goed om <em>te weten.</em></h2></div>
+      <div class="faq rv">
+        <details><summary>Hoe snel kunt u langskomen?<i aria-hidden="true"></i></summary><p class="ans">Voor een kennismaking meestal binnen twee weken. In het voorjaar loopt de agenda snel vol: wilt u in april een nieuwe tuin, plan het ontwerp dan best in de winter.</p></details>
+        <details><summary>Wat kost een tuinontwerp?<i aria-hidden="true"></i></summary><p class="ans">Een ontwerp start vanaf 650 € excl. btw voor een tuin tot 300 m². Kiest u daarna voor de aanleg bij ons, dan trekken we dat bedrag af van de factuur.</p></details>
+        <details><summary>Kan ik een onderhoudscontract nemen zonder aanleg?<i aria-hidden="true"></i></summary><p class="ans">Zeker. Veel klanten starten met onderhoud van een bestaande tuin. Na het eerste jaar stellen we samen een jaarplan op met wat de tuin nodig heeft.</p></details>
+        <details><summary>Geeft u garantie op de planten?<i aria-hidden="true"></i></summary><p class="ans">Ja, één jaar hergroeigarantie op alle aanplant die wij leveren en planten, op voorwaarde dat het onderhoud en de bewatering gebeuren zoals afgesproken.</p></details>
+        <details><summary>Moet ik thuis zijn tijdens het onderhoud?<i aria-hidden="true"></i></summary><p class="ans">Nee. U geeft ons toegang tot de tuin en na elke beurt krijgt u een kort bericht met wat we gedaan hebben en wat er de volgende keer op de planning staat.</p></details>
+        <details><summary>Is het afvoeren van groenafval inbegrepen?<i aria-hidden="true"></i></summary><p class="ans">Ja, afvoer en verwerking zitten in elke prijs. Wat kan, verwerken we ter plaatse tot compost of mulch, zodat het terug naar uw borders gaat.</p></details>
+        <details><summary>Bestaan er premies voor een groendak of wadi?<i aria-hidden="true"></i></summary><p class="ans">Sommige gemeenten en waterbedrijven geven een tegemoetkoming voor groendaken of het afkoppelen van regenwater. De voorwaarden verschillen per gemeente; we helpen u graag uitzoeken wat voor u geldt.</p></details>
+      </div>
+      <div class="askcard rv"><svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg><div><b>Staat uw vraag er niet bij?</b><p>Bel ons op <a href="tel:+3215000001">015 00 00 01</a> of stel ze bij uw aanvraag. We antwoorden binnen de werkdag.</p></div></div>
+    </div>
+    <div class="area" id="werkgebied">
+      <div class="rv"><span class="eyebrow">Werkgebied</span><h2 class="h2">Thuis in de <em>Zuiderkempen.</em></h2>
+      <p class="lede" style="margin-top:1.1rem">Korte verplaatsingen betekenen meer tijd in uw tuin. Onderhoud doen we binnen ongeveer 10 km, ontwerp en aanleg tot zo'n 20 km rond Heist-op-den-Berg.</p></div>
+      <div class="map rv" aria-hidden="true"><svg viewBox="0 0 400 400" id="mapSvg"></svg></div>
+      <form class="check rv" id="areaForm" role="search" aria-label="Check uw gemeente">
+        <label for="areaIn">Komen we tot bij u?</label>
+        <div class="row"><input id="areaIn" list="areaList" placeholder="Uw gemeente, bv. Hulshout" autocomplete="address-level2"><button class="btn btn-sm" type="submit">Check</button></div>
+        <datalist id="areaList"></datalist>
+        <p class="res" id="areaRes" aria-live="polite"></p>
+      </form>
+      <p class="towns">Heist-op-den-Berg, Itegem, Wiekevorst, Booischot, Hulshout, Begijnendijk, Berlaar, Westerlo, Nijlen, Putte, Herselt, Keerbergen, Tremelo, Herentals, Lier en Aarschot. Schematische kaart, niet op schaal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="offerte" id="offerte" aria-labelledby="of-title">
+  <div class="wrap of-grid">
+    <div class="of-side">
+      <div class="rv"><span class="eyebrow">Offerte</span><h2 class="h2" id="of-title">Vertel ons over <em>uw tuin.</em></h2>
+      <p class="lede">Drie korte stappen. We bellen u binnen twee werkdagen om een gratis bezoek in te plannen.</p></div>
+      <ul class="promise rv">
+        <li><svg aria-hidden="true"><use href="#check"/></svg><div><b>Gratis plaatsbezoek</b><span>Ook als het bij een gesprek blijft.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#check"/></svg><div><b>Vaste prijs</b><span>Geen meerwerk zonder uw akkoord.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#check"/></svg><div><b>Eén jaar hergroeigarantie</b><span>Op alle aanplant die wij leveren.</span></div></li>
+      </ul>
+      <div class="callcard rv"><img src="img/allium.jpg" alt="" width="900" height="1349" loading="lazy"><b>Liever bellen of een foto sturen?</b><a href="tel:+3215000001">015 00 00 01</a><p>Ma tot vr, 7:30 tot 17:30. Via WhatsApp kan ook: stuur gerust een foto van uw tuin mee.</p></div>
+    </div>
+
+    <form class="qf rv" id="qf" novalidate aria-labelledby="of-title">
+      <ol class="prog" id="prog" aria-label="Voortgang">
+        <li class="cur"><span>Stap 1</span>Wat</li>
+        <li><span>Stap 2</span>Uw tuin</li>
+        <li><span>Stap 3</span>Contact</li>
+      </ol>
+      <p class="sr" id="progLive" aria-live="polite">Stap 1 van 3</p>
+
+      <div class="qstep" data-step="0">
+        <h3 tabindex="-1">Waarmee kunnen we helpen?</h3>
+        <p class="sub">Kies alles wat van toepassing is.</p>
         <fieldset>
-          <legend>Waarmee kunnen we helpen?</legend>
-          <div class="chips">
-            <label class="chip"><input type="radio" name="type" value="Tuinaanleg" checked><span>Tuinaanleg</span></label>
-            <label class="chip"><input type="radio" name="type" value="Onderhoudscontract"><span>Onderhoud</span></label>
-            <label class="chip"><input type="radio" name="type" value="Snoeien of vellen"><span>Snoeien / vellen</span></label>
-            <label class="chip"><input type="radio" name="type" value="Terras of oprit"><span>Terras / oprit</span></label>
-            <label class="chip"><input type="radio" name="type" value="Iets anders"><span>Iets anders</span></label>
+          <legend class="sr">Diensten</legend>
+          <div class="opts" id="svcOpts">
+            <label class="opt"><input type="checkbox" name="svc" value="Tuinontwerp"><span class="bx"><svg><use href="#check"/></svg></span><span><b>Tuinontwerp</b><small>Plan en beplantingsplan</small></span></label>
+            <label class="opt"><input type="checkbox" name="svc" value="Tuinaanleg"><span class="bx"><svg><use href="#check"/></svg></span><span><b>Tuinaanleg</b><small>Nieuwe of vernieuwde tuin</small></span></label>
+            <label class="opt"><input type="checkbox" name="svc" value="Onderhoud"><span class="bx"><svg><use href="#check"/></svg></span><span><b>Onderhoud</b><small>Per beurt of jaarcontract</small></span></label>
+            <label class="opt"><input type="checkbox" name="svc" value="Snoeien of vellen"><span class="bx"><svg><use href="#check"/></svg></span><span><b>Snoeien of vellen</b><small>Bomen, hagen, fruit</small></span></label>
+            <label class="opt"><input type="checkbox" name="svc" value="Terras of oprit"><span class="bx"><svg><use href="#check"/></svg></span><span><b>Terras of oprit</b><small>Verharding en afwatering</small></span></label>
+            <label class="opt"><input type="checkbox" name="svc" value="Groendak of ecologisch"><span class="bx"><svg><use href="#check"/></svg></span><span><b>Groendak of ecologisch</b><small>Wadi, weide, groendak</small></span></label>
+          </div>
+        </fieldset>
+        <p class="ferr" id="e-svc" role="alert"></p>
+      </div>
+
+      <div class="qstep" data-step="1" hidden>
+        <h3 tabindex="-1">Vertel iets over de tuin.</h3>
+        <p class="sub">Een schatting is genoeg; we meten alles op tijdens het bezoek.</p>
+        <fieldset>
+          <legend><label for="qm2">Oppervlakte van de tuin</label></legend>
+          <div class="rng"><input type="range" id="qm2" min="20" max="3000" step="10" value="250"><output for="qm2" id="qm2Out">± 250 m²</output></div>
+          <div class="rng-scale" aria-hidden="true"><span>stadstuin</span><span>gezinstuin</span><span>grote tuin</span></div>
+        </fieldset>
+        <fieldset>
+          <legend>Hoeveel zon krijgt de tuin?</legend>
+          <div class="opts three">
+            <label class="opt"><input type="radio" name="sun" value="Vooral zon" checked><span class="bx"><svg><use href="#check"/></svg></span><svg class="ico" viewBox="0 0 26 26" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="13" cy="13" r="5"/><path d="M13 2v3M13 21v3M2 13h3M21 13h3M5.2 5.2l2.1 2.1M18.7 18.7l2.1 2.1M5.2 20.8l2.1-2.1M18.7 7.3l2.1-2.1"/></g></svg><span><b>Vooral zon</b><small>Meer dan 6 uur</small></span></label>
+            <label class="opt"><input type="radio" name="sun" value="Halfschaduw"><span class="bx"><svg><use href="#check"/></svg></span><svg class="ico" viewBox="0 0 26 26" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M13 8a5 5 0 000 10z" fill="currentColor"/><circle cx="13" cy="13" r="5"/><path d="M13 2v3M13 21v3M2 13h3M21 13h3"/></g></svg><span><b>Halfschaduw</b><small>3 tot 6 uur</small></span></label>
+            <label class="opt"><input type="radio" name="sun" value="Vooral schaduw"><span class="bx"><svg><use href="#check"/></svg></span><svg class="ico" viewBox="0 0 26 26" aria-hidden="true"><path d="M7 19a5 5 0 01.4-10 6.5 6.5 0 0112.4 2A4 4 0 0119 19z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span><b>Vooral schaduw</b><small>Minder dan 3 uur</small></span></label>
           </div>
         </fieldset>
         <fieldset>
-          <legend>Hoe groot is de tuin?</legend>
-          <div class="range"><input type="range" id="q-m2" min="20" max="2000" step="10" value="200"><output for="q-m2" id="q-m2-out">± 200 m²</output></div>
+          <legend><label for="qbud">Richtbudget</label></legend>
+          <div class="rng"><input type="range" id="qbud" min="0" max="4" step="1" value="1" aria-valuetext="5 000 tot 10 000 euro"><output for="qbud" id="qbudOut">5 – 10 k€</output></div>
+          <div class="rng-scale" aria-hidden="true"><span>&lt; 5 k€</span><span>20 k€</span><span>&gt; 40 k€</span></div>
+          <label class="agree" style="margin-top:.6rem"><input type="checkbox" id="qnobud">Ik heb nog geen idee van het budget</label>
         </fieldset>
-        <div class="two">
-          <div class="field"><label for="q-name">Naam</label><input id="q-name" autocomplete="name" required></div>
-          <div class="field"><label for="q-tel">Telefoon</label><input id="q-tel" type="tel" inputmode="tel" autocomplete="tel" required></div>
-        </div>
-        <div class="two">
-          <div class="field"><label for="q-city">Gemeente</label><input id="q-city" autocomplete="address-level2" placeholder="bv. Heist-op-den-Berg"></div>
-          <div class="field"><label for="q-when">Wanneer?</label><select id="q-when"><option>Zo snel mogelijk</option><option>Dit seizoen</option><option>Volgend voorjaar</option><option>Ik oriënteer me nog</option></select></div>
-        </div>
-        <div class="field"><label for="q-msg">Vertel iets over uw tuin</label><textarea id="q-msg" placeholder="bv. Achtertuin op het zuiden, veel schaduw van de buren hun eik. We willen een terras en minder gazon."></textarea></div>
-        <p class="err" id="q-err"></p>
-        <button class="btn btn-clay" type="submit" style="width:100%">Verstuur mijn aanvraag</button>
-        <p style="margin-top:.8rem;font-size:.85rem;color:var(--muted)">Demo: er wordt niets verstuurd. Op de echte site komt elke aanvraag in uw mailbox en op uw gsm.</p>
       </div>
-      <div class="done" id="done" role="status" aria-live="polite" tabindex="-1">
-        <div class="check" aria-hidden="true">✓</div>
-        <h3>Bedankt, we bellen u!</h3>
-        <p id="done-text"></p>
-        <p class="demo-note">Dit is een demo: er is geen echte aanvraag verstuurd.</p>
-        <p style="margin-top:1.4rem"><button class="btn btn-line" type="button" id="again">Nieuwe aanvraag</button></p>
+
+      <div class="qstep" data-step="2" hidden>
+        <h3 tabindex="-1">Hoe bereiken we u?</h3>
+        <p class="sub">We gebruiken uw gegevens alleen om u terug te bellen.</p>
+        <div class="f2">
+          <div class="f"><label for="qn">Naam</label><input id="qn" autocomplete="name" required aria-describedby="e-qn"><p class="ferr" id="e-qn"></p></div>
+          <div class="f"><label for="qt">Telefoon</label><input id="qt" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-qt"><p class="ferr" id="e-qt"></p></div>
+        </div>
+        <div class="f2">
+          <div class="f"><label for="qe">E-mail</label><input id="qe" type="email" autocomplete="email" required aria-describedby="e-qe"><p class="ferr" id="e-qe"></p></div>
+          <div class="f"><label for="qc">Gemeente <small>(optioneel)</small></label><input id="qc" autocomplete="address-level2" placeholder="bv. Heist-op-den-Berg"></div>
+        </div>
+        <div class="f"><label for="qw">Wanneer wilt u starten?</label><select id="qw"><option>Zo snel mogelijk</option><option>Dit seizoen</option><option>Volgend voorjaar</option><option>Ik oriënteer me nog</option></select></div>
+        <div class="f"><label for="qmsg">Iets wat we moeten weten? <small>(optioneel)</small></label><textarea id="qmsg" placeholder="bv. Achtertuin op het zuiden, veel schaduw van de eik van de buren. We willen een terras en minder gazon."></textarea></div>
+        <label class="agree"><input type="checkbox" id="qok" aria-describedby="e-qok">Ik ga akkoord dat Groenwerk De Witte mij contacteert over deze aanvraag.</label>
+        <p class="ferr" id="e-qok"></p>
+      </div>
+
+      <div class="qdone" id="qdone" hidden>
+        <div class="ok" aria-hidden="true"><svg><use href="#check"/></svg></div>
+        <h3 tabindex="-1" id="qdoneTitle">Bedankt, we bellen u!</h3>
+        <p id="qdoneText"></p>
+        <dl class="qsum" id="qsum"></dl>
+        <span class="demo">Demo: er is niets verstuurd.</span>
+        <p style="margin-top:1.4rem"><button class="btn btn-ghost btn-sm" type="button" id="qagain">Nieuwe aanvraag</button></p>
+      </div>
+
+      <div class="qnav" id="qnav">
+        <button class="btn btn-ghost" type="button" id="qprev" hidden>Vorige</button>
+        <button class="btn btn-clay" type="submit" id="qnext" style="margin-left:auto">Volgende <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+        <p class="note">Demo: er wordt niets verstuurd. Op de echte site komt elke aanvraag in uw mailbox en op uw gsm.</p>
       </div>
     </form>
   </div>
@@ -397,68 +1231,419 @@ legend{font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppe
 </main>
 
 <footer class="foot">
+  <svg class="sprig-bg" aria-hidden="true"><use href="#sprig"/></svg>
   <div class="wrap">
-    <div><h3>Groenwerk De Witte BV</h3><p>Voorbeeldweg 44, 2220 Heist-op-den-Berg<br>BTW BE 0000.000.000 (fictief)<br>Erkend tuinaannemer, verzekerd</p></div>
-    <div><h3>Contact</h3><p><a href="tel:+3215000001">015 00 00 01</a><br><a href="mailto:info@groenwerkdewitte.example">info@groenwerkdewitte.example</a><br>Ma tot vr 7:30 – 17:30</p></div>
-    <div><h3>Werkgebied</h3><p>Heist-op-den-Berg, Hulshout, Booischot, Westerlo, Herselt, Putte, Berlaar, Nijlen, Herentals</p></div>
-    <p class="legal">Fictieve zaak, alle cijfers zijn voorbeelden, foto's via Unsplash. <a href="../../nl/index.html">Voorbeeldsite door Kade Studio</a>.</p>
+    <div class="foot-cta">
+      <h2>Laten we samen naar <em>uw tuin</em> kijken.</h2>
+      <a class="btn btn-clay" href="#offerte">Plan een tuinbezoek <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><span><b>Groenwerk De Witte</b><small>Tuinarchitectuur &amp; onderhoud</small></span></a>
+        <p>Groenwerk De Witte BV<br>Voorbeeldweg 44, 2220 Heist-op-den-Berg<br>BTW BE 0000.000.000 (fictief)</p>
+      </div>
+      <div><h3>Contact</h3><ul><li><a href="tel:+3215000001">015 00 00 01</a></li><li><a href="mailto:info@groenwerkdewitte.example">info@groenwerkdewitte.example</a></li><li>Ma tot vr, 7:30 tot 17:30</li></ul></div>
+      <div><h3>Diensten</h3><ul><li><a href="#diensten">Tuinontwerp &amp; aanleg</a></li><li><a href="#onderhoud">Onderhoudsformules</a></li><li><a href="#diensten">Snoeien &amp; vellen</a></li><li><a href="#duurzaam">Ecologische tuinen</a></li></ul></div>
+      <div><h3>Ontdek</h3><ul><li><a href="#projecten">Projecten</a></li><li><a href="#seizoenen">Seizoenskalender</a></li><li><a href="#faq">Veelgestelde vragen</a></li><li><a href="#werkgebied">Werkgebied</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <span>Fictieve zaak: alle namen, cijfers en reviews zijn voorbeelden. Foto's via Unsplash.</span>
+      <a href="../../nl/index.html">Voorbeeldsite door Kade Studio</a>
+    </div>
   </div>
 </footer>
 
-<div class="callbar">
-  <a class="btn btn-white" href="tel:+3215000001">Bel 015 00 00 01</a>
-  <a class="btn btn-clay" href="#offerte">Gratis offerte</a>
+<div class="callbar" id="callbar">
+  <a class="btn btn-light" href="tel:+3215000001">Bel 015 00 00 01</a>
+  <a class="btn btn-clay" href="#offerte">Offerte</a>
 </div>
 
 <script>
 (function(){
-  var mb = document.getElementById('menubtn'), menu = document.getElementById('menu');
-  mb.addEventListener('click', function(){ var o = menu.classList.toggle('open'); mb.setAttribute('aria-expanded', String(o)); });
-  menu.addEventListener('click', function(e){ if (e.target.tagName === 'A') { menu.classList.remove('open'); mb.setAttribute('aria-expanded','false'); } });
+  'use strict';
+  var d = document, html = d.documentElement;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s, c){ return (c || d).querySelector(s); }
+  function $$(s, c){ return Array.prototype.slice.call((c || d).querySelectorAll(s)); }
+  function fmt(n){ return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
 
-  var M = ['Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus','September','Oktober','November','December'];
-  var S = ['Winterrust','Winterrust','Lente begint','Groeispurt','Alles bloeit','Zomer','Zomer','Nazomer','Herfst begint','Herfst','Opruimen','Winterrust'];
-  var IMG = ['snoei','potten','zaailingen','planten','allium','onderhoud','terras','tomaten','moestuin','cottage','snoei','potten'];
-  var T = [
-    [['Vormsnoei van bomen en struiken','Zonder blad zien we de structuur. Ideaal voor fruitbomen, leibomen en hagen van beuk.'],['Planten van bomen en hagen met blote wortel','Goedkoper en ze slaan beter aan dan in de zomer.'],['Aanlegwerken plannen','Terrassen en opritten starten we nu, zodat de tuin klaar is tegen de lente.']],
-    [['Snoei van rozen en bessenstruiken','Net voor de knoppen uitlopen, bij vorstvrij weer.'],['Verticuteren voorbereiden','We bekalken het gazon als de bodem te zuur is.'],['Terras en oprit','Laatste kans om droog te werken voor het seizoen start.']],
-    [['Borders opschonen en bemesten','Oude stengels weg, compost erop, bodem losmaken.'],['Gazon verticuteren en bijzaaien','Vanaf 10 graden bodemtemperatuur.'],['Eerste maaibeurt','Hoog afgesteld, zodat het gras sterk start.']],
-    [['Aanplant van vaste planten','De beste maand om borders aan te vullen.'],['Maaien om de 2 weken','Vanaf nu volgt het onderhoudscontract het groeiritme.'],['Hagen een eerste keer scheren','Pas na controle op broedende vogels.']],
-    [['Maaien wekelijks','Inclusief kanten steken en opkuis van paden.'],['Onkruid in borders en voegen','Mechanisch en met heet water, nooit met gif.'],['Water geven aan jonge aanplant','We stellen een beregeningsschema op voor u.']],
-    [['Hagen scheren','Buxus, taxus, liguster, haagbeuk.'],['Zomersnoei van fruitbomen','Voor meer vruchten en minder waterloten.'],['Terras reinigen','Zonder hogedruk op natuursteen: we borstelen en behandelen.']],
-    [['Maaien en bewateren','Bij hitte maaien we hoger en minder vaak.'],['Uitgebloeide planten terugknippen','Lavendel, salie en geraniums bloeien zo een tweede keer.'],['Vakantiedienst','Wij houden uw tuin in de gaten terwijl u weg bent.']],
-    [['Hagen een tweede keer scheren','Zo staan ze strak tot het voorjaar.'],['Gazon bijzaaien op kale plekken','Nog warm genoeg, al wat meer regen.'],['Najaarsaanplant voorbereiden','We leveren het plantplan voor september.']],
-    [['Najaarsaanplant van vaste planten en bollen','De grond is warm, de wortels groeien nog maanden door.'],['Gazon herstellen','Verticuteren, bijzaaien en najaarsmeststof.'],['Vijvers en waterpartijen onderhouden','Netten plaatsen tegen bladval.']],
-    [['Bomen en hagen planten','Het plantseizoen voor blote wortel start.'],['Bladeren ruimen','Van gazon en paden; in borders laten we ze liggen als mulch.'],['Laatste maaibeurt','Iets korter, om schimmels te vermijden.']],
-    [['Bladeren ruimen en composteren','Elke twee weken tot de bomen kaal zijn.'],['Boomvelling en grote snoei','Zonder blad en zonder nesten: het veiligste moment.'],['Winterklaar maken','Kranen afsluiten, kwetsbare planten beschermen, meubels stallen.']],
-    [['Planning voor volgend jaar','We overlopen samen wat er mag veranderen.'],['Aanlegwerken in droge periodes','Grondwerk en verharding gaan door bij goed weer.'],['Vogel- en insectenvriendelijk','Zaaddozen blijven staan, takkenrillen worden gemaakt.']]
-  ];
-  var mo = new Date().getMonth(), months = document.getElementById('months'), tasks = document.getElementById('tasks');
-  M.forEach(function(m, i){ var b = document.createElement('button'); b.type = 'button'; b.textContent = m.slice(0,3); b.setAttribute('aria-label', m); b.dataset.i = i; b.setAttribute('aria-pressed', String(i === mo)); if (i === mo) b.classList.add('now'); months.appendChild(b); });
-  function showMonth(i){
-    months.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', String(+b.dataset.i === i)); });
-    tasks.innerHTML = '<img src="img/' + IMG[i] + '.jpg" alt="" loading="lazy" width="1000" height="440"><div class="in"><h3>' + M[i] + ' <small>' + S[i] + '</small></h3><ul>' + T[i].map(function(t, k){ return '<li><span class="n">' + (k + 1) + '</span><div><b>' + t[0] + '</b><span>' + t[1] + '</span></div></li>'; }).join('') + '</ul><div class="cta"><a class="btn btn-line" href="#offerte" style="padding:.6rem 1.1rem;font-size:.95rem">Plan dit in voor mijn tuin</a>' + (i === mo ? '<span>Dit staat nu op onze planning.</span>' : '') + '</div></div>';
+  /* ---------- reveal ---------- */
+  var rvs = $$('.rv, .rv-img');
+  function revealAll(){ rvs.forEach(function(el){ el.classList.add('in'); }); }
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    rvs.forEach(function(el){ io.observe(el); });
+    setTimeout(revealAll, 3500);
+  } else revealAll();
+
+  /* ---------- header, parallax, callbar ---------- */
+  var hdr = $('#hdr'), heroMedia = $('#heroMedia'), callbar = $('#callbar'), hero = $('.hero');
+  var pxEls = $$('[data-px]'), ticking = false;
+  function onScroll(){
+    var y = window.scrollY || html.scrollTop;
+    hdr.classList.toggle('scrolled', y > 40);
+    callbar.classList.toggle('show', y > hero.offsetHeight * .6);
+    if (!reduce) {
+      if (y < hero.offsetHeight + 200) heroMedia.style.transform = 'translate3d(0,' + (y * .22).toFixed(1) + 'px,0)';
+      var vh = window.innerHeight;
+      pxEls.forEach(function(el){
+        var r = el.parentNode.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) return;
+        var c = (r.top + r.height / 2 - vh / 2) * -parseFloat(el.dataset.px);
+        el.style.transform = 'translate3d(0,' + c.toFixed(1) + 'px,0)';
+      });
+    }
+    ticking = false;
   }
-  months.addEventListener('click', function(e){ var b = e.target.closest('button'); if (b) showMonth(+b.dataset.i); });
+  window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  /* active nav link */
+  var navLinks = $$('.nav a');
+  if ('IntersectionObserver' in window) {
+    var secIO = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ navLinks.forEach(function(a){ a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + e.target.id)); }); } }); }, { rootMargin: '-45% 0px -50% 0px' });
+    ['diensten','projecten','seizoenen','onderhoud','werkwijze','werkgebied'].forEach(function(id){ var s = d.getElementById(id); if (s) secIO.observe(s); });
+  }
+
+  /* ---------- mobile menu ---------- */
+  var mb = $('#menubtn'), mnav = $('#mnav'), mclose = $('#mclose');
+  function openMenu(){
+    mnav.hidden = false; void mnav.offsetWidth; mnav.classList.add('open');
+    mb.setAttribute('aria-expanded', 'true'); html.style.overflow = 'hidden';
+    $('a', mnav).focus();
+  }
+  function closeMenu(focusBtn){
+    mnav.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); html.style.overflow = '';
+    setTimeout(function(){ if (!mnav.classList.contains('open')) mnav.hidden = true; }, reduce ? 0 : 360);
+    if (focusBtn) mb.focus();
+  }
+  mb.addEventListener('click', openMenu);
+  mclose.addEventListener('click', function(){ closeMenu(true); });
+  mnav.addEventListener('click', function(e){ if (e.target.closest('a')) closeMenu(false); });
+  mnav.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeMenu(true);
+    if (e.key === 'Tab') trap(e, mnav);
+  });
+  function trap(e, box){
+    var f = $$('a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])', box).filter(function(el){ return el.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && d.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && d.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+
+  /* ---------- months data ---------- */
+  var M = ['Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus','September','Oktober','November','December'];
+  var SK = ['w','w','l','l','l','z','z','z','h','h','h','w'];
+  var SN = { w: 'Winter', l: 'Lente', z: 'Zomer', h: 'Herfst' };
+  var SUB = ['Winterrust','Laatste winterweken','De lente begint','Groeispurt','Alles bloeit','Volle zomer','Hoogzomer','Nazomer','Herfst begint','Volle herfst','Opruimen','Winterrust'];
+  var NOW = [
+    'Vormsnoei van fruitbomen en hagen, nu de structuur van de tuin zichtbaar is.',
+    'Rozen snoeien bij vorstvrij weer en de aanleg voor het voorjaar inplannen.',
+    'Borders opschonen en bemesten, en het gazon verticuteren zodra de bodem opwarmt.',
+    'Vaste planten aanplanten: dé maand om borders aan te vullen.',
+    'Wekelijks maaien en jonge aanplant regelmatig water geven.',
+    'Hagen scheren na de broedcontrole en zomersnoei van fruitbomen.',
+    'Hoger maaien bij hitte en uitgebloeide planten terugknippen.',
+    'Tweede scheerbeurt voor de hagen en de najaarsaanplant voorbereiden.',
+    'Vaste planten en bollen planten: de grond is nog warm.',
+    'Bomen en hagen planten en bladeren ruimen van gazon en paden.',
+    'Bomen vellen en grote snoei, en de tuin winterklaar maken.',
+    'Samen plannen voor volgend jaar en aanleggen bij droog weer.'
+  ];
+  var T = [
+    [['Vormsnoei van bomen en struiken','Zonder blad zien we de structuur. Ideaal voor fruitbomen, leibomen en beukenhagen.'],['Bomen en hagen met blote wortel planten','Goedkoper dan in pot, en ze slaan beter aan dan in de zomer.'],['Aanlegwerken plannen','Terrassen en opritten starten we nu, zodat de tuin klaar is tegen de lente.']],
+    [['Rozen en bessenstruiken snoeien','Net voor de knoppen uitlopen, bij vorstvrij weer.'],['Gazon voorbereiden','We bekalken het gazon als de bodem te zuur is.'],['Terras en oprit','De laatste kans om droog te werken voor het seizoen start.']],
+    [['Borders opschonen en bemesten','Oude stengels weg, compost erop, bodem losmaken.'],['Gazon verticuteren en bijzaaien','Vanaf ongeveer 10 graden bodemtemperatuur.'],['Eerste maaibeurt','Hoog afgesteld, zodat het gras sterk kan starten.']],
+    [['Vaste planten aanplanten','De beste maand om borders aan te vullen of te vernieuwen.'],['Om de twee weken maaien','Vanaf nu volgt het onderhoudscontract het groeiritme.'],['Hagen een eerste keer scheren','Pas na controle op broedende vogels.']],
+    [['Wekelijks maaien','Inclusief kanten steken en de paden opkuisen.'],['Onkruid in borders en voegen','Mechanisch en met heet water, nooit met gif.'],['Jonge aanplant water geven','We stellen een bewateringsschema voor u op.']],
+    [['Hagen scheren','Buxus, taxus, liguster en haagbeuk.'],['Zomersnoei van fruitbomen','Voor meer vruchten en minder waterloten.'],['Terras reinigen','Zonder hogedruk op natuursteen: we borstelen en behandelen.']],
+    [['Maaien en bewateren','Bij hitte maaien we hoger en minder vaak.'],['Uitgebloeide planten terugknippen','Lavendel, salie en ooievaarsbek bloeien zo een tweede keer.'],['Vakantiedienst','Wij houden uw tuin in het oog terwijl u weg bent.']],
+    [['Hagen een tweede keer scheren','Zo blijven ze strak tot het voorjaar.'],['Kale plekken in het gazon bijzaaien','Nog warm genoeg, en wat meer regen.'],['Najaarsaanplant voorbereiden','U krijgt het plantplan voor september.']],
+    [['Vaste planten en bollen planten','De grond is warm, de wortels groeien nog maanden door.'],['Gazon herstellen','Verticuteren, bijzaaien en een najaarsmeststof.'],['Vijvers onderhouden','Netten plaatsen tegen bladval en de oevers bijwerken.']],
+    [['Bomen en hagen planten','Het plantseizoen voor blote wortel start.'],['Bladeren ruimen','Van gazon en paden; in de borders laten we ze liggen als mulch.'],['Laatste maaibeurt','Iets korter, om schimmels te vermijden.']],
+    [['Bladeren ruimen en composteren','Elke twee weken, tot de bomen kaal zijn.'],['Boomvelling en grote snoei','Zonder blad en zonder nesten: het veiligste moment.'],['Winterklaar maken','Kranen afsluiten, kwetsbare planten beschermen, meubels stallen.']],
+    [['Planning voor volgend jaar','We overlopen samen wat er mag veranderen.'],['Aanlegwerken bij droog weer','Grondwerk en verharding gaan door als het weer meezit.'],['Ruimte voor vogels en insecten','Zaaddozen blijven staan, takkenrillen bieden beschutting.']]
+  ];
+  var mo = new Date().getMonth();
+
+  $('#nowMonth').textContent = M[mo];
+  $('#nowText').textContent = NOW[mo];
+
+  /* ---------- calendar tabs ---------- */
+  var tabs = $('#tabs'), panel = $('#spanel'), sel = mo;
+  M.forEach(function(m, i){
+    var b = d.createElement('button');
+    b.type = 'button'; b.id = 'tab-' + i; b.setAttribute('role', 'tab'); b.setAttribute('aria-controls', 'spanel');
+    b.dataset.i = i; b.dataset.s = SK[i]; b.textContent = m.slice(0, 3);
+    b.setAttribute('aria-label', m + (i === mo ? ', huidige maand' : ''));
+    if (i === mo) { var dot = d.createElement('span'); dot.className = 'dot'; dot.setAttribute('aria-hidden', 'true'); b.appendChild(dot); }
+    tabs.appendChild(b);
+  });
+  function showMonth(i, focus){
+    sel = i;
+    $$('[role=tab]', tabs).forEach(function(b){ var on = +b.dataset.i === i; b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1; if (on && focus) b.focus(); });
+    panel.setAttribute('aria-labelledby', 'tab-' + i);
+    $$('.sframe img', panel).forEach(function(im){ im.classList.toggle('on', im.dataset.s === SK[i]); });
+    $('#sName').textContent = SN[SK[i]];
+    $('#mName').textContent = M[i];
+    var sub = $('#mSub'); sub.textContent = i === mo ? 'Nu op onze planning' : SUB[i]; sub.className = i === mo ? 'cur' : '';
+    var list = $('#mList');
+    list.innerHTML = T[i].map(function(t){ return '<li><div><b>' + t[0] + '</b><span>' + t[1] + '</span></div></li>'; }).join('');
+    var st = $('#stasks'); st.classList.remove('fade-swap'); void st.offsetWidth; st.classList.add('fade-swap');
+    $('#mNote').textContent = i === mo ? 'Dit doen we deze weken bij onze klanten.' : '';
+  }
+  tabs.addEventListener('click', function(e){ var b = e.target.closest('[role=tab]'); if (b) showMonth(+b.dataset.i); });
+  tabs.addEventListener('keydown', function(e){
+    var k = e.key, n = sel;
+    if (k === 'ArrowRight') n = (sel + 1) % 12; else if (k === 'ArrowLeft') n = (sel + 11) % 12;
+    else if (k === 'Home') n = 0; else if (k === 'End') n = 11; else return;
+    e.preventDefault(); showMonth(n, true);
+  });
   showMonth(mo);
 
-  var m2 = document.getElementById('q-m2'), out = document.getElementById('q-m2-out');
-  m2.addEventListener('input', function(){ out.textContent = (m2.value >= 2000 ? 'meer dan 2 000' : '± ' + m2.value) + ' m²'; });
+  /* ---------- services image swap ---------- */
+  var svcImgs = $$('#svcFrame img'), svcs = $$('#svcList .svc'), names = ['Tuinontwerp','Tuinaanleg','Tuinonderhoud','Snoeien & vellen','Terrassen & opritten','Groendaken & ecologisch'];
+  function svcOn(i){
+    svcs.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+    svcImgs.forEach(function(im, k){ im.classList.toggle('on', k === i); });
+    $('#svcCap').textContent = names[i]; $('#svcNum').textContent = '0' + (i + 1) + ' / 06';
+  }
+  svcs.forEach(function(s, i){ s.addEventListener('mouseenter', function(){ svcOn(i); }); s.addEventListener('focusin', function(){ svcOn(i); }); });
 
-  var form = document.getElementById('qform');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var err = document.getElementById('q-err'); err.textContent = '';
-    var name = document.getElementById('q-name').value.trim(), tel = document.getElementById('q-tel').value.replace(/\D/g,'');
-    if (!name) { err.textContent = 'Vul uw naam in.'; document.getElementById('q-name').focus(); return; }
-    if (tel.length < 9) { err.textContent = 'Vul een geldig telefoonnummer in.'; document.getElementById('q-tel').focus(); return; }
-    var type = document.querySelector('input[name="type"]:checked').value.toLowerCase(), city = document.getElementById('q-city').value.trim();
-    document.getElementById('form-body').hidden = true;
-    var d = document.getElementById('done'); d.classList.add('show');
-    document.getElementById('done-text').textContent = name.split(' ')[0] + ', we bellen u binnen twee werkdagen over ' + type + ' voor uw tuin van ' + out.textContent + (city ? ' in ' + city : '') + '.';
-    d.focus();
+  /* ---------- projects dialog ---------- */
+  var P = [
+    { k: 'Ontwerp & aanleg', t: 'Villatuin onder de oude eik', loc: 'Itegem · 2025',
+      brief: 'Een nieuwbouwwoning rond een bestaande, waardevolle boom. De vraag: een tuin die de strakke architectuur rust geeft, met een terras in de avondzon, zonder de wortels van de eik te beschadigen.',
+      specs: [['Oppervlakte','1 250 m²'],['Doorlooptijd','9 weken'],['Ontwerp','3 weken'],['Budgetklasse','35 – 45 k€']],
+      pal: [['Japans bosgras','Hakonechloa macra'],['Hortensia','Hydrangea arborescens \'Annabelle\''],['Taxus in blokvorm','Taxus baccata'],['Ooievaarsbek','Geranium \'Rozanne\''],['Zachte naaldvaren','Polystichum setiferum']],
+      did: ['Boombeschermingszone afgebakend vóór de eerste graafbeurt','Terras in keramische tegels op een waterdoorlatende fundering','Gazon op graszoden en schaduwborders onder de kruin','Tuinverlichting in de bomen, warm en gericht'],
+      img: [['villa.jpg',1600,1067,'Moderne woning met gazon onder een oude boom bij avondlicht'],['terras.jpg',1000,726,'Schaduwterras met tafel en planten'],['onderhoud.jpg',1000,563,'Pas gemaaid gazon bij een moderne woning'],['planten.jpg',1000,667,'Handen planten jonge planten in losse aarde']] },
+    { k: 'Aanleg & onderhoud', t: 'Landelijke tuin rond een hoeve', loc: 'Booischot · 2024, in onderhoud sinds 2025',
+      brief: 'Een gerenoveerde hoeve met een verwaarloosd erf. De eigenaars wilden een romantische, bloemrijke tuin die past bij het oude gebouw, met een plek voor fruit en water.',
+      specs: [['Oppervlakte','1 800 m²'],['Doorlooptijd','12 weken'],['Onderhoud','Seizoen, tweewekelijks'],['Budgetklasse','40 – 55 k€']],
+      pal: [['Engelse roos','Rosa \'Gertrude Jekyll\''],['Sierui','Allium \'Purple Sensation\''],['Sierappel','Malus \'Red Sentinel\''],['Vrouwenmantel','Alchemilla mollis'],['Siberische iris','Iris sibirica']],
+      did: ['Gemengde borders met vaste planten, rozen en bollen','Boomgaard met zes oude, streekeigen appelrassen','Natuurlijke vijver met een flauwe oever voor amfibieën','Tweewekelijks onderhoud door dezelfde ploeg'],
+      img: [['cottage.jpg',1200,900,'Landelijke woning met een rijk bloeiende tuin'],['allium.jpg',900,1349,'Paarse sierui in een gemengde border'],['aanleg.jpg',1000,667,'Woning met weelderige voortuin en rozen'],['snoei.jpg',1000,750,'Weelderige tuin met bomen en een gazonpad']] },
+    { k: 'Voortuin', t: 'Voortuin met stapstenen', loc: 'Hulshout · 2025',
+      brief: 'Na een verbouwing lag de voortuin er kaal en modderig bij. Gevraagd: een sobere, onderhoudsarme entree die past bij de moderne gevel en het hele jaar groen oogt.',
+      specs: [['Oppervlakte','140 m²'],['Doorlooptijd','3 weken'],['Onderhoud','Basis, maandelijks'],['Budgetklasse','9 – 12 k€']],
+      pal: [['Lampenpoetsersgras','Pennisetum \'Hameln\''],['Japanse hulst','Ilex crenata'],['Herfstblauwgras','Sesleria autumnalis'],['Wilde tijm','Thymus serpyllum'],['Meerstammige berk','Betula utilis \'Doorenbos\'']],
+      did: ['Grond afgegraven, verbeterd en opnieuw genivelleerd','Grote betonnen stapstenen tot aan de voordeur','Wintergroene blokken van Japanse hulst als ritme','Lage grassen langs de oprit, één keer per jaar terugknippen'],
+      img: [['voortuin.jpg',1600,1342,'Moderne voortuin met gazon en stapstenen'],['troffel.jpg',1000,667,'Plantschopje en potgrond op een werktafel'],['handen.jpg',1000,1500,'Hovenier plant een jonge plant']] },
+    { k: 'Moestuin', t: 'Moestuin met verhoogde bakken', loc: 'Westerlo · 2026',
+      brief: 'Een gezin dat zelf groenten wil kweken, maar zonder rugpijn en zonder elke dag water te geven. De vraag: een productieve moestuin die er ook in de winter verzorgd uitziet.',
+      specs: [['Oppervlakte','60 m²'],['Doorlooptijd','1 week'],['Bakken','6 in onbehandeld lariks'],['Budgetklasse','6 – 8 k€']],
+      pal: [['Tomaat','Solanum lycopersicum \'Black Krim\''],['Snijbiet','Beta vulgaris \'Bright Lights\''],['Oost-Indische kers','Tropaeolum majus'],['Goudsbloem','Calendula officinalis'],['Bieslook','Allium schoenoprasum']],
+      did: ['Zes bakken op werkhoogte, met een pad in halfverharding','Druppelbewatering op een regenwaterput met timer','Compostplek en een zaaitafel onder het afdak','Startpakket met plantgoed en een zaaikalender'],
+      img: [['bakken.jpg',1200,800,'Verhoogde moestuinbakken met snijbiet'],['moestuin.jpg',1000,667,'Moestuinbak met sla en kruiden'],['tomaten.jpg',900,600,'Rijpende tomaten aan de plant'],['potten.jpg',1000,1500,'Jonge plantjes worden in een bak geplant en water gegeven'],['zaailingen.jpg',900,600,'Jonge zaailingen in potten']] }
+  ];
+  var dlg = $('#pd'), cur = 0, opener = null;
+  function setImg(p, k){
+    var im = p.img[k], el = $('#pdImg');
+    el.src = 'img/' + im[0]; el.width = im[1]; el.height = im[2]; el.alt = im[3];
+    $$('#pdThumbs button').forEach(function(b, j){ b.setAttribute('aria-pressed', String(j === k)); });
+  }
+  function fillProject(i){
+    cur = i; var p = P[i];
+    $('#pdKicker').textContent = '0' + (i + 1) + ' · ' + p.k;
+    $('#pdTitle').textContent = p.t;
+    $('#pdLoc').textContent = p.loc;
+    $('#pdBrief').textContent = p.brief;
+    $('#pdSpecs').innerHTML = p.specs.map(function(s){ return '<div><dt>' + s[0] + '</dt><dd>' + s[1] + '</dd></div>'; }).join('');
+    $('#pdPalette').innerHTML = p.pal.map(function(s){ return '<li><span>' + s[0] + '</span><span class="latin">' + s[1] + '</span></li>'; }).join('');
+    $('#pdDid').innerHTML = p.did.map(function(s){ return '<li>' + s + '</li>'; }).join('');
+    $('#pdThumbs').innerHTML = p.img.map(function(im, j){ return '<button type="button" aria-label="Toon foto ' + (j + 1) + ' van ' + p.img.length + '" aria-pressed="false" data-k="' + j + '"><img src="img/' + im[0] + '" alt="" width="' + im[1] + '" height="' + im[2] + '" loading="lazy"></button>'; }).join('');
+    setImg(p, 0);
+    $('.pd-body', dlg).scrollTop = 0;
+  }
+  function openProject(i, btn){
+    opener = btn || d.activeElement; fillProject(i);
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+    html.style.overflow = 'hidden';
+    $('#pdClose').focus();
+  }
+  function closeProject(){
+    html.style.overflow = '';
+    if (typeof dlg.close === 'function') dlg.close(); else { dlg.removeAttribute('open'); onClosed(); }
+  }
+  function onClosed(){ html.style.overflow = ''; if (opener && opener.focus) opener.focus(); }
+  dlg.addEventListener('close', onClosed);
+  $$('.pcard .open').forEach(function(b){ b.addEventListener('click', function(){ openProject(+b.dataset.p, b); }); });
+  $('#pdClose').addEventListener('click', closeProject);
+  $('#pdNext').addEventListener('click', function(){ fillProject((cur + 1) % P.length); $('#pdTitle').scrollIntoView({ block: 'nearest' }); });
+  $('#pdThumbs').addEventListener('click', function(e){ var b = e.target.closest('button'); if (b) setImg(P[cur], +b.dataset.k); });
+  $('#pdCta').addEventListener('click', function(){ closeProject(); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) closeProject(); });
+  dlg.addEventListener('keydown', function(e){ if (e.key === 'Tab') trap(e, dlg); if (e.key === 'Escape' && typeof dlg.close !== 'function') closeProject(); });
+
+  /* ---------- before / after ---------- */
+  var ba = $('#ba'), baR = $('#baRange');
+  function setBA(){ ba.style.setProperty('--pos', baR.value + '%'); baR.setAttribute('aria-valuetext', baR.value + ' procent vóór'); }
+  baR.addEventListener('input', setBA); setBA();
+
+  /* ---------- range fill helper ---------- */
+  function fill(r){ r.style.setProperty('--p', ((r.value - r.min) / (r.max - r.min) * 100) + '%'); }
+  $$('input[type=range]').forEach(function(r){ fill(r); r.addEventListener('input', function(){ fill(r); }); });
+
+  /* ---------- pricing ---------- */
+  var seg = $('#seg'), m2 = $('#m2'), m2Out = $('#m2Out');
+  var BASE = [40, 60, 85], K = [3.2, 4.4, 5.8], VIS = [18, 22, 26], SEAS = ['van maart tot november','afgestemd op het groeiritme','ook in de winter'];
+  var shown = [95, 135, 185];
+  function perBeurt(t, a){ return Math.round((BASE[t] + K[t] * Math.sqrt(a)) / 5) * 5; }
+  function tween(el, from, to, suffix){
+    if (reduce || from === to) { el.textContent = fmt(to) + suffix; return; }
+    var t0 = performance.now(), dur = 420;
+    (function step(now){ var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = fmt(from + (to - from) * e) + suffix; if (p < 1) requestAnimationFrame(step); })(t0);
+  }
+  function price(){
+    var yearly = $('input[name=bill]:checked', seg).value === 'y', a = +m2.value;
+    seg.classList.toggle('y', yearly);
+    m2Out.textContent = fmt(a) + ' m²';
+    for (var t = 0; t < 3; t++){
+      var pb = perBeurt(t, a), val, sub;
+      if (yearly){ var yr = pb * VIS[t] * .88; val = Math.round(yr / 12 / 5) * 5; sub = VIS[t] + ' beurten, ± ' + fmt(Math.round(yr / 10) * 10) + ' € per jaar. Maandelijks gefactureerd.'; }
+      else { val = pb; sub = VIS[t] + ' beurten per jaar, ' + SEAS[t] + '.'; }
+      tween($('[data-amt="' + t + '"]'), shown[t], val, ' €'); shown[t] = val;
+      $('[data-sub="' + t + '"]').textContent = sub;
+    }
+    $$('[data-unit]').forEach(function(u){ u.textContent = yearly ? 'per maand' : 'per beurt'; });
+    $('#planNote').textContent = 'Indicatieve prijzen, excl. btw, voor een tuin van ± ' + fmt(a) + ' m²' + (yearly ? ' met jaarcontract (12 % korting)' : '') + '. De definitieve prijs volgt na een gratis plaatsbezoek.';
+  }
+  seg.addEventListener('change', price); m2.addEventListener('input', price); price();
+
+  /* ---------- plant of the month ---------- */
+  var PL = [
+    ['Toverhazelaar','Hamamelis × intermedia \'Jelena\'','Koperoranje, geurende spinnetjes midden in de winter. Een struik die u vanuit het raam wilt zien.','Zon tot halfschaduw','2 – 3 m','jan – feb','Vroege bijen'],
+    ['Kerstroos','Helleborus orientalis','Bloeit in de koudste weken en houdt van een plek onder bladverliezende struiken. Wintergroen blad.','Halfschaduw','40 cm','feb – apr','Vroege hommels'],
+    ['Gele kornoelje','Cornus mas','Een wolk van kleine gele bloemen op kale takken, later rode bessen voor de vogels. Inheems en sterk.','Zon tot halfschaduw','3 – 5 m','feb – mrt','Bijen, vogels'],
+    ['Krentenboompje','Amelanchier lamarckii','Witte bloesem in april, eetbare bessen in juni en vuurrode herfstkleur. Drie seizoenen in één boom.','Zon tot halfschaduw','4 – 6 m','apr','Bijen, merels'],
+    ['Sierui','Allium \'Purple Sensation\'','Paarse bollen die boven de border zweven. Plant ze in het najaar in groepjes tussen vaste planten.','Zon','80 cm','mei – jun','Bijen, hommels'],
+    ['Kattenkruid','Nepeta \'Walker\'s Low\'','Een zachtblauwe rand die maandenlang bloeit en na terugknippen opnieuw begint. Onverwoestbaar.','Zon','60 cm','jun – sep','Bijen, vlinders'],
+    ['Lavendel','Lavandula angustifolia \'Hidcote\'','Compact, diep violet en heerlijk geurend langs een terras. Snoei na de bloei in vorm.','Volle zon','50 cm','jul – aug','Bijen, vlinders'],
+    ['Zonnehoed','Echinacea purpurea','Stevige roze schermbloemen die tot in de winter mooi blijven als zaaddoos voor de vogels.','Zon','90 cm','jul – sep','Vlinders, putters'],
+    ['Herfstanemoon','Anemone × hybrida \'Honorine Jobert\'','Witte, sierlijke bloemen op lange stelen die de schaduwrijke border in september oplichten.','Halfschaduw','1,2 m','aug – okt','Bijen, zweefvliegen'],
+    ['Aster','Symphyotrichum \'Little Carlow\'','Een wolk van lavendelblauwe sterretjes tot diep in de herfst, wanneer bijen en vlinders nog weinig vinden.','Zon tot halfschaduw','90 cm','sep – nov','Bijen, vlinders'],
+    ['Struisriet','Calamagrostis × acutiflora \'Karl Foerster\'','Een kaarsrecht siergras dat de border structuur geeft en in de winter mooi berijpt. Pas in maart terugknippen.','Zon','1,5 m','jun – feb','Structuur, vogels'],
+    ['Hulst','Ilex aquifolium','Glanzend wintergroen blad en rode bessen. Een inheemse haag- of solitairplant waar vogels graag in schuilen.','Zon tot schaduw','2 – 8 m','mei','Vogels, beschutting']
+  ];
+  var pi = mo;
+  function showPlant(i){
+    pi = (i + 12) % 12; var p = PL[pi];
+    $('#potmLabel').textContent = 'Plant van de maand · ' + M[pi];
+    $('#potmMo').textContent = M[pi];
+    $('#potmName').textContent = p[0]; $('#potmLatin').textContent = p[1]; $('#potmWhy').textContent = p[2];
+    $('#potmDl').innerHTML = [['Standplaats',p[3]],['Hoogte',p[4]],['Bloei',p[5]],['Goed voor',p[6]]].map(function(x){ return '<div><dt>' + x[0] + '</dt><dd>' + x[1] + '</dd></div>'; }).join('');
+    var l = $('#potmLive'); l.classList.remove('fade-swap'); void l.offsetWidth; l.classList.add('fade-swap');
+  }
+  $('#potmPrev').addEventListener('click', function(){ showPlant(pi - 1); });
+  $('#potmNext').addEventListener('click', function(){ showPlant(pi + 1); });
+  showPlant(mo);
+
+  /* ---------- service area ---------- */
+  var TW = [['Heist-op-den-Berg',0,0,0],['Itegem',-3,-3,4],['Wiekevorst',1,-4,4],['Booischot',-5,1,5],['Hulshout',-6,3,7],['Begijnendijk',2,8,9],['Berlaar',-9,-3,9],['Westerlo',8,-6,10],['Nijlen',-7,-8,10],['Putte',-11,3,11],['Herselt',11,3,12],['Keerbergen',-8,10,12],['Tremelo',0,14,14],['Herentals',4,-16,16],['Lier',-16,-6,17],['Aarschot',11,13,17]];
+  var svg = $('#mapSvg'), C = 200, S = 8, out = '';
+  out += '<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(31,58,43,.08)" stroke-width="2"/></pattern></defs>';
+  out += '<circle cx="200" cy="200" r="160" fill="rgba(168,184,154,.14)" stroke="rgba(31,58,43,.22)" stroke-dasharray="3 5"/>';
+  out += '<circle cx="200" cy="200" r="80" fill="url(#hatch)" stroke="rgba(31,58,43,.35)"/>';
+  out += '<path d="M10 260 C90 230 140 300 220 270 S340 210 395 240" fill="none" stroke="rgba(85,112,76,.35)" stroke-width="5" stroke-linecap="round"/>';
+  out += '<text class="ringlbl" x="200" y="114" text-anchor="middle">Onderhoud ± 10 km</text><text class="ringlbl" x="200" y="34" text-anchor="middle">Aanleg ± 20 km</text>';
+  TW.forEach(function(t, i){
+    var x = C + t[1] * S, y = C + t[2] * S, hub = i === 0;
+    out += '<circle class="pt" data-i="' + i + '" cx="' + x + '" cy="' + y + '" r="' + (hub ? 7 : 3.5) + '"' + (hub ? ' style="fill:var(--forest)"' : '') + '/>';
+    var west = t[1] < 0 && t[0] !== 'Hulshout', lx = hub ? x + 12 : (west ? x - 7 : x + 7), ly = hub ? y - 8 : y + 4;
+    out += '<text class="tw' + (hub ? ' hub' : '') + '" x="' + lx + '" y="' + ly + '"' + (west && !hub ? ' text-anchor="end"' : '') + '>' + t[0] + '</text>';
   });
-  document.getElementById('again').addEventListener('click', function(){ document.getElementById('done').classList.remove('show'); document.getElementById('form-body').hidden = false; form.reset(); out.textContent = '± 200 m²'; });
+  svg.innerHTML = out;
+  $('#areaList').innerHTML = TW.map(function(t){ return '<option value="' + t[0] + '">'; }).join('');
+  function norm(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z]/g, ''); }
+  $('#areaForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = $('#areaIn').value.trim(), res = $('#areaRes'), n = norm(v);
+    $$('.pt', svg).forEach(function(p){ p.classList.remove('hit'); p.setAttribute('r', p.dataset.i === '0' ? 7 : 3.5); });
+    if (!n){ res.className = 'res mid'; res.textContent = 'Vul de naam van uw gemeente in.'; return; }
+    var hit = -1; TW.forEach(function(t, i){ if (hit < 0 && (norm(t[0]) === n || norm(t[0]).indexOf(n) === 0)) hit = i; });
+    if (hit < 0){ res.className = 'res mid'; res.textContent = v + ' staat niet in onze lijst. Bel ons gerust: soms combineren we een project met een tuin in de buurt.'; return; }
+    var t = TW[hit], p = $('.pt[data-i="' + hit + '"]', svg); p.classList.add('hit'); p.setAttribute('r', hit === 0 ? 9 : 6);
+    if (t[3] <= 10){ res.className = 'res ok'; res.textContent = 'Ja! ' + t[0] + ' ligt in onze vaste onderhoudszone' + (hit ? ' (± ' + t[3] + ' km).' : '.'); }
+    else { res.className = 'res ok'; res.textContent = 'Ja, voor ontwerp en aanleg komen we naar ' + t[0] + ' (± ' + t[3] + ' km). Voor onderhoud kijken we of er een ploeg in de buurt is.'; }
+  });
+
+  /* ---------- quote form ---------- */
+  var qf = $('#qf'), steps = $$('.qstep', qf), stepI = 0, prog = $$('#prog li'), prev = $('#qprev'), next = $('#qnext');
+  var qm2 = $('#qm2'), qm2Out = $('#qm2Out'), qbud = $('#qbud'), qbudOut = $('#qbudOut'), nobud = $('#qnobud');
+  var BUD = ['tot 5 000 €','5 – 10 k€','10 – 20 k€','20 – 40 k€','meer dan 40 k€'], BUDT = ['tot 5 000 euro','5 000 tot 10 000 euro','10 000 tot 20 000 euro','20 000 tot 40 000 euro','meer dan 40 000 euro'];
+  function m2txt(){ return (+qm2.value >= 3000 ? 'meer dan 3 000' : '± ' + fmt(+qm2.value)) + ' m²'; }
+  qm2.addEventListener('input', function(){ qm2Out.textContent = m2txt(); });
+  function budUpd(){ qbud.disabled = nobud.checked; qbudOut.textContent = nobud.checked ? 'nog onbekend' : BUD[qbud.value]; qbud.setAttribute('aria-valuetext', BUDT[qbud.value]); }
+  qbud.addEventListener('input', budUpd); nobud.addEventListener('change', budUpd);
+  function go(i){
+    stepI = i;
+    steps.forEach(function(s, k){ s.hidden = k !== i; });
+    prog.forEach(function(p, k){ p.className = k < i ? 'done' : (k === i ? 'cur' : ''); if (k === i) p.setAttribute('aria-current', 'step'); else p.removeAttribute('aria-current'); });
+    $('#progLive').textContent = 'Stap ' + (i + 1) + ' van 3';
+    prev.hidden = i === 0;
+    next.innerHTML = i === 2 ? 'Verstuur aanvraag <svg aria-hidden="true"><use href="#arrow"/></svg>' : 'Volgende <svg aria-hidden="true"><use href="#arrow"/></svg>';
+    var h = $('h3', steps[i]); if (h) h.focus({ preventScroll: true });
+    var top = qf.getBoundingClientRect().top; if (top < 0) qf.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+  function setErr(id, msg, input){
+    $('#' + id).textContent = msg;
+    if (input) input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    return !msg;
+  }
+  function validate(i){
+    if (i === 0){
+      var any = $$('input[name=svc]:checked', qf).length > 0;
+      if (!setErr('e-svc', any ? '' : 'Kies minstens één dienst.')) { $('input[name=svc]', qf).focus(); return false; }
+      return true;
+    }
+    if (i === 2){
+      var n = $('#qn'), t = $('#qt'), e = $('#qe'), ok = $('#qok'), first = null;
+      if (!setErr('e-qn', n.value.trim().length >= 2 ? '' : 'Vul uw naam in.', n)) first = first || n;
+      if (!setErr('e-qt', t.value.replace(/\D/g, '').length >= 9 ? '' : 'Vul een geldig telefoonnummer in, bv. 0470 00 00 00.', t)) first = first || t;
+      if (!setErr('e-qe', /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.value.trim()) ? '' : 'Vul een geldig e-mailadres in.', e)) first = first || e;
+      if (!setErr('e-qok', ok.checked ? '' : 'Vink aan dat we u mogen contacteren.', ok)) first = first || ok;
+      if (first){ first.focus(); return false; }
+    }
+    return true;
+  }
+  $$('input[name=svc]', qf).forEach(function(c){ c.addEventListener('change', function(){ if ($$('input[name=svc]:checked', qf).length) setErr('e-svc', ''); }); });
+  ['qn','qt','qe'].forEach(function(id){ $('#' + id).addEventListener('input', function(){ if (this.getAttribute('aria-invalid') === 'true') setErr('e-' + id, '', this); }); });
+  $('#qok').addEventListener('change', function(){ if (this.checked) setErr('e-qok', '', this); });
+  prev.addEventListener('click', function(){ if (stepI > 0) go(stepI - 1); });
+  qf.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!validate(stepI)) return;
+    if (stepI < 2) { go(stepI + 1); return; }
+    var svcs = $$('input[name=svc]:checked', qf).map(function(c){ return c.value; });
+    var name = $('#qn').value.trim().split(/\s+/)[0], city = $('#qc').value.trim();
+    steps.forEach(function(s){ s.hidden = true; }); $('#qnav').hidden = true;
+    prog.forEach(function(p){ p.className = 'done'; p.removeAttribute('aria-current'); });
+    var done = $('#qdone'); done.hidden = false;
+    $('#qdoneTitle').textContent = 'Bedankt, ' + name + '!';
+    $('#qdoneText').textContent = 'We bellen u binnen twee werkdagen om een gratis bezoek in te plannen' + (city ? ' in ' + city : '') + '. Dit hebben we genoteerd:';
+    var rows = [['Diensten', svcs.join(', ')], ['Tuin', m2txt() + ', ' + $('input[name=sun]:checked', qf).value.toLowerCase()], ['Budget', nobud.checked ? 'nog onbekend' : BUD[qbud.value]], ['Start', $('#qw').value]];
+    $('#qsum').innerHTML = rows.map(function(r){ return '<div><dt>' + r[0] + '</dt><dd></dd></div>'; }).join('');
+    $$('#qsum dd').forEach(function(dd, k){ dd.textContent = rows[k][1]; });
+    $('#progLive').textContent = 'Aanvraag verzonden (demo)';
+    $('#qdoneTitle').focus();
+  });
+  $('#qagain').addEventListener('click', function(){
+    qf.reset(); $('#qdone').hidden = true; $('#qnav').hidden = false;
+    qm2Out.textContent = m2txt(); budUpd(); $$('input[type=range]', qf).forEach(fill);
+    $$('[aria-invalid]', qf).forEach(function(x){ x.setAttribute('aria-invalid', 'false'); });
+    $$('.ferr', qf).forEach(function(x){ x.textContent = ''; });
+    go(0);
+  });
+  /* plan buttons preselect */
+  $$('[data-plan]').forEach(function(a){ a.addEventListener('click', function(){
+    var c = $('input[name=svc][value="Onderhoud"]', qf); c.checked = true; setErr('e-svc', '');
+    var msg = $('#qmsg'); var yearly = $('input[name=bill]:checked', seg).value === 'y';
+    msg.value = 'Interesse in onderhoudsformule ' + a.dataset.plan + (yearly ? ' (jaarcontract)' : ' (per beurt)') + ', tuin van ± ' + m2.value + ' m².';
+    qm2.value = Math.min(3000, +m2.value); qm2Out.textContent = m2txt(); fill(qm2);
+  }); });
+  budUpd();
 })();
 </script>
 </body>

@@ -137,5 +137,14 @@
  "i_open": "Open",
  "i_board": "Gratis demo",
  "i_board2": "online in 48 u",
- "i_skip": "Intro overslaan"
+ "i_skip": "Intro overslaan",
+ "iv_hello": "hallo",
+ "bubble": "demo klaar",
+ "hero_l": "websites<br>voor handelaars<br>&amp; vakmensen",
+ "hero_r": "westerlo 2260<br>kempen<br>belgië",
+ "al_prev": "Vorige demo",
+ "al_next": "Volgende demo",
+ "al_step": "Volgende stap",
+ "ball": "en als…?",
+ "cta_s": "Mijn demo"
 }
