@@ -7,31 +7,31 @@
 <title>Vélo Atelier Leuven | Fietsen, maatadvies en atelier in Leuven</title>
 <meta name="description" content="Voorbeeldsite: fietsenwinkel en atelier in Leuven. Stadsfietsen, e-bikes, koers, gravel, MTB en kinderfietsen uit voorraad. Proefrit, afstelling op maat en herstelling binnen 48 uur.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#ffffff">
-<link rel="preload" href="fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#f3f1eb">
+<link rel="preload" href="fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/geist-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/hero-zwart.jpg" as="image" fetchpriority="high">
 <style>
-@font-face{font-family:"Geist";src:url(fonts/geist-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 @font-face{font-family:"Geist Mono";src:url(fonts/geist-mono-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
 :root{
-  --bg:#fff;--paper:#f3f4f6;--paper-2:#e9ebef;--line:#e2e5e9;--line-2:#cdd2d8;
-  --ink:#0c0d10;--ink-2:#1c1f24;--text:#2b2f36;--muted:#6a707b;--faint:#9aa0a9;
-  --accent:#2f4bff;--accent-2:#1d36e6;--accent-soft:#eceffe;--ok:#0d9a60;--warn:#c27400;--danger:#d92d20;--studio:#242426;
-  --f:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --wrap:1360px;--g:clamp(20px,4vw,48px);--r:4px;--r2:8px;
+  --bg:#f3f1eb;--paper:#e9e6dd;--paper-2:#dfdbd0;--line:#d8d4c9;--line-2:#bdb8ad;--sheet:#fbfaf6;
+  --ink:#121212;--ink-2:#1f1f1e;--text:#2c2b28;--muted:#65615a;--faint:#8c877f;
+  --accent:#c2321a;--accent-2:#9e2712;--accent-soft:#f6e0d8;--hi:#f2c200;--ok:#1e7a4c;--warn:#9a5a00;--danger:#c0281b;--studio:#242426;
+  --f:"Archivo",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:1360px;--g:clamp(16px,4vw,48px);--r:2px;--r2:3px;
   --ease:cubic-bezier(.2,.7,.2,1);--sec:clamp(72px,9vw,136px);--hh:64px;
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--hh) + 16px)}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.55;font-feature-settings:"ss01","cv11";-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img,svg{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
-h1,h2,h3,h4{margin:0;color:var(--ink);font-weight:600;letter-spacing:-.035em;line-height:1.02}
+h1,h2,h3,h4{margin:0;color:var(--ink);font-weight:620;letter-spacing:-.025em;line-height:1.05}
+h1,h2,.cd{font-stretch:68%;font-weight:780;letter-spacing:-.01em;line-height:.9;text-transform:uppercase}
 p{margin:0}
 ul,ol{margin:0;padding:0;list-style:none}
 .wrap{width:min(var(--wrap),100% - 2*var(--g));margin-inline:auto}
@@ -64,7 +64,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .tlink:hover{text-decoration-color:var(--accent);color:var(--accent)}
 
 /* header */
-.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(243,241,235,.9);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
 .hdr.scrolled{border-bottom-color:var(--line)}
 .hdr .wrap{display:flex;align-items:center;gap:28px;height:var(--hh)}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex:none}
@@ -89,62 +89,104 @@ ul,ol{margin:0;padding:0;list-style:none}
 .menubtn{display:none}
 
 /* mobile menu */
-.mmenu{position:fixed;inset:0;z-index:90;background:#fff;display:flex;flex-direction:column;padding:0 var(--g) calc(24px + env(safe-area-inset-bottom));transform:translateY(-8px);opacity:0;transition:opacity .25s var(--ease),transform .25s var(--ease);overflow:auto}
+.mmenu{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;flex-direction:column;padding:0 var(--g) calc(24px + env(safe-area-inset-bottom));transform:translateY(-8px);opacity:0;transition:opacity .25s var(--ease),transform .25s var(--ease);overflow:auto}
 .mmenu.open{opacity:1;transform:none}
 .mmenu[hidden]{display:none}
 .mmenu-top{display:flex;align-items:center;justify-content:space-between;height:var(--hh);border-bottom:1px solid var(--line)}
 .mmenu nav{display:flex;flex-direction:column;margin-top:12px}
-.mmenu nav a{display:flex;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:28px;font-weight:600;letter-spacing:-.035em;color:var(--ink)}
+.mmenu nav a{display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:34px;font-weight:760;font-stretch:68%;text-transform:uppercase;letter-spacing:0;color:var(--ink)}
 .mmenu nav a span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--faint);font-weight:500;width:22px}
 .mmenu-foot{margin-top:auto;padding-top:28px;display:grid;gap:10px}
 .mmenu-foot p{font-size:14px;color:var(--muted)}
 
-/* hero */
-.hero{padding:clamp(28px,4vw,56px) 0 0}
-.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:stretch}
-.hero-copy{display:flex;flex-direction:column;padding:clamp(8px,2vw,32px) 0}
-.eyebrow{display:inline-flex;align-items:center;gap:10px}
-.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-.hero h1{font-size:clamp(44px,6.1vw,92px);letter-spacing:-.05em;line-height:.94;margin-top:26px;font-weight:620}
+/* hero: configurator on a drawing sheet */
+.hero{padding:clamp(18px,2.6vw,36px) 0 0}
+.cfg{display:grid;grid-template-columns:minmax(0,4.3fr) minmax(0,7.7fr);grid-template-areas:"copy sheet" "ctrl sheet";grid-template-rows:auto 1fr;gap:0 clamp(24px,3.4vw,56px);align-items:start}
+.cfg-copy{grid-area:copy}
+.cfg-ctrl{grid-area:ctrl}
+.sheet{grid-area:sheet}
+.eyebrow{display:flex;align-items:center;gap:10px}
+.tri{display:inline-flex;flex:none}
+.tri i{width:9px;height:9px;display:block}
+.tri i:nth-child(1){background:var(--ink)}.tri i:nth-child(2){background:var(--hi)}.tri i:nth-child(3){background:var(--accent)}
+.hero h1{font-size:clamp(50px,5.4vw,84px);line-height:.86;margin-top:16px}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero .lead{margin-top:26px;font-size:clamp(17px,1.35vw,19px);line-height:1.5;color:var(--text);max-width:40ch}
-.hero .ctas{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px}
-.hero-meta{margin-top:auto;padding-top:40px;display:flex;gap:28px;flex-wrap:wrap}
-.hero-meta div{display:grid;gap:6px}
-.hero-meta b{font-size:26px;font-weight:600;letter-spacing:-.04em;color:var(--ink);line-height:1}
-.feature{align-self:start;position:relative;background:var(--studio);border-radius:var(--r2);overflow:hidden;color:#fff;isolation:isolate}
-.feature-media{position:relative;aspect-ratio:1800/1272}
-.feature-media img{width:100%;height:100%;object-fit:cover}
-.feature-top{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;padding:18px 20px;z-index:2}
-.feature-top .lbl{color:rgba(255,255,255,.62)}
-.co{position:absolute;z-index:2;display:flex;align-items:center;gap:0;transform:translate(-5px,-5px)}
-.co i{width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(47,75,255,.55);flex:none;animation:pulse 2.6s infinite}
-.co s{width:clamp(18px,3vw,44px);height:1px;background:rgba(255,255,255,.55);text-decoration:none}
-.co span{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:rgba(12,13,16,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);padding:6px 8px;border-radius:3px;white-space:nowrap;line-height:1.2}
-.co span em{display:block;font-style:normal;color:rgba(255,255,255,.6);font-size:9.5px;margin-bottom:2px}
-.co.l{flex-direction:row-reverse;transform:translate(calc(-100% + 5px),-5px)}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(47,75,255,.55)}50%{box-shadow:0 0 0 8px rgba(47,75,255,.12)}}
-.feature-bar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;padding:16px 20px 18px;border-top:1px solid rgba(255,255,255,.08);background:#1a1a1c}
-.feature-bar h2{color:#fff;font-size:20px;letter-spacing:-.03em}
-.feature-bar p{font-size:13px;color:rgba(255,255,255,.62);margin-top:4px}
-.feature-bar .price{font-size:18px;font-weight:600;letter-spacing:-.02em;color:#fff;margin-right:14px}
-.feature-bar .btn{background:#fff;color:var(--ink);border-color:#fff}
-.feature-bar .btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-.usps{margin-top:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
-.usp{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:22px 24px 26px 0}
-.usp+.usp{padding-left:24px;border-left:1px solid var(--line)}
+.hero .lead{margin-top:16px;font-size:clamp(16px,1.2vw,17.5px);line-height:1.5;color:var(--text);max-width:44ch}
+.cf{margin:20px 0 0;border:0;padding:0;min-width:0}
+.cf-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px;width:100%;padding:0}
+.cf-h output,.cf-h .v{font-family:var(--mono);font-size:12px;color:var(--ink)}
+.types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1.5px solid var(--ink);background:var(--sheet)}
+.types button{display:grid;gap:3px;justify-items:start;text-align:left;padding:10px 12px 11px;border:0;background:none;color:var(--ink);transition:background .2s var(--ease),color .2s var(--ease)}
+.types button+button{border-left:1.5px solid var(--ink)}
+.types button svg{width:30px;height:30px;stroke-width:1.4;margin-bottom:2px}
+.types b{font-size:19px;font-weight:760;font-stretch:70%;text-transform:uppercase;letter-spacing:0;line-height:1}
+.types small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.types button:hover{background:var(--paper)}
+.types button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.types button[aria-pressed="true"] small{color:#c9c5bc}
+.swatches{display:flex;gap:6px;flex-wrap:wrap}
+.swatches button{width:44px;height:44px;border-radius:50%;padding:0;border:1.5px solid transparent;background:none;display:grid;place-items:center;transition:border-color .15s}
+.swatches button i{width:32px;height:32px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.4)}
+.swatches button:hover{border-color:var(--line-2)}
+.swatches button[aria-pressed="true"]{border-color:var(--ink)}
+.csize{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.csize button{display:grid;gap:1px;justify-items:center;padding:8px 4px 9px;border:1.5px solid var(--line-2);background:var(--sheet);color:var(--ink);transition:border-color .15s,background .15s,color .15s}
+.csize b{font-size:24px;font-weight:780;font-stretch:68%;line-height:1}
+.csize small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.csize button:hover{border-color:var(--ink)}
+.csize button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.csize button[aria-pressed="true"] small{color:#c9c5bc}
+.fit{display:flex;align-items:center;justify-content:space-between;gap:8px 14px;flex-wrap:wrap;margin-top:10px;font-size:14px;color:var(--ink)}
+.fit span{display:inline-flex;align-items:center;gap:8px}
+.fit .tlink{font-size:13px}
+.cfg-cta{margin-top:22px;display:grid;gap:10px}
+.cfg-cta .btn{--h:54px;font-size:16px;width:100%}
+.cfg-meta{display:flex;justify-content:space-between;gap:6px 16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.cfg-meta .stk{font-size:11.5px}
+/* sheet */
+.sheet{margin:0;border:1.5px solid var(--ink);background:var(--sheet);position:relative}
+.sheet-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 14px;border-bottom:1px solid var(--ink)}
+.sheet-top .lbl{color:var(--ink)}
+.sheet-top .lbl+.lbl{color:var(--muted)}
+.draw{position:relative;background-color:var(--sheet);background-image:linear-gradient(rgba(18,18,18,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(18,18,18,.07) 1px,transparent 1px),linear-gradient(rgba(18,18,18,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(18,18,18,.035) 1px,transparent 1px);background-size:64px 64px,64px 64px,16px 16px,16px 16px;background-position:-1px -1px}
+.draw{overflow:hidden}
+.draw svg{display:block;width:100%;height:auto;overflow:hidden}
+.draw noscript img{width:100%}
+.bk-t{font-family:var(--mono);fill:var(--ink);letter-spacing:.04em}
+.bk-dim{stroke:var(--accent);fill:none}
+.bk-dimt{font-family:var(--mono);fill:var(--accent);letter-spacing:.06em}
+.bk-ball circle{fill:var(--sheet);stroke:var(--ink)}
+.bk-ball text{font-family:var(--mono);font-weight:600;fill:var(--ink)}
+.bk-ball line{stroke:var(--ink)}
+.bk-ball .dot{fill:var(--ink);stroke:none}
+.bk-ball{transition:opacity .3s var(--ease)}
+.bk-ball.off{opacity:0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;padding:10px 14px;border-top:1px solid var(--ink);font-size:13px;color:var(--ink);min-height:41px}
+.legend li{display:flex;align-items:center;gap:7px}
+.legend i{font-style:normal;font-family:var(--mono);font-size:10.5px;font-weight:600;width:19px;height:19px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;flex:none}
+.tblock{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr);border-top:1.5px solid var(--ink)}
+.tblock>div{padding:9px 14px 11px;min-width:0}
+.tblock>div+div{border-left:1px solid var(--ink)}
+.tblock b{display:block;margin-top:4px;font-size:21px;font-weight:760;font-stretch:70%;text-transform:uppercase;line-height:1;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tblock .pr{background:var(--hi)}
+.tblock .pr .lbl{color:var(--ink)}
+.tblock .pr b{font-size:28px;font-variant-numeric:tabular-nums}
+.usps{margin-top:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--ink)}
+.usp{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:20px 24px 24px 0}
+.usp+.usp{padding-left:24px;border-left:1px solid var(--line-2)}
 .usp .lbl{grid-row:span 2;color:var(--accent);padding-top:4px}
-.usp b{font-size:17px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.usp b{font-size:17px;font-weight:650;letter-spacing:-.02em;color:var(--ink)}
 .usp p{font-size:14.5px;color:var(--muted)}
+.kassei{height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='22'%3E%3Cg fill='%23dcd8ce' stroke='%23b4aea2'%3E%3Crect x='1.5' y='1.5' width='29' height='8' rx='3'/%3E%3Crect x='33.5' y='1.5' width='29' height='8' rx='3'/%3E%3Crect x='-14.5' y='12.5' width='29' height='8' rx='3'/%3E%3Crect x='17.5' y='12.5' width='29' height='8' rx='3'/%3E%3Crect x='49.5' y='12.5' width='29' height='8' rx='3'/%3E%3C/g%3E%3C/svg%3E") repeat-x 0 0/64px 22px}
 
 /* section heads */
 section{scroll-margin-top:var(--hh)}
 .sec{padding:var(--sec) 0}
-.sh{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px;align-items:end;padding-top:18px;border-top:1px solid var(--line);margin-bottom:clamp(32px,4vw,56px)}
+.sh{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px;align-items:end;padding-top:18px;border-top:1.5px solid var(--ink);margin-bottom:clamp(32px,4vw,56px)}
 .sh .lbl{grid-column:1/4;align-self:start}
-.sh h2{grid-column:4/10;font-size:clamp(34px,4.2vw,60px);letter-spacing:-.045em;line-height:.98}
+.sh h2{grid-column:4/10;font-size:clamp(40px,5vw,74px)}
 .sh p{grid-column:10/13;color:var(--muted);font-size:15px}
-.sh.dark{border-top-color:rgba(255,255,255,.14)}
+.sh.dark{border-top-color:rgba(255,255,255,.4)}
 
 /* categories */
 .cats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
@@ -249,7 +291,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .ns-list li{border:1px solid var(--line);border-radius:var(--r2);padding:14px}
 
 /* size calc */
-.dark{background:var(--ink);color:#d9dce1}
+.dark{background-color:var(--ink);background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;color:#d9dce1}
 .dark h2,.dark h3{color:#fff}
 .dark .lbl{color:#8d939d}
 .dark .sh p{color:#a3a9b2}
@@ -263,8 +305,8 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .slider::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--accent) var(--p,50%),#3a3e46 var(--p,50%))}
 .slider::-moz-range-track{height:2px;background:#3a3e46}
 .slider::-moz-range-progress{height:2px;background:var(--accent)}
-.slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-9px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 5px rgba(47,75,255,.35);cursor:grab}
-.slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 5px rgba(47,75,255,.35)}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-9px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 5px rgba(194,50,26,.35);cursor:grab}
+.slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 5px rgba(194,50,26,.35)}
 .ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:#6f7580}
 .inp-d{display:flex;align-items:center;border:1px solid #30343b;border-radius:var(--r);background:#0f1114;transition:border-color .15s}
 .inp-d:focus-within{border-color:var(--accent)}
@@ -402,23 +444,37 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .lookup{display:flex;gap:6px;margin-top:16px}
 .lookup input{flex:1;min-width:0;height:46px;padding:0 13px;border:1px solid var(--line-2);border-radius:var(--r);font-family:var(--mono);font-size:15px;text-transform:uppercase;letter-spacing:.04em}
 .lookup input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-.timeline{margin-top:22px;display:grid}
-.tl-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px}
-.tl-head b{font-family:var(--mono);font-weight:500;color:var(--ink)}
-.tl-bar{height:3px;background:var(--line);border-radius:2px;margin:6px 0 14px;overflow:hidden}
-.tl-bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .8s var(--ease)}
-.tl{display:grid;grid-template-columns:22px 1fr;gap:0 12px;position:relative;padding-bottom:16px}
-.tl::before{content:"";position:absolute;left:10px;top:22px;bottom:0;width:1px;background:var(--line)}
-.tl:last-child::before{display:none}
-.tl .dot{width:21px;height:21px;border-radius:50%;border:1px solid var(--line-2);background:#fff;display:grid;place-items:center}
-.tl .dot svg{width:11px;height:11px;stroke-width:2.6;color:#fff}
-.tl.done .dot{background:var(--ink);border-color:var(--ink)}
-.tl.now .dot{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-.tl.now .dot::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 1.4s infinite}
+.status-box h3.cd{font-size:clamp(34px,3.2vw,44px)}
+.try{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.try .lbl{margin-right:4px}
+.try .pill{font-family:var(--mono);font-size:12px;padding:0 10px}
+.trk{margin-top:12px;border-top:1.5px solid var(--ink);padding-top:14px}
+.trk-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.trk-head b{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--ink);letter-spacing:.03em}
+.trk-line{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:34px}
+.trk-line::before,.trk-line::after{content:"";position:absolute;left:12.5%;top:10px;height:4px}
+.trk-line::before{right:12.5%;background:repeating-linear-gradient(90deg,var(--ink) 0 7px,transparent 7px 10px);opacity:.25}
+.trk-line::after{width:calc(75% * var(--p,0));background:repeating-linear-gradient(90deg,var(--accent) 0 7px,transparent 7px 10px);transition:width 1s var(--ease)}
+.trk-line li{position:relative;z-index:1;display:grid;justify-items:center;text-align:center;gap:8px;padding:0 2px}
+.trk-line .node{width:24px;height:24px;border-radius:50%;border:2px solid var(--line-2);background:var(--sheet);display:grid;place-items:center;transition:background .3s,border-color .3s}
+.trk-line .node svg{width:12px;height:12px;stroke-width:2.8;color:#fff}
+.trk-line b{font-size:13px;font-weight:620;line-height:1.2;color:var(--faint)}
+.trk-line small{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px}
+.trk-line .done .node{background:var(--ink);border-color:var(--ink)}
+.trk-line .done b,.trk-line .now b{color:var(--ink)}
+.trk-line .now .node{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 5px var(--accent-soft)}
+.trk-line .now .node::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+.trk-line .fin.now .node{background:var(--ok);border-color:var(--ok);box-shadow:0 0 0 5px #d5eadf}
+.trk-line .fin.now .node::after{display:none}
+.trk-bike{position:absolute;top:-30px;left:50%;width:26px;height:26px;margin-left:-13px;color:var(--accent);stroke-width:1.6}
+.fin .trk-bike{color:var(--ok)}
 @keyframes blink{50%{opacity:.25}}
-.tl b{font-size:14.5px;font-weight:560;color:var(--ink)}
-.tl.todo b{color:var(--faint);font-weight:500}
-.tl small{display:block;font-size:12.5px;color:var(--muted);margin-top:1px}
+.trk-now{margin-top:18px;padding:14px 16px;background:var(--paper);border-left:3px solid var(--accent);display:grid;gap:6px}
+.trk-now.fin{border-left-color:var(--ok)}
+.trk-now p{font-size:14.5px;color:var(--ink)}
+.trk-log{margin-top:14px;display:grid;gap:0}
+.trk-log li{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.trk-log time{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding-top:2px}
 
 /* leasing */
 .lease{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
@@ -471,7 +527,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .live{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px;border-radius:16px;background:var(--paper);font-size:13.5px;font-weight:500;color:var(--ink);margin:16px 0 8px}
 .live i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(13,154,96,.18)}
 .live.closed i{background:var(--warn);box-shadow:0 0 0 3px rgba(194,116,0,.18)}
-.map{position:relative;border-radius:var(--r2);overflow:hidden;background:#eef0f3;min-height:400px}
+.map{position:relative;border-radius:var(--r2);overflow:hidden;background:#e9e6dd;min-height:400px}
 .map svg.m{position:absolute;inset:0;width:100%;height:100%}
 .map-card{position:absolute;left:16px;bottom:16px;right:16px;max-width:360px;background:#fff;border-radius:var(--r);padding:18px;box-shadow:0 10px 30px rgba(12,13,16,.12)}
 .map-card address{font-style:normal;font-size:14.5px;line-height:1.6;margin-top:8px}
@@ -510,7 +566,7 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
 .foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .foot-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;font-size:13px}
 .foot-bot a{color:#fff}
-.wordmark{font-size:clamp(64px,15vw,232px);font-weight:650;letter-spacing:-.07em;line-height:.8;color:#16181c;margin-top:56px;white-space:nowrap;overflow:hidden;user-select:none}
+.wordmark{font-size:clamp(64px,17vw,280px);font-weight:820;font-stretch:62%;text-transform:uppercase;letter-spacing:-.01em;line-height:.8;color:#222;margin-top:56px;white-space:nowrap;overflow:hidden;user-select:none}
 
 /* overlays */
 .scrim{position:fixed;inset:0;z-index:70;background:rgba(12,13,16,.42);opacity:0;transition:opacity .3s var(--ease)}
@@ -628,7 +684,7 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
 .ctable thead th{position:sticky;top:0;background:#fff;z-index:1;vertical-align:bottom;border-bottom:1px solid var(--ink)}
 .ctable tbody th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);width:180px;padding-top:14px}
 .ctable td{color:var(--ink)}
-.ctable tr.diff td{background:#fafbff}
+.ctable tr.diff td{background:#faf3ef}
 .ctable tr.diff th::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:1px}
 .ctable tr.same.hide{display:none}
 .ch{display:grid;gap:8px}
@@ -640,7 +696,7 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
 /* bottom bar */
 .bbar{display:none}
 .toast{position:fixed;left:50%;bottom:24px;z-index:95;transform:translate(-50%,16px);opacity:0;pointer-events:none;display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:12px 16px;border-radius:var(--r);font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);transition:opacity .25s,transform .25s var(--ease);max-width:calc(100% - 32px)}
-.toast svg{color:#7d93ff}
+.toast svg{color:var(--hi)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 /* dialogs: container focus has no ring */
@@ -664,9 +720,10 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
 @media (max-width:1100px){
   .nav,.hdr-book{display:none}
   .menubtn{display:inline-grid}
-  .hero-grid{grid-template-columns:1fr}
-  .hero-copy{padding:0}
-  .hero-meta{margin-top:36px;padding-top:0}
+  .cfg{grid-template-columns:1fr;grid-template-areas:"copy" "sheet" "ctrl";grid-template-rows:none}
+  .sheet{margin-top:20px}
+  .cfg-ctrl{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;align-items:start}
+  .cfg-ctrl .cf:first-child,.cfg-ctrl .cfg-cta{grid-column:1/-1}
   .shop{grid-template-columns:1fr}
   .filters{position:fixed;top:auto;left:0;right:0;bottom:0;z-index:80;max-height:min(86vh,720px);background:#fff;border-radius:12px 12px 0 0;padding:0 var(--g) 0;transform:translateY(105%);transition:transform .38s var(--ease);box-shadow:0 -20px 60px rgba(12,13,16,.18);display:flex;flex-direction:column;overflow:hidden}
   .filters.open{transform:none}
@@ -698,18 +755,24 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
   .usps{grid-template-columns:1fr}
   .usp{padding:16px 0}
   .usp+.usp{padding-left:0;border-left:0;border-top:1px solid var(--line)}
-  .hero h1{margin-top:20px}
-  .hero .ctas .btn{flex:1}
-  .hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-  .hero-meta b{font-size:22px}
-  .hero-meta .lbl{font-size:10px}
+  .hero h1{margin-top:12px;font-size:clamp(44px,13vw,64px)}
+  .hero .lead{margin-top:12px;font-size:15.5px}
+  .sheet{margin-top:16px;margin-inline:-6px}
+  .sheet-top{padding:7px 10px}
+  .sheet-top .lbl{font-size:9.5px}
+  .legend{gap:4px 12px;padding:8px 10px;font-size:12px}
+  .tblock{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .tblock>div{padding:8px 10px 9px}
+  .tblock>div:first-child{grid-column:1/-1}
+  .tblock>div:nth-child(2){border-left:0}
+  .tblock>div:nth-child(n+2){border-top:1px solid var(--ink)}
+  .tblock b{font-size:18px}
+  .tblock .pr b{font-size:22px}
+  .cfg-ctrl{display:block}
+  .types button{padding:9px 9px 10px}
+  .types b{font-size:17px}
+  .types small{font-size:10.5px}
   .card-b .ty{display:none}
-  .co span{font-size:9px;padding:4px 6px}
-  .co span em{display:none}
-  .co s{width:14px}
-  .co.hide-m{display:none}
-  .feature-bar{grid-template-columns:1fr;gap:12px}
-  .feature-bar .r{display:flex;justify-content:space-between;align-items:center}
   .sh{grid-template-columns:1fr;gap:12px}
   .sh h2,.sh p,.sh .lbl{grid-column:1}
   .cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -756,8 +819,11 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
   .toast{bottom:calc(80px + env(safe-area-inset-bottom))}
   .modal{padding:0;place-items:end stretch}
   .modal-in{max-height:92vh;border-radius:12px 12px 0 0;width:100%}
-  .bbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
-  .bbar a,.bbar button{position:relative;display:grid;justify-items:center;gap:3px;padding:9px 0 8px;font-size:11px;font-weight:500;text-decoration:none;color:var(--text);background:none;border:0}
+  .bbar{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:55;background:#121212;border-top:1px solid #000;padding-bottom:env(safe-area-inset-bottom)}
+  .bbar a,.bbar button{position:relative;display:grid;justify-items:center;gap:3px;padding:9px 0 8px;font-size:11px;font-weight:500;text-decoration:none;color:#e9e6dd;background:none;border:0}
+  .bbar .call{grid-auto-flow:column;align-items:center;justify-content:center;gap:9px;font-size:15px;font-weight:650;color:#fff;border-right:1px solid #333}
+  .bbar .call .ico{width:19px;height:19px;color:var(--hi)}
+
   .bbar .ico{width:20px;height:20px}
   .bbar .badge{position:absolute;top:4px;left:calc(50% + 6px);background:var(--accent);color:#fff;min-width:17px;height:17px;font-size:10px;padding:0 4px}
 }
@@ -808,7 +874,7 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
 <header class="hdr" id="top">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Vélo Atelier Leuven, naar boven">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#0c0d10"/><circle cx="11" cy="19" r="5" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="21" cy="19" r="5" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M11 19l3.5-7h4L21 19" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="24.5" cy="8.5" r="2" fill="#2f4bff"/></svg>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#0c0d10"/><circle cx="11" cy="19" r="5" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="21" cy="19" r="5" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M11 19l3.5-7h4L21 19" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="24.5" cy="8.5" r="2" fill="#f2c200"/></svg>
       <span><b>Vélo Atelier</b><small>Leuven · sinds 2014</small></span>
     </a>
     <nav class="nav" aria-label="Hoofdnavigatie">
@@ -849,38 +915,52 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
 </div>
 
 <main id="main">
-<!-- HERO -->
-<section class="hero" aria-labelledby="hero-title">
+<!-- HERO: configurator -->
+<section class="hero" id="configurator" aria-labelledby="hero-title">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow lbl"><i aria-hidden="true"></i>Fietswinkel &amp; atelier · Leuven</p>
-        <h1 id="hero-title">Precies de fiets die bij u <em>past.</em></h1>
-        <p class="lead">Stadsfietsen, e-bikes, koers, gravel en MTB uit voorraad. Elke fiets wordt na een proefrit op uw maat afgesteld, en ons eigen atelier herstelt binnen 48 uur.</p>
-        <div class="ctas">
-          <a class="btn" href="#catalogus">Bekijk de fietsen <svg class="ico arr" aria-hidden="true"><use href="#i-arr"/></svg></a>
-          <a class="btn btn-line" href="#maat">Welke maat heb ik nodig?</a>
-        </div>
-        <div class="hero-meta">
-          <div><b class="num">120+</b><span class="lbl">Fietsen in de winkel</span></div>
-          <div><b class="num">48 u</b><span class="lbl">Herstelling</span></div>
-          <div><b class="num">4,9/5</b><span class="lbl">Voorbeeldscore</span></div>
-        </div>
+    <div class="cfg">
+      <div class="cfg-copy">
+        <p class="eyebrow lbl"><span class="tri" aria-hidden="true"><i></i><i></i><i></i></span>Fietswinkel &amp; atelier · Leuven</p>
+        <h1 id="hero-title">Uw fiets, <em>op maat</em> getekend.</h1>
+        <p class="lead">Kies het type, de kleur en de maat. We zetten deze fiets klaar voor een proefrit in Leuven, afgesteld op uw lengte.</p>
       </div>
-      <figure class="feature" style="margin:0">
-        <div class="feature-top"><span class="lbl">Fig. 01 · Uitgelicht</span><span class="lbl">Nieuw · 2026</span></div>
-        <div class="feature-media">
-          <img src="img/hero-zwart.jpg" alt="Volledig zwarte koersfiets met carbon wielen, zijaanzicht tegen een donkergrijze studioachtergrond" width="1800" height="1272" fetchpriority="high">
-          <span class="co" style="left:29%;top:17%"><i></i><s></s><span><em>Contactpunt</em>Zadel op maat gezet</span></span>
-          <span class="co hide-m" style="left:52%;top:35%"><i></i><s></s><span><em>Frame</em>Carbon · 980 g</span></span>
-          <span class="co l" style="left:45%;top:71%"><i></i><s></s><span><em>Aandrijving</em>2×12 elektronisch</span></span>
-          <span class="co l" style="left:83%;top:57%"><i></i><s></s><span><em>Wielen</em>50 mm carbon</span></span>
+      <figure class="sheet">
+        <div class="sheet-top"><span class="lbl">Tekening 01 · <span id="cf-sheetname">Stadsfiets</span></span><span class="lbl">Zijaanzicht · mm</span></div>
+        <div class="draw">
+          <svg id="bike" viewBox="-960 -880 2160 1390" role="img" aria-labelledby="bike-t"><title id="bike-t">Technische tekening van de gekozen fiets</title></svg>
+          <noscript><img src="img/hero-zwart.jpg" alt="Zwarte koersfiets in zijaanzicht" width="1800" height="1272"></noscript>
         </div>
-        <figcaption class="feature-bar">
-          <div><h2>Hageland Route SL</h2><p>Koersfiets · 7,9 kg · maat 51 tot 58</p></div>
-          <div class="r"><span class="price feature-price num">3 499 €</span><button class="btn btn-sm" type="button" data-open-product="route-sl">Bekijk details <svg class="ico arr" aria-hidden="true"><use href="#i-arr"/></svg></button></div>
+        <ol class="legend" id="cf-legend" aria-label="Onderdelen op de tekening"></ol>
+        <figcaption class="tblock" aria-live="polite">
+          <div><span class="lbl">Model</span><b id="tb-model">Lovania Linea 7</b></div>
+          <div><span class="lbl">Maat</span><b id="tb-size">M · 53 cm</b></div>
+          <div><span class="lbl">Kleur</span><b id="tb-color">Leeuwgeel</b></div>
+          <div class="pr"><span class="lbl">Prijs</span><b id="tb-price" class="num">899 €</b></div>
         </figcaption>
       </figure>
+      <div class="cfg-ctrl">
+        <fieldset class="cf">
+          <legend class="cf-h"><span class="lbl">01 · Type</span></legend>
+          <div class="types" role="group" aria-label="Type fiets">
+            <button type="button" data-ctype="stad" aria-pressed="true"><svg class="ico" aria-hidden="true"><use href="#i-bike"/></svg><b>Stadsfiets</b><small>899 €</small></button>
+            <button type="button" data-ctype="gravel" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-road"/></svg><b>Gravel</b><small>1 649 €</small></button>
+            <button type="button" data-ctype="ebike" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-ebike"/></svg><b>E-bike</b><small>2 749 €</small></button>
+          </div>
+        </fieldset>
+        <fieldset class="cf">
+          <legend class="cf-h"><span class="lbl">02 · Kleur</span><span class="v" id="cf-cname">Leeuwgeel</span></legend>
+          <div class="swatches" id="cf-colors" role="group" aria-label="Kleur van het frame"></div>
+        </fieldset>
+        <fieldset class="cf">
+          <legend class="cf-h"><span class="lbl">03 · Framemaat</span></legend>
+          <div class="csize" id="cf-sizes" role="group" aria-label="Framemaat"></div>
+          <p class="fit"><span><svg class="ico" aria-hidden="true"><use href="#i-ruler"/></svg><span id="cf-fit">Voor lengte 1m65–1m75</span></span><a class="tlink" href="#maat">Exacte maat berekenen</a></p>
+        </fieldset>
+        <div class="cfg-cta">
+          <button class="btn btn-accent" type="button" id="cf-go">Proefrit reserveren met deze fiets <svg class="ico arr" aria-hidden="true"><use href="#i-arr"/></svg></button>
+          <div class="cfg-meta"><span id="cf-stock" class="stk">2 in de winkel in maat M</span><span id="cf-lease">Leasing: ± 28 € bruto per maand</span></div>
+        </div>
+      </div>
     </div>
     <ul class="usps" aria-label="Waarom bij ons">
       <li class="usp"><span class="lbl">01</span><b>Proefrit zonder afspraak</b><p>Elke fiets mag mee voor een rondje door Leuven, ook e-bikes.</p></li>
@@ -946,10 +1026,10 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
             <li><b>Hageland Route SL</b><br>Koersfiets, carbon · 3 499 €</li>
             <li><b>Hageland Grind Pro</b><br>Gravelbike, carbon · 3 799 €</li>
             <li><b>Hageland Grind Alu</b><br>Gravelbike, aluminium · 1 649 €</li>
-            <li><b>Arkel Volt Mid</b><br>E-bike, middenmotor · 3 299 €</li>
-            <li><b>Arkel Volt Commute</b><br>E-bike, woon-werk · 2 749 €</li>
+            <li><b>Lovania Volt Mid</b><br>E-bike, middenmotor · 3 299 €</li>
+            <li><b>Lovania Volt Commute</b><br>E-bike, woon-werk · 2 749 €</li>
             <li><b>Dijle Urban E</b><br>Lichte e-bike · 2 199 €</li>
-            <li><b>Arkel Linea 7</b><br>Stadsfiets, riemaandrijving · 899 €</li>
+            <li><b>Lovania Linea 7</b><br>Stadsfiets, riemaandrijving · 899 €</li>
             <li><b>Dijle Linea Light</b><br>Lichte stadsfiets · 749 €</li>
             <li><b>Dijle Classic 3</b><br>Stadsfiets · 549 €</li>
             <li><b>Hageland Trail 29</b><br>Mountainbike, hardtail · 1 299 €</li>
@@ -1112,13 +1192,14 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
       </form>
       <div class="panel status-box rv" id="status">
         <p class="lbl">Volg uw herstelling</p>
-        <h3 style="margin-top:10px">Status van mijn herstelling</h3>
-        <p>Vul de code in van uw bon of sms. Probeer gerust een willekeurige code, bijvoorbeeld <span style="white-space:nowrap">VA-R-2481</span>.</p>
+        <h3 class="cd" style="margin-top:10px">Waar is mijn fiets?</h3>
+        <p>Vul het herstelnummer in van uw bon of sms.</p>
         <form class="lookup" id="lookup" novalidate>
-          <label class="sr" for="lk-code">Herstelcode</label>
+          <label class="sr" for="lk-code">Herstelnummer</label>
           <input id="lk-code" placeholder="VA-R-0000" autocomplete="off" spellcheck="false">
-          <button class="btn" type="submit"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span class="sr">Zoek</span></button>
+          <button class="btn" type="submit">Zoek</button>
         </form>
+        <p class="try"><span class="lbl">Demo</span><button type="button" class="pill" data-code="VA-R-2481">VA-R-2481</button><button type="button" class="pill" data-code="VA-R-1307">VA-R-1307</button></p>
         <p class="err" id="lk-err" role="alert"></p>
         <div id="lk-out" aria-live="polite"></div>
       </div>
@@ -1196,13 +1277,13 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
       </div>
       <div class="map" role="img" aria-label="Gestileerd plannetje van de Leuvense binnenstad met de ligging van de winkel">
         <svg class="m" viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="800" height="520" fill="#eef0f3"/>
-          <g fill="#e2e5ea"><rect x="40" y="40" width="150" height="110" rx="3"/><rect x="220" y="30" width="190" height="90" rx="3"/><rect x="440" y="40" width="120" height="150" rx="3"/><rect x="600" y="20" width="170" height="120" rx="3"/><rect x="30" y="190" width="170" height="130" rx="3"/><rect x="240" y="160" width="160" height="150" rx="3"/><rect x="590" y="180" width="190" height="110" rx="3"/><rect x="40" y="360" width="200" height="130" rx="3"/><rect x="280" y="350" width="140" height="150" rx="3"/><rect x="460" y="330" width="130" height="170" rx="3"/><rect x="630" y="330" width="150" height="160" rx="3"/></g>
-          <path d="M0 470 C 180 430, 260 330, 420 320 S 650 260, 800 300" fill="none" stroke="#d3dcea" stroke-width="18"/>
-          <g fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"><path d="M0 170h800M210 0v520M425 0v520M580 0v520M0 335h800"/><path d="M60 520L380 140 800 60" stroke-width="10"/></g>
+          <rect width="800" height="520" fill="#e9e6dd"/>
+          <g fill="#dcd8cd"><rect x="40" y="40" width="150" height="110" rx="3"/><rect x="220" y="30" width="190" height="90" rx="3"/><rect x="440" y="40" width="120" height="150" rx="3"/><rect x="600" y="20" width="170" height="120" rx="3"/><rect x="30" y="190" width="170" height="130" rx="3"/><rect x="240" y="160" width="160" height="150" rx="3"/><rect x="590" y="180" width="190" height="110" rx="3"/><rect x="40" y="360" width="200" height="130" rx="3"/><rect x="280" y="350" width="140" height="150" rx="3"/><rect x="460" y="330" width="130" height="170" rx="3"/><rect x="630" y="330" width="150" height="160" rx="3"/></g>
+          <path d="M0 470 C 180 430, 260 330, 420 320 S 650 260, 800 300" fill="none" stroke="#c9d1c4" stroke-width="18"/>
+          <g fill="none" stroke="#f6f4ee" stroke-width="14" stroke-linecap="round"><path d="M0 170h800M210 0v520M425 0v520M580 0v520M0 335h800"/><path d="M60 520L380 140 800 60" stroke-width="10"/></g>
           <g fill="none" stroke="#c9ced6" stroke-width="1" stroke-dasharray="3 5"><path d="M610 166 L520 230"/></g>
           <rect x="610" y="146" width="96" height="26" rx="3" fill="#0c0d10"/><text x="658" y="163" fill="#fff" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle" letter-spacing="1">STATION</text>
-          <circle cx="500" cy="236" r="36" fill="#2f4bff" opacity=".12"/><circle cx="500" cy="236" r="18" fill="#2f4bff" opacity=".22"/><circle cx="500" cy="236" r="8" fill="#2f4bff" stroke="#fff" stroke-width="3"/>
+          <circle cx="500" cy="236" r="36" fill="#f2c200" opacity=".25"/><circle cx="500" cy="236" r="18" fill="#c2321a" opacity=".22"/><circle cx="500" cy="236" r="8" fill="#c2321a" stroke="#fff" stroke-width="3"/>
           <text x="40" y="30" fill="#9aa0a9" font-family="ui-monospace,monospace" font-size="10" letter-spacing="1">50.879° N · 4.700° E (illustratief)</text>
         </svg>
         <div class="map-card">
@@ -1238,12 +1319,12 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <a class="logo" href="#top" aria-label="Vélo Atelier Leuven, naar boven"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#fff"/><circle cx="11" cy="19" r="5" fill="none" stroke="#0c0d10" stroke-width="1.8"/><circle cx="21" cy="19" r="5" fill="none" stroke="#0c0d10" stroke-width="1.8"/><path d="M11 19l3.5-7h4L21 19" fill="none" stroke="#0c0d10" stroke-width="1.8" stroke-linejoin="round"/><circle cx="24.5" cy="8.5" r="2" fill="#2f4bff"/></svg><span><b>Vélo Atelier</b><small>Leuven · sinds 2014</small></span></a>
+        <a class="logo" href="#top" aria-label="Vélo Atelier Leuven, naar boven"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#fff"/><circle cx="11" cy="19" r="5" fill="none" stroke="#0c0d10" stroke-width="1.8"/><circle cx="21" cy="19" r="5" fill="none" stroke="#0c0d10" stroke-width="1.8"/><path d="M11 19l3.5-7h4L21 19" fill="none" stroke="#0c0d10" stroke-width="1.8" stroke-linejoin="round"/><circle cx="24.5" cy="8.5" r="2" fill="#f2c200"/></svg><span><b>Vélo Atelier</b><small>Leuven · sinds 2014</small></span></a>
         <p>Fietswinkel en atelier in Leuven. Proefrit, afstelling op maat en herstelling binnen 48 uur.</p>
         <form class="news" id="news" novalidate><label class="sr" for="n-mail">E-mailadres voor de nieuwsbrief</label><input id="n-mail" type="email" placeholder="uw@email.example" autocomplete="email"><button class="btn" type="submit">Inschrijven</button></form>
       </div>
       <div><h4>Shop</h4><ul><li><a href="#catalogus" data-cat="stad">Stadsfietsen</a></li><li><a href="#catalogus" data-cat="ebike">E-bikes</a></li><li><a href="#catalogus" data-cat="gravel">Gravel &amp; koers</a></li><li><a href="#catalogus" data-cat="toebehoren">Toebehoren</a></li></ul></div>
-      <div><h4>Atelier</h4><ul><li><a href="#atelier">Herstelling boeken</a></li><li><a href="#status">Status herstelling</a></li><li><a href="#maat">Maatadvies</a></li><li><a href="#leasing">Leasing en premies</a></li></ul></div>
+      <div><h4>Atelier</h4><ul><li><a href="#atelier">Herstelling boeken</a></li><li><a href="#status">Waar is mijn fiets?</a></li><li><a href="#maat">Maatadvies</a></li><li><a href="#leasing">Leasing en premies</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+3216000000">016 00 00 00</a></li><li><a href="mailto:info@veloatelier.example">info@veloatelier.example</a></li><li>Voorbeeldstraat 7</li><li>3000 Leuven</li></ul></div>
     </div>
     <div class="foot-bot">
@@ -1255,8 +1336,8 @@ details .a{padding:0 0 24px;max-width:66ch;color:var(--text)}
 </footer>
 
 <nav class="bbar" aria-label="Snelmenu">
+  <a class="call" href="tel:+3216000000"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Bel ons</a>
   <a href="#catalogus"><svg class="ico" aria-hidden="true"><use href="#i-bike"/></svg>Fietsen</a>
-  <a href="#maat"><svg class="ico" aria-hidden="true"><use href="#i-ruler"/></svg>Maat</a>
   <a href="#atelier"><svg class="ico" aria-hidden="true"><use href="#i-wrench"/></svg>Atelier</a>
   <button type="button" data-open-cart aria-haspopup="dialog" aria-controls="cart"><svg class="ico" aria-hidden="true"><use href="#i-bag"/></svg>Mandje<span class="badge" data-badge>0</span></button>
 </nav>
@@ -1318,11 +1399,11 @@ var P = [
   colors:[{n:'Zwart / rood',hex:'#1d1d1f',img:'p-graffiti',w:900,h:600}], sizes:{'51':2,'54':3,'56':2,'58':1},
   desc:'De toegankelijke gravelbike: stevig aluminium frame, carbon vork en een brede 2×10-groep. Ideaal voor woon-werkverkeer én de zondagsrit.',
   specs:{Frame:'Aluminium 6061', Vork:'Carbon', Aandrijving:'2×10', Remmen:'Mechanische schijfremmen', Wielen:'Aluminium', Banden:'40 mm', Gewicht:'10,4 kg (maat 54)', Garantie:'5 jaar op het frame'}},
- {id:'volt-mid', type:'ebike', brand:'Arkel', name:'Arkel Volt Mid', sub:'E-bike, middenmotor 625 Wh', price:3299, nieuw:true, kg:24.5, line:'75 Nm · 625 Wh · tot 130 km',
+ {id:'volt-mid', type:'ebike', brand:'Lovania', name:'Lovania Volt Mid', sub:'E-bike, middenmotor 625 Wh', price:3299, nieuw:true, kg:24.5, line:'75 Nm · 625 Wh · tot 130 km',
   colors:[{n:'Zwart / geel',hex:'#1b1b1b',img:'p-geel',w:900,h:600}], sizes:{S:1,M:2,L:1},
   desc:'Krachtige middenmotor voor heuvels en tegenwind, met een uitneembare batterij van 625 Wh. Geïntegreerd licht, stuurslot en gps-tracker.',
   specs:{Frame:'Aluminium, geïntegreerde batterij', Motor:'Middenmotor, 75 Nm', Batterij:'625 Wh, uitneembaar', Bereik:'80 tot 130 km', Aandrijving:'Naaf, 5 versnellingen', Remmen:'Hydraulische schijfremmen', Gewicht:'24,5 kg', Garantie:'2 jaar op motor en batterij'}},
- {id:'volt-commute', type:'ebike', brand:'Arkel', name:'Arkel Volt Commute', sub:'E-bike, woon-werk', price:2749, oud:2999, kg:22.8, line:'60 Nm · 500 Wh · tot 100 km',
+ {id:'volt-commute', type:'ebike', brand:'Lovania', name:'Lovania Volt Commute', sub:'E-bike, woon-werk', price:2749, oud:2999, kg:22.8, line:'60 Nm · 500 Wh · tot 100 km',
   colors:[{n:'Mistgrijs',hex:'#c9cdd2',img:'p-muur',w:900,h:1250},{n:'Zilver',hex:'#a7adb4',img:'p-staal',w:900,h:600}], sizes:{S:0,M:2,L:3},
   desc:'De e-bike voor elke dag: middenmotor van 60 Nm, riemaandrijving zonder onderhoud en een stevige drager voor laptoptas of kinderzitje.',
   specs:{Frame:'Aluminium', Motor:'Middenmotor, 60 Nm', Batterij:'500 Wh, uitneembaar', Bereik:'60 tot 100 km', Aandrijving:'Riem, traploze naaf', Remmen:'Hydraulische schijfremmen', Gewicht:'22,8 kg', Garantie:'2 jaar op motor en batterij'}},
@@ -1330,7 +1411,7 @@ var P = [
   colors:[{n:'Grafiet',hex:'#4a4f55',img:'p-grijs',w:900,h:600},{n:'Antraciet',hex:'#2c3034',img:'p-nat',w:900,h:1350}], sizes:{S:1,M:1,L:0},
   desc:'Een e-bike die u nog de trap op krijgt. Subtiele ondersteuning tot 25 km/u, batterij onzichtbaar in de buis.',
   specs:{Frame:'Aluminium, batterij in de buis', Motor:'Achterwielmotor, 40 Nm', Batterij:'250 Wh, range extender optioneel', Bereik:'50 tot 80 km', Aandrijving:'1×9', Remmen:'Hydraulische schijfremmen', Gewicht:'17 kg', Garantie:'2 jaar'}},
- {id:'linea-7', type:'stad', brand:'Arkel', name:'Arkel Linea 7', sub:'Stadsfiets, riemaandrijving', price:899, kg:15.8, line:'15,8 kg · 7 v · riem',
+ {id:'linea-7', type:'stad', brand:'Lovania', name:'Lovania Linea 7', sub:'Stadsfiets, riemaandrijving', price:899, kg:15.8, line:'15,8 kg · 7 v · riem',
   colors:[{n:'Zilver',hex:'#b7bcc2',img:'p-staal',w:900,h:600},{n:'Krijtwit',hex:'#eceae4',img:'p-wit',w:900,h:600}], sizes:{S:1,M:2,L:1,XL:0},
   desc:'Onderhoudsarme stadsfiets met een riem in plaats van een ketting, naafversnelling en hydraulische schijfremmen. Rechtop zitten, drager tot 25 kg.',
   specs:{Frame:'Staal, diamant of lage instap', Aandrijving:'Riem, 7 naafversnellingen', Remmen:'Hydraulische schijfremmen', Verlichting:'Naafdynamo', Banden:'42 mm, antilek', Gewicht:'15,8 kg', Garantie:'5 jaar op het frame'}},
@@ -1606,16 +1687,18 @@ document.addEventListener('click', function(e){
 var VIEWS_BIKE = [{n:'Zijaanzicht', s:1, o:'50% 50%'}, {n:'Aandrijving', s:2.1, o:'40% 72%'}, {n:'Cockpit', s:2.1, o:'72% 30%'}, {n:'Wiel', s:1.8, o:'80% 70%'}];
 var VIEWS_ACC = [{n:'Product', s:1, o:'50% 50%'}, {n:'Detail', s:1.7, o:'50% 50%'}];
 var pdState = {};
-function openProduct(p){
+function openProduct(p, o){
   if (!p) return;
+  o = o || {};
   var ms = mySize(p) || (rec && calcTouched && p.sizes ? null : null);
   var sizes = sizeKeys(p), selSize = null;
   if (sizes.length) {
     var mine = rec && calcTouched && FAM[p.type] ? (function(){ var s = rec[FAM[p.type]]; if (p.type === 'ebike' && s === 'XL') s = 'L'; return p.sizes[s] !== undefined ? s : null; })() : null;
     selSize = mine || sizes.filter(function(s){ return p.sizes[s] > 0; })[0] || sizes[0];
     ms = mine;
+    if (o.size && p.sizes[o.size] !== undefined) selSize = o.size;
   }
-  pdState = {p:p, color:0, size:selSize, view:0, mine:ms};
+  pdState = {p:p, color:0, size:selSize, view:0, mine:ms, cfg:o.color || null};
   var views = p.type === 'toebehoren' || p.type === 'kids' ? VIEWS_ACC : VIEWS_BIKE;
   pdState.views = views;
   $('#pd-crumb').textContent = 'Fietsen / ' + TYPES[p.type] + ' / ' + p.brand;
@@ -1658,12 +1741,13 @@ function openProduct(p){
       if (!n.value.trim()) { n.setAttribute('aria-invalid','true'); err.textContent = 'Vul uw naam in.'; n.focus(); return; }
       if (t.value.replace(/\D/g, '').length < 9) { t.setAttribute('aria-invalid','true'); err.textContent = 'Vul een geldig gsm-nummer in.'; t.focus(); return; }
       var d = $('#tr-day'); var dayTxt = d.options[d.selectedIndex].text;
-      this.innerHTML = '<div class="ok" tabindex="-1" id="tr-ok"><div class="ok-ic" style="width:40px;height:40px;margin-bottom:12px">' + ico('check') + '</div><h3>Proefrit aangevraagd</h3><p>' + esc(n.value.trim().split(' ')[0]) + ', we zetten de ' + p.name + (pdState.size ? ' in maat ' + pdState.size : '') + ' voor u klaar op ' + dayTxt.toLowerCase() + '. We bevestigen per sms.</p><p class="demo-note">Demo: er is geen echte afspraak gemaakt.</p></div>';
+      this.innerHTML = '<div class="ok" tabindex="-1" id="tr-ok"><div class="ok-ic" style="width:40px;height:40px;margin-bottom:12px">' + ico('check') + '</div><h3>Proefrit aangevraagd</h3><p>' + esc(n.value.trim().split(' ')[0]) + ', we zetten de ' + p.name + (pdState.size ? ' in maat ' + pdState.size : '') + ' voor u klaar op ' + dayTxt.toLowerCase() + '. We bevestigen per sms.' + (pdState.cfg ? ' Uw kleurkeuze, ' + pdState.cfg.toLowerCase() + ', noteren we bij de aanvraag.' : '') + '</p><p class="demo-note">Demo: er is geen echte afspraak gemaakt.</p></div>';
       $('#tr-ok').focus();
     });
   }
   var sh = $('#pd-sizehelp'); if (sh) sh.addEventListener('click', function(e){ e.preventDefault(); var t = {stad:'stad', ebike:'ebike', gravel:'gravel', mtb:'mtb'}[p.type]; var r = $('input[name=ctype][value="' + t + '"]'); if (r) { r.checked = true; runCalc(); } closeDlg(true); setTimeout(function(){ goTo('#maat'); }, 50); });
   openDlg($('#pd'));
+  if (o.tr && tr) setTimeout(function(){ tr.click(); }, reduce ? 30 : 420);
 }
 function trForm(p){
   var opts = '', d = new Date(), c = 0;
@@ -1888,6 +1972,7 @@ function bkDone(){
   var code = 'VA-R-' + String(Math.floor(1000 + Math.random() * 8999)); lastCode = code;
   var d = parseIso(bk.date), p = pkg(), slot = $('input[name=slot]:checked').value, bike = BIKES.filter(function(b){ return b[0] === bk.bike; })[0][1];
   var nm = $('#bk-name').value.trim().split(' ')[0];
+  lastBk = {date:d, bike:bike};
   $('#bk-done').innerHTML = '<div class="ok-ic">' + ico('check') + '</div><p class="lbl">Afspraak bevestigd</p><h3 style="margin-top:8px">Tot ' + DAYN[d.getDay()] + ', ' + esc(nm) + '.</h3><p>Breng uw ' + bike.toLowerCase() + ' binnen op ' + fmtD(d) + ' in de ' + slot + '. We sturen een sms zodra hij klaar is.</p><div class="codebox"><span class="lbl">Uw code</span>' + code + '</div>' +
     '<dl class="summary"><dt>Fiets</dt><dd>' + bike + '</dd><dt>Pakket</dt><dd>' + p.n + (bk.extras.length ? ' + ' + bk.extras.map(function(x){ return x.n.toLowerCase(); }).join(', ') : '') + '</dd><dt>Prijs</dt><dd>' + (bkTotal() ? money(bkTotal()) : 'Gratis') + ', onderdelen apart</dd><dt>Klaar</dt><dd>Uiterlijk ' + fmtD(addOpenDays(d, 2)) + '</dd></dl>' +
     '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px"><button class="btn" type="button" id="bk-track">Volg deze herstelling</button><button class="btn btn-line" type="button" id="bk-again">Nog een afspraak</button></div><p class="demo-note">Demo: er is geen echte afspraak gemaakt.</p>';
@@ -1898,22 +1983,47 @@ function bkDone(){
 $('#book').addEventListener('submit', function(e){ e.preventDefault(); });
 $('#book').addEventListener('keydown', function(e){ if (e.key === 'Enter' && e.target.tagName === 'INPUT') { e.preventDefault(); $('#bk-next').click(); } });
 
-/* ---------- status lookup ---------- */
-var STAGES = [['Ingeboekt','Afspraak staat in de planning'],['Diagnose','Mecanicien bekijkt de fiets'],['In herstelling','Onderdelen in voorraad, aan de slag'],['Testrit en controle','Remmen, schakelen en wielen getest'],['Klaar voor afhaling','We hebben u een sms gestuurd']];
+/* ---------- repair tracker: waar is mijn fiets? ---------- */
+var STAGES = ['Binnen', 'Diagnose', 'Wordt hersteld', 'Klaar om op te halen'];
+var DEMO = {
+  'VA-R-2481': {stage:2, bike:'Stadsfiets', mech:'Jonas', log:['Ingeboekt aan de balie: kleine beurt.', 'Ketting versleten, remblokken voor op. Prijs per sms doorgegeven, u gaf akkoord.', 'Nieuwe ketting en remblokken gemonteerd. Nu: versnellingen afstellen en testrit.']},
+  'VA-R-1307': {stage:3, bike:'E-bike', mech:'Elif', log:['Ingeboekt: e-bike check.', 'Software bijgewerkt, batterij getest: 94 % capaciteit.', 'Remmen ontlucht en riemspanning nagezien.', 'Klaar. Af te halen in de winkel, betalen met Bancontact of Payconiq.']}
+};
+var GENLOG = ['Ingeboekt aan de balie.', 'Mecanicien bekijkt de fiets. Zijn er onderdelen nodig, dan bellen we eerst.', 'Aan de slag op werkpost 2.', 'Klaar. We stuurden u een sms.'];
+var lastBk = null;
 function hash(s){ var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
-function lookup(){
+function lookup(quiet){
   var v = $('#lk-code').value.trim().toUpperCase(), err = $('#lk-err'), out = $('#lk-out'); err.textContent = '';
-  if (v.replace(/[^A-Z0-9]/g, '').length < 3) { err.textContent = 'Vul uw code in, bijvoorbeeld VA-R-2481.'; $('#lk-code').focus(); out.innerHTML = ''; return; }
-  var h = hash(v), stage = v === lastCode ? 0 : 1 + (h % 4), mech = ['Jonas','Elif','Wout'][h % 3], now = new Date();
-  var times = []; for (var i = 0; i <= stage; i++) { var t = new Date(now.getTime() - (stage - i) * (3 + (h % 5)) * 3600e3); times.push(t); }
-  function tf(d){ return DAYS[d.getDay()] + ' ' + d.getDate() + ' ' + MON[d.getMonth()] + ', ' + String(d.getHours()).padStart(2, '0') + '.' + String(d.getMinutes()).padStart(2, '0'); }
-  var pct = Math.round(stage / 4 * 100);
-  out.innerHTML = '<div class="timeline"><div class="tl-head"><b>' + esc(v) + '</b><span class="lbl">Mecanicien · ' + mech + '</span></div><div class="tl-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '" aria-label="Voortgang"><i></i></div>' +
-    STAGES.map(function(s, i){ var cls = i < stage ? 'done' : i === stage ? (stage === 4 ? 'done' : 'now') : 'todo'; return '<div class="tl ' + cls + '"><span class="dot">' + (cls === 'done' ? ico('check') : '') + '</span><div><b>' + s[0] + '</b><small>' + (i <= stage ? (i === stage && stage === 0 && v === lastCode ? 'Breng uw fiets binnen op de gekozen dag' : tf(times[i]) + ' · ' + s[1]) : (i === 4 ? 'Verwacht ' + fmtD(addOpenDays(now, 1)) : 'Volgt')) + '</small></div></div>'; }).join('') +
-    '<p class="demo-note">Demo: elke code toont een fictieve status.</p></div>';
-  setTimeout(function(){ var b = $('.tl-bar i', out); if (b) b.style.width = Math.max(4, pct) + '%'; }, 30);
+  if (v.replace(/[^A-Z0-9]/g, '').length < 3) { err.textContent = 'Vul uw herstelnummer in, bijvoorbeeld VA-R-2481.'; $('#lk-code').focus(); out.innerHTML = ''; return; }
+  var h = hash(v), now = new Date(), d = DEMO[v], booked = v === lastCode && lastBk;
+  var stage = booked ? -1 : d ? d.stage : h % 4;
+  var bike = d ? d.bike : booked ? lastBk.bike : ['Stadsfiets','Koersfiets','E-bike','Gravelbike'][h % 4];
+  var mech = d ? d.mech : ['Jonas','Elif','Wout'][h % 3];
+  var log = d ? d.log : GENLOG;
+  var base = new Date(now.getFullYear(), now.getMonth(), now.getDate()); while (!openDay(base)) base.setDate(base.getDate() - 1);
+  var CLOCK = [[9,41],[10,58],[13,20],[16,5]], times = [];
+  for (var i = 0; i <= Math.max(stage, 0); i++) { var t = new Date(base); t.setHours(CLOCK[i][0], CLOCK[i][1] + (h % 9)); times.push(t); }
+  function hm(t){ return String(t.getHours()).padStart(2, '0') + '.' + String(t.getMinutes()).padStart(2, '0'); }
+  function dm(t){ return DAYS[t.getDay()] + ' ' + t.getDate() + ' ' + MON[t.getMonth()]; }
+  var fin = stage === 3;
+  var nowTxt = booked ? 'Afspraak staat in de planning. Breng uw ' + bike.toLowerCase() + ' binnen op ' + fmtD(lastBk.date) + '.' : log[stage];
+  var line = STAGES.map(function(n, i){
+    var cls = i < stage ? 'done' : i === stage ? 'now' : 'todo'; if (i === 3) cls += ' fin';
+    var sub = i <= stage ? hm(times[i]) : i === 3 ? 'verwacht ' + DAYS[addOpenDays(base, 1).getDay()] : '';
+    return '<li class="' + cls + '">' + (i === stage ? ico('bike', 'trk-bike') : '') + '<span class="node">' + (i < stage || (fin && i === 3) ? ico('check') : '') + '</span><span><b>' + n + '</b>' + (sub ? '<small>' + sub + '</small>' : '') + '</span></li>';
+  }).join('');
+  var logH = stage > 0 ? '<ol class="trk-log">' + times.slice(0, stage).map(function(t, i){ return '<li><time>' + dm(t) + ' · ' + hm(t) + '</time><span><b style="color:var(--ink);font-weight:620">' + STAGES[i] + '.</b> ' + log[i] + '</span></li>'; }).reverse().join('') + '</ol>' : '';
+  out.innerHTML = '<div class="trk"><div class="trk-head"><b>' + esc(v) + '</b><span class="lbl">' + bike + ' · mecanicien ' + mech + '</span></div>' +
+    '<ol class="trk-line" style="--p:0" aria-label="Voortgang: ' + (stage < 0 ? 'nog niet binnen' : 'stap ' + (stage + 1) + ' van 4, ' + STAGES[stage].toLowerCase()) + '">' + line + '</ol>' +
+    '<div class="trk-now' + (fin ? ' fin' : '') + '"><span class="lbl">' + (stage < 0 ? 'Gepland' : 'Nu · ' + STAGES[stage]) + '</span><p>' + nowTxt + '</p>' + (fin ? '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-sm" href="#bezoek">Openingsuren</a><a class="btn btn-sm btn-line" href="tel:+3216000000">' + ico('phone') + 'Bel het atelier</a></div>' : '') + '</div>' +
+    logH + '<p class="demo-note">Demo: elk nummer toont een fictieve status.</p></div>';
+  var pv = Math.max(0, stage) / 3, tl = $('.trk-line', out);
+  if (reduce || quiet === true) tl.style.setProperty('--p', pv);
+  else setTimeout(function(){ tl.style.setProperty('--p', pv); }, 40);
 }
 $('#lookup').addEventListener('submit', function(e){ e.preventDefault(); lookup(); });
+$$('[data-code]').forEach(function(b){ b.addEventListener('click', function(){ $('#lk-code').value = b.dataset.code; lookup(); }); });
+$('#lk-code').value = 'VA-R-2481'; lookup(true);
 
 /* ---------- leasing ---------- */
 var lp = $('#l-p');
@@ -1944,6 +2054,310 @@ if ('IntersectionObserver' in window && !reduce) {
   rvs.forEach(function(el){ io.observe(el); });
 } else rvs.forEach(function(el){ el.classList.add('in'); });
 setTimeout(function(){ rvs.forEach(function(el){ el.classList.add('in'); }); }, 2500);
+
+/* ---------- configurator: parametric bike drawing ---------- */
+(function(){
+var svg = $('#bike'); if (!svg) return;
+var NS = 'http://www.w3.org/2000/svg', INK = '#121212', PAPER = '#fbfaf6', G = 300, VBW = 2160;
+function E(tag, at, par){ var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); (par || svg).appendChild(e); return e; }
+function f(n){ return Math.round(n * 10) / 10; }
+function pt(x, y){ return {x:x, y:y}; }
+function add(a, b, k){ if (k == null) k = 1; return {x:a.x + b.x * k, y:a.y + b.y * k}; }
+function mid(a, b, t){ if (t == null) t = .5; return {x:a.x + (b.x - a.x) * t, y:a.y + (b.y - a.y) * t}; }
+function L(a, b){ return 'M' + f(a.x) + ' ' + f(a.y) + 'L' + f(b.x) + ' ' + f(b.y); }
+function at(el, o){ for (var k in o) el.setAttribute(k, o[k]); }
+
+var COLORS = [['Leeuwgeel','#f2c200'],['Koersrood','#c2321a'],['Dijlegroen','#2f5947'],['Kasseigrijs','#a29e95'],['Gietzwart','#2a2a2a']];
+var FIT = {S:'Voor lengte 1m55–1m65', M:'Voor lengte 1m65–1m75', L:'Voor lengte 1m75–1m85'};
+var T = {
+  stad:{label:'Stadsfiets', name:'Lovania Linea 7', pid:'linea-7', price:899, sizes:{S:['S',49],M:['M',53],L:['L',57]}, chain:false,
+    parts:[['belt','Riem in plaats van ketting'],['rhub','7 naafversnellingen'],['fhub','Naafdynamo voor het licht'],['rack','Drager tot 25 kg'],['tt','Lage instap']],
+    g:{tire:40, drop:62, cs:465, fc:640, sta:69, hta:68, a2c:405, off:50, ht:190, ttJ:.40, bend:120, dtW:34, post:215, bar:0, spacer:75, stemA:42, stemL:70, ring:72, cog:44, fend:1, rack:1, bat:0, disc:0, bottle:0, stand:1, tread:0, lamp:1, der:0, saddle:44}},
+  gravel:{label:'Gravel', name:'Hageland Grind Alu', pid:'grind-alu', price:1649, sizes:{S:['51',51],M:['54',54],L:['56',56]}, chain:true,
+    parts:[['fork','Carbon vork'],['ftire','40 mm banden voor onverhard'],['ring','2×10 versnellingen'],['rdisc','Schijfremmen'],['bottle','Bidonhouder']],
+    g:{tire:40, drop:70, cs:425, fc:590, sta:73.5, hta:71.5, a2c:395, off:47, ht:135, ttJ:.9, bend:0, dtW:32, post:185, bar:1, spacer:25, stemA:-6, stemL:95, ring:98, cog:52, fend:0, rack:0, bat:0, disc:1, bottle:1, stand:0, tread:1, lamp:0, der:1, saddle:24}},
+  ebike:{label:'E-bike', name:'Lovania Volt Commute', pid:'volt-commute', price:2749, sizes:{S:['S',49],M:['M',53],L:['L',57]}, chain:false,
+    parts:[['motor','Middenmotor, 60 Nm'],['bat','Batterij 500 Wh, uitneembaar'],['rhub','Riem en traploze naaf'],['rack','Drager voor tas of kinderzitje'],['fdisc','Hydraulische schijfremmen']],
+    g:{tire:55, drop:58, cs:470, fc:655, sta:70, hta:69, a2c:425, off:48, ht:180, ttJ:.6, bend:55, dtW:46, post:200, bar:0, spacer:60, stemA:30, stemL:80, ring:66, cog:46, fend:1, rack:1, bat:1, disc:1, bottle:0, stand:1, tread:0, lamp:1, der:0, saddle:36}}
+};
+var state = {type:'stad', color:0, size:'M'};
+function target(){
+  var t = T[state.type], g = {}, k; for (k in t.g) g[k] = t.g[k];
+  var cm = t.sizes[state.size][1], q = (cm - t.sizes.M[1]) / 4;
+  g.st = cm * 10; g.ht += q * 20; g.fc += q * 24; g.post += q * 38;
+  return g;
+}
+
+/* ---- skeleton ---- */
+var defs = E('defs', {});
+var pat = E('pattern', {id:'kassei', width:150, height:76, patternUnits:'userSpaceOnUse'}, defs);
+var cg = E('g', {fill:'#e4e0d6', stroke:'#a8a296', 'stroke-width':3}, pat);
+[[3,4],[78,4],[-34,40],[41,40],[116,40]].forEach(function(c){ E('rect', {x:c[0], y:c[1], width:69, height:32, rx:11}, cg); });
+E('rect', {x:-960, y:G, width:VBW, height:76, fill:'url(#kassei)'});
+E('line', {x1:-960, y1:G, x2:1200, y2:G, stroke:INK, 'stroke-width':2, 'vector-effect':'non-scaling-stroke'});
+
+var gB = E('g', {});
+var farCrank = E('g', {stroke:'#8d8981', 'stroke-linecap':'round'}, gB);
+var fcArm = E('path', {'stroke-width':16}, farCrank), fcPed = E('path', {'stroke-width':18}, farCrank);
+
+function wheel(){
+  var w = E('g', {}, gB), rot = E('g', {}, w), d = '';
+  var tread = E('circle', {fill:'none', stroke:INK, 'stroke-width':9, 'stroke-dasharray':'10 13'}, rot);
+  var tire = E('circle', {fill:'none', stroke:'#1d1d1d'}, rot);
+  E('circle', {r:311, fill:'none', stroke:INK, 'stroke-width':13}, rot);
+  E('circle', {r:293, fill:'none', stroke:INK, 'stroke-width':3}, rot);
+  for (var i = 0; i < 24; i++) {
+    var a = i * Math.PI / 12, b = a + (i % 2 ? -1 : 1) * .78;
+    d += 'M' + f(Math.cos(a) * 24) + ' ' + f(Math.sin(a) * 24) + 'L' + f(Math.cos(b) * 291) + ' ' + f(Math.sin(b) * 291);
+  }
+  E('path', {d:d, stroke:'#3a3a3a', 'stroke-width':1, 'vector-effect':'non-scaling-stroke', fill:'none'}, rot);
+  var disc = E('g', {fill:'none', stroke:'#4a4a4a'}, rot);
+  E('circle', {r:80, 'stroke-width':10}, disc); E('circle', {r:62, 'stroke-width':10, 'stroke-dasharray':'14 10'}, disc);
+  E('circle', {r:28, fill:PAPER, stroke:INK, 'stroke-width':6}, rot);
+  E('line', {x1:0, y1:-293, x2:0, y2:-262, stroke:INK, 'stroke-width':8}, rot);
+  return {g:w, rot:rot, tire:tire, tread:tread, disc:disc};
+}
+var wR = wheel(), wF = wheel();
+
+var fendG = E('g', {fill:'none', 'stroke-linecap':'round'}, gB);
+var fendO = E('path', {stroke:INK, 'stroke-width':22}, fendG), fendC = E('path', {'stroke-width':13}, fendG);
+var stand = E('path', {stroke:INK, 'stroke-width':13, 'stroke-linecap':'round'}, gB);
+
+var drive = E('g', {fill:'none'}, gB);
+var chain = E('path', {stroke:'#2a2a2a', 'stroke-width':9, 'stroke-linecap':'round'}, drive);
+var cog = E('circle', {stroke:INK, 'stroke-width':8}, drive);
+var derG = E('g', {stroke:INK, 'stroke-width':8, 'stroke-linecap':'round', 'stroke-linejoin':'round'}, drive);
+var derP = E('path', {}, derG), derC1 = E('circle', {r:14, fill:PAPER}, derG), derC2 = E('circle', {r:14, fill:PAPER}, derG);
+
+var rackG = E('g', {stroke:INK, fill:'none', 'stroke-linecap':'round', 'stroke-linejoin':'round'}, gB);
+var rackP = E('path', {'stroke-width':12}, rackG), rackS = E('path', {'stroke-width':8}, rackG);
+var rLamp = E('rect', {width:34, height:22, rx:5, fill:'#c2321a', stroke:INK, 'stroke-width':4}, rackG);
+
+var gO = E('g', {fill:'none', stroke:INK, 'stroke-linecap':'round', 'stroke-linejoin':'round'}, gB);
+var gC = E('g', {fill:'none', 'stroke-linecap':'round', 'stroke-linejoin':'round'}, gB);
+var TUBES = {};
+['cs','ss','fk','st','dt','tt','ht'].forEach(function(n){ TUBES[n] = {o:E('path', {}, gO), c:E('path', {}, gC)}; });
+function tube(n, d, w){ var t = TUBES[n]; t.o.setAttribute('d', d); t.c.setAttribute('d', d); t.o.setAttribute('stroke-width', f(w + 9)); t.c.setAttribute('stroke-width', f(w)); }
+
+var batG = E('g', {'stroke-linecap':'round', fill:'none'}, gB);
+var batO = E('path', {stroke:INK, 'stroke-width':50}, batG), batC = E('path', {stroke:'#2e2e2e', 'stroke-width':40}, batG), batH = E('path', {stroke:'#f2c200', 'stroke-width':6}, batG);
+var motor = E('g', {}, batG);
+var motC = E('circle', {r:82, fill:'#2e2e2e', stroke:INK, 'stroke-width':6}, motor), motI = E('circle', {r:40, fill:'none', stroke:'#5a5a5a', 'stroke-width':6}, motor);
+var botG = E('g', {'stroke-linecap':'round', fill:'none'}, gB);
+var botO = E('path', {stroke:INK, 'stroke-width':64}, botG), botC = E('path', {stroke:'#e6e1d4', 'stroke-width':54}, botG), botK = E('path', {stroke:INK, 'stroke-width':6}, botG);
+
+var ringG = E('g', {fill:'none', stroke:INK}, gB);
+var ring = E('circle', {'stroke-width':9}, ringG), ringT = E('circle', {'stroke-width':6, 'stroke-dasharray':'5 5'}, ringG), ring2 = E('circle', {'stroke-width':6}, ringG);
+var crank = E('g', {stroke:INK, 'stroke-linecap':'round'}, gB);
+var crArm = E('path', {'stroke-width':20}, crank), crPed = E('path', {'stroke-width':20}, crank), crBolt = E('circle', {r:14, fill:PAPER, 'stroke-width':5}, crank);
+
+var post = E('path', {stroke:'#3d3d3d', 'stroke-width':18, 'stroke-linecap':'butt'}, gB);
+var saddle = E('path', {fill:INK}, gB);
+var ckp = E('g', {fill:'none', 'stroke-linecap':'round', 'stroke-linejoin':'round'}, gB);
+var steer = E('path', {stroke:'#2d2d2d', 'stroke-width':26}, ckp), stem = E('path', {stroke:'#232323', 'stroke-width':22}, ckp);
+var bar = E('path', {stroke:INK, 'stroke-width':16}, ckp), grip = E('path', {stroke:'#3d3d3d', 'stroke-width':28}, ckp), hood = E('path', {stroke:'#2a2a2a', 'stroke-width':16}, ckp);
+var lampG = E('g', {}, gB);
+var lamp = E('circle', {r:22, fill:PAPER, stroke:INK, 'stroke-width':6}, lampG), lampI = E('circle', {r:9, fill:'#f2c200'}, lampG);
+
+var dimG = E('g', {}, gB);
+var dimL = E('path', {'class':'bk-dim', 'stroke-width':1.2, 'vector-effect':'non-scaling-stroke'}, dimG);
+var dimX = E('path', {'class':'bk-dim', 'stroke-width':1, 'stroke-dasharray':'4 4', 'vector-effect':'non-scaling-stroke'}, dimG);
+var dimBg = E('rect', {fill:PAPER}, dimG), dimT = E('text', {'class':'bk-dimt', 'text-anchor':'middle', 'dominant-baseline':'central'}, dimG);
+var sdL = E('path', {'class':'bk-dim', 'stroke-width':1.2, 'vector-effect':'non-scaling-stroke'}, dimG);
+var sdBg = E('rect', {fill:PAPER}, dimG), sdT = E('text', {'class':'bk-dimt', 'text-anchor':'middle', 'dominant-baseline':'central'}, dimG);
+
+var ballG = E('g', {'class':'bk-ball'}, gB), BALLS = [];
+for (var bi = 0; bi < 5; bi++) {
+  var bg = E('g', {}, ballG);
+  BALLS.push({ln:E('line', {'stroke-width':1, 'vector-effect':'non-scaling-stroke'}, bg), dot:E('circle', {'class':'dot'}, bg), c:E('circle', {'stroke-width':1.3, 'vector-effect':'non-scaling-stroke'}, bg), t:E('text', {'text-anchor':'middle', 'dominant-baseline':'central'}, bg)});
+  BALLS[bi].t.textContent = bi + 1;
+}
+
+/* ---- geometry + draw ---- */
+var u = 2.5;
+function measure(){ var w = svg.getBoundingClientRect().width || 800; u = VBW / w; }
+function geo(g){
+  var r = Math.PI / 180, sa = g.sta * r, ha = g.hta * r, R = 311 + g.tire;
+  var BB = pt(0, 0), RA = pt(-Math.sqrt(g.cs * g.cs - g.drop * g.drop), -g.drop), FA = pt(g.fc, -g.drop);
+  var d = pt(Math.cos(ha), Math.sin(ha)), n = pt(Math.sin(ha), -Math.cos(ha));
+  var C = add(add(FA, d, -g.a2c), n, -g.off), H = add(C, d, -g.ht);
+  var su = pt(-Math.cos(sa), -Math.sin(sa)), S = add(BB, su, g.st), J = add(BB, su, g.st * g.ttJ), SS = add(BB, su, g.st * .95);
+  var Hs = add(H, d, 32), Cd = add(C, d, -34);
+  var ttc = add(mid(Hs, J), pt(g.bend * .25, g.bend));
+  var P = add(S, su, g.post), Stp = add(H, d, -g.spacer);
+  var B = add(Stp, pt(Math.cos(g.stemA * r), -Math.sin(g.stemA * r)), g.stemL);
+  var gl = R - g.drop;
+  return {R:R, BB:BB, RA:RA, FA:FA, d:d, n:n, C:C, H:H, su:su, S:S, J:J, SS:SS, Hs:Hs, Cd:Cd, ttc:ttc, P:P, Stp:Stp, B:B, gl:gl, sa:sa};
+}
+function qpt(a, c, b, t){ var s = 1 - t; return pt(s * s * a.x + 2 * s * t * c.x + t * t * b.x, s * s * a.y + 2 * s * t * c.y + t * t * b.y); }
+function arc(c, rr, a1, a2){ var r = Math.PI / 180, p1 = pt(c.x + rr * Math.cos(a1 * r), c.y - rr * Math.sin(a1 * r)), p2 = pt(c.x + rr * Math.cos(a2 * r), c.y - rr * Math.sin(a2 * r)); return 'M' + f(p1.x) + ' ' + f(p1.y) + 'A' + f(rr) + ' ' + f(rr) + ' 0 0 1 ' + f(p2.x) + ' ' + f(p2.y); }
+var last = null;
+function draw(g, dist){
+  var q = geo(g); last = q;
+  var oy = G - q.gl; gB.setAttribute('transform', 'translate(0 ' + f(oy) + ')');
+  var wrad = dist / q.R, wdeg = wrad * 180 / Math.PI, crad = wrad * g.cog / g.ring + .9;
+  [[wR, q.RA], [wF, q.FA]].forEach(function(w){
+    w[0].rot.setAttribute('transform', 'translate(' + f(w[1].x) + ' ' + f(w[1].y) + ') rotate(' + f(wdeg % 360) + ')');
+    at(w[0].tire, {r:f(311 + g.tire / 2), 'stroke-width':f(g.tire)});
+    at(w[0].tread, {r:f(311 + g.tire + 2), opacity:f(g.tread)});
+    w[0].disc.setAttribute('opacity', f(g.disc));
+  });
+  // fenders
+  var fr = q.R + 18, fd = arc(q.RA, fr, 205, 70) + arc(q.FA, fr, 165, 22);
+  fendO.setAttribute('d', fd); fendC.setAttribute('d', fd); fendG.setAttribute('opacity', f(g.fend));
+  // stand
+  var K = mid(q.BB, q.RA, .34); stand.setAttribute('d', L(K, pt(K.x - 80, q.gl - 6))); stand.setAttribute('opacity', f(g.stand));
+  // drivetrain
+  var RA = q.RA;
+  chain.setAttribute('d', L(pt(0, -g.ring), pt(RA.x, RA.y - g.cog)) + L(pt(0, g.ring), pt(RA.x, RA.y + g.cog)));
+  chain.setAttribute('stroke-dashoffset', f(-crad * g.ring));
+  at(cog, {cx:f(RA.x), cy:f(RA.y), r:f(g.cog)});
+  var d1 = pt(RA.x + 16, RA.y + 92), d2 = pt(RA.x - 28, RA.y + 130);
+  derP.setAttribute('d', L(pt(RA.x + 6, RA.y + 20), d1) + L(d1, d2));
+  at(derC1, {cx:f(d1.x), cy:f(d1.y)}); at(derC2, {cx:f(d2.x), cy:f(d2.y)}); derG.setAttribute('opacity', f(g.der));
+  // rack
+  var yr = RA.y - q.R - 32, ra = pt(RA.x - 150, yr), rb = pt(q.SS.x - 26, yr);
+  rackP.setAttribute('d', L(ra, rb) + L(rb, add(q.SS, pt(-6, 8))));
+  rackS.setAttribute('d', L(pt(RA.x - 120, yr), RA) + L(pt(RA.x + 40, yr), RA));
+  at(rLamp, {x:f(ra.x - 30), y:f(yr - 2)}); rackG.setAttribute('opacity', f(g.rack));
+  // frame
+  tube('cs', L(q.BB, RA), 20);
+  tube('ss', L(RA, q.SS), 17);
+  tube('fk', 'M' + f(q.C.x) + ' ' + f(q.C.y) + 'Q' + f(q.C.x + q.d.x * g.a2c * .78) + ' ' + f(q.C.y + q.d.y * g.a2c * .78) + ' ' + f(q.FA.x) + ' ' + f(q.FA.y), 24);
+  tube('st', L(q.BB, q.S), 30);
+  tube('dt', L(q.Cd, q.BB), g.dtW);
+  tube('tt', 'M' + f(q.Hs.x) + ' ' + f(q.Hs.y) + 'Q' + f(q.ttc.x) + ' ' + f(q.ttc.y) + ' ' + f(q.J.x) + ' ' + f(q.J.y), 30);
+  tube('ht', L(q.H, q.C), 46);
+  // battery and bottle on the down tube
+  var dv = pt(q.BB.x - q.Cd.x, q.BB.y - q.Cd.y), dl = Math.hypot(dv.x, dv.y), du = pt(dv.x / dl, dv.y / dl), up = pt(du.y, -du.x);
+  if (up.y > 0) up = pt(-up.x, -up.y);
+  var b1 = add(add(q.Cd, du, dl * .16), up, g.dtW / 2 + 16), b2 = add(add(q.Cd, du, dl * .74), up, g.dtW / 2 + 16);
+  var bd = L(b1, b2); batO.setAttribute('d', bd); batC.setAttribute('d', bd); batH.setAttribute('d', L(mid(b1, b2, .1), mid(b1, b2, .22)));
+  at(motC, {cx:12, cy:-6}); at(motI, {cx:12, cy:-6}); batG.setAttribute('opacity', f(g.bat));
+  var o1 = add(add(q.Cd, du, dl * .3), up, g.dtW / 2 + 32), o2 = add(add(q.Cd, du, dl * .62), up, g.dtW / 2 + 32);
+  var od = L(o1, o2); botO.setAttribute('d', od); botC.setAttribute('d', od); botK.setAttribute('d', L(mid(o1, o2, .12), add(mid(o1, o2, .12), up, 0)) + L(add(mid(o1, o2, .14), up, -27), add(mid(o1, o2, .14), up, 27)));
+  botG.setAttribute('opacity', f(g.bottle));
+  // chainrings and cranks
+  at(ring, {r:f(g.ring)}); at(ringT, {r:f(g.ring + 6)}); at(ring2, {r:f(g.ring - 24), opacity:f(g.der)});
+  var ce = pt(Math.cos(crad) * 170, Math.sin(crad) * 170), cf = pt(-ce.x, -ce.y);
+  crArm.setAttribute('d', L(q.BB, ce)); crPed.setAttribute('d', L(pt(ce.x - 48, ce.y), pt(ce.x + 48, ce.y)));
+  fcArm.setAttribute('d', L(q.BB, cf)); fcPed.setAttribute('d', L(pt(cf.x - 44, cf.y), pt(cf.x + 44, cf.y)));
+  // saddle and cockpit
+  post.setAttribute('d', L(add(q.S, q.su, -20), q.P));
+  var th = g.saddle, Px = q.P.x, Py = q.P.y - 4;
+  saddle.setAttribute('d', 'M' + f(Px - 128) + ' ' + f(Py - th * .95) + 'Q' + f(Px - 40) + ' ' + f(Py - th * 1.3) + ' ' + f(Px + 90) + ' ' + f(Py - th * .55) + 'L' + f(Px + 92) + ' ' + f(Py - th * .12) + 'Q' + f(Px - 20) + ' ' + f(Py - th * .05) + ' ' + f(Px - 124) + ' ' + f(Py + th * .08) + 'Z');
+  steer.setAttribute('d', L(q.H, q.Stp)); stem.setAttribute('d', L(q.Stp, q.B));
+  var k = g.bar, B = q.B;
+  function bl(cx, dx){ return cx + (dx - cx) * k; }
+  var c1 = pt(B.x + bl(-10, 120), B.y + bl(-55, -5)), c2 = pt(B.x + bl(-120, 125), B.y + bl(-75, 135)), be = pt(B.x + bl(-215, 15), B.y + bl(-60, 128));
+  bar.setAttribute('d', 'M' + f(B.x) + ' ' + f(B.y) + 'C' + f(c1.x) + ' ' + f(c1.y) + ' ' + f(c2.x) + ' ' + f(c2.y) + ' ' + f(be.x) + ' ' + f(be.y));
+  grip.setAttribute('opacity', f(1 - k)); grip.setAttribute('d', L(add(be, pt(30, -2)), add(be, pt(-22, 2))));
+  hood.setAttribute('d', L(add(B, pt(48, 2)), add(B, pt(90, -4))) + L(add(B, pt(86, 26)), add(B, pt(100, 84)))); hood.setAttribute('opacity', f(k));
+  var lp = add(add(q.C, q.n, 44), q.d, 6); at(lamp, {cx:f(lp.x), cy:f(lp.y)}); at(lampI, {cx:f(lp.x), cy:f(lp.y)}); lampG.setAttribute('opacity', f(g.lamp));
+  // dimensions
+  var fs = 10.5 * u, yd = q.gl + 128;
+  dimL.setAttribute('d', L(pt(RA.x, yd), pt(q.FA.x, yd)) + L(pt(RA.x - 14, yd + 14), pt(RA.x + 14, yd - 14)) + L(pt(q.FA.x - 14, yd + 14), pt(q.FA.x + 14, yd - 14)));
+  dimX.setAttribute('d', L(pt(RA.x, RA.y + 40), pt(RA.x, yd + 24)) + L(pt(q.FA.x, q.FA.y + 40), pt(q.FA.x, yd + 24)));
+  var wb = Math.round(q.FA.x - RA.x), txt = 'WIELBASIS ' + money(wb).replace(' €', '') + ' MM', tw = txt.length * fs * .62 + fs;
+  at(dimT, {x:f((RA.x + q.FA.x) / 2), y:f(yd), 'font-size':f(fs)}); dimT.textContent = txt;
+  at(dimBg, {x:f((RA.x + q.FA.x) / 2 - tw / 2), y:f(yd - fs * .8), width:f(tw), height:f(fs * 1.6)});
+  var pv = pt(Math.sin(q.sa), -Math.cos(q.sa)), s1 = add(q.BB, pv, 70), s2 = add(q.S, pv, 70);
+  sdL.setAttribute('d', L(s1, s2) + L(add(s1, pv, -16), add(s1, pv, 16)) + L(add(s2, pv, -16), add(s2, pv, 16)));
+  var sm = mid(s1, s2, g.ttJ > .75 ? .5 : .8), st2 = Math.round(g.st / 10) + ' CM', sw = st2.length * fs * .62 + fs * .8;
+  at(sdT, {x:f(sm.x), y:f(sm.y), 'font-size':f(fs)}); sdT.textContent = st2;
+  at(sdBg, {x:f(sm.x - sw / 2), y:f(sm.y - fs * .8), width:f(sw), height:f(fs * 1.6)});
+  placeBalls(q, g);
+}
+function anchor(key, q, g){
+  var RA = q.RA, FA = q.FA, r = Math.PI / 180;
+  switch (key) {
+    case 'belt': return [mid(pt(0, g.ring), pt(RA.x, RA.y + g.cog)), pt(-30, 175)];
+    case 'rhub': return [RA, pt(-250, -250)];
+    case 'fhub': return [FA, pt(250, -250)];
+    case 'rack': return [pt(RA.x - 40, RA.y - q.R - 32), pt(-40, -150)];
+    case 'tt': return [qpt(q.Hs, q.ttc, q.J, .5), pt(10, -175)];
+    case 'fork': return [mid(q.C, FA, .5), pt(210, -40)];
+    case 'ftire': return [pt(FA.x + q.R * Math.cos(35 * r), FA.y - q.R * Math.sin(35 * r)), pt(140, -120)];
+    case 'ring': return [pt(g.ring * .7, g.ring * .7), pt(80, 165)];
+    case 'rdisc': return [pt(RA.x + 56, RA.y + 56), pt(-130, 190)];
+    case 'bottle': var dv = mid(q.Cd, q.BB, .46); return [pt(dv.x - 30, dv.y - 50), pt(-10, -150)];
+    case 'motor': return [pt(40, 40), pt(60, 175)];
+    case 'bat': var bv = mid(q.Cd, q.BB, .45); return [pt(bv.x - 30, bv.y - 34), pt(-190, -120)];
+    case 'fdisc': return [pt(FA.x - 56, FA.y + 56), pt(150, 190)];
+  }
+  return [pt(0, 0), pt(0, 0)];
+}
+var ballParts = T.stad.parts;
+function placeBalls(q, g){
+  var br = 11 * u, fs = 10.5 * u;
+  ballParts.forEach(function(p, i){
+    var a = anchor(p[0], q, g), A = a[0], C = add(A, a[1]), v = pt(C.x - A.x, C.y - A.y), l = Math.hypot(v.x, v.y) || 1, E2 = add(C, pt(v.x / l, v.y / l), -br), b = BALLS[i];
+    at(b.ln, {x1:f(A.x), y1:f(A.y), x2:f(E2.x), y2:f(E2.y)});
+    at(b.dot, {cx:f(A.x), cy:f(A.y), r:f(3 * u)});
+    at(b.c, {cx:f(C.x), cy:f(C.y), r:f(br)});
+    at(b.t, {x:f(C.x), y:f(C.y + fs * .05), 'font-size':f(fs)});
+  });
+}
+
+/* ---- animation: morph between types and sizes, wheels roll with scroll ---- */
+var cur = target(), from = null, to = null, t0 = 0, DUR = 700;
+var dist = 0, distT = 0, raf = 0, visible = true;
+function want(){ if (!raf && visible) raf = requestAnimationFrame(tick); }
+function ease(k){ return k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; }
+function tick(ts){
+  raf = 0; var more = false;
+  if (to) {
+    if (!t0) t0 = ts;
+    var k = Math.min(1, (ts - t0) / DUR), e = ease(k);
+    for (var key in to) cur[key] = from[key] + (to[key] - from[key]) * e;
+    if (k >= 1) { to = null; ballG.classList.remove('off'); } else more = true;
+  }
+  var dd = distT - dist;
+  if (Math.abs(dd) > .4) { dist += dd * .16; more = true; } else dist = distT;
+  draw(cur, dist);
+  if (more) want();
+}
+function morph(){
+  var tg = target();
+  if (reduce) { cur = tg; to = null; draw(cur, dist); ballG.classList.remove('off'); return; }
+  from = {}; for (var k in cur) from[k] = cur[k];
+  to = tg; t0 = 0; want();
+}
+if (!reduce) addEventListener('scroll', function(){ distT = scrollY * 2.4; want(); }, {passive:true});
+if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ visible = es[0].isIntersecting; if (visible) want(); }).observe(svg);
+addEventListener('resize', function(){ measure(); want(); });
+
+/* ---- controls ---- */
+$('#cf-colors').innerHTML = COLORS.map(function(c, i){ return '<button type="button" data-ccol="' + i + '" aria-pressed="' + (i === state.color) + '" aria-label="' + c[0] + '" title="' + c[0] + '" style="--c:' + c[1] + '"><i></i></button>'; }).join('');
+function renderSizes(){ var t = T[state.type]; $('#cf-sizes').innerHTML = ['S','M','L'].map(function(s){ return '<button type="button" data-csize="' + s + '" aria-pressed="' + (s === state.size) + '" aria-label="Maat ' + s + ', ' + t.sizes[s][1] + ' centimeter"><b>' + s + '</b><small>' + t.sizes[s][1] + ' cm</small></button>'; }).join(''); }
+function ui(){
+  var t = T[state.type], c = COLORS[state.color], p = byId[t.pid], sz = t.sizes[state.size][0], n = p && p.sizes ? p.sizes[sz] : 0;
+  gC.setAttribute('stroke', c[1]); fendC.setAttribute('stroke', c[1]);
+  $('#tb-model').textContent = t.name; $('#tb-size').textContent = state.size + ' · ' + t.sizes[state.size][1] + ' cm';
+  $('#tb-color').textContent = c[0]; $('#cf-cname').textContent = c[0]; $('#tb-price').textContent = money(t.price);
+  $('#cf-sheetname').textContent = t.label; $('#cf-fit').textContent = FIT[state.size];
+  var sk = $('#cf-stock'); sk.className = 'stk' + (n ? (n <= 1 ? ' low' : '') : ' out');
+  sk.textContent = n ? n + ' in de winkel in maat ' + sz : 'Maat ' + sz + ' op bestelling, 5 werkdagen';
+  $('#cf-lease').textContent = 'Leasing: ± ' + Math.round(t.price * .031) + ' € bruto per maand';
+  $('#bike-t').textContent = 'Technische tekening: ' + t.name + ', ' + t.label.toLowerCase() + ' in ' + c[0].toLowerCase() + ', framemaat ' + t.sizes[state.size][1] + ' cm';
+  $('#cf-legend').innerHTML = t.parts.map(function(x, i){ return '<li><i>' + (i + 1) + '</i>' + x[1] + '</li>'; }).join('');
+  $$('[data-ctype]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.ctype === state.type)); });
+  $$('[data-ccol]').forEach(function(b){ b.setAttribute('aria-pressed', String(+b.dataset.ccol === state.color)); });
+  $$('[data-csize]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.csize === state.size)); });
+  chain.setAttribute('stroke-dasharray', t.chain ? '9 6' : 'none');
+}
+$('.types').addEventListener('click', function(e){
+  var b = e.target.closest('[data-ctype]'); if (!b || b.dataset.ctype === state.type) return;
+  state.type = b.dataset.ctype; ballParts = T[state.type].parts;
+  if (!reduce) ballG.classList.add('off');
+  renderSizes(); ui(); morph();
+});
+$('#cf-colors').addEventListener('click', function(e){ var b = e.target.closest('[data-ccol]'); if (!b) return; state.color = +b.dataset.ccol; ui(); });
+$('#cf-sizes').addEventListener('click', function(e){ var b = e.target.closest('[data-csize]'); if (!b || b.dataset.csize === state.size) return; state.size = b.dataset.csize; ui(); morph(); });
+$('#cf-go').addEventListener('click', function(){ var t = T[state.type]; openProduct(byId[t.pid], {size:t.sizes[state.size][0], color:COLORS[state.color][0], tr:true}); });
+renderSizes(); ui(); measure(); draw(cur, 0);
+window.__cfg = {state:state, set:function(o){ for (var k in o) state[k] = o[k]; ballParts = T[state.type].parts; renderSizes(); ui(); cur = target(); to = null; draw(cur, dist); ballG.classList.remove('off'); }};
+})();
 
 /* ---------- init ---------- */
 runCalc(); render(); dock(); badges();

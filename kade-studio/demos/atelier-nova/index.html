@@ -16,7 +16,7 @@
 :root{
   --paper:#f3efe6;--paper-2:#e9e3d6;--paper-3:#dcd4c3;--card:#fbf9f4;
   --ink:#16130f;--ink-2:#3a352e;--muted:#6a6358;--rule:rgba(22,19,15,.16);--rule-2:rgba(22,19,15,.08);
-  --blue:#2445ff;--pink:#ff4f9a;--yellow:#ffd23f;--orange:#ff6b2c;--green:#10a37a;
+  --blue:#0078bf;--pink:#ff48b0;--yellow:#ffe800;--orange:#ff6b2c;--green:#00a95c;
   --f-sans:"Bricolage",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
   --f-mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -60,7 +60,7 @@ em.s,.s-it{font-family:var(--f-serif);font-style:italic;font-weight:400;font-str
 .nav a[aria-current="true"]{background:var(--ink);color:var(--paper)}
 .status{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2);white-space:nowrap}
 .status i{width:.5rem;height:.5rem;border-radius:50%;background:var(--muted)}
-.status.open i{background:var(--green);box-shadow:0 0 0 3px rgba(16,163,122,.2)}
+.status.open i{background:var(--green);box-shadow:0 0 0 3px rgba(0,169,92,.2)}
 .menubtn{display:none;align-items:center;gap:.5rem;height:2.6rem;padding:0 1rem;border:1.5px solid var(--ink);background:transparent;border-radius:999px;font-weight:600;font-size:.9rem;cursor:pointer}
 .menubtn span{display:grid;gap:4px}.menubtn span i{display:block;width:16px;height:1.5px;background:currentColor}
 
@@ -85,61 +85,111 @@ em.s,.s-it{font-family:var(--f-serif);font-style:italic;font-weight:400;font-str
 .link{font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.2em;background:none;border:0;padding:0;cursor:pointer}
 .link:hover{text-decoration-color:var(--blue);color:var(--blue)}
 
-/* ---------- HERO ---------- */
-.hero{position:relative;height:calc(100svh - var(--hdr) - 2.1rem);min-height:620px;max-height:1020px;overflow:hidden;background:var(--paper);touch-action:pan-y;user-select:none;-webkit-user-select:none}
-.hero.lock{touch-action:none}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.hero::after{content:"";position:absolute;inset:0;background:var(--grain);opacity:.32;mix-blend-mode:multiply;pointer-events:none;z-index:1}
-@media (pointer:fine){.js .hero{cursor:none}.js .hero :is(a,button){cursor:pointer}}
-.hero-in{position:relative;z-index:2;height:100%;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto auto;padding:clamp(1.25rem,3vw,2.25rem) 0 clamp(1rem,2.4vw,1.75rem);pointer-events:none}
-.hero-in :is(a,button,.dock){pointer-events:auto}
-.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+/* ---------- HERO: drukkerij-tafel ---------- */
+.hero{position:relative;background:var(--paper);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:var(--grain);opacity:.3;mix-blend-mode:multiply;pointer-events:none;z-index:-1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(2rem,4.5vw,5rem);align-items:center;min-height:calc(100svh - var(--hdr) - 2.1rem);padding:clamp(1.5rem,3vw,2.5rem) 0}
+.hero-copy{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:1.5rem;min-width:0}
 .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.eyebrow i{width:.6rem;height:.6rem;border-radius:50%;background:var(--pink)}
 .eyebrow b{font-weight:400;color:var(--muted)}
-.hint{display:inline-flex;align-items:center;gap:.55rem;background:var(--ink);color:var(--paper);padding:.45rem .85rem;border-radius:999px;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;transition:opacity .6s,transform .6s}
-.hint i{width:.5rem;height:.5rem;border-radius:50%;background:var(--yellow)}
-.hint.gone{opacity:0;transform:translateY(-6px)}
-.title{font-size:clamp(4.4rem,27vw,25rem);line-height:.78;font-weight:300;font-stretch:80%;letter-spacing:-.04em;margin:clamp(1rem,2vw,1.5rem) 0 0 -.05em;white-space:nowrap}
-.title .tl{display:inline}
-.title .tl+.tl{margin-left:.16em}
-.title .ch{display:inline-block;font-variation-settings:"wght" var(--w,300),"wdth" var(--d,80);transform:translateY(var(--y,0)) rotate(var(--rt,0deg));transform-origin:50% 80%}
-.hero-aside{align-self:end;justify-self:end;width:min(25.5rem,100%);padding:1.25rem 1.3rem 1.3rem;border-radius:var(--r-lg);background:rgba(251,249,244,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--rule-2);box-shadow:0 18px 40px -26px rgba(22,19,15,.45)}
-.hero-aside p{font-size:1.02rem;line-height:1.5;color:var(--ink-2);margin-bottom:1.1rem}
-.hero-aside .btn{min-height:2.8rem;padding:0 1.1rem;font-size:.9rem}
+.title{position:relative;isolation:isolate;font-size:clamp(4.6rem,13.6vw,13.6rem);line-height:.8;font-weight:800;font-stretch:75%;letter-spacing:0;margin:.05em 0 .05em -.045em;white-space:nowrap}
+.title .ov{position:relative;display:inline-block;color:var(--blue)}
+.title .ov::before{content:attr(data-t);content:attr(data-t) / "";position:absolute;left:0;top:0;white-space:pre;color:var(--pink);mix-blend-mode:multiply;transform:translate(var(--mx,.045em),var(--my,-.035em));transition:transform .6s var(--ease);pointer-events:none}
+.title::after{content:"";position:absolute;z-index:-1;width:.95em;aspect-ratio:1;left:1.9em;top:.7em;border-radius:50%;background:radial-gradient(circle,var(--yellow) 46%,transparent 49%) 0 0/9px 9px;-webkit-mask:radial-gradient(circle,#000 55%,transparent 71%);mask:radial-gradient(circle,#000 55%,transparent 71%);mix-blend-mode:multiply}
+.lead{font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.5;color:var(--ink-2);max-width:34ch}
 .ctas{display:flex;flex-wrap:wrap;gap:.6rem}
-.hero-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:clamp(1rem,2.4vw,1.75rem)}
-.dock{display:flex;align-items:center;gap:.35rem;background:rgba(251,249,244,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--rule);border-radius:999px;padding:.35rem;box-shadow:0 10px 30px -12px rgba(22,19,15,.35);cursor:auto;max-width:100%}
-.dock .grp{display:flex;align-items:center;gap:.2rem}
-.dock .sep{width:1px;height:1.6rem;background:var(--rule);margin:0 .25rem}
+.facts{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;color:var(--muted)}
+.facts li{display:flex;align-items:center;gap:.5rem}
+.facts li::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--c)}
+
+/* studio = tekenblad + gereedschap */
+.studio{--sheet:min(31rem,calc((100svh - var(--hdr) - 2.1rem - 10rem) * .8));display:grid;grid-template-columns:auto var(--sheet);grid-template-areas:"cap cap" "tools sheet" ". foot";gap:.85rem 1.1rem;align-items:start}
+.studio-cap{grid-area:cap;display:flex;justify-content:space-between;gap:1rem;color:var(--muted)}
+.studio-cap b{font-weight:400;color:var(--ink)}
+.tools{grid-area:tools;display:flex;flex-direction:column;align-items:center;gap:.9rem;padding:.5rem .35rem;border-radius:999px;background:var(--card);border:1px solid var(--rule-2);box-shadow:0 14px 30px -22px rgba(22,19,15,.45)}
+.brushes,.inks,.hist{display:flex;flex-direction:column;align-items:center;gap:.3rem}
+.tools .rule{width:60%;height:1px;background:var(--rule)}
+.br{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;width:3.6rem;height:3.6rem;border:0;border-radius:999px;background:transparent;color:var(--ink);font:400 .58rem/1 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.br svg{width:22px;height:22px}
+.br:hover{background:var(--paper-2)}
+.br[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .sw{width:2rem;height:2rem;border-radius:50%;border:0;padding:0;cursor:pointer;background:var(--c);position:relative;transition:transform .2s var(--ease)}
 .sw::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--ink);opacity:0;transform:scale(.8);transition:.2s var(--ease)}
 .sw:hover{transform:scale(1.08)}
 .sw[aria-pressed="true"]::after{opacity:1;transform:none}
-.sz{width:2.1rem;height:2.1rem;border-radius:50%;border:0;background:transparent;cursor:pointer;display:grid;place-items:center}
-.sz i{display:block;border-radius:50%;background:var(--ink);width:var(--s);height:var(--s)}
-.sz:hover{background:var(--paper-2)}
-.sz[aria-pressed="true"]{background:var(--ink)}.sz[aria-pressed="true"] i{background:var(--paper)}
-.tool{display:inline-flex;align-items:center;gap:.4rem;height:2.1rem;padding:0 .8rem;border-radius:999px;border:0;background:transparent;font-size:.84rem;font-weight:550;cursor:pointer;white-space:nowrap}
-.tool svg{width:16px;height:16px}
+.tool{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-width:2.6rem;height:2.6rem;padding:0 .7rem;border-radius:999px;border:0;background:transparent;font-size:.86rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.tool svg{width:17px;height:17px}
 .tool:hover{background:var(--paper-2)}
-.tool[disabled]{opacity:.35;cursor:default;background:transparent}
-.tool--hi{background:var(--ink);color:var(--paper)}
-.tool--hi:hover{background:var(--blue)}
-.tool.pm{display:none}
-.tool.pm[aria-pressed="true"]{background:var(--blue);color:#fff}
-.cue{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink-2)}
-.cue span{width:1.5px;height:2.4rem;background:var(--rule);position:relative;overflow:hidden}
-.cue span::after{content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;background:var(--ink);animation:cue 2.2s var(--ease) infinite}
-@keyframes cue{to{top:100%}}
-.bcur{position:absolute;left:0;top:0;z-index:3;width:var(--bs,28px);height:var(--bs,28px);margin:calc(var(--bs,28px)/-2) 0 0 calc(var(--bs,28px)/-2);border-radius:50%;border:1.5px solid var(--ink);background:color-mix(in srgb,var(--bc,#2445ff) 35%,transparent);pointer-events:none;opacity:0;transition:opacity .2s,width .2s,height .2s,margin .2s}
-.bcur::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;margin:-2px;border-radius:50%;background:var(--ink)}
+.tool[disabled]{opacity:.3;cursor:default;background:transparent}
+.sheet-wrap{grid-area:sheet;position:relative;width:var(--sheet)}
+.sheet-wrap::before,.sheet-wrap::after{content:"";position:absolute;inset:0;mix-blend-mode:multiply;border-radius:2px}
+.sheet-wrap::before{background:var(--pink);transform:rotate(3.2deg) translate(3.5%,1%)}
+.sheet-wrap::after{background:radial-gradient(circle,var(--blue) 40%,transparent 43%) 0 0/8px 8px;transform:rotate(-2.4deg) translate(-3%,2.2%);opacity:.9}
+.cm{position:absolute;width:14px;height:14px;z-index:3;pointer-events:none}
+.cm::before,.cm::after{content:"";position:absolute;background:var(--ink)}
+.cm::before{width:14px;height:1px}.cm::after{width:1px;height:14px}
+.cm.a{left:-22px;top:-22px}.cm.a::before{top:21px}.cm.a::after{left:21px}
+.cm.b{right:-22px;top:-22px}.cm.b::before{top:21px;right:0}.cm.b::after{right:21px;left:auto}
+.cm.c{left:-22px;bottom:-22px}.cm.c::before{bottom:21px}.cm.c::after{left:21px;bottom:0}
+.cm.d{right:-22px;bottom:-22px}.cm.d::before{bottom:21px;right:0}.cm.d::after{right:21px;bottom:0}
+.sheet{position:relative;z-index:2;aspect-ratio:4/5;background:#fbf8f1;box-shadow:0 1px 2px rgba(22,19,15,.08),0 30px 60px -32px rgba(22,19,15,.6);touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.sheet::after{content:"";position:absolute;inset:0;background:var(--grain);opacity:.22;mix-blend-mode:multiply;pointer-events:none}
+.sheet canvas{position:absolute;inset:0;width:100%;height:100%}
+.fine .sheet canvas{cursor:none}
+.sheet.drawing{touch-action:none;box-shadow:0 0 0 3px var(--ink),0 30px 60px -32px rgba(22,19,15,.6)}
+.tape{position:absolute;z-index:4;top:-.8rem;left:50%;width:6.5rem;height:1.55rem;transform:translateX(-50%) rotate(-2.5deg);background:rgba(226,216,190,.78);box-shadow:0 1px 2px rgba(22,19,15,.12);pointer-events:none}
+.hint{position:absolute;z-index:3;left:.8rem;bottom:1rem;display:inline-flex;align-items:center;gap:.5rem;background:var(--ink);color:var(--paper);padding:.45rem .8rem;border-radius:999px;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;pointer-events:none;transition:opacity .6s,transform .6s}
+.hint i{width:.5rem;height:.5rem;border-radius:50%;background:var(--yellow)}
+.hint.gone{opacity:0;transform:translateY(-6px)}
+.tapdraw{display:none;position:absolute;z-index:3;left:50%;bottom:1rem;transform:translateX(-50%);align-items:center;gap:.55rem;min-height:3rem;padding:0 1.25rem;border:0;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:600;font-size:.95rem;white-space:nowrap;box-shadow:0 12px 26px -12px rgba(22,19,15,.7);cursor:pointer}
+.tapdraw svg{width:18px;height:18px}
+.touch .tapdraw{display:inline-flex}
+.touch .hint,.touch .sheet.drawing .tapdraw{display:none}
+.bcur{position:absolute;left:0;top:0;z-index:3;width:var(--bs,24px);height:var(--bs,24px);margin:calc(var(--bs,24px)/-2) 0 0 calc(var(--bs,24px)/-2);border-radius:50%;border:1.5px solid var(--ink);pointer-events:none;opacity:0;transition:opacity .2s}
+.bcur::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;margin:-2px;border-radius:50%;background:var(--bc,var(--ink))}
+.bcur.spray{border-style:dashed}
+.bcur.rakel{height:7px;margin-top:-3.5px;border-radius:2px;background:var(--bc)}
 .bcur.on{opacity:1}
+.sfoot{grid-area:foot;display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.sfoot .lbl{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tool.pm{display:none;border:1.5px solid var(--ink);height:3rem;padding:0 1.1rem}
+.touch .tool.pm{display:inline-flex}
+.touch .sfoot .lbl{display:none}
+.tool.pm[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.btn--pink{--bg:var(--pink);--fg:var(--ink);--hv:var(--ink);border-color:var(--ink)}
+.btn--pink:hover{color:var(--paper)}
+.btn--poster{min-height:3rem;box-shadow:3px 3px 0 var(--blue)}
+.btn--poster svg{width:18px;height:18px}
+
+/* affiche-dialoog */
+.pd{width:min(1120px,100% - 2rem);max-height:94vh;background:var(--ink);color:var(--paper);border-radius:var(--r-lg);overflow:hidden}
+.pd-in{display:grid;grid-template-columns:minmax(0,1fr) 23rem;max-height:94vh}
+.pd-stage{display:grid;place-items:center;padding:clamp(1.2rem,3vw,2.4rem);background:#0d0b09;min-height:0}
+.pd-paper{position:relative;height:min(82vh,780px);aspect-ratio:5/7;max-width:100%;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
+.pd-paper canvas{width:100%;height:100%;background:#f3eee3}
+.rakel{position:absolute;left:-4%;right:-4%;top:0;height:18px;margin-top:-9px;border-radius:4px;background:linear-gradient(#4a433a,#16130f 60%);border-top:5px solid var(--rc,var(--pink));box-shadow:0 8px 18px -6px rgba(0,0,0,.7);opacity:0;pointer-events:none}
+.rakel.on{opacity:1}
+.pd-side{position:relative;padding:2.2rem 1.7rem 1.7rem;display:flex;flex-direction:column;gap:1rem;overflow:auto;overscroll-behavior:contain}
+.pd-side .pass{color:#bdb6a8;min-height:1.1em}
+.pd-side h2{font-size:clamp(2.2rem,3.4vw,3rem);line-height:.95;font-weight:700;font-stretch:78%;letter-spacing:-.03em}
+.pd-side h2 em{font-family:var(--f-serif);font-weight:400;font-stretch:100%;color:var(--pink)}
+.pd-side>p{color:#cfc8b9;font-size:.98rem}
+.pd-btns{display:flex;flex-wrap:wrap;gap:.5rem}
+.pd-btns .btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.pd-cta{margin-top:auto;background:var(--pink);color:var(--ink);border-radius:var(--r-lg);padding:1.3rem 1.3rem 1.4rem;display:grid;gap:.6rem}
+.pd-cta h3{font-size:1.75rem;line-height:1;font-weight:700;font-stretch:80%;letter-spacing:-.025em}
+.pd-cta p{font-size:.92rem}
+.pd-cta .btn{justify-self:start}
+.pd .x{background:#2a2620;color:var(--paper)}
+.pd .x:hover{background:var(--yellow);color:var(--ink)}
+
 
 /* ticker */
-.ticker{background:var(--ink);color:var(--paper);overflow:hidden;border-block:1px solid var(--ink)}
+.ticker{background:var(--pink);color:var(--ink);overflow:hidden;border-block:1.5px solid var(--ink)}
 .ticker div{display:flex;width:max-content;animation:tick 38s linear infinite}
 .ticker span{display:inline-flex;align-items:center;gap:2rem;padding:.9rem 1rem .9rem 1rem;font-weight:600;font-stretch:82%;font-size:1.3rem;letter-spacing:-.01em;white-space:nowrap}
-.ticker span::after{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--c,var(--yellow));margin-left:1rem}
+.ticker span::after{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--ink);margin-left:1rem}
 .ticker em{font-family:var(--f-serif);font-weight:400;font-size:1.45rem}
 @keyframes tick{to{transform:translateX(-50%)}}
 
@@ -325,7 +375,7 @@ dialog[open]{animation:dlg .35s var(--ease)}
 .field input,.field textarea,.field select{width:100%;min-height:3rem;padding:.7rem .9rem;border:1px solid var(--rule);border-radius:var(--r);background:var(--card);font-size:1rem;transition:border-color .2s,box-shadow .2s}
 .field textarea{min-height:5.5rem;resize:vertical}
 .field :is(input,textarea,select):hover{border-color:var(--ink-2)}
-.field :is(input,textarea,select):focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(36,69,255,.2)}
+.field :is(input,textarea,select):focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,120,191,.2)}
 .field .hint2{font-size:.8rem;color:var(--muted)}
 .field.bad :is(input,textarea){border-color:#c2361b}
 .err{color:#b4301a;font-size:.84rem;min-height:1.2em}
@@ -385,12 +435,12 @@ dialog[open]{animation:dlg .35s var(--ease)}
 .cmp thead th{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#bdb6a8;border-bottom-color:#6a6358}
 .cmp tbody th{text-align:left;color:#e7e1d3}
 .cmp th:first-child{padding-left:0}
-.cmp .hotc{background:rgba(255,210,63,.07)}
+.cmp .hotc{background:rgba(255,232,0,.07)}
 .cmp svg{width:18px;height:18px;margin:auto}
 .cmp .no{color:#6a6358}
 
 /* space */
-.space{background:var(--blue);color:var(--paper)}
+.space{background:#00579a;color:var(--paper)}
 .space .sec-head .mono,.space .sec-head .lead{color:#dfe3ff}
 .spgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,4vw,4rem);align-items:start}
 .stations{border-top:1px solid rgba(243,239,230,.3)}
@@ -401,10 +451,10 @@ dialog[open]{animation:dlg .35s var(--ease)}
 .stations .q{font-family:var(--f-mono);font-size:.72rem;opacity:.75}
 .stations button:hover,.stations button[aria-pressed="true"]{padding-left:.6rem}
 .stations button[aria-pressed="true"] b{color:var(--yellow)}
-.plan-map{background:#1d3be6;border-radius:var(--r-lg);padding:clamp(1rem,2vw,1.6rem);position:relative}
+.plan-map{background:#004a85;border-radius:var(--r-lg);padding:clamp(1rem,2vw,1.6rem);position:relative}
 .plan-map svg{width:100%;height:auto}
 .plan-map .zone{fill:rgba(243,239,230,.04);stroke:rgba(243,239,230,.55);stroke-width:1.5;transition:fill .3s}
-.plan-map .zone.on{fill:rgba(255,210,63,.22)}
+.plan-map .zone.on{fill:rgba(255,232,0,.22)}
 .plan-map .pin circle{fill:var(--paper);transition:fill .3s,r .3s}
 .plan-map .pin text{font:500 13px var(--f-mono);fill:var(--blue);text-anchor:middle;dominant-baseline:central}
 .plan-map .pin{cursor:pointer}
@@ -548,7 +598,7 @@ dialog[open]{animation:dlg .35s var(--ease)}
 .vcard h3{font-size:1.9rem}
 .nowopen{display:inline-flex;align-items:center;gap:.5rem;margin-top:.6rem;font-size:.92rem;color:var(--ink-2)}
 .nowopen i{width:.55rem;height:.55rem;border-radius:50%;background:var(--muted)}
-.nowopen.open i{background:var(--green);box-shadow:0 0 0 3px rgba(16,163,122,.2)}
+.nowopen.open i{background:var(--green);box-shadow:0 0 0 3px rgba(0,169,92,.2)}
 .hours{width:100%;border-collapse:collapse;margin-top:1.2rem;font-variant-numeric:tabular-nums}
 .hours th,.hours td{padding:.6rem .4rem;border-bottom:1px solid var(--rule-2);font-weight:400;font-size:.97rem;text-align:left}
 .hours td{text-align:right}
@@ -577,10 +627,10 @@ dialog[open]{animation:dlg .35s var(--ease)}
 .legal a{color:var(--paper)}
 
 /* mobile bar, toast, menu */
-.mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:.5rem;padding:.6rem var(--g) calc(.6rem + env(safe-area-inset-bottom));background:rgba(243,239,230,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--rule)}
-.mbar a{flex:1;min-height:2.9rem;display:flex;align-items:center;justify-content:center;gap:.4rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.86rem;border:1px solid var(--ink)}
-.mbar a svg{width:16px;height:16px}
-.mbar a.p{background:var(--ink);color:var(--paper)}
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:.5rem;padding:.6rem var(--g) calc(.6rem + env(safe-area-inset-bottom));background:#16130f;border-top:1px solid #000}
+.mbar a{flex:1;min-height:3.1rem;display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--paper);border:1px solid rgba(243,239,230,.35)}
+.mbar a svg{width:18px;height:18px}
+.mbar a.tel{flex:1.55;background:var(--paper);color:var(--ink);border-color:var(--paper);font-size:1.02rem;font-weight:700;letter-spacing:-.01em}
 .toast{position:fixed;left:50%;bottom:1.5rem;z-index:300;transform:translate(-50%,calc(100% + 3rem));visibility:hidden;background:var(--ink);color:var(--paper);padding:.85rem 1.2rem;border-radius:999px;font-size:.92rem;box-shadow:0 12px 30px -10px rgba(0,0,0,.45);transition:transform .45s var(--ease);max-width:calc(100% - 2rem);text-align:center}
 .toast.on{transform:translate(-50%,0);visibility:visible}
 .mnav{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;background:var(--ink);color:var(--paper);padding:0}
@@ -607,6 +657,24 @@ dialog[open]{animation:dlg .35s var(--ease)}
 @media (max-width:1180px){
   .nav .opt{display:none}
   .status{display:none}
+}
+@media (max-width:1100px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);min-height:0;gap:1.35rem;padding:1.25rem 0 2.75rem}
+  .hero-copy{display:contents}
+  .eyebrow{order:1}.title{order:2}.studio{order:3}.lead{order:4}.ctas{order:5}.facts{order:6}
+  .title{font-size:clamp(4.6rem,23.5vw,10rem);margin-top:.1em}
+  .lead{max-width:44ch}
+  .studio{--sheet:100%;width:100%;max-width:34rem;grid-template-columns:minmax(0,1fr);grid-template-areas:"cap" "sheet" "tools" "foot";gap:.75rem;margin-top:.4rem}
+  .sheet-wrap{width:100%;margin-bottom:.35rem}
+  .tools{flex-direction:row;flex-wrap:wrap;justify-content:space-between;border-radius:22px;padding:.45rem;gap:.5rem}
+  .tools .rule{display:none}
+  .brushes{flex-direction:row;width:100%;background:var(--paper-2);border-radius:999px;padding:.2rem;gap:.15rem}
+  .br{flex:1;flex-direction:row;width:auto;height:2.85rem;gap:.45rem;font-size:.66rem}
+  .br svg{width:19px;height:19px}
+  .inks,.hist{flex-direction:row}
+  .inks{gap:.55rem;padding-left:.3rem}
+  .sw{width:2.45rem;height:2.45rem}
+  .sfoot .btn--poster{flex:1}
 }
 @media (max-width:1024px){
   .wgrid,.revs{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -638,21 +706,6 @@ dialog[open]{animation:dlg .35s var(--ease)}
   .mbar{display:flex}
   body{padding-bottom:calc(4.2rem + env(safe-area-inset-bottom))}
   .toast{bottom:5.5rem}
-  .hero{height:auto;min-height:0;max-height:none}
-  .hero-in{min-height:0;grid-template-rows:auto minmax(calc(100svh - 26rem),1fr) auto auto auto;padding-bottom:1.5rem}
-  .hero-top{flex-direction:column;gap:.7rem}
-  .title{order:1;align-self:end}.hero-foot{order:2;margin-top:1rem}.hero-aside{order:3}
-  .hero-aside{justify-self:stretch;width:auto;margin-top:1.1rem;padding:1rem 1.05rem 1.1rem}
-  .title{font-size:27vw;margin-top:.5rem}
-  .hero-aside p{margin-bottom:1rem}
-  .cue{display:none}
-  .dock{flex-wrap:wrap;justify-content:space-between;row-gap:.4rem;border-radius:18px;width:100%;padding:.45rem}
-  .dock .sep{display:none}
-  .dock .tool{padding:0 .7rem;background:var(--paper-2)}
-  .dock .tool--hi{background:var(--ink)}
-  .tool .lbl{display:none}
-  .tool.pm{display:inline-flex}
-  .tool.pm .lbl{display:inline}
   .month .ev{display:none}
   .dots{display:flex}
   .day{min-height:3.9rem;padding:.3rem;align-items:center}
@@ -669,6 +722,15 @@ dialog[open]{animation:dlg .35s var(--ease)}
 }
 @media (max-width:640px){
   :root{--hdr:3.8rem}
+  .cm{display:none}
+  .sheet-wrap::before{transform:rotate(2.4deg) translate(1.6%,1%)}
+  .sheet-wrap::after{transform:rotate(-1.8deg) translate(-1.6%,1.8%)}
+  .tools .hist .tool{min-width:2.75rem;height:2.75rem}
+  .pd-in{display:block;overflow:auto;max-height:none;height:100%}
+  .pd{width:100%;max-width:100%;max-height:100%;height:100%;border-radius:0}
+  .pd-stage{display:block;padding:4.25rem 1rem 1rem}
+  .pd-paper{height:auto;width:100%}
+  .pd-side{overflow:visible;padding:1.4rem 1rem 2rem}
   .wgrid,.revs,.plans,.makers{grid-template-columns:1fr}
   .maker:last-child{display:block}
   .wsbar{align-items:stretch}
@@ -712,13 +774,16 @@ dialog[open]{animation:dlg .35s var(--ease)}
       <feComposite in="d" in2="m" operator="in"/>
     </filter>
     <pattern id="ht-ink" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="2" fill="#16130f"/></pattern>
-    <pattern id="ht-blue" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.6" fill="#2445ff"/></pattern>
-    <pattern id="ht-pink" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="5" cy="5" r="2.4" fill="#ff4f9a"/></pattern>
+    <pattern id="ht-blue" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.6" fill="#0078bf"/></pattern>
+    <pattern id="ht-pink" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="5" cy="5" r="2.4" fill="#ff48b0"/></pattern>
   </defs>
   <symbol id="i-arr" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-undo" viewBox="0 0 16 16"><path d="M5 3 2 6l3 3M2.5 6H10a4 4 0 0 1 0 8H6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-wipe" viewBox="0 0 16 16"><path d="M3 4h10M6 4V2.5h4V4M4.5 4l.7 9.5h5.6l.7-9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-card" viewBox="0 0 16 16"><rect x="1.5" y="3" width="13" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 5.5h3M9.5 8h3M3.5 10.5l2-3 1.5 2 1-1.2" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-spray" viewBox="0 0 16 16"><path d="M7 6.5h5.5v8H7zM8.5 6.5V4h2.5v2.5M9.75 4V2.5h2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="3.5" cy="3" r=".9" fill="currentColor"/><circle cx="5" cy="5" r=".9" fill="currentColor"/><circle cx="2.2" cy="5.8" r=".9" fill="currentColor"/><circle cx="4" cy="7.6" r=".9" fill="currentColor"/></symbol>
+  <symbol id="i-rakel" viewBox="0 0 16 16"><path d="M1.5 5.5h13v3.5h-13zM3.5 9v4.5h9V9M6 5.5V2.5h4v3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-poster" viewBox="0 0 16 16"><rect x="3" y="1.5" width="10" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="9.5" cy="5.5" r="2" fill="currentColor"/><path d="M5 11h6M5 12.8h3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 16 16"><path d="M8 2v8.5M4.5 7 8 10.5 11.5 7M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-brush" viewBox="0 0 16 16"><path d="M13.5 2.5 7 9M7 9c-2-.5-4 1-4 3.5-.3 1-1 1.4-1.5 1.5 3.5.7 6-1 5.5-5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-cal" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3M8 8.5v3.5M6.25 10.25h3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
   <symbol id="i-check" viewBox="0 0 16 16"><path d="m3 8.5 3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -740,7 +805,7 @@ dialog[open]{animation:dlg .35s var(--ease)}
 <header class="hdr" id="hdr">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Atelier Nova, naar boven">
-      <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="11" cy="12" r="9" fill="#2445ff"/><circle cx="19" cy="17" r="9" fill="#ff4f9a" style="mix-blend-mode:multiply"/><circle cx="17" cy="9" r="4.5" fill="#ffd23f" style="mix-blend-mode:multiply"/></svg>
+      <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="11" cy="12" r="9" fill="#0078bf"/><circle cx="19" cy="17" r="9" fill="#ff48b0" style="mix-blend-mode:multiply"/><circle cx="17" cy="9" r="4.5" fill="#ffe800" style="mix-blend-mode:multiply"/></svg>
       Atelier Nova
     </a>
     <nav class="nav" aria-label="Hoofdnavigatie">
@@ -761,51 +826,61 @@ dialog[open]{animation:dlg .35s var(--ease)}
 </header>
 
 <main id="main">
-<section class="hero" id="top" aria-labelledby="hero-title" aria-describedby="hero-desc">
-  <canvas id="paint" aria-hidden="true"></canvas>
-  <p class="sr" id="hero-desc">De achtergrond is een interactief schilderdoek. Beweeg met je muis of veeg met je vinger om mee te schilderen. Met de knoppen onderaan kies je een kleur en een penseeldikte, zet je een stap terug, wis je het doek of bewaar je je werk als postkaart.</p>
-  <div class="bcur" id="bcur" aria-hidden="true"></div>
-  <div class="wrap hero-in">
-    <div class="hero-top">
-      <p class="eyebrow"><svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="#ff4f9a"/></svg>Open kunstatelier <b>· Dok Noord, Gent</b></p>
-      <p class="hint" id="hint" aria-hidden="true"><i></i><span>Beweeg je muis: je schildert mee</span></p>
-    </div>
-    <div class="hero-aside">
-        <p>Keramiek, zeefdruk, tekenen en schilderen in een oude drukkerij aan de Gentse Dok Noord. Kleine groepen, eerlijke prijzen en een deur die openstaat van ’s morgens tot ’s avonds.</p>
-        <div class="ctas">
-          <a class="btn" href="#workshops">Bekijk de workshops <svg class="arr" width="14" height="14" aria-hidden="true"><use href="#i-arr"/></svg></a>
-          <a class="btn btn--ghost" href="#atelier">Open atelier vanaf 12 €</a>
-        </div>
-    </div>
-    <h1 class="title" id="hero-title"><span class="sr">Atelier Nova</span><span class="tl" aria-hidden="true" id="tl1">Atelier</span><span class="tl" aria-hidden="true" id="tl2">Nova</span></h1>
-    <div class="hero-foot">
-      <div class="dock" role="toolbar" aria-label="Schildergereedschap" id="dock">
-        <div class="grp" role="group" aria-label="Verfkleur">
-          <button type="button" class="sw" style="--c:#2445ff" data-c="#2445ff" aria-label="Blauw" aria-pressed="true"></button>
-          <button type="button" class="sw" style="--c:#ff4f9a" data-c="#ff4f9a" aria-label="Roze" aria-pressed="false"></button>
-          <button type="button" class="sw" style="--c:#ffd23f" data-c="#ffd23f" aria-label="Geel" aria-pressed="false"></button>
-          <button type="button" class="sw" style="--c:#ff6b2c" data-c="#ff6b2c" aria-label="Oranje" aria-pressed="false"></button>
-          <button type="button" class="sw" style="--c:#10a37a" data-c="#10a37a" aria-label="Groen" aria-pressed="false"></button>
-          <button type="button" class="sw" style="--c:#16130f" data-c="#16130f" aria-label="Inkt" aria-pressed="false"></button>
-        </div>
-        <span class="sep" aria-hidden="true"></span>
-        <div class="grp" role="group" aria-label="Penseeldikte">
-          <button type="button" class="sz" style="--s:5px" data-r="6" aria-label="Fijn penseel" aria-pressed="false"><i></i></button>
-          <button type="button" class="sz" style="--s:9px" data-r="15" aria-label="Middel penseel" aria-pressed="true"><i></i></button>
-          <button type="button" class="sz" style="--s:14px" data-r="30" aria-label="Breed penseel" aria-pressed="false"><i></i></button>
-        </div>
-        <span class="sep" aria-hidden="true"></span>
-        <button type="button" class="tool pm" id="pm" aria-pressed="false"><svg aria-hidden="true"><use href="#i-brush"/></svg><span class="lbl">Schildermodus</span></button>
-        <button type="button" class="tool" id="undo" disabled aria-label="Stap terug"><svg aria-hidden="true"><use href="#i-undo"/></svg><span class="lbl">Terug</span></button>
-        <button type="button" class="tool" id="wipe" aria-label="Wis het doek"><svg aria-hidden="true"><use href="#i-wipe"/></svg><span class="lbl">Wis</span></button>
-        <button type="button" class="tool tool--hi" id="save" aria-label="Bewaar als postkaart"><svg aria-hidden="true"><use href="#i-card"/></svg><span class="lbl">Bewaar als postkaart</span></button>
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy" id="hcopy">
+      <p class="eyebrow"><i aria-hidden="true"></i>Open kunstatelier <b>· Dok Noord, Gent</b></p>
+      <h1 class="title" id="hero-title"><span class="ov" data-t="Atelier&#10;Nova">Atelier<br>Nova</span></h1>
+      <p class="lead">Keramiek, zeefdruk, tekenen en schilderen in een oude drukkerij aan de Gentse Dok Noord. Kleine groepen, eerlijke prijzen en een deur die openstaat van ’s morgens tot ’s avonds.</p>
+      <div class="ctas">
+        <a class="btn" href="#workshops">Bekijk de workshops <svg class="arr" width="14" height="14" aria-hidden="true"><use href="#i-arr"/></svg></a>
+        <a class="btn btn--ghost" href="#atelier">Open atelier vanaf 12 €</a>
       </div>
-      <a class="cue" href="#atelier-intro">Scroll <span aria-hidden="true"></span></a>
+      <ul class="facts mono"><li style="--c:#ff48b0">max. 8 per groep</li><li style="--c:#0078bf">materiaal inbegrepen</li><li style="--c:#ffe800">di – zo open</li></ul>
+    </div>
+
+    <div class="studio" id="studio">
+      <p class="studio-cap"><span class="mono">Proefblad · <b>teken mee</b></span><span class="mono" id="tstat" aria-live="polite">Penseel · roze</span></p>
+      <div class="tools" role="toolbar" aria-label="Tekengereedschap">
+        <div class="brushes" role="group" aria-label="Gereedschap">
+          <button type="button" class="br" data-b="pen" aria-pressed="true"><svg aria-hidden="true"><use href="#i-brush"/></svg><span>Penseel</span></button>
+          <button type="button" class="br" data-b="spray" aria-pressed="false"><svg aria-hidden="true"><use href="#i-spray"/></svg><span>Spuitbus</span></button>
+          <button type="button" class="br" data-b="rakel" aria-pressed="false"><svg aria-hidden="true"><use href="#i-rakel"/></svg><span>Rakel</span></button>
+        </div>
+        <span class="rule" aria-hidden="true"></span>
+        <div class="inks" role="group" aria-label="Inkt">
+          <button type="button" class="sw" style="--c:#ff48b0" data-c="#ff48b0" data-n="roze" aria-label="Fluo roze" aria-pressed="true"></button>
+          <button type="button" class="sw" style="--c:#0078bf" data-c="#0078bf" data-n="blauw" aria-label="Blauw" aria-pressed="false"></button>
+          <button type="button" class="sw" style="--c:#ffe800" data-c="#ffe800" data-n="geel" aria-label="Geel" aria-pressed="false"></button>
+          <button type="button" class="sw" style="--c:#00a95c" data-c="#00a95c" data-n="groen" aria-label="Groen" aria-pressed="false"></button>
+          <button type="button" class="sw" style="--c:#1d1a17" data-c="#1d1a17" data-n="zwart" aria-label="Zwart" aria-pressed="false"></button>
+        </div>
+        <span class="rule" aria-hidden="true"></span>
+        <div class="hist">
+          <button type="button" class="tool" id="undo" disabled aria-label="Stap terug" title="Stap terug"><svg aria-hidden="true"><use href="#i-undo"/></svg></button>
+          <button type="button" class="tool" id="wipe" aria-label="Wis het blad" title="Wis het blad"><svg aria-hidden="true"><use href="#i-wipe"/></svg></button>
+        </div>
+      </div>
+      <div class="sheet-wrap">
+        <span class="cm a" aria-hidden="true"></span><span class="cm b" aria-hidden="true"></span><span class="cm c" aria-hidden="true"></span><span class="cm d" aria-hidden="true"></span>
+        <span class="tape" aria-hidden="true"></span>
+        <div class="sheet" id="sheet">
+          <canvas id="paint" role="img" aria-label="Tekenblad. Teken met penseel, spuitbus of rakel en maak er daarna een affiche van."></canvas>
+          <div class="bcur" id="bcur" aria-hidden="true"></div>
+          <p class="hint" id="hint" aria-hidden="true"><i></i><span>Klik en sleep om te tekenen</span></p>
+          <button type="button" class="tapdraw" id="tapdraw"><svg aria-hidden="true"><use href="#i-brush"/></svg>Tik om te tekenen</button>
+        </div>
+      </div>
+      <div class="sfoot">
+        <span class="lbl">Ctrl + Z om terug te gaan</span>
+        <button type="button" class="tool pm" id="pm" aria-pressed="false">Teken</button>
+        <button type="button" class="btn btn--pink btn--poster" id="mkposter"><svg aria-hidden="true"><use href="#i-poster"/></svg>Maak er een affiche van</button>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div id="ticker"><span style="--c:#ff6b2c">Keramiek</span><span style="--c:#ff4f9a">Zeefdruk</span><span style="--c:#ffd23f"><em>Tekenen</em></span><span style="--c:#2445ff">Schilderen</span><span style="--c:#10a37a">Open atelier</span><span style="--c:#ff4f9a"><em>Expo</em> cursisten</span><span style="--c:#ffd23f">Kinderateliers</span><span style="--c:#ff6b2c">Late night atelier</span></div></div>
+<div class="ticker" aria-hidden="true"><div id="ticker"><span style="--c:#ff6b2c">Keramiek</span><span style="--c:#ff48b0">Zeefdruk</span><span style="--c:#ffe800"><em>Tekenen</em></span><span style="--c:#0078bf">Schilderen</span><span style="--c:#00a95c">Open atelier</span><span style="--c:#ff48b0"><em>Expo</em> cursisten</span><span style="--c:#ffe800">Kinderateliers</span><span style="--c:#ff6b2c">Late night atelier</span></div></div>
 
 <section class="sec" id="atelier-intro" aria-labelledby="intro-h">
   <div class="wrap intro">
@@ -835,9 +910,9 @@ dialog[open]{animation:dlg .35s var(--ease)}
           <div class="chips" id="f-disc">
             <button type="button" class="chip" data-v="" aria-pressed="true">Alles</button>
             <button type="button" class="chip" data-v="keramiek" style="--c:#ff6b2c" aria-pressed="false"><i></i>Keramiek</button>
-            <button type="button" class="chip" data-v="druk" style="--c:#ff4f9a" aria-pressed="false"><i></i>Zeefdruk &amp; grafiek</button>
+            <button type="button" class="chip" data-v="druk" style="--c:#ff48b0" aria-pressed="false"><i></i>Zeefdruk &amp; grafiek</button>
             <button type="button" class="chip" data-v="tekenen" style="--c:#16130f" aria-pressed="false"><i></i>Tekenen</button>
-            <button type="button" class="chip" data-v="schilderen" style="--c:#2445ff" aria-pressed="false"><i></i>Schilderen</button>
+            <button type="button" class="chip" data-v="schilderen" style="--c:#0078bf" aria-pressed="false"><i></i>Schilderen</button>
           </div>
         </fieldset>
         <div class="fg"><label for="f-level">Niveau</label>
@@ -999,7 +1074,7 @@ dialog[open]{animation:dlg .35s var(--ease)}
             </g>
             <g class="zl">
               <text x="32" y="38">Draaien</text><text x="250" y="38">Ovens</text><text x="250" y="138">Glazuur</text><text x="362" y="38">Etspers</text><text x="362" y="158">Zeefdruk</text><text x="32" y="188">Teken- &amp; schilderzaal</text><text x="252" y="268">Expo</text><text x="500" y="268">Keuken</text>
-              <text x="360" y="415" text-anchor="middle" style="fill:#ffd23f">▲ Ingang Voorbeeldkaai</text>
+              <text x="360" y="415" text-anchor="middle" style="fill:#ffe800">▲ Ingang Voorbeeldkaai</text>
             </g>
             <g id="pins">
               <g class="pin on" data-z="1"><circle cx="210" cy="148" r="15"/><text x="210" y="148">1</text></g>
@@ -1034,9 +1109,9 @@ dialog[open]{animation:dlg .35s var(--ease)}
         <div class="poster grain">
           <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
             <rect width="400" height="500" fill="#f3efe6"/>
-            <g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="250" cy="170" r="130" fill="#ffd23f"/></g>
-            <g filter="url(#riso)" style="mix-blend-mode:multiply"><rect x="60" y="120" width="170" height="250" fill="#2445ff" transform="rotate(-8 145 245)"/></g>
-            <g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="300" cy="330" r="70" fill="#ff4f9a"/><rect x="30" y="400" width="340" height="60" fill="url(#ht-ink)"/></g>
+            <g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="250" cy="170" r="130" fill="#ffe800"/></g>
+            <g filter="url(#riso)" style="mix-blend-mode:multiply"><rect x="60" y="120" width="170" height="250" fill="#0078bf" transform="rotate(-8 145 245)"/></g>
+            <g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="300" cy="330" r="70" fill="#ff48b0"/><rect x="30" y="400" width="340" height="60" fill="url(#ht-ink)"/></g>
             <text x="30" y="70" style="font:600 64px 'Bricolage';font-stretch:76%;letter-spacing:-2px" fill="#16130f">Eerste</text>
             <text x="30" y="128" style="font:italic 400 66px 'Instrument Serif'" fill="#16130f">keer</text>
             <text x="30" y="484" style="font:400 12px 'DM Mono';letter-spacing:1px" fill="#16130f">EXPO CURSISTEN · 31.10 – 22.11.2026</text>
@@ -1069,31 +1144,31 @@ dialog[open]{animation:dlg .35s var(--ease)}
     </div>
     <ul class="ggrid" id="ggrid">
       <li class="gi w2 h2 rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Drie zonnen" data-m="Femke" data-k="Zeefdruk, drie kleuren" data-f="50 × 50 cm" data-w="Posters in drie kleuren" data-d="Drie lagen inkt die over elkaar vallen. Het geel ligt bewust een paar millimeter naast het blauw." aria-label="Bekijk Drie zonnen groter">
-        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#f3efe6"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="160" cy="185" r="118" fill="#2445ff"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="252" cy="238" r="110" fill="#ff4f9a"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="232" cy="116" r="58" fill="#ffd23f"/><rect x="40" y="318" width="320" height="48" fill="url(#ht-ink)"/></g></svg>
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#f3efe6"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="160" cy="185" r="118" fill="#0078bf"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="252" cy="238" r="110" fill="#ff48b0"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="232" cy="116" r="58" fill="#ffe800"/><rect x="40" y="318" width="320" height="48" fill="url(#ht-ink)"/></g></svg>
       </button><figcaption><b>Drie zonnen</b><span>Zeefdruk · Femke</span></figcaption></figure></li>
       <li class="gi rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Kom en vaas" data-m="Youssef" data-k="Steengoed, geglazuurd" data-f="h 24 cm" data-w="Draaien voor beginners" data-d="Een vaas van de derde avond en een kom die net niet scheef is. Het gele glazuur liep precies zoals gehoopt." aria-label="Bekijk Kom en vaas groter">
-        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#ff6b2c"/><rect x="0" y="300" width="400" height="100" fill="#16130f" opacity=".12"/><g filter="url(#riso)"><path d="M156 300c-46 0-62-44-50-86 10-34 30-52 30-84v-26h40v26c0 32 20 50 30 84 12 42-4 86-50 86z" fill="#f3efe6"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M110 200c14-6 30 4 46 0s30-6 44 0l-2 14c-6 0-6 18-12 18s-4-12-10-12-6 22-12 22-6-20-12-20-4 10-10 10-6-14-14-14z" fill="#ffd23f"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M205 236h150c-4 40-34 64-75 64s-71-24-75-64z" fill="#2445ff"/></g></svg>
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#ff6b2c"/><rect x="0" y="300" width="400" height="100" fill="#16130f" opacity=".12"/><g filter="url(#riso)"><path d="M156 300c-46 0-62-44-50-86 10-34 30-52 30-84v-26h40v26c0 32 20 50 30 84 12 42-4 86-50 86z" fill="#f3efe6"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M110 200c14-6 30 4 46 0s30-6 44 0l-2 14c-6 0-6 18-12 18s-4-12-10-12-6 22-12 22-6-20-12-20-4 10-10 10-6-14-14-14z" fill="#ffe800"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M205 236h150c-4 40-34 64-75 64s-71-24-75-64z" fill="#0078bf"/></g></svg>
       </button><figcaption><b>Kom en vaas</b><span>Keramiek · Youssef</span></figcaption></figure></li>
       <li class="gi h2 rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Model, vijf minuten" data-m="Ann" data-k="Houtskool op papier" data-f="42 × 59 cm" data-w="Modeltekenen" data-d="Een snelle pose van vijf minuten. Weinig lijnen, veel gewicht." aria-label="Bekijk Model, vijf minuten groter">
-        <svg viewBox="0 0 300 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="300" height="450" fill="#f3efe6"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="175" cy="175" r="92" fill="#ff4f9a"/></g><g fill="none" stroke="#16130f" stroke-width="4" stroke-linecap="round" filter="url(#riso)"><ellipse cx="150" cy="95" rx="30" ry="38"/><path d="M140 132c-4 18-30 24-48 40-20 18-24 60-20 98"/><path d="M162 132c6 18 34 22 50 40 18 20 20 58 14 96"/><path d="M98 200c10 40 8 80 20 120 10 34 8 70 4 100"/><path d="M206 206c-6 42-2 82-16 118-12 32-10 66-8 96"/><path d="M118 300c22 10 50 10 72 0"/><path d="M40 410c50-14 170-14 220 0" stroke-width="2"/></g></svg>
+        <svg viewBox="0 0 300 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="300" height="450" fill="#f3efe6"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="175" cy="175" r="92" fill="#ff48b0"/></g><g fill="none" stroke="#16130f" stroke-width="4" stroke-linecap="round" filter="url(#riso)"><ellipse cx="150" cy="95" rx="30" ry="38"/><path d="M140 132c-4 18-30 24-48 40-20 18-24 60-20 98"/><path d="M162 132c6 18 34 22 50 40 18 20 20 58 14 96"/><path d="M98 200c10 40 8 80 20 120 10 34 8 70 4 100"/><path d="M206 206c-6 42-2 82-16 118-12 32-10 66-8 96"/><path d="M118 300c22 10 50 10 72 0"/><path d="M40 410c50-14 170-14 220 0" stroke-width="2"/></g></svg>
       </button><figcaption><b>Model, vijf minuten</b><span>Houtskool · Ann</span></figcaption></figure></li>
       <li class="gi rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Kraan aan het dok" data-m="Pieter" data-k="Linosnede, handgedrukt" data-f="30 × 30 cm" data-w="Linosnede en handdruk" data-d="De oude havenkraan die je vanuit het atelier ziet, in één blok gesneden en gedrukt op de etspers." aria-label="Bekijk Kraan aan het dok groter">
-        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#16130f"/><g filter="url(#riso)"><circle cx="300" cy="96" r="44" fill="#2445ff"/></g><g filter="url(#riso)" fill="#f3efe6"><rect x="122" y="110" width="18" height="210"/><path d="M80 108h260v14H80z"/><path d="M131 110 230 60l2 6-96 48z"/><path d="M131 110 330 108l-2-4z"/><rect x="296" y="122" width="3" height="96"/><rect x="288" y="216" width="18" height="12"/><rect x="98" y="300" width="66" height="22"/></g><g fill="none" stroke="#ffd23f" stroke-width="5" stroke-linecap="round" filter="url(#riso)"><path d="M30 345c30-12 50 12 80 0s50-12 80 0 50 12 80 0 50-12 100 0"/><path d="M30 372c30-12 50 12 80 0s50-12 80 0 50 12 80 0 50-12 100 0"/></g></svg>
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#16130f"/><g filter="url(#riso)"><circle cx="300" cy="96" r="44" fill="#0078bf"/></g><g filter="url(#riso)" fill="#f3efe6"><rect x="122" y="110" width="18" height="210"/><path d="M80 108h260v14H80z"/><path d="M131 110 230 60l2 6-96 48z"/><path d="M131 110 330 108l-2-4z"/><rect x="296" y="122" width="3" height="96"/><rect x="288" y="216" width="18" height="12"/><rect x="98" y="300" width="66" height="22"/></g><g fill="none" stroke="#ffe800" stroke-width="5" stroke-linecap="round" filter="url(#riso)"><path d="M30 345c30-12 50 12 80 0s50-12 80 0 50 12 80 0 50-12 100 0"/><path d="M30 372c30-12 50 12 80 0s50-12 80 0 50 12 80 0 50-12 100 0"/></g></svg>
       </button><figcaption><b>Kraan aan het dok</b><span>Linosnede · Pieter</span></figcaption></figure></li>
       <li class="gi w2 rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Schelde bij avond" data-m="Marie" data-k="Acryl op doek" data-f="100 × 50 cm" data-w="Groot schilderen met acryl" data-d="Vier lagen acryl, met de vingers in de laatste. Het eerste doek dat Marie ooit afmaakte." aria-label="Bekijk Schelde bij avond groter">
-        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="800" height="400" fill="#f3efe6"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><rect width="800" height="270" fill="#ffd23f"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="560" cy="160" r="72" fill="#ff6b2c"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M0 250C120 210 220 290 360 250S600 200 800 250V400H0Z" fill="#2445ff"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M0 310C140 280 260 350 420 310S660 270 800 310V400H0Z" fill="#ff4f9a"/></g><path d="M60 350h120M260 372h200M540 352h160" stroke="#f3efe6" stroke-width="4" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="800" height="400" fill="#f3efe6"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><rect width="800" height="270" fill="#ffe800"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="560" cy="160" r="72" fill="#ff6b2c"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M0 250C120 210 220 290 360 250S600 200 800 250V400H0Z" fill="#0078bf"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M0 310C140 280 260 350 420 310S660 270 800 310V400H0Z" fill="#ff48b0"/></g><path d="M60 350h120M260 372h200M540 352h160" stroke="#f3efe6" stroke-width="4" stroke-linecap="round"/></svg>
       </button><figcaption><b>Schelde bij avond</b><span>Acryl · Marie</span></figcaption></figure></li>
       <li class="gi rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Ritme" data-m="Jonas" data-k="Zeefdruk, twee kleuren" data-f="A2" data-w="Posters in drie kleuren" data-d="Een poster voor een fictief concert. Blauw en roze overlappen tot een diep paars." aria-label="Bekijk Ritme groter">
-        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#ffd23f"/><g filter="url(#riso)" style="mix-blend-mode:multiply" fill="#2445ff"><rect x="50" y="70" width="70" height="270"/><rect x="160" y="130" width="70" height="210"/><rect x="270" y="190" width="70" height="150"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply" fill="#ff4f9a"><rect x="80" y="40" width="70" height="200"/><rect x="190" y="100" width="70" height="160"/><rect x="300" y="160" width="70" height="120"/><circle cx="110" cy="330" r="30"/></g></svg>
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#ffe800"/><g filter="url(#riso)" style="mix-blend-mode:multiply" fill="#0078bf"><rect x="50" y="70" width="70" height="270"/><rect x="160" y="130" width="70" height="210"/><rect x="270" y="190" width="70" height="150"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply" fill="#ff48b0"><rect x="80" y="40" width="70" height="200"/><rect x="190" y="100" width="70" height="160"/><rect x="300" y="160" width="70" height="120"/><circle cx="110" cy="330" r="30"/></g></svg>
       </button><figcaption><b>Ritme</b><span>Zeefdruk · Jonas</span></figcaption></figure></li>
       <li class="gi rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Monster met hoed" data-m="Mila, 8 jaar" data-k="Klei en verf" data-f="h 14 cm" data-w="Kleiclub 6 – 10 jaar" data-d="Het monster heet Gerard en heeft een feesthoed. Volgens de maker is hij heel vriendelijk." aria-label="Bekijk Monster met hoed groter">
-        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#10a37a"/><g filter="url(#riso)"><path d="M110 330c-40-30-40-120 0-170s130-60 170-10 50 140 20 180-150 30-190 0z" fill="#f3efe6"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M150 172 254 160 200 62z" fill="#ff4f9a"/><circle cx="200" cy="62" r="15" fill="#ffd23f"/></g><circle cx="170" cy="222" r="26" fill="#fff"/><circle cx="242" cy="212" r="19" fill="#fff"/><circle cx="176" cy="226" r="10" fill="#16130f"/><circle cx="246" cy="216" r="8" fill="#16130f"/><path d="M168 282c20 18 50 18 70-4" fill="none" stroke="#16130f" stroke-width="6" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#00a95c"/><g filter="url(#riso)"><path d="M110 330c-40-30-40-120 0-170s130-60 170-10 50 140 20 180-150 30-190 0z" fill="#f3efe6"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M150 172 254 160 200 62z" fill="#ff48b0"/><circle cx="200" cy="62" r="15" fill="#ffe800"/></g><circle cx="170" cy="222" r="26" fill="#fff"/><circle cx="242" cy="212" r="19" fill="#fff"/><circle cx="176" cy="226" r="10" fill="#16130f"/><circle cx="246" cy="216" r="8" fill="#16130f"/><path d="M168 282c20 18 50 18 70-4" fill="none" stroke="#16130f" stroke-width="6" stroke-linecap="round"/></svg>
       </button><figcaption><b>Monster met hoed</b><span>Kinderatelier · Mila</span></figcaption></figure></li>
       <li class="gi w2 rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Moiré" data-m="Sam" data-k="Zeefdruk, docentenwerk" data-f="70 × 50 cm" data-w="Posters in drie kleuren" data-d="Twee rasters van ringen die net niet samenvallen. Een oefening in registratie die Sam elk jaar opnieuw drukt." aria-label="Bekijk Moiré groter">
-        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="800" height="400" fill="#f3efe6"/><g fill="none" stroke="#2445ff" stroke-width="11" filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="380" cy="205" r="22"/><circle cx="380" cy="205" r="50"/><circle cx="380" cy="205" r="78"/><circle cx="380" cy="205" r="106"/><circle cx="380" cy="205" r="134"/><circle cx="380" cy="205" r="162"/><circle cx="380" cy="205" r="190"/></g><g fill="none" stroke="#ff4f9a" stroke-width="11" filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="425" cy="190" r="22"/><circle cx="425" cy="190" r="50"/><circle cx="425" cy="190" r="78"/><circle cx="425" cy="190" r="106"/><circle cx="425" cy="190" r="134"/><circle cx="425" cy="190" r="162"/><circle cx="425" cy="190" r="190"/></g></svg>
+        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="800" height="400" fill="#f3efe6"/><g fill="none" stroke="#0078bf" stroke-width="11" filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="380" cy="205" r="22"/><circle cx="380" cy="205" r="50"/><circle cx="380" cy="205" r="78"/><circle cx="380" cy="205" r="106"/><circle cx="380" cy="205" r="134"/><circle cx="380" cy="205" r="162"/><circle cx="380" cy="205" r="190"/></g><g fill="none" stroke="#ff48b0" stroke-width="11" filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="425" cy="190" r="22"/><circle cx="425" cy="190" r="50"/><circle cx="425" cy="190" r="78"/><circle cx="425" cy="190" r="106"/><circle cx="425" cy="190" r="134"/><circle cx="425" cy="190" r="162"/><circle cx="425" cy="190" r="190"/></g></svg>
       </button><figcaption><b>Moiré</b><span>Zeefdruk · Sam</span></figcaption></figure></li>
       <li class="gi w2 rv"><figure style="display:contents"><button type="button" class="art grain" data-t="Twee bladeren" data-m="Hilde" data-k="Aquarel" data-f="40 × 30 cm" data-w="Aquarel op zondag" data-d="Nat in nat, en dan het papier laten doen wat het wil. Het groen en blauw liepen samen in het midden." aria-label="Bekijk Twee bladeren groter">
-        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="800" height="400" fill="#f3efe6"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><ellipse cx="360" cy="200" rx="64" ry="160" transform="rotate(32 360 200)" fill="#10a37a" opacity=".9"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><ellipse cx="450" cy="205" rx="58" ry="150" transform="rotate(-28 450 205)" fill="#2445ff" opacity=".85"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="600" cy="110" r="34" fill="#ffd23f"/></g><path d="M290 320 432 82M520 330 380 80" stroke="#f3efe6" stroke-width="3" stroke-linecap="round" opacity=".8"/></svg>
+        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="800" height="400" fill="#f3efe6"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><ellipse cx="360" cy="200" rx="64" ry="160" transform="rotate(32 360 200)" fill="#00a95c" opacity=".9"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><ellipse cx="450" cy="205" rx="58" ry="150" transform="rotate(-28 450 205)" fill="#0078bf" opacity=".85"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="600" cy="110" r="34" fill="#ffe800"/></g><path d="M290 320 432 82M520 330 380 80" stroke="#f3efe6" stroke-width="3" stroke-linecap="round" opacity=".8"/></svg>
       </button><figcaption><b>Twee bladeren</b><span>Aquarel · Hilde</span></figcaption></figure></li>
     </ul>
     <p class="note">Illustratieve werken, getekend voor deze voorbeeldsite. Op een echte site tonen we hier foto’s van het werk van je cursisten.</p>
@@ -1109,19 +1184,19 @@ dialog[open]{animation:dlg .35s var(--ease)}
     </div>
     <div class="makers">
       <article class="maker rv">
-        <div class="pic grain"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="500" fill="#ff6b2c"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M50 500c10-120 80-170 150-170s140 50 150 170z" fill="#2445ff"/></g><g filter="url(#riso)"><rect x="176" y="290" width="48" height="60" fill="#f3efe6"/><ellipse cx="200" cy="230" rx="78" ry="92" fill="#f3efe6"/></g><g filter="url(#riso)" fill="#16130f"><circle cx="200" cy="112" r="40"/><path d="M122 222c0-62 36-102 78-102s78 40 78 102c-20-32-50-48-78-48s-58 16-78 48z"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="160" cy="262" r="16" fill="#ff4f9a"/><circle cx="240" cy="262" r="16" fill="#ff4f9a"/><circle cx="122" cy="262" r="8" fill="#ffd23f"/></g></svg><span class="mono">Keramiek</span></div>
+        <div class="pic grain"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="500" fill="#ff6b2c"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M50 500c10-120 80-170 150-170s140 50 150 170z" fill="#0078bf"/></g><g filter="url(#riso)"><rect x="176" y="290" width="48" height="60" fill="#f3efe6"/><ellipse cx="200" cy="230" rx="78" ry="92" fill="#f3efe6"/></g><g filter="url(#riso)" fill="#16130f"><circle cx="200" cy="112" r="40"/><path d="M122 222c0-62 36-102 78-102s78 40 78 102c-20-32-50-48-78-48s-58 16-78 48z"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="160" cy="262" r="16" fill="#ff48b0"/><circle cx="240" cy="262" r="16" fill="#ff48b0"/><circle cx="122" cy="262" r="8" fill="#ffe800"/></g></svg><span class="mono">Keramiek</span></div>
         <div><h3>Nora <em>draait sinds 2009</em></h3>
         <p>Bakt elke week twee ovens vol en heeft een zwak voor scheve kommen. Ze legt alles drie keer uit, en de vierde keer met plezier.</p>
         <div class="gives"><span class="pill">Draaien voor beginners</span><span class="pill">Handvormen</span><span class="pill">Kleiclub</span></div></div>
       </article>
       <article class="maker rv">
-        <div class="pic grain"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="500" fill="#ff4f9a"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M50 500c10-120 80-170 150-170s140 50 150 170z" fill="#ffd23f"/><rect x="40" y="40" width="120" height="120" fill="url(#ht-blue)"/></g><g filter="url(#riso)"><rect x="176" y="290" width="48" height="60" fill="#f3efe6"/><ellipse cx="200" cy="230" rx="76" ry="90" fill="#f3efe6"/></g><g filter="url(#riso)" fill="#16130f"><path d="M122 214c0-70 40-100 78-100s78 30 78 100h-18c-6-32-30-52-60-52s-54 20-60 52z"/></g><g fill="none" stroke="#16130f" stroke-width="6" filter="url(#riso)"><circle cx="168" cy="240" r="22"/><circle cx="232" cy="240" r="22"/><path d="M190 240h20"/></g></svg><span class="mono">Zeefdruk &amp; grafiek</span></div>
+        <div class="pic grain"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="500" fill="#ff48b0"/><g filter="url(#riso)" style="mix-blend-mode:multiply"><path d="M50 500c10-120 80-170 150-170s140 50 150 170z" fill="#ffe800"/><rect x="40" y="40" width="120" height="120" fill="url(#ht-blue)"/></g><g filter="url(#riso)"><rect x="176" y="290" width="48" height="60" fill="#f3efe6"/><ellipse cx="200" cy="230" rx="76" ry="90" fill="#f3efe6"/></g><g filter="url(#riso)" fill="#16130f"><path d="M122 214c0-70 40-100 78-100s78 30 78 100h-18c-6-32-30-52-60-52s-54 20-60 52z"/></g><g fill="none" stroke="#16130f" stroke-width="6" filter="url(#riso)"><circle cx="168" cy="240" r="22"/><circle cx="232" cy="240" r="22"/><path d="M190 240h20"/></g></svg><span class="mono">Zeefdruk &amp; grafiek</span></div>
         <div><h3>Sam <em>zette de pers weer aan</em></h3>
         <p>Kreeg de etspers van de oude drukkerij weer aan de praat. Houdt van felle inkt en strakke registratie, en leert je graag waarom het mis mag gaan.</p>
         <div class="gives"><span class="pill">Zeefdruk op textiel</span><span class="pill">Posters</span><span class="pill">Linosnede</span></div></div>
       </article>
       <article class="maker rv">
-        <div class="pic grain"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="500" fill="#2445ff"/><g filter="url(#riso)"><path d="M50 500c10-120 80-170 150-170s140 50 150 170z" fill="#ff6b2c"/><path d="M130 340c40 30 100 30 140 0l10 30c-50 30-110 30-160 0z" fill="#ffd23f"/></g><g filter="url(#riso)"><rect x="176" y="290" width="48" height="50" fill="#f3efe6"/><ellipse cx="200" cy="232" rx="76" ry="90" fill="#f3efe6"/></g><g filter="url(#riso)" fill="#16130f"><circle cx="140" cy="170" r="30"/><circle cx="175" cy="140" r="32"/><circle cx="215" cy="134" r="32"/><circle cx="255" cy="152" r="30"/><circle cx="272" cy="190" r="24"/><circle cx="126" cy="206" r="22"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="200" cy="268" r="12" fill="#ff4f9a"/></g></svg><span class="mono">Tekenen &amp; schilderen</span></div>
+        <div class="pic grain"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="500" fill="#0078bf"/><g filter="url(#riso)"><path d="M50 500c10-120 80-170 150-170s140 50 150 170z" fill="#ff6b2c"/><path d="M130 340c40 30 100 30 140 0l10 30c-50 30-110 30-160 0z" fill="#ffe800"/></g><g filter="url(#riso)"><rect x="176" y="290" width="48" height="50" fill="#f3efe6"/><ellipse cx="200" cy="232" rx="76" ry="90" fill="#f3efe6"/></g><g filter="url(#riso)" fill="#16130f"><circle cx="140" cy="170" r="30"/><circle cx="175" cy="140" r="32"/><circle cx="215" cy="134" r="32"/><circle cx="255" cy="152" r="30"/><circle cx="272" cy="190" r="24"/><circle cx="126" cy="206" r="22"/></g><g filter="url(#riso)" style="mix-blend-mode:multiply"><circle cx="200" cy="268" r="12" fill="#ff48b0"/></g></svg><span class="mono">Tekenen &amp; schilderen</span></div>
         <div><h3>Lieve <em>tekent elke dag</em></h3>
         <p>Liefst buiten, op een klapstoeltje. Begeleidt de modelavonden en neemt je op zondag mee de stad in met een schetsboek.</p>
         <div class="gives"><span class="pill">Modeltekenen</span><span class="pill">Urban sketching</span><span class="pill">Groot schilderen</span></div></div>
@@ -1152,10 +1227,10 @@ dialog[open]{animation:dlg .35s var(--ease)}
           </fieldset>
           <fieldset class="fg"><legend>Kleur</legend>
             <div class="cw" id="v-cw">
-              <button type="button" data-theme="blauw" style="--a:#2445ff;--b:#ff4f9a" aria-label="Blauw met roze" aria-pressed="true"></button>
-              <button type="button" data-theme="zon" style="--a:#ffd23f;--b:#ff6b2c" aria-label="Geel met oranje" aria-pressed="false"></button>
-              <button type="button" data-theme="munt" style="--a:#10a37a;--b:#ffd23f" aria-label="Groen met geel" aria-pressed="false"></button>
-              <button type="button" data-theme="inkt" style="--a:#16130f;--b:#ff4f9a" aria-label="Inkt met roze" aria-pressed="false"></button>
+              <button type="button" data-theme="blauw" style="--a:#0078bf;--b:#ff48b0" aria-label="Blauw met roze" aria-pressed="true"></button>
+              <button type="button" data-theme="zon" style="--a:#ffe800;--b:#ff6b2c" aria-label="Geel met oranje" aria-pressed="false"></button>
+              <button type="button" data-theme="munt" style="--a:#00a95c;--b:#ffe800" aria-label="Groen met geel" aria-pressed="false"></button>
+              <button type="button" data-theme="inkt" style="--a:#16130f;--b:#ff48b0" aria-label="Inkt met roze" aria-pressed="false"></button>
             </div>
           </fieldset>
           <div class="row2">
@@ -1191,8 +1266,8 @@ dialog[open]{animation:dlg .35s var(--ease)}
     </div>
     <div class="revs">
       <figure class="rev rv"><div class="stars" aria-label="5 op 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div><blockquote>“Ik kwam voor één workshop draaien en heb nu een tienbeurtenkaart. Nora legt alles uit zonder dat het ooit vervelend wordt.”</blockquote><figcaption><i style="--c:#ff6b2c"></i><span><b>Femke</b><span>Draaien voor beginners</span></span></figcaption></figure>
-      <figure class="rev rv"><div class="stars" aria-label="5 op 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div><blockquote>“Mijn eerste zeefdruk hangt nu in de living. Dat had ik vooraf echt niet gedacht.”</blockquote><figcaption><i style="--c:#ff4f9a"></i><span><b>Youssef</b><span>Zeefdruk op textiel</span></span></figcaption></figure>
-      <figure class="rev rv"><div class="stars" aria-label="5 op 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div><blockquote>“De kleiclub is het hoogtepunt van de week voor onze dochter. Ze vertelt er nog dagen over.”</blockquote><figcaption><i style="--c:#10a37a"></i><span><b>Ellen</b><span>Mama van Mila, 8 jaar</span></span></figcaption></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 op 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div><blockquote>“Mijn eerste zeefdruk hangt nu in de living. Dat had ik vooraf echt niet gedacht.”</blockquote><figcaption><i style="--c:#ff48b0"></i><span><b>Youssef</b><span>Zeefdruk op textiel</span></span></figcaption></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 op 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div><blockquote>“De kleiclub is het hoogtepunt van de week voor onze dochter. Ze vertelt er nog dagen over.”</blockquote><figcaption><i style="--c:#00a95c"></i><span><b>Ellen</b><span>Mama van Mila, 8 jaar</span></span></figcaption></figure>
     </div>
     <p class="note">Voorbeeldreviews: fictieve namen en teksten.</p>
   </div>
@@ -1226,13 +1301,13 @@ dialog[open]{animation:dlg .35s var(--ease)}
       <div class="map rv" aria-hidden="true">
         <svg viewBox="0 0 640 560" preserveAspectRatio="xMidYMid slice" focusable="false">
           <rect width="640" height="560" fill="#e2dccd"/>
-          <path d="M0 0h200c-14 80 26 130 14 200-10 60-70 90-78 160-6 60 22 130 12 200H0z" fill="#2445ff" opacity=".88"/>
+          <path d="M0 0h200c-14 80 26 130 14 200-10 60-70 90-78 160-6 60 22 130 12 200H0z" fill="#0078bf" opacity=".88"/>
           <g fill="#d3cbb8"><rect x="270" y="40" width="120" height="110" rx="4"/><rect x="420" y="40" width="190" height="110" rx="4"/><rect x="270" y="200" width="100" height="130" rx="4"/><rect x="500" y="200" width="110" height="130" rx="4"/><rect x="270" y="380" width="160" height="140" rx="4"/><rect x="460" y="380" width="150" height="140" rx="4"/></g>
-          <rect x="390" y="200" width="90" height="130" rx="4" fill="#ff4f9a"/>
+          <rect x="390" y="200" width="90" height="130" rx="4" fill="#ff48b0"/>
           <path d="M240 0v560M240 175h400M240 355h400M485 175v180" stroke="#f3efe6" stroke-width="16"/>
-          <path d="M240 0v560" stroke="#ffd23f" stroke-width="3" stroke-dasharray="10 8"/>
+          <path d="M240 0v560" stroke="#ffe800" stroke-width="3" stroke-dasharray="10 8"/>
           <circle cx="240" cy="355" r="11" fill="#16130f"/><text x="258" y="383" style="font:400 12px 'DM Mono'" fill="#16130f">TRAM · DOK NOORD</text>
-          <g transform="translate(435 250)"><path d="M0 0c-14-18-22-28-22-40a22 22 0 0 1 44 0c0 12-8 22-22 40z" fill="#16130f"/><circle cx="0" cy="-40" r="8" fill="#ffd23f"/></g>
+          <g transform="translate(435 250)"><path d="M0 0c-14-18-22-28-22-40a22 22 0 0 1 44 0c0 12-8 22-22 40z" fill="#16130f"/><circle cx="0" cy="-40" r="8" fill="#ffe800"/></g>
           <text x="435" y="300" text-anchor="middle" style="font:600 15px 'Bricolage'" fill="#16130f">Atelier Nova</text>
           <text x="22" y="300" style="font:italic 400 34px 'Instrument Serif'" fill="#f3efe6">Dok Noord</text>
           <text x="500" y="168" style="font:400 11px 'DM Mono'" fill="#6a6358">VOORBEELDKAAI</text>
@@ -1279,9 +1354,8 @@ dialog[open]{animation:dlg .35s var(--ease)}
 </footer>
 
 <nav class="mbar" aria-label="Snelle acties">
-  <a href="tel:+3290000000"><svg aria-hidden="true"><use href="#i-phone"/></svg>Bel</a>
-  <a href="#cadeaubon"><svg aria-hidden="true"><use href="#i-gift"/></svg>Cadeaubon</a>
-  <a class="p" href="#workshops">Workshops</a>
+  <a class="tel" href="tel:+3290000000"><svg aria-hidden="true"><use href="#i-phone"/></svg>Bel 09 000 00 00</a>
+  <a href="#workshops">Workshops</a>
 </nav>
 
 <dialog class="mnav" id="mnav" aria-label="Menu">
@@ -1312,6 +1386,28 @@ dialog[open]{animation:dlg .35s var(--ease)}
       <p id="lb-desc"></p>
       <dl><dt>Maker</dt><dd id="lb-m"></dd><dt>Techniek</dt><dd id="lb-k"></dd><dt>Formaat</dt><dd id="lb-f"></dd><dt>Workshop</dt><dd id="lb-w"></dd></dl>
       <div class="lb-nav"><button type="button" class="ib" id="lb-prev" aria-label="Vorig werk"><svg aria-hidden="true"><use href="#i-prev"/></svg></button><span class="mono" style="color:#9a9284">← → om te bladeren</span><button type="button" class="ib" id="lb-next" aria-label="Volgend werk"><svg aria-hidden="true"><use href="#i-next"/></svg></button></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pd" id="pd" aria-labelledby="pd-title">
+  <button type="button" class="x" data-close aria-label="Sluiten"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+  <div class="pd-in">
+    <div class="pd-stage"><div class="pd-paper"><canvas id="pcv" width="1000" height="1400" role="img" aria-label="Jouw tekening als affiche voor de workshop zeefdruk"></canvas><i class="rakel" id="prakel" aria-hidden="true"></i></div></div>
+    <div class="pd-side">
+      <p class="mono pass" id="pd-pass" aria-live="polite">Drukgang 1</p>
+      <h2 id="pd-title">Jouw tekening, <em>gedrukt.</em></h2>
+      <p>Elke kleur is een aparte drukgang. De lagen vallen nooit helemaal op elkaar. Dat kleine verschil maakt een zeefdruk echt.</p>
+      <div class="pd-btns">
+        <a class="btn btn--paper" id="pd-dl" href="#" download="atelier-nova-affiche.png" aria-disabled="true"><svg width="15" height="15" aria-hidden="true"><use href="#i-dl"/></svg>Download als PNG</a>
+        <button type="button" class="btn btn--ghost" data-close style="--fg:var(--paper);border-color:#6a6358">Verder tekenen</button>
+      </div>
+      <div class="pd-cta">
+        <p class="mono">Workshop zeefdruk</p>
+        <h3>Leer dit echt in de workshop zeefdruk.</h3>
+        <p id="pd-ws">Posters in drie kleuren, met Sam.</p>
+        <button type="button" class="btn" id="pd-go">Bekijk de workshop <svg class="arr" width="14" height="14" aria-hidden="true"><use href="#i-arr"/></svg></button>
+      </div>
     </div>
   </div>
 </dialog>
@@ -1391,300 +1487,464 @@ if ('IntersectionObserver' in window) {
 }
 
 /* =========================================================
-   HERO: paint canvas
+   HERO: tekenblad (penseel, spuitbus, rakel) en affiche
    ========================================================= */
-var hero = $('#top'), cv = $('#paint'), ctx = cv.getContext('2d');
-var base = D.createElement('canvas'), bx = base.getContext('2d');
-var layer = D.createElement('canvas'), lx = layer.getContext('2d');
-var ilayer = D.createElement('canvas'), ix = ilayer.getContext('2d');
-var W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 1.75);
-var PAPER = '#f3efe6', color = '#2445ff', maxR = 15;
-var strokes = [], cur = null, dirty = true, painted = false, lastPt = null, rs = 0;
-var pointer = {x: -999, y: -999, inside: false};
-var undoBtn = $('#undo'), bcur = $('#bcur');
+var coarse = matchMedia('(pointer: coarse)').matches || (!finePtr && navigator.maxTouchPoints > 0);
+R.classList.add(coarse ? 'touch' : 'fine');
+var LW = 1000, LH = 1250, PAPER = '#fbf8f1';
+var PEN_W = 46, SPR_R = 64, RAK_L = 74;
+var SCREEN = {'#ff48b0': 75, '#0078bf': 15, '#ffe800': 0, '#00a95c': 60, '#1d1a17': 45};
+var INKN = {'#ff48b0': 'roze', '#0078bf': 'blauw', '#ffe800': 'geel', '#00a95c': 'groen', '#1d1a17': 'zwart'};
+var TOOLN = {pen: 'Penseel', spray: 'Spuitbus', rakel: 'Rakel'};
+var hero = $('#top'), sheet = $('#sheet'), cv = $('#paint'), ctx = cv.getContext('2d');
+var undoBtn = $('#undo'), bcur = $('#bcur'), hint = $('#hint'), pm = $('#pm');
+var DPR = Math.min(window.devicePixelRatio || 1, 2);
 
-var noise = D.createElement('canvas'); noise.width = noise.height = 128;
-(function(){
-  var x = noise.getContext('2d'), id = x.createImageData(128, 128), s = 11;
-  for (var i = 0; i < 128 * 128; i++) { s = (s * 16807) % 2147483647; if (s / 2147483647 < .08) id.data[i * 4 + 3] = 255; }
-  x.putImageData(id, 0, 0);
-})();
-var pats = {};
-function pat(c, k){ if (!pats[k]) pats[k] = c.createPattern(noise, 'repeat'); return pats[k]; }
+function mkc(w, h){ var c = D.createElement('canvas'); c.width = w; c.height = h; return c; }
+function mul(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function seed(){ return (Math.random() * 4294967296) >>> 0; }
+function sm(t){ t = t < 0 ? 0 : t > 1 ? 1 : t; return t * t * (3 - 2 * t); }
+function dot(c, x, y, r){ c.beginPath(); c.arc(x, y, r > .3 ? r : .3, 0, 6.2832); c.fill(); }
+function rgba(hex, a){ var n = parseInt(hex.slice(1), 16); return 'rgba(' + (n >> 16) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; }
+function clr(c, W, H){ c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'source-over'; c.globalAlpha = 1; c.clearRect(0, 0, W, H); }
 
-function stamp(c, x, y, r){ c.beginPath(); c.arc(x, y, Math.max(.6, r), 0, 6.2832); c.fill(); }
-function mid(a, b){ return [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2]; }
-function quad(c, a, k, b){
-  var len = Math.hypot(k[0] - a[0], k[1] - a[1]) + Math.hypot(b[0] - k[0], b[1] - k[1]);
-  var step = Math.max(.6, Math.min(a[2], b[2]) * .28), n = Math.max(1, Math.ceil(len / step));
-  for (var i = 1; i <= n; i++) { var t = i / n, u = 1 - t; stamp(c, u*u*a[0] + 2*u*t*k[0] + t*t*b[0], u*u*a[1] + 2*u*t*k[1] + t*t*b[1], a[2] + (b[2] - a[2]) * t); }
+/* inkt dekt nooit helemaal: een vaste ruistegel haalt kleine puntjes weg */
+var noise = mkc(128, 128);
+(function(){ var x = noise.getContext('2d'), id = x.createImageData(128, 128), r = mul(7); for (var i = 0; i < 16384; i++) if (r() < .075) id.data[i * 4 + 3] = 255; x.putImageData(id, 0, 0); })();
+function speck(c, x0, y0, w, h){ c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'destination-out'; c.fillStyle = c.createPattern(noise, 'repeat'); c.fillRect(x0, y0, w, h); c.restore(); }
+/* rasterpunten onder de klassieke rasterhoek van elke inkt */
+var htTiles = {};
+function htFill(c, col, S, W, H){
+  var cell = Math.max(5, Math.round(8.5 * S)), k = cell + col, t = htTiles[k];
+  if (!t) { t = htTiles[k] = mkc(cell, cell); var x = t.getContext('2d'); x.fillStyle = col; dot(x, cell / 2, cell / 2, cell * .38); }
+  var p = c.createPattern(t, 'repeat');
+  if (p.setTransform && window.DOMMatrix) p.setTransform(new DOMMatrix().rotate(SCREEN[col] || 45));
+  c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'source-in'; c.fillStyle = p; c.fillRect(0, 0, W, H); c.restore();
 }
-function seg(c, p, i){
-  if (i === 1) { var m = mid(p[0], p[1]); quad(c, p[0], mid(p[0], m), m); return; }
-  quad(c, mid(p[i-2], p[i-1]), p[i-1], mid(p[i-1], p[i]));
+
+/* --- penseel: getaperd, dikte uit snelheid of druk, haren die uitdrogen --- */
+function bristles(st){
+  if (st._br) return st._br;
+  var r = mul(st.s), a = [];
+  for (var k = 0; k < 11; k++) a.push({o: -1 + 2 * (k + .2 + r() * .6) / 11, w: .12 + r() * .14, a: .35 + r() * .5, dry: r() * .72});
+  return (st._br = a);
 }
-function tail(c, p){ var n = p.length; if (n < 2) return; var m = mid(p[n-2], p[n-1]); quad(c, m, mid(m, p[n-1]), p[n-1]); }
-function speck(c, k, x0, y0, x1, y1){ c.save(); c.globalCompositeOperation = 'destination-out'; c.fillStyle = pat(c, k); c.fillRect(x0, y0, x1 - x0, y1 - y0); c.restore(); }
-function speckPts(c, k, pts){
-  var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
-  pts.forEach(function(p){ x0 = Math.min(x0, p[0] - p[2]); y0 = Math.min(y0, p[1] - p[2]); x1 = Math.max(x1, p[0] + p[2]); y1 = Math.max(y1, p[1] + p[2]); });
-  speck(c, k, x0 - 3, y0 - 3, x1 + 3, y1 + 3);
+function penDraw(c, st, i0, i1, total, ps){
+  var p = st.p, br = bristles(st);
+  c.fillStyle = st.c;
+  for (var i = Math.max(1, i0); i <= i1; i++) {
+    var a = p[i - 1], b = p[i], L = b[3] - a[3];
+    if (L <= 0) continue;
+    var nx = -(b[1] - a[1]) / L, ny = (b[0] - a[0]) / L;
+    while (ps.nd <= b[3]) {
+      var t = (ps.nd - a[3]) / L, d = ps.nd, x = a[0] + (b[0] - a[0]) * t, y = a[1] + (b[1] - a[1]) * t, w = a[2] + (b[2] - a[2]) * t;
+      var r = w / 2 * (.22 + .78 * sm(d / 60)) * (total ? .1 + .9 * sm((total - d) / 120) : 1);
+      var load = Math.exp(-d / 1100);
+      c.globalAlpha = .9; dot(c, x, y, r * (.4 + .6 * load));
+      for (var k = 0; k < br.length; k++) { var q = br[k]; if (load < q.dry) continue; c.globalAlpha = q.a; dot(c, x + nx * q.o * r, y + ny * q.o * r, r * q.w); }
+      ps.nd += Math.max(.7, r * .2);
+    }
+  }
+  c.globalAlpha = 1;
 }
-function drawStroke(c, k, s){
-  c.fillStyle = s.c;
-  var p = s.p;
-  if (p.length) { stamp(c, p[0][0], p[0][1], p[0][2]); for (var i = 1; i < p.length; i++) seg(c, p, i); tail(c, p); }
-  (s.dots || []).forEach(function(d){ stamp(c, d[0], d[1], d[2]); });
-  speck(c, k, 0, 0, W, H);
+/* --- spuitbus: nevel + druppels, opbouwend zolang je drukt --- */
+function sprayEv(c, col, ev){
+  var r = mul(ev[3]), x = ev[0], y = ev[1], n = ev[2], Rr = SPR_R;
+  var g = c.createRadialGradient(x, y, 0, x, y, Rr * .9);
+  g.addColorStop(0, rgba(col, .075)); g.addColorStop(1, rgba(col, 0));
+  c.fillStyle = g; c.fillRect(x - Rr, y - Rr, Rr * 2, Rr * 2);
+  c.fillStyle = col;
+  for (var i = 0; i < n; i++) { var a = r() * 6.2832, d = Rr * Math.min(1.45, Math.sqrt(-2 * Math.log(1 - r() * .995)) * .42); dot(c, x + Math.cos(a) * d, y + Math.sin(a) * d, .8 + Math.pow(r(), 3) * 2.4); }
+  if (r() < .06) { var a2 = r() * 6.2832, d2 = Rr * (1 + r() * .7); dot(c, x + Math.cos(a2) * d2, y + Math.sin(a2) * d2, 2.2 + r() * 3.6); }
 }
-function commit(srcCanvas, srcCtx){
-  bx.save(); bx.globalCompositeOperation = 'multiply'; bx.drawImage(srcCanvas, 0, 0, W, H); bx.restore();
-  srcCtx.clearRect(0, 0, W, H);
+/* --- rakel: brede vlakke baan, gevuld met een raster --- */
+function rakelPrep(m){ m.fillStyle = m.strokeStyle = '#000'; m.lineWidth = 1.4; m.lineJoin = 'round'; }
+function rakelQuad(m, a, b){
+  var L = RAK_L, ca = Math.cos(a[2]) * L, sa = Math.sin(a[2]) * L, cb = Math.cos(b[2]) * L, sb = Math.sin(b[2]) * L;
+  m.beginPath(); m.moveTo(a[0] + ca, a[1] + sa); m.lineTo(b[0] + cb, b[1] + sb); m.lineTo(b[0] - cb, b[1] - sb); m.lineTo(a[0] - ca, a[1] - sa); m.closePath();
+  m.fill(); m.stroke();
 }
+
+/* renderer: kladcanvassen op een bepaalde schaal (scherm of affiche) */
+function Rend(W, H, S, ox, oy){ this.W = W; this.H = H; this.S = S; this.ox = ox || 0; this.oy = oy || 0; this.t = mkc(W, H); this.tx = this.t.getContext('2d'); this.m = mkc(W, H); this.mx = this.m.getContext('2d'); }
+function setT(Rn, c){ c.setTransform(Rn.S, 0, 0, Rn.S, Rn.ox, Rn.oy); }
+function renderFull(Rn, st){
+  var c = Rn.tx; clr(c, Rn.W, Rn.H); setT(Rn, c);
+  c.save(); c.beginPath(); c.rect(0, 0, LW, LH); c.clip();
+  if (st.t === 'pen') penDraw(c, st, 1, st.p.length - 1, st.p[st.p.length - 1][3], {nd: 0});
+  else if (st.t === 'spray') st.e.forEach(function(ev){ sprayEv(c, st.c, ev); });
+  else {
+    var m = Rn.mx; clr(m, Rn.W, Rn.H); setT(Rn, m); rakelPrep(m);
+    for (var i = 1; i < st.p.length; i++) rakelQuad(m, st.p[i - 1], st.p[i]);
+    c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(Rn.m, 0, 0); htFill(c, st.c, Rn.S, Rn.W, Rn.H);
+  }
+  c.restore();
+  if (st.t !== 'spray') speck(c, 0, 0, Rn.W, Rn.H);
+  return Rn.t;
+}
+
+/* --- schermtoestand --- */
+var SR = null, base, bx, live, lx, CW = 0, CH = 0;
+var strokes = [], wiped = null, cur = null, sel = {tool: 'pen', ink: '#ff48b0'}, tool = 'pen', ink = '#ff48b0';
+var dirty = false, rakDirty = false, cw = PEN_W * .5, drew = false;
+function commit(c){ bx.setTransform(1, 0, 0, 1, 0, 0); bx.globalCompositeOperation = 'multiply'; bx.drawImage(c, 0, 0); bx.globalCompositeOperation = 'source-over'; }
 function redraw(){
-  bx.fillStyle = PAPER; bx.fillRect(0, 0, W, H); lx.clearRect(0, 0, W, H);
-  strokes.forEach(function(s){ drawStroke(lx, 'l', s); commit(layer, lx); });
-  dirty = true; undoBtn.disabled = !strokes.length;
+  clr(bx, CW, CH); bx.fillStyle = PAPER; bx.fillRect(0, 0, CW, CH);
+  strokes.forEach(function(st){ commit(renderFull(SR, st)); });
+  undoBtn.disabled = !strokes.length && !wiped; dirty = true; wake();
 }
-function size(){
-  var r = hero.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
-  if (w === W && h === H) return;
-  finish(); endIntro(true);
-  W = w; H = h;
-  [cv, base, layer, ilayer].forEach(function(c){ c.width = Math.round(W * DPR); c.height = Math.round(H * DPR); });
-  [ctx, bx, lx, ix].forEach(function(c){ c.setTransform(DPR, 0, 0, DPR, 0, 0); });
-  pats = {};
-  redraw(); measure(); wake();
+function resize(){
+  var w = sheet.clientWidth; if (!w) return;
+  var nw = Math.round(w * DPR); if (nw === CW) return;
+  if (SR) { finishIntro(); endStroke(); }
+  CW = nw; CH = Math.round(nw * LH / LW); cv.width = CW; cv.height = CH;
+  SR = new Rend(CW, CH, CW / LW);
+  base = mkc(CW, CH); bx = base.getContext('2d'); live = mkc(CW, CH); lx = live.getContext('2d');
+  redraw(); setCursor();
 }
-function begin(x, y, r, mouse){
-  cur = {c: color, p: [[x, y, r]], last: performance.now(), mouse: mouse};
-  lx.fillStyle = color; stamp(lx, x, y, r); speckPts(lx, 'l', cur.p); dirty = true;
+function emit(x, y, n){ var ev = [x, y, n, seed()]; cur.e.push(ev); setT(SR, lx); sprayEv(lx, cur.c, ev); dirty = true; }
+function beginStroke(x, y, w){
+  cur = {t: tool, c: ink, s: seed(), p: [], e: [], ps: {nd: 0}, lt: performance.now(), hold: false};
+  clr(lx, CW, CH);
+  if (tool === 'pen') cur.p.push([x, y, w || PEN_W * .55, 0]);
+  else if (tool === 'spray') { cur.pos = [x, y]; cur.ep = [x, y]; emit(x, y, 16); }
+  else { cur.anchor = [x, y]; cur.ang = null; clr(SR.mx, CW, CH); setT(SR, SR.mx); rakelPrep(SR.mx); }
+  dirty = true; wake();
 }
-function extend(x, y, r){
-  var p = cur.p, l = p[p.length - 1];
-  cur.last = performance.now();
-  if (Math.hypot(x - l[0], y - l[1]) < 1.2) return;
-  p.push([x, y, r]); lx.fillStyle = cur.c; seg(lx, p, p.length - 1); speckPts(lx, 'l', p.slice(-3)); dirty = true;
-}
-function finish(){
+function addPoint(x, y, w){
   if (!cur) return;
-  lx.fillStyle = cur.c; tail(lx, cur.p); speck(lx, 'l', 0, 0, W, H);
-  commit(layer, lx);
-  strokes.push({c: cur.c, p: cur.p});
-  cur = null; dirty = true; undoBtn.disabled = false;
+  x = Math.max(-30, Math.min(LW + 30, x)); y = Math.max(-30, Math.min(LH + 30, y));
+  var p = cur.p, l, d;
+  if (cur.t === 'pen') {
+    l = p[p.length - 1];
+    var sx = l[0] + (x - l[0]) * .62, sy = l[1] + (y - l[1]) * .62;
+    d = Math.hypot(sx - l[0], sy - l[1]);
+    if (d < .8) return;
+    p.push([sx, sy, w == null ? l[2] : w, l[3] + d]);
+    setT(SR, lx); penDraw(lx, cur, p.length - 1, p.length - 1, 0, cur.ps);
+    var S = SR.S, pad = PEN_W;
+    speck(lx, Math.floor((Math.min(l[0], sx) - pad) * S), Math.floor((Math.min(l[1], sy) - pad) * S), Math.ceil((Math.abs(sx - l[0]) + pad * 2) * S), Math.ceil((Math.abs(sy - l[1]) + pad * 2) * S));
+    dirty = true;
+  } else if (cur.t === 'spray') {
+    cur.pos = [x, y];
+    var q = cur.ep, dd = Math.hypot(x - q[0], y - q[1]), n = Math.floor(dd / 9);
+    for (var i = 1; i <= n; i++) emit(q[0] + (x - q[0]) * i / n, q[1] + (y - q[1]) * i / n, 7);
+    if (n) cur.ep = [x, y];
+  } else {
+    if (cur.ang === null) {
+      var dx = x - cur.anchor[0], dy = y - cur.anchor[1];
+      if (Math.hypot(dx, dy) < 6) return;
+      cur.ang = Math.atan2(dy, dx) + Math.PI / 2;
+      p.push([cur.anchor[0], cur.anchor[1], cur.ang, 0]);
+    }
+    l = p[p.length - 1]; d = Math.hypot(x - l[0], y - l[1]);
+    if (d < 2.5) return;
+    var df = Math.atan2(y - l[1], x - l[0]) + Math.PI / 2 - cur.ang;
+    df = Math.atan2(Math.sin(df), Math.cos(df));
+    if (df > Math.PI / 2) df -= Math.PI; else if (df < -Math.PI / 2) df += Math.PI;
+    cur.ang += df * .2;
+    p.push([x, y, cur.ang, l[3] + d]);
+    rakelQuad(SR.mx, l, p[p.length - 1]); rakDirty = true;
+  }
 }
-function splat(x, y){
-  var r = maxR * (.9 + Math.random() * .6), dots = [[x, y, r]];
-  for (var i = 0; i < 11; i++) { var a = Math.random() * 6.283, d = r * (1.05 + Math.random() * 1.5); dots.push([x + Math.cos(a) * d, y + Math.sin(a) * d, Math.random() * r * .28 + 1.2]); }
-  var s = {c: color, p: [], dots: dots};
-  drawStroke(lx, 'l', s); commit(layer, lx); strokes.push(s); dirty = true; undoBtn.disabled = false;
+function rakLive(){ clr(lx, CW, CH); lx.drawImage(SR.m, 0, 0); htFill(lx, cur.c, SR.S, CW, CH); speck(lx, 0, 0, CW, CH); rakDirty = false; dirty = true; }
+function endStroke(){
+  if (!cur) return;
+  var st = cur, a; cur = null; rakDirty = false;
+  if (st.t === 'pen') {
+    if (st.p.length === 1) { a = st.p[0]; st.p.push([a[0] + .6, a[1] + .4, a[2], .72]); }
+    commit(renderFull(SR, st));
+  } else if (st.t === 'spray') commit(live);
+  else {
+    if (st.p.length < 2) { a = st.anchor; st.p = [[a[0], a[1], 0, 0], [a[0], a[1] + 34, 0, 34]]; }
+    commit(renderFull(SR, st));
+  }
+  ['ps', 'pos', 'ep', 'anchor', 'ang', 'lt', 'hold'].forEach(function(k){ delete st[k]; });
+  strokes.push(st); wiped = null;
+  clr(lx, CW, CH); undoBtn.disabled = false; dirty = true; wake();
 }
-function rel(e){ var r = cv.getBoundingClientRect(); return {x: e.clientX - r.left, y: e.clientY - r.top}; }
-function overUI(e){ return e.target && e.target.closest && e.target.closest('a,button,.dock,input'); }
-function radiusFor(e, x, y, t){
-  if (e.pointerType === 'pen' && e.pressure > 0) return Math.max(1.2, maxR * (.25 + e.pressure * 1.1));
-  if (!lastPt) return maxR * .45;
-  var v = Math.hypot(x - lastPt.x, y - lastPt.y) / Math.max(6, t - lastPt.t);
-  var target = maxR * Math.max(.22, Math.min(1.12, 1.18 - v * .6));
-  rs += (target - rs) * .2;
-  return rs;
+function paintFrame(){
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalCompositeOperation = 'source-over'; ctx.drawImage(base, 0, 0);
+  if (cur) { ctx.globalCompositeOperation = 'multiply'; ctx.drawImage(live, 0, 0); ctx.globalCompositeOperation = 'source-over'; }
 }
-var hint = $('#hint'), hintTxt = $('#hint span');
-if (!finePtr) hintTxt.textContent = 'Veeg zijwaarts om te schilderen';
-function firstPaint(){
-  if (painted) return; painted = true;
-  hintTxt.textContent = 'Mooi. Probeer een andere kleur';
-  setTimeout(function(){ hint.classList.add('gone'); }, 2600);
+
+/* --- intro: het atelier zet zelf drie lagen op het blad --- */
+var intro = null;
+function introScript(){
+  var A = [], B = [], C = [], i, t;
+  for (i = 0; i <= 40; i++) { t = i / 40; A.push([90 + 820 * t, 360 - 60 * t + 45 * Math.sin(t * Math.PI * 1.6)]); }
+  for (i = 0; i <= 50; i++) { t = i / 50; B.push([650 + 120 * Math.cos(t * 5.4 + .4) * (1 - t * .45), 700 + 90 * Math.sin(t * 5.4 + .4) * (1 - t * .45)]); }
+  for (i = 0; i <= 70; i++) { t = i / 70; C.push([140 + 720 * t + 40 * Math.sin(t * 9), 1040 - 540 * Math.sin(t * Math.PI * .9) + 60 * t, PEN_W * (.6 + .5 * Math.sin(Math.PI * t))]); }
+  return [{tool: 'rakel', ink: '#ffe800', p: A, t0: 0, dur: 800}, {tool: 'spray', ink: '#ff48b0', p: B, t0: 950, dur: 1100}, {tool: 'pen', ink: '#0078bf', p: C, t0: 2200, dur: 1000}];
 }
-function cursorOn(on){ bcur.classList.toggle('on', !!on && finePtr); }
-hero.addEventListener('pointermove', function(e){
-  var p = rel(e); pointer.x = p.x; pointer.y = p.y; pointer.inside = true; wake();
-  if (e.pointerType === 'mouse') {
-    if (overUI(e)) { finish(); lastPt = null; cursorOn(false); return; }
-    cursorOn(true);
-  } else if (!e.buttons || !cur) return;
+function restoreTool(){ tool = sel.tool; ink = sel.ink; }
+function startIntro(){ if (strokes.length || cur) return; intro = {t0: performance.now(), list: introScript(), k: 0, on: false, n: 0}; if (reduce) finishIntro(); else wake(); }
+function stepIntro(now){
+  var el = now - intro.t0, s = intro.list[intro.k];
+  if (el < s.t0) return;
+  var n = Math.min(s.p.length, Math.floor((el - s.t0) / s.dur * s.p.length) + 1);
+  if (!intro.on) { tool = s.tool; ink = s.ink; beginStroke(s.p[0][0], s.p[0][1], s.p[0][2]); cur.hold = true; intro.on = true; intro.n = 1; }
+  while (intro.n < n) { var q = s.p[intro.n++]; addPoint(q[0], q[1], q[2]); }
+  if (intro.n >= s.p.length && el >= s.t0 + s.dur) { endStroke(); intro.on = false; if (++intro.k >= intro.list.length) { intro = null; restoreTool(); } }
+}
+function finishIntro(){
+  if (!intro) return;
+  var it = intro; intro = null;
+  for (var k = it.k; k < it.list.length; k++) {
+    var s = it.list[k], resume = k === it.k && it.on && cur;
+    if (!resume) { tool = s.tool; ink = s.ink; beginStroke(s.p[0][0], s.p[0][1], s.p[0][2]); }
+    for (var j = resume ? it.n : 1; j < s.p.length; j++) { addPoint(s.p[j][0], s.p[j][1], s.p[j][2]); if (s.tool === 'spray') emit(s.p[j][0], s.p[j][1], 26); }
+    endStroke();
+  }
+  restoreTool();
+}
+
+/* --- render-lus: alleen als het blad zichtbaar is en er iets verandert --- */
+var vis = true, running = false, lastNow = 0;
+function wake(){ if (running || !vis || D.hidden) return; running = true; lastNow = performance.now(); requestAnimationFrame(frame); }
+function frame(now){
+  if (!vis || D.hidden) { running = false; return; }
+  var dt = Math.min(50, Math.max(0, now - lastNow)); lastNow = now;
+  if (intro) stepIntro(now);
+  if (cur && cur.t === 'spray' && cur.hold) emit(cur.pos[0], cur.pos[1], Math.max(2, Math.min(26, Math.round(dt * 1.3))));
+  if (rakDirty && cur) rakLive();
+  if (dirty) { paintFrame(); dirty = false; }
+  if (intro || cur) requestAnimationFrame(frame); else running = false;
+}
+if ('IntersectionObserver' in window) new IntersectionObserver(function(es){
+  vis = es[0].isIntersecting;
+  if (vis) { dirty = true; wake(); }
+  else { finishIntro(); endStroke(); pid = null; if (drawMode) setDraw(false, true); }
+}).observe(sheet);
+D.addEventListener('visibilitychange', function(){ if (D.hidden) endStroke(); else { dirty = true; wake(); } });
+if ('ResizeObserver' in window) new ResizeObserver(function(){ resize(); }).observe(sheet);
+else addEventListener('resize', resize);
+
+/* --- invoer --- */
+var pid = null, lastP = null, tap = null, drawMode = false;
+function lpt(e){ var r = cv.getBoundingClientRect(); return {x: (e.clientX - r.left) / r.width * LW, y: (e.clientY - r.top) / r.height * LH}; }
+function widthFor(e, q){
+  if (e.pointerType === 'pen' && e.pressure > 0) return PEN_W * (.15 + e.pressure * 1.05);
+  if (!q || !lastP) return (cw = PEN_W * .55);
+  var v = Math.hypot(q.x - lastP.x, q.y - lastP.y) / Math.max(4, e.timeStamp - lastP.t);
+  cw += (PEN_W * Math.max(.28, Math.min(1.1, 1.2 - v * .32)) - cw) * .25;
+  return cw;
+}
+function userDrew(){ if (drew) return; drew = true; setTimeout(function(){ hint.classList.add('gone'); }, 600); }
+cv.addEventListener('pointerdown', function(e){
+  if (e.button > 0) return;
+  if (e.pointerType !== 'mouse' && !drawMode) { tap = {x: e.clientX, y: e.clientY, t: performance.now()}; return; }
+  e.preventDefault();
+  try { cv.setPointerCapture(e.pointerId); } catch (er) {}
+  finishIntro(); endStroke();
+  pid = e.pointerId; lastP = null;
+  var q = lpt(e);
+  beginStroke(q.x, q.y, widthFor(e, null)); cur.hold = true;
+  lastP = {x: q.x, y: q.y, t: e.timeStamp};
+  userDrew();
+});
+cv.addEventListener('pointermove', function(e){
+  if (e.pointerType === 'mouse') moveCursor(e);
+  if (e.pointerId !== pid || !cur) return;
   var list = (e.getCoalescedEvents && e.getCoalescedEvents()) || [];
   if (!list.length) list = [e];
-  list.forEach(function(ce){
-    var q = rel(ce), t = performance.now(), r = radiusFor(ce, q.x, q.y, t);
-    if (!cur) { rs = maxR * .4; begin(q.x, q.y, rs, e.pointerType === 'mouse'); }
-    else extend(q.x, q.y, r);
-    lastPt = {x: q.x, y: q.y, t: t};
-  });
-  firstPaint();
+  list.forEach(function(ce){ var q = lpt(ce); addPoint(q.x, q.y, widthFor(ce, q)); lastP = {x: q.x, y: q.y, t: ce.timeStamp}; });
+  if (tool === 'rakel' && e.pointerType === 'mouse') moveCursor(e);
 });
-hero.addEventListener('pointerdown', function(e){
-  if (overUI(e)) return;
-  var p = rel(e);
-  finish();
-  if (e.pointerType === 'mouse') { splat(p.x, p.y); lastPt = null; firstPaint(); wake(); return; }
-  rs = maxR * .5; begin(p.x, p.y, rs, false); lastPt = {x: p.x, y: p.y, t: performance.now()}; firstPaint(); wake();
-});
-['pointerup', 'pointercancel'].forEach(function(t){ hero.addEventListener(t, function(e){ if (e.pointerType !== 'mouse') { finish(); lastPt = null; } }); });
-hero.addEventListener('pointerleave', function(){ finish(); lastPt = null; pointer.inside = false; cursorOn(false); wake(); });
+function up(e){
+  if (tap && e.pointerType !== 'mouse') {
+    if (e.type === 'pointerup' && Math.hypot(e.clientX - tap.x, e.clientY - tap.y) < 12 && performance.now() - tap.t < 600) setDraw(true);
+    tap = null; return;
+  }
+  if (e.pointerId !== pid) return;
+  pid = null; lastP = null; endStroke();
+}
+cv.addEventListener('pointerup', up);
+cv.addEventListener('pointercancel', up);
+cv.addEventListener('pointerleave', function(){ bcur.classList.remove('on'); });
+cv.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+function moveCursor(e){
+  var r = sheet.getBoundingClientRect();
+  bcur.style.transform = 'translate(' + (e.clientX - r.left).toFixed(1) + 'px,' + (e.clientY - r.top).toFixed(1) + 'px)' + (tool === 'rakel' ? ' rotate(' + (cur && cur.ang != null ? cur.ang : 0).toFixed(3) + 'rad)' : '');
+  bcur.classList.add('on');
+}
+function setCursor(){
+  var s = sheet.clientWidth / LW;
+  bcur.className = 'bcur' + (sel.tool === 'pen' ? '' : ' ' + sel.tool) + (bcur.classList.contains('on') ? ' on' : '');
+  bcur.style.setProperty('--bs', Math.round(sel.tool === 'pen' ? PEN_W * s : sel.tool === 'spray' ? SPR_R * 1.6 * s : RAK_L * 2 * s) + 'px');
+  bcur.style.setProperty('--bc', sel.ink);
+}
+function setDraw(on, quiet){
+  drawMode = on; sheet.classList.toggle('drawing', on);
+  pm.setAttribute('aria-pressed', String(on)); pm.textContent = on ? 'Klaar' : 'Teken';
+  if (!quiet) toast(on ? 'Tekenen staat aan. Scrollen kan naast het blad of met Klaar.' : 'Tekenen staat uit. Je kan weer scrollen.');
+}
+pm.addEventListener('click', function(){ setDraw(!drawMode); });
+$('#tapdraw').addEventListener('click', function(){ setDraw(true); });
 
-/* dock */
+/* --- gereedschap --- */
+var tstat = $('#tstat');
+function updStat(){ tstat.textContent = TOOLN[sel.tool] + ' · ' + INKN[sel.ink]; setCursor(); }
+$$('.br').forEach(function(b){ b.addEventListener('click', function(){
+  sel.tool = b.dataset.b; if (!intro) tool = sel.tool;
+  $$('.br').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); }); updStat();
+}); });
 $$('.sw').forEach(function(b){ b.addEventListener('click', function(){
-  finish(); color = b.dataset.c;
-  $$('.sw').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
-  bcur.style.setProperty('--bc', color);
+  sel.ink = b.dataset.c; if (!intro) ink = sel.ink;
+  $$('.sw').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); }); updStat();
 }); });
-$$('.sz').forEach(function(b){ b.addEventListener('click', function(){
-  finish(); maxR = +b.dataset.r;
-  $$('.sz').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
-  bcur.style.setProperty('--bs', Math.round(maxR * 1.6 + 6) + 'px');
-}); });
-bcur.style.setProperty('--bs', Math.round(maxR * 1.6 + 6) + 'px');
-function undo(){ finish(); endIntro(true); if (!strokes.length) return; strokes.pop(); redraw(); wake(); }
+function undo(){
+  finishIntro(); endStroke();
+  if (strokes.length) strokes.pop(); else if (wiped) { strokes = wiped; wiped = null; } else return;
+  redraw();
+}
 undoBtn.addEventListener('click', undo);
-$('#wipe').addEventListener('click', function(){ finish(); endIntro(false); strokes = []; redraw(); wake(); toast('Het doek is weer leeg.'); });
-var pm = $('#pm');
-pm.addEventListener('click', function(){
-  var on = hero.classList.toggle('lock'); pm.setAttribute('aria-pressed', String(on));
-  toast(on ? 'Schildermodus aan: teken vrij. Tik opnieuw om weer te scrollen.' : 'Schildermodus uit: je kan weer scrollen.');
+$('#wipe').addEventListener('click', function(){
+  finishIntro(); endStroke(); if (!strokes.length) return;
+  wiped = strokes; strokes = []; redraw(); toast('Het blad is leeg. Met Terug komt alles terug.');
 });
 D.addEventListener('keydown', function(e){
-  if ((e.metaKey || e.ctrlKey) && !e.shiftKey && e.key.toLowerCase() === 'z' && heroVis && !/INPUT|TEXTAREA|SELECT/.test((e.target.tagName || ''))) { e.preventDefault(); undo(); }
-});
-var saveBtn = $('#save');
-saveBtn.addEventListener('click', function(){
-  finish(); endIntro(true);
-  var pc = D.createElement('canvas'); pc.width = 1800; pc.height = 1200;
-  var c = pc.getContext('2d');
-  c.fillStyle = '#fbf9f4'; c.fillRect(0, 0, 1800, 1200);
-  var ax = 60, ay = 60, aw = 1680, ah = 960, sw = base.width, sh = base.height, s = Math.max(aw / sw, ah / sh);
-  c.save(); c.beginPath(); c.rect(ax, ay, aw, ah); c.clip();
-  c.drawImage(base, ax + (aw - sw * s) / 2, ay + (ah - sh * s) / 2, sw * s, sh * s); c.restore();
-  c.fillStyle = '#16130f'; c.textBaseline = 'alphabetic';
-  c.font = '600 66px Bricolage, sans-serif'; c.fillText('Atelier Nova', 60, 1134);
-  var tw = c.measureText('Atelier Nova').width;
-  c.font = 'italic 48px "Instrument Serif", serif'; c.fillText('groeten uit Dok Noord', 60 + tw + 26, 1132);
-  c.font = '22px "DM Mono", monospace'; c.textAlign = 'right';
-  var d = new Date(); c.fillText('GENT · ' + pad(d.getDate()) + '.' + pad(d.getMonth() + 1) + '.' + d.getFullYear(), 1740, 1126);
-  function done(url){
-    var a = D.createElement('a'); a.download = 'atelier-nova-postkaart.png'; a.href = url;
-    D.body.appendChild(a); a.click(); a.remove();
-    saveBtn.dataset.saved = String((+saveBtn.dataset.saved || 0) + 1);
-    toast('Je postkaart staat in je downloads.');
-  }
-  if (pc.toBlob) pc.toBlob(function(b){ if (!b) { done(pc.toDataURL('image/png')); return; } var u = URL.createObjectURL(b); done(u); setTimeout(function(){ URL.revokeObjectURL(u); }, 5000); }, 'image/png');
-  else done(pc.toDataURL('image/png'));
+  if ((e.metaKey || e.ctrlKey) && !e.shiftKey && e.key.toLowerCase() === 'z' && vis && !/INPUT|TEXTAREA|SELECT/.test(e.target.tagName || '') && !D.querySelector('dialog[open]')) { e.preventDefault(); undo(); }
 });
 
-/* title letters */
-var chars = [];
-['#tl1', '#tl2'].forEach(function(sel){
-  var el = $(sel), t = el.textContent; el.textContent = '';
-  t.split('').forEach(function(ch){ var sp = D.createElement('span'); sp.className = 'ch'; sp.textContent = ch; el.appendChild(sp); chars.push({el: sp, x: 0, y: 0, w: 300, d: 80, ty: 0, rt: 0}); });
-});
-var REST_W = 300, REST_D = 80;
-if (reduce) chars.forEach(function(c){ c.el.style.setProperty('--w', 560); c.el.style.setProperty('--d', 86); });
-function measure(){
-  var hr = hero.getBoundingClientRect();
-  chars.forEach(function(c){ var r = c.el.getBoundingClientRect(); c.x = r.left - hr.left + r.width / 2; c.y = r.top - hr.top + r.height / 2; });
-}
-if (D.fonts && D.fonts.ready) D.fonts.ready.then(function(){ measure(); });
-function stepLetters(now){
-  if (reduce) return false;
-  var moving = false, RAD = Math.max(170, Math.min(340, W * .22)), small = W < 700;
-  var maxW = small ? 720 : 800, maxD = small ? 88 : 100;
-  var wave = intro ? ((now - intro.t0) / 1500) * (chars.length + 6) - 3 : -99;
-  chars.forEach(function(c, i){
-    var k = 0;
-    if (pointer.inside) { var d = Math.hypot(c.x - pointer.x, c.y - pointer.y); k = Math.max(0, 1 - d / RAD); k = k * k * (3 - 2 * k); }
-    if (wave > -99) k = Math.max(k, Math.max(0, 1 - Math.abs(wave - i) / 2.2) * .9);
-    var tw = REST_W + (maxW - REST_W) * k, td = REST_D + (maxD - REST_D) * k, ty = -10 * k, tr = (i % 2 ? 1 : -1) * 4 * k;
-    c.w += (tw - c.w) * .16; c.d += (td - c.d) * .16; c.ty += (ty - c.ty) * .2; c.rt += (tr - c.rt) * .2;
-    if (Math.abs(tw - c.w) > .4 || Math.abs(td - c.d) > .1 || Math.abs(ty - c.ty) > .05) moving = true;
-    var s = c.el.style;
-    s.setProperty('--w', Math.round(c.w)); s.setProperty('--d', c.d.toFixed(1));
-    s.setProperty('--y', c.ty.toFixed(2) + 'px'); s.setProperty('--rt', c.rt.toFixed(2) + 'deg');
-    s.color = k > .62 && pointer.inside ? color : '';
+/* titel: de roze laag schuift een fractie mee met de muis */
+var ovEl = $('.title .ov'), tq = 0;
+if (finePtr && !reduce) hero.addEventListener('pointermove', function(e){
+  if (tq) return;
+  tq = requestAnimationFrame(function(){
+    tq = 0;
+    var r = ovEl.getBoundingClientRect(), dx = (e.clientX - r.left - r.width / 2) / innerWidth, dy = (e.clientY - r.top - r.height / 2) / innerHeight;
+    ovEl.style.setProperty('--mx', (.045 + dx * .06).toFixed(3) + 'em'); ovEl.style.setProperty('--my', (-.035 + dy * .06).toFixed(3) + 'em');
   });
-  return moving;
-}
+});
 
-/* scripted intro strokes */
-var intro = null;
-function introStrokes(){
-  var sm = W < 700, a = [], b = [], N = 70, i, t;
-  for (i = 0; i <= N; i++) { t = i / N;
-    a.push([W * ((sm ? .15 : .5) + (sm ? .85 : .47) * t), H * (.72 - .44 * t) + Math.sin(t * Math.PI * 2.2) * H * .07, (sm ? 18 : 28) * (.3 + .8 * Math.sin(Math.PI * t))]);
-    b.push([W * ((sm ? .05 : .04) + (sm ? .4 : .2) * t), H * ((sm ? .3 : .38) + .05 * Math.sin(t * Math.PI * 3)), (sm ? 12 : 17) * (.35 + .7 * Math.sin(Math.PI * t))]);
+resize();
+setTimeout(startIntro, reduce ? 0 : 450);
+
+/* =========================================================
+   AFFICHE: elke inkt een eigen drukgang, licht verschoven
+   ========================================================= */
+var pdDlg = $('#pd'), pcv = $('#pcv'), pc = pcv.getContext('2d'), prak = $('#prakel'), pdPass = $('#pd-pass'), pdDl = $('#pd-dl');
+var PW = 1000, PH = 1400, RP = null, PL = null, plx = null, pjob = 0, purl = null;
+var INK_ORDER = ['#ffe800', '#ff48b0', '#00a95c', '#0078bf', '#1d1a17'];
+function fontsReady(){
+  if (!D.fonts || !D.fonts.load) return Promise.resolve();
+  return Promise.all(['800 100px Bricolage', 'italic 400 60px "Instrument Serif"', '400 20px "DM Mono"'].map(function(f){ return D.fonts.load(f); })).catch(function(){});
+}
+function posterWS(){ var w = WS[5], s = nextSess(w) || w.sess[0]; return {w: w, s: s, d: s.start}; }
+function paperBase(c){
+  clr(c, PW, PH); c.fillStyle = '#f3eee3'; c.fillRect(0, 0, PW, PH);
+  var id = c.getImageData(0, 0, PW, PH), d = id.data, r = mul(3), i;
+  for (i = 0; i < d.length; i += 4) { var n = (r() - .5) * 13; d[i] += n; d[i + 1] += n; d[i + 2] += n; }
+  c.putImageData(id, 0, 0);
+  c.strokeStyle = '#7d725e'; c.lineWidth = .8; c.globalAlpha = .07;
+  for (i = 0; i < 320; i++) { var x = r() * PW, y = r() * PH, a = r() * 6.28, l = 6 + r() * 18; c.beginPath(); c.moveTo(x, y); c.quadraticCurveTo(x + Math.cos(a + .6) * l * .5, y + Math.sin(a + .6) * l * .5, x + Math.cos(a) * l, y + Math.sin(a) * l); c.stroke(); }
+  c.globalAlpha = 1;
+}
+function regMark(c, x, y){ c.lineWidth = 1.6; c.beginPath(); c.arc(x, y, 10, 0, 6.2832); c.moveTo(x - 17, y); c.lineTo(x + 17, y); c.moveTo(x, y - 17); c.lineTo(x, y + 17); c.stroke(); }
+function txt(c, s, x, y, font, align){ c.font = font; c.textAlign = align || 'left'; c.fillText(s, x, y); }
+function passDraw(c, col, info){
+  strokes.forEach(function(st){ if (st.c === col) { c.globalCompositeOperation = 'source-over'; c.drawImage(renderFull(RP, st), 0, 0); } });
+  c.setTransform(1, 0, 0, 1, 0, 0); c.fillStyle = c.strokeStyle = col; c.textBaseline = 'alphabetic';
+  regMark(c, 25, 700); regMark(c, 975, 700); regMark(c, 500, 28);
+  var x, y;
+  if (col === '#ffe800') {
+    for (y = 1125; y < PH + 10; y += 10) { var rr = 4.6 * sm((y - 1110) / 150); if (rr < .4) continue; for (x = 5; x < PW + 10; x += 10) dot(c, x, y, rr); }
+  } else if (col === '#ff48b0') {
+    dot(c, 838, 236, 118);
+  } else if (col === '#0078bf') {
+    c.save(); c.font = '800 300px Bricolage'; if ('fontStretch' in c) c.fontStretch = 'condensed';
+    if ('letterSpacing' in c) c.letterSpacing = '-4px';
+    var w = c.measureText('Zeefdruk').width, sx = 900 / w, fs = 300;
+    if (sx > 1) { fs = Math.min(380, 300 * sx); c.font = '800 ' + fs + 'px Bricolage'; if ('fontStretch' in c) c.fontStretch = 'condensed'; w = c.measureText('Zeefdruk').width; sx = 900 / w; }
+    c.translate(46, 1238); c.scale(sx, 1); c.textAlign = 'left'; c.fillText('Zeefdruk', 0, 0); c.restore();
+  } else if (col === '#1d1a17') {
+    var n = new Date(), d = info.d;
+    txt(c, 'ATELIER NOVA · DOK NOORD, GENT', 50, 66, '400 17px "DM Mono", monospace');
+    txt(c, 'PROEFDRUK 1/1 · ' + pad(n.getDate()) + '.' + pad(n.getMonth() + 1) + '.' + n.getFullYear(), 950, 66, '400 17px "DM Mono", monospace', 'right');
+    txt(c, DS[d.getDay()], 838, 198, 'italic 400 46px "Instrument Serif", serif', 'center');
+    c.save(); c.font = '800 86px Bricolage, sans-serif'; if ('fontStretch' in c) c.fontStretch = 'condensed'; c.textAlign = 'center'; c.fillText(pad(d.getDate()) + '.' + pad(d.getMonth() + 1), 838, 268); c.restore();
+    txt(c, info.w.tm + ' – ' + info.w.te, 838, 302, '400 17px "DM Mono", monospace', 'center');
+    txt(c, info.w.n, 50, 1302, 'italic 400 52px "Instrument Serif", serif');
+    txt(c, info.w.dur.toUpperCase() + ' · ' + info.w.p + ' €', 950, 1298, '400 18px "DM Mono", monospace', 'right');
+    c.fillRect(50, 1324, 900, 1.6);
+    txt(c, 'WORKSHOP ZEEFDRUK · MAX. 8 MENSEN · VOORBEELDKAAI 21, GENT', 50, 1362, '400 15px "DM Mono", monospace');
+    txt(c, 'ATELIERNOVA.EXAMPLE', 950, 1362, '400 15px "DM Mono", monospace', 'right');
   }
-  return [{c: '#2445ff', p: a, t0: 0, dur: 1150, n: -1}, {c: '#ffd23f', p: b, t0: 450, dur: 900, n: -1}];
 }
-function startIntro(){
-  var list = introStrokes();
-  if (reduce) { list.forEach(function(s){ strokes.push({c: s.c, p: s.p}); }); redraw(); return; }
-  intro = {t0: performance.now(), list: list}; wake();
-}
-function stepIntro(now){
-  var el = now - intro.t0, allDone = true;
-  intro.list.forEach(function(s){
-    var target = Math.min(s.p.length - 1, Math.floor(Math.max(0, el - s.t0) / s.dur * (s.p.length - 1)));
-    if (el < s.t0) { allDone = false; return; }
-    ix.fillStyle = s.c;
-    while (s.n < target) { s.n++; if (s.n === 0) stamp(ix, s.p[0][0], s.p[0][1], s.p[0][2]); else seg(ix, s.p, s.n); }
-    if (s.n >= 0) speckPts(ix, 'i', s.p.slice(Math.max(0, s.n - 4), s.n + 1));
-    if (s.n < s.p.length - 1) allDone = false;
+function printPoster(){
+  var job = ++pjob, info = posterWS();
+  pdDl.setAttribute('aria-disabled', 'true'); pdDl.setAttribute('href', '#');
+  pdPass.textContent = 'Het papier ligt klaar';
+  var d = info.d;
+  $('#pd-ws').textContent = info.w.n + ' met Sam · ' + DN[d.getDay()] + ' ' + d.getDate() + ' ' + MN[d.getMonth()] + ' · ' + info.w.dur + ' · ' + eur(info.w.p) + ' · ' + spLabel(info.s.spots).toLowerCase() + '.';
+  paperBase(pc);
+  fontsReady().then(function(){
+    if (job !== pjob) return;
+    if (!RP) { RP = new Rend(PW, PH, .9, 50, 92); PL = mkc(PW, PH); plx = PL.getContext('2d'); }
+    var used = {}; strokes.forEach(function(s){ used[s.c] = 1; });
+    var passes = INK_ORDER.filter(function(c){ return c !== '#00a95c' || used[c]; }), rr = mul(seed()), i = 0;
+    function next(){
+      if (job !== pjob) return;
+      if (i >= passes.length) { finishPoster(job, passes.length); return; }
+      var col = passes[i], last = i === passes.length - 1;
+      var dx = last ? 0 : Math.round((rr() - .5) * 14), dy = last ? 0 : Math.round((rr() - .5) * 12);
+      clr(plx, PW, PH); passDraw(plx, col, info); speck(plx, 0, 0, PW, PH);
+      i++;
+      pdPass.textContent = 'Drukgang ' + i + ' van ' + passes.length + ' · ' + INKN[col];
+      function lay(a, b){ pc.save(); pc.beginPath(); pc.rect(0, a, PW, b - a); pc.clip(); pc.globalCompositeOperation = 'multiply'; pc.globalAlpha = .96; pc.drawImage(PL, dx, dy); pc.restore(); }
+      if (reduce) { lay(0, PH); next(); return; }
+      prak.style.setProperty('--rc', col); prak.style.top = '0%'; prak.classList.add('on');
+      var t0 = performance.now(), y0 = 0, DUR = 640;
+      requestAnimationFrame(function step(now){
+        if (job !== pjob) return;
+        var k = Math.min(1, (now - t0) / DUR), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2, y1 = Math.round(e * PH);
+        if (y1 > y0) { lay(y0, y1); y0 = y1; }
+        prak.style.top = (e * 100).toFixed(2) + '%';
+        if (k < 1) requestAnimationFrame(step); else { prak.classList.remove('on'); setTimeout(next, 160); }
+      });
+    }
+    next();
   });
-  dirty = true;
-  if (allDone && el > 1600) endIntro(true);
 }
-function endIntro(keep){
-  if (!intro) return;
-  var list = intro.list; intro = null; ix.clearRect(0, 0, W, H);
-  if (keep) { list.forEach(function(s){ strokes.unshift({c: s.c, p: s.p}); }); redraw(); }
-  chars.forEach(function(c){ c.el.style.color = ''; });
+function finishPoster(job, n){
+  pdPass.textContent = 'Klaar · ' + n + ' drukgangen, elk licht verschoven';
+  var ok = function(url){ if (job !== pjob) return; pdDl.href = url; pdDl.removeAttribute('aria-disabled'); };
+  if (pcv.toBlob) pcv.toBlob(function(b){ if (!b) { ok(pcv.toDataURL('image/png')); return; } if (purl) URL.revokeObjectURL(purl); purl = URL.createObjectURL(b); ok(purl); }, 'image/png');
+  else ok(pcv.toDataURL('image/png'));
 }
-
-/* render loop: runs only while the hero is visible, the tab is visible and something is changing */
-var heroVis = true, running = false, idle = 0;
-function onScreen(){ var r = hero.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
-function wake(){ if (running || !heroVis || D.hidden || !onScreen()) return; running = true; idle = 0; requestAnimationFrame(frame); }
-function frame(now){
-  if (!heroVis || D.hidden) { running = false; return; }
-  var act = false;
-  if (intro) { stepIntro(now); act = true; }
-  if (cur && cur.mouse && performance.now() - cur.last > 420) { finish(); lastPt = null; }
-  if (stepLetters(now)) act = true;
-  if (finePtr && pointer.inside) bcur.style.transform = 'translate3d(' + pointer.x + 'px,' + pointer.y + 'px,0)';
-  if (dirty) {
-    ctx.drawImage(base, 0, 0, W, H);
-    ctx.save(); ctx.globalCompositeOperation = 'multiply';
-    if (intro) ctx.drawImage(ilayer, 0, 0, W, H);
-    if (cur) ctx.drawImage(layer, 0, 0, W, H);
-    ctx.restore(); dirty = false; act = true;
-  }
-  if (cur) act = true;
-  idle = act ? 0 : idle + 1;
-  if (idle > 30) { running = false; return; }
-  requestAnimationFrame(frame);
-}
-if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ heroVis = es[0].isIntersecting; if (heroVis) wake(); else finish(); }).observe(hero);
-D.addEventListener('visibilitychange', function(){ if (!D.hidden) wake(); else finish(); });
-var rzT; addEventListener('resize', function(){ clearTimeout(rzT); rzT = setTimeout(size, 120); });
-size();
-setTimeout(startIntro, reduce ? 0 : 350);
+$('#mkposter').addEventListener('click', function(){
+  finishIntro(); endStroke();
+  if (!strokes.length) { toast('Teken eerst iets op het blad.'); return; }
+  openDlg(pdDlg, this); printPoster();
+});
+pdDlg.addEventListener('close', function(){ pjob++; prak.classList.remove('on'); });
+pdDl.addEventListener('click', function(e){
+  if (pdDl.getAttribute('aria-disabled') === 'true') { e.preventDefault(); return; }
+  toast('Je affiche staat in je downloads.');
+});
+$('#pd-go').addEventListener('click', function(){
+  var from = $('#mkposter'); closeDlg(pdDlg);
+  setTimeout(function(){ openWS(5, null, from); }, 60);
+});
 
 /* =========================================================
    WORKSHOPS
    ========================================================= */
-var COL = {b: '#2445ff', p: '#ff4f9a', y: '#ffd23f', o: '#ff6b2c', g: '#10a37a', k: '#16130f'};
-var DISC = {keramiek: {n: 'Keramiek', c: '#ff6b2c', code: 'KER'}, druk: {n: 'Zeefdruk & grafiek', c: '#ff4f9a', code: 'DRU'}, tekenen: {n: 'Tekenen', c: '#16130f', code: 'TEK'}, schilderen: {n: 'Schilderen', c: '#2445ff', code: 'SCH'}};
+var COL = {b: '#0078bf', p: '#ff48b0', y: '#ffe800', o: '#ff6b2c', g: '#00a95c', k: '#16130f'};
+var DISC = {keramiek: {n: 'Keramiek', c: '#ff6b2c', code: 'KER'}, druk: {n: 'Zeefdruk & grafiek', c: '#ff48b0', code: 'DRU'}, tekenen: {n: 'Tekenen', c: '#16130f', code: 'TEK'}, schilderen: {n: 'Schilderen', c: '#0078bf', code: 'SCH'}};
 var LV = {beginner: 'Beginner', alle: 'Voor iedereen', gevorderd: 'Gevorderd', kinderen: 'Kinderen'};
 var T = {
   nora: {n: 'Nora', r: 'Keramist, draait sinds 2009 en geeft de meeste keramiekreeksen.', c: '#ff6b2c'},
-  sam: {n: 'Sam', r: 'Grafisch kunstenaar en drukker, zette de oude etspers weer aan de praat.', c: '#ff4f9a'},
-  lieve: {n: 'Lieve', r: 'Tekenaar en schilder, begeleidt de modelavonden en tekent het liefst buiten.', c: '#2445ff'},
-  ines: {n: 'Ines', r: 'Gastdocent aquarel. Werkt met losse, natte lagen en veel geduld.', c: '#10a37a'},
-  jonas: {n: 'Jonas', r: 'Gastdocent glazuur. Mengt al zijn glazuren zelf en deelt graag zijn recepten.', c: '#ffd23f'}
+  sam: {n: 'Sam', r: 'Grafisch kunstenaar en drukker, zette de oude etspers weer aan de praat.', c: '#ff48b0'},
+  lieve: {n: 'Lieve', r: 'Tekenaar en schilder, begeleidt de modelavonden en tekent het liefst buiten.', c: '#0078bf'},
+  ines: {n: 'Ines', r: 'Gastdocent aquarel. Werkt met losse, natte lagen en veel geduld.', c: '#00a95c'},
+  jonas: {n: 'Jonas', r: 'Gastdocent glazuur. Mengt al zijn glazuren zelf en deelt graag zijn recepten.', c: '#ffe800'}
 };
 var WS = [
   {n: 'Draaien voor beginners', d: 'keramiek', lv: 'beginner', who: 'nora', tm: '19:00', te: '21:30', meet: 4, step: 7, starts: [['2026-11-03', 3], ['2026-12-01', 6]], p: 185, c: ['o', 'b'], bg: '#f3efe6', v: 0, dur: '4 avonden',
    txt: 'Centreren, optrekken en afdraaien. Je begint bij een klomp klei en eindigt met vier stukken om mee naar huis te nemen.', make: ['Een kom en een beker op de draaischijf', 'Een kleine schaal en een vrije vorm', 'Je eigen glazuur op de laatste avond'], mat: ['10 kg steengoedklei', 'Twee glazuren naar keuze', 'Biscuit- en glazuurbak', 'Schort en gereedschap']},
-  {n: 'Handvormen en glazuur', d: 'keramiek', lv: 'alle', who: 'nora', tm: '19:00', te: '21:30', meet: 3, step: 7, starts: [['2026-11-05', 4], ['2026-12-03', 8]], p: 135, c: ['o', 'p'], bg: '#ffd23f', v: 1, dur: '3 avonden',
+  {n: 'Handvormen en glazuur', d: 'keramiek', lv: 'alle', who: 'nora', tm: '19:00', te: '21:30', meet: 3, step: 7, starts: [['2026-11-05', 4], ['2026-12-03', 8]], p: 135, c: ['o', 'p'], bg: '#ffe800', v: 1, dur: '3 avonden',
    txt: 'Zonder draaischijf: knijpen, rollen en plaatwerk. De tweede avond gaat volledig over glazuren en kleur.', make: ['Een set van drie kleine kommetjes', 'Een vaas uit plaatwerk', 'Proeftegels met je favoriete glazuren'], mat: ['Klei en slib', 'Alle huisglazuren', 'Twee ovenbeurten']},
   {n: 'Glazuurlab', d: 'keramiek', lv: 'gevorderd', who: 'jonas', tm: '18:30', te: '21:30', meet: 2, step: 7, starts: [['2026-11-13', 4]], p: 90, c: ['g', 'y'], bg: '#e9e3d6', v: 0, dur: '2 avonden',
    txt: 'Voor wie al draait of boetseert. Je leert glazuren wegen, mengen en testen, en vertrekt met je eigen recept.', make: ['Een reeks van twaalf testtegels', 'Een eigen glazuurrecept op papier', 'Twee geglazuurde stukken van thuis'], mat: ['Grondstoffen en pigmenten', 'Weegschalen en zeven', 'Een glazuurbak']},
@@ -1692,13 +1952,13 @@ var WS = [
    txt: 'Beesten, bekers en monsters uit klei. Op de laatste woensdag komen de ouders naar de mini-expo.', make: ['Een monster, een beest en een beker', 'Een tegel met hun eigen tekening', 'Een mini-expo voor de ouders'], mat: ['Klei en kinderglazuur', 'Vieruurtje en drankje', 'Ovenbeurten']},
   {n: 'Zeefdruk op textiel', d: 'druk', lv: 'alle', who: 'sam', tm: '10:00', te: '17:00', meet: 1, step: 1, starts: [['2026-11-14', 6], ['2026-11-28', 2], ['2026-12-12', 7]], p: 95, c: ['p', 'y'], bg: '#f3efe6', v: 0, dur: '1 dag',
    txt: 'Van ontwerp tot bedrukt T-shirt in één dag. Je belicht je eigen raam en drukt in twee kleuren.', make: ['Een ontwerp in twee kleuren', 'Je eigen belicht zeefraam', 'Drie bedrukte stuks textiel'], mat: ['Raam, emulsie en textielinkt', 'Twee T-shirts of tassen', 'Middagsoep en koffie']},
-  {n: 'Posters in drie kleuren', d: 'druk', lv: 'gevorderd', who: 'sam', tm: '19:00', te: '22:00', meet: 2, step: 7, starts: [['2026-11-16', 1], ['2026-12-07', 5]], p: 120, c: ['b', 'p'], bg: '#ffd23f', v: 1, dur: '2 avonden',
+  {n: 'Posters in drie kleuren', d: 'druk', lv: 'gevorderd', who: 'sam', tm: '19:00', te: '22:00', meet: 2, step: 7, starts: [['2026-11-16', 1], ['2026-12-07', 5]], p: 120, c: ['b', 'p'], bg: '#ffe800', v: 1, dur: '2 avonden',
    txt: 'Registratie, rasters en overdruk. Je vertrekt met een oplage van vijftien posters op A2.', make: ['Een ontwerp in drie lagen', 'Een oplage van 15 posters op A2', 'Inzicht in rasters en overdruk'], mat: ['Drie zeeframen', 'Papier en inkt', 'Droogrek voor je oplage']},
   {n: 'Linosnede en handdruk', d: 'druk', lv: 'beginner', who: 'sam', tm: '19:00', te: '21:30', meet: 3, step: 7, starts: [['2026-11-18', 5]], p: 105, c: ['k', 'o'], bg: '#f3efe6', v: 2, dur: '3 avonden',
    txt: 'Snijden in linoleum en drukken op de etspers van de oude drukkerij. Rustig werk met een mooi resultaat.', make: ['Een linosnede van 20 × 20 cm', 'Een kleine oplage op de etspers', 'Een kaartje in twee kleuren'], mat: ['Linoleum en gutsen', 'Drukinkt en papier', 'Gebruik van de etspers']},
   {n: 'Modeltekenen', d: 'tekenen', lv: 'gevorderd', who: 'lieve', tm: '19:30', te: '21:30', meet: 6, step: 7, starts: [['2026-11-04', 0], ['2027-01-13', 8]], p: 140, c: ['p', 'y'], bg: '#f3efe6', v: 0, dur: '6 weken',
    txt: 'Naar levend model, met poses van twee tot twintig minuten. Over gewicht, ritme en durven weglaten.', make: ['Snelle gebaarstudies', 'Langere studies in houtskool en conté', 'Een map met zes avonden werk'], mat: ['Houtskool, conté en papier', 'Ezels en tekenplanken', 'Vergoeding voor het model']},
-  {n: 'Urban sketching in Gent', d: 'tekenen', lv: 'alle', who: 'lieve', tm: '10:00', te: '12:30', meet: 4, step: 7, starts: [['2026-11-08', 7]], p: 110, c: ['b', 'o'], bg: '#ffd23f', v: 0, dur: '4 zondagen',
+  {n: 'Urban sketching in Gent', d: 'tekenen', lv: 'alle', who: 'lieve', tm: '10:00', te: '12:30', meet: 4, step: 7, starts: [['2026-11-08', 7]], p: 110, c: ['b', 'o'], bg: '#ffe800', v: 0, dur: '4 zondagen',
    txt: 'Buiten tekenen op vier plekken in de stad. Bij regen schuiven we het atelier in met de schetsen van de dag.', make: ['Vier stadsgezichten', 'Een eigen schetsboek vol', 'Snelle kleur met waterverf'], mat: ['Schetsboek en fineliner', 'Reisdoosje waterverf', 'Klapstoeltje']},
   {n: 'Strip- en tekenclub 10 – 14 jaar', d: 'tekenen', lv: 'kinderen', who: 'lieve', tm: '10:00', te: '12:00', meet: 4, step: 7, starts: [['2026-11-07', 3]], p: 70, c: ['o', 'b'], bg: '#f3efe6', v: 1, dur: '4 zaterdagen',
    txt: 'Personages bedenken, een verhaal in vakjes en een eigen mini-strip om te kopiëren voor vrienden.', make: ['Een eigen personage', 'Een strip van één pagina', 'Twintig kopieën om uit te delen'], mat: ['Papier, potloden en inkt', 'Kopieën van de strip', 'Vieruurtje']},
@@ -1720,7 +1980,7 @@ function nextSess(w){ for (var i = 0; i < w.sess.length; i++) if (w.sess[i].star
 function dayLabel(w){ var o = [1, 2, 3, 4, 5, 6, 0].filter(function(x){ return w.dows.indexOf(x) > -1; }); return o.map(function(x){ return DS[x]; }).join(' + '); }
 function fdate(d){ return d.getDate() + ' ' + MS[d.getMonth()]; }
 function spLabel(n){ return n === 0 ? 'Volzet' : n === 1 ? 'Nog 1 plaats' : n <= 3 ? 'Nog ' + n + ' plaatsen' : n + ' plaatsen vrij'; }
-function fgFor(c){ return (c === '#2445ff' || c === '#16130f') ? '#fff' : '#16130f'; }
+function fgFor(c){ return (c === '#0078bf' || c === '#16130f') ? '#fff' : '#16130f'; }
 
 function art(w, extra){
   var a = COL[w.c[0]], b = COL[w.c[1]], v = w.v, M = '';
@@ -1738,7 +1998,7 @@ function art(w, extra){
     else M = G1 + '<path d="M60 50h220a20 20 0 0 1 20 20v100a20 20 0 0 1-20 20H150l-40 40v-40H60a20 20 0 0 1-20-20V70a20 20 0 0 1 20-20z" fill="' + a + '"/>' + E + G2 + '<path d="m300 150 18 38 42 5-31 28 9 41-38-21-37 21 8-41-31-28 42-5z" fill="' + b + '"/>' + E + '<g fill="#16130f"><circle cx="110" cy="120" r="7"/><circle cx="170" cy="120" r="7"/><circle cx="230" cy="120" r="7"/></g>';
   } else {
     if (v === 0) M = G1 + '<path d="M24 82C110 40 232 128 378 64v74C232 200 110 112 24 156z" fill="' + a + '"/>' + E + G2 + '<path d="M24 176C140 136 252 226 378 166v66C252 292 140 202 24 242z" fill="' + b + '"/>' + E;
-    else M = G1 + '<ellipse cx="170" cy="150" rx="54" ry="120" transform="rotate(34 170 150)" fill="' + a + '" opacity=".9"/>' + E + G2 + '<ellipse cx="240" cy="152" rx="50" ry="110" transform="rotate(-26 240 152)" fill="' + b + '" opacity=".85"/><circle cx="330" cy="70" r="26" fill="#ffd23f"/>' + E;
+    else M = G1 + '<ellipse cx="170" cy="150" rx="54" ry="120" transform="rotate(34 170 150)" fill="' + a + '" opacity=".9"/>' + E + G2 + '<ellipse cx="240" cy="152" rx="50" ry="110" transform="rotate(-26 240 152)" fill="' + b + '" opacity=".85"/><circle cx="330" cy="70" r="26" fill="#ffe800"/>' + E;
   }
   return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"' + (extra || '') + '><rect width="400" height="300" fill="' + w.bg + '"/>' + M + '</svg>';
 }
@@ -2048,10 +2308,10 @@ lb.addEventListener('keydown', function(e){ if (e.key === 'ArrowLeft') showArt(l
    VOUCHER
    ========================================================= */
 var VT = {
-  blauw: {bg: '#2445ff', a: '#ff4f9a', b: '#ffd23f', fg: '#f3efe6', bl: 'multiply'},
-  zon: {bg: '#ffd23f', a: '#ff6b2c', b: '#ff4f9a', fg: '#16130f', bl: 'multiply'},
-  munt: {bg: '#10a37a', a: '#2445ff', b: '#ffd23f', fg: '#16130f', bl: 'multiply'},
-  inkt: {bg: '#16130f', a: '#ff4f9a', b: '#ffd23f', fg: '#f3efe6', bl: 'normal'}
+  blauw: {bg: '#0078bf', a: '#ff48b0', b: '#ffe800', fg: '#f3efe6', bl: 'multiply'},
+  zon: {bg: '#ffe800', a: '#ff6b2c', b: '#ff48b0', fg: '#16130f', bl: 'multiply'},
+  munt: {bg: '#00a95c', a: '#0078bf', b: '#ffe800', fg: '#16130f', bl: 'multiply'},
+  inkt: {bg: '#16130f', a: '#ff48b0', b: '#ffe800', fg: '#f3efe6', bl: 'normal'}
 };
 var V = {a: 50, own: false}, vEl = $('#voucher'), vown = $('#v-own');
 var vu = add(TODAY, 365); $('#vp-valid').textContent = MN[vu.getMonth()] + ' ' + vu.getFullYear();

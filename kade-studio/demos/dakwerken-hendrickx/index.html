@@ -1,288 +1,312 @@
 <!doctype html>
-<!-- Voorbeeldontwerp door Kade Studio. Fictieve zaak: Dakwerken Hendrickx bestaat niet. Concept-site, geen echte offerteaanvragen. Alle cijfers, prijzen, reviews en vermeldingen zijn illustratief. Foto's: Unsplash (zie img/CREDITS.md). -->
+<!-- Voorbeeldontwerp door Kade Studio. Fictieve zaak: Dakwerken Hendrickx bestaat niet. Niet de officiële website van een bestaand bedrijf. Concept-site, geen echte offerteaanvragen. Alle cijfers, prijzen, reviews en vermeldingen zijn illustratief. Foto's: Unsplash (zie img/CREDITS.md). -->
 <html lang="nl-BE">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dakwerken Hendrickx | Dakwerker in Lier: nieuwe daken, renovatie, isolatie</title>
-<meta name="description" content="Voorbeeldsite: dakwerker in Lier en omgeving sinds 1998. Hellende en platte daken, dakisolatie, dakgoten, zonnepanelen en herstellingen. Prijsindicatie online, offerte binnen 48 uur, 10 jaar garantie.">
+<meta name="description" content="Voorbeeldsite: dakwerker in Lier en omgeving sinds 1998. Hellende en platte daken, dakisolatie, dakgoten, zonnepanelen en herstellingen. Richtprijs online, offerte binnen 48 uur, 10 jaar garantie.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#16191d">
-<link rel="preload" href="fonts/antonio-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/hero.jpg" as="image">
+<meta name="theme-color" content="#eeeae1">
+<meta name="color-scheme" content="light">
+<link rel="preload" href="fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-mono-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:"Antonio";src:url(fonts/antonio-latin-wght-normal.woff2) format("woff2");font-weight:100 700;font-display:swap}
-@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken-grotesk-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 @font-face{font-family:"IBM Plex Mono";src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
 :root{
-  --paper:#f3f0e9;--paper-2:#e9e4d9;--card:#fbfaf6;
-  --ink:#16191d;--ink-2:#20252c;--ink-3:#2b313a;
-  --text:#2a2f36;--muted:#61666e;--rule:rgba(22,25,29,.14);--rule-2:rgba(22,25,29,.32);
-  --on-dk:#ebe8e1;--on-dk-muted:#a2a8b0;--rule-dk:rgba(235,232,225,.14);
-  --accent:#f2621f;--accent-2:#ff7a3c;--accent-ink:#b4440e;--ok:#2f7a4f;--err:#b3261e;
-  --f-disp:"Antonio","Arial Narrow",sans-serif;--f-body:"Hanken Grotesk",system-ui,-apple-system,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  --wrap:1320px;--g:clamp(1rem,3.6vw,3rem);
-  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.5rem;--s6:2rem;--s7:3rem;--s8:4rem;--s9:6rem;--s10:8rem;
-  --r:2px;--ease:cubic-bezier(.2,.7,.1,1);
-  --hdr:76px;
+  --paper:#eeeae1;--paper-2:#e5e0d4;--card:#f7f4ee;
+  --ink:#252422;--ink-2:#2f2e2b;--ink-3:#3b3a36;
+  --text:#2f2e2b;--muted:#5f5c56;--rule:rgba(37,36,34,.16);--rule-2:rgba(37,36,34,.38);
+  --on-dk:#eeeae1;--on-dk-muted:#b0aba1;--rule-dk:rgba(238,234,225,.16);
+  --terra:#ad4b29;--terra-2:#c25d36;--terra-ink:#9a4122;--terra-lt:#e08a62;
+  --wood:#e2cfae;--ok:#2f6b47;--err:#a8261e;
+  --f-body:"Archivo",system-ui,-apple-system,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --wrap:1360px;--g:clamp(1rem,3.4vw,3rem);
+  --r:0px;--ease:cubic-bezier(.2,.7,.1,1);
+  --hdr:72px;
+  --grid:repeating-linear-gradient(0deg,transparent 0 23px,rgba(37,36,34,.06) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(37,36,34,.06) 23px 24px);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
-body{margin:0;background:var(--paper);color:var(--text);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6;font-feature-settings:"ss01";-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,svg{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit}
 button,input,select,textarea{font:inherit;color:inherit}
-h1,h2,h3,h4{font-family:var(--f-disp);font-weight:600;line-height:.98;margin:0;color:var(--ink);text-transform:uppercase;letter-spacing:-.005em}
+h1,h2,h3,h4{font-family:var(--f-body);font-weight:800;font-stretch:112%;line-height:1;margin:0;color:var(--ink);letter-spacing:-.025em}
 p{margin:0}
 ul,ol{margin:0;padding:0;list-style:none}
 .wrap{width:min(var(--wrap),100% - 2*var(--g));margin-inline:auto}
 .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 .skip{position:absolute;left:1rem;top:-5rem;background:var(--ink);color:var(--paper);padding:.7rem 1rem;z-index:200;font-weight:600}
 .skip:focus{top:1rem}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 .mono{font-family:var(--f-mono);font-weight:500;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
 .tnum{font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--terra);margin-right:.5rem;vertical-align:1px}
 
 /* Kade ribbon */
 .kade{background:#74DB4B;color:#111;font-size:.8rem;line-height:1.4;text-align:center;padding:.45rem var(--g);display:flex;justify-content:center;gap:.3rem 1.2rem;flex-wrap:wrap;position:relative;z-index:60}
 .kade a{color:inherit;font-weight:700}
 
-/* utility bar */
-.util{background:var(--ink);color:var(--on-dk-muted);font-size:.8125rem}
-.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:36px}
-.util .u-l{display:flex;gap:1.6rem}
-.util a{color:var(--on-dk);text-decoration:none;font-weight:600}
-.util a:hover{color:var(--accent-2)}
-.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:.5rem;vertical-align:1px;box-shadow:0 0 0 0 rgba(242,98,31,.6);animation:pulse 2.2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,98,31,.55)}70%{box-shadow:0 0 0 8px rgba(242,98,31,0)}100%{box-shadow:0 0 0 0 rgba(242,98,31,0)}}
-
 /* header */
-.hdr{position:sticky;top:0;z-index:50;background:rgba(243,240,233,.94);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
-.hdr .wrap{display:flex;align-items:center;gap:2rem;height:var(--hdr);transition:height .35s var(--ease)}
-.hdr.is-condensed{border-color:var(--rule);box-shadow:0 8px 24px -18px rgba(22,25,29,.35)}
-.hdr.is-condensed .wrap{height:60px}
-.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--ink);flex:none}
-.brand svg{width:38px;height:38px;transition:width .35s var(--ease),height .35s var(--ease)}
-.hdr.is-condensed .brand svg{width:32px;height:32px}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(238,234,225,.95);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule-2)}
+.hdr .wrap{display:flex;align-items:center;gap:2rem;height:var(--hdr)}
+.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--ink);flex:none}
+.brand svg{width:40px;height:40px}
 .brand-t{display:flex;flex-direction:column;line-height:1}
-.brand-t b{font-family:var(--f-disp);font-weight:700;font-size:1.55rem;letter-spacing:.06em;text-transform:uppercase}
-.brand-t span{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
+.brand-t b{font-weight:800;font-stretch:125%;font-size:1.3rem;letter-spacing:.02em;text-transform:uppercase}
+.brand-t span{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.35rem}
 .nav{margin-left:auto}
-.nav ul{display:flex;gap:.25rem}
-.nav a{display:block;text-decoration:none;font-size:.9375rem;font-weight:500;color:var(--ink);padding:.5rem .8rem;position:relative}
-.nav a::after{content:"";position:absolute;left:.8rem;right:.8rem;bottom:.25rem;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav ul{display:flex;gap:.1rem}
+.nav a{display:block;text-decoration:none;font-size:.9375rem;font-weight:500;color:var(--ink);padding:.5rem .7rem;position:relative}
+.nav a::after{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.25rem;height:2px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
 .nav a:hover::after,.nav a[aria-current="true"]::after{transform:scaleX(1)}
 .hdr-cta{display:flex;align-items:center;gap:1.1rem;flex:none}
-.hdr-tel{text-decoration:none;font-weight:600;font-size:.9375rem;color:var(--ink);display:flex;align-items:center;gap:.45rem;white-space:nowrap}
+.hdr-tel{text-decoration:none;font-weight:700;font-size:.9375rem;color:var(--ink);display:flex;align-items:center;gap:.45rem;white-space:nowrap}
 .hdr-tel svg{width:16px;height:16px}
-.menubtn{display:none;margin-left:auto;align-items:center;gap:.6rem;background:none;border:1px solid var(--rule-2);border-radius:var(--r);padding:.55rem .8rem;font-weight:600;font-size:.875rem;color:var(--ink);cursor:pointer}
+.menubtn{display:none;margin-left:auto;align-items:center;gap:.6rem;background:none;border:1px solid var(--rule-2);padding:.55rem .8rem;font-weight:600;font-size:.875rem;color:var(--ink);cursor:pointer;min-height:44px}
 .menubtn i{position:relative;width:16px;height:10px;display:block}
 .menubtn i::before,.menubtn i::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .3s var(--ease),top .3s var(--ease)}
 .menubtn i::before{top:1px}.menubtn i::after{top:8px}
 .menubtn[aria-expanded="true"] i::before{top:4.5px;transform:rotate(45deg)}
 .menubtn[aria-expanded="true"] i::after{top:4.5px;transform:rotate(-45deg)}
-.mnav{position:fixed;inset:0;z-index:45;background:var(--paper);padding:calc(var(--mtop,120px) + 1.5rem) var(--g) 7rem;display:flex;flex-direction:column;gap:2rem;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility 0s .3s}
+.mnav{position:fixed;inset:0;z-index:49;background:var(--paper);padding:calc(var(--mtop,120px) + 1.5rem) var(--g) 7rem;display:flex;flex-direction:column;gap:2rem;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility 0s .3s}
 .mnav.open{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--ease),transform .3s var(--ease)}
-.mnav ol{counter-reset:m;border-top:1px solid var(--rule)}
+.mnav ol{border-top:1px solid var(--rule)}
 .mnav li{border-bottom:1px solid var(--rule)}
-.mnav a{display:flex;align-items:baseline;gap:1rem;padding:.9rem 0;text-decoration:none;font-family:var(--f-disp);font-size:2.1rem;line-height:1;text-transform:uppercase;color:var(--ink)}
-.mnav a span{font-family:var(--f-mono);font-size:.7rem;color:var(--muted)}
+.mnav a{display:flex;align-items:baseline;gap:1rem;padding:.85rem 0;text-decoration:none;font-weight:800;font-stretch:112%;font-size:1.9rem;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.mnav a span{font-family:var(--f-mono);font-size:.7rem;font-weight:500;color:var(--terra-ink);letter-spacing:.06em}
 .mnav .m-foot{display:grid;gap:.6rem;font-size:.95rem;color:var(--muted)}
-.mnav .m-foot a{display:block;font-family:var(--f-body);font-size:1rem;font-weight:600;text-transform:none;padding:0;color:var(--ink)}
+.mnav .m-foot a{display:block;font-size:1rem;font-weight:700;font-stretch:100%;letter-spacing:0;padding:0;color:var(--ink)}
 
 /* buttons */
-.btn{--bg:var(--accent);--fg:var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:52px;padding:.85rem 1.4rem;border:1px solid var(--bg);border-radius:var(--r);background:var(--bg);color:var(--fg);font-weight:600;font-size:.9688rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease),transform .25s var(--ease)}
+.btn{--bg:var(--terra);--fg:#fff;--bd:var(--bg);display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:52px;padding:.85rem 1.4rem;border:1.5px solid var(--bd);background:var(--bg);color:var(--fg);font-weight:700;font-size:.9688rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
 .btn svg{width:16px;height:16px;flex:none;transition:transform .3s var(--ease)}
-.btn:hover{--bg:var(--accent-2)}
+.btn:hover{--bg:var(--terra-ink)}
 .btn:hover svg{transform:translateX(3px)}
 .btn:active{transform:translateY(1px)}
 .btn-dark{--bg:var(--ink);--fg:var(--paper)}
 .btn-dark:hover{--bg:#000}
-.btn-line{--bg:transparent;--fg:var(--ink);border-color:var(--rule-2)}
-.btn-line:hover{--bg:var(--ink);--fg:var(--paper);border-color:var(--ink)}
-.btn-line-dk{--bg:transparent;--fg:var(--on-dk);border-color:rgba(235,232,225,.35)}
-.btn-line-dk:hover{--bg:var(--on-dk);--fg:var(--ink);border-color:var(--on-dk)}
-.btn-sm{min-height:42px;padding:.55rem 1rem;font-size:.875rem}
+.btn-line{--bg:transparent;--fg:var(--ink);--bd:var(--ink)}
+.btn-line:hover{--bg:var(--ink);--fg:var(--paper);--bd:var(--ink)}
+.btn-line-dk{--bg:transparent;--fg:var(--on-dk);--bd:rgba(238,234,225,.5)}
+.btn-line-dk:hover{--bg:var(--on-dk);--fg:var(--ink);--bd:var(--on-dk)}
+.btn-sm{min-height:44px;padding:.55rem 1rem;font-size:.875rem}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
-.lnk{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--rule-2);padding-bottom:.2rem;transition:border-color .25s,gap .25s var(--ease)}
-.lnk:hover{border-color:var(--accent);gap:.75rem}
+.lnk{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;color:var(--ink);border-bottom:1.5px solid var(--terra);padding-bottom:.2rem;transition:gap .25s var(--ease)}
+.lnk:hover{gap:.75rem}
 .lnk svg{width:14px;height:14px}
 
-/* hero */
-.hero{position:relative;border-bottom:1px solid var(--rule)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,5.2fr) minmax(0,6.8fr);min-height:min(calc(100vh - 112px),860px);min-height:min(calc(100svh - 112px),860px)}
-.hero-txt{display:flex;flex-direction:column;justify-content:space-between;gap:var(--s6);padding:clamp(2rem,5vh,4rem) clamp(2rem,4vw,4rem) clamp(2rem,4vh,3rem) max(var(--g),calc((100vw - var(--wrap))/2))}
-.eyebrow{display:flex;align-items:center;gap:.75rem;color:var(--muted)}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--ink)}
-.hero h1{font-size:clamp(3.4rem,min(6.4vw,9.4vh),7.4rem);font-weight:600;line-height:.9;margin-top:1.1rem;letter-spacing:-.01em}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero .lead{margin-top:1.6rem;font-size:clamp(1.05rem,1.3vw,1.1875rem);line-height:1.55;max-width:44ch;color:var(--text)}
-.hero .ctas{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem}
-.trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule)}
-.trust li{padding:1rem 1rem 0 0;display:flex;flex-direction:column;gap:.15rem}
-.trust li+li{padding-left:1rem;border-left:1px solid var(--rule)}
-.trust b{font-family:var(--f-disp);font-weight:600;font-size:1.6rem;line-height:1;color:var(--ink);text-transform:uppercase}
-.trust span{font-size:.8125rem;line-height:1.35;color:var(--muted)}
-.sos{display:flex;align-items:center;flex-wrap:wrap;gap:.35rem .9rem;margin-top:1.2rem;padding:.75rem 1rem;background:var(--card);border:1px solid var(--rule);font-size:.875rem}
-.sos b{font-weight:700;color:var(--ink)}
-.sos a{font-weight:700;color:var(--accent-ink);text-decoration:none;white-space:nowrap}
+/* ===== HERO + DAKDOORSNEDE ===== */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);border-bottom:1px solid var(--rule-2);position:relative}
+.hero-copy{padding:clamp(2rem,4.5vh,3.5rem) clamp(1.5rem,3vw,3.5rem) clamp(1.5rem,3vh,2.5rem) max(var(--g),calc((100vw - var(--wrap))/2));display:flex;flex-direction:column;gap:1.6rem;border-right:1px solid var(--rule-2);background:var(--paper)}
+.eyebrow{display:flex;align-items:center;gap:.75rem;color:var(--terra-ink)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:var(--terra)}
+.hero h1{font-size:clamp(2.7rem,min(4.9vw,8.4vh),5.2rem);font-weight:800;font-stretch:110%;line-height:.94;letter-spacing:-.035em;margin-top:.9rem}
+.hero h1 em{font-style:normal;color:var(--terra)}
+.hero .lead{font-size:clamp(1.02rem,1.2vw,1.15rem);line-height:1.55;max-width:46ch;color:var(--text)}
+.ctas{display:flex;flex-wrap:wrap;gap:.6rem}
+.tb{border:1.5px solid var(--ink);background:var(--card);font-size:.875rem}
+.tb-h{display:flex;justify-content:space-between;gap:1rem;padding:.45rem .8rem;background:var(--ink);color:var(--on-dk)}
+.tb dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0}
+.tb dl div{padding:.6rem .8rem .7rem;border-top:1px solid var(--rule-2)}
+.tb dl div:not(:nth-child(3n+1)){border-left:1px solid var(--rule-2)}
+.tb dt{font-family:var(--f-mono);font-size:.625rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tb dd{margin:.15rem 0 0;font-weight:700;color:var(--ink);line-height:1.25}
+.tb dd b{display:block;font-size:1.45rem;font-weight:800;font-stretch:112%;letter-spacing:-.02em;line-height:1.05}
+.sos{display:flex;align-items:center;flex-wrap:wrap;gap:.3rem .9rem;font-size:.9rem}
+.sos b{color:var(--ink)}
+.sos a{font-weight:800;color:var(--terra-ink);text-decoration:none;white-space:nowrap}
 .sos a:hover{text-decoration:underline}
-.hero-pic{position:relative;overflow:hidden;background:var(--ink)}
-.hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:32% 40%;transform:scale(1.04);animation:heroIn 1.6s var(--ease) both}
-@keyframes heroIn{from{transform:scale(1.1);opacity:.4}to{transform:scale(1.04);opacity:1}}
-.hero-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,25,29,.0) 50%,rgba(22,25,29,.55) 100%),linear-gradient(90deg,rgba(22,25,29,.18),transparent 30%)}
-.fig{position:absolute;left:clamp(1rem,2.5vw,2rem);bottom:clamp(1rem,2.5vw,2rem);right:clamp(1rem,2.5vw,2rem);z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;color:#fff}
-.fig .mono{color:rgba(255,255,255,.85)}
-.badge{position:absolute;z-index:2;top:clamp(1rem,2.5vw,2rem);right:clamp(1rem,2.5vw,2rem);width:122px;height:122px;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;text-align:center}
-.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 24s linear infinite}
-.badge b{font-family:var(--f-disp);font-size:2.3rem;line-height:.9;font-weight:600}
-.badge b small{display:block;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.1em;margin-top:.2rem}
-@keyframes spin{to{transform:rotate(360deg)}}
 
-/* figures strip */
-.figs{border-bottom:1px solid var(--rule)}
-.figs ul{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
-.figs li{padding:1.6rem 1.25rem 1.5rem;border-left:1px solid var(--rule)}
-.figs li:first-child{border-left:0;padding-left:0}
-.figs b{display:block;font-family:var(--f-disp);font-weight:500;font-size:clamp(2rem,3.4vw,3rem);line-height:1;color:var(--ink)}
-.figs span{display:block;margin-top:.45rem;font-size:.875rem;color:var(--muted)}
+.dd{position:relative}
+.dd-stage{display:flex;flex-direction:column;padding:clamp(1rem,2.4vh,1.75rem) max(var(--g),calc((100vw - var(--wrap))/2)) clamp(1rem,2.4vh,1.75rem) clamp(1.25rem,2.5vw,2.5rem);gap:.8rem;background:var(--paper-2);background-image:var(--grid)}
+.js .dd:not(.static){height:270vh}
+.js .dd:not(.static) .dd-stage{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));height:calc(100svh - var(--hdr))}
+.dd-top{display:flex;justify-content:space-between;gap:1rem;color:var(--muted);border-bottom:1px solid var(--rule-2);padding-bottom:.6rem}
+.dd-top b{color:var(--ink);font-weight:500}
+.dd-fig{flex:1;min-height:0;position:relative;overflow:hidden}
+.dd-svg{width:100%;height:100%}
+.dd-svg .c-wood{fill:var(--wood);stroke:var(--ink);stroke-width:1.4}
+.dd-svg .c-grain{fill:none;stroke:rgba(37,36,34,.38);stroke-width:1}
+.dd-svg .c-iso{fill:#f2e7c6;stroke:var(--ink);stroke-width:1.4}
+.dd-svg .c-loop{fill:none;stroke:rgba(37,36,34,.5);stroke-width:1.1}
+.dd-svg .c-film{fill:#fff;stroke:var(--ink);stroke-width:1.2}
+.dd-svg .c-dash{fill:none;stroke:var(--terra);stroke-width:1.6;stroke-dasharray:10 6}
+.dd-svg .c-folie{fill:var(--ink-3);stroke:var(--ink);stroke-width:1}
+.dd-svg .c-tile{fill:var(--terra);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round}
+.dd-svg .c-zinc{fill:#b9b7b1;stroke:var(--ink);stroke-width:1.5}
+.dd-svg .c-zinc-l{stroke:var(--ink);stroke-width:1.5}
+.dd-svg .ghost{fill:none;stroke:rgba(37,36,34,.35);stroke-width:1.2;stroke-dasharray:6 6}
+.dd-svg .ann{font-family:var(--f-mono);font-size:15px;letter-spacing:.08em;fill:var(--muted)}
+.dd-svg .dd-l{transition:opacity .35s var(--ease)}
+.dd-svg .dd-dot{fill:var(--ink)}
+.dd-svg .dd-lead{stroke:var(--ink);stroke-width:1.2}
+.dd-svg .dd-n{font-family:var(--f-mono);font-weight:500;font-size:19px;fill:var(--terra-ink)}
+.dd-svg .dd-t{font-family:var(--f-body);font-weight:800;font-stretch:112%;font-size:25px;letter-spacing:-.01em;fill:var(--ink)}
+.dd-svg .dd-c{font-family:var(--f-mono);font-weight:500;font-size:15.5px;fill:var(--muted)}
+.dd-svg .dd-ly.on .dd-dot{fill:var(--terra)}
+.dd-svg .dd-ly.on .dd-lead{stroke:var(--terra);stroke-width:2}
+.dd-svg .dd-ly.on .dd-t{fill:var(--terra-ink)}
+.dd-svg .dd-ly.on [class^="c-"]{stroke:var(--terra-ink);stroke-width:2.4}
+.dd-svg #dd-all{transition:none}
+.js .dd:not(.static) .dd-l.off{opacity:0}
+.dd-cap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.2rem 1.2rem;align-items:end;border-top:1px solid var(--rule-2);padding-top:.8rem}
+.dd-num{font-weight:800;font-stretch:112%;font-size:2.6rem;line-height:.9;letter-spacing:-.03em;color:var(--terra);grid-row:span 2}
+.dd-num small{font-size:.9rem;color:var(--muted);letter-spacing:0}
+.dd-name{font-weight:800;font-stretch:112%;font-size:1.25rem;line-height:1.1;color:var(--ink)}
+.dd-line{font-size:.9375rem;color:var(--muted)}
+.dd-steps{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center}
+.dd-steps button{width:44px;height:36px;border:1px solid var(--rule-2);background:var(--card);font-family:var(--f-mono);font-size:.75rem;font-weight:500;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.dd-steps button:hover{border-color:var(--ink)}
+.dd-steps button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.dd-steps .dd-hint{margin-left:auto;color:var(--muted)}
+.dd-steps .dd-hint i{display:inline-block;font-style:normal;margin-left:.3rem}
+.dd.is-done .dd-hint{visibility:hidden}
 
 /* sections */
 .sec{padding:clamp(4rem,8vw,7.5rem) 0}
-.sh{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:1.2rem;margin-bottom:clamp(2.5rem,5vw,4.5rem);padding-top:1.1rem;border-top:1px solid var(--rule-2)}
-.sh-idx{grid-column:1/4;display:flex;gap:.9rem;align-items:baseline;color:var(--ink)}
-.sh-idx span{color:var(--accent-ink)}
-.sh h2{grid-column:4/13;font-size:clamp(2.6rem,5.4vw,5.2rem);line-height:.92}
+.sh{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:1.2rem;margin-bottom:clamp(2.5rem,5vw,4.5rem);padding-top:1.1rem;border-top:1.5px solid var(--ink)}
+.sh::before,.sh::after{content:"";position:absolute;top:-6px;width:1.5px;height:11px;background:var(--ink)}
+.sh::before{left:0}.sh::after{right:0}
+.sh-idx{grid-column:1/4;display:flex;flex-direction:column;gap:.3rem;color:var(--ink)}
+.sh-idx span{color:var(--terra-ink)}
+.sh-idx small{font-size:.6875rem;color:var(--muted)}
+.sh h2{grid-column:4/13;font-size:clamp(2.4rem,5vw,4.8rem);line-height:.95;letter-spacing:-.035em}
 .sh-lead{grid-column:4/10;font-size:1.125rem;color:var(--muted);max-width:56ch}
 .dk{background:var(--ink);color:var(--on-dk)}
 .dk h2,.dk h3,.dk h4{color:var(--on-dk)}
-.dk .sh{border-color:rgba(235,232,225,.35)}
+.dk .sh{border-color:var(--on-dk)}
+.dk .sh::before,.dk .sh::after{background:var(--on-dk)}
 .dk .sh-idx{color:var(--on-dk)}
-.dk .sh-idx span{color:var(--accent)}
-.dk .sh-lead{color:var(--on-dk-muted)}
+.dk .sh-idx span{color:var(--terra-lt)}
+.dk .sh-idx small,.dk .sh-lead{color:var(--on-dk-muted)}
 .alt{background:var(--paper-2)}
 
 /* services */
 .svc{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem}
 .svc-fig{grid-column:1/6;position:relative}
 .svc-fig .stick{position:sticky;top:100px}
-.svc-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ink-2)}
-.svc-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .6s var(--ease),transform 1.2s var(--ease)}
-.svc-frame img.on{opacity:1;transform:scale(1)}
-.svc-cap{display:flex;justify-content:space-between;margin-top:.8rem;color:var(--muted)}
-.svc-list{grid-column:7/13;border-top:1px solid var(--rule)}
-.srv{position:relative;display:grid;grid-template-columns:3rem minmax(0,1fr) auto;column-gap:1rem;padding:1.6rem 0 1.7rem;border-bottom:1px solid var(--rule);transition:padding .4s var(--ease)}
-.srv::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.svc-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ink-2);outline:1.5px solid var(--ink);outline-offset:8px}
+.svc-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s var(--ease)}
+.svc-frame img.on{opacity:1}
+.svc-cap{display:flex;justify-content:space-between;margin-top:1.2rem;color:var(--muted)}
+.svc-list{grid-column:7/13;border-top:1.5px solid var(--ink)}
+.srv{position:relative;display:grid;grid-template-columns:3rem minmax(0,1fr) auto;column-gap:1rem;padding:1.6rem 0 1.7rem;border-bottom:1px solid var(--rule-2)}
+.srv::before{content:"";position:absolute;left:0;top:-1px;height:3px;width:100%;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .srv:hover::before,.srv.on::before{transform:scaleX(1)}
 .srv-no{color:var(--muted);padding-top:.45rem}
-.srv.on .srv-no{color:var(--accent-ink)}
-.srv h3{font-size:clamp(1.7rem,2.5vw,2.25rem);font-weight:500}
+.srv.on .srv-no{color:var(--terra-ink)}
+.srv h3{font-size:clamp(1.6rem,2.3vw,2.1rem);letter-spacing:-.03em}
 .srv p{margin-top:.6rem;color:var(--muted);max-width:52ch;font-size:1rem}
 .srv .tags{margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.35rem}
-.srv .tags li{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--rule);padding:.2rem .5rem;color:var(--text)}
-.srv-go{grid-column:3;grid-row:1;align-self:start;width:44px;height:44px;border:1px solid var(--rule-2);border-radius:50%;display:grid;place-items:center;color:var(--ink);text-decoration:none;transition:background .3s,border-color .3s,color .3s,transform .4s var(--ease)}
+.srv .tags li{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--rule-2);padding:.2rem .5rem;color:var(--text)}
+.srv-go{grid-column:3;grid-row:1;align-self:start;width:44px;height:44px;border:1.5px solid var(--ink);display:grid;place-items:center;color:var(--ink);text-decoration:none;transition:background .3s,border-color .3s,color .3s}
 .srv-go svg{width:16px;height:16px}
-.srv-go:hover,.srv.on .srv-go{background:var(--accent);border-color:var(--accent);color:var(--ink)}
-.srv-go:hover{transform:rotate(-45deg)}
+.srv-go:hover,.srv.on .srv-go{background:var(--terra);border-color:var(--terra);color:#fff}
 .srv-body{grid-column:2}
 .srv-thumb{display:none}
 
 /* estimator */
-.est{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--rule-dk)}
-.est-ctl{padding:clamp(1.5rem,3vw,2.75rem);border-right:1px solid var(--rule-dk);display:grid;gap:2.2rem;align-content:start}
+.est{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid var(--rule-dk)}
+.est-ctl{padding:clamp(1.25rem,3vw,2.75rem);border-right:1px solid var(--rule-dk);display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;align-content:start}
 .est fieldset{border:0;margin:0;padding:0;min-width:0}
-.est legend,.est .lbl{display:flex;justify-content:space-between;align-items:baseline;width:100%;color:var(--on-dk-muted);margin-bottom:.9rem;padding:0}
+.q{display:grid;gap:.9rem}
+.q-l{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;width:100%;padding:0;color:var(--on-dk)}
+.q-l>span:first-child{display:flex;gap:.8rem;align-items:baseline;font-weight:800;font-stretch:112%;font-size:1.3rem;letter-spacing:-.02em}
+.q-l .qn{font-family:var(--f-mono);font-weight:500;font-size:.75rem;color:var(--terra-lt);letter-spacing:.06em}
 .seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule-dk);border:1px solid var(--rule-dk)}
 .seg label{position:relative;cursor:pointer}
 .seg input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
 .seg span{display:flex;flex-direction:column;gap:.25rem;height:100%;padding:1rem;background:var(--ink);transition:background .25s,color .25s}
-.seg span b{font-family:var(--f-disp);font-weight:500;font-size:1.35rem;text-transform:uppercase;line-height:1;color:var(--on-dk)}
+.seg span b{font-weight:800;font-stretch:112%;font-size:1.15rem;line-height:1;color:var(--on-dk)}
 .seg span small{font-size:.8125rem;color:var(--on-dk-muted)}
 .seg label:hover span{background:var(--ink-2)}
 .seg input:checked+span{background:var(--on-dk)}
 .seg input:checked+span b{color:var(--ink)}
-.seg input:checked+span small{color:#555}
-.seg input:focus-visible+span{outline:2px solid var(--accent);outline-offset:-2px}
-.m2out{font-family:var(--f-disp);font-size:2.6rem;line-height:1;color:var(--on-dk);text-transform:none}
-.range{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer;margin:0;--p:40%}
-.range::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--accent) var(--p),rgba(235,232,225,.22) var(--p))}
-.range::-moz-range-track{height:2px;background:rgba(235,232,225,.22)}
-.range::-moz-range-progress{height:2px;background:var(--accent)}
-.range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--on-dk);border:5px solid var(--ink);box-shadow:0 0 0 1px var(--on-dk);margin-top:-10px;transition:transform .2s}
-.range::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--on-dk);border:4px solid var(--ink);box-shadow:0 0 0 1px var(--on-dk)}
-.range:active::-webkit-slider-thumb{transform:scale(1.15)}
-.range:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.ticks{display:flex;justify-content:space-between;margin-top:.3rem;color:var(--on-dk-muted);font-size:.6875rem}
-.opts{display:grid;gap:1px;background:var(--rule-dk);border:1px solid var(--rule-dk)}
+.seg input:checked+span small{color:#55524c}
+.seg input:focus-visible+span{outline:2px solid var(--terra-lt);outline-offset:-2px}
+.m2out{font-weight:800;font-stretch:112%;font-size:2.2rem;line-height:1;color:var(--on-dk);letter-spacing:-.03em}
+.range{-webkit-appearance:none;appearance:none;width:100%;height:32px;background:transparent;cursor:pointer;margin:0;--p:40%}
+.range::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--terra-lt) var(--p),rgba(238,234,225,.25) var(--p))}
+.range::-moz-range-track{height:2px;background:rgba(238,234,225,.25)}
+.range::-moz-range-progress{height:2px;background:var(--terra-lt)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--on-dk);border:6px solid var(--ink);box-shadow:0 0 0 1.5px var(--on-dk);margin-top:-11px}
+.range::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--on-dk);border:5px solid var(--ink);box-shadow:0 0 0 1.5px var(--on-dk)}
+.range:focus-visible{outline:2px solid var(--terra-lt);outline-offset:4px}
+.ticks{display:flex;justify-content:space-between;margin-top:-.4rem;color:var(--on-dk-muted);font-size:.6875rem}
+.sel-dk{width:100%;min-height:52px;border:1px solid rgba(238,234,225,.35);background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23eeeae1' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 1rem center;color:var(--on-dk);padding:.7rem 2.6rem .7rem 1rem;font-size:1rem;font-weight:600;appearance:none;-webkit-appearance:none;cursor:pointer}
+.sel-dk:focus-visible{outline:2px solid var(--terra-lt);outline-offset:2px}
+.sel-dk option{color:#111;background:#fff}
+.zone{font-size:.875rem;color:var(--on-dk-muted)}
+.zone b{color:var(--on-dk)}
+.extras summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--on-dk-muted);padding:.2rem 0}
+.extras summary::-webkit-details-marker{display:none}
+.extras summary::after{content:"+";font-family:var(--f-mono);font-size:1.1rem;color:var(--on-dk)}
+.extras[open] summary::after{content:"−"}
+.opts{display:grid;gap:1px;background:var(--rule-dk);border:1px solid var(--rule-dk);margin-top:.8rem}
 .opt{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1rem;background:var(--ink);cursor:pointer}
 .opt>span:first-child{display:flex;flex-direction:column}
 .opt b{font-weight:600;font-size:.9688rem;color:var(--on-dk)}
 .opt small{font-size:.8125rem;color:var(--on-dk-muted)}
 .sw{position:relative;flex:none;width:44px;height:24px}
 .sw input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
-.sw i{position:absolute;inset:0;border-radius:99px;border:1px solid rgba(235,232,225,.35);transition:background .25s,border-color .25s}
+.sw i{position:absolute;inset:0;border-radius:99px;border:1px solid rgba(238,234,225,.4);transition:background .25s,border-color .25s}
 .sw i::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--on-dk-muted);transition:transform .3s var(--ease),background .25s}
-.sw input:checked+i{background:var(--accent);border-color:var(--accent)}
-.sw input:checked+i::after{transform:translateX(20px);background:var(--ink)}
-.sw input:focus-visible+i{outline:2px solid var(--accent);outline-offset:3px}
-.step-n{display:flex;align-items:center;border:1px solid rgba(235,232,225,.35);flex:none}
-.step-n button{width:36px;height:36px;background:none;border:0;color:var(--on-dk);font-size:1.1rem;cursor:pointer}
+.sw input:checked+i{background:var(--terra-2);border-color:var(--terra-2)}
+.sw input:checked+i::after{transform:translateX(20px);background:#fff}
+.sw input:focus-visible+i{outline:2px solid var(--terra-lt);outline-offset:3px}
+.step-n{display:flex;align-items:center;border:1px solid rgba(238,234,225,.4);flex:none}
+.step-n button{width:40px;height:40px;background:none;border:0;color:var(--on-dk);font-size:1.1rem;cursor:pointer}
 .step-n button:hover{background:var(--ink-3)}
 .step-n output{min-width:2ch;text-align:center;font-family:var(--f-mono);font-size:.9rem;color:var(--on-dk)}
-.incl{border-top:1px solid var(--rule-dk);padding-top:1.4rem}
-.incl .mono{color:var(--on-dk-muted)}
-.incl ul{margin-top:.9rem;display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.2rem}
-.incl li{position:relative;padding-left:1.2rem;font-size:.875rem;color:var(--on-dk)}
-.incl li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:4px;border-left:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);transform:rotate(-45deg)}
-.est-out{padding:clamp(1.5rem,3vw,2.75rem);display:flex;flex-direction:column;gap:1.6rem;background:linear-gradient(180deg,var(--ink-2),var(--ink))}
-.draw{width:100%;height:auto;border:1px solid var(--rule-dk);background:repeating-linear-gradient(0deg,transparent 0 23px,rgba(235,232,225,.045) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(235,232,225,.045) 23px 24px)}
-.draw .ln{fill:none;stroke:rgba(235,232,225,.75);stroke-width:1.2;stroke-linejoin:round}
-.draw .ln-soft{fill:none;stroke:rgba(235,232,225,.3);stroke-width:1}
-.draw .hi{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linejoin:round;transition:opacity .35s}
-.draw .hatch{stroke:var(--accent);stroke-width:1;opacity:.85}
-.draw text{font-family:var(--f-mono);font-size:10px;fill:rgba(235,232,225,.7);letter-spacing:.06em}
+.est-out{padding:clamp(1.25rem,3vw,2.75rem);display:flex;flex-direction:column;gap:1.5rem;background:var(--ink-2)}
+.draw{width:100%;height:auto;border:1px solid var(--rule-dk);background:repeating-linear-gradient(0deg,transparent 0 23px,rgba(238,234,225,.05) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(238,234,225,.05) 23px 24px)}
+.draw .ln{fill:none;stroke:rgba(238,234,225,.75);stroke-width:1.2;stroke-linejoin:round}
+.draw .ln-soft{fill:none;stroke:rgba(238,234,225,.3);stroke-width:1}
+.draw .hi{fill:none;stroke:var(--terra-lt);stroke-width:2.2;stroke-linejoin:round;transition:opacity .35s}
+.draw text{font-family:var(--f-mono);font-size:10px;fill:rgba(238,234,225,.7);letter-spacing:.06em}
 .draw .off{opacity:0}
 .draw [hidden]{display:none}
-.price-lbl{color:var(--on-dk-muted);display:flex;justify-content:space-between;gap:1rem}
-.price{font-family:var(--f-disp);font-weight:500;font-size:clamp(2.6rem,4.6vw,4.2rem);line-height:1;color:var(--on-dk);margin-top:.5rem;white-space:nowrap}
+.price-lbl{color:var(--on-dk-muted);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.price{font-weight:800;font-stretch:108%;font-size:clamp(2.3rem,4.2vw,3.8rem);line-height:1;letter-spacing:-.035em;color:var(--on-dk);margin-top:.5rem;white-space:nowrap}
 .price span{color:var(--on-dk-muted);font-weight:300}
 .price-sub{margin-top:.5rem;font-size:.875rem;color:var(--on-dk-muted)}
 .bd{border-top:1px solid var(--rule-dk)}
 .bd div{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--rule-dk);font-size:.875rem}
 .bd dt{color:var(--on-dk-muted)}
 .bd dd{margin:0;color:var(--on-dk);font-variant-numeric:tabular-nums;white-space:nowrap}
-.disc{display:flex;gap:.8rem;font-size:.8125rem;line-height:1.5;color:var(--on-dk-muted);padding:.9rem 1rem;border:1px dashed rgba(235,232,225,.28)}
+.disc{display:flex;gap:.8rem;font-size:.8125rem;line-height:1.5;color:var(--on-dk-muted);padding:.9rem 1rem;border:1px dashed rgba(238,234,225,.3)}
 .disc b{color:var(--on-dk)}
-.tag-ind{display:inline-block;background:var(--accent);color:var(--ink);padding:.1rem .45rem;font-family:var(--f-mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;height:fit-content}
+.tag-ind{display:inline-block;background:var(--terra-2);color:#fff;padding:.15rem .5rem;font-family:var(--f-mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase}
 
 /* projects */
 .feat{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:1.5rem;margin-bottom:clamp(3.5rem,7vw,6rem);align-items:end}
 .feat-ba{grid-column:1/9}
 .feat-txt{grid-column:9/13;padding-bottom:.25rem}
-.feat-txt h3{font-size:clamp(1.9rem,2.8vw,2.6rem);margin-top:.8rem}
+.feat-txt h3{font-size:clamp(1.8rem,2.6vw,2.4rem);margin-top:.8rem;letter-spacing:-.03em}
 .feat-txt p{margin-top:.9rem;color:var(--muted);font-size:1rem}
-.specs{margin:1.3rem 0 1.6rem;border-top:1px solid var(--rule)}
+.specs{margin:1.3rem 0 1.6rem;border-top:1px solid var(--rule-2)}
 .specs div{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--rule);font-size:.9375rem}
 .specs dt{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:.2rem}
-.specs dd{margin:0;color:var(--ink);font-weight:500}
-.ba{position:relative;overflow:hidden;background:var(--ink);aspect-ratio:3/2;--x:50%;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.specs dd{margin:0;color:var(--ink);font-weight:600}
+.ba{position:relative;overflow:hidden;background:var(--ink);aspect-ratio:3/2;--x:50%;user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:ew-resize}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .ba-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x)) 0 0)}
-.ba-before img{filter:grayscale(.75) sepia(.35) brightness(.72) contrast(.88) saturate(.8)}
-.ba-before::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,transparent 30%,rgba(40,30,20,.35) 100%)}
-.ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#fff;pointer-events:none;box-shadow:0 0 12px rgba(0,0,0,.3)}
-.ba-knob{position:absolute;top:50%;left:var(--x);width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:#fff;display:grid;place-items:center;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.25);color:var(--ink)}
+.ba-before img{filter:grayscale(.8) sepia(.4) brightness(.7) contrast(.85) saturate(.75)}
+.ba-before::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,transparent 30%,rgba(40,30,20,.4) 100%)}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
+.ba-knob{position:absolute;top:50%;left:var(--x);width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#fff;display:grid;place-items:center;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.28);color:var(--ink)}
 .ba-knob svg{width:22px;height:22px}
-.ba-tag{position:absolute;top:1rem;padding:.35rem .6rem;background:rgba(22,25,29,.78);color:#fff;pointer-events:none}
-.ba-tag.l{left:1rem}.ba-tag.r{right:1rem;background:var(--accent);color:var(--ink)}
-.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none}
-.ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:48px;height:600px}
-.ba:has(.ba-range:focus-visible) .ba-knob{outline:2px solid var(--accent);outline-offset:3px}
+.ba-tag{position:absolute;top:1rem;padding:.35rem .6rem;background:rgba(37,36,34,.82);color:#fff;pointer-events:none}
+.ba-tag.l{left:1rem}.ba-tag.r{right:1rem;background:var(--terra);color:#fff}
+.ba-range{position:absolute;left:0;right:0;bottom:0;width:100%;height:4px;margin:0;opacity:0;pointer-events:none;-webkit-appearance:none;appearance:none}
+.ba:has(.ba-range:focus-visible) .ba-knob{outline:3px solid var(--terra);outline-offset:3px}
 .ba-note{margin-top:.7rem;color:var(--muted);font-size:.8125rem}
 .filters{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2rem;align-items:center}
-.filters button{display:inline-flex;align-items:center;gap:.5rem;min-height:40px;padding:.45rem .95rem;border:1px solid var(--rule-2);border-radius:99px;background:transparent;font-size:.875rem;font-weight:500;color:var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.filters button{display:inline-flex;align-items:center;gap:.5rem;min-height:42px;padding:.45rem .95rem;border:1px solid var(--rule-2);background:transparent;font-size:.875rem;font-weight:600;color:var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
 .filters button sup{font-family:var(--f-mono);font-size:.625rem;color:var(--muted);top:0}
 .filters button:hover{border-color:var(--ink)}
 .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
@@ -293,22 +317,23 @@ ul,ol{margin:0;padding:0;list-style:none}
 .pj[hidden]{display:none}
 .pj.fade{opacity:0;transform:translateY(10px)}
 .pj-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--paper-2)}
-.pj-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .5s}
+.pj-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
 .pj-img::after{content:"Bekijk project";position:absolute;right:1rem;bottom:1rem;background:var(--paper);color:var(--ink);font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;padding:.45rem .7rem;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s var(--ease)}
 .pj:hover .pj-img img{transform:scale(1.045)}
 .pj:hover .pj-img::after,.pj:focus-within .pj-img::after{opacity:1;transform:none}
-.pj-meta{display:flex;justify-content:space-between;gap:1rem;margin-top:1rem;padding-top:.7rem;border-top:1px solid var(--rule);color:var(--muted)}
-.pj h3{margin-top:.55rem;font-size:1.6rem;font-weight:500;line-height:1.02}
+.pj-meta{display:flex;justify-content:space-between;gap:1rem;margin-top:1rem;padding-top:.7rem;border-top:1.5px solid var(--ink);color:var(--muted)}
+.pj-meta span:first-child{color:var(--terra-ink)}
+.pj h3{margin-top:.55rem;font-size:1.4rem;line-height:1.08;letter-spacing:-.025em}
 .pj h3 button{all:unset;cursor:pointer}
 .pj h3 button::after{content:"";position:absolute;inset:0}
 .pj h3 button:focus-visible{outline:none}
-.pj:has(button:focus-visible){outline:2px solid var(--accent);outline-offset:6px}
+.pj:has(button:focus-visible){outline:2px solid var(--terra);outline-offset:6px}
 .pj-sub{margin-top:.4rem;font-size:.9375rem;color:var(--muted)}
 .pj-note{margin-top:2.5rem;font-size:.8125rem;color:var(--muted)}
 
 /* dialog */
-.pm{width:min(1180px,100% - 2rem);max-height:calc(100% - 2rem);padding:0;border:0;border-radius:var(--r);background:var(--paper);color:var(--text);overflow:auto;overscroll-behavior:contain}
-.pm::backdrop{background:rgba(16,18,22,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.pm{width:min(1180px,100% - 2rem);max-height:calc(100% - 2rem);padding:0;border:0;background:var(--paper);color:var(--text);overflow:auto;overscroll-behavior:contain}
+.pm::backdrop{background:rgba(20,19,18,.74)}
 .pm[open]{animation:pmIn .45s var(--ease)}
 @keyframes pmIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .pm-in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
@@ -317,83 +342,82 @@ ul,ol{margin:0;padding:0;list-style:none}
 .pm-media .ba{position:absolute;inset:0}
 .pm-body{padding:clamp(1.5rem,3vw,2.75rem);display:flex;flex-direction:column}
 .pm-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;color:var(--muted)}
-.pm-x{width:44px;height:44px;border-radius:50%;border:1px solid var(--rule-2);background:none;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:background .25s,color .25s,transform .4s var(--ease)}
-.pm-x:hover{background:var(--ink);color:var(--paper);transform:rotate(90deg)}
+.pm-x{width:44px;height:44px;border:1.5px solid var(--ink);background:none;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:background .25s,color .25s}
+.pm-x:hover{background:var(--ink);color:var(--paper)}
 .pm-x svg{width:16px;height:16px}
-.pm h3{font-size:clamp(2rem,3vw,2.75rem);margin-top:1.4rem}
-.pm .pm-loc{margin-top:.6rem;color:var(--accent-ink)}
+.pm h3{font-size:clamp(1.8rem,2.8vw,2.5rem);margin-top:1.4rem;letter-spacing:-.03em}
+.pm .pm-loc{margin-top:.6rem;color:var(--terra-ink)}
 .pm .pm-desc{margin-top:1rem;color:var(--text)}
 .pm-nav{margin-top:auto;padding-top:1.5rem;display:flex;gap:.5rem;flex-wrap:wrap}
 .pm-nav .btn{flex:1 1 auto}
 
+/* certs */
+.certs{border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2);background:var(--card)}
+.certs .wrap{display:grid;grid-template-columns:minmax(0,2fr) repeat(6,minmax(0,1.5fr))}
+.certs .c-h{padding:1.6rem 1.5rem 1.6rem 0;display:flex;flex-direction:column;justify-content:center;gap:.4rem}
+.certs .c-h b{font-weight:800;font-stretch:112%;font-size:1.35rem;line-height:1.05;letter-spacing:-.02em;color:var(--ink)}
+.certs .c-h span{font-size:.75rem;color:var(--muted)}
+.cert{padding:1.6rem 1rem;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:.7rem}
+.cert svg{width:34px;height:34px;color:var(--terra-ink)}
+.cert b{font-size:.875rem;font-weight:700;line-height:1.25;color:var(--ink)}
+.cert span{display:block;font-size:.75rem;line-height:1.4;color:var(--muted);margin-top:.15rem;font-weight:400}
+
 /* timeline */
 .tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
-.tl::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--rule-2)}
-.tl::after{content:"";position:absolute;left:0;top:9px;height:1px;width:100%;background:var(--accent);transform:scaleX(var(--tl,1));transform-origin:left;transition:transform 1.8s var(--ease)}
+.tl::before{content:"";position:absolute;left:0;right:0;top:9px;height:1.5px;background:var(--rule-2)}
+.tl::after{content:"";position:absolute;left:0;top:9px;height:1.5px;width:100%;background:var(--terra);transform:scaleX(var(--tl,1));transform-origin:left;transition:transform 1.8s var(--ease)}
 .js .tl:not(.in)::after{--tl:0}
 .tl li{position:relative;padding:2.4rem 1.5rem 0 0}
-.tl li::before{content:"";position:absolute;left:0;top:3px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:1px solid var(--ink);z-index:1}
-.tl li:first-child::before{background:var(--accent);border-color:var(--accent)}
-.tl .mono{color:var(--accent-ink)}
-.tl h3{margin-top:.6rem;font-size:1.65rem;font-weight:500}
+.tl li::before{content:"";position:absolute;left:0;top:3px;width:13px;height:13px;background:var(--paper);border:1.5px solid var(--ink);z-index:1;transform:rotate(45deg)}
+.tl li:first-child::before{background:var(--terra);border-color:var(--terra)}
+.tl .mono{color:var(--terra-ink)}
+.tl h3{margin-top:.6rem;font-size:1.5rem;letter-spacing:-.025em}
 .tl p{margin-top:.6rem;font-size:.9688rem;color:var(--muted)}
-.tl .when{display:inline-block;margin-top:1rem;padding:.25rem .55rem;border:1px solid var(--rule-2);font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.tl .when{display:inline-block;margin-top:1rem;padding:.25rem .55rem;border:1px solid var(--ink);font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
 .promise{margin-top:clamp(3.5rem,7vw,6rem);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;align-items:center}
 .promise-pic{grid-column:1/7;aspect-ratio:16/10;overflow:hidden;position:relative}
 .promise-pic img{width:100%;height:100%;object-fit:cover}
 .promise-txt{grid-column:8/13}
-.promise-txt blockquote{margin:0;font-family:var(--f-disp);font-size:clamp(2rem,3.4vw,3.2rem);line-height:1;text-transform:uppercase;color:var(--ink)}
+.promise-txt blockquote{margin:0;font-weight:800;font-stretch:112%;font-size:clamp(1.9rem,3.1vw,2.9rem);line-height:1;letter-spacing:-.035em;color:var(--ink)}
 .promise-txt p{margin-top:1.1rem;color:var(--muted)}
-.promise-txt ul{margin-top:1.4rem;border-top:1px solid var(--rule)}
+.promise-txt ul{margin-top:1.4rem;border-top:1px solid var(--rule-2)}
 .promise-txt li{display:flex;gap:.8rem;padding:.65rem 0;border-bottom:1px solid var(--rule);font-size:.9688rem}
-.promise-txt li svg{width:18px;height:18px;flex:none;color:var(--accent-ink);margin-top:.2rem}
-
-/* certifications */
-.certs{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--card)}
-.certs .wrap{display:grid;grid-template-columns:minmax(0,2fr) repeat(6,minmax(0,1.5fr))}
-.certs .c-h{padding:1.6rem 1.5rem 1.6rem 0;display:flex;flex-direction:column;justify-content:center;gap:.4rem}
-.certs .c-h b{font-family:var(--f-disp);font-weight:500;font-size:1.5rem;line-height:1;text-transform:uppercase;color:var(--ink)}
-.certs .c-h span{font-size:.75rem;color:var(--muted)}
-.cert{padding:1.6rem 1rem;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:.7rem}
-.cert svg{width:34px;height:34px;color:var(--ink)}
-.cert b{font-size:.875rem;font-weight:700;line-height:1.25;color:var(--ink)}
-.cert span{display:block;font-size:.75rem;line-height:1.4;color:var(--muted);margin-top:.15rem;font-weight:400}
+.promise-txt li svg{width:18px;height:18px;flex:none;color:var(--terra-ink);margin-top:.2rem}
 
 /* premies */
 .prem{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:2rem}
-.prem-cards{grid-column:1/8;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.pc{background:var(--paper);padding:1.6rem 1.5rem 1.8rem}
-.alt .pc{background:var(--paper-2)}
-.pc .mono{color:var(--accent-ink)}
-.pc h3{font-size:1.5rem;font-weight:500;margin-top:.7rem}
+.prem-cards{grid-column:1/8;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule-2);border:1px solid var(--rule-2)}
+.pc{background:var(--paper-2);padding:1.6rem 1.5rem 1.8rem}
+.pc .mono{color:var(--terra-ink)}
+.pc h3{font-size:1.4rem;margin-top:.7rem;letter-spacing:-.025em}
 .pc p,.pc li{font-size:.9688rem;color:var(--muted)}
 .pc p{margin-top:.6rem}
 .pc ul{margin-top:.7rem;display:grid;gap:.45rem}
 .pc li{padding-left:1.1rem;position:relative}
-.pc li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:1px;background:var(--ink)}
+.pc li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:1.5px;background:var(--terra)}
 .prem-side{grid-column:9/13;align-self:start;position:sticky;top:100px}
 .prem-side .box{background:var(--ink);color:var(--on-dk);padding:1.8rem}
-.prem-side h3{color:var(--on-dk);font-size:1.75rem;font-weight:500}
+.prem-side h3{color:var(--on-dk);font-size:1.6rem;letter-spacing:-.025em}
 .prem-side ol{margin-top:1.2rem;counter-reset:p;display:grid;gap:.9rem}
 .prem-side li{counter-increment:p;display:grid;grid-template-columns:2rem 1fr;font-size:.9375rem;color:var(--on-dk-muted)}
-.prem-side li::before{content:"0" counter(p);font-family:var(--f-mono);font-size:.75rem;color:var(--accent);padding-top:.2rem}
-.prem-side li b{color:var(--on-dk);font-weight:600}
+.prem-side li::before{content:"0" counter(p);font-family:var(--f-mono);font-size:.75rem;color:var(--terra-lt);padding-top:.2rem}
+.prem-side li b{color:var(--on-dk);font-weight:700}
 .prem-side .fine{margin-top:1rem;font-size:.75rem;line-height:1.5;color:var(--muted)}
 
 /* reviews */
 .rv-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:2rem}
 .rv-score{grid-column:1/4}
-.rv-score b{display:block;font-family:var(--f-disp);font-weight:500;font-size:clamp(4.5rem,8vw,7rem);line-height:1;color:var(--ink)}
-.stars{display:flex;gap:3px;color:var(--accent);margin-top:.9rem}
+.rv-score b{display:block;font-weight:800;font-stretch:112%;font-size:clamp(4.5rem,8vw,7rem);line-height:1;letter-spacing:-.04em;color:var(--ink)}
+.stars{display:flex;gap:3px;color:var(--terra);margin-top:.9rem}
 .stars svg{width:16px;height:16px}
 .rv-score p{margin-top:.7rem;font-size:.875rem;color:var(--muted)}
-.rv-tag{display:inline-block;margin-top:1.2rem;padding:.3rem .55rem;border:1px solid var(--accent-ink);color:var(--accent-ink)}
+.rv-tag{display:inline-block;margin-top:1.2rem;padding:.3rem .55rem;border:1px solid var(--terra-ink);color:var(--terra-ink)}
 .rv-main{grid-column:4/9;margin:0}
-.rv-main p{font-family:var(--f-body);font-weight:400;font-size:clamp(1.4rem,2.1vw,1.95rem);line-height:1.32;color:var(--ink);letter-spacing:-.015em}
-.rv-main p::before{content:"“";display:block;font-family:var(--f-disp);font-size:5rem;line-height:.7;color:var(--accent);margin-bottom:.4rem}
+.rv-main p{font-weight:500;font-size:clamp(1.35rem,2vw,1.85rem);line-height:1.3;color:var(--ink);letter-spacing:-.02em}
+.rv-main p::before{content:"“";display:block;font-weight:800;font-size:5rem;line-height:.7;color:var(--terra);margin-bottom:.3rem}
 .rv-main footer,.rv-s footer{margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;color:var(--muted)}
 .rv-side{grid-column:9/13;display:grid;gap:1.5rem}
-.rv-s{margin:0;padding-top:1.2rem;border-top:1px solid var(--rule)}
+.rv-s{margin:0;padding-top:1.2rem;border-top:1.5px solid var(--ink)}
 .rv-s p{font-size:1rem;color:var(--text)}
 .rv-s footer{margin-top:.8rem}
 
@@ -402,160 +426,114 @@ ul,ol{margin:0;padding:0;list-style:none}
 .faq-side{grid-column:1/4}
 .faq-side p{color:var(--muted);font-size:.9688rem}
 .faq-side .lnk{margin-top:1rem}
-.faq-list{grid-column:4/13;border-top:1px solid var(--rule-2)}
-.qa{border-bottom:1px solid var(--rule)}
-.qa summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:3rem minmax(0,1fr) 28px;gap:1rem;align-items:center;padding:1.35rem 0;font-weight:600;font-size:1.125rem;color:var(--ink);transition:color .25s}
+.faq-list{grid-column:4/13;border-top:1.5px solid var(--ink)}
+.qa{border-bottom:1px solid var(--rule-2)}
+.qa summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:3rem minmax(0,1fr) 28px;gap:1rem;align-items:center;padding:1.35rem 0;font-weight:700;font-size:1.125rem;color:var(--ink);transition:color .25s}
 .qa summary::-webkit-details-marker{display:none}
-.qa summary:hover{color:var(--accent-ink)}
+.qa summary:hover{color:var(--terra-ink)}
 .qa summary .mono{color:var(--muted)}
-.qa .pm-i{position:relative;width:28px;height:28px;border:1px solid var(--rule-2);border-radius:50%}
+.qa .pm-i{position:relative;width:28px;height:28px;border:1.5px solid var(--ink)}
 .qa .pm-i::before,.qa .pm-i::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.5px;margin:-.75px 0 0 -5px;background:currentColor;transition:transform .35s var(--ease)}
 .qa .pm-i::after{transform:rotate(90deg)}
 .qa[open] .pm-i::after{transform:rotate(0)}
 .qa .ans{padding:0 2.5rem 1.6rem 4rem;color:var(--muted);max-width:72ch}
-.qa .ans p+p{margin-top:.6rem}
 
 /* area */
 .area{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:2rem;align-items:center}
-.map{grid-column:1/7;border:1px solid var(--rule-dk);background:var(--ink-2)}
+.map{grid-column:1/7;border:1px solid var(--rule-dk);background:var(--ink-2);background-image:repeating-linear-gradient(0deg,transparent 0 23px,rgba(238,234,225,.04) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(238,234,225,.04) 23px 24px)}
 .map svg{width:100%;height:auto}
-.map .ring{fill:none;stroke:rgba(235,232,225,.18);stroke-dasharray:3 5}
-.map .ring.r3{stroke:rgba(242,98,31,.55);stroke-dasharray:none}
+.map .ring{fill:none;stroke:rgba(238,234,225,.2);stroke-dasharray:3 5}
+.map .ring.r3{stroke:rgba(224,138,98,.6);stroke-dasharray:none}
 .map .dot{fill:var(--on-dk)}
-.map .lier{fill:var(--accent)}
+.map .lier{fill:var(--terra-lt)}
 .map text{font-family:var(--f-body);font-size:12px;fill:var(--on-dk-muted)}
-.map text.big{font-family:var(--f-disp);font-size:20px;fill:var(--on-dk);text-transform:uppercase;letter-spacing:.04em}
-.map text.km{font-family:var(--f-mono);font-size:9px;fill:rgba(235,232,225,.45)}
-.map .river{fill:none;stroke:rgba(120,150,180,.35);stroke-width:3;stroke-linecap:round}
+.map text.big{font-weight:800;font-stretch:112%;font-size:22px;fill:var(--on-dk)}
+.map text.km{font-family:var(--f-mono);font-size:9px;fill:rgba(238,234,225,.5)}
+.map .river{fill:none;stroke:rgba(238,234,225,.16);stroke-width:4;stroke-linecap:round}
 .area-txt{grid-column:8/13}
-.area-txt h3{font-size:2rem;font-weight:500}
+.area-txt h3{font-size:1.8rem;letter-spacing:-.025em}
 .area-txt>p{margin-top:.8rem;color:var(--on-dk-muted)}
 .towns{margin-top:1.4rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--rule-dk)}
 .towns li{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--rule-dk);font-size:.9375rem}
 .towns li:nth-child(odd){padding-right:1rem}
 .towns li:nth-child(even){padding-left:1rem;border-left:1px solid var(--rule-dk)}
 .towns span{color:var(--on-dk-muted);font-family:var(--f-mono);font-size:.6875rem;padding-top:.25rem}
-.sos-dk{margin-top:1.8rem;padding:1.3rem 1.4rem;border:1px solid rgba(242,98,31,.55);display:grid;gap:.4rem}
-.sos-dk b{font-family:var(--f-disp);font-weight:500;font-size:1.5rem;line-height:1;text-transform:uppercase;color:var(--on-dk)}
+.sos-dk{margin-top:1.8rem;padding:1.3rem 1.4rem;border:1.5px solid var(--terra-lt);display:grid;gap:.4rem}
+.sos-dk b{font-weight:800;font-stretch:112%;font-size:1.35rem;line-height:1;letter-spacing:-.02em;color:var(--on-dk)}
 .sos-dk p{font-size:.9375rem;color:var(--on-dk-muted)}
-.sos-dk a{color:var(--accent-2);font-weight:700;text-decoration:none}
+.sos-dk a{color:var(--terra-lt);font-weight:800;text-decoration:none}
 .sos-dk a:hover{text-decoration:underline}
 
 /* quote form */
 .qf{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:2.5rem;align-items:start}
 .qf-side{grid-column:1/5}
-.qf-side h2{font-size:clamp(2.6rem,4.6vw,4.4rem);line-height:.92}
+.qf-side .sh-idx{flex-direction:row;gap:.8rem;margin-bottom:1.2rem}
+.qf-side h2{font-size:clamp(2.4rem,4.2vw,4rem);line-height:.95;letter-spacing:-.035em}
 .qf-side>p{margin-top:1rem;color:var(--muted)}
-.qf-pts{margin-top:1.8rem;border-top:1px solid var(--rule)}
-.qf-pts li{display:grid;grid-template-columns:2.2rem 1fr;padding:.9rem 0;border-bottom:1px solid var(--rule)}
-.qf-pts .mono{color:var(--accent-ink);padding-top:.2rem}
-.qf-pts b{display:block;color:var(--ink);font-weight:600}
+.qf-pts{margin-top:1.8rem;border-top:1.5px solid var(--ink)}
+.qf-pts li{display:grid;grid-template-columns:2.2rem 1fr;padding:.9rem 0;border-bottom:1px solid var(--rule-2)}
+.qf-pts .mono{color:var(--terra-ink);padding-top:.2rem}
+.qf-pts b{display:block;color:var(--ink);font-weight:700}
 .qf-pts span{font-size:.9rem;color:var(--muted)}
 .qf-contact{margin-top:1.8rem;display:flex;gap:1rem;align-items:center}
 .qf-contact img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:28% 20%;flex:none}
 .qf-contact p{font-size:.9rem;color:var(--muted)}
-.qf-contact a{font-weight:700;color:var(--ink);text-decoration:none}
-.form{grid-column:6/13;background:var(--card);border:1px solid var(--rule);padding:clamp(1.3rem,3vw,2.75rem);box-shadow:0 30px 60px -40px rgba(22,25,29,.35)}
-.prog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;margin-bottom:2rem}
-.prog li{display:flex;flex-direction:column;gap:.5rem;color:var(--muted);font-size:.8125rem;font-weight:600}
-.prog li::before{content:"";height:3px;background:var(--rule);transition:background .4s var(--ease)}
-.prog li .mono{font-size:.6875rem}
-.prog li.done::before,.prog li[aria-current="step"]::before{background:var(--ink)}
-.prog li[aria-current="step"]::before{background:var(--accent)}
-.prog li[aria-current="step"],.prog li.done{color:var(--ink)}
-.fstep{border:0;margin:0;padding:0;min-width:0}
-.fstep+.fstep{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--rule)}
-.js .fstep+.fstep{margin-top:0;padding-top:0;border-top:0}
-.js .fstep:not(.cur){display:none}
-.fstep.cur{animation:stepIn .45s var(--ease)}
-@keyframes stepIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
-.fstep legend{padding:0;font-family:var(--f-disp);font-weight:500;font-size:clamp(1.7rem,2.6vw,2.25rem);text-transform:uppercase;line-height:1;color:var(--ink);margin-bottom:.4rem}
-.fhint{color:var(--muted);font-size:.9375rem;margin-bottom:1.5rem}
-.prefill{display:none;align-items:flex-start;gap:.7rem;margin-bottom:1.5rem;padding:.8rem 1rem;background:#fff1e8;border-left:3px solid var(--accent);font-size:.875rem;color:var(--text)}
+.qf-contact a{font-weight:800;color:var(--ink);text-decoration:none}
+.form{grid-column:6/13;background:var(--card);border:1.5px solid var(--ink);padding:clamp(1.25rem,3vw,2.75rem);position:relative}
+.form-h{display:flex;justify-content:space-between;gap:1rem;margin:calc(-1*clamp(1.25rem,3vw,2.75rem)) calc(-1*clamp(1.25rem,3vw,2.75rem)) 1.8rem;padding:.55rem clamp(1.25rem,3vw,2.75rem);background:var(--ink);color:var(--on-dk)}
+.prefill{display:none;align-items:flex-start;gap:.7rem;margin-bottom:1.5rem;padding:.8rem 1rem;background:#f6e6dc;border-left:3px solid var(--terra);font-size:.875rem;color:var(--text)}
 .prefill.show{display:flex}
-.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+.fset{border:0;margin:0;padding:0;min-width:0}
+.fset legend,.flbl{padding:0;font-size:.875rem;font-weight:700;color:var(--ink);margin-bottom:.6rem}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
 .tile{position:relative;cursor:pointer}
 .tile input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.tile>span{display:flex;flex-direction:column;gap:.8rem;height:100%;padding:1rem;border:1px solid var(--rule-2);background:var(--paper);font-weight:600;font-size:.9375rem;color:var(--ink);transition:border-color .2s,background .2s,box-shadow .2s}
-.tile svg{width:28px;height:28px;color:var(--ink)}
+.tile>span{display:flex;align-items:center;gap:.7rem;height:100%;min-height:56px;padding:.7rem .85rem;border:1px solid var(--rule-2);background:var(--paper);font-weight:700;font-size:.9rem;line-height:1.2;color:var(--ink);transition:border-color .2s,background .2s}
+.tile svg{width:26px;height:26px;color:var(--ink);flex:none}
 .tile:hover>span{border-color:var(--ink)}
 .tile input:checked+span{border-color:var(--ink);background:var(--ink);color:var(--paper)}
-.tile input:checked+span svg{color:var(--accent)}
-.tile input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
-.f-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 1.2rem}
-.f-row.pc2{grid-template-columns:8rem minmax(0,1fr)}
+.tile input:checked+span svg{color:var(--terra-lt)}
+.tile input:focus-visible+span{outline:2px solid var(--terra);outline-offset:2px}
+.f-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem 1.2rem}
 .fld{display:grid;gap:.4rem;margin-top:1.25rem;align-content:start}
-.fld>label,.fld .flbl{font-size:.875rem;font-weight:600;color:var(--ink)}
-.fld .opt-t{font-weight:400;color:var(--muted)}
-.inp{width:100%;min-height:50px;border:1px solid var(--rule-2);border-radius:var(--r);background:#fff;padding:.75rem .9rem;font-size:1rem;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.fld>label{font-size:.875rem;font-weight:700;color:var(--ink)}
+.inp{width:100%;min-height:52px;border:1px solid var(--rule-2);border-radius:0;background:#fff;padding:.75rem .9rem;font-size:1rem;color:var(--ink);transition:border-color .2s,box-shadow .2s}
 .inp:hover{border-color:var(--ink)}
-.inp:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(242,98,31,.28)}
+.inp:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(173,75,41,.3)}
 textarea.inp{min-height:7.5rem;resize:vertical;line-height:1.5}
-select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2316191d' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right .9rem center;padding-right:2.4rem}
-.inp[aria-invalid="true"]{border-color:var(--err);box-shadow:0 0 0 3px rgba(179,38,30,.12)}
-.ferr{font-size:.8125rem;color:var(--err);min-height:0}
+.inp[aria-invalid="true"]{border-color:var(--err);box-shadow:0 0 0 3px rgba(168,38,30,.12)}
+.ferr{font-size:.8125rem;color:var(--err)}
 .ferr:empty{display:none}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem}
-.chip{position:relative}
-.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.chip span{display:inline-flex;align-items:center;gap:.45rem;min-height:42px;padding:.5rem .9rem;border:1px solid var(--rule-2);border-radius:99px;font-size:.875rem;font-weight:500;cursor:pointer;background:#fff;transition:background .2s,color .2s,border-color .2s}
-.chip span::before{content:"";width:12px;height:12px;border:1px solid currentColor;border-radius:2px;flex:none}
-.chip input[type=radio]+span::before{border-radius:50%}
-.chip input:checked+span{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.chip input:checked+span::before{background:var(--accent);border-color:var(--accent)}
-.chip input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
-.urgent{display:none;margin-top:1rem;padding:.9rem 1rem;background:var(--ink);color:var(--on-dk);font-size:.9rem}
-.urgent.show{display:block}
-.urgent a{color:var(--accent-2);font-weight:700}
-.drop{display:flex;flex-direction:column;align-items:center;gap:.35rem;padding:1.4rem 1rem;border:1px dashed var(--rule-2);background:var(--paper);text-align:center;cursor:pointer;transition:border-color .2s,background .2s}
-.drop:hover,.drop.over{border-color:var(--accent);background:#fff6ef}
-.drop svg{width:26px;height:26px;color:var(--ink)}
-.drop b{color:var(--ink);font-size:.9375rem}
-.drop small{color:var(--muted);font-size:.8125rem}
-.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:.5rem;margin-top:.7rem}
-.thumbs:empty{display:none}
-.thumbs li{position:relative;aspect-ratio:1;overflow:hidden;background:var(--paper-2);animation:stepIn .3s var(--ease)}
-.thumbs img{width:100%;height:100%;object-fit:cover}
-.thumbs button{position:absolute;top:4px;right:4px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(22,25,29,.82);color:#fff;cursor:pointer;display:grid;place-items:center;font-size:.9rem;line-height:1}
-.thumbs button:hover{background:var(--err)}
-.thumbs span{position:absolute;left:0;right:0;bottom:0;padding:.15rem .3rem;background:rgba(22,25,29,.7);color:#fff;font-size:.625rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.check{display:flex;gap:.7rem;align-items:flex-start;margin-top:1.4rem;font-size:.875rem;color:var(--muted);cursor:pointer}
-.check input{width:20px;height:20px;margin:.1rem 0 0;accent-color:var(--ink);flex:none}
-.fnav{display:flex;justify-content:space-between;gap:.75rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--rule)}
-.fnav .btn{min-width:9rem}
-.fnav .sp{flex:1}
-.fs-prev,.fs-next{display:none!important}
-.js .fs-prev.show,.js .fs-next.show{display:inline-flex!important}
-.js .fs-submit:not(.show){display:none}
-.fdemo{margin-top:1rem;font-size:.75rem;color:var(--muted)}
-.done{display:none;text-align:left}
-.done.show{display:block;animation:stepIn .5s var(--ease)}
+.f-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--rule-2)}
+.f-foot p{font-size:.8125rem;color:var(--muted);max-width:40ch}
+.done{display:none}
+.done.show{display:block}
 .done .ok{width:56px;height:56px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center}
 .done .ok svg{width:26px;height:26px}
-.done h3{margin-top:1.4rem;font-size:clamp(2.2rem,3.6vw,3rem);font-weight:500}
+.done h3{margin-top:1.4rem;font-size:clamp(2rem,3.2vw,2.8rem);letter-spacing:-.03em}
 .done>p{margin-top:.8rem;color:var(--text)}
-.done .specs{margin-top:1.4rem}
 .done .demo-note{display:flex;gap:.6rem;margin-top:1.2rem;padding:.8rem 1rem;border:1px dashed var(--rule-2);font-size:.8125rem;color:var(--muted)}
 
 /* footer */
 .foot{background:var(--ink);color:var(--on-dk-muted);padding:clamp(4rem,8vw,6rem) 0 2rem;font-size:.9375rem}
 .foot-top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid var(--rule-dk)}
 .foot-cta{grid-column:1/6}
-.foot-cta h2{color:var(--on-dk);font-size:clamp(2.4rem,4vw,3.6rem);line-height:.95}
-.foot-cta .ctas{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.foot-cta h2{color:var(--on-dk);font-size:clamp(2.2rem,3.8vw,3.4rem);line-height:.95;letter-spacing:-.035em}
+.foot-cta .ctas{margin-top:1.6rem}
 .foot-col{grid-column:span 2}
 .foot-col:first-of-type{grid-column:7/9}
-.foot-col h4{font-family:var(--f-mono);font-weight:500;font-size:.6875rem;letter-spacing:.08em;color:var(--on-dk);margin-bottom:1rem}
+.foot-col h4{font-family:var(--f-mono);font-weight:500;font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dk);margin-bottom:1rem}
 .foot-col li+li{margin-top:.45rem}
 .foot a{color:var(--on-dk);text-decoration:none}
-.foot a:hover{color:var(--accent-2)}
-.word{font-family:var(--f-disp);font-weight:700;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(235,232,225,.26);font-size:clamp(4rem,21.5vw,19.6rem);line-height:.8;letter-spacing:.02em;margin:2.5rem 0 1.5rem;white-space:nowrap;overflow:hidden;user-select:none}
+.foot a:hover{color:var(--terra-lt)}
+.word{font-weight:900;font-stretch:125%;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(238,234,225,.28);font-size:clamp(2.4rem,11.4vw,11.6rem);line-height:.8;letter-spacing:-.02em;margin:2.5rem 0 1.5rem;white-space:nowrap;overflow:hidden;user-select:none}
 .legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem 2rem;font-size:.8125rem;padding-top:1.4rem;border-top:1px solid var(--rule-dk)}
 .legal a{text-decoration:underline;text-underline-offset:3px}
 
-.callbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:.5rem;padding:.6rem var(--g) calc(.6rem + env(safe-area-inset-bottom));background:rgba(22,25,29,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--rule-dk);transform:translateY(110%);transition:transform .4s var(--ease)}
-.callbar.show{transform:none}
-.callbar .btn{flex:1;min-height:48px;font-size:.9375rem;padding:.6rem}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:.5rem;padding:.6rem var(--g) calc(.6rem + env(safe-area-inset-bottom));background:var(--ink);border-top:1px solid var(--rule-dk)}
+.callbar .btn{flex:1;min-height:50px;font-size:.9375rem;padding:.6rem}
+.callbar .cb-tel{flex:1.25;--bg:var(--paper);--fg:var(--ink);--bd:var(--paper);font-size:1.05rem;font-weight:800}
+.callbar .cb-tel svg{width:18px;height:18px}
 
 /* reveal */
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
@@ -563,36 +541,39 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
 .js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
 
 /* responsive */
+@media (min-width:981px) and (min-height:720px){
+  .js .hero-copy{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));align-self:start;justify-content:space-between;overflow:hidden}
+}
 @media (max-width:1180px){
-  .nav a{padding:.5rem .55rem}
+  .nav a{padding:.5rem .5rem}
   .hdr-tel{display:none}
   .certs .wrap{grid-template-columns:repeat(3,minmax(0,1fr))}
   .certs .c-h{grid-column:1/-1;border-bottom:1px solid var(--rule);padding:1.4rem 0}
   .cert{border-bottom:1px solid var(--rule)}
   .cert:nth-child(3n+2){border-left:0;padding-left:0}
-  .figs ul{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .figs li:nth-child(4){border-left:0;padding-left:0}
-  .figs li:nth-child(n+4){border-top:1px solid var(--rule)}
+  .tb dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tb dl div:not(:nth-child(3n+1)){border-left:0}
+  .tb dl div:nth-child(even){border-left:1px solid var(--rule-2)}
 }
 @media (max-width:980px){
+  :root{--hdr:64px}
   .nav,.hdr-cta .btn{display:none}
   .menubtn{display:inline-flex}
-  .hdr-cta{margin-left:0}
-  .hero-grid{grid-template-columns:1fr;min-height:0}
-  .hero-txt{padding:2.5rem var(--g) 2rem;gap:2.2rem}
-  .hero-txt{display:contents}
-  .hero-txt>div:first-child{order:1;padding:2.25rem var(--g) 2rem}
-  .hero-pic{aspect-ratio:4/3;order:2}
-  .hero-txt>div:last-child{order:3;padding:0 var(--g) 2.25rem}
+  .hero{grid-template-columns:1fr}
+  .hero-copy{border-right:0;padding:2rem var(--g) 2.25rem}
+  .js .dd:not(.static){height:300vh;height:300svh}
+  .dd-stage{padding:.9rem var(--g) calc(.9rem + 76px);border-top:1px solid var(--rule-2)}
+  .static .dd-stage{padding-bottom:1.5rem}
   .sh{grid-template-columns:1fr}
   .sh-idx,.sh h2,.sh-lead{grid-column:1}
+  .sh-idx{flex-direction:row;justify-content:space-between}
   .svc{grid-template-columns:1fr}
   .svc-fig{display:none}
   .svc-list{grid-column:1}
   .srv{grid-template-columns:2.4rem minmax(0,1fr) auto}
   .srv-thumb{display:block;grid-column:2/4;margin-top:1.1rem;aspect-ratio:16/9;overflow:hidden}
   .srv-thumb img{width:100%;height:100%;object-fit:cover}
-  .est{grid-template-columns:1fr}
+  .est{grid-template-columns:minmax(0,1fr)}
   .est-ctl{border-right:0;border-bottom:1px solid var(--rule-dk)}
   .feat-ba,.feat-txt{grid-column:1/-1}
   .pj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -600,7 +581,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   .pm-media{min-height:0;aspect-ratio:3/2}
   .pm-media>img,.pm-media>.ba{min-height:0}
   .tl{grid-template-columns:1fr;padding-left:1.6rem}
-  .tl::before,.tl::after{left:6px;right:auto;top:0;bottom:0;width:1px;height:auto}
+  .tl::before,.tl::after{left:6px;right:auto;top:0;bottom:0;width:1.5px;height:auto}
   .tl::after{transform:scaleY(var(--tl,1));transform-origin:top}
   .tl li{padding:0 0 2.2rem 1rem}
   .tl li::before{left:-1.6rem;top:.15rem}
@@ -620,38 +601,35 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   .foot-cta{grid-column:1/-1}
   .foot-col,.foot-col:first-of-type{grid-column:span 4}
   .callbar{display:flex}
-  .foot{padding-bottom:6.5rem}
+  .foot{padding-bottom:7rem}
 }
 @media (max-width:640px){
   body{font-size:1rem}
-  .util .u-l span:not(:first-child){display:none}
-  .util .u-hours{display:none}
-  .hdr .wrap{height:64px;gap:1rem}
-  .hdr.is-condensed .wrap{height:56px}
-  .brand svg{width:32px;height:32px}
-  .brand-t b{font-size:1.3rem}
-  .hero h1{font-size:clamp(3rem,15vw,4.2rem)}
-  .hero .ctas .btn{flex:1 1 100%}
-  .trust{grid-template-columns:1fr}
-  .trust li,.trust li+li{padding:.8rem 0;border-left:0;border-bottom:1px solid var(--rule);flex-direction:row;align-items:baseline;justify-content:space-between;gap:1rem}
-  .trust b{font-size:1.3rem;flex:none}
-  .trust span{text-align:right}
-  .badge{width:96px;height:96px}
-  .badge b{font-size:1.8rem}
-  .figs ul{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .figs li{padding:1.2rem 1rem}
-  .figs li:nth-child(odd){border-left:0;padding-left:0}
-  .figs li:nth-child(4){border-left:1px solid var(--rule);padding-left:1rem}
-  .figs li:nth-child(n+3){border-top:1px solid var(--rule)}
-  .figs li:last-child{grid-column:1/-1}
+  .hdr .wrap{gap:1rem}
+  .brand svg{width:34px;height:34px}
+  .brand-t b{font-size:1.1rem}
+  .hero h1{font-size:clamp(2.5rem,11.6vw,3.6rem)}
+  .ctas .btn{flex:1 1 100%}
+  .tb dd b{font-size:1.25rem}
+  .dd-top .dd-scale{display:none}
+  .dd-fig{flex:0 0 auto;aspect-ratio:968/818;margin-inline:calc(-.6*var(--g))}
+  .dd-stage{justify-content:center}
+  .dd-svg .dd-c{display:none}
+  .dd-svg .dd-n{display:none}
+  .dd-svg .dd-t{font-size:40px;font-stretch:100%;transform:translateX(-46px)}
+  .dd-svg .ann{font-size:26px}
+  .dd-svg .ann-x{display:none}
+  .dd-num{font-size:2.2rem}
+  .dd-steps button{width:calc((100% - 6*.35rem)/7);height:40px}
+  .dd-steps .dd-hint{margin:.3rem 0 0;width:100%}
   .seg{grid-template-columns:1fr}
+  .seg span{flex-direction:row;justify-content:space-between;align-items:baseline}
   .srv{grid-template-columns:minmax(0,1fr) auto;row-gap:.6rem}
   .srv-no{grid-column:1;grid-row:1;padding-top:.8rem}
   .srv-go{grid-column:2;grid-row:1}
   .srv-body{grid-column:1/-1;grid-row:2}
   .srv-thumb{grid-column:1/-1;margin-top:.6rem}
-  .seg span{flex-direction:row;justify-content:space-between;align-items:baseline}
-  .price{font-size:clamp(2.1rem,10.5vw,2.8rem)}
+  .price{font-size:clamp(1.9rem,9.4vw,2.5rem);white-space:normal}
   .pj-grid{grid-template-columns:1fr}
   .filters{flex-wrap:nowrap;overflow-x:auto;margin-inline:calc(-1*var(--g));padding:0 var(--g) .3rem;scrollbar-width:none}
   .filters::-webkit-scrollbar{display:none}
@@ -659,7 +637,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   .filters .f-count{display:none}
   .ba{aspect-ratio:4/3}
   .ba-tag{top:.6rem}.ba-tag.l{left:.6rem}.ba-tag.r{right:.6rem}
-  .pm{width:100%;max-height:100%;height:100%;max-width:none;border-radius:0}
+  .pm{width:100%;max-height:100%;height:100%;max-width:none}
   .pm-nav .btn{flex:1 1 40%}
   .certs .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cert:nth-child(3n+2){border-left:1px solid var(--rule);padding-left:1rem}
@@ -672,15 +650,10 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   .towns li:nth-child(even){padding-left:0;border-left:0}
   .towns li:nth-child(odd){padding-right:0}
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .incl ul{grid-template-columns:1fr}
   .map text{font-size:15px}
   .map text.big{font-size:24px}
   .map text.km{font-size:11px}
   .f-row{grid-template-columns:1fr}
-  .f-row.pc2{grid-template-columns:6.5rem minmax(0,1fr)}
-  .prog li{font-size:.75rem}
-  .fnav .btn{min-width:0;flex:1}
-  .fnav .sp{display:none}
   .foot-col,.foot-col:first-of-type{grid-column:span 6}
   .foot-col:last-of-type{grid-column:1/-1}
 }
@@ -695,23 +668,17 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
 <a class="skip" href="#main">Naar de inhoud</a>
 <div class="kade"><span>Voorbeeldsite van Kade Studio: fictieve zaak, geen echte aanvragen.</span><a href="../../nl/index.html#exemples">← Terug naar Kade Studio</a></div>
 
-<div class="util">
-  <div class="wrap">
-    <div class="u-l"><span class="u-hours">Ma tot vr 7:00 – 17:00</span><span>Lier en 30 km rond</span><span>Familiebedrijf sinds 1998</span></div>
-    <div><span class="pulse" aria-hidden="true"></span>Lek of stormschade? <a href="tel:+3203000000">03 000 00 00</a></div>
-  </div>
-</div>
-
 <header class="hdr" id="hdr">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Dakwerken Hendrickx, naar boven">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#16191d"/><path d="M7 23 20 11l13 12" fill="none" stroke="#f3f0e9" stroke-width="2.6" stroke-linecap="square"/><path d="M12 22v9h16v-9" fill="none" stroke="#f2621f" stroke-width="2.6"/></svg>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#252422"/><path d="M6 25 20 12l14 13" fill="none" stroke="#eeeae1" stroke-width="2.6" stroke-linecap="square"/><path d="M10 29 20 19.6 30 29" fill="none" stroke="#c25d36" stroke-width="2.6" stroke-linecap="square"/></svg>
       <span class="brand-t"><b>Hendrickx</b><span>Dakwerken · Lier · 1998</span></span>
     </a>
     <nav class="nav" aria-label="Hoofdnavigatie">
       <ul>
+        <li><a href="#opbouw">Opbouw</a></li>
         <li><a href="#diensten">Diensten</a></li>
-        <li><a href="#prijs">Prijsindicatie</a></li>
+        <li><a href="#prijs">Richtprijs</a></li>
         <li><a href="#realisaties">Realisaties</a></li>
         <li><a href="#werkwijze">Werkwijze</a></li>
         <li><a href="#premies">Premies</a></li>
@@ -729,13 +696,14 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
 <div class="mnav" id="mnav" aria-label="Menu">
   <nav aria-label="Mobiele navigatie">
     <ol>
-      <li><a href="#diensten"><span>01</span>Diensten</a></li>
-      <li><a href="#prijs"><span>02</span>Prijsindicatie</a></li>
-      <li><a href="#realisaties"><span>03</span>Realisaties</a></li>
-      <li><a href="#werkwijze"><span>04</span>Werkwijze</a></li>
-      <li><a href="#premies"><span>05</span>Premies</a></li>
-      <li><a href="#faq"><span>07</span>Vragen</a></li>
-      <li><a href="#offerte"><span>09</span>Offerte</a></li>
+      <li><a href="#opbouw"><span>01</span>Opbouw</a></li>
+      <li><a href="#diensten"><span>02</span>Diensten</a></li>
+      <li><a href="#prijs"><span>03</span>Richtprijs</a></li>
+      <li><a href="#realisaties"><span>04</span>Realisaties</a></li>
+      <li><a href="#werkwijze"><span>05</span>Werkwijze</a></li>
+      <li><a href="#premies"><span>06</span>Premies</a></li>
+      <li><a href="#faq"><span>08</span>Vragen</a></li>
+      <li><a href="#offerte"><span>10</span>Offerte</a></li>
     </ol>
   </nav>
   <div class="m-foot">
@@ -747,55 +715,74 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
 
 <main id="main">
 <span id="top"></span>
-<section class="hero" aria-labelledby="hero-h">
-  <div class="hero-grid">
-    <div class="hero-txt">
-      <div>
-        <p class="eyebrow mono">Dakwerker in Lier · sinds 1998</p>
-        <h1 id="hero-h">Een dak dat <em>dertig jaar</em> dicht blijft.</h1>
-        <p class="lead">Familiebedrijf voor nieuwe daken, dakrenovatie, isolatie en herstellingen. Zes eigen dakwerkers, geen onderaannemers. U krijgt een vaste prijs op papier, binnen 48 uur na het plaatsbezoek.</p>
-        <div class="ctas">
-          <a class="btn" href="#offerte">Vraag een gratis offerte <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-          <a class="btn btn-line" href="#prijs">Bereken een prijsindicatie</a>
-        </div>
-      </div>
-      <div>
-        <ul class="trust">
-          <li><b>10 jaar</b><span>waterdichtheids&shy;garantie</span></li>
-          <li><b>Verzekerd</b><span>BA en 10-jarige aansprakelijkheid</span></li>
-          <li><b>48 u</b><span>offerte op papier na het bezoek</span></li>
-        </ul>
-        <p class="sos"><span><span class="pulse" aria-hidden="true"></span><b>Noodherstelling</b> na storm of lek: binnen 24 uur ter plaatse.</span><a href="tel:+3203000000">Bel 03 000 00 00 →</a></p>
-      </div>
+<section class="hero" id="opbouw" aria-labelledby="hero-h">
+  <div class="hero-copy">
+    <div>
+      <p class="eyebrow mono">Dakwerker in Lier · sinds 1998</p>
+      <h1 id="hero-h">Een dak dat <em>dertig jaar</em> dicht blijft.</h1>
     </div>
-    <div class="hero-pic">
-      <img src="img/hero.jpg" alt="Dakwerker met veiligheidslijn aan het werk op een donker hellend dak" width="1800" height="1200" fetchpriority="high">
-      <div class="badge" aria-hidden="true">
-        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-family="IBM Plex Mono, monospace" font-size="8.4" fill="#16191d"><textPath href="#circ" textLength="286" lengthAdjust="spacing">GARANTIE · WATERDICHT · DAKWERKEN HENDRICKX · </textPath></text></svg>
-        <b>10<small>JAAR</small></b>
+    <p class="lead">Familiebedrijf voor nieuwe daken, dakrenovatie, isolatie en herstellingen. Zes eigen dakwerkers, geen onderaannemers. U krijgt een vaste prijs op papier, binnen 48 uur na het plaatsbezoek.</p>
+    <div class="ctas">
+      <a class="btn" href="#offerte">Vraag een gratis offerte <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+      <a class="btn btn-line" href="#prijs">Richtprijs in 3 vragen</a>
+    </div>
+    <div class="tb" role="group" aria-label="Kerngegevens">
+      <p class="tb-h mono"><span>Dakwerken Hendrickx BV</span><span>Blad 01 / 10</span></p>
+      <dl>
+        <div><dt>Sinds</dt><dd><b class="tnum">1998</b>Lier, 2e generatie</dd></div>
+        <div><dt>Daken</dt><dd><b class="tnum">1 200+</b>gelegd of vernieuwd</dd></div>
+        <div><dt>Ploeg</dt><dd><b class="tnum">6</b>eigen dakwerkers</dd></div>
+        <div><dt>Garantie</dt><dd><b class="tnum">10 jaar</b>waterdicht</dd></div>
+        <div><dt>Offerte</dt><dd><b class="tnum">48 u</b>na het bezoek</dd></div>
+        <div><dt>Noodgeval</dt><dd><b class="tnum">24 u</b>ter plaatse</dd></div>
+      </dl>
+    </div>
+    <p class="sos"><span><span class="dot" aria-hidden="true"></span><b>Lek of stormschade?</b> We komen binnen 24 uur.</span><a href="tel:+3203000000">Bel 03 000 00 00 →</a></p>
+  </div>
+
+  <div class="dd" id="dd">
+    <div class="dd-stage" id="dd-stage">
+      <p class="dd-top mono"><span><b>Doorsnede A–A</b> · hellend dak</span><span class="dd-scale">Schematisch · n.t.s.</span></p>
+      <figure class="dd-fig" style="margin:0">
+        <svg class="dd-svg" id="dd-svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="dd-title">
+          <title id="dd-title">Doorsnede van een hellend dak in zeven lagen: dakpannen, panlatten, tengellatten, onderdakfolie, isolatie, kepers en dampscherm.</title>
+          <text class="ann" x="20" y="30">BUITEN</text>
+          <text class="ann ann-x" x="980" y="790" text-anchor="end">BINNEN · ZOLDER</text>
+<g id="dd-all">
+<g class="dd-ly" data-i="0" transform="translate(0 30)"><g transform="translate(134 742) rotate(-24) translate(0 0)"><rect class="c-film" x="0" y="-6" width="560" height="6"/><path class="c-dash" d="M0 -3H560"/></g><g class="dd-l" aria-hidden="true"><circle class="dd-dot" cx="643.1" cy="508.7" r="5"/><path class="dd-lead" d="M651.1 508.7H662"/><text class="dd-n" x="672" y="510.7">07</text><text class="dd-t" x="714" y="510.7">Dampscherm</text><text class="dd-c" x="714" y="534.7">Luchtdicht aan de binnenkant</text></g></g>
+<g class="dd-ly" data-i="1" transform="translate(0 -56)"><g transform="translate(134 742) rotate(-24) translate(0 -6)"><rect class="c-wood" x="0" y="-46" width="560" height="46"/><path class="c-grain" d="M8 -12 q12 0.6 24 0 t24 0 q12 3.0 24 0 t24 0 q12 1.5 24 0 t24 0 q12 -1.8 24 0 t24 0 q12 -2.9 24 0 t24 0 q12 -0.2 24 0 t24 0 q12 2.7 24 0 t24 0 q12 2.2 24 0 t24 0 q12 -1.1 24 0 t24 0 q12 -3.0 24 0 t24 0 q12 -1.1 24 0 t24 0 q12 2.2 24 0 t24 0M8 -22 q12 2.2 24 0 t24 0 q12 2.7 24 0 t24 0 q12 -0.2 24 0 t24 0 q12 -2.9 24 0 t24 0 q12 -1.9 24 0 t24 0 q12 1.5 24 0 t24 0 q12 3.0 24 0 t24 0 q12 0.7 24 0 t24 0 q12 -2.5 24 0 t24 0 q12 -2.5 24 0 t24 0 q12 0.7 24 0 t24 0 q12 3.0 24 0 t24 0M8 -33 q12 3.0 24 0 t24 0 q12 1.3 24 0 t24 0 q12 -2.1 24 0 t24 0 q12 -2.8 24 0 t24 0 q12 0.1 24 0 t24 0 q12 2.8 24 0 t24 0 q12 2.0 24 0 t24 0 q12 -1.4 24 0 t24 0 q12 -3.0 24 0 t24 0 q12 -0.8 24 0 t24 0 q12 2.4 24 0 t24 0 q12 2.5 24 0 t24 0"/></g><g class="dd-l" aria-hidden="true"><circle class="dd-dot" cx="624.4" cy="466.7" r="5"/><path class="dd-lead" d="M632.4 466.7H662"/><text class="dd-n" x="672" y="468.7">06</text><text class="dd-t" x="714" y="468.7">Kepers</text><text class="dd-c" x="714" y="492.7">Het houten draagwerk</text></g></g>
+<g class="dd-ly" data-i="2" transform="translate(0 -112)"><g transform="translate(134 742) rotate(-24) translate(0 -52)"><rect class="c-iso" x="0" y="-58" width="560" height="58"/><path class="c-loop" d="M8 -6 A15 25.8 0 1 1 28 -6 A15 25.8 0 1 1 48 -6 A15 25.8 0 1 1 68 -6 A15 25.8 0 1 1 88 -6 A15 25.8 0 1 1 108 -6 A15 25.8 0 1 1 128 -6 A15 25.8 0 1 1 148 -6 A15 25.8 0 1 1 168 -6 A15 25.8 0 1 1 188 -6 A15 25.8 0 1 1 208 -6 A15 25.8 0 1 1 228 -6 A15 25.8 0 1 1 248 -6 A15 25.8 0 1 1 268 -6 A15 25.8 0 1 1 288 -6 A15 25.8 0 1 1 308 -6 A15 25.8 0 1 1 328 -6 A15 25.8 0 1 1 348 -6 A15 25.8 0 1 1 368 -6 A15 25.8 0 1 1 388 -6 A15 25.8 0 1 1 408 -6 A15 25.8 0 1 1 428 -6 A15 25.8 0 1 1 448 -6 A15 25.8 0 1 1 468 -6 A15 25.8 0 1 1 488 -6 A15 25.8 0 1 1 508 -6 A15 25.8 0 1 1 528 -6"/></g><g class="dd-l" aria-hidden="true"><circle class="dd-dot" cx="600.8" cy="413.7" r="5"/><path class="dd-lead" d="M608.8 413.7H662"/><text class="dd-n" x="672" y="415.7">05</text><text class="dd-t" x="714" y="415.7">Isolatie</text><text class="dd-c" x="714" y="439.7">Minstens R 4,5 voor de premie</text></g></g>
+<g class="dd-ly" data-i="3" transform="translate(0 -168)"><g transform="translate(134 742) rotate(-24) translate(0 -110)"><rect class="c-folie" x="-14" y="-6" width="574" height="6"/></g><g class="dd-l" aria-hidden="true"><circle class="dd-dot" cx="598.4" cy="408.3" r="5"/><path class="dd-lead" d="M606.4 408.3H662"/><text class="dd-n" x="672" y="410.3">04</text><text class="dd-t" x="714" y="410.3">Onderdakfolie</text><text class="dd-c" x="714" y="434.3">Tweede lijn tegen lekken</text></g></g>
+<g class="dd-ly" data-i="4" transform="translate(0 -224)"><g transform="translate(134 742) rotate(-24) translate(0 -116)"><rect class="c-wood" x="0" y="-14" width="560" height="14"/></g><g class="dd-l" aria-hidden="true"><circle class="dd-dot" cx="592.7" cy="395.5" r="5"/><path class="dd-lead" d="M600.7 395.5H662"/><text class="dd-n" x="672" y="397.5">03</text><text class="dd-t" x="714" y="397.5">Tengellatten</text><text class="dd-c" x="714" y="421.5">Laten lucht en water door</text></g></g>
+<g class="dd-ly" data-i="5" transform="translate(0 -280)"><g transform="translate(134 742) rotate(-24) translate(0 -130)"><rect class="c-wood" x="10" y="-16" width="24" height="16"/><rect class="c-wood" x="70" y="-16" width="24" height="16"/><rect class="c-wood" x="130" y="-16" width="24" height="16"/><rect class="c-wood" x="190" y="-16" width="24" height="16"/><rect class="c-wood" x="250" y="-16" width="24" height="16"/><rect class="c-wood" x="310" y="-16" width="24" height="16"/><rect class="c-wood" x="370" y="-16" width="24" height="16"/><rect class="c-wood" x="430" y="-16" width="24" height="16"/><rect class="c-wood" x="490" y="-16" width="24" height="16"/></g><g class="dd-l" aria-hidden="true"><circle class="dd-dot" cx="586.2" cy="380.8" r="5"/><path class="dd-lead" d="M594.2 380.8H662"/><text class="dd-n" x="672" y="382.8">02</text><text class="dd-t" x="714" y="382.8">Panlatten</text><text class="dd-c" x="714" y="406.8">Dragen de pannen</text></g></g>
+<g class="dd-ly" data-i="6" transform="translate(0 -336)"><g transform="translate(134 742) rotate(-24) translate(0 -146)"><path class="c-tile" d="M-34 -14 L44 -2 L44 -13 L-34 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M26 -14 L104 -2 L104 -13 L26 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M86 -14 L164 -2 L164 -13 L86 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M146 -14 L224 -2 L224 -13 L146 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M206 -14 L284 -2 L284 -13 L206 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M266 -14 L344 -2 L344 -13 L266 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M326 -14 L404 -2 L404 -13 L326 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M386 -14 L464 -2 L464 -13 L386 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M446 -14 L524 -2 L524 -13 L446 -25 q-7 5.5 0 15 z"/><path class="c-tile" d="M506 -14 L560 -5.7 L560 -16.7 L506 -25 q-7 5.5 0 15 z"/><g transform="translate(-30 -2) rotate(24)"><path class="c-zinc" d="M-26 -4 a24 24 0 0 0 48 0"/><path class="c-zinc-l" d="M-28 -4h52"/></g></g><g class="dd-l" aria-hidden="true"><circle class="dd-dot" cx="575.6" cy="357.1" r="5"/><path class="dd-lead" d="M583.6 357.1H662"/><text class="dd-n" x="672" y="359.1">01</text><text class="dd-t" x="714" y="359.1">Dakpannen</text><text class="dd-c" x="714" y="383.1">Houden regen en wind tegen</text></g></g>
+</g>
+        </svg>
+      </figure>
+      <div class="dd-cap" aria-live="polite">
+        <p class="dd-num tnum" id="dd-num">00<small>/07</small></p>
+        <p class="dd-name" id="dd-name">Wat zit er onder uw pannen?</p>
+        <p class="dd-line" id="dd-line">Zeven lagen. Wij leggen ze allemaal zelf, en tonen u elke laag op foto.</p>
       </div>
-      <div class="fig"><span class="mono">Fig. 01 — Werf in uitvoering</span><span class="mono">Hellend dak · Lier</span></div>
+      <div class="dd-steps" id="dd-steps" role="group" aria-label="Toon een laag van het dak">
+        <button type="button" data-k="0" aria-pressed="false" aria-label="Laag 1: dakpannen">01</button>
+        <button type="button" data-k="1" aria-pressed="false" aria-label="Laag 2: panlatten">02</button>
+        <button type="button" data-k="2" aria-pressed="false" aria-label="Laag 3: tengellatten">03</button>
+        <button type="button" data-k="3" aria-pressed="false" aria-label="Laag 4: onderdakfolie">04</button>
+        <button type="button" data-k="4" aria-pressed="false" aria-label="Laag 5: isolatie">05</button>
+        <button type="button" data-k="5" aria-pressed="false" aria-label="Laag 6: kepers">06</button>
+        <button type="button" data-k="6" aria-pressed="false" aria-label="Laag 7: dampscherm">07</button>
+        <span class="dd-hint mono" aria-hidden="true">Scroll of tik om te openen<i>↓</i></span>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="figs" aria-label="Kerncijfers">
-  <div class="wrap">
-    <ul>
-      <li class="rv"><b class="tnum">1998</b><span>opgericht in Lier, nu tweede generatie</span></li>
-      <li class="rv d1"><b class="tnum">1 200+</b><span>daken geplaatst of gerenoveerd</span></li>
-      <li class="rv d2"><b class="tnum">6</b><span>eigen dakwerkers in vaste dienst</span></li>
-      <li class="rv d3"><b class="tnum">0</b><span>onderaannemers op uw werf</span></li>
-      <li class="rv d3"><b class="tnum">24 u</b><span>ter plaatse bij een noodherstelling</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- 01 Diensten -->
+<!-- 02 Diensten -->
 <section class="sec" id="diensten" aria-labelledby="h-diensten">
   <div class="wrap">
     <div class="sh rv">
-      <p class="sh-idx mono"><span>01</span>Diensten</p>
+      <p class="sh-idx mono"><span>02 — Diensten</span><small>Blad 02 / 10</small></p>
       <h2 id="h-diensten">Alles voor uw dak, uit één hand.</h2>
       <p class="sh-lead">Van één vervangen pan tot een volledig nieuw dak met isolatie en zonnepanelen. We werken met pannen, natuurleien, EPDM en zink, en plooien goten op maat in ons eigen atelier.</p>
     </div>
@@ -803,12 +790,12 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
       <div class="svc-fig" aria-hidden="true">
         <div class="stick">
           <div class="svc-frame" id="svc-frame">
-            <img src="img/leien.jpg" alt="" class="on" data-k="0" width="1400" height="933" loading="lazy">
-            <img src="img/plat-dak.jpg" alt="" data-k="1" width="1400" height="933" loading="lazy">
-            <img src="img/huis-3.jpg" alt="" data-k="2" width="1000" height="667" loading="lazy">
-            <img src="img/huis-4.jpg" alt="" data-k="3" width="1000" height="667" loading="lazy">
-            <img src="img/zonnepanelen.jpg" alt="" data-k="4" width="1000" height="677" loading="lazy">
-            <img src="img/herstelling.jpg" alt="" data-k="5" width="1000" height="667" loading="lazy">
+            <img src="img/leien.jpg" alt="" class="on" data-k="0" width="1400" height="933" loading="lazy" onerror="this.remove()">
+            <img src="img/plat-dak.jpg" alt="" data-k="1" width="1400" height="933" loading="lazy" onerror="this.remove()">
+            <img src="img/huis-3.jpg" alt="" data-k="2" width="1000" height="667" loading="lazy" onerror="this.remove()">
+            <img src="img/huis-4.jpg" alt="" data-k="3" width="1000" height="667" loading="lazy" onerror="this.remove()">
+            <img src="img/zonnepanelen.jpg" alt="" data-k="4" width="1000" height="677" loading="lazy" onerror="this.remove()">
+            <img src="img/herstelling.jpg" alt="" data-k="5" width="1000" height="667" loading="lazy" onerror="this.remove()">
           </div>
           <p class="svc-cap mono"><span id="svc-cap">Hellende daken</span><span id="svc-num">01 / 06</span></p>
         </div>
@@ -822,7 +809,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
             <ul class="tags"><li>Keramische pannen</li><li>Natuurleien</li><li>Dakgebinte</li></ul>
           </div>
           <a class="srv-go" href="#offerte" data-type="Hellend dak" aria-label="Offerte voor een hellend dak"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-          <div class="srv-thumb"><img src="img/leien.jpg" alt="Bakstenen woning met een donker leien dak" width="1400" height="933" loading="lazy"></div>
+          <div class="srv-thumb"><img src="img/leien.jpg" alt="Bakstenen woning met een donker leien dak" width="1400" height="933" loading="lazy" onerror="this.remove()"></div>
         </article>
         <article class="srv" data-k="1">
           <span class="srv-no mono">02</span>
@@ -832,7 +819,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
             <ul class="tags"><li>EPDM</li><li>Bitumen</li><li>Lichtkoepels</li><li>Dakterras</li></ul>
           </div>
           <a class="srv-go" href="#offerte" data-type="Plat dak" aria-label="Offerte voor een plat dak"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-          <div class="srv-thumb"><img src="img/plat-dak.jpg" alt="Moderne woning met platte daken en houten gevel" width="1400" height="933" loading="lazy"></div>
+          <div class="srv-thumb"><img src="img/plat-dak.jpg" alt="Moderne woning met platte daken en houten gevel" width="1400" height="933" loading="lazy" onerror="this.remove()"></div>
         </article>
         <article class="srv" data-k="2">
           <span class="srv-no mono">03</span>
@@ -842,7 +829,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
             <ul class="tags"><li>Sarking (PIR)</li><li>Minerale wol</li><li>Dampscherm</li></ul>
           </div>
           <a class="srv-go" href="#offerte" data-type="Isolatie" aria-label="Offerte voor dakisolatie"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-          <div class="srv-thumb"><img src="img/huis-3.jpg" alt="Witte woning met veranda en een grijs dak" width="1000" height="667" loading="lazy"></div>
+          <div class="srv-thumb"><img src="img/huis-3.jpg" alt="Witte woning met veranda en een grijs dak" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         </article>
         <article class="srv" data-k="3">
           <span class="srv-no mono">04</span>
@@ -852,7 +839,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
             <ul class="tags"><li>Zink</li><li>Aluminium</li><li>Bakgoten</li><li>Schouwen</li></ul>
           </div>
           <a class="srv-go" href="#offerte" data-type="Dakgoten &amp; zink" aria-label="Offerte voor dakgoten en zinkwerk"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-          <div class="srv-thumb"><img src="img/huis-4.jpg" alt="Grijze woning met licht dak en zinkwerk" width="1000" height="667" loading="lazy"></div>
+          <div class="srv-thumb"><img src="img/huis-4.jpg" alt="Grijze woning met licht dak en zinkwerk" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         </article>
         <article class="srv" data-k="4">
           <span class="srv-no mono">05</span>
@@ -862,7 +849,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
             <ul class="tags"><li>Hellend dak</li><li>Plat dak (oost-west)</li><li>Keuring</li></ul>
           </div>
           <a class="srv-go" href="#offerte" data-type="Zonnepanelen" aria-label="Offerte voor zonnepanelen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-          <div class="srv-thumb"><img src="img/zonnepanelen.jpg" alt="Zonnepanelen op een groot plat dak bij zonsondergang" width="1000" height="677" loading="lazy"></div>
+          <div class="srv-thumb"><img src="img/zonnepanelen.jpg" alt="Zonnepanelen op een groot plat dak bij zonsondergang" width="1000" height="677" loading="lazy" onerror="this.remove()"></div>
         </article>
         <article class="srv" data-k="5">
           <span class="srv-no mono">06</span>
@@ -872,56 +859,65 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
             <ul class="tags"><li>Lekdetectie</li><li>Stormschade</li><li>Verzekeringsdossier</li></ul>
           </div>
           <a class="srv-go" href="#offerte" data-type="Herstelling" aria-label="Herstelling aanvragen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
-          <div class="srv-thumb"><img src="img/herstelling.jpg" alt="Dakwerker op een beschadigd pannendak" width="1000" height="667" loading="lazy"></div>
+          <div class="srv-thumb"><img src="img/herstelling.jpg" alt="Dakwerker op een beschadigd pannendak" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         </article>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 02 Prijsindicatie -->
+<!-- 03 Richtprijs -->
 <section class="sec dk" id="prijs" aria-labelledby="h-prijs">
   <div class="wrap">
     <div class="sh rv">
-      <p class="sh-idx mono"><span>02</span>Prijsindicatie</p>
-      <h2 id="h-prijs">Wat kost een nieuw dak?</h2>
-      <p class="sh-lead">Kies het type dak, de oppervlakte en de opties. U krijgt meteen een indicatieve vork in euro, exclusief btw. De echte prijs staat vast na een gratis plaatsbezoek.</p>
+      <p class="sh-idx mono"><span>03 — Richtprijs</span><small>Blad 03 / 10</small></p>
+      <h2 id="h-prijs">Richtprijs in 3 vragen.</h2>
+      <p class="sh-lead">Type dak, oppervlakte en gemeente. U krijgt meteen een vork in euro, exclusief btw. Vrijblijvend: de echte prijs staat vast na een gratis plaatsbezoek.</p>
     </div>
     <form class="est rv" id="est" onsubmit="return false">
       <div class="est-ctl">
-        <fieldset>
-          <legend class="mono">Type dakbedekking</legend>
+        <fieldset class="q">
+          <legend class="q-l"><span><span class="qn">1/3</span>Welk dak?</span></legend>
           <div class="seg">
-            <label><input type="radio" name="roof" value="pannen" checked><span><b>Pannendak</b><small>Keramische pannen</small></span></label>
+            <label><input type="radio" name="roof" value="pannen" checked><span><b>Pannen</b><small>Keramische pannen</small></span></label>
             <label><input type="radio" name="roof" value="leien"><span><b>Leien</b><small>Natuurleien</small></span></label>
             <label><input type="radio" name="roof" value="epdm"><span><b>Plat dak</b><small>EPDM-rubber</small></span></label>
           </div>
         </fieldset>
-        <div>
-          <label class="lbl mono" for="m2">Dakoppervlakte <output class="m2out tnum" id="m2-out" for="m2">120 m²</output></label>
+        <div class="q">
+          <label class="q-l" for="m2"><span><span class="qn">2/3</span>Hoe groot?</span><output class="m2out tnum" id="m2-out" for="m2">120 m²</output></label>
           <input class="range" type="range" id="m2" min="20" max="300" step="5" value="120" aria-describedby="m2-help">
           <div class="ticks mono" aria-hidden="true"><span>20 m²</span><span>150</span><span>300 m²</span></div>
-          <p class="sr" id="m2-help">Oppervlakte van het dakvlak in vierkante meter, tussen 20 en 300.</p>
+          <p class="sr" id="m2-help">Oppervlakte van het dakvlak in vierkante meter, tussen 20 en 300. Een rijwoning heeft vaak 60 tot 90 m² dak.</p>
         </div>
-        <fieldset>
-          <legend class="mono">Opties</legend>
+        <div class="q">
+          <label class="q-l" for="gem"><span><span class="qn">3/3</span>Waar?</span></label>
+          <select class="sel-dk" id="gem">
+            <option value="Lier" data-km="0">Lier</option>
+            <option value="Berlaar" data-km="6">Berlaar</option>
+            <option value="Ranst" data-km="7">Ranst</option>
+            <option value="Duffel" data-km="7">Duffel</option>
+            <option value="Nijlen" data-km="8">Nijlen</option>
+            <option value="Kontich" data-km="9">Kontich</option>
+            <option value="Boechout" data-km="9">Boechout</option>
+            <option value="Putte" data-km="11">Putte</option>
+            <option value="Mechelen" data-km="13">Mechelen</option>
+            <option value="Heist-op-den-Berg" data-km="13">Heist-op-den-Berg</option>
+            <option value="Antwerpen" data-km="16">Antwerpen</option>
+            <option value="Herentals" data-km="19">Herentals</option>
+            <option value="" data-km="99">Andere gemeente</option>
+          </select>
+          <p class="zone" id="zone"><b>Lier · 0 km.</b> Binnen ons werkgebied: geen verplaatsingskosten.</p>
+        </div>
+        <details class="extras">
+          <summary class="mono">Extra's (optioneel)</summary>
           <div class="opts">
             <label class="opt"><span><b id="o-iso-t">Isolatie (sarking)</b><small id="o-iso-s">PIR-platen langs buiten, R ≥ 4,5</small></span><span class="sw"><input type="checkbox" id="o-iso" checked><i aria-hidden="true"></i></span></label>
             <label class="opt"><span><b id="o-got-t">Nieuwe zinken dakgoten</b><small id="o-got-s">Op maat geplooid, incl. afvoeren</small></span><span class="sw"><input type="checkbox" id="o-got"><i aria-hidden="true"></i></span></label>
             <div class="opt"><span><b id="o-win-t">Dakramen (velux)</b><small id="o-win-s">Plaatsen inclusief gootstuk en afwerking</small></span>
-              <span class="step-n" role="group" aria-labelledby="o-win-t"><button type="button" id="win-min" aria-label="Eén dakraam minder">−</button><output id="win-out" aria-live="polite">1</output><button type="button" id="win-plus" aria-label="Eén dakraam meer">+</button></span></div>
+              <span class="step-n" role="group" aria-labelledby="o-win-t"><button type="button" id="win-min" aria-label="Eén minder">−</button><output id="win-out" aria-live="polite">1</output><button type="button" id="win-plus" aria-label="Eén meer">+</button></span></div>
           </div>
-        </fieldset>
-        <div class="incl">
-          <p class="mono">Altijd inbegrepen</p>
-          <ul>
-            <li>Afbraak en afvoer van de oude dakbedekking</li>
-            <li>Nieuw onderdak of dampscherm</li>
-            <li>Stelling, valbeveiliging en container</li>
-            <li>Dagelijks waterdicht afdekken</li>
-            <li>Fotoverslag en garantiecertificaat</li>
-          </ul>
-        </div>
+        </details>
       </div>
       <div class="est-out">
         <svg class="draw" viewBox="0 0 400 230" role="img" aria-label="Schematische tekening van het gekozen dak" id="draw">
@@ -955,44 +951,44 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
           </g>
           <text x="20" y="22" id="draw-l">PANNENDAK · SCHAAL N.T.S.</text>
           <text x="380" y="22" text-anchor="end" id="draw-m2">≈ 120 M²</text>
-          <text x="20" y="218">HENDRICKX / FIG. 02</text>
+          <text x="20" y="218" id="draw-g">HENDRICKX / BLAD 03 · LIER</text>
         </svg>
         <div aria-live="polite" aria-atomic="true">
-          <p class="price-lbl mono"><span>Indicatieve prijs, excl. btw</span><span class="tag-ind">Indicatief</span></p>
+          <p class="price-lbl mono"><span>Richtprijs, excl. btw</span><span class="tag-ind">Vrijblijvend</span></p>
           <p class="price tnum" id="price">€ 25.300 <span>–</span> € 34.600</p>
           <p class="price-sub" id="price-sub">Met 6 % btw (woning ouder dan 10 jaar): € 26.800 – € 36.700 · ± 7 tot 9 werkdagen</p>
         </div>
         <dl class="bd" id="bd"></dl>
-        <p class="disc"><span aria-hidden="true">ⓘ</span><span><b>Indicatief, geen offerte.</b> Gebaseerd op gemiddelde voorbeeldprijzen voor een eengezinswoning met goed bereikbaar dak, inclusief afbraak, afvoer en stelling. Dakhelling, schouwen, kilgoten en de staat van het gebinte kunnen de prijs wijzigen. Na een gratis plaatsbezoek krijgt u een vaste prijs per post.</span></p>
-        <div><button class="btn" type="button" id="est-go">Neem over in mijn offerteaanvraag <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></button></div>
+        <p class="disc"><span aria-hidden="true">ⓘ</span><span><b>Richtprijs, geen offerte.</b> Gebaseerd op gemiddelde voorbeeldprijzen voor een eengezinswoning met goed bereikbaar dak, inclusief afbraak, afvoer en stelling. Dakhelling, schouwen, kilgoten en de staat van het gebinte kunnen de prijs wijzigen. Na een gratis plaatsbezoek krijgt u een vaste prijs per post.</span></p>
+        <div><button class="btn" type="button" id="est-go">Neem over in mijn aanvraag <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></button></div>
       </div>
     </form>
   </div>
 </section>
 
-<!-- 03 Realisaties -->
+<!-- 04 Realisaties -->
 <section class="sec" id="realisaties" aria-labelledby="h-real">
   <div class="wrap">
     <div class="sh rv">
-      <p class="sh-idx mono"><span>03</span>Realisaties</p>
+      <p class="sh-idx mono"><span>04 — Realisaties</span><small>Blad 04 / 10</small></p>
       <h2 id="h-real">Recent werk in de streek.</h2>
-      <p class="sh-lead">Een greep uit onze werven, met de cijfers erbij. Klik op een project voor de details. Op de echte site staan hier uw eigen foto's van voor en na.</p>
+      <p class="sh-lead">Een greep uit onze werven, met de cijfers erbij. Tik op een project voor de details. Op de echte site staan hier uw eigen foto's van voor en na.</p>
     </div>
 
     <div class="feat">
       <div class="feat-ba rv">
-        <div class="ba" style="--x:68%">
-          <img src="img/leien.jpg" alt="Na: gerenoveerd leien dak op een bakstenen woning" width="1400" height="933" loading="lazy">
-          <div class="ba-before"><img src="img/leien.jpg" alt="" width="1400" height="933" loading="lazy"></div>
+        <div class="ba" style="--x:62%">
+          <img src="img/leien.jpg" alt="Na: gerenoveerd leien dak op een bakstenen woning" width="1400" height="933" loading="lazy" onerror="this.remove()">
+          <div class="ba-before"><img src="img/leien.jpg" alt="" width="1400" height="933" loading="lazy" onerror="this.remove()"></div>
           <span class="ba-line" aria-hidden="true"></span>
           <span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
           <span class="ba-tag l mono">Voor · gesimuleerd</span><span class="ba-tag r mono">Na</span>
-          <input class="ba-range" type="range" min="0" max="100" value="68" aria-label="Vergelijk voor en na: schuif naar links of rechts">
+          <input class="ba-range" type="range" min="0" max="100" value="62" aria-label="Vergelijk voor en na">
         </div>
-        <p class="ba-note">Sleep de lijn om te vergelijken. De voor-foto is hier gesimuleerd met een filter op dezelfde stockfoto.</p>
+        <p class="ba-note">Sleep met uw duim over de foto. De voor-foto is hier gesimuleerd met een filter op dezelfde stockfoto.</p>
       </div>
       <div class="feat-txt rv d1">
-        <p class="mono" style="color:var(--accent-ink)">Uitgelicht · P—01</p>
+        <p class="mono" style="color:var(--terra-ink)">Uitgelicht · P—01</p>
         <h3>Natuurleien en sarking op een gezinswoning</h3>
         <p>Een leien dak uit de jaren 60 met doorgezakte panlatten en zonder isolatie. Volledig afgebroken tot op het gebinte, geïsoleerd langs buiten en opnieuw gedekt met natuurleien.</p>
         <dl class="specs">
@@ -1017,55 +1013,55 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
 
     <div class="pj-grid" id="pj-grid">
       <article class="pj rv" data-cat="hellend" data-id="p1">
-        <div class="pj-img"><img src="img/leien.jpg" alt="Bakstenen woning met een vernieuwd leien dak" width="1400" height="933" loading="lazy"></div>
+        <div class="pj-img"><img src="img/leien.jpg" alt="Bakstenen woning met een vernieuwd leien dak" width="1400" height="933" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—01</span><span>Hellend dak</span></p>
         <h3><button type="button" data-open="p1" aria-haspopup="dialog">Natuurleien en sarking op een gezinswoning</button></h3>
         <p class="pj-sub">Lier · 2026 · 165 m²</p>
       </article>
       <article class="pj rv d1" data-cat="plat" data-id="p2">
-        <div class="pj-img"><img src="img/plat-dak.jpg" alt="Moderne nieuwbouwwoning met platte daken en houten gevelbekleding" width="1400" height="933" loading="lazy"></div>
+        <div class="pj-img"><img src="img/plat-dak.jpg" alt="Moderne nieuwbouwwoning met platte daken en houten gevelbekleding" width="1400" height="933" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—02</span><span>Plat dak</span></p>
         <h3><button type="button" data-open="p2" aria-haspopup="dialog">EPDM op nieuwbouw met houten gevel</button></h3>
         <p class="pj-sub">Kontich · 2026 · 140 m²</p>
       </article>
       <article class="pj rv d2" data-cat="hellend" data-id="p3">
-        <div class="pj-img"><img src="img/huis-1.jpg" alt="Vrijstaande woning met nieuw pannendak en gazon" width="1000" height="667" loading="lazy"></div>
+        <div class="pj-img"><img src="img/huis-1.jpg" alt="Vrijstaande woning met nieuw pannendak en gazon" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—03</span><span>Hellend dak</span></p>
         <h3><button type="button" data-open="p3" aria-haspopup="dialog">Nieuw pannendak op een vrijstaande woning</button></h3>
         <p class="pj-sub">Nijlen · 2025 · 140 m²</p>
       </article>
       <article class="pj rv" data-cat="isolatie" data-id="p4">
-        <div class="pj-img"><img src="img/huis-3.jpg" alt="Witte woning met veranda en grijs dak" width="1000" height="667" loading="lazy"></div>
+        <div class="pj-img"><img src="img/huis-3.jpg" alt="Witte woning met veranda en grijs dak" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—04</span><span>Isolatie</span></p>
         <h3><button type="button" data-open="p4" aria-haspopup="dialog">Sarking-isolatie op een woning uit de jaren 30</button></h3>
         <p class="pj-sub">Duffel · 2025 · 150 m²</p>
       </article>
       <article class="pj rv d1" data-cat="zon" data-id="p5">
-        <div class="pj-img"><img src="img/zonnepanelen.jpg" alt="Zonnepanelen op een groot plat dak bij zonsondergang" width="1000" height="677" loading="lazy"></div>
+        <div class="pj-img"><img src="img/zonnepanelen.jpg" alt="Zonnepanelen op een groot plat dak bij zonsondergang" width="1000" height="677" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—05</span><span>Zonnepanelen</span></p>
         <h3><button type="button" data-open="p5" aria-haspopup="dialog">Zonnepanelen op een bedrijfsdak</button></h3>
         <p class="pj-sub">Heist-op-den-Berg · 2026 · 64 panelen</p>
       </article>
       <article class="pj rv d2" data-cat="herstel" data-id="p6">
-        <div class="pj-img"><img src="img/herstelling.jpg" alt="Dakwerker op een pannendak met stormschade" width="1000" height="667" loading="lazy"></div>
+        <div class="pj-img"><img src="img/herstelling.jpg" alt="Dakwerker op een pannendak met stormschade" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—06</span><span>Herstelling</span></p>
         <h3><button type="button" data-open="p6" aria-haspopup="dialog">Stormschade hersteld binnen 24 uur</button></h3>
         <p class="pj-sub">Berlaar · 2026 · 20 m²</p>
       </article>
       <article class="pj rv" data-cat="hellend" data-id="p7">
-        <div class="pj-img"><img src="img/huis-5.jpg" alt="Bakstenen woning met donker pannendak en dubbele garage" width="1000" height="667" loading="lazy"></div>
+        <div class="pj-img"><img src="img/huis-5.jpg" alt="Bakstenen woning met donker pannendak en dubbele garage" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—07</span><span>Hellend dak</span></p>
         <h3><button type="button" data-open="p7" aria-haspopup="dialog">Dakrenovatie met dakkapel en velux</button></h3>
         <p class="pj-sub">Ranst · 2025 · 180 m²</p>
       </article>
       <article class="pj rv d1" data-cat="plat" data-id="p8">
-        <div class="pj-img"><img src="img/huis-2.jpg" alt="Moderne woning met plat dak bij valavond" width="1000" height="667" loading="lazy"></div>
+        <div class="pj-img"><img src="img/huis-2.jpg" alt="Moderne woning met plat dak bij valavond" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—08</span><span>Plat dak</span></p>
         <h3><button type="button" data-open="p8" aria-haspopup="dialog">Plat dak met lichtstraat en dakterras</button></h3>
         <p class="pj-sub">Boechout · 2025 · 210 m²</p>
       </article>
       <article class="pj rv d2" data-cat="isolatie" data-id="p9">
-        <div class="pj-img"><img src="img/huis-6.jpg" alt="Woning met steil dak en verlichte ramen bij avond" width="1000" height="667" loading="lazy"></div>
+        <div class="pj-img"><img src="img/huis-6.jpg" alt="Woning met steil dak en verlichte ramen bij avond" width="1000" height="667" loading="lazy" onerror="this.remove()"></div>
         <p class="pj-meta mono"><span>P—09</span><span>Isolatie</span></p>
         <h3><button type="button" data-open="p9" aria-haspopup="dialog">Zolder geïsoleerd en omgebouwd tot slaapkamer</button></h3>
         <p class="pj-sub">Herentals · 2025 · 95 m²</p>
@@ -1106,23 +1102,23 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   </div>
 </section>
 
-<!-- 04 Werkwijze -->
+<!-- 05 Werkwijze -->
 <section class="sec" id="werkwijze" aria-labelledby="h-werk">
   <div class="wrap">
     <div class="sh rv">
-      <p class="sh-idx mono"><span>04</span>Werkwijze</p>
+      <p class="sh-idx mono"><span>05 — Werkwijze</span><small>Blad 05 / 10</small></p>
       <h2 id="h-werk">Van eerste telefoon tot propere werf.</h2>
       <p class="sh-lead">Vijf stappen, telkens met een duidelijke termijn. U weet op elk moment wie er langskomt, wat het kost en wanneer de werf start.</p>
     </div>
     <ol class="tl rv" id="tl">
-      <li><span class="mono">Stap 01</span><h3>Aanvraag</h3><p>U belt of vult het formulier in, liefst met een paar foto's. We plannen meteen een bezoek.</p><span class="when">Dag 0</span></li>
+      <li><span class="mono">Stap 01</span><h3>Aanvraag</h3><p>U belt of vult het formulier in. Foto's stuurt u gerust via WhatsApp. We plannen meteen een bezoek.</p><span class="when">Dag 0</span></li>
       <li><span class="mono">Stap 02</span><h3>Plaatsbezoek</h3><p>We meten op, kijken naar gebinte, isolatie, goten en schouwen, en bespreken de opties.</p><span class="when">Binnen de week</span></li>
       <li><span class="mono">Stap 03</span><h3>Vaste offerte</h3><p>Prijs per post, materialen, planning en premies op papier. Geen meerwerk zonder uw akkoord.</p><span class="when">Binnen 48 uur</span></li>
       <li><span class="mono">Stap 04</span><h3>De werf</h3><p>Eigen ploeg, eigen stelling en kraan. Uw woning blijft bewoonbaar en elke avond is het dak dicht.</p><span class="when">3 tot 10 werkdagen</span></li>
       <li><span class="mono">Stap 05</span><h3>Oplevering</h3><p>Samen rondlopen, foto's van elke laag, garantiecertificaat en een bezemschone werf.</p><span class="when">10 jaar garantie</span></li>
     </ol>
     <div class="promise">
-      <div class="promise-pic rv"><img src="img/werf.jpg" alt="Twee ploegbazen met helm overleggen op een werf met stellingen" width="1000" height="750" loading="lazy"></div>
+      <div class="promise-pic rv"><img src="img/werf.jpg" alt="Twee ploegbazen met helm overleggen op een werf met stellingen" width="1000" height="750" loading="lazy" onerror="this.remove()"></div>
       <div class="promise-txt rv d1">
         <blockquote>“Wie de offerte maakt, staat ook op uw dak.”</blockquote>
         <p>Geen onderaannemers, geen wisselende gezichten. Eén vaste ploegbaas volgt uw werf van het plaatsbezoek tot de oplevering, met minstens tien jaar ervaring en een VCA-attest.</p>
@@ -1136,11 +1132,11 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   </div>
 </section>
 
-<!-- 05 Premies -->
+<!-- 06 Premies -->
 <section class="sec alt" id="premies" aria-labelledby="h-prem">
   <div class="wrap">
     <div class="sh rv">
-      <p class="sh-idx mono"><span>05</span>Premies</p>
+      <p class="sh-idx mono"><span>06 — Premies</span><small>Blad 06 / 10</small></p>
       <h2 id="h-prem">Mijn VerbouwPremie, zonder papierwerk.</h2>
       <p class="sh-lead">Wie in Vlaanderen zijn dak isoleert of renoveert, kan een deel terugkrijgen via de Mijn VerbouwPremie. Wij zorgen dat alles klopt op de factuur en leveren de stukken aan.</p>
     </div>
@@ -1167,11 +1163,11 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   </div>
 </section>
 
-<!-- 06 Reviews -->
+<!-- 07 Reviews -->
 <section class="sec" id="reviews" aria-labelledby="h-rev">
   <div class="wrap">
     <div class="sh rv">
-      <p class="sh-idx mono"><span>06</span>Klanten</p>
+      <p class="sh-idx mono"><span>07 — Klanten</span><small>Blad 07 / 10</small></p>
       <h2 id="h-rev">Wat bouwheren vertellen.</h2>
     </div>
     <div class="rv-grid">
@@ -1183,7 +1179,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
       </div>
       <figure class="rv-main rv d1">
         <blockquote style="margin:0"><p>Offerte binnen twee dagen, werf in negen. Elke avond lag er een zeil over het open dak en alles stond netjes opgeruimd. Je ziet nu nog niet dat er een stelling heeft gestaan.</p></blockquote>
-        <figcaption><footer class="mono" style="margin-top:1.2rem;display:flex;gap:1rem;color:var(--muted)"><span>Voorbeeldklant</span><span>Leien dak · Lier</span></footer></figcaption>
+        <figcaption><footer class="mono"><span>Voorbeeldklant</span><span>Leien dak · Lier</span></footer></figcaption>
       </figure>
       <div class="rv-side">
         <figure class="rv-s rv d2"><blockquote style="margin:0"><p>Na de storm stonden ze de dag erna op het dak. Ze maakten foto's en regelden het dossier voor de verzekering.</p></blockquote><figcaption><footer class="mono"><span>Voorbeeldklant</span><span>Stormschade · Berlaar</span></footer></figcaption></figure>
@@ -1193,11 +1189,11 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   </div>
 </section>
 
-<!-- 07 FAQ -->
+<!-- 08 FAQ -->
 <section class="sec alt" id="faq" aria-labelledby="h-faq">
   <div class="wrap">
     <div class="sh rv">
-      <p class="sh-idx mono"><span>07</span>Vragen</p>
+      <p class="sh-idx mono"><span>08 — Vragen</span><small>Blad 08 / 10</small></p>
       <h2 id="h-faq">Wat u ons het vaakst vraagt.</h2>
     </div>
     <div class="faq">
@@ -1210,17 +1206,17 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
         <details class="qa"><summary><span class="mono">05</span><span>Wat als het regent tijdens de werf?</span><i class="pm-i" aria-hidden="true"></i></summary><div class="ans"><p>We volgen het weerbericht op en openen nooit meer dak dan we dezelfde dag kunnen dichten. Bij aanhoudende regen of storm schuiven we een dag op, zonder meerkost voor u.</p></div></details>
         <details class="qa"><summary><span class="mono">06</span><span>Welke garantie krijg ik?</span><i class="pm-i" aria-hidden="true"></i></summary><div class="ans"><p>Op elk nieuw dak geven we 10 jaar waterdichtheidsgarantie, bovenop de wettelijke tienjarige aansprakelijkheid. U krijgt een garantiecertificaat bij de oplevering.</p></div></details>
         <details class="qa"><summary><span class="mono">07</span><span>Wat met asbest in oude leien of golfplaten?</span><i class="pm-i" aria-hidden="true"></i></summary><div class="ans"><p>Hechtgebonden asbest, zoals oude kunstleien of golfplaten, verwijderen we volgens de geldende veiligheidsregels en voeren we af naar een erkende verwerker. Dat staat apart vermeld op de offerte.</p></div></details>
-        <details class="qa"><summary><span class="mono">08</span><span>Doen jullie ook kleine herstellingen?</span><i class="pm-i" aria-hidden="true"></i></summary><div class="ans"><p>Zeker. Een paar losse pannen, een lekkende loodslab of een verstopte goot: stuur een foto via het formulier en we plannen een korte interventie.</p></div></details>
+        <details class="qa"><summary><span class="mono">08</span><span>Doen jullie ook kleine herstellingen?</span><i class="pm-i" aria-hidden="true"></i></summary><div class="ans"><p>Zeker. Een paar losse pannen, een lekkende loodslab of een verstopte goot: stuur een foto via WhatsApp en we plannen een korte interventie.</p></div></details>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 08 Werkgebied -->
+<!-- 09 Werkgebied -->
 <section class="sec dk" id="werkgebied" aria-labelledby="h-area">
   <div class="wrap">
     <div class="sh rv">
-      <p class="sh-idx mono"><span>08</span>Werkgebied</p>
+      <p class="sh-idx mono"><span>09 — Werkgebied</span><small>Blad 09 / 10</small></p>
       <h2 id="h-area">Lier en 30 km rond.</h2>
       <p class="sh-lead">Korte verplaatsingen betekenen snellere hulp bij een lek en geen verplaatsingskosten op uw factuur. Daarbuiten werken we op aanvraag.</p>
     </div>
@@ -1247,7 +1243,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
             <circle class="dot" cx="266" cy="256" r="3"/><text x="274" y="262">Putte</text>
             <circle class="dot" cx="165" cy="137" r="3"/><text x="118" y="128">Antwerpen</text>
           </g>
-          <circle cx="240" cy="200" r="14" fill="rgba(242,98,31,.2)"/>
+          <circle cx="240" cy="200" r="14" fill="rgba(224,138,98,.22)"/>
           <circle class="lier" cx="240" cy="200" r="6"/>
           <text class="big" x="248" y="234">Lier</text>
           <text class="km" x="16" y="388">SCHEMATISCH · NIET OP SCHAAL</text>
@@ -1264,7 +1260,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
           <li>Antwerpen <span>16 km</span></li><li>Herentals <span>19 km</span></li>
         </ul>
         <div class="sos-dk">
-          <b><span class="pulse" aria-hidden="true"></span>Dringende lekkage?</b>
+          <b><span class="dot" aria-hidden="true"></span>Dringende lekkage?</b>
           <p>Bel <a href="tel:+3203000000">03 000 00 00</a>. Binnen het werkgebied zijn we binnen 24 uur ter plaatse voor een noodherstelling, ook om het dak tijdelijk af te dekken.</p>
         </div>
       </div>
@@ -1272,109 +1268,48 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   </div>
 </section>
 
-<!-- 09 Offerte -->
+<!-- 10 Offerte -->
 <section class="sec" id="offerte" aria-labelledby="h-off">
   <div class="wrap">
     <div class="qf">
       <div class="qf-side rv">
-        <p class="sh-idx mono" style="margin-bottom:1.2rem"><span style="color:var(--accent-ink)">09</span>&nbsp;&nbsp;Offerte</p>
+        <p class="sh-idx mono"><span>10 — Offerte</span><small>Blad 10 / 10</small></p>
         <h2 id="h-off">Vraag uw gratis offerte.</h2>
-        <p>Drie korte stappen. We bellen u binnen één werkdag om een plaatsbezoek vast te leggen.</p>
+        <p>Vijf korte velden. We bellen u binnen één werkdag om een plaatsbezoek vast te leggen.</p>
         <ul class="qf-pts">
           <li><span class="mono">01</span><span><b>Gratis en vrijblijvend</b><span>Plaatsbezoek en offerte kosten u niets.</span></span></li>
           <li><span class="mono">02</span><span><b>Vaste prijs per post</b><span>Wat op de offerte staat, is wat u betaalt.</span></span></li>
           <li><span class="mono">03</span><span><b>Premies geregeld</b><span>We bereiden het dossier voor de Mijn VerbouwPremie mee voor.</span></span></li>
         </ul>
-        <div class="qf-contact"><img src="img/vakman.jpg" alt="" width="1000" height="668" loading="lazy"><p>Liever bellen? Ma tot vr 7:00 – 17:00 op <a href="tel:+3203000000">03 000 00 00</a>, of stuur een WhatsApp met een foto.</p></div>
+        <div class="qf-contact"><img src="img/vakman.jpg" alt="" width="1000" height="668" loading="lazy" onerror="this.remove()"><p>Liever bellen? Ma tot vr 7:00 – 17:00 op <a href="tel:+3203000000">03 000 00 00</a>, of stuur een WhatsApp met een foto.</p></div>
       </div>
 
       <form class="form rv d1" id="qform" novalidate aria-labelledby="h-off">
+        <p class="form-h mono"><span>Aanvraag plaatsbezoek</span><span>Ref. DH-…</span></p>
         <div id="form-body">
-          <ol class="prog" id="prog" aria-label="Voortgang">
-            <li aria-current="step"><span class="mono">Stap 1 / 3</span>Type werk</li>
-            <li><span class="mono">Stap 2 / 3</span>Details &amp; foto's</li>
-            <li><span class="mono">Stap 3 / 3</span>Contact</li>
-          </ol>
           <p class="prefill" id="prefill" role="status"><span aria-hidden="true">↳</span><span id="prefill-t"></span></p>
-
-          <fieldset class="fstep cur" data-step="1">
+          <fieldset class="fset">
             <legend>Wat moet er gebeuren?</legend>
-            <p class="fhint">Kies wat het best past. U kunt in de volgende stap meer vertellen.</p>
             <div class="tiles" id="tiles">
-              <label class="tile"><input type="radio" name="type" value="Hellend dak"><span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 14 14 5l11 9"/><path d="M6 12v12h16V12"/></svg>Hellend dak</span></label>
+              <label class="tile"><input type="radio" name="type" value="Hellend dak" aria-describedby="err-type"><span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 14 14 5l11 9"/><path d="M6 12v12h16V12"/></svg>Hellend dak</span></label>
               <label class="tile"><input type="radio" name="type" value="Plat dak"><span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10h22v3H3z"/><path d="M5 13v11h18V13"/></svg>Plat dak</span></label>
               <label class="tile"><input type="radio" name="type" value="Isolatie"><span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 14 14 5l11 9"/><path d="M6 16 14 9.5l8 6.5" stroke-dasharray="2 2"/><path d="M6 14v10h16V14"/></svg>Isolatie</span></label>
-              <label class="tile"><input type="radio" name="type" value="Dakgoten &amp; zink"><span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9h22v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path d="M20 15v9"/></svg>Dakgoten &amp; zink</span></label>
+              <label class="tile"><input type="radio" name="type" value="Dakgoten &amp; zink"><span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9h22v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path d="M20 15v9"/></svg>Goten &amp; zink</span></label>
               <label class="tile"><input type="radio" name="type" value="Zonnepanelen"><span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 22l4-14h12l4 14z"/><path d="M6 15h16M14 8v14"/></svg>Zonnepanelen</span></label>
               <label class="tile"><input type="radio" name="type" value="Herstelling"><span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M17 4l7 7-11 11H6v-7z"/><path d="M14 7l7 7"/></svg>Herstelling</span></label>
             </div>
             <p class="ferr" id="err-type" role="alert"></p>
-            <div class="fld">
-              <span class="flbl" id="urg-l">Hoe dringend is het?</span>
-              <div class="chips" role="radiogroup" aria-labelledby="urg-l">
-                <label class="chip"><input type="radio" name="urg" value="Gepland" checked><span>Gepland project</span></label>
-                <label class="chip"><input type="radio" name="urg" value="Dringend"><span>Dringend: lek of stormschade</span></label>
-              </div>
-              <p class="urgent" id="urgent">Bij een acuut lek belt u best meteen: <a href="tel:+3203000000">03 000 00 00</a>. We komen binnen 24 uur een noodherstelling doen. U kunt het formulier ook verder invullen.</p>
-            </div>
           </fieldset>
-
-          <fieldset class="fstep" data-step="2">
-            <legend>Vertel iets over uw dak</legend>
-            <p class="fhint">Een schatting volstaat. Foto's helpen ons om de offerte sneller en juister te maken.</p>
-            <div class="f-row">
-              <div class="fld"><label for="q-m2">Oppervlakte <span class="opt-t">(ca. m², optioneel)</span></label><input class="inp" id="q-m2" name="m2" type="number" inputmode="numeric" min="1" max="5000" placeholder="bv. 120" aria-describedby="err-m2"><p class="ferr" id="err-m2"></p></div>
-              <div class="fld"><label for="q-year">Bouwjaar woning</label><select class="inp" id="q-year" name="year"><option value="">Weet ik niet</option><option>Voor 1950</option><option>1950 – 1980</option><option>1980 – 2000</option><option>2000 – 2015</option><option>Na 2015</option></select></div>
-            </div>
-            <div class="fld">
-              <span class="flbl" id="opt-l">Gewenste opties <span class="opt-t">(optioneel)</span></span>
-              <div class="chips" role="group" aria-labelledby="opt-l">
-                <label class="chip"><input type="checkbox" name="opt" value="Isolatie"><span>Isolatie</span></label>
-                <label class="chip"><input type="checkbox" name="opt" value="Dakgoten"><span>Dakgoten</span></label>
-                <label class="chip"><input type="checkbox" name="opt" value="Dakramen"><span>Dakramen of lichtkoepels</span></label>
-                <label class="chip"><input type="checkbox" name="opt" value="Zonnepanelen"><span>Zonnepanelen</span></label>
-              </div>
-            </div>
-            <div class="fld"><label for="q-msg">Korte beschrijving</label><textarea class="inp" id="q-msg" name="msg" placeholder="bv. Rijwoning, pannendak van 1975. Na hevige regen zien we natte plekken op zolder." aria-describedby="err-msg"></textarea><p class="ferr" id="err-msg"></p></div>
-            <div class="fld">
-              <span class="flbl">Foto's <span class="opt-t">(optioneel, max. 6)</span></span>
-              <label class="drop" id="drop" for="q-files"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="6" width="20" height="15"/><circle cx="9" cy="11" r="2"/><path d="M3 18l6-5 5 4 3-2 6 4"/></svg><b>Klik of sleep foto's hierheen</b><small>JPG, PNG of HEIC · alleen een voorbeeld, er wordt niets opgeladen</small></label>
-              <input type="file" id="q-files" accept="image/*" multiple class="sr">
-              <ul class="thumbs" id="thumbs" aria-label="Gekozen foto's"></ul>
-              <p class="ferr" id="err-files" role="status"></p>
-            </div>
-          </fieldset>
-
-          <fieldset class="fstep" data-step="3">
-            <legend>Hoe bereiken we u?</legend>
-            <p class="fhint">We gebruiken uw gegevens alleen om u over deze aanvraag te contacteren.</p>
-            <div class="f-row">
-              <div class="fld"><label for="q-name">Naam</label><input class="inp" id="q-name" name="name" autocomplete="name" aria-describedby="err-name"><p class="ferr" id="err-name"></p></div>
-              <div class="fld"><label for="q-tel">Telefoon</label><input class="inp" id="q-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="bv. 0470 00 00 00" aria-describedby="err-tel"><p class="ferr" id="err-tel"></p></div>
-            </div>
-            <div class="fld"><label for="q-mail">E-mail</label><input class="inp" id="q-mail" name="mail" type="email" autocomplete="email" placeholder="naam@voorbeeld.example" aria-describedby="err-mail"><p class="ferr" id="err-mail"></p></div>
-            <div class="f-row pc2">
-              <div class="fld"><label for="q-zip">Postcode</label><input class="inp" id="q-zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="4" placeholder="2500" aria-describedby="err-zip"><p class="ferr" id="err-zip"></p></div>
-              <div class="fld"><label for="q-city">Gemeente van de werf</label><input class="inp" id="q-city" name="city" autocomplete="address-level2" placeholder="bv. Lier" aria-describedby="err-city"><p class="ferr" id="err-city"></p></div>
-            </div>
-            <div class="fld">
-              <span class="flbl" id="pref-l">Hoe contacteren we u het liefst?</span>
-              <div class="chips" role="radiogroup" aria-labelledby="pref-l">
-                <label class="chip"><input type="radio" name="pref" value="telefoon" checked><span>Telefonisch</span></label>
-                <label class="chip"><input type="radio" name="pref" value="e-mail"><span>Per e-mail</span></label>
-              </div>
-            </div>
-            <label class="check"><input type="checkbox" id="q-ok" aria-describedby="err-ok"><span>Ik ga akkoord dat Dakwerken Hendrickx mij contacteert over deze aanvraag.</span></label>
-            <p class="ferr" id="err-ok"></p>
-          </fieldset>
-
-          <div class="fnav">
-            <button class="btn btn-line fs-prev" type="button" id="f-prev">← Vorige</button>
-            <span class="sp"></span>
-            <button class="btn btn-dark fs-next show" type="button" id="f-next">Volgende <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></button>
-            <button class="btn fs-submit" type="submit" id="f-submit">Verstuur mijn aanvraag <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></button>
+          <div class="f-row">
+            <div class="fld"><label for="q-name">Naam</label><input class="inp" id="q-name" name="name" autocomplete="name" aria-describedby="err-name"><p class="ferr" id="err-name"></p></div>
+            <div class="fld"><label for="q-tel">Telefoon</label><input class="inp" id="q-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="0470 00 00 00" aria-describedby="err-tel"><p class="ferr" id="err-tel"></p></div>
+            <div class="fld"><label for="q-city">Gemeente</label><input class="inp" id="q-city" name="city" autocomplete="address-level2" placeholder="bv. Lier" aria-describedby="err-city"><p class="ferr" id="err-city"></p></div>
           </div>
-          <p class="fdemo">Demo: er wordt niets verstuurd. Op de echte site komt elke aanvraag per e-mail en als melding op uw gsm binnen.</p>
+          <div class="fld"><label for="q-msg">Uw vraag</label><textarea class="inp" id="q-msg" name="msg" placeholder="bv. Rijwoning, pannendak van 1975. Na hevige regen zien we natte plekken op zolder." aria-describedby="err-msg"></textarea><p class="ferr" id="err-msg"></p></div>
+          <div class="f-foot">
+            <p>We gebruiken uw gegevens alleen om u over deze aanvraag te contacteren. Demo: er wordt niets verstuurd.</p>
+            <button class="btn" type="submit" id="f-submit">Verstuur mijn aanvraag <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></button>
+          </div>
         </div>
 
         <div class="done" id="done" role="status" aria-live="polite" tabindex="-1">
@@ -1395,7 +1330,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-cta">
-        <h2>Uw dak, in goede handen.</h2>
+        <h2>Uw dak, laag per laag in goede handen.</h2>
         <div class="ctas"><a class="btn" href="#offerte">Gratis offerte</a><a class="btn btn-line-dk" href="tel:+3203000000">03 000 00 00</a></div>
       </div>
       <div class="foot-col"><h4>Dakwerken Hendrickx BV</h4><ul><li>Voorbeeldlaan 8</li><li>2500 Lier</li><li>BTW BE 0000.000.000 (fictief)</li></ul></div>
@@ -1404,15 +1339,15 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
     </div>
     <p class="word" aria-hidden="true">Hendrickx</p>
     <div class="legal">
-      <span>© <span id="yr">2026</span> Dakwerken Hendrickx BV · fictieve zaak. Erkend aannemer, verzekerd BA en 10-jarige aansprakelijkheid (voorbeeldvermelding). Alle cijfers, prijzen en reviews zijn voorbeelden, foto's via Unsplash.</span>
+      <span>© <span id="yr">2026</span> Dakwerken Hendrickx BV · Voorbeeldlaan 8, 2500 Lier · BTW BE 0000.000.000 · fictieve zaak. Erkend aannemer, verzekerd BA en 10-jarige aansprakelijkheid (voorbeeldvermelding). Alle cijfers, prijzen en reviews zijn voorbeelden, foto's via Unsplash.</span>
       <a href="../../nl/index.html">Voorbeeldsite door Kade Studio</a>
     </div>
   </div>
 </footer>
 
 <div class="callbar" id="callbar">
-  <a class="btn btn-line-dk" href="tel:+3203000000">Bel 03 000 00 00</a>
-  <a class="btn" href="#offerte">Gratis offerte</a>
+  <a class="btn cb-tel" href="tel:+3203000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>03 000 00 00</a>
+  <a class="btn" href="#offerte">Offerte</a>
 </div>
 
 <script>
@@ -1424,18 +1359,8 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   function $$(s, c){ return Array.prototype.slice.call((c || d).querySelectorAll(s)); }
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var yr = $('#yr'); if (yr) yr.textContent = new Date().getFullYear();
-
-  /* header condense (hysteresis) + callbar */
-  var hdr = $('#hdr'), cb = $('#callbar'), condensed = false, ticking = false;
-  function onScroll(){
-    ticking = false;
-    var y = window.scrollY || pageYOffset;
-    if (!condensed && y > 120){ condensed = true; hdr.classList.add('is-condensed'); }
-    else if (condensed && y < 40){ condensed = false; hdr.classList.remove('is-condensed'); }
-    cb.classList.toggle('show', y > 500);
-  }
-  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
-  onScroll();
+  var hdr = $('#hdr');
+  function hdrH(){ return hdr.getBoundingClientRect().height; }
 
   /* mobile menu */
   var mb = $('#menubtn'), mn = $('#mnav');
@@ -1448,7 +1373,80 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   mb.addEventListener('click', function(e){ setMenu(mb.getAttribute('aria-expanded') !== 'true', e.detail === 0); });
   mn.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
   d.addEventListener('keydown', function(e){ if (e.key === 'Escape' && mn.classList.contains('open')){ setMenu(false); mb.focus(); } });
-  mn.style.zIndex = 49;
+
+  /* ===== Dakdoorsnede: scroll- en tikgestuurd ===== */
+  var dd = $('#dd'), stage = $('#dd-stage'), ddAll = $('#dd-all'), lys = $$('.dd-ly'), btns = $$('#dd-steps button');
+  var N = 7, G = 56, A = 0.06, SPAN = 0.86, W = SPAN / N;
+  var INFO = [
+    ['Dakpannen', 'Keramisch of natuurleien. Houden regen, wind en sneeuw tegen.'],
+    ['Panlatten', 'Dragen de pannen. De afstand stemmen we af op het type pan.'],
+    ['Tengellatten', 'Lopen van nok tot goot. Laten lucht en lekwater onder de pannen weg.'],
+    ['Onderdakfolie', 'Dampopen folie: een tweede lijn tegen stuifsneeuw en lekken.'],
+    ['Isolatie', 'Minstens R 4,5, zodat u recht hebt op de Mijn VerbouwPremie.'],
+    ['Kepers', 'Het houten draagwerk. We controleren elk stuk voor we sluiten.'],
+    ['Dampscherm', 'Luchtdicht aan de binnenkant. Geen condens op uw zolder.']
+  ];
+  var ease = function(t){ t = t < 0 ? 0 : t > 1 ? 1 : t; return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+  var lastK = -2, lastP = -1, ddOn = true;
+  function stepK(p){ return p < A ? -1 : Math.min(N - 1, Math.floor((p - A) / W)); }
+  function renderDD(p){
+    if (Math.abs(p - lastP) < 0.0005) return; lastP = p;
+    var e = []; for (var k = 0; k < N; k++) e[k] = ease((p - A - k*W) / (W * 0.8));
+    for (var i = 0; i < N; i++){
+      var off = 0;
+      if (i === 0) off = -30 * e[6];
+      else for (var j = 1; j <= i; j++) off += G * e[6 - j];
+      lys[i].setAttribute('transform', 'translate(0 ' + (-off).toFixed(1) + ')');
+      var lbl = lys[i].querySelector('.dd-l');
+      lbl.classList.toggle('off', e[6 - i] < 0.45);
+    }
+    var fr = 0; for (k = 0; k < N; k++) fr += e[k]; fr /= N;
+    ddAll.setAttribute('transform', 'translate(0 ' + (-150 * (1 - fr)).toFixed(1) + ')');
+    setStep(stepK(p));
+    dd.classList.toggle('is-done', p > A + SPAN);
+  }
+  function setStep(k){
+    if (k === lastK) return; lastK = k;
+    lys.forEach(function(l, i){ l.classList.toggle('on', k >= 0 && i === 6 - k); });
+    btns.forEach(function(b, i){ b.setAttribute('aria-pressed', String(i === k)); });
+    if (k < 0){ $('#dd-num').innerHTML = '00<small>/07</small>'; $('#dd-name').textContent = 'Wat zit er onder uw pannen?'; $('#dd-line').textContent = 'Zeven lagen. Wij leggen ze allemaal zelf, en tonen u elke laag op foto.'; }
+    else { $('#dd-num').innerHTML = '0' + (k + 1) + '<small>/07</small>'; $('#dd-name').textContent = INFO[k][0]; $('#dd-line').textContent = INFO[k][1]; }
+  }
+  function ddProgress(){
+    var r = dd.getBoundingClientRect(), total = dd.offsetHeight - stage.offsetHeight;
+    if (total <= 0) return 1;
+    var p = (hdrH() - r.top) / total;
+    return p < 0 ? 0 : p > 1 ? 1 : p;
+  }
+  var svgEl = $('#dd-svg'), mqS = window.matchMedia('(max-width:640px)');
+  function fitVB(){ svgEl.setAttribute('viewBox', mqS.matches ? '16 -18 968 818' : '0 0 1000 800'); }
+  fitVB(); if (mqS.addEventListener) mqS.addEventListener('change', fitVB);
+  var isStatic = reduce;
+  if (isStatic){ dd.classList.add('static'); renderDD(1); setStep(-1); }
+  btns.forEach(function(b, k){
+    b.addEventListener('click', function(){
+      if (dd.classList.contains('static')){ setStep(k); return; }
+      var total = dd.offsetHeight - stage.offsetHeight;
+      var target = dd.getBoundingClientRect().top + (window.scrollY || pageYOffset) - hdrH() + (A + (k + 0.92) * W) * total;
+      window.scrollTo({top: Math.round(target), behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+
+  /* scroll loop (rAF, alleen als nodig) */
+  var cb = $('#callbar'), ticking = false;
+  function onScroll(){
+    ticking = false;
+    var y = window.scrollY || pageYOffset;
+    cb.classList.toggle('show', y > 300);
+    if (!isStatic && ddOn) renderDD(ddProgress());
+  }
+  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  addEventListener('resize', function(){ lastP = -1; onScroll(); });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ ddOn = es[0].isIntersecting; if (ddOn) onScroll(); }, {rootMargin:'100px 0px'}).observe(dd);
+  }
+  if (!isStatic){ lastP = -1; renderDD(ddProgress()); }
+  onScroll();
 
   /* reveal */
   var rvs = $$('.rv, .tl');
@@ -1456,7 +1454,6 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
     rvs.forEach(function(el){ io.observe(el); });
   } else rvs.forEach(function(el){ el.classList.add('in'); });
-  setTimeout(function(){ rvs.forEach(function(el){ el.classList.add('in'); }); }, 3000);
 
   /* services: image swap */
   var frame = $('#svc-frame'), cap = $('#svc-cap'), num = $('#svc-num'), rows = $$('.srv');
@@ -1476,20 +1473,21 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
     var r = $$('input[name="type"]').filter(function(x){ return x.value === v; })[0];
     if (r){ r.checked = true; clearErr('type'); }
   }
-  $$('[data-type]').forEach(function(a){ a.addEventListener('click', function(){ setType(a.dataset.type); goStep(1); }); });
+  $$('[data-type]').forEach(function(a){ a.addEventListener('click', function(){ setType(a.dataset.type); }); });
 
-  /* estimator */
+  /* richtprijs in 3 vragen */
   var est = {
     pannen:{label:'Pannendak', base:[105,145], iso:[55,75], isoT:'Isolatie (sarking)', isoS:'PIR-platen langs buiten, R ≥ 4,5', gotT:'Nieuwe zinken dakgoten', gotS:'Op maat geplooid, incl. afvoeren', winT:'Dakramen (velux)', winS:'Plaatsen inclusief gootstuk en afwerking', win:[1150,1650], type:'Hellend dak', days:[30,22]},
     leien:{label:'Natuurleien', base:[145,195], iso:[55,75], isoT:'Isolatie (sarking)', isoS:'PIR-platen langs buiten, R ≥ 4,5', gotT:'Nieuwe zinken dakgoten', gotS:'Op maat geplooid, incl. afvoeren', winT:'Dakramen (velux)', winS:'Plaatsen inclusief gootstuk en afwerking', win:[1150,1650], type:'Hellend dak', days:[24,18]},
     epdm:{label:'Plat dak in EPDM', base:[85,120], iso:[35,50], isoT:'Isolatie (PIR)', isoS:'Onder de EPDM, R ≥ 4,5', gotT:'Dakranden & afvoer', gotS:'Aluminium dakrandprofielen en afvoeren', winT:'Lichtkoepels', winS:'Inclusief opstand en afwerking', win:[950,1400], type:'Plat dak', days:[60,45]}
   };
-  var m2 = $('#m2'), m2o = $('#m2-out'), oIso = $('#o-iso'), oGot = $('#o-got'), wOut = $('#win-out'), win = 1;
+  var m2 = $('#m2'), m2o = $('#m2-out'), oIso = $('#o-iso'), oGot = $('#o-got'), wOut = $('#win-out'), gem = $('#gem'), win = 1;
   var fmt = function(n){ return '€ ' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
   var r100 = function(n){ return Math.round(n / 100) * 100; };
   var lastEst = null;
   function calc(){
     var k = $('input[name="roof"]:checked').value, c = est[k], a = +m2.value;
+    var opt = gem.options[gem.selectedIndex], km = +opt.dataset.km, city = opt.value;
     var rows = [], lo = 0, hi = 0;
     function add(lbl, l, h){ lo += l; hi += h; rows.push([lbl, fmt(r100(l)) + ' – ' + fmt(r100(h))]); }
     add(c.label + ' · ' + a + ' m²', c.base[0] * a, c.base[1] * a);
@@ -1502,6 +1500,9 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
     var dHi = Math.max(2, Math.ceil(a / c.days[1])) + (oIso.checked ? 2 : 0) + win;
     $('#price').innerHTML = fmt(lo) + ' <span>–</span> ' + fmt(hi);
     $('#price-sub').textContent = 'Met 6 % btw (woning ouder dan 10 jaar): ' + fmt(r100(lo * 1.06)) + ' – ' + fmt(r100(hi * 1.06)) + ' · ± ' + dLo + ' tot ' + dHi + ' werkdagen';
+    var zoneTxt = km < 99 ? '<b>' + city + ' · ' + km + ' km.</b> Binnen ons werkgebied: geen verplaatsingskosten.' : '<b>Buiten ons vaste werkgebied.</b> We bekijken het graag, verplaatsing op aanvraag.';
+    rows.push([km < 99 ? 'Verplaatsing naar ' + city : 'Verplaatsing', km < 99 ? 'inbegrepen' : 'op aanvraag']);
+    $('#zone').innerHTML = zoneTxt;
     $('#bd').innerHTML = rows.map(function(r){ return '<div><dt>' + r[0] + '</dt><dd>' + r[1] + '</dd></div>'; }).join('');
     m2o.textContent = a + ' m²';
     m2.style.setProperty('--p', ((a - 20) / 280 * 100) + '%');
@@ -1517,33 +1518,42 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
     $$('#pitch-win path, #flat-win path').forEach(function(p){ var i = Array.prototype.indexOf.call(p.parentNode.children, p); p.classList.toggle('off', i >= win); });
     $('#draw-l').textContent = c.label.toUpperCase() + ' · SCHAAL N.T.S.';
     $('#draw-m2').textContent = '≈ ' + a + ' M²';
-    lastEst = {k:k, c:c, a:a, lo:lo, hi:hi};
+    $('#draw-g').textContent = 'HENDRICKX / BLAD 03 · ' + (city || 'ANDERE GEMEENTE').toUpperCase();
+    lastEst = {k:k, c:c, a:a, lo:lo, hi:hi, city:city};
   }
   $$('input[name="roof"]').forEach(function(r){ r.addEventListener('change', calc); });
-  m2.addEventListener('input', calc); oIso.addEventListener('change', calc); oGot.addEventListener('change', calc);
+  m2.addEventListener('input', calc); oIso.addEventListener('change', calc); oGot.addEventListener('change', calc); gem.addEventListener('change', calc);
   $('#win-min').addEventListener('click', function(){ win = Math.max(0, win - 1); calc(); });
   $('#win-plus').addEventListener('click', function(){ win = Math.min(4, win + 1); calc(); });
   calc();
   $('#est-go').addEventListener('click', function(){
     var e = lastEst; if (!e) return;
     setType(e.c.type);
-    $('#q-m2').value = e.a;
-    var want = {Isolatie:oIso.checked, Dakgoten:oGot.checked, Dakramen:win > 0};
-    $$('input[name="opt"]').forEach(function(x){ if (x.value in want) x.checked = want[x.value]; });
+    if (e.city) $('#q-city').value = e.city;
     var msg = $('#q-msg');
-    var line = 'Prijsindicatie: ' + e.c.label.toLowerCase() + ', ca. ' + e.a + ' m²' + (oIso.checked ? ', met isolatie' : '') + (oGot.checked ? ', met ' + e.c.gotT.toLowerCase() : '') + (win ? ', ' + win + ' ' + e.c.winT.toLowerCase() : '') + '. Indicatie ' + fmt(e.lo) + ' – ' + fmt(e.hi) + ' excl. btw.';
-    msg.value = line + (msg.value && msg.value.indexOf('Prijsindicatie:') !== 0 ? '\n' + msg.value : '');
-    prefillT.textContent = 'Overgenomen uit de prijsindicatie: ' + e.c.label.toLowerCase() + ', ' + e.a + ' m², ' + fmt(e.lo) + ' – ' + fmt(e.hi) + ' excl. btw. Controleer en vul aan.';
+    var line = 'Richtprijs: ' + e.c.label.toLowerCase() + ', ca. ' + e.a + ' m²' + (oIso.checked ? ', met isolatie' : '') + (oGot.checked ? ', met ' + e.c.gotT.toLowerCase() : '') + (win ? ', ' + win + ' × ' + e.c.winT.toLowerCase() : '') + '. Vork ' + fmt(e.lo) + ' – ' + fmt(e.hi) + ' excl. btw.';
+    msg.value = line + (msg.value && msg.value.indexOf('Richtprijs:') !== 0 ? '\n' + msg.value : '');
+    prefillT.textContent = 'Overgenomen uit de richtprijs: ' + e.c.label.toLowerCase() + ', ' + e.a + ' m²' + (e.city ? ', ' + e.city : '') + '. Vul uw naam en telefoon aan.';
     prefillBox.classList.add('show');
-    goStep(1);
     d.getElementById('offerte').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
   });
 
-  /* before / after */
+  /* voor / na: duim, muis en toetsen */
   function initBA(el){
     var r = $('.ba-range', el); if (!r) return;
-    var up = function(){ el.style.setProperty('--x', r.value + '%'); r.setAttribute('aria-valuetext', r.value + ' procent voor-foto zichtbaar'); };
-    r.addEventListener('input', up); up();
+    function set(v){ v = Math.max(0, Math.min(100, v)); r.value = v; el.style.setProperty('--x', v + '%'); r.setAttribute('aria-valuetext', Math.round(v) + ' procent voor-foto zichtbaar'); }
+    function fromEvt(e){ var b = el.getBoundingClientRect(); set((e.clientX - b.left) / b.width * 100); }
+    var drag = false, sx = 0, sy = 0, decided = false;
+    el.addEventListener('pointerdown', function(e){ drag = true; decided = e.pointerType === 'mouse'; sx = e.clientX; sy = e.clientY; if (decided){ fromEvt(e); } });
+    el.addEventListener('pointermove', function(e){
+      if (!drag) return;
+      if (!decided){ var dx = Math.abs(e.clientX - sx), dy = Math.abs(e.clientY - sy); if (dx < 6 && dy < 6) return; decided = true; if (dy > dx){ drag = false; return; } try { el.setPointerCapture(e.pointerId); } catch(_){} }
+      fromEvt(e);
+    });
+    function end(e){ if (drag && !decided && e.type === 'pointerup') fromEvt(e); drag = false; }
+    el.addEventListener('pointerup', end); el.addEventListener('pointercancel', function(){ drag = false; });
+    r.addEventListener('input', function(){ set(+r.value); });
+    set(+r.value);
   }
   $$('.ba').forEach(initBA);
 
@@ -1594,12 +1604,12 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
   var pm = $('#pm'), cur = null, lastFocus = null;
   function baHTML(p){
     var src = 'img/' + p.img + '.jpg';
-    return '<div class="ba" style="--x:50%"><img src="' + src + '" alt="Na: ' + p.alt + '" width="' + p.w + '" height="' + p.h + '"><div class="ba-before"><img src="' + src + '" alt="" width="' + p.w + '" height="' + p.h + '"></div><span class="ba-line" aria-hidden="true"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span><span class="ba-tag l mono">Voor · gesimuleerd</span><span class="ba-tag r mono">Na</span><input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Vergelijk voor en na"></div>';
+    return '<div class="ba" style="--x:50%"><img src="' + src + '" alt="Na: ' + p.alt + '" width="' + p.w + '" height="' + p.h + '" onerror="this.remove()"><div class="ba-before"><img src="' + src + '" alt="" width="' + p.w + '" height="' + p.h + '" onerror="this.remove()"></div><span class="ba-line" aria-hidden="true"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span><span class="ba-tag l mono">Voor · gesimuleerd</span><span class="ba-tag r mono">Na</span><input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Vergelijk voor en na"></div>';
   }
   function fill(id){
-    cur = id; var p = P[id], list = visible.indexOf(id) > -1 ? visible : ids, i = list.indexOf(id);
+    cur = id; var p = P[id], list = visible.indexOf(id) > -1 ? visible : ids;
     var media = $('#pm-media');
-    media.innerHTML = p.ba ? baHTML(p) : '<img src="img/' + p.img + '.jpg" alt="' + p.alt + '" width="' + p.w + '" height="' + p.h + '">';
+    media.innerHTML = p.ba ? baHTML(p) : '<img src="img/' + p.img + '.jpg" alt="' + p.alt + '" width="' + p.w + '" height="' + p.h + '" onerror="this.remove()">';
     if (p.ba) initBA($('.ba', media));
     $('#pm-count').textContent = 'Project ' + (ids.indexOf(id) + 1 < 10 ? '0' : '') + (ids.indexOf(id) + 1) + ' · ' + p.cat + (p.ba ? ' · voor/na' : '');
     $('#pm-title').textContent = p.title;
@@ -1616,7 +1626,7 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
     $('#pm-x').focus();
   }
   function closePM(){ if (pm.open){ if (pm.close) pm.close(); else pm.removeAttribute('open'); } }
-  pm.addEventListener('close', function(){ d.body.style.overflow = ''; if (lastFocus && lastFocus.focus) lastFocus.focus(); });
+  pm.addEventListener('close', function(){ d.body.style.overflow = ''; if (lastFocus && lastFocus.focus) lastFocus.focus({preventScroll:true}); });
   function step(dir){ var list = pm.dataset.list.split(','), i = list.indexOf(cur); fill(list[(i + dir + list.length) % list.length]); }
   d.addEventListener('click', function(e){ var t = e.target.closest('[data-open]'); if (t){ e.preventDefault(); openPM(t.dataset.open, t); } });
   $('#pm-x').addEventListener('click', closePM);
@@ -1627,112 +1637,45 @@ select.inp{appearance:none;-webkit-appearance:none;background:#fff url("data:ima
     if (e.target.classList && e.target.classList.contains('ba-range')) return;
     if (e.key === 'ArrowRight') step(1); else if (e.key === 'ArrowLeft') step(-1);
   });
-  $('#pm-cta').addEventListener('click', function(){ setType(P[cur].type); goStep(1); closePM(); });
+  $('#pm-cta').addEventListener('click', function(){ setType(P[cur].type); closePM(); });
 
-  /* multi-step form */
-  var form = $('#qform'), steps = $$('.fstep', form), progLi = $$('#prog li'), curStep = 1;
-  var bPrev = $('#f-prev'), bNext = $('#f-next'), bSub = $('#f-submit');
-  function goStep(n){
-    curStep = n;
-    steps.forEach(function(s){ s.classList.toggle('cur', +s.dataset.step === n); });
-    progLi.forEach(function(li, i){
-      li.classList.toggle('done', i + 1 < n);
-      if (i + 1 === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
-    });
-    bPrev.classList.toggle('show', n > 1);
-    bNext.classList.toggle('show', n < 3);
-    bSub.classList.toggle('show', n === 3);
-  }
-  function setErr(id, msg, el){
-    var p = $('#err-' + id); if (p) p.textContent = msg;
-    if (el) el.setAttribute('aria-invalid', 'true');
-    return el || p;
-  }
+  /* kort formulier: type, naam, telefoon, gemeente, vraag */
+  var form = $('#qform');
+  function setErr(id, msg, el){ var p = $('#err-' + id); if (p) p.textContent = msg; if (el) el.setAttribute('aria-invalid', 'true'); return el; }
   function clearErr(id){
     var p = $('#err-' + id); if (p) p.textContent = '';
-    var el = p && d.querySelector('[aria-describedby~="err-' + id + '"]'); if (el) el.removeAttribute('aria-invalid');
+    var el = d.querySelector('[aria-describedby~="err-' + id + '"]'); if (el) el.removeAttribute('aria-invalid');
   }
-  function validate(n){
+  function validate(){
     var bad = [];
-    if (n === 1){
-      clearErr('type');
-      if (!$('input[name="type"]:checked')) bad.push(setErr('type', 'Kies het type werk, zodat we de juiste ploegbaas sturen.', null) && $('#tiles input'));
-    }
-    if (n === 2){
-      ['m2','msg'].forEach(clearErr);
-      var m = $('#q-m2'), v = m.value.trim();
-      if (v && (!/^\d+$/.test(v) || +v < 1 || +v > 5000)) bad.push(setErr('m2', 'Geef een getal tussen 1 en 5 000 m², of laat het veld leeg.', m));
-      var msg = $('#q-msg');
-      if (msg.value.trim().length < 15) bad.push(setErr('msg', 'Beschrijf kort wat er moet gebeuren (minstens 15 tekens).', msg));
-    }
-    if (n === 3){
-      ['name','tel','mail','zip','city','ok'].forEach(clearErr);
-      var nm = $('#q-name'); if (nm.value.trim().length < 2) bad.push(setErr('name', 'Vul uw naam in.', nm));
-      var tel = $('#q-tel'), digits = tel.value.replace(/\D/g, '');
-      if (digits.length < 9 || digits.length > 13) bad.push(setErr('tel', 'Vul een geldig telefoonnummer in, bv. 0470 00 00 00.', tel));
-      var ml = $('#q-mail'); if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(ml.value.trim())) bad.push(setErr('mail', 'Vul een geldig e-mailadres in.', ml));
-      var zp = $('#q-zip'); if (!/^[1-9]\d{3}$/.test(zp.value.trim())) bad.push(setErr('zip', 'Belgische postcode van 4 cijfers.', zp));
-      var ct = $('#q-city'); if (ct.value.trim().length < 2) bad.push(setErr('city', 'Vul de gemeente van de werf in.', ct));
-      var ok = $('#q-ok'); if (!ok.checked) bad.push(setErr('ok', 'Vink dit aan zodat we u mogen contacteren.', ok));
-    }
+    ['type','name','tel','city','msg'].forEach(clearErr);
+    if (!$('input[name="type"]:checked')) bad.push(setErr('type', 'Kies het type werk.', null) || $('#tiles input'));
+    var nm = $('#q-name'); if (nm.value.trim().length < 2) bad.push(setErr('name', 'Vul uw naam in.', nm));
+    var tel = $('#q-tel'), digits = tel.value.replace(/\D/g, '');
+    if (digits.length < 9 || digits.length > 13) bad.push(setErr('tel', 'Vul een geldig nummer in, bv. 0470 00 00 00.', tel));
+    var ct = $('#q-city'); if (ct.value.trim().length < 2) bad.push(setErr('city', 'Vul de gemeente van de werf in.', ct));
+    var msg = $('#q-msg'); if (msg.value.trim().length < 10) bad.push(setErr('msg', 'Beschrijf kort wat er moet gebeuren.', msg));
     if (bad.length && bad[0] && bad[0].focus) bad[0].focus();
     return !bad.length;
   }
   $$('input[name="type"]').forEach(function(r){ r.addEventListener('change', function(){ clearErr('type'); }); });
-  ['m2','msg','name','tel','mail','zip','city'].forEach(function(id){ var el = $('#q-' + id); el.addEventListener('input', function(){ if (el.getAttribute('aria-invalid')) clearErr(id); }); });
-  $('#q-ok').addEventListener('change', function(){ clearErr('ok'); });
-  $$('input[name="urg"]').forEach(function(r){ r.addEventListener('change', function(){ $('#urgent').classList.toggle('show', $('input[name="urg"]:checked').value === 'Dringend'); }); });
-  bNext.addEventListener('click', function(){ if (validate(curStep)){ goStep(curStep + 1); var lg = $('.fstep.cur legend', form); form.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'}); var f = $('.fstep.cur input:not([type=hidden]), .fstep.cur textarea', form); if (f) f.focus({preventScroll:true}); } });
-  bPrev.addEventListener('click', function(){ goStep(Math.max(1, curStep - 1)); });
-
-  /* photo upload preview */
-  var drop = $('#drop'), fi = $('#q-files'), thumbs = $('#thumbs'), files = [];
-  function renderThumbs(){
-    $$('img', thumbs).forEach(function(i){ URL.revokeObjectURL(i.src); });
-    thumbs.innerHTML = '';
-    files.forEach(function(f, i){
-      var li = d.createElement('li'), img = d.createElement('img'), b = d.createElement('button'), s = d.createElement('span');
-      img.src = URL.createObjectURL(f); img.alt = 'Voorbeeld van ' + f.name;
-      b.type = 'button'; b.textContent = '×'; b.setAttribute('aria-label', 'Verwijder ' + f.name);
-      b.addEventListener('click', function(){ files.splice(i, 1); renderThumbs(); drop.focus && fi.focus(); });
-      s.textContent = f.name;
-      li.appendChild(img); li.appendChild(s); li.appendChild(b); thumbs.appendChild(li);
-    });
-  }
-  function addFiles(list){
-    var skipped = 0;
-    Array.prototype.forEach.call(list || [], function(f){
-      if (!/^image\//.test(f.type)){ skipped++; return; }
-      if (files.length < 6) files.push(f); else skipped++;
-    });
-    $('#err-files').textContent = skipped ? skipped + ' bestand(en) overgeslagen: alleen afbeeldingen, maximaal 6.' : '';
-    renderThumbs();
-  }
-  ['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.add('over'); }); });
-  ['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.remove('over'); }); });
-  drop.addEventListener('drop', function(e){ addFiles(e.dataTransfer.files); });
-  fi.addEventListener('change', function(){ addFiles(fi.files); fi.value = ''; });
-
+  ['name','tel','city','msg'].forEach(function(id){ var el = $('#q-' + id); el.addEventListener('input', function(){ if (el.getAttribute('aria-invalid')) clearErr(id); }); });
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    for (var n = 1; n <= 3; n++){ if (!validate(n)){ goStep(n); validate(n); return; } }
+    if (!validate()) return;
     var type = $('input[name="type"]:checked').value, name = $('#q-name').value.trim(), city = $('#q-city').value.trim();
-    var pref = $('input[name="pref"]:checked').value, urg = $('input[name="urg"]:checked').value;
     var ref = 'DH-' + new Date().getFullYear() + '-' + String(Math.floor(1000 + Math.random() * 9000));
     $('#form-body').hidden = true;
     var dn = $('#done'); dn.classList.add('show');
-    $('#done-text').textContent = 'Bedankt, ' + name.split(' ')[0] + '. We ' + (pref === 'telefoon' ? 'bellen' : 'mailen') + ' u binnen één werkdag over uw ' + type.toLowerCase() + ' in ' + city + ' om een plaatsbezoek vast te leggen.' + (urg === 'Dringend' ? ' Omdat het dringend is, krijgt uw aanvraag voorrang.' : '');
-    var opts = $$('input[name="opt"]:checked').map(function(x){ return x.value.toLowerCase(); });
-    var sp = [['Referentie', ref], ['Type werk', type + (urg === 'Dringend' ? ' · dringend' : '')], ['Oppervlakte', $('#q-m2').value ? $('#q-m2').value + ' m²' : 'nog te bepalen'], ['Opties', opts.length ? opts.join(', ') : 'geen'], ["Foto's", files.length ? files.length + ' toegevoegd' : 'geen'], ['Werf', $('#q-zip').value.trim() + ' ' + city]];
+    $('#done-text').textContent = 'Bedankt, ' + name.split(' ')[0] + '. We bellen u binnen één werkdag over uw ' + type.toLowerCase() + ' in ' + city + ' om een plaatsbezoek vast te leggen.';
+    var sp = [['Referentie', ref], ['Type werk', type], ['Gemeente', city], ['Telefoon', $('#q-tel').value.trim()]];
     $('#done-specs').innerHTML = sp.map(function(s){ var dd = d.createElement('dd'); dd.textContent = s[1]; return '<div><dt>' + s[0] + '</dt>' + dd.outerHTML + '</div>'; }).join('');
     dn.focus({preventScroll:true});
     form.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
   });
   $('#again').addEventListener('click', function(){
-    $('#done').classList.remove('show'); $('#form-body').hidden = false; form.reset(); files = []; renderThumbs();
-    prefillBox.classList.remove('show'); $('#urgent').classList.remove('show'); goStep(1);
+    $('#done').classList.remove('show'); $('#form-body').hidden = false; form.reset(); prefillBox.classList.remove('show');
   });
-  goStep(1);
 
   /* active nav link */
   var navLinks = $$('.nav a'), secs = navLinks.map(function(a){ return d.querySelector(a.getAttribute('href')); });
