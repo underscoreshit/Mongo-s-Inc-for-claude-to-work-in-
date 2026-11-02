@@ -1,7 +1,7 @@
 """Build: src/app.html + data/repos.json -> dist/artifact.html (claude.ai) and dist/index.html (standalone PWA)."""
 import json, pathlib
 R = pathlib.Path(__file__).resolve().parent.parent
-src = (R/"src/app.html").read_text()
+src = (R/"src/app.html").read_text().replace("/*VILLAGE*/", (R/"src/village.js").read_text())
 data = json.dumps(json.loads((R/"data/repos.json").read_text()), separators=(",",":"), ensure_ascii=False).replace("</", "<\\/")
 page = src.replace("/*DATA*/", data)
 (R/"dist").mkdir(exist_ok=True)
